@@ -1,0 +1,9 @@
+grammar de.htwg.zeta.xtext.CalculatorForm with org.eclipse.xtext.common.Terminals
+
+generate calculatorForm "http://www.htwg.de/zeta/xtext/CalculatorForm"
+
+Model:
+    greetings+=Greeting*;
+
+Greeting:
+    'Hello' name=ID '!';

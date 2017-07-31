@@ -1,0 +1,93 @@
+<idea-plugin version="2">
+	<extensions defaultExtensionNs="org.eclipse.xtext.idea">
+		<package
+			uri="http://www.htwg.de/zeta/xtext/CalculatorForm"
+			class="de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage"
+		/>
+		<resourceFactory 
+			type="cform"
+			class="org.eclipse.xtext.resource.IResourceFactory"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+		/>
+		<resourceServiceProvider
+			uriExtension="cform"
+			class="org.eclipse.xtext.idea.resource.IResourceIdeaServiceProvider"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+		/>
+
+		<lang.setup
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			implementationClass="de.htwg.zeta.xtext.idea.CalculatorFormIdeaSetup"
+		/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<psi.treeChangePreprocessor implementation="de.htwg.zeta.xtext.idea.lang.psi.CalculatorFormCodeBlockModificationListener"/>
+
+		<fileTypeFactory implementation="de.htwg.zeta.xtext.idea.lang.CalculatorFormFileTypeFactory"/>
+		<stubElementTypeHolder class="de.htwg.zeta.xtext.idea.lang.CalculatorFormElementTypeProvider"/>
+		<lang.ast.factory 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.lang.BaseXtextASTFactory"
+		/>
+		<lang.parserDefinition 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="de.htwg.zeta.xtext.idea.lang.parser.CalculatorFormParserDefinition"
+		/>
+		<lang.findUsagesProvider 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.findusages.BaseXtextFindUsageProvider"
+		/>
+		<lang.refactoringSupport 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.refactoring.BaseXtextRefactoringSupportProvider"
+		/>
+		<lang.namesValidator 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="com.intellij.lang.refactoring.NamesValidator"
+		/>
+		<lang.syntaxHighlighterFactory key="de.htwg.zeta.xtext.CalculatorForm" implementationClass="de.htwg.zeta.xtext.idea.highlighting.CalculatorFormSyntaxHighlighterFactory" />
+		<lang.braceMatcher 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="com.intellij.lang.PairedBraceMatcher"
+		/>
+		<annotator 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.annotation.IssueAnnotator"
+		/>
+		<completion.contributor language="de.htwg.zeta.xtext.CalculatorForm" implementationClass="de.htwg.zeta.xtext.idea.completion.CalculatorFormCompletionContributor"/>
+		<pom.declarationSearcher implementation="de.htwg.zeta.xtext.idea.lang.pom.CalculatorFormPomDeclarationSearcher"/>
+
+		<lang.psiStructureViewFactory 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="com.intellij.lang.PsiStructureViewFactory"
+		/>
+		<facetType implementation="de.htwg.zeta.xtext.idea.facet.CalculatorFormFacetType"/>
+      	<lang.documentationProvider 
+      		language="de.htwg.zeta.xtext.CalculatorForm"
+      		factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+      		implementationClass="org.eclipse.xtext.idea.documentation.IdeaDocumentationProvider"
+      	/>
+		<colorSettingsPage implementation="de.htwg.zeta.xtext.idea.highlighting.CalculatorFormColorSettingsPage"/>
+		<highlightVisitor implementation="de.htwg.zeta.xtext.idea.highlighting.CalculatorFormSemanticHighlightVisitor"/>
+
+		<lang.formatter 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="com.intellij.formatting.FormattingModelBuilder"
+		/>
+		<lang.commenter 
+			language="de.htwg.zeta.xtext.CalculatorForm"
+			factoryClass="de.htwg.zeta.xtext.idea.CalculatorFormExtensionFactory"
+			implementationClass="com.intellij.lang.CodeDocumentationAwareCommenter"
+		/>
+	</extensions>
+</idea-plugin>
