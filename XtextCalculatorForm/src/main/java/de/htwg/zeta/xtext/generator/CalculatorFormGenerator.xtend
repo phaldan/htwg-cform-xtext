@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import de.htwg.zeta.xtext.calculatorForm.Model
 
 /**
  * Generates code from your model files on save.
@@ -16,5 +17,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class CalculatorFormGenerator extends AbstractGenerator {
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        val root = resource.contents.filter(typeof(Model)).toList.get(0)
+        new SimpleGenerator(fsa, root, "simple")
     }
 }
