@@ -60,19 +60,36 @@ ruleModel returns [Boolean current=false]
 :
 	(
 		(
-			{
-				markComposite(elementTypeProvider.getModel_FormElementsFormElementParserRuleCall_0ElementType());
-			}
-			lv_formElements_0_0=ruleFormElement
-			{
-				doneComposite();
-				if(!$current) {
-					associateWithSemanticElement();
-					$current = true;
+			(
+				{
+					markComposite(elementTypeProvider.getModel_FormElementsFormElementParserRuleCall_0_0ElementType());
 				}
-			}
-		)
-	)*
+				lv_formElements_0_0=ruleFormElement
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getModel_CalculationsCalculateParserRuleCall_1_0ElementType());
+				}
+				lv_calculations_1_0=ruleCalculate
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+	)
 ;
 
 //Entry rule entryRuleFormElement
@@ -1547,6 +1564,462 @@ ruleButtonSubmit returns [Boolean current=false]
 				)
 			)
 		)?
+	)
+;
+
+//Entry rule entryRuleCalculate
+entryRuleCalculate returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getCalculateElementType()); }
+	iv_ruleCalculate=ruleCalculate
+	{ $current=$iv_ruleCalculate.current; }
+	EOF;
+
+// Rule Calculate
+ruleCalculate returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getCalculate_CalculateKeyword_0ElementType());
+		}
+		otherlv_0='calculate'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					markComposite(elementTypeProvider.getCalculate_ResultFieldCrossReference_1_0ElementType());
+				}
+				ruleQualifiedName
+				{
+					doneComposite();
+				}
+			)
+		)
+		{
+			markLeaf(elementTypeProvider.getCalculate_EqualsSignKeyword_2ElementType());
+		}
+		otherlv_2='='
+		{
+			doneLeaf(otherlv_2);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getCalculate_ExpressionExpressionParserRuleCall_3_0ElementType());
+				}
+				lv_expression_3_0=ruleExpression
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)
+	)
+;
+
+//Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getQualifiedNameElementType()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current; }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getQualifiedName_IDTerminalRuleCall_0ElementType());
+		}
+		this_ID_0=RULE_ID
+		{
+			doneLeaf(this_ID_0);
+		}
+		(
+			{
+				markLeaf(elementTypeProvider.getQualifiedName_FullStopKeyword_1_0ElementType());
+			}
+			kw='.'
+			{
+				doneLeaf(kw);
+			}
+			{
+				markLeaf(elementTypeProvider.getQualifiedName_IDTerminalRuleCall_1_1ElementType());
+			}
+			this_ID_2=RULE_ID
+			{
+				doneLeaf(this_ID_2);
+			}
+		)*
+	)
+;
+
+//Entry rule entryRuleExpression
+entryRuleExpression returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getExpressionElementType()); }
+	iv_ruleExpression=ruleExpression
+	{ $current=$iv_ruleExpression.current; }
+	EOF;
+
+// Rule Expression
+ruleExpression returns [Boolean current=false]
+:
+	{
+		markComposite(elementTypeProvider.getExpression_AdditionParserRuleCallElementType());
+	}
+	this_Addition_0=ruleAddition
+	{
+		$current = $this_Addition_0.current;
+		doneComposite();
+	}
+;
+
+//Entry rule entryRuleAddition
+entryRuleAddition returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getAdditionElementType()); }
+	iv_ruleAddition=ruleAddition
+	{ $current=$iv_ruleAddition.current; }
+	EOF;
+
+// Rule Addition
+ruleAddition returns [Boolean current=false]
+:
+	(
+		{
+			markComposite(elementTypeProvider.getAddition_MultiplicationParserRuleCall_0ElementType());
+		}
+		this_Multiplication_0=ruleMultiplication
+		{
+			$current = $this_Multiplication_0.current;
+			doneComposite();
+		}
+		(
+			(
+				(
+					(
+						{
+							precedeComposite(elementTypeProvider.getAddition_PlusLeftAction_1_0_0_0ElementType());
+							doneComposite();
+							associateWithSemanticElement();
+						}
+					)
+					{
+						markLeaf(elementTypeProvider.getAddition_PlusSignKeyword_1_0_0_1ElementType());
+					}
+					otherlv_2='+'
+					{
+						doneLeaf(otherlv_2);
+					}
+				)
+				    |
+				(
+					(
+						{
+							precedeComposite(elementTypeProvider.getAddition_MinusLeftAction_1_0_1_0ElementType());
+							doneComposite();
+							associateWithSemanticElement();
+						}
+					)
+					{
+						markLeaf(elementTypeProvider.getAddition_HyphenMinusKeyword_1_0_1_1ElementType());
+					}
+					otherlv_4='-'
+					{
+						doneLeaf(otherlv_4);
+					}
+				)
+			)
+			(
+				(
+					{
+						markComposite(elementTypeProvider.getAddition_RightMultiplicationParserRuleCall_1_1_0ElementType());
+					}
+					lv_right_5_0=ruleMultiplication
+					{
+						doneComposite();
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+				)
+			)
+		)*
+	)
+;
+
+//Entry rule entryRuleMultiplication
+entryRuleMultiplication returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getMultiplicationElementType()); }
+	iv_ruleMultiplication=ruleMultiplication
+	{ $current=$iv_ruleMultiplication.current; }
+	EOF;
+
+// Rule Multiplication
+ruleMultiplication returns [Boolean current=false]
+:
+	(
+		{
+			markComposite(elementTypeProvider.getMultiplication_PrefixedParserRuleCall_0ElementType());
+		}
+		this_Prefixed_0=rulePrefixed
+		{
+			$current = $this_Prefixed_0.current;
+			doneComposite();
+		}
+		(
+			(
+				(
+					{
+						precedeComposite(elementTypeProvider.getMultiplication_MultiOrDivLeftAction_1_0_0ElementType());
+						doneComposite();
+						associateWithSemanticElement();
+					}
+				)
+				(
+					(
+						(
+							{
+								markLeaf(elementTypeProvider.getMultiplication_OpAsteriskKeyword_1_0_1_0_0ElementType());
+							}
+							lv_op_2_1='*'
+							{
+								doneLeaf(lv_op_2_1);
+							}
+							{
+								if (!$current) {
+									associateWithSemanticElement();
+									$current = true;
+								}
+							}
+							    |
+							{
+								markLeaf(elementTypeProvider.getMultiplication_OpSolidusKeyword_1_0_1_0_1ElementType());
+							}
+							lv_op_2_2='/'
+							{
+								doneLeaf(lv_op_2_2);
+							}
+							{
+								if (!$current) {
+									associateWithSemanticElement();
+									$current = true;
+								}
+							}
+						)
+					)
+				)
+			)
+			(
+				(
+					{
+						markComposite(elementTypeProvider.getMultiplication_RightPrefixedParserRuleCall_1_1_0ElementType());
+					}
+					lv_right_3_0=rulePrefixed
+					{
+						doneComposite();
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+				)
+			)
+		)*
+	)
+;
+
+//Entry rule entryRulePrefixed
+entryRulePrefixed returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getPrefixedElementType()); }
+	iv_rulePrefixed=rulePrefixed
+	{ $current=$iv_rulePrefixed.current; }
+	EOF;
+
+// Rule Prefixed
+rulePrefixed returns [Boolean current=false]
+:
+	(
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getPrefixed_BooleanNegationAction_0_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				('!')=>
+				{
+					markLeaf(elementTypeProvider.getPrefixed_ExclamationMarkKeyword_0_1ElementType());
+				}
+				otherlv_1='!'
+				{
+					doneLeaf(otherlv_1);
+				}
+			)
+			(
+				(
+					{
+						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType());
+					}
+					lv_expression_2_0=ruleAtomic
+					{
+						doneComposite();
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getPrefixed_ArithmeticSignedAction_1_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				('-')=>
+				{
+					markLeaf(elementTypeProvider.getPrefixed_HyphenMinusKeyword_1_1ElementType());
+				}
+				otherlv_4='-'
+				{
+					doneLeaf(otherlv_4);
+				}
+			)
+			(
+				(
+					{
+						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType());
+					}
+					lv_expression_5_0=ruleAtomic
+					{
+						doneComposite();
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+				)
+			)
+		)
+		    |
+		{
+			markComposite(elementTypeProvider.getPrefixed_AtomicParserRuleCall_2ElementType());
+		}
+		this_Atomic_6=ruleAtomic
+		{
+			$current = $this_Atomic_6.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleAtomic
+entryRuleAtomic returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getAtomicElementType()); }
+	iv_ruleAtomic=ruleAtomic
+	{ $current=$iv_ruleAtomic.current; }
+	EOF;
+
+// Rule Atomic
+ruleAtomic returns [Boolean current=false]
+:
+	(
+		(
+			{
+				markLeaf(elementTypeProvider.getAtomic_LeftParenthesisKeyword_0_0ElementType());
+			}
+			otherlv_0='('
+			{
+				doneLeaf(otherlv_0);
+			}
+			{
+				markComposite(elementTypeProvider.getAtomic_ExpressionParserRuleCall_0_1ElementType());
+			}
+			this_Expression_1=ruleExpression
+			{
+				$current = $this_Expression_1.current;
+				doneComposite();
+			}
+			{
+				markLeaf(elementTypeProvider.getAtomic_RightParenthesisKeyword_0_2ElementType());
+			}
+			otherlv_2=')'
+			{
+				doneLeaf(otherlv_2);
+			}
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getAtomic_NumberLiteralAction_1_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getAtomic_ValueINTTerminalRuleCall_1_1_0ElementType());
+					}
+					lv_value_4_0=RULE_INT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_4_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						if (!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
+					}
+					ruleQualifiedName
+					{
+						doneComposite();
+					}
+				)
+			)
+		)
 	)
 ;
 

@@ -6,8 +6,10 @@ package de.htwg.zeta.xtext.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -23,18 +25,30 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Model");
-		private final Assignment cFormElementsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cFormElementsFormElementParserRuleCall_0 = (RuleCall)cFormElementsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFormElementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFormElementsFormElementParserRuleCall_0_0 = (RuleCall)cFormElementsAssignment_0.eContents().get(0);
+		private final Assignment cCalculationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCalculationsCalculateParserRuleCall_1_0 = (RuleCall)cCalculationsAssignment_1.eContents().get(0);
 		
 		//Model:
-		//	formElements+=FormElement*;
+		//	formElements+=FormElement* calculations+=Calculate*;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//formElements+=FormElement* calculations+=Calculate*
+		public Group getGroup() { return cGroup; }
+		
 		//formElements+=FormElement*
-		public Assignment getFormElementsAssignment() { return cFormElementsAssignment; }
+		public Assignment getFormElementsAssignment_0() { return cFormElementsAssignment_0; }
 		
 		//FormElement
-		public RuleCall getFormElementsFormElementParserRuleCall_0() { return cFormElementsFormElementParserRuleCall_0; }
+		public RuleCall getFormElementsFormElementParserRuleCall_0_0() { return cFormElementsFormElementParserRuleCall_0_0; }
+		
+		//calculations+=Calculate*
+		public Assignment getCalculationsAssignment_1() { return cCalculationsAssignment_1; }
+		
+		//Calculate
+		public RuleCall getCalculationsCalculateParserRuleCall_1_0() { return cCalculationsCalculateParserRuleCall_1_0; }
 	}
 	public class FormElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FormElement");
@@ -876,6 +890,308 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_5_1_0() { return cValueSTRINGTerminalRuleCall_5_1_0; }
 	}
+	public class CalculateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Calculate");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCalculateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cResultAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cResultFieldCrossReference_1_0 = (CrossReference)cResultAssignment_1.eContents().get(0);
+		private final RuleCall cResultFieldQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cResultFieldCrossReference_1_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
+		
+		//// Expression based on http://xsemantics.sourceforge.net/xsemantics-documentation/Expressions-example.html
+		//Calculate:
+		//	'calculate' result=[Field|QualifiedName] '=' expression=Expression;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'calculate' result=[Field|QualifiedName] '=' expression=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//'calculate'
+		public Keyword getCalculateKeyword_0() { return cCalculateKeyword_0; }
+		
+		//result=[Field|QualifiedName]
+		public Assignment getResultAssignment_1() { return cResultAssignment_1; }
+		
+		//[Field|QualifiedName]
+		public CrossReference getResultFieldCrossReference_1_0() { return cResultFieldCrossReference_1_0; }
+		
+		//QualifiedName
+		public RuleCall getResultFieldQualifiedNameParserRuleCall_1_0_1() { return cResultFieldQualifiedNameParserRuleCall_1_0_1; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//expression=Expression
+		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
+		
+		//Expression
+		public RuleCall getExpressionExpressionParserRuleCall_3_0() { return cExpressionExpressionParserRuleCall_3_0; }
+	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//	ID ('.' ID)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('.' ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.' ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+	public class ExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Expression");
+		private final RuleCall cAdditionParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Expression:
+		//	Addition;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Addition
+		public RuleCall getAdditionParserRuleCall() { return cAdditionParserRuleCall; }
+	}
+	public class AdditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Addition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMultiplicationParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
+		private final Action cPlusLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Keyword cPlusSignKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
+		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
+		private final Action cMinusLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightMultiplicationParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//Addition Expression:
+		//	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+		public Group getGroup() { return cGroup; }
+		
+		//Multiplication
+		public RuleCall getMultiplicationParserRuleCall_0() { return cMultiplicationParserRuleCall_0; }
+		
+		//(({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//({Plus.left=current} '+' | {Minus.left=current} '-')
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
+		
+		//{Plus.left=current} '+'
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
+		
+		//{Plus.left=current}
+		public Action getPlusLeftAction_1_0_0_0() { return cPlusLeftAction_1_0_0_0; }
+		
+		//'+'
+		public Keyword getPlusSignKeyword_1_0_0_1() { return cPlusSignKeyword_1_0_0_1; }
+		
+		//{Minus.left=current} '-'
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
+		
+		//{Minus.left=current}
+		public Action getMinusLeftAction_1_0_1_0() { return cMinusLeftAction_1_0_1_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1_0_1_1() { return cHyphenMinusKeyword_1_0_1_1; }
+		
+		//right=Multiplication
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//Multiplication
+		public RuleCall getRightMultiplicationParserRuleCall_1_1_0() { return cRightMultiplicationParserRuleCall_1_1_0; }
+	}
+	public class MultiplicationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Multiplication");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPrefixedParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Action cMultiOrDivLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
+		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
+		private final Keyword cOpAsteriskKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
+		private final Keyword cOpSolidusKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
+		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cRightPrefixedParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
+		
+		//Multiplication Expression:
+		//	Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		public Group getGroup() { return cGroup; }
+		
+		//Prefixed
+		public RuleCall getPrefixedParserRuleCall_0() { return cPrefixedParserRuleCall_0; }
+		
+		//(({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//({MultiOrDiv.left=current} op=("*" | "/"))
+		public Group getGroup_1_0() { return cGroup_1_0; }
+		
+		//{MultiOrDiv.left=current}
+		public Action getMultiOrDivLeftAction_1_0_0() { return cMultiOrDivLeftAction_1_0_0; }
+		
+		//op=("*" | "/")
+		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		
+		//("*" | "/")
+		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		
+		//"*"
+		public Keyword getOpAsteriskKeyword_1_0_1_0_0() { return cOpAsteriskKeyword_1_0_1_0_0; }
+		
+		//"/"
+		public Keyword getOpSolidusKeyword_1_0_1_0_1() { return cOpSolidusKeyword_1_0_1_0_1; }
+		
+		//right=Prefixed
+		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
+		
+		//Prefixed
+		public RuleCall getRightPrefixedParserRuleCall_1_1_0() { return cRightPrefixedParserRuleCall_1_1_0; }
+	}
+	public class PrefixedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Prefixed");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cBooleanNegationAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cExpressionAtomicParserRuleCall_0_2_0 = (RuleCall)cExpressionAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cArithmeticSignedAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cExpressionAtomicParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
+		private final RuleCall cAtomicParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Prefixed Expression:
+		//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{BooleanNegation} => "!" expression=Atomic
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{BooleanNegation}
+		public Action getBooleanNegationAction_0_0() { return cBooleanNegationAction_0_0; }
+		
+		//=> "!"
+		public Keyword getExclamationMarkKeyword_0_1() { return cExclamationMarkKeyword_0_1; }
+		
+		//expression=Atomic
+		public Assignment getExpressionAssignment_0_2() { return cExpressionAssignment_0_2; }
+		
+		//Atomic
+		public RuleCall getExpressionAtomicParserRuleCall_0_2_0() { return cExpressionAtomicParserRuleCall_0_2_0; }
+		
+		//{ArithmeticSigned} => "-" expression=Atomic
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{ArithmeticSigned}
+		public Action getArithmeticSignedAction_1_0() { return cArithmeticSignedAction_1_0; }
+		
+		//=> "-"
+		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
+		
+		//expression=Atomic
+		public Assignment getExpressionAssignment_1_2() { return cExpressionAssignment_1_2; }
+		
+		//Atomic
+		public RuleCall getExpressionAtomicParserRuleCall_1_2_0() { return cExpressionAtomicParserRuleCall_1_2_0; }
+		
+		/// * right associativity * / Atomic
+		public RuleCall getAtomicParserRuleCall_2() { return cAtomicParserRuleCall_2; }
+	}
+	public class AtomicElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Atomic");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cNumberLiteralAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cFieldReferenceAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cRefAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cRefFieldCrossReference_2_1_0 = (CrossReference)cRefAssignment_2_1.eContents().get(0);
+		private final RuleCall cRefFieldQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRefFieldCrossReference_2_1_0.eContents().get(1);
+		
+		//Atomic Expression:
+		//	'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'(' Expression ')'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
+		
+		//Expression
+		public RuleCall getExpressionParserRuleCall_0_1() { return cExpressionParserRuleCall_0_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
+		
+		//{NumberLiteral} value=INT
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{NumberLiteral}
+		public Action getNumberLiteralAction_1_0() { return cNumberLiteralAction_1_0; }
+		
+		//value=INT
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
+		
+		//{FieldReference} ref=[Field|QualifiedName]
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{FieldReference}
+		public Action getFieldReferenceAction_2_0() { return cFieldReferenceAction_2_0; }
+		
+		//ref=[Field|QualifiedName]
+		public Assignment getRefAssignment_2_1() { return cRefAssignment_2_1; }
+		
+		//[Field|QualifiedName]
+		public CrossReference getRefFieldCrossReference_2_1_0() { return cRefFieldCrossReference_2_1_0; }
+		
+		//QualifiedName
+		public RuleCall getRefFieldQualifiedNameParserRuleCall_2_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_2_1_0_1; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -893,6 +1209,13 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final PageChildElements pPageChild;
 	private final ButtonElements pButton;
 	private final ButtonSubmitElements pButtonSubmit;
+	private final CalculateElements pCalculate;
+	private final QualifiedNameElements pQualifiedName;
+	private final ExpressionElements pExpression;
+	private final AdditionElements pAddition;
+	private final MultiplicationElements pMultiplication;
+	private final PrefixedElements pPrefixed;
+	private final AtomicElements pAtomic;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tSTRING;
@@ -921,6 +1244,13 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pPageChild = new PageChildElements();
 		this.pButton = new ButtonElements();
 		this.pButtonSubmit = new ButtonSubmitElements();
+		this.pCalculate = new CalculateElements();
+		this.pQualifiedName = new QualifiedNameElements();
+		this.pExpression = new ExpressionElements();
+		this.pAddition = new AdditionElements();
+		this.pMultiplication = new MultiplicationElements();
+		this.pPrefixed = new PrefixedElements();
+		this.pAtomic = new AtomicElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.INT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.STRING");
@@ -954,7 +1284,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	formElements+=FormElement*;
+	//	formElements+=FormElement* calculations+=Calculate*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -1106,6 +1436,77 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getButtonSubmitRule() {
 		return getButtonSubmitAccess().getRule();
+	}
+	
+	//// Expression based on http://xsemantics.sourceforge.net/xsemantics-documentation/Expressions-example.html
+	//Calculate:
+	//	'calculate' result=[Field|QualifiedName] '=' expression=Expression;
+	public CalculateElements getCalculateAccess() {
+		return pCalculate;
+	}
+	
+	public ParserRule getCalculateRule() {
+		return getCalculateAccess().getRule();
+	}
+	
+	//QualifiedName:
+	//	ID ('.' ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
+	}
+	
+	//Expression:
+	//	Addition;
+	public ExpressionElements getExpressionAccess() {
+		return pExpression;
+	}
+	
+	public ParserRule getExpressionRule() {
+		return getExpressionAccess().getRule();
+	}
+	
+	//Addition Expression:
+	//	Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
+	public AdditionElements getAdditionAccess() {
+		return pAddition;
+	}
+	
+	public ParserRule getAdditionRule() {
+		return getAdditionAccess().getRule();
+	}
+	
+	//Multiplication Expression:
+	//	Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+	public MultiplicationElements getMultiplicationAccess() {
+		return pMultiplication;
+	}
+	
+	public ParserRule getMultiplicationRule() {
+		return getMultiplicationAccess().getRule();
+	}
+	
+	//Prefixed Expression:
+	//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+	public PrefixedElements getPrefixedAccess() {
+		return pPrefixed;
+	}
+	
+	public ParserRule getPrefixedRule() {
+		return getPrefixedAccess().getRule();
+	}
+	
+	//Atomic Expression:
+	//	'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+	public AtomicElements getAtomicAccess() {
+		return pAtomic;
+	}
+	
+	public ParserRule getAtomicRule() {
+		return getAtomicAccess().getRule();
 	}
 	
 	//terminal ID:

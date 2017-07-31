@@ -77,23 +77,44 @@ ruleModel returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getModelAccess().getFormElementsFormElementParserRuleCall_0());
-			}
-			lv_formElements_0_0=ruleFormElement
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getModelRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getFormElementsFormElementParserRuleCall_0_0());
 				}
-				add(
-					$current,
-					"formElements",
-					lv_formElements_0_0,
-					"de.htwg.zeta.xtext.CalculatorForm.FormElement");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)*
+				lv_formElements_0_0=ruleFormElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					add(
+						$current,
+						"formElements",
+						lv_formElements_0_0,
+						"de.htwg.zeta.xtext.CalculatorForm.FormElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getCalculationsCalculateParserRuleCall_1_0());
+				}
+				lv_calculations_1_0=ruleCalculate
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					add(
+						$current,
+						"calculations",
+						lv_calculations_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.Calculate");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
 ;
 
 // Entry rule entryRuleFormElement
@@ -1501,6 +1522,484 @@ ruleButtonSubmit returns [EObject current=null]
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleCalculate
+entryRuleCalculate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCalculateRule()); }
+	iv_ruleCalculate=ruleCalculate
+	{ $current=$iv_ruleCalculate.current; }
+	EOF;
+
+// Rule Calculate
+ruleCalculate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='calculate'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCalculateAccess().getCalculateKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCalculateRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getCalculateAccess().getResultFieldCrossReference_1_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='='
+		{
+			newLeafNode(otherlv_2, grammarAccess.getCalculateAccess().getEqualsSignKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCalculateAccess().getExpressionExpressionParserRuleCall_3_0());
+				}
+				lv_expression_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCalculateRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_3_0,
+						"de.htwg.zeta.xtext.CalculatorForm.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current.getText(); }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
+	)
+;
+
+// Entry rule entryRuleExpression
+entryRuleExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getExpressionRule()); }
+	iv_ruleExpression=ruleExpression
+	{ $current=$iv_ruleExpression.current; }
+	EOF;
+
+// Rule Expression
+ruleExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getExpressionAccess().getAdditionParserRuleCall());
+	}
+	this_Addition_0=ruleAddition
+	{
+		$current = $this_Addition_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleAddition
+entryRuleAddition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAdditionRule()); }
+	iv_ruleAddition=ruleAddition
+	{ $current=$iv_ruleAddition.current; }
+	EOF;
+
+// Rule Addition
+ruleAddition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0());
+		}
+		this_Multiplication_0=ruleMultiplication
+		{
+			$current = $this_Multiplication_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				(
+					(
+						{
+							$current = forceCreateModelElementAndSet(
+								grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0(),
+								$current);
+						}
+					)
+					otherlv_2='+'
+					{
+						newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1());
+					}
+				)
+				    |
+				(
+					(
+						{
+							$current = forceCreateModelElementAndSet(
+								grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0(),
+								$current);
+						}
+					)
+					otherlv_4='-'
+					{
+						newLeafNode(otherlv_4, grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1());
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_1_0());
+					}
+					lv_right_5_0=ruleMultiplication
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAdditionRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.Multiplication");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleMultiplication
+entryRuleMultiplication returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMultiplicationRule()); }
+	iv_ruleMultiplication=ruleMultiplication
+	{ $current=$iv_ruleMultiplication.current; }
+	EOF;
+
+// Rule Multiplication
+ruleMultiplication returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getMultiplicationAccess().getPrefixedParserRuleCall_0());
+		}
+		this_Prefixed_0=rulePrefixed
+		{
+			$current = $this_Prefixed_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				(
+					{
+						$current = forceCreateModelElementAndSet(
+							grammarAccess.getMultiplicationAccess().getMultiOrDivLeftAction_1_0_0(),
+							$current);
+					}
+				)
+				(
+					(
+						(
+							lv_op_2_1='*'
+							{
+								newLeafNode(lv_op_2_1, grammarAccess.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMultiplicationRule());
+								}
+								setWithLastConsumed($current, "op", lv_op_2_1, null);
+							}
+							    |
+							lv_op_2_2='/'
+							{
+								newLeafNode(lv_op_2_2, grammarAccess.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1());
+							}
+							{
+								if ($current==null) {
+									$current = createModelElement(grammarAccess.getMultiplicationRule());
+								}
+								setWithLastConsumed($current, "op", lv_op_2_2, null);
+							}
+						)
+					)
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0());
+					}
+					lv_right_3_0=rulePrefixed
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMultiplicationRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"de.htwg.zeta.xtext.CalculatorForm.Prefixed");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRulePrefixed
+entryRulePrefixed returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPrefixedRule()); }
+	iv_rulePrefixed=rulePrefixed
+	{ $current=$iv_rulePrefixed.current; }
+	EOF;
+
+// Rule Prefixed
+rulePrefixed returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPrefixedAccess().getBooleanNegationAction_0_0(),
+						$current);
+				}
+			)
+			(
+				('!')=>
+				otherlv_1='!'
+				{
+					newLeafNode(otherlv_1, grammarAccess.getPrefixedAccess().getExclamationMarkKeyword_0_1());
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_0_2_0());
+					}
+					lv_expression_2_0=ruleAtomic
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPrefixedRule());
+						}
+						set(
+							$current,
+							"expression",
+							lv_expression_2_0,
+							"de.htwg.zeta.xtext.CalculatorForm.Atomic");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getPrefixedAccess().getArithmeticSignedAction_1_0(),
+						$current);
+				}
+			)
+			(
+				('-')=>
+				otherlv_4='-'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getPrefixedAccess().getHyphenMinusKeyword_1_1());
+				}
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_1_2_0());
+					}
+					lv_expression_5_0=ruleAtomic
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPrefixedRule());
+						}
+						set(
+							$current,
+							"expression",
+							lv_expression_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.Atomic");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getPrefixedAccess().getAtomicParserRuleCall_2());
+		}
+		this_Atomic_6=ruleAtomic
+		{
+			$current = $this_Atomic_6.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleAtomic
+entryRuleAtomic returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAtomicRule()); }
+	iv_ruleAtomic=ruleAtomic
+	{ $current=$iv_ruleAtomic.current; }
+	EOF;
+
+// Rule Atomic
+ruleAtomic returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='('
+			{
+				newLeafNode(otherlv_0, grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0());
+			}
+			{
+				newCompositeNode(grammarAccess.getAtomicAccess().getExpressionParserRuleCall_0_1());
+			}
+			this_Expression_1=ruleExpression
+			{
+				$current = $this_Expression_1.current;
+				afterParserOrEnumRuleCall();
+			}
+			otherlv_2=')'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicAccess().getNumberLiteralAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_value_4_0=RULE_INT
+					{
+						newLeafNode(lv_value_4_0, grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtomicRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_4_0,
+							"de.htwg.zeta.xtext.CalculatorForm.INT");
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtomicRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
 	)
 ;
 

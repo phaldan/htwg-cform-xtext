@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Model#getFormElements <em>Form Elements</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Model#getCalculations <em>Calculations</em>}</li>
  * </ul>
  *
  * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel()
@@ -40,5 +41,21 @@ public interface Model extends EObject
    * @generated
    */
   EList<FormElement> getFormElements();
+
+  /**
+   * Returns the value of the '<em><b>Calculations</b></em>' containment reference list.
+   * The list contents are of type {@link de.htwg.zeta.xtext.calculatorForm.Calculate}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Calculations</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Calculations</em>' containment reference list.
+   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel_Calculations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Calculate> getCalculations();
 
 } // Model

@@ -159,6 +159,87 @@ public interface CalculatorFormFactory extends EFactory
   ButtonSubmit createButtonSubmit();
 
   /**
+   * Returns a new object of class '<em>Calculate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculate</em>'.
+   * @generated
+   */
+  Calculate createCalculate();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
+
+  /**
+   * Returns a new object of class '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Plus</em>'.
+   * @generated
+   */
+  Plus createPlus();
+
+  /**
+   * Returns a new object of class '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Minus</em>'.
+   * @generated
+   */
+  Minus createMinus();
+
+  /**
+   * Returns a new object of class '<em>Multi Or Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Or Div</em>'.
+   * @generated
+   */
+  MultiOrDiv createMultiOrDiv();
+
+  /**
+   * Returns a new object of class '<em>Boolean Negation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Negation</em>'.
+   * @generated
+   */
+  BooleanNegation createBooleanNegation();
+
+  /**
+   * Returns a new object of class '<em>Arithmetic Signed</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arithmetic Signed</em>'.
+   * @generated
+   */
+  ArithmeticSigned createArithmeticSigned();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>Field Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Reference</em>'.
+   * @generated
+   */
+  FieldReference createFieldReference();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

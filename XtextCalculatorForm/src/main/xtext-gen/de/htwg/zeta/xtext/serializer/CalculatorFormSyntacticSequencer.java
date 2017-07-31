@@ -21,11 +21,15 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CalculatorFormGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Atomic_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_Atomic_LeftParenthesisKeyword_0_0_p;
 	protected AbstractElementAlias match_FieldChoice___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CalculatorFormGrammarAccess) access;
+		match_Atomic_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0());
+		match_Atomic_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0());
 		match_FieldChoice___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0()), new TokenAlias(false, false, grammarAccess.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2()));
 	}
 	
@@ -41,12 +45,48 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_FieldChoice___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q.equals(syntax))
+			if (match_Atomic_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_Atomic_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Atomic_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_Atomic_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FieldChoice___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q.equals(syntax))
 				emit_FieldChoice___LeftCurlyBracketKeyword_12_0_RightCurlyBracketKeyword_12_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     '('*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '!' expression=Atomic
+	 *     (rule start) (ambiguity) '-' expression=Atomic
+	 *     (rule start) (ambiguity) ref=[Field|QualifiedName]
+	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) {Minus.left=}
+	 *     (rule start) (ambiguity) {MultiOrDiv.left=}
+	 *     (rule start) (ambiguity) {Plus.left=}
+	 */
+	protected void emit_Atomic_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '!' expression=Atomic
+	 *     (rule start) (ambiguity) '-' expression=Atomic
+	 *     (rule start) (ambiguity) {Minus.left=}
+	 *     (rule start) (ambiguity) {MultiOrDiv.left=}
+	 *     (rule start) (ambiguity) {Plus.left=}
+	 */
+	protected void emit_Atomic_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ('{' '}')?

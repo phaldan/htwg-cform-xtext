@@ -80,6 +80,15 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.PAGE_CHILD: return createPageChild();
       case CalculatorFormPackage.BUTTON: return createButton();
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
+      case CalculatorFormPackage.CALCULATE: return createCalculate();
+      case CalculatorFormPackage.EXPRESSION: return createExpression();
+      case CalculatorFormPackage.PLUS: return createPlus();
+      case CalculatorFormPackage.MINUS: return createMinus();
+      case CalculatorFormPackage.MULTI_OR_DIV: return createMultiOrDiv();
+      case CalculatorFormPackage.BOOLEAN_NEGATION: return createBooleanNegation();
+      case CalculatorFormPackage.ARITHMETIC_SIGNED: return createArithmeticSigned();
+      case CalculatorFormPackage.NUMBER_LITERAL: return createNumberLiteral();
+      case CalculatorFormPackage.FIELD_REFERENCE: return createFieldReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -248,6 +257,105 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     ButtonSubmitImpl buttonSubmit = new ButtonSubmitImpl();
     return buttonSubmit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Calculate createCalculate()
+  {
+    CalculateImpl calculate = new CalculateImpl();
+    return calculate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Plus createPlus()
+  {
+    PlusImpl plus = new PlusImpl();
+    return plus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Minus createMinus()
+  {
+    MinusImpl minus = new MinusImpl();
+    return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MultiOrDiv createMultiOrDiv()
+  {
+    MultiOrDivImpl multiOrDiv = new MultiOrDivImpl();
+    return multiOrDiv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BooleanNegation createBooleanNegation()
+  {
+    BooleanNegationImpl booleanNegation = new BooleanNegationImpl();
+    return booleanNegation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArithmeticSigned createArithmeticSigned()
+  {
+    ArithmeticSignedImpl arithmeticSigned = new ArithmeticSignedImpl();
+    return arithmeticSigned;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberLiteral createNumberLiteral()
+  {
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldReference createFieldReference()
+  {
+    FieldReferenceImpl fieldReference = new FieldReferenceImpl();
+    return fieldReference;
   }
 
   /**
