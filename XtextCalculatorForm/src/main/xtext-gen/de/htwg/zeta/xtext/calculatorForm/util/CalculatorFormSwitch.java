@@ -80,10 +80,124 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CalculatorFormPackage.GREETING:
+      case CalculatorFormPackage.FORM_ELEMENT:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        FormElement formElement = (FormElement)theEObject;
+        T result = caseFormElement(formElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD:
+      {
+        Field field = (Field)theEObject;
+        T result = caseField(field);
+        if (result == null) result = caseFormElement(field);
+        if (result == null) result = casePageChild(field);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_INPUT:
+      {
+        FieldInput fieldInput = (FieldInput)theEObject;
+        T result = caseFieldInput(fieldInput);
+        if (result == null) result = caseField(fieldInput);
+        if (result == null) result = caseFormElement(fieldInput);
+        if (result == null) result = casePageChild(fieldInput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_SELECT:
+      {
+        FieldSelect fieldSelect = (FieldSelect)theEObject;
+        T result = caseFieldSelect(fieldSelect);
+        if (result == null) result = caseField(fieldSelect);
+        if (result == null) result = caseFormElement(fieldSelect);
+        if (result == null) result = casePageChild(fieldSelect);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_SELECT_CHILD:
+      {
+        FieldSelectChild fieldSelectChild = (FieldSelectChild)theEObject;
+        T result = caseFieldSelectChild(fieldSelectChild);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_OPTION:
+      {
+        FieldOption fieldOption = (FieldOption)theEObject;
+        T result = caseFieldOption(fieldOption);
+        if (result == null) result = caseFieldSelectChild(fieldOption);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_OPTION_GROUP:
+      {
+        FieldOptionGroup fieldOptionGroup = (FieldOptionGroup)theEObject;
+        T result = caseFieldOptionGroup(fieldOptionGroup);
+        if (result == null) result = caseFieldSelectChild(fieldOptionGroup);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_CHOICE:
+      {
+        FieldChoice fieldChoice = (FieldChoice)theEObject;
+        T result = caseFieldChoice(fieldChoice);
+        if (result == null) result = caseField(fieldChoice);
+        if (result == null) result = caseFormElement(fieldChoice);
+        if (result == null) result = casePageChild(fieldChoice);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.FIELD_CHOICE_OPTION:
+      {
+        FieldChoiceOption fieldChoiceOption = (FieldChoiceOption)theEObject;
+        T result = caseFieldChoiceOption(fieldChoiceOption);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.GROUP:
+      {
+        Group group = (Group)theEObject;
+        T result = caseGroup(group);
+        if (result == null) result = caseFormElement(group);
+        if (result == null) result = casePageChild(group);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.PAGE:
+      {
+        Page page = (Page)theEObject;
+        T result = casePage(page);
+        if (result == null) result = caseFormElement(page);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.PAGE_CHILD:
+      {
+        PageChild pageChild = (PageChild)theEObject;
+        T result = casePageChild(pageChild);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.BUTTON:
+      {
+        Button button = (Button)theEObject;
+        T result = caseButton(button);
+        if (result == null) result = caseField(button);
+        if (result == null) result = caseFormElement(button);
+        if (result == null) result = casePageChild(button);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.BUTTON_SUBMIT:
+      {
+        ButtonSubmit buttonSubmit = (ButtonSubmit)theEObject;
+        T result = caseButtonSubmit(buttonSubmit);
+        if (result == null) result = caseButton(buttonSubmit);
+        if (result == null) result = caseField(buttonSubmit);
+        if (result == null) result = caseFormElement(buttonSubmit);
+        if (result == null) result = casePageChild(buttonSubmit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,17 +222,225 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Form Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Form Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseFormElement(FormElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseField(Field object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Input</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Input</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldInput(FieldInput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Select</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Select</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldSelect(FieldSelect object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Select Child</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Select Child</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldSelectChild(FieldSelectChild object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Option</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Option</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldOption(FieldOption object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Option Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Option Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldOptionGroup(FieldOptionGroup object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Choice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Choice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldChoice(FieldChoice object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Choice Option</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Choice Option</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldChoiceOption(FieldChoiceOption object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGroup(Group object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Page</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Page</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePage(Page object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Page Child</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Page Child</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePageChild(PageChild object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButton(Button object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button Submit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button Submit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButtonSubmit(ButtonSubmit object)
   {
     return null;
   }

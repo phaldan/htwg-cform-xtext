@@ -78,33 +78,33 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getFormElementsFormElementParserRuleCall_0());
 			}
-			lv_greetings_0_0=ruleGreeting
+			lv_formElements_0_0=ruleFormElement
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
 				add(
 					$current,
-					"greetings",
-					lv_greetings_0_0,
-					"de.htwg.zeta.xtext.CalculatorForm.Greeting");
+					"formElements",
+					lv_formElements_0_0,
+					"de.htwg.zeta.xtext.CalculatorForm.FormElement");
 				afterParserOrEnumRuleCall();
 			}
 		)
 	)*
 ;
 
-// Entry rule entryRuleGreeting
-entryRuleGreeting returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGreetingRule()); }
-	iv_ruleGreeting=ruleGreeting
-	{ $current=$iv_ruleGreeting.current; }
+// Entry rule entryRuleFormElement
+entryRuleFormElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFormElementRule()); }
+	iv_ruleFormElement=ruleFormElement
+	{ $current=$iv_ruleFormElement.current; }
 	EOF;
 
-// Rule Greeting
-ruleGreeting returns [EObject current=null]
+// Rule FormElement
+ruleFormElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -112,32 +112,1395 @@ ruleGreeting returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Hello'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+			newCompositeNode(grammarAccess.getFormElementAccess().getFieldParserRuleCall_0());
+		}
+		this_Field_0=ruleField
+		{
+			$current = $this_Field_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFormElementAccess().getGroupParserRuleCall_1());
+		}
+		this_Group_1=ruleGroup
+		{
+			$current = $this_Group_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFormElementAccess().getPageParserRuleCall_2());
+		}
+		this_Page_2=rulePage
+		{
+			$current = $this_Page_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleField
+entryRuleField returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldRule()); }
+	iv_ruleField=ruleField
+	{ $current=$iv_ruleField.current; }
+	EOF;
+
+// Rule Field
+ruleField returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getFieldAccess().getFieldInputParserRuleCall_0());
+		}
+		this_FieldInput_0=ruleFieldInput
+		{
+			$current = $this_FieldInput_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFieldAccess().getFieldSelectParserRuleCall_1());
+		}
+		this_FieldSelect_1=ruleFieldSelect
+		{
+			$current = $this_FieldSelect_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFieldAccess().getFieldChoiceParserRuleCall_2());
+		}
+		this_FieldChoice_2=ruleFieldChoice
+		{
+			$current = $this_FieldChoice_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFieldAccess().getButtonParserRuleCall_3());
+		}
+		this_Button_3=ruleButton
+		{
+			$current = $this_Button_3.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleFieldInput
+entryRuleFieldInput returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldInputRule()); }
+	iv_ruleFieldInput=ruleFieldInput
+	{ $current=$iv_ruleFieldInput.current; }
+	EOF;
+
+// Rule FieldInput
+ruleFieldInput returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='field'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFieldInputAccess().getFieldKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getFieldInputAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGreetingRule());
+						$current = createModelElement(grammarAccess.getFieldInputRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
 				}
 			)
 		)
-		otherlv_2='!'
+		(
+			(
+				lv_autofocus_2_0='autofocus'
+				{
+					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldInputRule());
+					}
+					setWithLastConsumed($current, "autofocus", true, "autofocus");
+				}
+			)
+		)?
+		(
+			(
+				lv_disabled_3_0='disabled'
+				{
+					newLeafNode(lv_disabled_3_0, grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldInputRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			otherlv_4='form'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getFieldInputAccess().getFormKeyword_4_0());
+			}
+			(
+				(
+					lv_form_5_0=RULE_STRING
+					{
+						newLeafNode(lv_form_5_0, grammarAccess.getFieldInputAccess().getFormSTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldInputRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"form",
+							lv_form_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6='label'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getFieldInputAccess().getLabelKeyword_5_0());
+			}
+			(
+				(
+					lv_label_7_0=RULE_STRING
+					{
+						newLeafNode(lv_label_7_0, grammarAccess.getFieldInputAccess().getLabelSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldInputRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_7_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			(
+				lv_notdisplayed_8_0='notdisplayed'
+				{
+					newLeafNode(lv_notdisplayed_8_0, grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldInputRule());
+					}
+					setWithLastConsumed($current, "notdisplayed", true, "notdisplayed");
+				}
+			)
+		)?
+		(
+			(
+				lv_readonly_9_0='readonly'
+				{
+					newLeafNode(lv_readonly_9_0, grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldInputRule());
+					}
+					setWithLastConsumed($current, "readonly", true, "readonly");
+				}
+			)
+		)?
+		(
+			(
+				lv_required_10_0='required'
+				{
+					newLeafNode(lv_required_10_0, grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldInputRule());
+					}
+					setWithLastConsumed($current, "required", true, "required");
+				}
+			)
+		)?
+		(
+			otherlv_11='value'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getFieldInputAccess().getValueKeyword_9_0());
+			}
+			(
+				(
+					lv_value_12_0=RULE_STRING
+					{
+						newLeafNode(lv_value_12_0, grammarAccess.getFieldInputAccess().getValueSTRINGTerminalRuleCall_9_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldInputRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_12_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleFieldSelect
+entryRuleFieldSelect returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldSelectRule()); }
+	iv_ruleFieldSelect=ruleFieldSelect
+	{ $current=$iv_ruleFieldSelect.current; }
+	EOF;
+
+// Rule FieldSelect
+ruleFieldSelect returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='dropdown'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
+			newLeafNode(otherlv_0, grammarAccess.getFieldSelectAccess().getDropdownKeyword_0());
 		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getFieldSelectAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldSelectRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_autofocus_2_0='autofocus'
+				{
+					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldSelectRule());
+					}
+					setWithLastConsumed($current, "autofocus", true, "autofocus");
+				}
+			)
+		)?
+		(
+			(
+				lv_disabled_3_0='disabled'
+				{
+					newLeafNode(lv_disabled_3_0, grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldSelectRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			otherlv_4='form'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getFieldSelectAccess().getFormKeyword_4_0());
+			}
+			(
+				(
+					lv_form_5_0=RULE_STRING
+					{
+						newLeafNode(lv_form_5_0, grammarAccess.getFieldSelectAccess().getFormSTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldSelectRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"form",
+							lv_form_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6='label'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getFieldSelectAccess().getLabelKeyword_5_0());
+			}
+			(
+				(
+					lv_label_7_0=RULE_STRING
+					{
+						newLeafNode(lv_label_7_0, grammarAccess.getFieldSelectAccess().getLabelSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldSelectRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_7_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			(
+				lv_multiple_8_0='multiple'
+				{
+					newLeafNode(lv_multiple_8_0, grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldSelectRule());
+					}
+					setWithLastConsumed($current, "multiple", true, "multiple");
+				}
+			)
+		)?
+		(
+			(
+				lv_required_9_0='required'
+				{
+					newLeafNode(lv_required_9_0, grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldSelectRule());
+					}
+					setWithLastConsumed($current, "required", true, "required");
+				}
+			)
+		)?
+		(
+			otherlv_10='size'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getFieldSelectAccess().getSizeKeyword_8_0());
+			}
+			(
+				(
+					lv_size_11_0=RULE_INT
+					{
+						newLeafNode(lv_size_11_0, grammarAccess.getFieldSelectAccess().getSizeINTTerminalRuleCall_8_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldSelectRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"size",
+							lv_size_11_0,
+							"de.htwg.zeta.xtext.CalculatorForm.INT");
+					}
+				)
+			)
+		)?
+		otherlv_12='{'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getFieldSelectAccess().getLeftCurlyBracketKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFieldSelectAccess().getChildsFieldSelectChildParserRuleCall_10_0());
+				}
+				lv_childs_13_0=ruleFieldSelectChild
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFieldSelectRule());
+					}
+					add(
+						$current,
+						"childs",
+						lv_childs_13_0,
+						"de.htwg.zeta.xtext.CalculatorForm.FieldSelectChild");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_14='}'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFieldSelectAccess().getRightCurlyBracketKeyword_11());
+		}
+	)
+;
+
+// Entry rule entryRuleFieldSelectChild
+entryRuleFieldSelectChild returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldSelectChildRule()); }
+	iv_ruleFieldSelectChild=ruleFieldSelectChild
+	{ $current=$iv_ruleFieldSelectChild.current; }
+	EOF;
+
+// Rule FieldSelectChild
+ruleFieldSelectChild returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getFieldSelectChildAccess().getFieldOptionParserRuleCall_0());
+		}
+		this_FieldOption_0=ruleFieldOption
+		{
+			$current = $this_FieldOption_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFieldSelectChildAccess().getFieldOptionGroupParserRuleCall_1());
+		}
+		this_FieldOptionGroup_1=ruleFieldOptionGroup
+		{
+			$current = $this_FieldOptionGroup_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleFieldOption
+entryRuleFieldOption returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldOptionRule()); }
+	iv_ruleFieldOption=ruleFieldOption
+	{ $current=$iv_ruleFieldOption.current; }
+	EOF;
+
+// Rule FieldOption
+ruleFieldOption returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='option'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFieldOptionAccess().getOptionKeyword_0());
+		}
+		(
+			(
+				lv_text_1_0=RULE_STRING
+				{
+					newLeafNode(lv_text_1_0, grammarAccess.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldOptionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"text",
+						lv_text_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_disabled_2_0='disabled'
+				{
+					newLeafNode(lv_disabled_2_0, grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldOptionRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			(
+				lv_selected_3_0='selected'
+				{
+					newLeafNode(lv_selected_3_0, grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldOptionRule());
+					}
+					setWithLastConsumed($current, "selected", true, "selected");
+				}
+			)
+		)?
+		(
+			otherlv_4='text'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getFieldOptionAccess().getTextKeyword_4_0());
+			}
+			(
+				(
+					lv_text_5_0=RULE_STRING
+					{
+						newLeafNode(lv_text_5_0, grammarAccess.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldOptionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"text",
+							lv_text_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6='value'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getFieldOptionAccess().getValueKeyword_5_0());
+			}
+			(
+				(
+					lv_value_7_0=RULE_STRING
+					{
+						newLeafNode(lv_value_7_0, grammarAccess.getFieldOptionAccess().getValueSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldOptionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_7_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleFieldOptionGroup
+entryRuleFieldOptionGroup returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldOptionGroupRule()); }
+	iv_ruleFieldOptionGroup=ruleFieldOptionGroup
+	{ $current=$iv_ruleFieldOptionGroup.current; }
+	EOF;
+
+// Rule FieldOptionGroup
+ruleFieldOptionGroup returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='option-group'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFieldOptionGroupAccess().getOptionGroupKeyword_0());
+		}
+		(
+			(
+				lv_disabled_1_0='disabled'
+				{
+					newLeafNode(lv_disabled_1_0, grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldOptionGroupRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			otherlv_2='label'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getFieldOptionGroupAccess().getLabelKeyword_2_0());
+			}
+			(
+				(
+					lv_label_3_0=RULE_STRING
+					{
+						newLeafNode(lv_label_3_0, grammarAccess.getFieldOptionGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldOptionGroupRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_3_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getFieldOptionGroupAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFieldOptionGroupAccess().getOptionsFieldOptionParserRuleCall_4_0());
+				}
+				lv_options_5_0=ruleFieldOption
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFieldOptionGroupRule());
+					}
+					add(
+						$current,
+						"options",
+						lv_options_5_0,
+						"de.htwg.zeta.xtext.CalculatorForm.FieldOption");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getFieldOptionGroupAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleFieldChoice
+entryRuleFieldChoice returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldChoiceRule()); }
+	iv_ruleFieldChoice=ruleFieldChoice
+	{ $current=$iv_ruleFieldChoice.current; }
+	EOF;
+
+// Rule FieldChoice
+ruleFieldChoice returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='choice'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFieldChoiceAccess().getChoiceKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getFieldChoiceAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_autofocus_2_0='autofocus'
+				{
+					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "autofocus", true, "autofocus");
+				}
+			)
+		)?
+		(
+			(
+				lv_checked_3_0='checked'
+				{
+					newLeafNode(lv_checked_3_0, grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "checked", true, "checked");
+				}
+			)
+		)?
+		(
+			(
+				lv_disabled_4_0='disabled'
+				{
+					newLeafNode(lv_disabled_4_0, grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			otherlv_5='form'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getFieldChoiceAccess().getFormKeyword_5_0());
+			}
+			(
+				(
+					lv_form_6_0=RULE_STRING
+					{
+						newLeafNode(lv_form_6_0, grammarAccess.getFieldChoiceAccess().getFormSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldChoiceRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"form",
+							lv_form_6_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_7='label'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getFieldChoiceAccess().getLabelKeyword_6_0());
+			}
+			(
+				(
+					lv_label_8_0=RULE_STRING
+					{
+						newLeafNode(lv_label_8_0, grammarAccess.getFieldChoiceAccess().getLabelSTRINGTerminalRuleCall_6_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldChoiceRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_8_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			(
+				lv_multiple_9_0='multiple'
+				{
+					newLeafNode(lv_multiple_9_0, grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "multiple", true, "multiple");
+				}
+			)
+		)?
+		(
+			(
+				lv_notdisplayed_10_0='notdisplayed'
+				{
+					newLeafNode(lv_notdisplayed_10_0, grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "notdisplayed", true, "notdisplayed");
+				}
+			)
+		)?
+		(
+			(
+				lv_readonly_11_0='readonly'
+				{
+					newLeafNode(lv_readonly_11_0, grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "readonly", true, "readonly");
+				}
+			)
+		)?
+		(
+			(
+				lv_required_12_0='required'
+				{
+					newLeafNode(lv_required_12_0, grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceRule());
+					}
+					setWithLastConsumed($current, "required", true, "required");
+				}
+			)
+		)?
+		(
+			otherlv_13='value'
+			{
+				newLeafNode(otherlv_13, grammarAccess.getFieldChoiceAccess().getValueKeyword_11_0());
+			}
+			(
+				(
+					lv_value_14_0=RULE_STRING
+					{
+						newLeafNode(lv_value_14_0, grammarAccess.getFieldChoiceAccess().getValueSTRINGTerminalRuleCall_11_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldChoiceRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_14_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_15='{'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFieldChoiceAccess().getOptionsFieldChoiceOptionParserRuleCall_12_1_0());
+					}
+					lv_options_16_0=ruleFieldChoiceOption
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFieldChoiceRule());
+						}
+						add(
+							$current,
+							"options",
+							lv_options_16_0,
+							"de.htwg.zeta.xtext.CalculatorForm.FieldChoiceOption");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_17='}'
+			{
+				newLeafNode(otherlv_17, grammarAccess.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleFieldChoiceOption
+entryRuleFieldChoiceOption returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFieldChoiceOptionRule()); }
+	iv_ruleFieldChoiceOption=ruleFieldChoiceOption
+	{ $current=$iv_ruleFieldChoiceOption.current; }
+	EOF;
+
+// Rule FieldChoiceOption
+ruleFieldChoiceOption returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='option'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFieldChoiceOptionAccess().getOptionKeyword_0());
+		}
+		(
+			(
+				lv_label_1_0=RULE_STRING
+				{
+					newLeafNode(lv_label_1_0, grammarAccess.getFieldChoiceOptionAccess().getLabelSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"label",
+						lv_label_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_autofocus_2_0='autofocus'
+				{
+					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed($current, "autofocus", true, "autofocus");
+				}
+			)
+		)?
+		(
+			(
+				lv_checked_3_0='checked'
+				{
+					newLeafNode(lv_checked_3_0, grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed($current, "checked", true, "checked");
+				}
+			)
+		)?
+		(
+			(
+				lv_disabled_4_0='disabled'
+				{
+					newLeafNode(lv_disabled_4_0, grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			(
+				lv_readonly_5_0='readonly'
+				{
+					newLeafNode(lv_readonly_5_0, grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed($current, "readonly", true, "readonly");
+				}
+			)
+		)?
+		(
+			(
+				lv_required_6_0='required'
+				{
+					newLeafNode(lv_required_6_0, grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+					}
+					setWithLastConsumed($current, "required", true, "required");
+				}
+			)
+		)?
+		(
+			otherlv_7='value'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getFieldChoiceOptionAccess().getValueKeyword_7_0());
+			}
+			(
+				(
+					lv_value_8_0=RULE_STRING
+					{
+						newLeafNode(lv_value_8_0, grammarAccess.getFieldChoiceOptionAccess().getValueSTRINGTerminalRuleCall_7_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getFieldChoiceOptionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_8_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleGroup
+entryRuleGroup returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGroupRule()); }
+	iv_ruleGroup=ruleGroup
+	{ $current=$iv_ruleGroup.current; }
+	EOF;
+
+// Rule Group
+ruleGroup returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='group'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGroupAccess().getGroupKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getGroupAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGroupRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
+			)
+		)
+		(
+			otherlv_2='label'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGroupAccess().getLabelKeyword_2_0());
+			}
+			(
+				(
+					lv_label_3_0=RULE_STRING
+					{
+						newLeafNode(lv_label_3_0, grammarAccess.getGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGroupRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"label",
+							lv_label_3_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getGroupAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGroupAccess().getFieldsFieldParserRuleCall_4_0());
+				}
+				lv_fields_5_0=ruleField
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGroupRule());
+					}
+					add(
+						$current,
+						"fields",
+						lv_fields_5_0,
+						"de.htwg.zeta.xtext.CalculatorForm.Field");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_6='}'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getGroupAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRulePage
+entryRulePage returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPageRule()); }
+	iv_rulePage=rulePage
+	{ $current=$iv_rulePage.current; }
+	EOF;
+
+// Rule Page
+rulePage returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='page'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
+		}
+		otherlv_1='{'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPageAccess().getChildsPageChildParserRuleCall_2_0());
+				}
+				lv_childs_2_0=rulePageChild
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPageRule());
+					}
+					add(
+						$current,
+						"childs",
+						lv_childs_2_0,
+						"de.htwg.zeta.xtext.CalculatorForm.PageChild");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3='}'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRulePageChild
+entryRulePageChild returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPageChildRule()); }
+	iv_rulePageChild=rulePageChild
+	{ $current=$iv_rulePageChild.current; }
+	EOF;
+
+// Rule PageChild
+rulePageChild returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getPageChildAccess().getGroupParserRuleCall_0());
+		}
+		this_Group_0=ruleGroup
+		{
+			$current = $this_Group_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPageChildAccess().getFieldParserRuleCall_1());
+		}
+		this_Field_1=ruleField
+		{
+			$current = $this_Field_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleButton
+entryRuleButton returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getButtonRule()); }
+	iv_ruleButton=ruleButton
+	{ $current=$iv_ruleButton.current; }
+	EOF;
+
+// Rule Button
+ruleButton returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	{
+		newCompositeNode(grammarAccess.getButtonAccess().getButtonSubmitParserRuleCall());
+	}
+	this_ButtonSubmit_0=ruleButtonSubmit
+	{
+		$current = $this_ButtonSubmit_0.current;
+		afterParserOrEnumRuleCall();
+	}
+;
+
+// Entry rule entryRuleButtonSubmit
+entryRuleButtonSubmit returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getButtonSubmitRule()); }
+	iv_ruleButtonSubmit=ruleButtonSubmit
+	{ $current=$iv_ruleButtonSubmit.current; }
+	EOF;
+
+// Rule ButtonSubmit
+ruleButtonSubmit returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='submit-button'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getButtonSubmitAccess().getSubmitButtonKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getButtonSubmitAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonSubmitRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_text_2_0=RULE_STRING
+				{
+					newLeafNode(lv_text_2_0, grammarAccess.getButtonSubmitAccess().getTextSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonSubmitRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"text",
+						lv_text_2_0,
+						"de.htwg.zeta.xtext.CalculatorForm.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_autofocus_3_0='autofocus'
+				{
+					newLeafNode(lv_autofocus_3_0, grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonSubmitRule());
+					}
+					setWithLastConsumed($current, "autofocus", true, "autofocus");
+				}
+			)
+		)?
+		(
+			(
+				lv_disabled_4_0='disabled'
+				{
+					newLeafNode(lv_disabled_4_0, grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonSubmitRule());
+					}
+					setWithLastConsumed($current, "disabled", true, "disabled");
+				}
+			)
+		)?
+		(
+			otherlv_5='value'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getButtonSubmitAccess().getValueKeyword_5_0());
+			}
+			(
+				(
+					lv_value_6_0=RULE_STRING
+					{
+						newLeafNode(lv_value_6_0, grammarAccess.getButtonSubmitAccess().getValueSTRINGTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getButtonSubmitRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_6_0,
+							"de.htwg.zeta.xtext.CalculatorForm.STRING");
+					}
+				)
+			)
+		)?
 	)
 ;
 

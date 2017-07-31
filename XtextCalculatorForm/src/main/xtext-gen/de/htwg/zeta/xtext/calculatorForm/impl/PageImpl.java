@@ -4,8 +4,8 @@
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.FormElement;
-import de.htwg.zeta.xtext.calculatorForm.Model;
+import de.htwg.zeta.xtext.calculatorForm.Page;
+import de.htwg.zeta.xtext.calculatorForm.PageChild;
 
 import java.util.Collection;
 
@@ -16,42 +16,40 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Page</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.ModelImpl#getFormElements <em>Form Elements</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.PageImpl#getChilds <em>Childs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class PageImpl extends FormElementImpl implements Page
 {
   /**
-   * The cached value of the '{@link #getFormElements() <em>Form Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getChilds() <em>Childs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFormElements()
+   * @see #getChilds()
    * @generated
    * @ordered
    */
-  protected EList<FormElement> formElements;
+  protected EList<PageChild> childs;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected PageImpl()
   {
     super();
   }
@@ -64,7 +62,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return CalculatorFormPackage.Literals.MODEL;
+    return CalculatorFormPackage.Literals.PAGE;
   }
 
   /**
@@ -72,13 +70,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<FormElement> getFormElements()
+  public EList<PageChild> getChilds()
   {
-    if (formElements == null)
+    if (childs == null)
     {
-      formElements = new EObjectContainmentEList<FormElement>(FormElement.class, this, CalculatorFormPackage.MODEL__FORM_ELEMENTS);
+      childs = new EObjectContainmentEList<PageChild>(PageChild.class, this, CalculatorFormPackage.PAGE__CHILDS);
     }
-    return formElements;
+    return childs;
   }
 
   /**
@@ -91,8 +89,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return ((InternalEList<?>)getFormElements()).basicRemove(otherEnd, msgs);
+      case CalculatorFormPackage.PAGE__CHILDS:
+        return ((InternalEList<?>)getChilds()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +105,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return getFormElements();
+      case CalculatorFormPackage.PAGE__CHILDS:
+        return getChilds();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +122,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        getFormElements().clear();
-        getFormElements().addAll((Collection<? extends FormElement>)newValue);
+      case CalculatorFormPackage.PAGE__CHILDS:
+        getChilds().clear();
+        getChilds().addAll((Collection<? extends PageChild>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +140,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        getFormElements().clear();
+      case CalculatorFormPackage.PAGE__CHILDS:
+        getChilds().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +157,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return formElements != null && !formElements.isEmpty();
+      case CalculatorFormPackage.PAGE__CHILDS:
+        return childs != null && !childs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //PageImpl

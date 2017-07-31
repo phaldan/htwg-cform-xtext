@@ -31,52 +31,1046 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createModelElementType() {
 			return new IGrammarAwareElementType("Model_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelRule());
 		}
-		public static IGrammarAwareElementType createModel_GreetingsAssignmentElementType() {
-			return new IGrammarAwareElementType("Model_GreetingsAssignment_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getGreetingsAssignment());
+		public static IGrammarAwareElementType createModel_FormElementsAssignmentElementType() {
+			return new IGrammarAwareElementType("Model_FormElementsAssignment_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormElementsAssignment());
 		}
-		public static IGrammarAwareElementType createModel_GreetingsGreetingParserRuleCall_0ElementType() {
-			return new IGrammarAwareElementType("Model_GreetingsGreetingParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+		public static IGrammarAwareElementType createModel_FormElementsFormElementParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("Model_FormElementsFormElementParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormElementsFormElementParserRuleCall_0());
 		}
 	}
 
 	public static final IGrammarAwareElementType Model_ELEMENT_TYPE = associate(ModelFactory.createModelElementType());
 
-	public static final IGrammarAwareElementType Model_GreetingsAssignment_ELEMENT_TYPE = associate(ModelFactory.createModel_GreetingsAssignmentElementType());
+	public static final IGrammarAwareElementType Model_FormElementsAssignment_ELEMENT_TYPE = associate(ModelFactory.createModel_FormElementsAssignmentElementType());
 
-	public static final IGrammarAwareElementType Model_GreetingsGreetingParserRuleCall_0_ELEMENT_TYPE = associate(ModelFactory.createModel_GreetingsGreetingParserRuleCall_0ElementType());
+	public static final IGrammarAwareElementType Model_FormElementsFormElementParserRuleCall_0_ELEMENT_TYPE = associate(ModelFactory.createModel_FormElementsFormElementParserRuleCall_0ElementType());
 
-	private static class GreetingFactory {
-		public static IGrammarAwareElementType createGreetingElementType() {
-			return new IGrammarAwareElementType("Greeting_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingRule());
+	private static class FormElementFactory {
+		public static IGrammarAwareElementType createFormElementElementType() {
+			return new IGrammarAwareElementType("FormElement_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormElementRule());
 		}
-		public static IGrammarAwareElementType createGreeting_GroupElementType() {
-			return new IGrammarAwareElementType("Greeting_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingAccess().getGroup());
+		public static IGrammarAwareElementType createFormElement_AlternativesElementType() {
+			return new IGrammarAwareElementType("FormElement_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormElementAccess().getAlternatives());
 		}
-		public static IGrammarAwareElementType createGreeting_HelloKeyword_0ElementType() {
-			return new IGrammarAwareElementType("Greeting_HelloKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingAccess().getHelloKeyword_0());
+		public static IGrammarAwareElementType createFormElement_FieldParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("FormElement_FieldParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormElementAccess().getFieldParserRuleCall_0());
 		}
-		public static IGrammarAwareElementType createGreeting_NameAssignment_1ElementType() {
-			return new IGrammarAwareElementType("Greeting_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingAccess().getNameAssignment_1());
+		public static IGrammarAwareElementType createFormElement_GroupParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("FormElement_GroupParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormElementAccess().getGroupParserRuleCall_1());
 		}
-		public static IGrammarAwareElementType createGreeting_NameIDTerminalRuleCall_1_0ElementType() {
-			return new IGrammarAwareElementType("Greeting_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
-		}
-		public static IGrammarAwareElementType createGreeting_ExclamationMarkKeyword_2ElementType() {
-			return new IGrammarAwareElementType("Greeting_ExclamationMarkKeyword_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGreetingAccess().getExclamationMarkKeyword_2());
+		public static IGrammarAwareElementType createFormElement_PageParserRuleCall_2ElementType() {
+			return new IGrammarAwareElementType("FormElement_PageParserRuleCall_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormElementAccess().getPageParserRuleCall_2());
 		}
 	}
 
-	public static final IGrammarAwareElementType Greeting_ELEMENT_TYPE = associate(GreetingFactory.createGreetingElementType());
+	public static final IGrammarAwareElementType FormElement_ELEMENT_TYPE = associate(FormElementFactory.createFormElementElementType());
 
-	public static final IGrammarAwareElementType Greeting_Group_ELEMENT_TYPE = associate(GreetingFactory.createGreeting_GroupElementType());
+	public static final IGrammarAwareElementType FormElement_Alternatives_ELEMENT_TYPE = associate(FormElementFactory.createFormElement_AlternativesElementType());
 
-	public static final IGrammarAwareElementType Greeting_HelloKeyword_0_ELEMENT_TYPE = associate(GreetingFactory.createGreeting_HelloKeyword_0ElementType());
+	public static final IGrammarAwareElementType FormElement_FieldParserRuleCall_0_ELEMENT_TYPE = associate(FormElementFactory.createFormElement_FieldParserRuleCall_0ElementType());
 
-	public static final IGrammarAwareElementType Greeting_NameAssignment_1_ELEMENT_TYPE = associate(GreetingFactory.createGreeting_NameAssignment_1ElementType());
+	public static final IGrammarAwareElementType FormElement_GroupParserRuleCall_1_ELEMENT_TYPE = associate(FormElementFactory.createFormElement_GroupParserRuleCall_1ElementType());
 
-	public static final IGrammarAwareElementType Greeting_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(GreetingFactory.createGreeting_NameIDTerminalRuleCall_1_0ElementType());
+	public static final IGrammarAwareElementType FormElement_PageParserRuleCall_2_ELEMENT_TYPE = associate(FormElementFactory.createFormElement_PageParserRuleCall_2ElementType());
 
-	public static final IGrammarAwareElementType Greeting_ExclamationMarkKeyword_2_ELEMENT_TYPE = associate(GreetingFactory.createGreeting_ExclamationMarkKeyword_2ElementType());
+	private static class FieldFactory {
+		public static IGrammarAwareElementType createFieldElementType() {
+			return new IGrammarAwareElementType("Field_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldRule());
+		}
+		public static IGrammarAwareElementType createField_AlternativesElementType() {
+			return new IGrammarAwareElementType("Field_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldAccess().getAlternatives());
+		}
+		public static IGrammarAwareElementType createField_FieldInputParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("Field_FieldInputParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldAccess().getFieldInputParserRuleCall_0());
+		}
+		public static IGrammarAwareElementType createField_FieldSelectParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("Field_FieldSelectParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldAccess().getFieldSelectParserRuleCall_1());
+		}
+		public static IGrammarAwareElementType createField_FieldChoiceParserRuleCall_2ElementType() {
+			return new IGrammarAwareElementType("Field_FieldChoiceParserRuleCall_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldAccess().getFieldChoiceParserRuleCall_2());
+		}
+		public static IGrammarAwareElementType createField_ButtonParserRuleCall_3ElementType() {
+			return new IGrammarAwareElementType("Field_ButtonParserRuleCall_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldAccess().getButtonParserRuleCall_3());
+		}
+	}
+
+	public static final IGrammarAwareElementType Field_ELEMENT_TYPE = associate(FieldFactory.createFieldElementType());
+
+	public static final IGrammarAwareElementType Field_Alternatives_ELEMENT_TYPE = associate(FieldFactory.createField_AlternativesElementType());
+
+	public static final IGrammarAwareElementType Field_FieldInputParserRuleCall_0_ELEMENT_TYPE = associate(FieldFactory.createField_FieldInputParserRuleCall_0ElementType());
+
+	public static final IGrammarAwareElementType Field_FieldSelectParserRuleCall_1_ELEMENT_TYPE = associate(FieldFactory.createField_FieldSelectParserRuleCall_1ElementType());
+
+	public static final IGrammarAwareElementType Field_FieldChoiceParserRuleCall_2_ELEMENT_TYPE = associate(FieldFactory.createField_FieldChoiceParserRuleCall_2ElementType());
+
+	public static final IGrammarAwareElementType Field_ButtonParserRuleCall_3_ELEMENT_TYPE = associate(FieldFactory.createField_ButtonParserRuleCall_3ElementType());
+
+	private static class FieldInputFactory {
+		public static IGrammarAwareElementType createFieldInputElementType() {
+			return new IGrammarAwareElementType("FieldInput_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputRule());
+		}
+		public static IGrammarAwareElementType createFieldInput_GroupElementType() {
+			return new IGrammarAwareElementType("FieldInput_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldInput_FieldKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_FieldKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getFieldKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldInput_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldInput_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_AutofocusAssignment_2ElementType() {
+			return new IGrammarAwareElementType("FieldInput_AutofocusAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getAutofocusAssignment_2());
+		}
+		public static IGrammarAwareElementType createFieldInput_AutofocusAutofocusKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_DisabledAssignment_3ElementType() {
+			return new IGrammarAwareElementType("FieldInput_DisabledAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getDisabledAssignment_3());
+		}
+		public static IGrammarAwareElementType createFieldInput_DisabledDisabledKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_DisabledDisabledKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getDisabledDisabledKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_Group_4ElementType() {
+			return new IGrammarAwareElementType("FieldInput_Group_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getGroup_4());
+		}
+		public static IGrammarAwareElementType createFieldInput_FormKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_FormKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getFormKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_FormAssignment_4_1ElementType() {
+			return new IGrammarAwareElementType("FieldInput_FormAssignment_4_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getFormAssignment_4_1());
+		}
+		public static IGrammarAwareElementType createFieldInput_FormSTRINGTerminalRuleCall_4_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getFormSTRINGTerminalRuleCall_4_1_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_Group_5ElementType() {
+			return new IGrammarAwareElementType("FieldInput_Group_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getGroup_5());
+		}
+		public static IGrammarAwareElementType createFieldInput_LabelKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_LabelKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getLabelKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_LabelAssignment_5_1ElementType() {
+			return new IGrammarAwareElementType("FieldInput_LabelAssignment_5_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getLabelAssignment_5_1());
+		}
+		public static IGrammarAwareElementType createFieldInput_LabelSTRINGTerminalRuleCall_5_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getLabelSTRINGTerminalRuleCall_5_1_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_NotdisplayedAssignment_6ElementType() {
+			return new IGrammarAwareElementType("FieldInput_NotdisplayedAssignment_6_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getNotdisplayedAssignment_6());
+		}
+		public static IGrammarAwareElementType createFieldInput_NotdisplayedNotdisplayedKeyword_6_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_NotdisplayedNotdisplayedKeyword_6_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_ReadonlyAssignment_7ElementType() {
+			return new IGrammarAwareElementType("FieldInput_ReadonlyAssignment_7_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getReadonlyAssignment_7());
+		}
+		public static IGrammarAwareElementType createFieldInput_ReadonlyReadonlyKeyword_7_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_ReadonlyReadonlyKeyword_7_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_RequiredAssignment_8ElementType() {
+			return new IGrammarAwareElementType("FieldInput_RequiredAssignment_8_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getRequiredAssignment_8());
+		}
+		public static IGrammarAwareElementType createFieldInput_RequiredRequiredKeyword_8_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_RequiredRequiredKeyword_8_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getRequiredRequiredKeyword_8_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_Group_9ElementType() {
+			return new IGrammarAwareElementType("FieldInput_Group_9_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getGroup_9());
+		}
+		public static IGrammarAwareElementType createFieldInput_ValueKeyword_9_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_ValueKeyword_9_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getValueKeyword_9_0());
+		}
+		public static IGrammarAwareElementType createFieldInput_ValueAssignment_9_1ElementType() {
+			return new IGrammarAwareElementType("FieldInput_ValueAssignment_9_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getValueAssignment_9_1());
+		}
+		public static IGrammarAwareElementType createFieldInput_ValueSTRINGTerminalRuleCall_9_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldInput_ValueSTRINGTerminalRuleCall_9_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldInputAccess().getValueSTRINGTerminalRuleCall_9_1_0());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldInput_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInputElementType());
+
+	public static final IGrammarAwareElementType FieldInput_Group_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldInput_FieldKeyword_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_FieldKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_NameAssignment_1_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_AutofocusAssignment_2_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_AutofocusAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_AutofocusAutofocusKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_DisabledAssignment_3_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_DisabledAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_DisabledDisabledKeyword_3_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_DisabledDisabledKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_Group_4_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_Group_4ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_FormKeyword_4_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_FormKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_FormAssignment_4_1_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_FormAssignment_4_1ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_FormSTRINGTerminalRuleCall_4_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_Group_5_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_Group_5ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_LabelKeyword_5_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_LabelKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_LabelAssignment_5_1_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_LabelAssignment_5_1ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_LabelSTRINGTerminalRuleCall_5_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_NotdisplayedAssignment_6_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_NotdisplayedAssignment_6ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_NotdisplayedNotdisplayedKeyword_6_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_NotdisplayedNotdisplayedKeyword_6_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_ReadonlyAssignment_7_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_ReadonlyAssignment_7ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_ReadonlyReadonlyKeyword_7_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_ReadonlyReadonlyKeyword_7_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_RequiredAssignment_8_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_RequiredAssignment_8ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_RequiredRequiredKeyword_8_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_RequiredRequiredKeyword_8_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_Group_9_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_Group_9ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_ValueKeyword_9_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_ValueKeyword_9_0ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_ValueAssignment_9_1_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_ValueAssignment_9_1ElementType());
+
+	public static final IGrammarAwareElementType FieldInput_ValueSTRINGTerminalRuleCall_9_1_0_ELEMENT_TYPE = associate(FieldInputFactory.createFieldInput_ValueSTRINGTerminalRuleCall_9_1_0ElementType());
+
+	private static class FieldSelectFactory {
+		public static IGrammarAwareElementType createFieldSelectElementType() {
+			return new IGrammarAwareElementType("FieldSelect_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectRule());
+		}
+		public static IGrammarAwareElementType createFieldSelect_GroupElementType() {
+			return new IGrammarAwareElementType("FieldSelect_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldSelect_DropdownKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_DropdownKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getDropdownKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldSelect_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_AutofocusAssignment_2ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_AutofocusAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getAutofocusAssignment_2());
+		}
+		public static IGrammarAwareElementType createFieldSelect_AutofocusAutofocusKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_DisabledAssignment_3ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_DisabledAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getDisabledAssignment_3());
+		}
+		public static IGrammarAwareElementType createFieldSelect_DisabledDisabledKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_DisabledDisabledKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getDisabledDisabledKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_Group_4ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_Group_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getGroup_4());
+		}
+		public static IGrammarAwareElementType createFieldSelect_FormKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_FormKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getFormKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_FormAssignment_4_1ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_FormAssignment_4_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getFormAssignment_4_1());
+		}
+		public static IGrammarAwareElementType createFieldSelect_FormSTRINGTerminalRuleCall_4_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getFormSTRINGTerminalRuleCall_4_1_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_Group_5ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_Group_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getGroup_5());
+		}
+		public static IGrammarAwareElementType createFieldSelect_LabelKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_LabelKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getLabelKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_LabelAssignment_5_1ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_LabelAssignment_5_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getLabelAssignment_5_1());
+		}
+		public static IGrammarAwareElementType createFieldSelect_LabelSTRINGTerminalRuleCall_5_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getLabelSTRINGTerminalRuleCall_5_1_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_MultipleAssignment_6ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_MultipleAssignment_6_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getMultipleAssignment_6());
+		}
+		public static IGrammarAwareElementType createFieldSelect_MultipleMultipleKeyword_6_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_MultipleMultipleKeyword_6_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getMultipleMultipleKeyword_6_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_RequiredAssignment_7ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_RequiredAssignment_7_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getRequiredAssignment_7());
+		}
+		public static IGrammarAwareElementType createFieldSelect_RequiredRequiredKeyword_7_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_RequiredRequiredKeyword_7_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getRequiredRequiredKeyword_7_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_Group_8ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_Group_8_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getGroup_8());
+		}
+		public static IGrammarAwareElementType createFieldSelect_SizeKeyword_8_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_SizeKeyword_8_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getSizeKeyword_8_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_SizeAssignment_8_1ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_SizeAssignment_8_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getSizeAssignment_8_1());
+		}
+		public static IGrammarAwareElementType createFieldSelect_SizeINTTerminalRuleCall_8_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_SizeINTTerminalRuleCall_8_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getSizeINTTerminalRuleCall_8_1_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_LeftCurlyBracketKeyword_9ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_LeftCurlyBracketKeyword_9_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getLeftCurlyBracketKeyword_9());
+		}
+		public static IGrammarAwareElementType createFieldSelect_ChildsAssignment_10ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_ChildsAssignment_10_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getChildsAssignment_10());
+		}
+		public static IGrammarAwareElementType createFieldSelect_ChildsFieldSelectChildParserRuleCall_10_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_ChildsFieldSelectChildParserRuleCall_10_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getChildsFieldSelectChildParserRuleCall_10_0());
+		}
+		public static IGrammarAwareElementType createFieldSelect_RightCurlyBracketKeyword_11ElementType() {
+			return new IGrammarAwareElementType("FieldSelect_RightCurlyBracketKeyword_11_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectAccess().getRightCurlyBracketKeyword_11());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldSelect_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelectElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_Group_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_DropdownKeyword_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_DropdownKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_NameAssignment_1_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_AutofocusAssignment_2_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_AutofocusAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_AutofocusAutofocusKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_DisabledAssignment_3_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_DisabledAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_DisabledDisabledKeyword_3_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_DisabledDisabledKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_Group_4_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_Group_4ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_FormKeyword_4_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_FormKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_FormAssignment_4_1_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_FormAssignment_4_1ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_FormSTRINGTerminalRuleCall_4_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_Group_5_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_Group_5ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_LabelKeyword_5_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_LabelKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_LabelAssignment_5_1_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_LabelAssignment_5_1ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_LabelSTRINGTerminalRuleCall_5_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_MultipleAssignment_6_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_MultipleAssignment_6ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_MultipleMultipleKeyword_6_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_MultipleMultipleKeyword_6_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_RequiredAssignment_7_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_RequiredAssignment_7ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_RequiredRequiredKeyword_7_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_RequiredRequiredKeyword_7_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_Group_8_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_Group_8ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_SizeKeyword_8_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_SizeKeyword_8_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_SizeAssignment_8_1_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_SizeAssignment_8_1ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_SizeINTTerminalRuleCall_8_1_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_SizeINTTerminalRuleCall_8_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_LeftCurlyBracketKeyword_9_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_LeftCurlyBracketKeyword_9ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_ChildsAssignment_10_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_ChildsAssignment_10ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_ChildsFieldSelectChildParserRuleCall_10_0_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_ChildsFieldSelectChildParserRuleCall_10_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelect_RightCurlyBracketKeyword_11_ELEMENT_TYPE = associate(FieldSelectFactory.createFieldSelect_RightCurlyBracketKeyword_11ElementType());
+
+	private static class FieldSelectChildFactory {
+		public static IGrammarAwareElementType createFieldSelectChildElementType() {
+			return new IGrammarAwareElementType("FieldSelectChild_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectChildRule());
+		}
+		public static IGrammarAwareElementType createFieldSelectChild_AlternativesElementType() {
+			return new IGrammarAwareElementType("FieldSelectChild_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectChildAccess().getAlternatives());
+		}
+		public static IGrammarAwareElementType createFieldSelectChild_FieldOptionParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("FieldSelectChild_FieldOptionParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectChildAccess().getFieldOptionParserRuleCall_0());
+		}
+		public static IGrammarAwareElementType createFieldSelectChild_FieldOptionGroupParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("FieldSelectChild_FieldOptionGroupParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldSelectChildAccess().getFieldOptionGroupParserRuleCall_1());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldSelectChild_ELEMENT_TYPE = associate(FieldSelectChildFactory.createFieldSelectChildElementType());
+
+	public static final IGrammarAwareElementType FieldSelectChild_Alternatives_ELEMENT_TYPE = associate(FieldSelectChildFactory.createFieldSelectChild_AlternativesElementType());
+
+	public static final IGrammarAwareElementType FieldSelectChild_FieldOptionParserRuleCall_0_ELEMENT_TYPE = associate(FieldSelectChildFactory.createFieldSelectChild_FieldOptionParserRuleCall_0ElementType());
+
+	public static final IGrammarAwareElementType FieldSelectChild_FieldOptionGroupParserRuleCall_1_ELEMENT_TYPE = associate(FieldSelectChildFactory.createFieldSelectChild_FieldOptionGroupParserRuleCall_1ElementType());
+
+	private static class FieldOptionFactory {
+		public static IGrammarAwareElementType createFieldOptionElementType() {
+			return new IGrammarAwareElementType("FieldOption_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionRule());
+		}
+		public static IGrammarAwareElementType createFieldOption_GroupElementType() {
+			return new IGrammarAwareElementType("FieldOption_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldOption_OptionKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_OptionKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getOptionKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_TextAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldOption_TextAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getTextAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldOption_TextSTRINGTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_TextSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_DisabledAssignment_2ElementType() {
+			return new IGrammarAwareElementType("FieldOption_DisabledAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getDisabledAssignment_2());
+		}
+		public static IGrammarAwareElementType createFieldOption_DisabledDisabledKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_DisabledDisabledKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getDisabledDisabledKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_SelectedAssignment_3ElementType() {
+			return new IGrammarAwareElementType("FieldOption_SelectedAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getSelectedAssignment_3());
+		}
+		public static IGrammarAwareElementType createFieldOption_SelectedSelectedKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_SelectedSelectedKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getSelectedSelectedKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_Group_4ElementType() {
+			return new IGrammarAwareElementType("FieldOption_Group_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getGroup_4());
+		}
+		public static IGrammarAwareElementType createFieldOption_TextKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_TextKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getTextKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_TextAssignment_4_1ElementType() {
+			return new IGrammarAwareElementType("FieldOption_TextAssignment_4_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getTextAssignment_4_1());
+		}
+		public static IGrammarAwareElementType createFieldOption_TextSTRINGTerminalRuleCall_4_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_TextSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_4_1_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_Group_5ElementType() {
+			return new IGrammarAwareElementType("FieldOption_Group_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getGroup_5());
+		}
+		public static IGrammarAwareElementType createFieldOption_ValueKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_ValueKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getValueKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createFieldOption_ValueAssignment_5_1ElementType() {
+			return new IGrammarAwareElementType("FieldOption_ValueAssignment_5_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getValueAssignment_5_1());
+		}
+		public static IGrammarAwareElementType createFieldOption_ValueSTRINGTerminalRuleCall_5_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldOption_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionAccess().getValueSTRINGTerminalRuleCall_5_1_0());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldOption_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOptionElementType());
+
+	public static final IGrammarAwareElementType FieldOption_Group_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldOption_OptionKeyword_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_OptionKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_TextAssignment_1_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_TextAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_TextSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_TextSTRINGTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_DisabledAssignment_2_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_DisabledAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_DisabledDisabledKeyword_2_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_DisabledDisabledKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_SelectedAssignment_3_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_SelectedAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_SelectedSelectedKeyword_3_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_SelectedSelectedKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_Group_4_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_Group_4ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_TextKeyword_4_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_TextKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_TextAssignment_4_1_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_TextAssignment_4_1ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_TextSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_TextSTRINGTerminalRuleCall_4_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_Group_5_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_Group_5ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_ValueKeyword_5_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_ValueKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_ValueAssignment_5_1_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_ValueAssignment_5_1ElementType());
+
+	public static final IGrammarAwareElementType FieldOption_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE = associate(FieldOptionFactory.createFieldOption_ValueSTRINGTerminalRuleCall_5_1_0ElementType());
+
+	private static class FieldOptionGroupFactory {
+		public static IGrammarAwareElementType createFieldOptionGroupElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupRule());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_GroupElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_OptionGroupKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_OptionGroupKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getOptionGroupKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_DisabledAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_DisabledAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getDisabledAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_DisabledDisabledKeyword_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_DisabledDisabledKeyword_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_Group_2ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_Group_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getGroup_2());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_LabelKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_LabelKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getLabelKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_LabelAssignment_2_1ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_LabelAssignment_2_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getLabelAssignment_2_1());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_LeftCurlyBracketKeyword_3ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_LeftCurlyBracketKeyword_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getLeftCurlyBracketKeyword_3());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_OptionsAssignment_4ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_OptionsAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getOptionsAssignment_4());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getOptionsFieldOptionParserRuleCall_4_0());
+		}
+		public static IGrammarAwareElementType createFieldOptionGroup_RightCurlyBracketKeyword_5ElementType() {
+			return new IGrammarAwareElementType("FieldOptionGroup_RightCurlyBracketKeyword_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldOptionGroupAccess().getRightCurlyBracketKeyword_5());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldOptionGroup_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroupElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_Group_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_OptionGroupKeyword_0_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_OptionGroupKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_DisabledAssignment_1_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_DisabledAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_DisabledDisabledKeyword_1_0_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_DisabledDisabledKeyword_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_Group_2_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_Group_2ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_LabelKeyword_2_0_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_LabelKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_LabelAssignment_2_1_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_LabelAssignment_2_1ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_LeftCurlyBracketKeyword_3_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_LeftCurlyBracketKeyword_3ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_OptionsAssignment_4_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_OptionsAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldOptionGroup_RightCurlyBracketKeyword_5_ELEMENT_TYPE = associate(FieldOptionGroupFactory.createFieldOptionGroup_RightCurlyBracketKeyword_5ElementType());
+
+	private static class FieldChoiceFactory {
+		public static IGrammarAwareElementType createFieldChoiceElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceRule());
+		}
+		public static IGrammarAwareElementType createFieldChoice_GroupElementType() {
+			return new IGrammarAwareElementType("FieldChoice_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ChoiceKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ChoiceKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getChoiceKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldChoice_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_AutofocusAssignment_2ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_AutofocusAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getAutofocusAssignment_2());
+		}
+		public static IGrammarAwareElementType createFieldChoice_AutofocusAutofocusKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_CheckedAssignment_3ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_CheckedAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getCheckedAssignment_3());
+		}
+		public static IGrammarAwareElementType createFieldChoice_CheckedCheckedKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_CheckedCheckedKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_DisabledAssignment_4ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_DisabledAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getDisabledAssignment_4());
+		}
+		public static IGrammarAwareElementType createFieldChoice_DisabledDisabledKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_DisabledDisabledKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_Group_5ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_Group_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getGroup_5());
+		}
+		public static IGrammarAwareElementType createFieldChoice_FormKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_FormKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getFormKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_FormAssignment_5_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_FormAssignment_5_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getFormAssignment_5_1());
+		}
+		public static IGrammarAwareElementType createFieldChoice_FormSTRINGTerminalRuleCall_5_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_FormSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getFormSTRINGTerminalRuleCall_5_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_Group_6ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_Group_6_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getGroup_6());
+		}
+		public static IGrammarAwareElementType createFieldChoice_LabelKeyword_6_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_LabelKeyword_6_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getLabelKeyword_6_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_LabelAssignment_6_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_LabelAssignment_6_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getLabelAssignment_6_1());
+		}
+		public static IGrammarAwareElementType createFieldChoice_LabelSTRINGTerminalRuleCall_6_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_LabelSTRINGTerminalRuleCall_6_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getLabelSTRINGTerminalRuleCall_6_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_MultipleAssignment_7ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_MultipleAssignment_7_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getMultipleAssignment_7());
+		}
+		public static IGrammarAwareElementType createFieldChoice_MultipleMultipleKeyword_7_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_MultipleMultipleKeyword_7_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_NotdisplayedAssignment_8ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_NotdisplayedAssignment_8_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getNotdisplayedAssignment_8());
+		}
+		public static IGrammarAwareElementType createFieldChoice_NotdisplayedNotdisplayedKeyword_8_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_NotdisplayedNotdisplayedKeyword_8_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ReadonlyAssignment_9ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ReadonlyAssignment_9_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getReadonlyAssignment_9());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ReadonlyReadonlyKeyword_9_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ReadonlyReadonlyKeyword_9_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_RequiredAssignment_10ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_RequiredAssignment_10_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getRequiredAssignment_10());
+		}
+		public static IGrammarAwareElementType createFieldChoice_RequiredRequiredKeyword_10_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_RequiredRequiredKeyword_10_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_Group_11ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_Group_11_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getGroup_11());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ValueKeyword_11_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ValueKeyword_11_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getValueKeyword_11_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ValueAssignment_11_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ValueAssignment_11_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getValueAssignment_11_1());
+		}
+		public static IGrammarAwareElementType createFieldChoice_ValueSTRINGTerminalRuleCall_11_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_ValueSTRINGTerminalRuleCall_11_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getValueSTRINGTerminalRuleCall_11_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_Group_12ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_Group_12_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getGroup_12());
+		}
+		public static IGrammarAwareElementType createFieldChoice_LeftCurlyBracketKeyword_12_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_LeftCurlyBracketKeyword_12_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_OptionsAssignment_12_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_OptionsAssignment_12_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getOptionsAssignment_12_1());
+		}
+		public static IGrammarAwareElementType createFieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getOptionsFieldChoiceOptionParserRuleCall_12_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoice_RightCurlyBracketKeyword_12_2ElementType() {
+			return new IGrammarAwareElementType("FieldChoice_RightCurlyBracketKeyword_12_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldChoice_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoiceElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_Group_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ChoiceKeyword_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ChoiceKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_NameAssignment_1_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_AutofocusAssignment_2_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_AutofocusAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_AutofocusAutofocusKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_CheckedAssignment_3_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_CheckedAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_CheckedCheckedKeyword_3_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_CheckedCheckedKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_DisabledAssignment_4_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_DisabledAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_DisabledDisabledKeyword_4_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_DisabledDisabledKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_Group_5_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_Group_5ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_FormKeyword_5_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_FormKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_FormAssignment_5_1_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_FormAssignment_5_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_FormSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_FormSTRINGTerminalRuleCall_5_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_Group_6_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_Group_6ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_LabelKeyword_6_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_LabelKeyword_6_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_LabelAssignment_6_1_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_LabelAssignment_6_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_LabelSTRINGTerminalRuleCall_6_1_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_LabelSTRINGTerminalRuleCall_6_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_MultipleAssignment_7_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_MultipleAssignment_7ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_MultipleMultipleKeyword_7_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_MultipleMultipleKeyword_7_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_NotdisplayedAssignment_8_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_NotdisplayedAssignment_8ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_NotdisplayedNotdisplayedKeyword_8_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_NotdisplayedNotdisplayedKeyword_8_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ReadonlyAssignment_9_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ReadonlyAssignment_9ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ReadonlyReadonlyKeyword_9_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ReadonlyReadonlyKeyword_9_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_RequiredAssignment_10_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_RequiredAssignment_10ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_RequiredRequiredKeyword_10_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_RequiredRequiredKeyword_10_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_Group_11_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_Group_11ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ValueKeyword_11_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ValueKeyword_11_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ValueAssignment_11_1_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ValueAssignment_11_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_ValueSTRINGTerminalRuleCall_11_1_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_ValueSTRINGTerminalRuleCall_11_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_Group_12_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_Group_12ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_LeftCurlyBracketKeyword_12_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_LeftCurlyBracketKeyword_12_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_OptionsAssignment_12_1_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_OptionsAssignment_12_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoice_RightCurlyBracketKeyword_12_2_ELEMENT_TYPE = associate(FieldChoiceFactory.createFieldChoice_RightCurlyBracketKeyword_12_2ElementType());
+
+	private static class FieldChoiceOptionFactory {
+		public static IGrammarAwareElementType createFieldChoiceOptionElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionRule());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_GroupElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_OptionKeyword_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_OptionKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getOptionKeyword_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_LabelAssignment_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_LabelAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getLabelAssignment_1());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getLabelSTRINGTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_AutofocusAssignment_2ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_AutofocusAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getAutofocusAssignment_2());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_AutofocusAutofocusKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_CheckedAssignment_3ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_CheckedAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getCheckedAssignment_3());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_CheckedCheckedKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_CheckedCheckedKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_DisabledAssignment_4ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_DisabledAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getDisabledAssignment_4());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_DisabledDisabledKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_DisabledDisabledKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_ReadonlyAssignment_5ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ReadonlyAssignment_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getReadonlyAssignment_5());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_ReadonlyReadonlyKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ReadonlyReadonlyKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_RequiredAssignment_6ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_RequiredAssignment_6_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getRequiredAssignment_6());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_RequiredRequiredKeyword_6_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_RequiredRequiredKeyword_6_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_Group_7ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_Group_7_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getGroup_7());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_ValueKeyword_7_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ValueKeyword_7_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getValueKeyword_7_0());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_ValueAssignment_7_1ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ValueAssignment_7_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getValueAssignment_7_1());
+		}
+		public static IGrammarAwareElementType createFieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0ElementType() {
+			return new IGrammarAwareElementType("FieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFieldChoiceOptionAccess().getValueSTRINGTerminalRuleCall_7_1_0());
+		}
+	}
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOptionElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_Group_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_GroupElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_OptionKeyword_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_OptionKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_LabelAssignment_1_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_LabelAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_AutofocusAssignment_2_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_AutofocusAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_AutofocusAutofocusKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_CheckedAssignment_3_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_CheckedAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_CheckedCheckedKeyword_3_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_CheckedCheckedKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_DisabledAssignment_4_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_DisabledAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_DisabledDisabledKeyword_4_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_DisabledDisabledKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ReadonlyAssignment_5_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_ReadonlyAssignment_5ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ReadonlyReadonlyKeyword_5_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_ReadonlyReadonlyKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_RequiredAssignment_6_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_RequiredAssignment_6ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_RequiredRequiredKeyword_6_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_RequiredRequiredKeyword_6_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_Group_7_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_Group_7ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ValueKeyword_7_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_ValueKeyword_7_0ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ValueAssignment_7_1_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_ValueAssignment_7_1ElementType());
+
+	public static final IGrammarAwareElementType FieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0_ELEMENT_TYPE = associate(FieldChoiceOptionFactory.createFieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0ElementType());
+
+	private static class GroupFactory {
+		public static IGrammarAwareElementType createGroupElementType() {
+			return new IGrammarAwareElementType("Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupRule());
+		}
+		public static IGrammarAwareElementType createGroup_GroupElementType() {
+			return new IGrammarAwareElementType("Group_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createGroup_GroupKeyword_0ElementType() {
+			return new IGrammarAwareElementType("Group_GroupKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getGroupKeyword_0());
+		}
+		public static IGrammarAwareElementType createGroup_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("Group_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createGroup_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("Group_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createGroup_Group_2ElementType() {
+			return new IGrammarAwareElementType("Group_Group_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getGroup_2());
+		}
+		public static IGrammarAwareElementType createGroup_LabelKeyword_2_0ElementType() {
+			return new IGrammarAwareElementType("Group_LabelKeyword_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getLabelKeyword_2_0());
+		}
+		public static IGrammarAwareElementType createGroup_LabelAssignment_2_1ElementType() {
+			return new IGrammarAwareElementType("Group_LabelAssignment_2_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getLabelAssignment_2_1());
+		}
+		public static IGrammarAwareElementType createGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType() {
+			return new IGrammarAwareElementType("Group_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0());
+		}
+		public static IGrammarAwareElementType createGroup_LeftCurlyBracketKeyword_3ElementType() {
+			return new IGrammarAwareElementType("Group_LeftCurlyBracketKeyword_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getLeftCurlyBracketKeyword_3());
+		}
+		public static IGrammarAwareElementType createGroup_FieldsAssignment_4ElementType() {
+			return new IGrammarAwareElementType("Group_FieldsAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getFieldsAssignment_4());
+		}
+		public static IGrammarAwareElementType createGroup_FieldsFieldParserRuleCall_4_0ElementType() {
+			return new IGrammarAwareElementType("Group_FieldsFieldParserRuleCall_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getFieldsFieldParserRuleCall_4_0());
+		}
+		public static IGrammarAwareElementType createGroup_RightCurlyBracketKeyword_5ElementType() {
+			return new IGrammarAwareElementType("Group_RightCurlyBracketKeyword_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getGroupAccess().getRightCurlyBracketKeyword_5());
+		}
+	}
+
+	public static final IGrammarAwareElementType Group_ELEMENT_TYPE = associate(GroupFactory.createGroupElementType());
+
+	public static final IGrammarAwareElementType Group_Group_ELEMENT_TYPE = associate(GroupFactory.createGroup_GroupElementType());
+
+	public static final IGrammarAwareElementType Group_GroupKeyword_0_ELEMENT_TYPE = associate(GroupFactory.createGroup_GroupKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType Group_NameAssignment_1_ELEMENT_TYPE = associate(GroupFactory.createGroup_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType Group_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(GroupFactory.createGroup_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType Group_Group_2_ELEMENT_TYPE = associate(GroupFactory.createGroup_Group_2ElementType());
+
+	public static final IGrammarAwareElementType Group_LabelKeyword_2_0_ELEMENT_TYPE = associate(GroupFactory.createGroup_LabelKeyword_2_0ElementType());
+
+	public static final IGrammarAwareElementType Group_LabelAssignment_2_1_ELEMENT_TYPE = associate(GroupFactory.createGroup_LabelAssignment_2_1ElementType());
+
+	public static final IGrammarAwareElementType Group_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE = associate(GroupFactory.createGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType());
+
+	public static final IGrammarAwareElementType Group_LeftCurlyBracketKeyword_3_ELEMENT_TYPE = associate(GroupFactory.createGroup_LeftCurlyBracketKeyword_3ElementType());
+
+	public static final IGrammarAwareElementType Group_FieldsAssignment_4_ELEMENT_TYPE = associate(GroupFactory.createGroup_FieldsAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType Group_FieldsFieldParserRuleCall_4_0_ELEMENT_TYPE = associate(GroupFactory.createGroup_FieldsFieldParserRuleCall_4_0ElementType());
+
+	public static final IGrammarAwareElementType Group_RightCurlyBracketKeyword_5_ELEMENT_TYPE = associate(GroupFactory.createGroup_RightCurlyBracketKeyword_5ElementType());
+
+	private static class PageFactory {
+		public static IGrammarAwareElementType createPageElementType() {
+			return new IGrammarAwareElementType("Page_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageRule());
+		}
+		public static IGrammarAwareElementType createPage_GroupElementType() {
+			return new IGrammarAwareElementType("Page_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createPage_PageKeyword_0ElementType() {
+			return new IGrammarAwareElementType("Page_PageKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getPageKeyword_0());
+		}
+		public static IGrammarAwareElementType createPage_LeftCurlyBracketKeyword_1ElementType() {
+			return new IGrammarAwareElementType("Page_LeftCurlyBracketKeyword_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getLeftCurlyBracketKeyword_1());
+		}
+		public static IGrammarAwareElementType createPage_ChildsAssignment_2ElementType() {
+			return new IGrammarAwareElementType("Page_ChildsAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getChildsAssignment_2());
+		}
+		public static IGrammarAwareElementType createPage_ChildsPageChildParserRuleCall_2_0ElementType() {
+			return new IGrammarAwareElementType("Page_ChildsPageChildParserRuleCall_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getChildsPageChildParserRuleCall_2_0());
+		}
+		public static IGrammarAwareElementType createPage_RightCurlyBracketKeyword_3ElementType() {
+			return new IGrammarAwareElementType("Page_RightCurlyBracketKeyword_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageAccess().getRightCurlyBracketKeyword_3());
+		}
+	}
+
+	public static final IGrammarAwareElementType Page_ELEMENT_TYPE = associate(PageFactory.createPageElementType());
+
+	public static final IGrammarAwareElementType Page_Group_ELEMENT_TYPE = associate(PageFactory.createPage_GroupElementType());
+
+	public static final IGrammarAwareElementType Page_PageKeyword_0_ELEMENT_TYPE = associate(PageFactory.createPage_PageKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType Page_LeftCurlyBracketKeyword_1_ELEMENT_TYPE = associate(PageFactory.createPage_LeftCurlyBracketKeyword_1ElementType());
+
+	public static final IGrammarAwareElementType Page_ChildsAssignment_2_ELEMENT_TYPE = associate(PageFactory.createPage_ChildsAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType Page_ChildsPageChildParserRuleCall_2_0_ELEMENT_TYPE = associate(PageFactory.createPage_ChildsPageChildParserRuleCall_2_0ElementType());
+
+	public static final IGrammarAwareElementType Page_RightCurlyBracketKeyword_3_ELEMENT_TYPE = associate(PageFactory.createPage_RightCurlyBracketKeyword_3ElementType());
+
+	private static class PageChildFactory {
+		public static IGrammarAwareElementType createPageChildElementType() {
+			return new IGrammarAwareElementType("PageChild_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageChildRule());
+		}
+		public static IGrammarAwareElementType createPageChild_AlternativesElementType() {
+			return new IGrammarAwareElementType("PageChild_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageChildAccess().getAlternatives());
+		}
+		public static IGrammarAwareElementType createPageChild_GroupParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("PageChild_GroupParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageChildAccess().getGroupParserRuleCall_0());
+		}
+		public static IGrammarAwareElementType createPageChild_FieldParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("PageChild_FieldParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPageChildAccess().getFieldParserRuleCall_1());
+		}
+	}
+
+	public static final IGrammarAwareElementType PageChild_ELEMENT_TYPE = associate(PageChildFactory.createPageChildElementType());
+
+	public static final IGrammarAwareElementType PageChild_Alternatives_ELEMENT_TYPE = associate(PageChildFactory.createPageChild_AlternativesElementType());
+
+	public static final IGrammarAwareElementType PageChild_GroupParserRuleCall_0_ELEMENT_TYPE = associate(PageChildFactory.createPageChild_GroupParserRuleCall_0ElementType());
+
+	public static final IGrammarAwareElementType PageChild_FieldParserRuleCall_1_ELEMENT_TYPE = associate(PageChildFactory.createPageChild_FieldParserRuleCall_1ElementType());
+
+	private static class ButtonFactory {
+		public static IGrammarAwareElementType createButtonElementType() {
+			return new IGrammarAwareElementType("Button_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonRule());
+		}
+		public static IGrammarAwareElementType createButton_ButtonSubmitParserRuleCallElementType() {
+			return new IGrammarAwareElementType("Button_ButtonSubmitParserRuleCall_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonAccess().getButtonSubmitParserRuleCall());
+		}
+	}
+
+	public static final IGrammarAwareElementType Button_ELEMENT_TYPE = associate(ButtonFactory.createButtonElementType());
+
+	public static final IGrammarAwareElementType Button_ButtonSubmitParserRuleCall_ELEMENT_TYPE = associate(ButtonFactory.createButton_ButtonSubmitParserRuleCallElementType());
+
+	private static class ButtonSubmitFactory {
+		public static IGrammarAwareElementType createButtonSubmitElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitRule());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_GroupElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_SubmitButtonKeyword_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_SubmitButtonKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getSubmitButtonKeyword_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_TextAssignment_2ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_TextAssignment_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getTextAssignment_2());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_TextSTRINGTerminalRuleCall_2_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_TextSTRINGTerminalRuleCall_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getTextSTRINGTerminalRuleCall_2_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_AutofocusAssignment_3ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_AutofocusAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getAutofocusAssignment_3());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_AutofocusAutofocusKeyword_3_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_AutofocusAutofocusKeyword_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_DisabledAssignment_4ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_DisabledAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getDisabledAssignment_4());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_DisabledDisabledKeyword_4_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_DisabledDisabledKeyword_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_Group_5ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_Group_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getGroup_5());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_ValueKeyword_5_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_ValueKeyword_5_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getValueKeyword_5_0());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_ValueAssignment_5_1ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_ValueAssignment_5_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getValueAssignment_5_1());
+		}
+		public static IGrammarAwareElementType createButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0ElementType() {
+			return new IGrammarAwareElementType("ButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getButtonSubmitAccess().getValueSTRINGTerminalRuleCall_5_1_0());
+		}
+	}
+
+	public static final IGrammarAwareElementType ButtonSubmit_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmitElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_Group_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_GroupElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_SubmitButtonKeyword_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_SubmitButtonKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_NameAssignment_1_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_TextAssignment_2_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_TextAssignment_2ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_TextSTRINGTerminalRuleCall_2_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_TextSTRINGTerminalRuleCall_2_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_AutofocusAssignment_3_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_AutofocusAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_AutofocusAutofocusKeyword_3_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_AutofocusAutofocusKeyword_3_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_DisabledAssignment_4_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_DisabledAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_DisabledDisabledKeyword_4_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_DisabledDisabledKeyword_4_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_Group_5_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_Group_5ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_ValueKeyword_5_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_ValueKeyword_5_0ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_ValueAssignment_5_1_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_ValueAssignment_5_1ElementType());
+
+	public static final IGrammarAwareElementType ButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE = associate(ButtonSubmitFactory.createButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0ElementType());
 
 	@Override
 	public IFileElementType getFileType() {
@@ -92,36 +1086,800 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Model_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_GreetingsAssignmentElementType() {
-		return Model_GreetingsAssignment_ELEMENT_TYPE;
+	public IGrammarAwareElementType getModel_FormElementsAssignmentElementType() {
+		return Model_FormElementsAssignment_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_GreetingsGreetingParserRuleCall_0ElementType() {
-		return Model_GreetingsGreetingParserRuleCall_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getModel_FormElementsFormElementParserRuleCall_0ElementType() {
+		return Model_FormElementsFormElementParserRuleCall_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreetingElementType() {
-		return Greeting_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElementElementType() {
+		return FormElement_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreeting_GroupElementType() {
-		return Greeting_Group_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElement_AlternativesElementType() {
+		return FormElement_Alternatives_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreeting_HelloKeyword_0ElementType() {
-		return Greeting_HelloKeyword_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElement_FieldParserRuleCall_0ElementType() {
+		return FormElement_FieldParserRuleCall_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreeting_NameAssignment_1ElementType() {
-		return Greeting_NameAssignment_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElement_GroupParserRuleCall_1ElementType() {
+		return FormElement_GroupParserRuleCall_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreeting_NameIDTerminalRuleCall_1_0ElementType() {
-		return Greeting_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElement_PageParserRuleCall_2ElementType() {
+		return FormElement_PageParserRuleCall_2_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getGreeting_ExclamationMarkKeyword_2ElementType() {
-		return Greeting_ExclamationMarkKeyword_2_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFieldElementType() {
+		return Field_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getField_AlternativesElementType() {
+		return Field_Alternatives_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getField_FieldInputParserRuleCall_0ElementType() {
+		return Field_FieldInputParserRuleCall_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getField_FieldSelectParserRuleCall_1ElementType() {
+		return Field_FieldSelectParserRuleCall_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getField_FieldChoiceParserRuleCall_2ElementType() {
+		return Field_FieldChoiceParserRuleCall_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getField_ButtonParserRuleCall_3ElementType() {
+		return Field_ButtonParserRuleCall_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInputElementType() {
+		return FieldInput_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_GroupElementType() {
+		return FieldInput_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_FieldKeyword_0ElementType() {
+		return FieldInput_FieldKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_NameAssignment_1ElementType() {
+		return FieldInput_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_NameIDTerminalRuleCall_1_0ElementType() {
+		return FieldInput_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_AutofocusAssignment_2ElementType() {
+		return FieldInput_AutofocusAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_AutofocusAutofocusKeyword_2_0ElementType() {
+		return FieldInput_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_DisabledAssignment_3ElementType() {
+		return FieldInput_DisabledAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_DisabledDisabledKeyword_3_0ElementType() {
+		return FieldInput_DisabledDisabledKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_Group_4ElementType() {
+		return FieldInput_Group_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_FormKeyword_4_0ElementType() {
+		return FieldInput_FormKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_FormAssignment_4_1ElementType() {
+		return FieldInput_FormAssignment_4_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_FormSTRINGTerminalRuleCall_4_1_0ElementType() {
+		return FieldInput_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_Group_5ElementType() {
+		return FieldInput_Group_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_LabelKeyword_5_0ElementType() {
+		return FieldInput_LabelKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_LabelAssignment_5_1ElementType() {
+		return FieldInput_LabelAssignment_5_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_LabelSTRINGTerminalRuleCall_5_1_0ElementType() {
+		return FieldInput_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_NotdisplayedAssignment_6ElementType() {
+		return FieldInput_NotdisplayedAssignment_6_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_NotdisplayedNotdisplayedKeyword_6_0ElementType() {
+		return FieldInput_NotdisplayedNotdisplayedKeyword_6_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_ReadonlyAssignment_7ElementType() {
+		return FieldInput_ReadonlyAssignment_7_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_ReadonlyReadonlyKeyword_7_0ElementType() {
+		return FieldInput_ReadonlyReadonlyKeyword_7_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_RequiredAssignment_8ElementType() {
+		return FieldInput_RequiredAssignment_8_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_RequiredRequiredKeyword_8_0ElementType() {
+		return FieldInput_RequiredRequiredKeyword_8_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_Group_9ElementType() {
+		return FieldInput_Group_9_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_ValueKeyword_9_0ElementType() {
+		return FieldInput_ValueKeyword_9_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_ValueAssignment_9_1ElementType() {
+		return FieldInput_ValueAssignment_9_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldInput_ValueSTRINGTerminalRuleCall_9_1_0ElementType() {
+		return FieldInput_ValueSTRINGTerminalRuleCall_9_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelectElementType() {
+		return FieldSelect_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_GroupElementType() {
+		return FieldSelect_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_DropdownKeyword_0ElementType() {
+		return FieldSelect_DropdownKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_NameAssignment_1ElementType() {
+		return FieldSelect_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_NameIDTerminalRuleCall_1_0ElementType() {
+		return FieldSelect_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_AutofocusAssignment_2ElementType() {
+		return FieldSelect_AutofocusAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_AutofocusAutofocusKeyword_2_0ElementType() {
+		return FieldSelect_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_DisabledAssignment_3ElementType() {
+		return FieldSelect_DisabledAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_DisabledDisabledKeyword_3_0ElementType() {
+		return FieldSelect_DisabledDisabledKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_Group_4ElementType() {
+		return FieldSelect_Group_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_FormKeyword_4_0ElementType() {
+		return FieldSelect_FormKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_FormAssignment_4_1ElementType() {
+		return FieldSelect_FormAssignment_4_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_FormSTRINGTerminalRuleCall_4_1_0ElementType() {
+		return FieldSelect_FormSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_Group_5ElementType() {
+		return FieldSelect_Group_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_LabelKeyword_5_0ElementType() {
+		return FieldSelect_LabelKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_LabelAssignment_5_1ElementType() {
+		return FieldSelect_LabelAssignment_5_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_LabelSTRINGTerminalRuleCall_5_1_0ElementType() {
+		return FieldSelect_LabelSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_MultipleAssignment_6ElementType() {
+		return FieldSelect_MultipleAssignment_6_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_MultipleMultipleKeyword_6_0ElementType() {
+		return FieldSelect_MultipleMultipleKeyword_6_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_RequiredAssignment_7ElementType() {
+		return FieldSelect_RequiredAssignment_7_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_RequiredRequiredKeyword_7_0ElementType() {
+		return FieldSelect_RequiredRequiredKeyword_7_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_Group_8ElementType() {
+		return FieldSelect_Group_8_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_SizeKeyword_8_0ElementType() {
+		return FieldSelect_SizeKeyword_8_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_SizeAssignment_8_1ElementType() {
+		return FieldSelect_SizeAssignment_8_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_SizeINTTerminalRuleCall_8_1_0ElementType() {
+		return FieldSelect_SizeINTTerminalRuleCall_8_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_LeftCurlyBracketKeyword_9ElementType() {
+		return FieldSelect_LeftCurlyBracketKeyword_9_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_ChildsAssignment_10ElementType() {
+		return FieldSelect_ChildsAssignment_10_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_ChildsFieldSelectChildParserRuleCall_10_0ElementType() {
+		return FieldSelect_ChildsFieldSelectChildParserRuleCall_10_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelect_RightCurlyBracketKeyword_11ElementType() {
+		return FieldSelect_RightCurlyBracketKeyword_11_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelectChildElementType() {
+		return FieldSelectChild_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelectChild_AlternativesElementType() {
+		return FieldSelectChild_Alternatives_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelectChild_FieldOptionParserRuleCall_0ElementType() {
+		return FieldSelectChild_FieldOptionParserRuleCall_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldSelectChild_FieldOptionGroupParserRuleCall_1ElementType() {
+		return FieldSelectChild_FieldOptionGroupParserRuleCall_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionElementType() {
+		return FieldOption_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_GroupElementType() {
+		return FieldOption_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_OptionKeyword_0ElementType() {
+		return FieldOption_OptionKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_TextAssignment_1ElementType() {
+		return FieldOption_TextAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_TextSTRINGTerminalRuleCall_1_0ElementType() {
+		return FieldOption_TextSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_DisabledAssignment_2ElementType() {
+		return FieldOption_DisabledAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_DisabledDisabledKeyword_2_0ElementType() {
+		return FieldOption_DisabledDisabledKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_SelectedAssignment_3ElementType() {
+		return FieldOption_SelectedAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_SelectedSelectedKeyword_3_0ElementType() {
+		return FieldOption_SelectedSelectedKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_Group_4ElementType() {
+		return FieldOption_Group_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_TextKeyword_4_0ElementType() {
+		return FieldOption_TextKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_TextAssignment_4_1ElementType() {
+		return FieldOption_TextAssignment_4_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_TextSTRINGTerminalRuleCall_4_1_0ElementType() {
+		return FieldOption_TextSTRINGTerminalRuleCall_4_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_Group_5ElementType() {
+		return FieldOption_Group_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_ValueKeyword_5_0ElementType() {
+		return FieldOption_ValueKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_ValueAssignment_5_1ElementType() {
+		return FieldOption_ValueAssignment_5_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOption_ValueSTRINGTerminalRuleCall_5_1_0ElementType() {
+		return FieldOption_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroupElementType() {
+		return FieldOptionGroup_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_GroupElementType() {
+		return FieldOptionGroup_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_OptionGroupKeyword_0ElementType() {
+		return FieldOptionGroup_OptionGroupKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_DisabledAssignment_1ElementType() {
+		return FieldOptionGroup_DisabledAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_DisabledDisabledKeyword_1_0ElementType() {
+		return FieldOptionGroup_DisabledDisabledKeyword_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_Group_2ElementType() {
+		return FieldOptionGroup_Group_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_LabelKeyword_2_0ElementType() {
+		return FieldOptionGroup_LabelKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_LabelAssignment_2_1ElementType() {
+		return FieldOptionGroup_LabelAssignment_2_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType() {
+		return FieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_LeftCurlyBracketKeyword_3ElementType() {
+		return FieldOptionGroup_LeftCurlyBracketKeyword_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_OptionsAssignment_4ElementType() {
+		return FieldOptionGroup_OptionsAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0ElementType() {
+		return FieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldOptionGroup_RightCurlyBracketKeyword_5ElementType() {
+		return FieldOptionGroup_RightCurlyBracketKeyword_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceElementType() {
+		return FieldChoice_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_GroupElementType() {
+		return FieldChoice_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ChoiceKeyword_0ElementType() {
+		return FieldChoice_ChoiceKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_NameAssignment_1ElementType() {
+		return FieldChoice_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_NameIDTerminalRuleCall_1_0ElementType() {
+		return FieldChoice_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_AutofocusAssignment_2ElementType() {
+		return FieldChoice_AutofocusAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_AutofocusAutofocusKeyword_2_0ElementType() {
+		return FieldChoice_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_CheckedAssignment_3ElementType() {
+		return FieldChoice_CheckedAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_CheckedCheckedKeyword_3_0ElementType() {
+		return FieldChoice_CheckedCheckedKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_DisabledAssignment_4ElementType() {
+		return FieldChoice_DisabledAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_DisabledDisabledKeyword_4_0ElementType() {
+		return FieldChoice_DisabledDisabledKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_Group_5ElementType() {
+		return FieldChoice_Group_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_FormKeyword_5_0ElementType() {
+		return FieldChoice_FormKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_FormAssignment_5_1ElementType() {
+		return FieldChoice_FormAssignment_5_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_FormSTRINGTerminalRuleCall_5_1_0ElementType() {
+		return FieldChoice_FormSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_Group_6ElementType() {
+		return FieldChoice_Group_6_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_LabelKeyword_6_0ElementType() {
+		return FieldChoice_LabelKeyword_6_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_LabelAssignment_6_1ElementType() {
+		return FieldChoice_LabelAssignment_6_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_LabelSTRINGTerminalRuleCall_6_1_0ElementType() {
+		return FieldChoice_LabelSTRINGTerminalRuleCall_6_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_MultipleAssignment_7ElementType() {
+		return FieldChoice_MultipleAssignment_7_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_MultipleMultipleKeyword_7_0ElementType() {
+		return FieldChoice_MultipleMultipleKeyword_7_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_NotdisplayedAssignment_8ElementType() {
+		return FieldChoice_NotdisplayedAssignment_8_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_NotdisplayedNotdisplayedKeyword_8_0ElementType() {
+		return FieldChoice_NotdisplayedNotdisplayedKeyword_8_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ReadonlyAssignment_9ElementType() {
+		return FieldChoice_ReadonlyAssignment_9_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ReadonlyReadonlyKeyword_9_0ElementType() {
+		return FieldChoice_ReadonlyReadonlyKeyword_9_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_RequiredAssignment_10ElementType() {
+		return FieldChoice_RequiredAssignment_10_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_RequiredRequiredKeyword_10_0ElementType() {
+		return FieldChoice_RequiredRequiredKeyword_10_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_Group_11ElementType() {
+		return FieldChoice_Group_11_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ValueKeyword_11_0ElementType() {
+		return FieldChoice_ValueKeyword_11_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ValueAssignment_11_1ElementType() {
+		return FieldChoice_ValueAssignment_11_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_ValueSTRINGTerminalRuleCall_11_1_0ElementType() {
+		return FieldChoice_ValueSTRINGTerminalRuleCall_11_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_Group_12ElementType() {
+		return FieldChoice_Group_12_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_LeftCurlyBracketKeyword_12_0ElementType() {
+		return FieldChoice_LeftCurlyBracketKeyword_12_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_OptionsAssignment_12_1ElementType() {
+		return FieldChoice_OptionsAssignment_12_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0ElementType() {
+		return FieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoice_RightCurlyBracketKeyword_12_2ElementType() {
+		return FieldChoice_RightCurlyBracketKeyword_12_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOptionElementType() {
+		return FieldChoiceOption_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_GroupElementType() {
+		return FieldChoiceOption_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_OptionKeyword_0ElementType() {
+		return FieldChoiceOption_OptionKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_LabelAssignment_1ElementType() {
+		return FieldChoiceOption_LabelAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0ElementType() {
+		return FieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_AutofocusAssignment_2ElementType() {
+		return FieldChoiceOption_AutofocusAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_AutofocusAutofocusKeyword_2_0ElementType() {
+		return FieldChoiceOption_AutofocusAutofocusKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_CheckedAssignment_3ElementType() {
+		return FieldChoiceOption_CheckedAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_CheckedCheckedKeyword_3_0ElementType() {
+		return FieldChoiceOption_CheckedCheckedKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_DisabledAssignment_4ElementType() {
+		return FieldChoiceOption_DisabledAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_DisabledDisabledKeyword_4_0ElementType() {
+		return FieldChoiceOption_DisabledDisabledKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_ReadonlyAssignment_5ElementType() {
+		return FieldChoiceOption_ReadonlyAssignment_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_ReadonlyReadonlyKeyword_5_0ElementType() {
+		return FieldChoiceOption_ReadonlyReadonlyKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_RequiredAssignment_6ElementType() {
+		return FieldChoiceOption_RequiredAssignment_6_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_RequiredRequiredKeyword_6_0ElementType() {
+		return FieldChoiceOption_RequiredRequiredKeyword_6_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_Group_7ElementType() {
+		return FieldChoiceOption_Group_7_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_ValueKeyword_7_0ElementType() {
+		return FieldChoiceOption_ValueKeyword_7_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_ValueAssignment_7_1ElementType() {
+		return FieldChoiceOption_ValueAssignment_7_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getFieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0ElementType() {
+		return FieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroupElementType() {
+		return Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_GroupElementType() {
+		return Group_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_GroupKeyword_0ElementType() {
+		return Group_GroupKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_NameAssignment_1ElementType() {
+		return Group_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_NameIDTerminalRuleCall_1_0ElementType() {
+		return Group_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_Group_2ElementType() {
+		return Group_Group_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_LabelKeyword_2_0ElementType() {
+		return Group_LabelKeyword_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_LabelAssignment_2_1ElementType() {
+		return Group_LabelAssignment_2_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType() {
+		return Group_LabelSTRINGTerminalRuleCall_2_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_LeftCurlyBracketKeyword_3ElementType() {
+		return Group_LeftCurlyBracketKeyword_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_FieldsAssignment_4ElementType() {
+		return Group_FieldsAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_FieldsFieldParserRuleCall_4_0ElementType() {
+		return Group_FieldsFieldParserRuleCall_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getGroup_RightCurlyBracketKeyword_5ElementType() {
+		return Group_RightCurlyBracketKeyword_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPageElementType() {
+		return Page_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_GroupElementType() {
+		return Page_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_PageKeyword_0ElementType() {
+		return Page_PageKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_LeftCurlyBracketKeyword_1ElementType() {
+		return Page_LeftCurlyBracketKeyword_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_ChildsAssignment_2ElementType() {
+		return Page_ChildsAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_ChildsPageChildParserRuleCall_2_0ElementType() {
+		return Page_ChildsPageChildParserRuleCall_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPage_RightCurlyBracketKeyword_3ElementType() {
+		return Page_RightCurlyBracketKeyword_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPageChildElementType() {
+		return PageChild_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPageChild_AlternativesElementType() {
+		return PageChild_Alternatives_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPageChild_GroupParserRuleCall_0ElementType() {
+		return PageChild_GroupParserRuleCall_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getPageChild_FieldParserRuleCall_1ElementType() {
+		return PageChild_FieldParserRuleCall_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonElementType() {
+		return Button_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButton_ButtonSubmitParserRuleCallElementType() {
+		return Button_ButtonSubmitParserRuleCall_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmitElementType() {
+		return ButtonSubmit_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_GroupElementType() {
+		return ButtonSubmit_Group_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_SubmitButtonKeyword_0ElementType() {
+		return ButtonSubmit_SubmitButtonKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_NameAssignment_1ElementType() {
+		return ButtonSubmit_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_NameIDTerminalRuleCall_1_0ElementType() {
+		return ButtonSubmit_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_TextAssignment_2ElementType() {
+		return ButtonSubmit_TextAssignment_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_TextSTRINGTerminalRuleCall_2_0ElementType() {
+		return ButtonSubmit_TextSTRINGTerminalRuleCall_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_AutofocusAssignment_3ElementType() {
+		return ButtonSubmit_AutofocusAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_AutofocusAutofocusKeyword_3_0ElementType() {
+		return ButtonSubmit_AutofocusAutofocusKeyword_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_DisabledAssignment_4ElementType() {
+		return ButtonSubmit_DisabledAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_DisabledDisabledKeyword_4_0ElementType() {
+		return ButtonSubmit_DisabledDisabledKeyword_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_Group_5ElementType() {
+		return ButtonSubmit_Group_5_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_ValueKeyword_5_0ElementType() {
+		return ButtonSubmit_ValueKeyword_5_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_ValueAssignment_5_1ElementType() {
+		return ButtonSubmit_ValueAssignment_5_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0ElementType() {
+		return ButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0_ELEMENT_TYPE;
 	}
 
 }

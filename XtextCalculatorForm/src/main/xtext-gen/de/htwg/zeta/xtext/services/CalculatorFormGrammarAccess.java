@@ -6,6 +6,7 @@ package de.htwg.zeta.xtext.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -14,7 +15,6 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -23,36 +23,109 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Model");
-		private final Assignment cGreetingsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGreetingsGreetingParserRuleCall_0 = (RuleCall)cGreetingsAssignment.eContents().get(0);
+		private final Assignment cFormElementsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFormElementsFormElementParserRuleCall_0 = (RuleCall)cFormElementsAssignment.eContents().get(0);
 		
 		//Model:
-		//	greetings+=Greeting*;
+		//	formElements+=FormElement*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment() { return cGreetingsAssignment; }
+		//formElements+=FormElement*
+		public Assignment getFormElementsAssignment() { return cFormElementsAssignment; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_0() { return cGreetingsGreetingParserRuleCall_0; }
+		//FormElement
+		public RuleCall getFormElementsFormElementParserRuleCall_0() { return cFormElementsFormElementParserRuleCall_0; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Greeting");
+	public class FormElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FormElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFieldParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cGroupParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cPageParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//FormElement:
+		//	Field | Group | Page;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Field | Group | Page
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Field
+		public RuleCall getFieldParserRuleCall_0() { return cFieldParserRuleCall_0; }
+		
+		//Group
+		public RuleCall getGroupParserRuleCall_1() { return cGroupParserRuleCall_1; }
+		
+		//Page
+		public RuleCall getPageParserRuleCall_2() { return cPageParserRuleCall_2; }
+	}
+	public class FieldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Field");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFieldInputParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFieldSelectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cFieldChoiceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cButtonParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		//Field:
+		//	FieldInput | FieldSelect | FieldChoice | Button;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//FieldInput | FieldSelect | FieldChoice | Button
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//FieldInput
+		public RuleCall getFieldInputParserRuleCall_0() { return cFieldInputParserRuleCall_0; }
+		
+		//FieldSelect
+		public RuleCall getFieldSelectParserRuleCall_1() { return cFieldSelectParserRuleCall_1; }
+		
+		//FieldChoice
+		public RuleCall getFieldChoiceParserRuleCall_2() { return cFieldChoiceParserRuleCall_2; }
+		
+		//Button
+		public RuleCall getButtonParserRuleCall_3() { return cButtonParserRuleCall_3; }
+	}
+	public class FieldInputElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldInput");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAutofocusAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cAutofocusAutofocusKeyword_2_0 = (Keyword)cAutofocusAssignment_2.eContents().get(0);
+		private final Assignment cDisabledAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cDisabledDisabledKeyword_3_0 = (Keyword)cDisabledAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFormKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cFormAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cFormSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cFormAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLabelKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLabelAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cLabelAssignment_5_1.eContents().get(0);
+		private final Assignment cNotdisplayedAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final Keyword cNotdisplayedNotdisplayedKeyword_6_0 = (Keyword)cNotdisplayedAssignment_6.eContents().get(0);
+		private final Assignment cReadonlyAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final Keyword cReadonlyReadonlyKeyword_7_0 = (Keyword)cReadonlyAssignment_7.eContents().get(0);
+		private final Assignment cRequiredAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final Keyword cRequiredRequiredKeyword_8_0 = (Keyword)cRequiredAssignment_8.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cValueKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cValueAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_9_1_0 = (RuleCall)cValueAssignment_9_1.eContents().get(0);
 		
-		//Greeting:
-		//	'Hello' name=ID '!';
+		//FieldInput:
+		//	'field' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+		//	notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value' value=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' name=ID '!'
+		//'field' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+		//notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value' value=STRING)?
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//'field'
+		public Keyword getFieldKeyword_0() { return cFieldKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -60,25 +133,801 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//autofocus?='autofocus'?
+		public Assignment getAutofocusAssignment_2() { return cAutofocusAssignment_2; }
+		
+		//'autofocus'
+		public Keyword getAutofocusAutofocusKeyword_2_0() { return cAutofocusAutofocusKeyword_2_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_3() { return cDisabledAssignment_3; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_3_0() { return cDisabledDisabledKeyword_3_0; }
+		
+		//('form' form=STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'form'
+		public Keyword getFormKeyword_4_0() { return cFormKeyword_4_0; }
+		
+		//form=STRING
+		public Assignment getFormAssignment_4_1() { return cFormAssignment_4_1; }
+		
+		//STRING
+		public RuleCall getFormSTRINGTerminalRuleCall_4_1_0() { return cFormSTRINGTerminalRuleCall_4_1_0; }
+		
+		//('label' label=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'label'
+		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_5_1() { return cLabelAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
+		
+		//notdisplayed?='notdisplayed'?
+		public Assignment getNotdisplayedAssignment_6() { return cNotdisplayedAssignment_6; }
+		
+		//'notdisplayed'
+		public Keyword getNotdisplayedNotdisplayedKeyword_6_0() { return cNotdisplayedNotdisplayedKeyword_6_0; }
+		
+		//readonly?='readonly'?
+		public Assignment getReadonlyAssignment_7() { return cReadonlyAssignment_7; }
+		
+		//'readonly'
+		public Keyword getReadonlyReadonlyKeyword_7_0() { return cReadonlyReadonlyKeyword_7_0; }
+		
+		//required?='required'?
+		public Assignment getRequiredAssignment_8() { return cRequiredAssignment_8; }
+		
+		//'required'
+		public Keyword getRequiredRequiredKeyword_8_0() { return cRequiredRequiredKeyword_8_0; }
+		
+		//('value' value=STRING)?
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//'value'
+		public Keyword getValueKeyword_9_0() { return cValueKeyword_9_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_9_1() { return cValueAssignment_9_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_9_1_0() { return cValueSTRINGTerminalRuleCall_9_1_0; }
+	}
+	public class FieldSelectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldSelect");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDropdownKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cAutofocusAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cAutofocusAutofocusKeyword_2_0 = (Keyword)cAutofocusAssignment_2.eContents().get(0);
+		private final Assignment cDisabledAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cDisabledDisabledKeyword_3_0 = (Keyword)cDisabledAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFormKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cFormAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cFormSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cFormAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLabelKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cLabelAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cLabelAssignment_5_1.eContents().get(0);
+		private final Assignment cMultipleAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final Keyword cMultipleMultipleKeyword_6_0 = (Keyword)cMultipleAssignment_6.eContents().get(0);
+		private final Assignment cRequiredAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final Keyword cRequiredRequiredKeyword_7_0 = (Keyword)cRequiredAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cSizeKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cSizeAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cSizeINTTerminalRuleCall_8_1_0 = (RuleCall)cSizeAssignment_8_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cChildsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cChildsFieldSelectChildParserRuleCall_10_0 = (RuleCall)cChildsAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		
+		//FieldSelect:
+		//	'dropdown' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+		//	multiple?='multiple'? required?='required'? ('size' size=INT)? '{' childs+=FieldSelectChild* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'dropdown' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+		//multiple?='multiple'? required?='required'? ('size' size=INT)? '{' childs+=FieldSelectChild* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'dropdown'
+		public Keyword getDropdownKeyword_0() { return cDropdownKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//autofocus?='autofocus'?
+		public Assignment getAutofocusAssignment_2() { return cAutofocusAssignment_2; }
+		
+		//'autofocus'
+		public Keyword getAutofocusAutofocusKeyword_2_0() { return cAutofocusAutofocusKeyword_2_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_3() { return cDisabledAssignment_3; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_3_0() { return cDisabledDisabledKeyword_3_0; }
+		
+		//('form' form=STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'form'
+		public Keyword getFormKeyword_4_0() { return cFormKeyword_4_0; }
+		
+		//form=STRING
+		public Assignment getFormAssignment_4_1() { return cFormAssignment_4_1; }
+		
+		//STRING
+		public RuleCall getFormSTRINGTerminalRuleCall_4_1_0() { return cFormSTRINGTerminalRuleCall_4_1_0; }
+		
+		//('label' label=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'label'
+		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_5_1() { return cLabelAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
+		
+		//multiple?='multiple'?
+		public Assignment getMultipleAssignment_6() { return cMultipleAssignment_6; }
+		
+		//'multiple'
+		public Keyword getMultipleMultipleKeyword_6_0() { return cMultipleMultipleKeyword_6_0; }
+		
+		//required?='required'?
+		public Assignment getRequiredAssignment_7() { return cRequiredAssignment_7; }
+		
+		//'required'
+		public Keyword getRequiredRequiredKeyword_7_0() { return cRequiredRequiredKeyword_7_0; }
+		
+		//('size' size=INT)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'size'
+		public Keyword getSizeKeyword_8_0() { return cSizeKeyword_8_0; }
+		
+		//size=INT
+		public Assignment getSizeAssignment_8_1() { return cSizeAssignment_8_1; }
+		
+		//INT
+		public RuleCall getSizeINTTerminalRuleCall_8_1_0() { return cSizeINTTerminalRuleCall_8_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		
+		//childs+=FieldSelectChild*
+		public Assignment getChildsAssignment_10() { return cChildsAssignment_10; }
+		
+		//FieldSelectChild
+		public RuleCall getChildsFieldSelectChildParserRuleCall_10_0() { return cChildsFieldSelectChildParserRuleCall_10_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+	}
+	public class FieldSelectChildElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldSelectChild");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFieldOptionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFieldOptionGroupParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//FieldSelectChild:
+		//	FieldOption | FieldOptionGroup;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//FieldOption | FieldOptionGroup
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//FieldOption
+		public RuleCall getFieldOptionParserRuleCall_0() { return cFieldOptionParserRuleCall_0; }
+		
+		//FieldOptionGroup
+		public RuleCall getFieldOptionGroupParserRuleCall_1() { return cFieldOptionGroupParserRuleCall_1; }
+	}
+	public class FieldOptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldOption");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
+		private final Assignment cDisabledAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cDisabledDisabledKeyword_2_0 = (Keyword)cDisabledAssignment_2.eContents().get(0);
+		private final Assignment cSelectedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cSelectedSelectedKeyword_3_0 = (Keyword)cSelectedAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTextKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTextAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cTextAssignment_4_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cValueKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cValueAssignment_5_1.eContents().get(0);
+		
+		//FieldOption:
+		//	'option' text=STRING disabled?='disabled'? selected?='selected'? ('text' text=STRING)? ('value' value=STRING)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'option' text=STRING disabled?='disabled'? selected?='selected'? ('text' text=STRING)? ('value' value=STRING)?
+		public Group getGroup() { return cGroup; }
+		
+		//'option'
+		public Keyword getOptionKeyword_0() { return cOptionKeyword_0; }
+		
+		//text=STRING
+		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_1_0() { return cTextSTRINGTerminalRuleCall_1_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_2() { return cDisabledAssignment_2; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_2_0() { return cDisabledDisabledKeyword_2_0; }
+		
+		//selected?='selected'?
+		public Assignment getSelectedAssignment_3() { return cSelectedAssignment_3; }
+		
+		//'selected'
+		public Keyword getSelectedSelectedKeyword_3_0() { return cSelectedSelectedKeyword_3_0; }
+		
+		//('text' text=STRING)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'text'
+		public Keyword getTextKeyword_4_0() { return cTextKeyword_4_0; }
+		
+		//text=STRING
+		public Assignment getTextAssignment_4_1() { return cTextAssignment_4_1; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_4_1_0() { return cTextSTRINGTerminalRuleCall_4_1_0; }
+		
+		//('value' value=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'value'
+		public Keyword getValueKeyword_5_0() { return cValueKeyword_5_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_5_1() { return cValueAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_5_1_0() { return cValueSTRINGTerminalRuleCall_5_1_0; }
+	}
+	public class FieldOptionGroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldOptionGroup");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOptionGroupKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cDisabledAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cDisabledDisabledKeyword_1_0 = (Keyword)cDisabledAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLabelKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cLabelAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cLabelAssignment_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cOptionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cOptionsFieldOptionParserRuleCall_4_0 = (RuleCall)cOptionsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//FieldOptionGroup:
+		//	'option-group' disabled?='disabled'? ('label' label=STRING)? '{' options+=FieldOption* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'option-group' disabled?='disabled'? ('label' label=STRING)? '{' options+=FieldOption* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'option-group'
+		public Keyword getOptionGroupKeyword_0() { return cOptionGroupKeyword_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_1() { return cDisabledAssignment_1; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_1_0() { return cDisabledDisabledKeyword_1_0; }
+		
+		//('label' label=STRING)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'label'
+		public Keyword getLabelKeyword_2_0() { return cLabelKeyword_2_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_2_1() { return cLabelAssignment_2_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_2_1_0() { return cLabelSTRINGTerminalRuleCall_2_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//options+=FieldOption*
+		public Assignment getOptionsAssignment_4() { return cOptionsAssignment_4; }
+		
+		//FieldOption
+		public RuleCall getOptionsFieldOptionParserRuleCall_4_0() { return cOptionsFieldOptionParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class FieldChoiceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldChoice");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cChoiceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cAutofocusAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cAutofocusAutofocusKeyword_2_0 = (Keyword)cAutofocusAssignment_2.eContents().get(0);
+		private final Assignment cCheckedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cCheckedCheckedKeyword_3_0 = (Keyword)cCheckedAssignment_3.eContents().get(0);
+		private final Assignment cDisabledAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cDisabledDisabledKeyword_4_0 = (Keyword)cDisabledAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cFormKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cFormAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cFormSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cFormAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLabelKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cLabelAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cLabelAssignment_6_1.eContents().get(0);
+		private final Assignment cMultipleAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final Keyword cMultipleMultipleKeyword_7_0 = (Keyword)cMultipleAssignment_7.eContents().get(0);
+		private final Assignment cNotdisplayedAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final Keyword cNotdisplayedNotdisplayedKeyword_8_0 = (Keyword)cNotdisplayedAssignment_8.eContents().get(0);
+		private final Assignment cReadonlyAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final Keyword cReadonlyReadonlyKeyword_9_0 = (Keyword)cReadonlyAssignment_9.eContents().get(0);
+		private final Assignment cRequiredAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final Keyword cRequiredRequiredKeyword_10_0 = (Keyword)cRequiredAssignment_10.eContents().get(0);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cValueKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Assignment cValueAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_11_1_0 = (RuleCall)cValueAssignment_11_1.eContents().get(0);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Keyword cLeftCurlyBracketKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Assignment cOptionsAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
+		private final RuleCall cOptionsFieldChoiceOptionParserRuleCall_12_1_0 = (RuleCall)cOptionsAssignment_12_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12_2 = (Keyword)cGroup_12.eContents().get(2);
+		
+		//FieldChoice:
+		//	'choice' name=ID autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? ('form' form=STRING)? ('label'
+		//	label=STRING)? multiple?='multiple'? notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'?
+		//	('value' value=STRING)? ('{' options+=FieldChoiceOption* '}')?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'choice' name=ID autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? ('form' form=STRING)? ('label'
+		//label=STRING)? multiple?='multiple'? notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value'
+		//value=STRING)? ('{' options+=FieldChoiceOption* '}')?
+		public Group getGroup() { return cGroup; }
+		
+		//'choice'
+		public Keyword getChoiceKeyword_0() { return cChoiceKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//autofocus?='autofocus'?
+		public Assignment getAutofocusAssignment_2() { return cAutofocusAssignment_2; }
+		
+		//'autofocus'
+		public Keyword getAutofocusAutofocusKeyword_2_0() { return cAutofocusAutofocusKeyword_2_0; }
+		
+		//checked?='checked'?
+		public Assignment getCheckedAssignment_3() { return cCheckedAssignment_3; }
+		
+		//'checked'
+		public Keyword getCheckedCheckedKeyword_3_0() { return cCheckedCheckedKeyword_3_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_4() { return cDisabledAssignment_4; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_4_0() { return cDisabledDisabledKeyword_4_0; }
+		
+		//('form' form=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'form'
+		public Keyword getFormKeyword_5_0() { return cFormKeyword_5_0; }
+		
+		//form=STRING
+		public Assignment getFormAssignment_5_1() { return cFormAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getFormSTRINGTerminalRuleCall_5_1_0() { return cFormSTRINGTerminalRuleCall_5_1_0; }
+		
+		//('label' label=STRING)?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'label'
+		public Keyword getLabelKeyword_6_0() { return cLabelKeyword_6_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_6_1() { return cLabelAssignment_6_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_6_1_0() { return cLabelSTRINGTerminalRuleCall_6_1_0; }
+		
+		//multiple?='multiple'?
+		public Assignment getMultipleAssignment_7() { return cMultipleAssignment_7; }
+		
+		//'multiple'
+		public Keyword getMultipleMultipleKeyword_7_0() { return cMultipleMultipleKeyword_7_0; }
+		
+		//notdisplayed?='notdisplayed'?
+		public Assignment getNotdisplayedAssignment_8() { return cNotdisplayedAssignment_8; }
+		
+		//'notdisplayed'
+		public Keyword getNotdisplayedNotdisplayedKeyword_8_0() { return cNotdisplayedNotdisplayedKeyword_8_0; }
+		
+		//readonly?='readonly'?
+		public Assignment getReadonlyAssignment_9() { return cReadonlyAssignment_9; }
+		
+		//'readonly'
+		public Keyword getReadonlyReadonlyKeyword_9_0() { return cReadonlyReadonlyKeyword_9_0; }
+		
+		//required?='required'?
+		public Assignment getRequiredAssignment_10() { return cRequiredAssignment_10; }
+		
+		//'required'
+		public Keyword getRequiredRequiredKeyword_10_0() { return cRequiredRequiredKeyword_10_0; }
+		
+		//('value' value=STRING)?
+		public Group getGroup_11() { return cGroup_11; }
+		
+		//'value'
+		public Keyword getValueKeyword_11_0() { return cValueKeyword_11_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_11_1() { return cValueAssignment_11_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_11_1_0() { return cValueSTRINGTerminalRuleCall_11_1_0; }
+		
+		//('{' options+=FieldChoiceOption* '}')?
+		public Group getGroup_12() { return cGroup_12; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_12_0() { return cLeftCurlyBracketKeyword_12_0; }
+		
+		//options+=FieldChoiceOption*
+		public Assignment getOptionsAssignment_12_1() { return cOptionsAssignment_12_1; }
+		
+		//FieldChoiceOption
+		public RuleCall getOptionsFieldChoiceOptionParserRuleCall_12_1_0() { return cOptionsFieldChoiceOptionParserRuleCall_12_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_12_2() { return cRightCurlyBracketKeyword_12_2; }
+	}
+	public class FieldChoiceOptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FieldChoiceOption");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOptionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cLabelAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_1_0 = (RuleCall)cLabelAssignment_1.eContents().get(0);
+		private final Assignment cAutofocusAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cAutofocusAutofocusKeyword_2_0 = (Keyword)cAutofocusAssignment_2.eContents().get(0);
+		private final Assignment cCheckedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cCheckedCheckedKeyword_3_0 = (Keyword)cCheckedAssignment_3.eContents().get(0);
+		private final Assignment cDisabledAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cDisabledDisabledKeyword_4_0 = (Keyword)cDisabledAssignment_4.eContents().get(0);
+		private final Assignment cReadonlyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final Keyword cReadonlyReadonlyKeyword_5_0 = (Keyword)cReadonlyAssignment_5.eContents().get(0);
+		private final Assignment cRequiredAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final Keyword cRequiredRequiredKeyword_6_0 = (Keyword)cRequiredAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cValueKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cValueAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cValueAssignment_7_1.eContents().get(0);
+		
+		//FieldChoiceOption:
+		//	'option' label=STRING autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? readonly?='readonly'?
+		//	required?='required'? ('value' value=STRING)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'option' label=STRING autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? readonly?='readonly'?
+		//required?='required'? ('value' value=STRING)?
+		public Group getGroup() { return cGroup; }
+		
+		//'option'
+		public Keyword getOptionKeyword_0() { return cOptionKeyword_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_1() { return cLabelAssignment_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_1_0() { return cLabelSTRINGTerminalRuleCall_1_0; }
+		
+		//autofocus?='autofocus'?
+		public Assignment getAutofocusAssignment_2() { return cAutofocusAssignment_2; }
+		
+		//'autofocus'
+		public Keyword getAutofocusAutofocusKeyword_2_0() { return cAutofocusAutofocusKeyword_2_0; }
+		
+		//checked?='checked'?
+		public Assignment getCheckedAssignment_3() { return cCheckedAssignment_3; }
+		
+		//'checked'
+		public Keyword getCheckedCheckedKeyword_3_0() { return cCheckedCheckedKeyword_3_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_4() { return cDisabledAssignment_4; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_4_0() { return cDisabledDisabledKeyword_4_0; }
+		
+		//readonly?='readonly'?
+		public Assignment getReadonlyAssignment_5() { return cReadonlyAssignment_5; }
+		
+		//'readonly'
+		public Keyword getReadonlyReadonlyKeyword_5_0() { return cReadonlyReadonlyKeyword_5_0; }
+		
+		//required?='required'?
+		public Assignment getRequiredAssignment_6() { return cRequiredAssignment_6; }
+		
+		//'required'
+		public Keyword getRequiredRequiredKeyword_6_0() { return cRequiredRequiredKeyword_6_0; }
+		
+		//('value' value=STRING)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'value'
+		public Keyword getValueKeyword_7_0() { return cValueKeyword_7_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_7_1() { return cValueAssignment_7_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_7_1_0() { return cValueSTRINGTerminalRuleCall_7_1_0; }
+	}
+	public class GroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Group");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGroupKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLabelKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cLabelAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cLabelAssignment_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFieldsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFieldsFieldParserRuleCall_4_0 = (RuleCall)cFieldsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Group:
+		//	'group' name=ID ('label' label=STRING)? '{' fields+=Field* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'group' name=ID ('label' label=STRING)? '{' fields+=Field* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'group'
+		public Keyword getGroupKeyword_0() { return cGroupKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//('label' label=STRING)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'label'
+		public Keyword getLabelKeyword_2_0() { return cLabelKeyword_2_0; }
+		
+		//label=STRING
+		public Assignment getLabelAssignment_2_1() { return cLabelAssignment_2_1; }
+		
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_2_1_0() { return cLabelSTRINGTerminalRuleCall_2_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//fields+=Field*
+		public Assignment getFieldsAssignment_4() { return cFieldsAssignment_4; }
+		
+		//Field
+		public RuleCall getFieldsFieldParserRuleCall_4_0() { return cFieldsFieldParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class PageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Page");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cChildsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cChildsPageChildParserRuleCall_2_0 = (RuleCall)cChildsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Page:
+		//	'page' '{' childs+=PageChild* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'page' '{' childs+=PageChild* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'page'
+		public Keyword getPageKeyword_0() { return cPageKeyword_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//childs+=PageChild*
+		public Assignment getChildsAssignment_2() { return cChildsAssignment_2; }
+		
+		//PageChild
+		public RuleCall getChildsPageChildParserRuleCall_2_0() { return cChildsPageChildParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class PageChildElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.PageChild");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cGroupParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFieldParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//PageChild:
+		//	Group | Field;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Group | Field
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Group
+		public RuleCall getGroupParserRuleCall_0() { return cGroupParserRuleCall_0; }
+		
+		//Field
+		public RuleCall getFieldParserRuleCall_1() { return cFieldParserRuleCall_1; }
+	}
+	public class ButtonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Button");
+		private final RuleCall cButtonSubmitParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Button:
+		//	ButtonSubmit;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ButtonSubmit
+		public RuleCall getButtonSubmitParserRuleCall() { return cButtonSubmitParserRuleCall; }
+	}
+	public class ButtonSubmitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ButtonSubmit");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSubmitButtonKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cTextAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTextSTRINGTerminalRuleCall_2_0 = (RuleCall)cTextAssignment_2.eContents().get(0);
+		private final Assignment cAutofocusAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cAutofocusAutofocusKeyword_3_0 = (Keyword)cAutofocusAssignment_3.eContents().get(0);
+		private final Assignment cDisabledAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cDisabledDisabledKeyword_4_0 = (Keyword)cDisabledAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cValueKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cValueAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cValueAssignment_5_1.eContents().get(0);
+		
+		//ButtonSubmit:
+		//	'submit-button' name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? ('value' value=STRING)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'submit-button' name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? ('value' value=STRING)?
+		public Group getGroup() { return cGroup; }
+		
+		//'submit-button'
+		public Keyword getSubmitButtonKeyword_0() { return cSubmitButtonKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//text=STRING
+		public Assignment getTextAssignment_2() { return cTextAssignment_2; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_2_0() { return cTextSTRINGTerminalRuleCall_2_0; }
+		
+		//autofocus?='autofocus'?
+		public Assignment getAutofocusAssignment_3() { return cAutofocusAssignment_3; }
+		
+		//'autofocus'
+		public Keyword getAutofocusAutofocusKeyword_3_0() { return cAutofocusAutofocusKeyword_3_0; }
+		
+		//disabled?='disabled'?
+		public Assignment getDisabledAssignment_4() { return cDisabledAssignment_4; }
+		
+		//'disabled'
+		public Keyword getDisabledDisabledKeyword_4_0() { return cDisabledDisabledKeyword_4_0; }
+		
+		//('value' value=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'value'
+		public Keyword getValueKeyword_5_0() { return cValueKeyword_5_0; }
+		
+		//value=STRING
+		public Assignment getValueAssignment_5_1() { return cValueAssignment_5_1; }
+		
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_5_1_0() { return cValueSTRINGTerminalRuleCall_5_1_0; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final GreetingElements pGreeting;
+	private final FormElementElements pFormElement;
+	private final FieldElements pField;
+	private final FieldInputElements pFieldInput;
+	private final FieldSelectElements pFieldSelect;
+	private final FieldSelectChildElements pFieldSelectChild;
+	private final FieldOptionElements pFieldOption;
+	private final FieldOptionGroupElements pFieldOptionGroup;
+	private final FieldChoiceElements pFieldChoice;
+	private final FieldChoiceOptionElements pFieldChoiceOption;
+	private final GroupElements pGroup;
+	private final PageElements pPage;
+	private final PageChildElements pPageChild;
+	private final ButtonElements pButton;
+	private final ButtonSubmitElements pButtonSubmit;
+	private final TerminalRule tID;
+	private final TerminalRule tINT;
+	private final TerminalRule tSTRING;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
-	
-	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
-	public CalculatorFormGrammarAccess(GrammarProvider grammarProvider,
-			TerminalsGrammarAccess gaTerminals) {
+	public CalculatorFormGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pGreeting = new GreetingElements();
+		this.pFormElement = new FormElementElements();
+		this.pField = new FieldElements();
+		this.pFieldInput = new FieldInputElements();
+		this.pFieldSelect = new FieldSelectElements();
+		this.pFieldSelectChild = new FieldSelectChildElements();
+		this.pFieldOption = new FieldOptionElements();
+		this.pFieldOptionGroup = new FieldOptionGroupElements();
+		this.pFieldChoice = new FieldChoiceElements();
+		this.pFieldChoiceOption = new FieldChoiceOptionElements();
+		this.pGroup = new GroupElements();
+		this.pPage = new PageElements();
+		this.pPageChild = new PageChildElements();
+		this.pButton = new ButtonElements();
+		this.pButtonSubmit = new ButtonSubmitElements();
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.INT");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.STRING");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ANY_OTHER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -102,14 +951,10 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
-	
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//Model:
-	//	greetings+=Greeting*;
+	//	formElements+=FormElement*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -118,56 +963,191 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Greeting:
-	//	'Hello' name=ID '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//FormElement:
+	//	Field | Group | Page;
+	public FormElementElements getFormElementAccess() {
+		return pFormElement;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getFormElementRule() {
+		return getFormElementAccess().getRule();
+	}
+	
+	//Field:
+	//	FieldInput | FieldSelect | FieldChoice | Button;
+	public FieldElements getFieldAccess() {
+		return pField;
+	}
+	
+	public ParserRule getFieldRule() {
+		return getFieldAccess().getRule();
+	}
+	
+	//FieldInput:
+	//	'field' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+	//	notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value' value=STRING)?;
+	public FieldInputElements getFieldInputAccess() {
+		return pFieldInput;
+	}
+	
+	public ParserRule getFieldInputRule() {
+		return getFieldInputAccess().getRule();
+	}
+	
+	//FieldSelect:
+	//	'dropdown' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)?
+	//	multiple?='multiple'? required?='required'? ('size' size=INT)? '{' childs+=FieldSelectChild* '}';
+	public FieldSelectElements getFieldSelectAccess() {
+		return pFieldSelect;
+	}
+	
+	public ParserRule getFieldSelectRule() {
+		return getFieldSelectAccess().getRule();
+	}
+	
+	//FieldSelectChild:
+	//	FieldOption | FieldOptionGroup;
+	public FieldSelectChildElements getFieldSelectChildAccess() {
+		return pFieldSelectChild;
+	}
+	
+	public ParserRule getFieldSelectChildRule() {
+		return getFieldSelectChildAccess().getRule();
+	}
+	
+	//FieldOption:
+	//	'option' text=STRING disabled?='disabled'? selected?='selected'? ('text' text=STRING)? ('value' value=STRING)?;
+	public FieldOptionElements getFieldOptionAccess() {
+		return pFieldOption;
+	}
+	
+	public ParserRule getFieldOptionRule() {
+		return getFieldOptionAccess().getRule();
+	}
+	
+	//FieldOptionGroup:
+	//	'option-group' disabled?='disabled'? ('label' label=STRING)? '{' options+=FieldOption* '}';
+	public FieldOptionGroupElements getFieldOptionGroupAccess() {
+		return pFieldOptionGroup;
+	}
+	
+	public ParserRule getFieldOptionGroupRule() {
+		return getFieldOptionGroupAccess().getRule();
+	}
+	
+	//FieldChoice:
+	//	'choice' name=ID autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? ('form' form=STRING)? ('label'
+	//	label=STRING)? multiple?='multiple'? notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'?
+	//	('value' value=STRING)? ('{' options+=FieldChoiceOption* '}')?;
+	public FieldChoiceElements getFieldChoiceAccess() {
+		return pFieldChoice;
+	}
+	
+	public ParserRule getFieldChoiceRule() {
+		return getFieldChoiceAccess().getRule();
+	}
+	
+	//FieldChoiceOption:
+	//	'option' label=STRING autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? readonly?='readonly'?
+	//	required?='required'? ('value' value=STRING)?;
+	public FieldChoiceOptionElements getFieldChoiceOptionAccess() {
+		return pFieldChoiceOption;
+	}
+	
+	public ParserRule getFieldChoiceOptionRule() {
+		return getFieldChoiceOptionAccess().getRule();
+	}
+	
+	//Group:
+	//	'group' name=ID ('label' label=STRING)? '{' fields+=Field* '}';
+	public GroupElements getGroupAccess() {
+		return pGroup;
+	}
+	
+	public ParserRule getGroupRule() {
+		return getGroupAccess().getRule();
+	}
+	
+	//Page:
+	//	'page' '{' childs+=PageChild* '}';
+	public PageElements getPageAccess() {
+		return pPage;
+	}
+	
+	public ParserRule getPageRule() {
+		return getPageAccess().getRule();
+	}
+	
+	//PageChild:
+	//	Group | Field;
+	public PageChildElements getPageChildAccess() {
+		return pPageChild;
+	}
+	
+	public ParserRule getPageChildRule() {
+		return getPageChildAccess().getRule();
+	}
+	
+	//Button:
+	//	ButtonSubmit;
+	public ButtonElements getButtonAccess() {
+		return pButton;
+	}
+	
+	public ParserRule getButtonRule() {
+		return getButtonAccess().getRule();
+	}
+	
+	//ButtonSubmit:
+	//	'submit-button' name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? ('value' value=STRING)?;
+	public ButtonSubmitElements getButtonSubmitAccess() {
+		return pButtonSubmit;
+	}
+	
+	public ParserRule getButtonSubmitRule() {
+		return getButtonSubmitAccess().getRule();
 	}
 	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return tID;
 	}
 	
-	//terminal INT returns ecore::EInt:
+	//terminal INT returns ecore::EIntegerObject:
 	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
+		return tINT;
 	}
 	
 	//terminal STRING:
 	//	'"' ('\\' . | !('\\' | '"'))* '"' |
 	//	"'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
+		return tSTRING;
 	}
 	
 	//terminal ML_COMMENT:
 	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
+		return tML_COMMENT;
 	}
 	
 	//terminal SL_COMMENT:
 	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
+		return tSL_COMMENT;
 	}
 	
 	//terminal WS:
 	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return tWS;
 	}
 	
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return tANY_OTHER;
 	}
 }

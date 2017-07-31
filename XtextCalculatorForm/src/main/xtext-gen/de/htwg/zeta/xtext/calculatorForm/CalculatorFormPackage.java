@@ -68,13 +68,13 @@ public interface CalculatorFormPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Form Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__FORM_ELEMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +86,52 @@ public interface CalculatorFormPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl <em>Form Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.GreetingImpl
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getGreeting()
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFormElement()
    * @generated
    */
-  int GREETING = 1;
+  int FORM_ELEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Form Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldImpl <em>Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getField()
+   * @generated
+   */
+  int FIELD = 2;
+
+  /**
+   * The number of structural features of the '<em>Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_FEATURE_COUNT = FORM_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldInputImpl <em>Field Input</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldInputImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldInput()
+   * @generated
+   */
+  int FIELD_INPUT = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +140,702 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int FIELD_INPUT__NAME = FIELD_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Autofocus</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int FIELD_INPUT__AUTOFOCUS = FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__DISABLED = FIELD_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Form</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__FORM = FIELD_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__LABEL = FIELD_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Notdisplayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__NOTDISPLAYED = FIELD_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Readonly</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__READONLY = FIELD_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__REQUIRED = FIELD_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT__VALUE = FIELD_FEATURE_COUNT + 8;
+
+  /**
+   * The number of structural features of the '<em>Field Input</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_INPUT_FEATURE_COUNT = FIELD_FEATURE_COUNT + 9;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectImpl <em>Field Select</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelect()
+   * @generated
+   */
+  int FIELD_SELECT = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__NAME = FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Autofocus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__AUTOFOCUS = FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__DISABLED = FIELD_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Form</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__FORM = FIELD_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__LABEL = FIELD_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Multiple</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__MULTIPLE = FIELD_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__REQUIRED = FIELD_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__SIZE = FIELD_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Childs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT__CHILDS = FIELD_FEATURE_COUNT + 8;
+
+  /**
+   * The number of structural features of the '<em>Field Select</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT_FEATURE_COUNT = FIELD_FEATURE_COUNT + 9;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectChildImpl <em>Field Select Child</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectChildImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelectChild()
+   * @generated
+   */
+  int FIELD_SELECT_CHILD = 5;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT_CHILD__DISABLED = 0;
+
+  /**
+   * The number of structural features of the '<em>Field Select Child</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_SELECT_CHILD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionImpl <em>Field Option</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOption()
+   * @generated
+   */
+  int FIELD_OPTION = 6;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION__DISABLED = FIELD_SELECT_CHILD__DISABLED;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION__TEXT = FIELD_SELECT_CHILD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Selected</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION__SELECTED = FIELD_SELECT_CHILD_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION__VALUE = FIELD_SELECT_CHILD_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Field Option</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION_FEATURE_COUNT = FIELD_SELECT_CHILD_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionGroupImpl <em>Field Option Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionGroupImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOptionGroup()
+   * @generated
+   */
+  int FIELD_OPTION_GROUP = 7;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION_GROUP__DISABLED = FIELD_SELECT_CHILD__DISABLED;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION_GROUP__LABEL = FIELD_SELECT_CHILD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Options</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION_GROUP__OPTIONS = FIELD_SELECT_CHILD_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Field Option Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_OPTION_GROUP_FEATURE_COUNT = FIELD_SELECT_CHILD_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceImpl <em>Field Choice</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoice()
+   * @generated
+   */
+  int FIELD_CHOICE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__NAME = FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Autofocus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__AUTOFOCUS = FIELD_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Checked</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__CHECKED = FIELD_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__DISABLED = FIELD_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Form</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__FORM = FIELD_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__LABEL = FIELD_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multiple</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__MULTIPLE = FIELD_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Notdisplayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__NOTDISPLAYED = FIELD_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Readonly</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__READONLY = FIELD_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__REQUIRED = FIELD_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__VALUE = FIELD_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Options</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE__OPTIONS = FIELD_FEATURE_COUNT + 11;
+
+  /**
+   * The number of structural features of the '<em>Field Choice</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_FEATURE_COUNT = FIELD_FEATURE_COUNT + 12;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceOptionImpl <em>Field Choice Option</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceOptionImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoiceOption()
+   * @generated
+   */
+  int FIELD_CHOICE_OPTION = 9;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__LABEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Autofocus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__AUTOFOCUS = 1;
+
+  /**
+   * The feature id for the '<em><b>Checked</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__CHECKED = 2;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__DISABLED = 3;
+
+  /**
+   * The feature id for the '<em><b>Readonly</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__READONLY = 4;
+
+  /**
+   * The feature id for the '<em><b>Required</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__REQUIRED = 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION__VALUE = 6;
+
+  /**
+   * The number of structural features of the '<em>Field Choice Option</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_CHOICE_OPTION_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.GroupImpl <em>Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.GroupImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getGroup()
+   * @generated
+   */
+  int GROUP = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__NAME = FORM_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__LABEL = FORM_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP__FIELDS = FORM_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GROUP_FEATURE_COUNT = FORM_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PageImpl <em>Page</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.PageImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPage()
+   * @generated
+   */
+  int PAGE = 11;
+
+  /**
+   * The feature id for the '<em><b>Childs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__CHILDS = FORM_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Page</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE_FEATURE_COUNT = FORM_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PageChildImpl <em>Page Child</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.PageChildImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPageChild()
+   * @generated
+   */
+  int PAGE_CHILD = 12;
+
+  /**
+   * The number of structural features of the '<em>Page Child</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE_CHILD_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ButtonImpl <em>Button</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.ButtonImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButton()
+   * @generated
+   */
+  int BUTTON = 13;
+
+  /**
+   * The number of structural features of the '<em>Button</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_FEATURE_COUNT = FIELD_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ButtonSubmitImpl <em>Button Submit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.ButtonSubmitImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButtonSubmit()
+   * @generated
+   */
+  int BUTTON_SUBMIT = 14;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT__NAME = BUTTON_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT__TEXT = BUTTON_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Autofocus</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT__AUTOFOCUS = BUTTON_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Disabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT__DISABLED = BUTTON_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT__VALUE = BUTTON_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Button Submit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_SUBMIT_FEATURE_COUNT = BUTTON_FEATURE_COUNT + 5;
 
 
   /**
@@ -125,36 +849,727 @@ public interface CalculatorFormPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Model#getFormElements <em>Form Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Form Elements</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Model#getFormElements()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_FormElements();
 
   /**
-   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FormElement <em>Form Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.Greeting
+   * @return the meta object for class '<em>Form Element</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FormElement
    * @generated
    */
-  EClass getGreeting();
+  EClass getFormElement();
 
   /**
-   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Field <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Field
+   * @generated
+   */
+  EClass getField();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput <em>Field Input</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Input</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput
+   * @generated
+   */
+  EClass getFieldInput();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.Greeting#getName()
-   * @see #getGreeting()
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#getName()
+   * @see #getFieldInput()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getFieldInput_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#isAutofocus <em>Autofocus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Autofocus</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#isAutofocus()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Autofocus();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#isDisabled()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Disabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#getForm <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Form</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#getForm()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Form();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#getLabel()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#isNotdisplayed <em>Notdisplayed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Notdisplayed</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#isNotdisplayed()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Notdisplayed();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#isReadonly <em>Readonly</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Readonly</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#isReadonly()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Readonly();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#isRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#isRequired()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Required();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput#getValue()
+   * @see #getFieldInput()
+   * @generated
+   */
+  EAttribute getFieldInput_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect <em>Field Select</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Select</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect
+   * @generated
+   */
+  EClass getFieldSelect();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#getName()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#isAutofocus <em>Autofocus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Autofocus</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#isAutofocus()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Autofocus();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#isDisabled()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Disabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#getForm <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Form</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#getForm()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Form();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#getLabel()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#isMultiple <em>Multiple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multiple</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#isMultiple()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Multiple();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#isRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#isRequired()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Required();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#getSize <em>Size</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Size</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#getSize()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EAttribute getFieldSelect_Size();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect#getChilds <em>Childs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Childs</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect#getChilds()
+   * @see #getFieldSelect()
+   * @generated
+   */
+  EReference getFieldSelect_Childs();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelectChild <em>Field Select Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Select Child</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelectChild
+   * @generated
+   */
+  EClass getFieldSelectChild();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelectChild#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelectChild#isDisabled()
+   * @see #getFieldSelectChild()
+   * @generated
+   */
+  EAttribute getFieldSelectChild_Disabled();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldOption <em>Field Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Option</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOption
+   * @generated
+   */
+  EClass getFieldOption();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldOption#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOption#getText()
+   * @see #getFieldOption()
+   * @generated
+   */
+  EAttribute getFieldOption_Text();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldOption#isSelected <em>Selected</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Selected</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOption#isSelected()
+   * @see #getFieldOption()
+   * @generated
+   */
+  EAttribute getFieldOption_Selected();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldOption#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOption#getValue()
+   * @see #getFieldOption()
+   * @generated
+   */
+  EAttribute getFieldOption_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup <em>Field Option Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Option Group</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup
+   * @generated
+   */
+  EClass getFieldOptionGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup#getLabel()
+   * @see #getFieldOptionGroup()
+   * @generated
+   */
+  EAttribute getFieldOptionGroup_Label();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup#getOptions <em>Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Options</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup#getOptions()
+   * @see #getFieldOptionGroup()
+   * @generated
+   */
+  EReference getFieldOptionGroup_Options();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice <em>Field Choice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Choice</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice
+   * @generated
+   */
+  EClass getFieldChoice();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#getName()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isAutofocus <em>Autofocus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Autofocus</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isAutofocus()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Autofocus();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isChecked <em>Checked</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Checked</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isChecked()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Checked();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isDisabled()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Disabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#getForm <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Form</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#getForm()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Form();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#getLabel()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isMultiple <em>Multiple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multiple</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isMultiple()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Multiple();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isNotdisplayed <em>Notdisplayed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Notdisplayed</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isNotdisplayed()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Notdisplayed();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isReadonly <em>Readonly</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Readonly</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isReadonly()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Readonly();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#isRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#isRequired()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Required();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#getValue()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EAttribute getFieldChoice_Value();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice#getOptions <em>Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Options</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice#getOptions()
+   * @see #getFieldChoice()
+   * @generated
+   */
+  EReference getFieldChoice_Options();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption <em>Field Choice Option</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Choice Option</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption
+   * @generated
+   */
+  EClass getFieldChoiceOption();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#getLabel()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Label();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isAutofocus <em>Autofocus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Autofocus</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isAutofocus()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Autofocus();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isChecked <em>Checked</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Checked</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isChecked()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Checked();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isDisabled()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Disabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isReadonly <em>Readonly</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Readonly</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isReadonly()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Readonly();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isRequired <em>Required</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Required</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#isRequired()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Required();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption#getValue()
+   * @see #getFieldChoiceOption()
+   * @generated
+   */
+  EAttribute getFieldChoiceOption_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Group</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Group
+   * @generated
+   */
+  EClass getGroup();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.Group#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Group#getName()
+   * @see #getGroup()
+   * @generated
+   */
+  EAttribute getGroup_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.Group#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Group#getLabel()
+   * @see #getGroup()
+   * @generated
+   */
+  EAttribute getGroup_Label();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Group#getFields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Group#getFields()
+   * @see #getGroup()
+   * @generated
+   */
+  EReference getGroup_Fields();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Page <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Page</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Page
+   * @generated
+   */
+  EClass getPage();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Page#getChilds <em>Childs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Childs</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Page#getChilds()
+   * @see #getPage()
+   * @generated
+   */
+  EReference getPage_Childs();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.PageChild <em>Page Child</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Page Child</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.PageChild
+   * @generated
+   */
+  EClass getPageChild();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Button</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Button
+   * @generated
+   */
+  EClass getButton();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit <em>Button Submit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Button Submit</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit
+   * @generated
+   */
+  EClass getButtonSubmit();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getName()
+   * @see #getButtonSubmit()
+   * @generated
+   */
+  EAttribute getButtonSubmit_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getText()
+   * @see #getButtonSubmit()
+   * @generated
+   */
+  EAttribute getButtonSubmit_Text();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#isAutofocus <em>Autofocus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Autofocus</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#isAutofocus()
+   * @see #getButtonSubmit()
+   * @generated
+   */
+  EAttribute getButtonSubmit_Autofocus();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#isDisabled <em>Disabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Disabled</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#isDisabled()
+   * @see #getButtonSubmit()
+   * @generated
+   */
+  EAttribute getButtonSubmit_Disabled();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit#getValue()
+   * @see #getButtonSubmit()
+   * @generated
+   */
+  EAttribute getButtonSubmit_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,22 +1605,42 @@ public interface CalculatorFormPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Form Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__FORM_ELEMENTS = eINSTANCE.getModel_FormElements();
 
     /**
-     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl <em>Form Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.GreetingImpl
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getGreeting()
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFormElement()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass FORM_ELEMENT = eINSTANCE.getFormElement();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldImpl <em>Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getField()
+     * @generated
+     */
+    EClass FIELD = eINSTANCE.getField();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldInputImpl <em>Field Input</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldInputImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldInput()
+     * @generated
+     */
+    EClass FIELD_INPUT = eINSTANCE.getFieldInput();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +1648,525 @@ public interface CalculatorFormPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute FIELD_INPUT__NAME = eINSTANCE.getFieldInput_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__AUTOFOCUS = eINSTANCE.getFieldInput_Autofocus();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__DISABLED = eINSTANCE.getFieldInput_Disabled();
+
+    /**
+     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__FORM = eINSTANCE.getFieldInput_Form();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__LABEL = eINSTANCE.getFieldInput_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Notdisplayed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__NOTDISPLAYED = eINSTANCE.getFieldInput_Notdisplayed();
+
+    /**
+     * The meta object literal for the '<em><b>Readonly</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__READONLY = eINSTANCE.getFieldInput_Readonly();
+
+    /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__REQUIRED = eINSTANCE.getFieldInput_Required();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_INPUT__VALUE = eINSTANCE.getFieldInput_Value();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectImpl <em>Field Select</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelect()
+     * @generated
+     */
+    EClass FIELD_SELECT = eINSTANCE.getFieldSelect();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__NAME = eINSTANCE.getFieldSelect_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__AUTOFOCUS = eINSTANCE.getFieldSelect_Autofocus();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__DISABLED = eINSTANCE.getFieldSelect_Disabled();
+
+    /**
+     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__FORM = eINSTANCE.getFieldSelect_Form();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__LABEL = eINSTANCE.getFieldSelect_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Multiple</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__MULTIPLE = eINSTANCE.getFieldSelect_Multiple();
+
+    /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__REQUIRED = eINSTANCE.getFieldSelect_Required();
+
+    /**
+     * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT__SIZE = eINSTANCE.getFieldSelect_Size();
+
+    /**
+     * The meta object literal for the '<em><b>Childs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_SELECT__CHILDS = eINSTANCE.getFieldSelect_Childs();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectChildImpl <em>Field Select Child</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldSelectChildImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelectChild()
+     * @generated
+     */
+    EClass FIELD_SELECT_CHILD = eINSTANCE.getFieldSelectChild();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_SELECT_CHILD__DISABLED = eINSTANCE.getFieldSelectChild_Disabled();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionImpl <em>Field Option</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOption()
+     * @generated
+     */
+    EClass FIELD_OPTION = eINSTANCE.getFieldOption();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_OPTION__TEXT = eINSTANCE.getFieldOption_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_OPTION__SELECTED = eINSTANCE.getFieldOption_Selected();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_OPTION__VALUE = eINSTANCE.getFieldOption_Value();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionGroupImpl <em>Field Option Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldOptionGroupImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOptionGroup()
+     * @generated
+     */
+    EClass FIELD_OPTION_GROUP = eINSTANCE.getFieldOptionGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_OPTION_GROUP__LABEL = eINSTANCE.getFieldOptionGroup_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_OPTION_GROUP__OPTIONS = eINSTANCE.getFieldOptionGroup_Options();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceImpl <em>Field Choice</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoice()
+     * @generated
+     */
+    EClass FIELD_CHOICE = eINSTANCE.getFieldChoice();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__NAME = eINSTANCE.getFieldChoice_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__AUTOFOCUS = eINSTANCE.getFieldChoice_Autofocus();
+
+    /**
+     * The meta object literal for the '<em><b>Checked</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__CHECKED = eINSTANCE.getFieldChoice_Checked();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__DISABLED = eINSTANCE.getFieldChoice_Disabled();
+
+    /**
+     * The meta object literal for the '<em><b>Form</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__FORM = eINSTANCE.getFieldChoice_Form();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__LABEL = eINSTANCE.getFieldChoice_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Multiple</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__MULTIPLE = eINSTANCE.getFieldChoice_Multiple();
+
+    /**
+     * The meta object literal for the '<em><b>Notdisplayed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__NOTDISPLAYED = eINSTANCE.getFieldChoice_Notdisplayed();
+
+    /**
+     * The meta object literal for the '<em><b>Readonly</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__READONLY = eINSTANCE.getFieldChoice_Readonly();
+
+    /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__REQUIRED = eINSTANCE.getFieldChoice_Required();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE__VALUE = eINSTANCE.getFieldChoice_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Options</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_CHOICE__OPTIONS = eINSTANCE.getFieldChoice_Options();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceOptionImpl <em>Field Choice Option</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldChoiceOptionImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoiceOption()
+     * @generated
+     */
+    EClass FIELD_CHOICE_OPTION = eINSTANCE.getFieldChoiceOption();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__LABEL = eINSTANCE.getFieldChoiceOption_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__AUTOFOCUS = eINSTANCE.getFieldChoiceOption_Autofocus();
+
+    /**
+     * The meta object literal for the '<em><b>Checked</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__CHECKED = eINSTANCE.getFieldChoiceOption_Checked();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__DISABLED = eINSTANCE.getFieldChoiceOption_Disabled();
+
+    /**
+     * The meta object literal for the '<em><b>Readonly</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__READONLY = eINSTANCE.getFieldChoiceOption_Readonly();
+
+    /**
+     * The meta object literal for the '<em><b>Required</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__REQUIRED = eINSTANCE.getFieldChoiceOption_Required();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FIELD_CHOICE_OPTION__VALUE = eINSTANCE.getFieldChoiceOption_Value();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.GroupImpl <em>Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.GroupImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getGroup()
+     * @generated
+     */
+    EClass GROUP = eINSTANCE.getGroup();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP__NAME = eINSTANCE.getGroup_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GROUP__LABEL = eINSTANCE.getGroup_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GROUP__FIELDS = eINSTANCE.getGroup_Fields();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PageImpl <em>Page</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.PageImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPage()
+     * @generated
+     */
+    EClass PAGE = eINSTANCE.getPage();
+
+    /**
+     * The meta object literal for the '<em><b>Childs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAGE__CHILDS = eINSTANCE.getPage_Childs();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PageChildImpl <em>Page Child</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.PageChildImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPageChild()
+     * @generated
+     */
+    EClass PAGE_CHILD = eINSTANCE.getPageChild();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ButtonImpl <em>Button</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.ButtonImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButton()
+     * @generated
+     */
+    EClass BUTTON = eINSTANCE.getButton();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ButtonSubmitImpl <em>Button Submit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.ButtonSubmitImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButtonSubmit()
+     * @generated
+     */
+    EClass BUTTON_SUBMIT = eINSTANCE.getButtonSubmit();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON_SUBMIT__NAME = eINSTANCE.getButtonSubmit_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON_SUBMIT__TEXT = eINSTANCE.getButtonSubmit_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Autofocus</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON_SUBMIT__AUTOFOCUS = eINSTANCE.getButtonSubmit_Autofocus();
+
+    /**
+     * The meta object literal for the '<em><b>Disabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON_SUBMIT__DISABLED = eINSTANCE.getButtonSubmit_Disabled();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON_SUBMIT__VALUE = eINSTANCE.getButtonSubmit_Value();
 
   }
 

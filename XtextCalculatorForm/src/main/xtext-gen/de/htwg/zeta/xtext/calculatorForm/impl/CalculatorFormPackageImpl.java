@@ -3,10 +3,23 @@
  */
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
+import de.htwg.zeta.xtext.calculatorForm.Button;
+import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormFactory;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.Greeting;
+import de.htwg.zeta.xtext.calculatorForm.Field;
+import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
+import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
+import de.htwg.zeta.xtext.calculatorForm.FieldInput;
+import de.htwg.zeta.xtext.calculatorForm.FieldOption;
+import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
+import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
+import de.htwg.zeta.xtext.calculatorForm.FieldSelectChild;
+import de.htwg.zeta.xtext.calculatorForm.FormElement;
+import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Model;
+import de.htwg.zeta.xtext.calculatorForm.Page;
+import de.htwg.zeta.xtext.calculatorForm.PageChild;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -35,7 +48,98 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass formElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldInputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldSelectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldSelectChildEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldOptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldOptionGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldChoiceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fieldChoiceOptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass groupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pageChildEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonSubmitEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -115,7 +219,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Greetings()
+  public EReference getModel_FormElements()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -125,9 +229,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGreeting()
+  public EClass getFormElement()
   {
-    return greetingEClass;
+    return formElementEClass;
   }
 
   /**
@@ -135,9 +239,649 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGreeting_Name()
+  public EClass getField()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return fieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldInput()
+  {
+    return fieldInputEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Name()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Autofocus()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Disabled()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Form()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Label()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Notdisplayed()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Readonly()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Required()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldInput_Value()
+  {
+    return (EAttribute)fieldInputEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldSelect()
+  {
+    return fieldSelectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Name()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Autofocus()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Disabled()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Form()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Label()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Multiple()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Required()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelect_Size()
+  {
+    return (EAttribute)fieldSelectEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFieldSelect_Childs()
+  {
+    return (EReference)fieldSelectEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldSelectChild()
+  {
+    return fieldSelectChildEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldSelectChild_Disabled()
+  {
+    return (EAttribute)fieldSelectChildEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldOption()
+  {
+    return fieldOptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldOption_Text()
+  {
+    return (EAttribute)fieldOptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldOption_Selected()
+  {
+    return (EAttribute)fieldOptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldOption_Value()
+  {
+    return (EAttribute)fieldOptionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldOptionGroup()
+  {
+    return fieldOptionGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldOptionGroup_Label()
+  {
+    return (EAttribute)fieldOptionGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFieldOptionGroup_Options()
+  {
+    return (EReference)fieldOptionGroupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldChoice()
+  {
+    return fieldChoiceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Name()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Autofocus()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Checked()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Disabled()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Form()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Label()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Multiple()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Notdisplayed()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Readonly()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Required()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoice_Value()
+  {
+    return (EAttribute)fieldChoiceEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFieldChoice_Options()
+  {
+    return (EReference)fieldChoiceEClass.getEStructuralFeatures().get(11);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFieldChoiceOption()
+  {
+    return fieldChoiceOptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Label()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Autofocus()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Checked()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Disabled()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Readonly()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Required()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFieldChoiceOption_Value()
+  {
+    return (EAttribute)fieldChoiceOptionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGroup()
+  {
+    return groupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGroup_Name()
+  {
+    return (EAttribute)groupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGroup_Label()
+  {
+    return (EAttribute)groupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGroup_Fields()
+  {
+    return (EReference)groupEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPage()
+  {
+    return pageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPage_Childs()
+  {
+    return (EReference)pageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPageChild()
+  {
+    return pageChildEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButton()
+  {
+    return buttonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButtonSubmit()
+  {
+    return buttonSubmitEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonSubmit_Name()
+  {
+    return (EAttribute)buttonSubmitEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonSubmit_Text()
+  {
+    return (EAttribute)buttonSubmitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonSubmit_Autofocus()
+  {
+    return (EAttribute)buttonSubmitEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonSubmit_Disabled()
+  {
+    return (EAttribute)buttonSubmitEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonSubmit_Value()
+  {
+    return (EAttribute)buttonSubmitEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -171,10 +915,87 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__FORM_ELEMENTS);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    formElementEClass = createEClass(FORM_ELEMENT);
+
+    fieldEClass = createEClass(FIELD);
+
+    fieldInputEClass = createEClass(FIELD_INPUT);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__NAME);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__AUTOFOCUS);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__DISABLED);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__FORM);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__LABEL);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__NOTDISPLAYED);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__READONLY);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__REQUIRED);
+    createEAttribute(fieldInputEClass, FIELD_INPUT__VALUE);
+
+    fieldSelectEClass = createEClass(FIELD_SELECT);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__NAME);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__AUTOFOCUS);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__DISABLED);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__FORM);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__LABEL);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__MULTIPLE);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__REQUIRED);
+    createEAttribute(fieldSelectEClass, FIELD_SELECT__SIZE);
+    createEReference(fieldSelectEClass, FIELD_SELECT__CHILDS);
+
+    fieldSelectChildEClass = createEClass(FIELD_SELECT_CHILD);
+    createEAttribute(fieldSelectChildEClass, FIELD_SELECT_CHILD__DISABLED);
+
+    fieldOptionEClass = createEClass(FIELD_OPTION);
+    createEAttribute(fieldOptionEClass, FIELD_OPTION__TEXT);
+    createEAttribute(fieldOptionEClass, FIELD_OPTION__SELECTED);
+    createEAttribute(fieldOptionEClass, FIELD_OPTION__VALUE);
+
+    fieldOptionGroupEClass = createEClass(FIELD_OPTION_GROUP);
+    createEAttribute(fieldOptionGroupEClass, FIELD_OPTION_GROUP__LABEL);
+    createEReference(fieldOptionGroupEClass, FIELD_OPTION_GROUP__OPTIONS);
+
+    fieldChoiceEClass = createEClass(FIELD_CHOICE);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__NAME);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__AUTOFOCUS);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__CHECKED);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__DISABLED);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__FORM);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__LABEL);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__MULTIPLE);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__NOTDISPLAYED);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__READONLY);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__REQUIRED);
+    createEAttribute(fieldChoiceEClass, FIELD_CHOICE__VALUE);
+    createEReference(fieldChoiceEClass, FIELD_CHOICE__OPTIONS);
+
+    fieldChoiceOptionEClass = createEClass(FIELD_CHOICE_OPTION);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__LABEL);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__AUTOFOCUS);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__CHECKED);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__DISABLED);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__READONLY);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__REQUIRED);
+    createEAttribute(fieldChoiceOptionEClass, FIELD_CHOICE_OPTION__VALUE);
+
+    groupEClass = createEClass(GROUP);
+    createEAttribute(groupEClass, GROUP__NAME);
+    createEAttribute(groupEClass, GROUP__LABEL);
+    createEReference(groupEClass, GROUP__FIELDS);
+
+    pageEClass = createEClass(PAGE);
+    createEReference(pageEClass, PAGE__CHILDS);
+
+    pageChildEClass = createEClass(PAGE_CHILD);
+
+    buttonEClass = createEClass(BUTTON);
+
+    buttonSubmitEClass = createEClass(BUTTON_SUBMIT);
+    createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__NAME);
+    createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__TEXT);
+    createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__AUTOFOCUS);
+    createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__DISABLED);
+    createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__VALUE);
   }
 
   /**
@@ -206,13 +1027,102 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    fieldEClass.getESuperTypes().add(this.getFormElement());
+    fieldEClass.getESuperTypes().add(this.getPageChild());
+    fieldInputEClass.getESuperTypes().add(this.getField());
+    fieldSelectEClass.getESuperTypes().add(this.getField());
+    fieldOptionEClass.getESuperTypes().add(this.getFieldSelectChild());
+    fieldOptionGroupEClass.getESuperTypes().add(this.getFieldSelectChild());
+    fieldChoiceEClass.getESuperTypes().add(this.getField());
+    groupEClass.getESuperTypes().add(this.getFormElement());
+    groupEClass.getESuperTypes().add(this.getPageChild());
+    pageEClass.getESuperTypes().add(this.getFormElement());
+    buttonEClass.getESuperTypes().add(this.getField());
+    buttonSubmitEClass.getESuperTypes().add(this.getButton());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_FormElements(), this.getFormElement(), null, "formElements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(formElementEClass, FormElement.class, "FormElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(fieldInputEClass, FieldInput.class, "FieldInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldInput_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Autofocus(), ecorePackage.getEBoolean(), "autofocus", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Form(), ecorePackage.getEString(), "form", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Label(), ecorePackage.getEString(), "label", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Notdisplayed(), ecorePackage.getEBoolean(), "notdisplayed", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Readonly(), ecorePackage.getEBoolean(), "readonly", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldInput_Value(), ecorePackage.getEString(), "value", null, 0, 1, FieldInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldSelectEClass, FieldSelect.class, "FieldSelect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldSelect_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Autofocus(), ecorePackage.getEBoolean(), "autofocus", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Form(), ecorePackage.getEString(), "form", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Label(), ecorePackage.getEString(), "label", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldSelect_Size(), ecorePackage.getEIntegerObject(), "size", null, 0, 1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFieldSelect_Childs(), this.getFieldSelectChild(), null, "childs", null, 0, -1, FieldSelect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldSelectChildEClass, FieldSelectChild.class, "FieldSelectChild", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldSelectChild_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FieldSelectChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldOptionEClass, FieldOption.class, "FieldOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldOption_Text(), ecorePackage.getEString(), "text", null, 0, 1, FieldOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldOption_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, FieldOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldOption_Value(), ecorePackage.getEString(), "value", null, 0, 1, FieldOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldOptionGroupEClass, FieldOptionGroup.class, "FieldOptionGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldOptionGroup_Label(), ecorePackage.getEString(), "label", null, 0, 1, FieldOptionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFieldOptionGroup_Options(), this.getFieldOption(), null, "options", null, 0, -1, FieldOptionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldChoiceEClass, FieldChoice.class, "FieldChoice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldChoice_Name(), ecorePackage.getEString(), "name", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Autofocus(), ecorePackage.getEBoolean(), "autofocus", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Checked(), ecorePackage.getEBoolean(), "checked", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Form(), ecorePackage.getEString(), "form", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Label(), ecorePackage.getEString(), "label", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Notdisplayed(), ecorePackage.getEBoolean(), "notdisplayed", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Readonly(), ecorePackage.getEBoolean(), "readonly", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoice_Value(), ecorePackage.getEString(), "value", null, 0, 1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFieldChoice_Options(), this.getFieldChoiceOption(), null, "options", null, 0, -1, FieldChoice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fieldChoiceOptionEClass, FieldChoiceOption.class, "FieldChoiceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFieldChoiceOption_Label(), ecorePackage.getEString(), "label", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Autofocus(), ecorePackage.getEBoolean(), "autofocus", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Checked(), ecorePackage.getEBoolean(), "checked", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Readonly(), ecorePackage.getEBoolean(), "readonly", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Required(), ecorePackage.getEBoolean(), "required", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFieldChoiceOption_Value(), ecorePackage.getEString(), "value", null, 0, 1, FieldChoiceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(groupEClass, Group.class, "Group", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGroup_Label(), ecorePackage.getEString(), "label", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGroup_Fields(), this.getField(), null, "fields", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPage_Childs(), this.getPageChild(), null, "childs", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pageChildEClass, PageChild.class, "PageChild", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(buttonSubmitEClass, ButtonSubmit.class, "ButtonSubmit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getButtonSubmit_Name(), ecorePackage.getEString(), "name", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButtonSubmit_Text(), ecorePackage.getEString(), "text", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButtonSubmit_Autofocus(), ecorePackage.getEBoolean(), "autofocus", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButtonSubmit_Disabled(), ecorePackage.getEBoolean(), "disabled", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButtonSubmit_Value(), ecorePackage.getEString(), "value", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

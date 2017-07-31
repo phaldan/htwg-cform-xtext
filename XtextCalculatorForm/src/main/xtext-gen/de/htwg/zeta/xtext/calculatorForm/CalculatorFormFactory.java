@@ -33,13 +33,130 @@ public interface CalculatorFormFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Form Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Form Element</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  FormElement createFormElement();
+
+  /**
+   * Returns a new object of class '<em>Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field</em>'.
+   * @generated
+   */
+  Field createField();
+
+  /**
+   * Returns a new object of class '<em>Field Input</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Input</em>'.
+   * @generated
+   */
+  FieldInput createFieldInput();
+
+  /**
+   * Returns a new object of class '<em>Field Select</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Select</em>'.
+   * @generated
+   */
+  FieldSelect createFieldSelect();
+
+  /**
+   * Returns a new object of class '<em>Field Select Child</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Select Child</em>'.
+   * @generated
+   */
+  FieldSelectChild createFieldSelectChild();
+
+  /**
+   * Returns a new object of class '<em>Field Option</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Option</em>'.
+   * @generated
+   */
+  FieldOption createFieldOption();
+
+  /**
+   * Returns a new object of class '<em>Field Option Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Option Group</em>'.
+   * @generated
+   */
+  FieldOptionGroup createFieldOptionGroup();
+
+  /**
+   * Returns a new object of class '<em>Field Choice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Choice</em>'.
+   * @generated
+   */
+  FieldChoice createFieldChoice();
+
+  /**
+   * Returns a new object of class '<em>Field Choice Option</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Choice Option</em>'.
+   * @generated
+   */
+  FieldChoiceOption createFieldChoiceOption();
+
+  /**
+   * Returns a new object of class '<em>Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Group</em>'.
+   * @generated
+   */
+  Group createGroup();
+
+  /**
+   * Returns a new object of class '<em>Page</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Page</em>'.
+   * @generated
+   */
+  Page createPage();
+
+  /**
+   * Returns a new object of class '<em>Page Child</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Page Child</em>'.
+   * @generated
+   */
+  PageChild createPageChild();
+
+  /**
+   * Returns a new object of class '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button</em>'.
+   * @generated
+   */
+  Button createButton();
+
+  /**
+   * Returns a new object of class '<em>Button Submit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button Submit</em>'.
+   * @generated
+   */
+  ButtonSubmit createButtonSubmit();
 
   /**
    * Returns the package supported by this factory.

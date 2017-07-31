@@ -81,9 +81,74 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseFormElement(FormElement object)
       {
-        return createGreetingAdapter();
+        return createFormElementAdapter();
+      }
+      @Override
+      public Adapter caseField(Field object)
+      {
+        return createFieldAdapter();
+      }
+      @Override
+      public Adapter caseFieldInput(FieldInput object)
+      {
+        return createFieldInputAdapter();
+      }
+      @Override
+      public Adapter caseFieldSelect(FieldSelect object)
+      {
+        return createFieldSelectAdapter();
+      }
+      @Override
+      public Adapter caseFieldSelectChild(FieldSelectChild object)
+      {
+        return createFieldSelectChildAdapter();
+      }
+      @Override
+      public Adapter caseFieldOption(FieldOption object)
+      {
+        return createFieldOptionAdapter();
+      }
+      @Override
+      public Adapter caseFieldOptionGroup(FieldOptionGroup object)
+      {
+        return createFieldOptionGroupAdapter();
+      }
+      @Override
+      public Adapter caseFieldChoice(FieldChoice object)
+      {
+        return createFieldChoiceAdapter();
+      }
+      @Override
+      public Adapter caseFieldChoiceOption(FieldChoiceOption object)
+      {
+        return createFieldChoiceOptionAdapter();
+      }
+      @Override
+      public Adapter caseGroup(Group object)
+      {
+        return createGroupAdapter();
+      }
+      @Override
+      public Adapter casePage(Page object)
+      {
+        return createPageAdapter();
+      }
+      @Override
+      public Adapter casePageChild(PageChild object)
+      {
+        return createPageChildAdapter();
+      }
+      @Override
+      public Adapter caseButton(Button object)
+      {
+        return createButtonAdapter();
+      }
+      @Override
+      public Adapter caseButtonSubmit(ButtonSubmit object)
+      {
+        return createButtonSubmitAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +188,211 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FormElement <em>Form Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwg.zeta.xtext.calculatorForm.Greeting
+   * @see de.htwg.zeta.xtext.calculatorForm.FormElement
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createFormElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Field <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Field
+   * @generated
+   */
+  public Adapter createFieldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldInput <em>Field Input</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldInput
+   * @generated
+   */
+  public Adapter createFieldInputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelect <em>Field Select</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelect
+   * @generated
+   */
+  public Adapter createFieldSelectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldSelectChild <em>Field Select Child</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldSelectChild
+   * @generated
+   */
+  public Adapter createFieldSelectChildAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldOption <em>Field Option</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOption
+   * @generated
+   */
+  public Adapter createFieldOptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup <em>Field Option Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup
+   * @generated
+   */
+  public Adapter createFieldOptionGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoice <em>Field Choice</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoice
+   * @generated
+   */
+  public Adapter createFieldChoiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption <em>Field Choice Option</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption
+   * @generated
+   */
+  public Adapter createFieldChoiceOptionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Group <em>Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Group
+   * @generated
+   */
+  public Adapter createGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Page <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Page
+   * @generated
+   */
+  public Adapter createPageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.PageChild <em>Page Child</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.PageChild
+   * @generated
+   */
+  public Adapter createPageChildAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Button
+   * @generated
+   */
+  public Adapter createButtonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.ButtonSubmit <em>Button Submit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.ButtonSubmit
+   * @generated
+   */
+  public Adapter createButtonSubmitAdapter()
   {
     return null;
   }

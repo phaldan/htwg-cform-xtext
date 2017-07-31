@@ -1,9 +1,79 @@
-grammar de.htwg.zeta.xtext.CalculatorForm with org.eclipse.xtext.common.Terminals
+grammar de.htwg.zeta.xtext.CalculatorForm hidden(WS, ML_COMMENT, SL_COMMENT)
+//with org.eclipse.xtext.common.Terminals
 
 generate calculatorForm "http://www.htwg.de/zeta/xtext/CalculatorForm"
 
-Model:
-    greetings+=Greeting*;
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Greeting:
-    'Hello' name=ID '!';
+Model:
+    formElements+=FormElement*
+;
+
+FormElement:
+    Field | Group | Page
+;
+
+Field:
+    FieldInput | FieldSelect | FieldChoice | Button
+;
+
+FieldInput:
+    'field' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)? notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value' value=STRING)?
+;
+
+FieldSelect:
+    'dropdown' name=ID autofocus?='autofocus'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)? multiple?='multiple'? required?='required'? ('size' size=INT)? '{' childs+=FieldSelectChild* '}'
+;
+
+FieldSelectChild:
+    FieldOption | FieldOptionGroup
+;
+
+FieldOption:
+    'option' text=STRING disabled?='disabled'? selected?='selected'? ('text' text=STRING)? ('value' value=STRING)?
+;
+
+FieldOptionGroup:
+    'option-group' disabled?='disabled'? ('label' label=STRING)? '{' options+=FieldOption* '}'
+;
+
+FieldChoice:
+    'choice' name=ID autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? ('form' form=STRING)? ('label' label=STRING)? multiple?='multiple'? notdisplayed?='notdisplayed'? readonly?='readonly'? required?='required'? ('value' value=STRING)? ('{' options+=FieldChoiceOption* '}')?
+;
+
+FieldChoiceOption:
+    'option' label=STRING autofocus?='autofocus'? checked?='checked'? disabled?='disabled'? readonly?='readonly'? required?='required'? ('value' value=STRING)?
+;
+
+Group:
+    'group' name=ID ('label' label=STRING)? '{' fields+=Field* '}'
+;
+
+Page:
+    'page' '{' childs+=PageChild* '}'
+;
+
+PageChild:
+    Group | Field
+;
+
+Button:
+    ButtonSubmit
+;
+
+ButtonSubmit:
+    'submit-button' name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? ('value' value=STRING)?
+;
+
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT returns ecore::EIntegerObject: ('0'..'9')+;
+terminal STRING:
+    '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+    "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+;
+terminal ML_COMMENT: '/*' -> '*/';
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS: (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;

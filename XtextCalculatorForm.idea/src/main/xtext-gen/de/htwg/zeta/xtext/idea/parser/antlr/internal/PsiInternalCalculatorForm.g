@@ -61,9 +61,9 @@ ruleModel returns [Boolean current=false]
 	(
 		(
 			{
-				markComposite(elementTypeProvider.getModel_GreetingsGreetingParserRuleCall_0ElementType());
+				markComposite(elementTypeProvider.getModel_FormElementsFormElementParserRuleCall_0ElementType());
 			}
-			lv_greetings_0_0=ruleGreeting
+			lv_formElements_0_0=ruleFormElement
 			{
 				doneComposite();
 				if(!$current) {
@@ -75,28 +75,117 @@ ruleModel returns [Boolean current=false]
 	)*
 ;
 
-//Entry rule entryRuleGreeting
-entryRuleGreeting returns [Boolean current=false]:
-	{ markComposite(elementTypeProvider.getGreetingElementType()); }
-	iv_ruleGreeting=ruleGreeting
-	{ $current=$iv_ruleGreeting.current; }
+//Entry rule entryRuleFormElement
+entryRuleFormElement returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFormElementElementType()); }
+	iv_ruleFormElement=ruleFormElement
+	{ $current=$iv_ruleFormElement.current; }
 	EOF;
 
-// Rule Greeting
-ruleGreeting returns [Boolean current=false]
+// Rule FormElement
+ruleFormElement returns [Boolean current=false]
 :
 	(
 		{
-			markLeaf(elementTypeProvider.getGreeting_HelloKeyword_0ElementType());
+			markComposite(elementTypeProvider.getFormElement_FieldParserRuleCall_0ElementType());
 		}
-		otherlv_0='Hello'
+		this_Field_0=ruleField
+		{
+			$current = $this_Field_0.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getFormElement_GroupParserRuleCall_1ElementType());
+		}
+		this_Group_1=ruleGroup
+		{
+			$current = $this_Group_1.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getFormElement_PageParserRuleCall_2ElementType());
+		}
+		this_Page_2=rulePage
+		{
+			$current = $this_Page_2.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleField
+entryRuleField returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldElementType()); }
+	iv_ruleField=ruleField
+	{ $current=$iv_ruleField.current; }
+	EOF;
+
+// Rule Field
+ruleField returns [Boolean current=false]
+:
+	(
+		{
+			markComposite(elementTypeProvider.getField_FieldInputParserRuleCall_0ElementType());
+		}
+		this_FieldInput_0=ruleFieldInput
+		{
+			$current = $this_FieldInput_0.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getField_FieldSelectParserRuleCall_1ElementType());
+		}
+		this_FieldSelect_1=ruleFieldSelect
+		{
+			$current = $this_FieldSelect_1.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getField_FieldChoiceParserRuleCall_2ElementType());
+		}
+		this_FieldChoice_2=ruleFieldChoice
+		{
+			$current = $this_FieldChoice_2.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getField_ButtonParserRuleCall_3ElementType());
+		}
+		this_Button_3=ruleButton
+		{
+			$current = $this_Button_3.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleFieldInput
+entryRuleFieldInput returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldInputElementType()); }
+	iv_ruleFieldInput=ruleFieldInput
+	{ $current=$iv_ruleFieldInput.current; }
+	EOF;
+
+// Rule FieldInput
+ruleFieldInput returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getFieldInput_FieldKeyword_0ElementType());
+		}
+		otherlv_0='field'
 		{
 			doneLeaf(otherlv_0);
 		}
 		(
 			(
 				{
-					markLeaf(elementTypeProvider.getGreeting_NameIDTerminalRuleCall_1_0ElementType());
+					markLeaf(elementTypeProvider.getFieldInput_NameIDTerminalRuleCall_1_0ElementType());
 				}
 				lv_name_1_0=RULE_ID
 				{
@@ -110,13 +199,1354 @@ ruleGreeting returns [Boolean current=false]
 				}
 			)
 		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldInput_AutofocusAutofocusKeyword_2_0ElementType());
+				}
+				lv_autofocus_2_0='autofocus'
+				{
+					doneLeaf(lv_autofocus_2_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldInput_DisabledDisabledKeyword_3_0ElementType());
+				}
+				lv_disabled_3_0='disabled'
+				{
+					doneLeaf(lv_disabled_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldInput_FormKeyword_4_0ElementType());
+			}
+			otherlv_4='form'
+			{
+				doneLeaf(otherlv_4);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldInput_FormSTRINGTerminalRuleCall_4_1_0ElementType());
+					}
+					lv_form_5_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_form_5_0);
+					}
+				)
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldInput_LabelKeyword_5_0ElementType());
+			}
+			otherlv_6='label'
+			{
+				doneLeaf(otherlv_6);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldInput_LabelSTRINGTerminalRuleCall_5_1_0ElementType());
+					}
+					lv_label_7_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_label_7_0);
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldInput_NotdisplayedNotdisplayedKeyword_6_0ElementType());
+				}
+				lv_notdisplayed_8_0='notdisplayed'
+				{
+					doneLeaf(lv_notdisplayed_8_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldInput_ReadonlyReadonlyKeyword_7_0ElementType());
+				}
+				lv_readonly_9_0='readonly'
+				{
+					doneLeaf(lv_readonly_9_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldInput_RequiredRequiredKeyword_8_0ElementType());
+				}
+				lv_required_10_0='required'
+				{
+					doneLeaf(lv_required_10_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldInput_ValueKeyword_9_0ElementType());
+			}
+			otherlv_11='value'
+			{
+				doneLeaf(otherlv_11);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldInput_ValueSTRINGTerminalRuleCall_9_1_0ElementType());
+					}
+					lv_value_12_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_12_0);
+					}
+				)
+			)
+		)?
+	)
+;
+
+//Entry rule entryRuleFieldSelect
+entryRuleFieldSelect returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldSelectElementType()); }
+	iv_ruleFieldSelect=ruleFieldSelect
+	{ $current=$iv_ruleFieldSelect.current; }
+	EOF;
+
+// Rule FieldSelect
+ruleFieldSelect returns [Boolean current=false]
+:
+	(
 		{
-			markLeaf(elementTypeProvider.getGreeting_ExclamationMarkKeyword_2ElementType());
+			markLeaf(elementTypeProvider.getFieldSelect_DropdownKeyword_0ElementType());
 		}
-		otherlv_2='!'
+		otherlv_0='dropdown'
 		{
-			doneLeaf(otherlv_2);
+			doneLeaf(otherlv_0);
 		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldSelect_NameIDTerminalRuleCall_1_0ElementType());
+				}
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldSelect_AutofocusAutofocusKeyword_2_0ElementType());
+				}
+				lv_autofocus_2_0='autofocus'
+				{
+					doneLeaf(lv_autofocus_2_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldSelect_DisabledDisabledKeyword_3_0ElementType());
+				}
+				lv_disabled_3_0='disabled'
+				{
+					doneLeaf(lv_disabled_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldSelect_FormKeyword_4_0ElementType());
+			}
+			otherlv_4='form'
+			{
+				doneLeaf(otherlv_4);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldSelect_FormSTRINGTerminalRuleCall_4_1_0ElementType());
+					}
+					lv_form_5_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_form_5_0);
+					}
+				)
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldSelect_LabelKeyword_5_0ElementType());
+			}
+			otherlv_6='label'
+			{
+				doneLeaf(otherlv_6);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldSelect_LabelSTRINGTerminalRuleCall_5_1_0ElementType());
+					}
+					lv_label_7_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_label_7_0);
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldSelect_MultipleMultipleKeyword_6_0ElementType());
+				}
+				lv_multiple_8_0='multiple'
+				{
+					doneLeaf(lv_multiple_8_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldSelect_RequiredRequiredKeyword_7_0ElementType());
+				}
+				lv_required_9_0='required'
+				{
+					doneLeaf(lv_required_9_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldSelect_SizeKeyword_8_0ElementType());
+			}
+			otherlv_10='size'
+			{
+				doneLeaf(otherlv_10);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldSelect_SizeINTTerminalRuleCall_8_1_0ElementType());
+					}
+					lv_size_11_0=RULE_INT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_size_11_0);
+					}
+				)
+			)
+		)?
+		{
+			markLeaf(elementTypeProvider.getFieldSelect_LeftCurlyBracketKeyword_9ElementType());
+		}
+		otherlv_12='{'
+		{
+			doneLeaf(otherlv_12);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getFieldSelect_ChildsFieldSelectChildParserRuleCall_10_0ElementType());
+				}
+				lv_childs_13_0=ruleFieldSelectChild
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+		{
+			markLeaf(elementTypeProvider.getFieldSelect_RightCurlyBracketKeyword_11ElementType());
+		}
+		otherlv_14='}'
+		{
+			doneLeaf(otherlv_14);
+		}
+	)
+;
+
+//Entry rule entryRuleFieldSelectChild
+entryRuleFieldSelectChild returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldSelectChildElementType()); }
+	iv_ruleFieldSelectChild=ruleFieldSelectChild
+	{ $current=$iv_ruleFieldSelectChild.current; }
+	EOF;
+
+// Rule FieldSelectChild
+ruleFieldSelectChild returns [Boolean current=false]
+:
+	(
+		{
+			markComposite(elementTypeProvider.getFieldSelectChild_FieldOptionParserRuleCall_0ElementType());
+		}
+		this_FieldOption_0=ruleFieldOption
+		{
+			$current = $this_FieldOption_0.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getFieldSelectChild_FieldOptionGroupParserRuleCall_1ElementType());
+		}
+		this_FieldOptionGroup_1=ruleFieldOptionGroup
+		{
+			$current = $this_FieldOptionGroup_1.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleFieldOption
+entryRuleFieldOption returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldOptionElementType()); }
+	iv_ruleFieldOption=ruleFieldOption
+	{ $current=$iv_ruleFieldOption.current; }
+	EOF;
+
+// Rule FieldOption
+ruleFieldOption returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getFieldOption_OptionKeyword_0ElementType());
+		}
+		otherlv_0='option'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldOption_TextSTRINGTerminalRuleCall_1_0ElementType());
+				}
+				lv_text_1_0=RULE_STRING
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_text_1_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldOption_DisabledDisabledKeyword_2_0ElementType());
+				}
+				lv_disabled_2_0='disabled'
+				{
+					doneLeaf(lv_disabled_2_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldOption_SelectedSelectedKeyword_3_0ElementType());
+				}
+				lv_selected_3_0='selected'
+				{
+					doneLeaf(lv_selected_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldOption_TextKeyword_4_0ElementType());
+			}
+			otherlv_4='text'
+			{
+				doneLeaf(otherlv_4);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldOption_TextSTRINGTerminalRuleCall_4_1_0ElementType());
+					}
+					lv_text_5_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_text_5_0);
+					}
+				)
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldOption_ValueKeyword_5_0ElementType());
+			}
+			otherlv_6='value'
+			{
+				doneLeaf(otherlv_6);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldOption_ValueSTRINGTerminalRuleCall_5_1_0ElementType());
+					}
+					lv_value_7_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_7_0);
+					}
+				)
+			)
+		)?
+	)
+;
+
+//Entry rule entryRuleFieldOptionGroup
+entryRuleFieldOptionGroup returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldOptionGroupElementType()); }
+	iv_ruleFieldOptionGroup=ruleFieldOptionGroup
+	{ $current=$iv_ruleFieldOptionGroup.current; }
+	EOF;
+
+// Rule FieldOptionGroup
+ruleFieldOptionGroup returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getFieldOptionGroup_OptionGroupKeyword_0ElementType());
+		}
+		otherlv_0='option-group'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldOptionGroup_DisabledDisabledKeyword_1_0ElementType());
+				}
+				lv_disabled_1_0='disabled'
+				{
+					doneLeaf(lv_disabled_1_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldOptionGroup_LabelKeyword_2_0ElementType());
+			}
+			otherlv_2='label'
+			{
+				doneLeaf(otherlv_2);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldOptionGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType());
+					}
+					lv_label_3_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_label_3_0);
+					}
+				)
+			)
+		)?
+		{
+			markLeaf(elementTypeProvider.getFieldOptionGroup_LeftCurlyBracketKeyword_3ElementType());
+		}
+		otherlv_4='{'
+		{
+			doneLeaf(otherlv_4);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getFieldOptionGroup_OptionsFieldOptionParserRuleCall_4_0ElementType());
+				}
+				lv_options_5_0=ruleFieldOption
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+		{
+			markLeaf(elementTypeProvider.getFieldOptionGroup_RightCurlyBracketKeyword_5ElementType());
+		}
+		otherlv_6='}'
+		{
+			doneLeaf(otherlv_6);
+		}
+	)
+;
+
+//Entry rule entryRuleFieldChoice
+entryRuleFieldChoice returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldChoiceElementType()); }
+	iv_ruleFieldChoice=ruleFieldChoice
+	{ $current=$iv_ruleFieldChoice.current; }
+	EOF;
+
+// Rule FieldChoice
+ruleFieldChoice returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getFieldChoice_ChoiceKeyword_0ElementType());
+		}
+		otherlv_0='choice'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_NameIDTerminalRuleCall_1_0ElementType());
+				}
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_AutofocusAutofocusKeyword_2_0ElementType());
+				}
+				lv_autofocus_2_0='autofocus'
+				{
+					doneLeaf(lv_autofocus_2_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_CheckedCheckedKeyword_3_0ElementType());
+				}
+				lv_checked_3_0='checked'
+				{
+					doneLeaf(lv_checked_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_DisabledDisabledKeyword_4_0ElementType());
+				}
+				lv_disabled_4_0='disabled'
+				{
+					doneLeaf(lv_disabled_4_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldChoice_FormKeyword_5_0ElementType());
+			}
+			otherlv_5='form'
+			{
+				doneLeaf(otherlv_5);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldChoice_FormSTRINGTerminalRuleCall_5_1_0ElementType());
+					}
+					lv_form_6_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_form_6_0);
+					}
+				)
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldChoice_LabelKeyword_6_0ElementType());
+			}
+			otherlv_7='label'
+			{
+				doneLeaf(otherlv_7);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldChoice_LabelSTRINGTerminalRuleCall_6_1_0ElementType());
+					}
+					lv_label_8_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_label_8_0);
+					}
+				)
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_MultipleMultipleKeyword_7_0ElementType());
+				}
+				lv_multiple_9_0='multiple'
+				{
+					doneLeaf(lv_multiple_9_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_NotdisplayedNotdisplayedKeyword_8_0ElementType());
+				}
+				lv_notdisplayed_10_0='notdisplayed'
+				{
+					doneLeaf(lv_notdisplayed_10_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_ReadonlyReadonlyKeyword_9_0ElementType());
+				}
+				lv_readonly_11_0='readonly'
+				{
+					doneLeaf(lv_readonly_11_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoice_RequiredRequiredKeyword_10_0ElementType());
+				}
+				lv_required_12_0='required'
+				{
+					doneLeaf(lv_required_12_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldChoice_ValueKeyword_11_0ElementType());
+			}
+			otherlv_13='value'
+			{
+				doneLeaf(otherlv_13);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldChoice_ValueSTRINGTerminalRuleCall_11_1_0ElementType());
+					}
+					lv_value_14_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_14_0);
+					}
+				)
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldChoice_LeftCurlyBracketKeyword_12_0ElementType());
+			}
+			otherlv_15='{'
+			{
+				doneLeaf(otherlv_15);
+			}
+			(
+				(
+					{
+						markComposite(elementTypeProvider.getFieldChoice_OptionsFieldChoiceOptionParserRuleCall_12_1_0ElementType());
+					}
+					lv_options_16_0=ruleFieldChoiceOption
+					{
+						doneComposite();
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+				)
+			)*
+			{
+				markLeaf(elementTypeProvider.getFieldChoice_RightCurlyBracketKeyword_12_2ElementType());
+			}
+			otherlv_17='}'
+			{
+				doneLeaf(otherlv_17);
+			}
+		)?
+	)
+;
+
+//Entry rule entryRuleFieldChoiceOption
+entryRuleFieldChoiceOption returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFieldChoiceOptionElementType()); }
+	iv_ruleFieldChoiceOption=ruleFieldChoiceOption
+	{ $current=$iv_ruleFieldChoiceOption.current; }
+	EOF;
+
+// Rule FieldChoiceOption
+ruleFieldChoiceOption returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getFieldChoiceOption_OptionKeyword_0ElementType());
+		}
+		otherlv_0='option'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_LabelSTRINGTerminalRuleCall_1_0ElementType());
+				}
+				lv_label_1_0=RULE_STRING
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_label_1_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_AutofocusAutofocusKeyword_2_0ElementType());
+				}
+				lv_autofocus_2_0='autofocus'
+				{
+					doneLeaf(lv_autofocus_2_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_CheckedCheckedKeyword_3_0ElementType());
+				}
+				lv_checked_3_0='checked'
+				{
+					doneLeaf(lv_checked_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_DisabledDisabledKeyword_4_0ElementType());
+				}
+				lv_disabled_4_0='disabled'
+				{
+					doneLeaf(lv_disabled_4_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_ReadonlyReadonlyKeyword_5_0ElementType());
+				}
+				lv_readonly_5_0='readonly'
+				{
+					doneLeaf(lv_readonly_5_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getFieldChoiceOption_RequiredRequiredKeyword_6_0ElementType());
+				}
+				lv_required_6_0='required'
+				{
+					doneLeaf(lv_required_6_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getFieldChoiceOption_ValueKeyword_7_0ElementType());
+			}
+			otherlv_7='value'
+			{
+				doneLeaf(otherlv_7);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getFieldChoiceOption_ValueSTRINGTerminalRuleCall_7_1_0ElementType());
+					}
+					lv_value_8_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_8_0);
+					}
+				)
+			)
+		)?
+	)
+;
+
+//Entry rule entryRuleGroup
+entryRuleGroup returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getGroupElementType()); }
+	iv_ruleGroup=ruleGroup
+	{ $current=$iv_ruleGroup.current; }
+	EOF;
+
+// Rule Group
+ruleGroup returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getGroup_GroupKeyword_0ElementType());
+		}
+		otherlv_0='group'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getGroup_NameIDTerminalRuleCall_1_0ElementType());
+				}
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
+			)
+		)
+		(
+			{
+				markLeaf(elementTypeProvider.getGroup_LabelKeyword_2_0ElementType());
+			}
+			otherlv_2='label'
+			{
+				doneLeaf(otherlv_2);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getGroup_LabelSTRINGTerminalRuleCall_2_1_0ElementType());
+					}
+					lv_label_3_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_label_3_0);
+					}
+				)
+			)
+		)?
+		{
+			markLeaf(elementTypeProvider.getGroup_LeftCurlyBracketKeyword_3ElementType());
+		}
+		otherlv_4='{'
+		{
+			doneLeaf(otherlv_4);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getGroup_FieldsFieldParserRuleCall_4_0ElementType());
+				}
+				lv_fields_5_0=ruleField
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+		{
+			markLeaf(elementTypeProvider.getGroup_RightCurlyBracketKeyword_5ElementType());
+		}
+		otherlv_6='}'
+		{
+			doneLeaf(otherlv_6);
+		}
+	)
+;
+
+//Entry rule entryRulePage
+entryRulePage returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getPageElementType()); }
+	iv_rulePage=rulePage
+	{ $current=$iv_rulePage.current; }
+	EOF;
+
+// Rule Page
+rulePage returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getPage_PageKeyword_0ElementType());
+		}
+		otherlv_0='page'
+		{
+			doneLeaf(otherlv_0);
+		}
+		{
+			markLeaf(elementTypeProvider.getPage_LeftCurlyBracketKeyword_1ElementType());
+		}
+		otherlv_1='{'
+		{
+			doneLeaf(otherlv_1);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getPage_ChildsPageChildParserRuleCall_2_0ElementType());
+				}
+				lv_childs_2_0=rulePageChild
+				{
+					doneComposite();
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)*
+		{
+			markLeaf(elementTypeProvider.getPage_RightCurlyBracketKeyword_3ElementType());
+		}
+		otherlv_3='}'
+		{
+			doneLeaf(otherlv_3);
+		}
+	)
+;
+
+//Entry rule entryRulePageChild
+entryRulePageChild returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getPageChildElementType()); }
+	iv_rulePageChild=rulePageChild
+	{ $current=$iv_rulePageChild.current; }
+	EOF;
+
+// Rule PageChild
+rulePageChild returns [Boolean current=false]
+:
+	(
+		{
+			markComposite(elementTypeProvider.getPageChild_GroupParserRuleCall_0ElementType());
+		}
+		this_Group_0=ruleGroup
+		{
+			$current = $this_Group_0.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getPageChild_FieldParserRuleCall_1ElementType());
+		}
+		this_Field_1=ruleField
+		{
+			$current = $this_Field_1.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleButton
+entryRuleButton returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getButtonElementType()); }
+	iv_ruleButton=ruleButton
+	{ $current=$iv_ruleButton.current; }
+	EOF;
+
+// Rule Button
+ruleButton returns [Boolean current=false]
+:
+	{
+		markComposite(elementTypeProvider.getButton_ButtonSubmitParserRuleCallElementType());
+	}
+	this_ButtonSubmit_0=ruleButtonSubmit
+	{
+		$current = $this_ButtonSubmit_0.current;
+		doneComposite();
+	}
+;
+
+//Entry rule entryRuleButtonSubmit
+entryRuleButtonSubmit returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getButtonSubmitElementType()); }
+	iv_ruleButtonSubmit=ruleButtonSubmit
+	{ $current=$iv_ruleButtonSubmit.current; }
+	EOF;
+
+// Rule ButtonSubmit
+ruleButtonSubmit returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getButtonSubmit_SubmitButtonKeyword_0ElementType());
+		}
+		otherlv_0='submit-button'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getButtonSubmit_NameIDTerminalRuleCall_1_0ElementType());
+				}
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getButtonSubmit_TextSTRINGTerminalRuleCall_2_0ElementType());
+				}
+				lv_text_2_0=RULE_STRING
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_text_2_0);
+				}
+			)
+		)
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getButtonSubmit_AutofocusAutofocusKeyword_3_0ElementType());
+				}
+				lv_autofocus_3_0='autofocus'
+				{
+					doneLeaf(lv_autofocus_3_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			(
+				{
+					markLeaf(elementTypeProvider.getButtonSubmit_DisabledDisabledKeyword_4_0ElementType());
+				}
+				lv_disabled_4_0='disabled'
+				{
+					doneLeaf(lv_disabled_4_0);
+				}
+				{
+					if (!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+			)
+		)?
+		(
+			{
+				markLeaf(elementTypeProvider.getButtonSubmit_ValueKeyword_5_0ElementType());
+			}
+			otherlv_5='value'
+			{
+				doneLeaf(otherlv_5);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getButtonSubmit_ValueSTRINGTerminalRuleCall_5_1_0ElementType());
+					}
+					lv_value_6_0=RULE_STRING
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_6_0);
+					}
+				)
+			)
+		)?
 	)
 ;
 

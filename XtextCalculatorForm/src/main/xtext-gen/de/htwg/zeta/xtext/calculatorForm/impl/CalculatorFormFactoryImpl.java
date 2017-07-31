@@ -66,7 +66,20 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
     switch (eClass.getClassifierID())
     {
       case CalculatorFormPackage.MODEL: return createModel();
-      case CalculatorFormPackage.GREETING: return createGreeting();
+      case CalculatorFormPackage.FORM_ELEMENT: return createFormElement();
+      case CalculatorFormPackage.FIELD: return createField();
+      case CalculatorFormPackage.FIELD_INPUT: return createFieldInput();
+      case CalculatorFormPackage.FIELD_SELECT: return createFieldSelect();
+      case CalculatorFormPackage.FIELD_SELECT_CHILD: return createFieldSelectChild();
+      case CalculatorFormPackage.FIELD_OPTION: return createFieldOption();
+      case CalculatorFormPackage.FIELD_OPTION_GROUP: return createFieldOptionGroup();
+      case CalculatorFormPackage.FIELD_CHOICE: return createFieldChoice();
+      case CalculatorFormPackage.FIELD_CHOICE_OPTION: return createFieldChoiceOption();
+      case CalculatorFormPackage.GROUP: return createGroup();
+      case CalculatorFormPackage.PAGE: return createPage();
+      case CalculatorFormPackage.PAGE_CHILD: return createPageChild();
+      case CalculatorFormPackage.BUTTON: return createButton();
+      case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +101,153 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public FormElement createFormElement()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    FormElementImpl formElement = new FormElementImpl();
+    return formElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Field createField()
+  {
+    FieldImpl field = new FieldImpl();
+    return field;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldInput createFieldInput()
+  {
+    FieldInputImpl fieldInput = new FieldInputImpl();
+    return fieldInput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldSelect createFieldSelect()
+  {
+    FieldSelectImpl fieldSelect = new FieldSelectImpl();
+    return fieldSelect;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldSelectChild createFieldSelectChild()
+  {
+    FieldSelectChildImpl fieldSelectChild = new FieldSelectChildImpl();
+    return fieldSelectChild;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldOption createFieldOption()
+  {
+    FieldOptionImpl fieldOption = new FieldOptionImpl();
+    return fieldOption;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldOptionGroup createFieldOptionGroup()
+  {
+    FieldOptionGroupImpl fieldOptionGroup = new FieldOptionGroupImpl();
+    return fieldOptionGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldChoice createFieldChoice()
+  {
+    FieldChoiceImpl fieldChoice = new FieldChoiceImpl();
+    return fieldChoice;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldChoiceOption createFieldChoiceOption()
+  {
+    FieldChoiceOptionImpl fieldChoiceOption = new FieldChoiceOptionImpl();
+    return fieldChoiceOption;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Group createGroup()
+  {
+    GroupImpl group = new GroupImpl();
+    return group;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Page createPage()
+  {
+    PageImpl page = new PageImpl();
+    return page;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PageChild createPageChild()
+  {
+    PageChildImpl pageChild = new PageChildImpl();
+    return pageChild;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Button createButton()
+  {
+    ButtonImpl button = new ButtonImpl();
+    return button;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ButtonSubmit createButtonSubmit()
+  {
+    ButtonSubmitImpl buttonSubmit = new ButtonSubmitImpl();
+    return buttonSubmit;
   }
 
   /**

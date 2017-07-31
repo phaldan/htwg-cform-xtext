@@ -4,9 +4,17 @@
 package de.htwg.zeta.xtext.serializer;
 
 import com.google.inject.Inject;
+import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.Greeting;
+import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
+import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
+import de.htwg.zeta.xtext.calculatorForm.FieldInput;
+import de.htwg.zeta.xtext.calculatorForm.FieldOption;
+import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
+import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
+import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Model;
+import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.services.CalculatorFormGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -15,9 +23,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -33,11 +39,35 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == CalculatorFormPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case CalculatorFormPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case CalculatorFormPackage.BUTTON_SUBMIT:
+				sequence_ButtonSubmit(context, (ButtonSubmit) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_CHOICE:
+				sequence_FieldChoice(context, (FieldChoice) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_CHOICE_OPTION:
+				sequence_FieldChoiceOption(context, (FieldChoiceOption) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_INPUT:
+				sequence_FieldInput(context, (FieldInput) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_OPTION:
+				sequence_FieldOption(context, (FieldOption) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_OPTION_GROUP:
+				sequence_FieldOptionGroup(context, (FieldOptionGroup) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FIELD_SELECT:
+				sequence_FieldSelect(context, (FieldSelect) semanticObject); 
+				return; 
+			case CalculatorFormPackage.GROUP:
+				sequence_Group(context, (Group) semanticObject); 
 				return; 
 			case CalculatorFormPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case CalculatorFormPackage.PAGE:
+				sequence_Page(context, (Page) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,19 +76,155 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     FormElement returns ButtonSubmit
+	 *     Field returns ButtonSubmit
+	 *     PageChild returns ButtonSubmit
+	 *     Button returns ButtonSubmit
+	 *     ButtonSubmit returns ButtonSubmit
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? value=STRING?)
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.GREETING__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+	protected void sequence_ButtonSubmit(ISerializationContext context, ButtonSubmit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FieldChoiceOption returns FieldChoiceOption
+	 *
+	 * Constraint:
+	 *     (
+	 *         label=STRING 
+	 *         autofocus?='autofocus'? 
+	 *         checked?='checked'? 
+	 *         disabled?='disabled'? 
+	 *         readonly?='readonly'? 
+	 *         required?='required'? 
+	 *         value=STRING?
+	 *     )
+	 */
+	protected void sequence_FieldChoiceOption(ISerializationContext context, FieldChoiceOption semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FormElement returns FieldChoice
+	 *     Field returns FieldChoice
+	 *     FieldChoice returns FieldChoice
+	 *     PageChild returns FieldChoice
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         autofocus?='autofocus'? 
+	 *         checked?='checked'? 
+	 *         disabled?='disabled'? 
+	 *         form=STRING? 
+	 *         label=STRING? 
+	 *         multiple?='multiple'? 
+	 *         notdisplayed?='notdisplayed'? 
+	 *         readonly?='readonly'? 
+	 *         required?='required'? 
+	 *         value=STRING? 
+	 *         options+=FieldChoiceOption*
+	 *     )
+	 */
+	protected void sequence_FieldChoice(ISerializationContext context, FieldChoice semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FormElement returns FieldInput
+	 *     Field returns FieldInput
+	 *     FieldInput returns FieldInput
+	 *     PageChild returns FieldInput
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         autofocus?='autofocus'? 
+	 *         disabled?='disabled'? 
+	 *         form=STRING? 
+	 *         label=STRING? 
+	 *         notdisplayed?='notdisplayed'? 
+	 *         readonly?='readonly'? 
+	 *         required?='required'? 
+	 *         value=STRING?
+	 *     )
+	 */
+	protected void sequence_FieldInput(ISerializationContext context, FieldInput semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FieldSelectChild returns FieldOptionGroup
+	 *     FieldOptionGroup returns FieldOptionGroup
+	 *
+	 * Constraint:
+	 *     (disabled?='disabled'? label=STRING? options+=FieldOption*)
+	 */
+	protected void sequence_FieldOptionGroup(ISerializationContext context, FieldOptionGroup semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FieldSelectChild returns FieldOption
+	 *     FieldOption returns FieldOption
+	 *
+	 * Constraint:
+	 *     (text=STRING disabled?='disabled'? selected?='selected'? text=STRING? value=STRING?)
+	 */
+	protected void sequence_FieldOption(ISerializationContext context, FieldOption semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FormElement returns FieldSelect
+	 *     Field returns FieldSelect
+	 *     FieldSelect returns FieldSelect
+	 *     PageChild returns FieldSelect
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         autofocus?='autofocus'? 
+	 *         disabled?='disabled'? 
+	 *         form=STRING? 
+	 *         label=STRING? 
+	 *         multiple?='multiple'? 
+	 *         required?='required'? 
+	 *         size=INT? 
+	 *         childs+=FieldSelectChild*
+	 *     )
+	 */
+	protected void sequence_FieldSelect(ISerializationContext context, FieldSelect semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FormElement returns Group
+	 *     Group returns Group
+	 *     PageChild returns Group
+	 *
+	 * Constraint:
+	 *     (name=ID label=STRING? fields+=Field*)
+	 */
+	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -67,9 +233,22 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     formElements+=FormElement+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FormElement returns Page
+	 *     Page returns Page
+	 *
+	 * Constraint:
+	 *     childs+=PageChild+
+	 */
+	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
