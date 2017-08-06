@@ -14,7 +14,9 @@ import de.htwg.zeta.xtext.calculatorForm.FloatLiteral
 import de.htwg.zeta.xtext.calculatorForm.Minus
 import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral
+import de.htwg.zeta.xtext.calculatorForm.PercentLiteral
 import de.htwg.zeta.xtext.calculatorForm.Plus
+import java.math.BigDecimal
 import java.util.HashSet
 import java.util.List
 
@@ -72,6 +74,8 @@ class SimpleCalculateTransformer {
             expression.value.toString
         } else if (expression instanceof FloatLiteral) {
             expression.value.toString
+        } else if (expression instanceof PercentLiteral) {
+            new BigDecimal(expression.value.replace("%", "")).divide(BigDecimal.valueOf(100)).toString
         } else if (expression instanceof FieldReference) {
             processFieldReference(expression)
         } else {
