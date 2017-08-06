@@ -1145,17 +1145,22 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cValueFLOATTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cFieldReferenceAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Assignment cRefAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cRefFieldCrossReference_3_1_0 = (CrossReference)cRefAssignment_3_1.eContents().get(0);
-		private final RuleCall cRefFieldQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefFieldCrossReference_3_1_0.eContents().get(1);
+		private final Action cPercentLiteralAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValuePERCENTTerminalRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cFieldReferenceAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cRefAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cRefFieldCrossReference_4_1_0 = (CrossReference)cRefAssignment_4_1.eContents().get(0);
+		private final RuleCall cRefFieldQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cRefFieldCrossReference_4_1_0.eContents().get(1);
 		
 		//Atomic Expression:
-		//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference}
-		//	ref=[Field|QualifiedName]
+		//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT |
+		//	{FieldReference} ref=[Field|QualifiedName]
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference} ref=[Field|QualifiedName]
+		//'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT |
+		//{FieldReference} ref=[Field|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' Expression ')'
@@ -1194,20 +1199,32 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//FLOAT
 		public RuleCall getValueFLOATTerminalRuleCall_2_1_0() { return cValueFLOATTerminalRuleCall_2_1_0; }
 		
-		//{FieldReference} ref=[Field|QualifiedName]
+		//{PercentLiteral} value=PERCENT
 		public Group getGroup_3() { return cGroup_3; }
 		
+		//{PercentLiteral}
+		public Action getPercentLiteralAction_3_0() { return cPercentLiteralAction_3_0; }
+		
+		//value=PERCENT
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+		
+		//PERCENT
+		public RuleCall getValuePERCENTTerminalRuleCall_3_1_0() { return cValuePERCENTTerminalRuleCall_3_1_0; }
+		
+		//{FieldReference} ref=[Field|QualifiedName]
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//{FieldReference}
-		public Action getFieldReferenceAction_3_0() { return cFieldReferenceAction_3_0; }
+		public Action getFieldReferenceAction_4_0() { return cFieldReferenceAction_4_0; }
 		
 		//ref=[Field|QualifiedName]
-		public Assignment getRefAssignment_3_1() { return cRefAssignment_3_1; }
+		public Assignment getRefAssignment_4_1() { return cRefAssignment_4_1; }
 		
 		//[Field|QualifiedName]
-		public CrossReference getRefFieldCrossReference_3_1_0() { return cRefFieldCrossReference_3_1_0; }
+		public CrossReference getRefFieldCrossReference_4_1_0() { return cRefFieldCrossReference_4_1_0; }
 		
 		//QualifiedName
-		public RuleCall getRefFieldQualifiedNameParserRuleCall_3_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_3_1_0_1; }
+		public RuleCall getRefFieldQualifiedNameParserRuleCall_4_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_4_1_0_1; }
 	}
 	
 	
@@ -1236,6 +1253,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tFLOAT;
+	private final TerminalRule tPERCENT;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
@@ -1272,6 +1290,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.INT");
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FLOAT");
+		this.tPERCENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.PERCENT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.STRING");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.SL_COMMENT");
@@ -1519,8 +1538,8 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Atomic Expression:
-	//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference}
-	//	ref=[Field|QualifiedName]
+	//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT |
+	//	{FieldReference} ref=[Field|QualifiedName]
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;
 	}
@@ -1545,6 +1564,12 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	//	INT '.' INT;
 	public TerminalRule getFLOATRule() {
 		return tFLOAT;
+	}
+	
+	//terminal PERCENT:
+	//	(INT | FLOAT) '%';
+	public TerminalRule getPERCENTRule() {
+		return tPERCENT;
 	}
 	
 	//terminal STRING:

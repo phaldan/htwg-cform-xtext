@@ -240,6 +240,15 @@ public interface CalculatorFormFactory extends EFactory
   FloatLiteral createFloatLiteral();
 
   /**
+   * Returns a new object of class '<em>Percent Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Percent Literal</em>'.
+   * @generated
+   */
+  PercentLiteral createPercentLiteral();
+
+  /**
    * Returns a new object of class '<em>Field Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -65,6 +65,7 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     (rule start) (ambiguity) ref=[Field|QualifiedName]
 	 *     (rule start) (ambiguity) value=FLOAT
 	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) value=PERCENT
 	 *     (rule start) (ambiguity) {Minus.left=}
 	 *     (rule start) (ambiguity) {MultiOrDiv.left=}
 	 *     (rule start) (ambiguity) {Plus.left=}

@@ -98,12 +98,14 @@ Atomic returns Expression:
     '(' Expression ')' |
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
+    {PercentLiteral} value=PERCENT |
     {FieldReference} ref=[Field|QualifiedName]
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal INT returns ecore::EIntegerObject: ('0'..'9')+;
 terminal FLOAT returns ecore::EFloat: INT '.' INT;
+terminal PERCENT returns ecore::EString: (INT|FLOAT) '%';
 terminal STRING:
     '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
     "'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"

@@ -23,6 +23,7 @@ import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Page;
+import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
 import de.htwg.zeta.xtext.services.CalculatorFormGrammarAccess;
 import java.util.Set;
@@ -103,6 +104,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
+				return; 
+			case CalculatorFormPackage.PERCENT_LITERAL:
+				sequence_Atomic(context, (PercentLiteral) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PLUS:
 				sequence_Addition(context, (Plus) semanticObject); 
@@ -188,7 +192,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FIELD_REFERENCE__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -239,6 +243,31 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns PercentLiteral
+	 *     Addition returns PercentLiteral
+	 *     Addition.Plus_1_0_0_0 returns PercentLiteral
+	 *     Addition.Minus_1_0_1_0 returns PercentLiteral
+	 *     Multiplication returns PercentLiteral
+	 *     Multiplication.MultiOrDiv_1_0_0 returns PercentLiteral
+	 *     Prefixed returns PercentLiteral
+	 *     Atomic returns PercentLiteral
+	 *
+	 * Constraint:
+	 *     value=PERCENT
+	 */
+	protected void sequence_Atomic(ISerializationContext context, PercentLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

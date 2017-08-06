@@ -1426,17 +1426,29 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createAtomic_Group_3ElementType() {
 			return new IGrammarAwareElementType("Atomic_Group_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getGroup_3());
 		}
-		public static IGrammarAwareElementType createAtomic_FieldReferenceAction_3_0ElementType() {
-			return new IGrammarAwareElementType("Atomic_FieldReferenceAction_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getFieldReferenceAction_3_0());
+		public static IGrammarAwareElementType createAtomic_PercentLiteralAction_3_0ElementType() {
+			return new IGrammarAwareElementType("Atomic_PercentLiteralAction_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getPercentLiteralAction_3_0());
 		}
-		public static IGrammarAwareElementType createAtomic_RefAssignment_3_1ElementType() {
-			return new IGrammarAwareElementType("Atomic_RefAssignment_3_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefAssignment_3_1());
+		public static IGrammarAwareElementType createAtomic_ValueAssignment_3_1ElementType() {
+			return new IGrammarAwareElementType("Atomic_ValueAssignment_3_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getValueAssignment_3_1());
 		}
-		public static IGrammarAwareElementType createAtomic_RefFieldCrossReference_3_1_0ElementType() {
-			return new IGrammarAwareElementType("Atomic_RefFieldCrossReference_3_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefFieldCrossReference_3_1_0());
+		public static IGrammarAwareElementType createAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType() {
+			return new IGrammarAwareElementType("Atomic_ValuePERCENTTerminalRuleCall_3_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0());
 		}
-		public static IGrammarAwareElementType createAtomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1ElementType() {
-			return new IGrammarAwareElementType("Atomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1());
+		public static IGrammarAwareElementType createAtomic_Group_4ElementType() {
+			return new IGrammarAwareElementType("Atomic_Group_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getGroup_4());
+		}
+		public static IGrammarAwareElementType createAtomic_FieldReferenceAction_4_0ElementType() {
+			return new IGrammarAwareElementType("Atomic_FieldReferenceAction_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getFieldReferenceAction_4_0());
+		}
+		public static IGrammarAwareElementType createAtomic_RefAssignment_4_1ElementType() {
+			return new IGrammarAwareElementType("Atomic_RefAssignment_4_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefAssignment_4_1());
+		}
+		public static IGrammarAwareElementType createAtomic_RefFieldCrossReference_4_1_0ElementType() {
+			return new IGrammarAwareElementType("Atomic_RefFieldCrossReference_4_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefFieldCrossReference_4_1_0());
+		}
+		public static IGrammarAwareElementType createAtomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1ElementType() {
+			return new IGrammarAwareElementType("Atomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1());
 		}
 	}
 
@@ -1470,13 +1482,21 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Atomic_Group_3_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_Group_3ElementType());
 
-	public static final IGrammarAwareElementType Atomic_FieldReferenceAction_3_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_FieldReferenceAction_3_0ElementType());
+	public static final IGrammarAwareElementType Atomic_PercentLiteralAction_3_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_PercentLiteralAction_3_0ElementType());
 
-	public static final IGrammarAwareElementType Atomic_RefAssignment_3_1_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefAssignment_3_1ElementType());
+	public static final IGrammarAwareElementType Atomic_ValueAssignment_3_1_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_ValueAssignment_3_1ElementType());
 
-	public static final IGrammarAwareElementType Atomic_RefFieldCrossReference_3_1_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefFieldCrossReference_3_1_0ElementType());
+	public static final IGrammarAwareElementType Atomic_ValuePERCENTTerminalRuleCall_3_1_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType());
 
-	public static final IGrammarAwareElementType Atomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1ElementType());
+	public static final IGrammarAwareElementType Atomic_Group_4_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_Group_4ElementType());
+
+	public static final IGrammarAwareElementType Atomic_FieldReferenceAction_4_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_FieldReferenceAction_4_0ElementType());
+
+	public static final IGrammarAwareElementType Atomic_RefAssignment_4_1_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefAssignment_4_1ElementType());
+
+	public static final IGrammarAwareElementType Atomic_RefFieldCrossReference_4_1_0_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefFieldCrossReference_4_1_0ElementType());
+
+	public static final IGrammarAwareElementType Atomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1_ELEMENT_TYPE = associate(AtomicFactory.createAtomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1ElementType());
 
 	@Override
 	public IFileElementType getFileType() {
@@ -2580,20 +2600,36 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Atomic_Group_3_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getAtomic_FieldReferenceAction_3_0ElementType() {
-		return Atomic_FieldReferenceAction_3_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getAtomic_PercentLiteralAction_3_0ElementType() {
+		return Atomic_PercentLiteralAction_3_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getAtomic_RefAssignment_3_1ElementType() {
-		return Atomic_RefAssignment_3_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getAtomic_ValueAssignment_3_1ElementType() {
+		return Atomic_ValueAssignment_3_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getAtomic_RefFieldCrossReference_3_1_0ElementType() {
-		return Atomic_RefFieldCrossReference_3_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType() {
+		return Atomic_ValuePERCENTTerminalRuleCall_3_1_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getAtomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1ElementType() {
-		return Atomic_RefFieldQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getAtomic_Group_4ElementType() {
+		return Atomic_Group_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getAtomic_FieldReferenceAction_4_0ElementType() {
+		return Atomic_FieldReferenceAction_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getAtomic_RefAssignment_4_1ElementType() {
+		return Atomic_RefAssignment_4_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getAtomic_RefFieldCrossReference_4_1_0ElementType() {
+		return Atomic_RefFieldCrossReference_4_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getAtomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1ElementType() {
+		return Atomic_RefFieldQualifiedNameParserRuleCall_4_1_0_1_ELEMENT_TYPE;
 	}
 
 }

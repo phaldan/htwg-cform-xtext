@@ -85,6 +85,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
 					put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
+					put(grammarAccess.getAtomicAccess().getGroup_4(), "rule__Atomic__Group_4__0");
 					put(grammarAccess.getModelAccess().getFormElementsAssignment_0(), "rule__Model__FormElementsAssignment_0");
 					put(grammarAccess.getModelAccess().getCalculationsAssignment_1(), "rule__Model__CalculationsAssignment_1");
 					put(grammarAccess.getFieldInputAccess().getNameAssignment_1(), "rule__FieldInput__NameAssignment_1");
@@ -150,7 +151,8 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrefixedAccess().getExpressionAssignment_1_2(), "rule__Prefixed__ExpressionAssignment_1_2");
 					put(grammarAccess.getAtomicAccess().getValueAssignment_1_1(), "rule__Atomic__ValueAssignment_1_1");
 					put(grammarAccess.getAtomicAccess().getValueAssignment_2_1(), "rule__Atomic__ValueAssignment_2_1");
-					put(grammarAccess.getAtomicAccess().getRefAssignment_3_1(), "rule__Atomic__RefAssignment_3_1");
+					put(grammarAccess.getAtomicAccess().getValueAssignment_3_1(), "rule__Atomic__ValueAssignment_3_1");
+					put(grammarAccess.getAtomicAccess().getRefAssignment_4_1(), "rule__Atomic__RefAssignment_4_1");
 				}
 			};
 		}

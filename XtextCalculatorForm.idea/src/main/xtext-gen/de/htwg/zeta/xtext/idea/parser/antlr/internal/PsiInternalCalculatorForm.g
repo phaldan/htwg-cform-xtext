@@ -2024,7 +2024,34 @@ ruleAtomic returns [Boolean current=false]
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_3_0ElementType());
+					precedeComposite(elementTypeProvider.getAtomic_PercentLiteralAction_3_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType());
+					}
+					lv_value_8_0=RULE_PERCENT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_8_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_4_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
@@ -2038,7 +2065,7 @@ ruleAtomic returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_3_1_0ElementType());
+						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_4_1_0ElementType());
 					}
 					ruleQualifiedName
 					{
@@ -2055,6 +2082,8 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 RULE_INT : ('0'..'9')+;
 
 RULE_FLOAT : RULE_INT '.' RULE_INT;
+
+RULE_PERCENT : (RULE_INT|RULE_FLOAT) '%';
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

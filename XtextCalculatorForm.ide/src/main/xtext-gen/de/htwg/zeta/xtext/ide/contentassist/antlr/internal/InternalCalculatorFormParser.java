@@ -23,16 +23,16 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalCalculatorFormParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'*'", "'/'", "'field'", "'form'", "'label'", "'value'", "'dropdown'", "'{'", "'}'", "'size'", "'option'", "'text'", "'option-group'", "'choice'", "'group'", "'page'", "'submit-button'", "'calculate'", "'='", "'.'", "'+'", "'-'", "'!'", "'('", "')'", "'autofocus'", "'disabled'", "'notdisplayed'", "'readonly'", "'required'", "'multiple'", "'selected'", "'checked'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_PERCENT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'*'", "'/'", "'field'", "'form'", "'label'", "'value'", "'dropdown'", "'{'", "'}'", "'size'", "'option'", "'text'", "'option-group'", "'choice'", "'group'", "'page'", "'submit-button'", "'calculate'", "'='", "'.'", "'+'", "'-'", "'!'", "'('", "')'", "'autofocus'", "'disabled'", "'notdisplayed'", "'readonly'", "'required'", "'multiple'", "'selected'", "'checked'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
+    public static final int RULE_PERCENT=8;
     public static final int RULE_ID=4;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -40,14 +40,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
     public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=8;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
     public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -59,9 +59,10 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=10;
-    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__44=44;
+    public static final int T__45=45;
     public static final int RULE_FLOAT=7;
     public static final int T__40=40;
     public static final int T__41=41;
@@ -1971,20 +1972,20 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             // InternalCalculatorForm.g:607:1: ( ( ruleField ) | ( ruleGroup ) | ( rulePage ) )
             int alt1=3;
             switch ( input.LA(1) ) {
-            case 14:
-            case 18:
-            case 25:
-            case 28:
+            case 15:
+            case 19:
+            case 26:
+            case 29:
                 {
                 alt1=1;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt1=2;
                 }
                 break;
-            case 27:
+            case 28:
                 {
                 alt1=3;
                 }
@@ -2094,22 +2095,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             // InternalCalculatorForm.g:634:1: ( ( ruleFieldInput ) | ( ruleFieldSelect ) | ( ruleFieldChoice ) | ( ruleButton ) )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 14:
+            case 15:
                 {
                 alt2=1;
                 }
                 break;
-            case 18:
+            case 19:
                 {
                 alt2=2;
                 }
                 break;
-            case 25:
+            case 26:
                 {
                 alt2=3;
                 }
                 break;
-            case 28:
+            case 29:
                 {
                 alt2=4;
                 }
@@ -2243,10 +2244,10 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==22) ) {
+            if ( (LA3_0==23) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==24) ) {
+            else if ( (LA3_0==25) ) {
                 alt3=2;
             }
             else {
@@ -2331,10 +2332,10 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==26) ) {
+            if ( (LA4_0==27) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==14||LA4_0==18||LA4_0==25||LA4_0==28) ) {
+            else if ( (LA4_0==15||LA4_0==19||LA4_0==26||LA4_0==29) ) {
                 alt4=2;
             }
             else {
@@ -2419,10 +2420,10 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==32) ) {
+            if ( (LA5_0==33) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==33) ) {
+            else if ( (LA5_0==34) ) {
                 alt5=2;
             }
             else {
@@ -2519,10 +2520,10 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==12) ) {
+            if ( (LA6_0==13) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==13) ) {
+            else if ( (LA6_0==14) ) {
                 alt6=2;
             }
             else {
@@ -2542,7 +2543,7 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0()); 
                     }
-                    match(input,12,FOLLOW_2); if (state.failed) return ;
+                    match(input,13,FOLLOW_2); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0()); 
                     }
@@ -2561,7 +2562,7 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
                     if ( state.backtracking==0 ) {
                        before(grammarAccess.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1()); 
                     }
-                    match(input,13,FOLLOW_2); if (state.failed) return ;
+                    match(input,14,FOLLOW_2); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
                        after(grammarAccess.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1()); 
                     }
@@ -2598,12 +2599,12 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             // InternalCalculatorForm.g:751:1: ( ( ( rule__Prefixed__Group_0__0 ) ) | ( ( rule__Prefixed__Group_1__0 ) ) | ( ruleAtomic ) )
             int alt7=3;
             switch ( input.LA(1) ) {
-            case 34:
+            case 35:
                 {
                 alt7=1;
                 }
                 break;
-            case 33:
+            case 34:
                 {
                 alt7=2;
                 }
@@ -2611,7 +2612,8 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             case RULE_ID:
             case RULE_INT:
             case RULE_FLOAT:
-            case 35:
+            case RULE_PERCENT:
+            case 36:
                 {
                 alt7=3;
                 }
@@ -2724,16 +2726,16 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Alternatives"
-    // InternalCalculatorForm.g:774:1: rule__Atomic__Alternatives : ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__Group_1__0 ) ) | ( ( rule__Atomic__Group_2__0 ) ) | ( ( rule__Atomic__Group_3__0 ) ) );
+    // InternalCalculatorForm.g:774:1: rule__Atomic__Alternatives : ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__Group_1__0 ) ) | ( ( rule__Atomic__Group_2__0 ) ) | ( ( rule__Atomic__Group_3__0 ) ) | ( ( rule__Atomic__Group_4__0 ) ) );
     public final void rule__Atomic__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:778:1: ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__Group_1__0 ) ) | ( ( rule__Atomic__Group_2__0 ) ) | ( ( rule__Atomic__Group_3__0 ) ) )
-            int alt8=4;
+            // InternalCalculatorForm.g:778:1: ( ( ( rule__Atomic__Group_0__0 ) ) | ( ( rule__Atomic__Group_1__0 ) ) | ( ( rule__Atomic__Group_2__0 ) ) | ( ( rule__Atomic__Group_3__0 ) ) | ( ( rule__Atomic__Group_4__0 ) ) )
+            int alt8=5;
             switch ( input.LA(1) ) {
-            case 35:
+            case 36:
                 {
                 alt8=1;
                 }
@@ -2748,9 +2750,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
                 alt8=3;
                 }
                 break;
-            case RULE_ID:
+            case RULE_PERCENT:
                 {
                 alt8=4;
+                }
+                break;
+            case RULE_ID:
+                {
+                alt8=5;
                 }
                 break;
             default:
@@ -2878,6 +2885,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
                     }
                     break;
+                case 5 :
+                    // InternalCalculatorForm.g:803:2: ( ( rule__Atomic__Group_4__0 ) )
+                    {
+                    // InternalCalculatorForm.g:803:2: ( ( rule__Atomic__Group_4__0 ) )
+                    // InternalCalculatorForm.g:804:3: ( rule__Atomic__Group_4__0 )
+                    {
+                    if ( state.backtracking==0 ) {
+                       before(grammarAccess.getAtomicAccess().getGroup_4()); 
+                    }
+                    // InternalCalculatorForm.g:805:3: ( rule__Atomic__Group_4__0 )
+                    // InternalCalculatorForm.g:805:4: rule__Atomic__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Atomic__Group_4__0();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+
+                    if ( state.backtracking==0 ) {
+                       after(grammarAccess.getAtomicAccess().getGroup_4()); 
+                    }
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -2896,14 +2932,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalCalculatorForm.g:807:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalCalculatorForm.g:813:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:811:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalCalculatorForm.g:812:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalCalculatorForm.g:817:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalCalculatorForm.g:818:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -2934,35 +2970,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalCalculatorForm.g:819:1: rule__Model__Group__0__Impl : ( ( rule__Model__FormElementsAssignment_0 )* ) ;
+    // InternalCalculatorForm.g:825:1: rule__Model__Group__0__Impl : ( ( rule__Model__FormElementsAssignment_0 )* ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:823:1: ( ( ( rule__Model__FormElementsAssignment_0 )* ) )
-            // InternalCalculatorForm.g:824:1: ( ( rule__Model__FormElementsAssignment_0 )* )
+            // InternalCalculatorForm.g:829:1: ( ( ( rule__Model__FormElementsAssignment_0 )* ) )
+            // InternalCalculatorForm.g:830:1: ( ( rule__Model__FormElementsAssignment_0 )* )
             {
-            // InternalCalculatorForm.g:824:1: ( ( rule__Model__FormElementsAssignment_0 )* )
-            // InternalCalculatorForm.g:825:2: ( rule__Model__FormElementsAssignment_0 )*
+            // InternalCalculatorForm.g:830:1: ( ( rule__Model__FormElementsAssignment_0 )* )
+            // InternalCalculatorForm.g:831:2: ( rule__Model__FormElementsAssignment_0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getFormElementsAssignment_0()); 
             }
-            // InternalCalculatorForm.g:826:2: ( rule__Model__FormElementsAssignment_0 )*
+            // InternalCalculatorForm.g:832:2: ( rule__Model__FormElementsAssignment_0 )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==14||LA9_0==18||(LA9_0>=25 && LA9_0<=28)) ) {
+                if ( (LA9_0==15||LA9_0==19||(LA9_0>=26 && LA9_0<=29)) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCalculatorForm.g:826:3: rule__Model__FormElementsAssignment_0
+            	    // InternalCalculatorForm.g:832:3: rule__Model__FormElementsAssignment_0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Model__FormElementsAssignment_0();
@@ -3003,14 +3039,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalCalculatorForm.g:834:1: rule__Model__Group__1 : rule__Model__Group__1__Impl ;
+    // InternalCalculatorForm.g:840:1: rule__Model__Group__1 : rule__Model__Group__1__Impl ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:838:1: ( rule__Model__Group__1__Impl )
-            // InternalCalculatorForm.g:839:2: rule__Model__Group__1__Impl
+            // InternalCalculatorForm.g:844:1: ( rule__Model__Group__1__Impl )
+            // InternalCalculatorForm.g:845:2: rule__Model__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__1__Impl();
@@ -3036,35 +3072,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalCalculatorForm.g:845:1: rule__Model__Group__1__Impl : ( ( rule__Model__CalculationsAssignment_1 )* ) ;
+    // InternalCalculatorForm.g:851:1: rule__Model__Group__1__Impl : ( ( rule__Model__CalculationsAssignment_1 )* ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:849:1: ( ( ( rule__Model__CalculationsAssignment_1 )* ) )
-            // InternalCalculatorForm.g:850:1: ( ( rule__Model__CalculationsAssignment_1 )* )
+            // InternalCalculatorForm.g:855:1: ( ( ( rule__Model__CalculationsAssignment_1 )* ) )
+            // InternalCalculatorForm.g:856:1: ( ( rule__Model__CalculationsAssignment_1 )* )
             {
-            // InternalCalculatorForm.g:850:1: ( ( rule__Model__CalculationsAssignment_1 )* )
-            // InternalCalculatorForm.g:851:2: ( rule__Model__CalculationsAssignment_1 )*
+            // InternalCalculatorForm.g:856:1: ( ( rule__Model__CalculationsAssignment_1 )* )
+            // InternalCalculatorForm.g:857:2: ( rule__Model__CalculationsAssignment_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getCalculationsAssignment_1()); 
             }
-            // InternalCalculatorForm.g:852:2: ( rule__Model__CalculationsAssignment_1 )*
+            // InternalCalculatorForm.g:858:2: ( rule__Model__CalculationsAssignment_1 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==29) ) {
+                if ( (LA10_0==30) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalCalculatorForm.g:852:3: rule__Model__CalculationsAssignment_1
+            	    // InternalCalculatorForm.g:858:3: rule__Model__CalculationsAssignment_1
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__Model__CalculationsAssignment_1();
@@ -3105,14 +3141,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__0"
-    // InternalCalculatorForm.g:861:1: rule__FieldInput__Group__0 : rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1 ;
+    // InternalCalculatorForm.g:867:1: rule__FieldInput__Group__0 : rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1 ;
     public final void rule__FieldInput__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:865:1: ( rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1 )
-            // InternalCalculatorForm.g:866:2: rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1
+            // InternalCalculatorForm.g:871:1: ( rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1 )
+            // InternalCalculatorForm.g:872:2: rule__FieldInput__Group__0__Impl rule__FieldInput__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__FieldInput__Group__0__Impl();
@@ -3143,22 +3179,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__0__Impl"
-    // InternalCalculatorForm.g:873:1: rule__FieldInput__Group__0__Impl : ( 'field' ) ;
+    // InternalCalculatorForm.g:879:1: rule__FieldInput__Group__0__Impl : ( 'field' ) ;
     public final void rule__FieldInput__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:877:1: ( ( 'field' ) )
-            // InternalCalculatorForm.g:878:1: ( 'field' )
+            // InternalCalculatorForm.g:883:1: ( ( 'field' ) )
+            // InternalCalculatorForm.g:884:1: ( 'field' )
             {
-            // InternalCalculatorForm.g:878:1: ( 'field' )
-            // InternalCalculatorForm.g:879:2: 'field'
+            // InternalCalculatorForm.g:884:1: ( 'field' )
+            // InternalCalculatorForm.g:885:2: 'field'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getFieldKeyword_0()); 
             }
-            match(input,14,FOLLOW_2); if (state.failed) return ;
+            match(input,15,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getFieldKeyword_0()); 
             }
@@ -3184,14 +3220,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__1"
-    // InternalCalculatorForm.g:888:1: rule__FieldInput__Group__1 : rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2 ;
+    // InternalCalculatorForm.g:894:1: rule__FieldInput__Group__1 : rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2 ;
     public final void rule__FieldInput__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:892:1: ( rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2 )
-            // InternalCalculatorForm.g:893:2: rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2
+            // InternalCalculatorForm.g:898:1: ( rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2 )
+            // InternalCalculatorForm.g:899:2: rule__FieldInput__Group__1__Impl rule__FieldInput__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__1__Impl();
@@ -3222,23 +3258,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__1__Impl"
-    // InternalCalculatorForm.g:900:1: rule__FieldInput__Group__1__Impl : ( ( rule__FieldInput__NameAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:906:1: rule__FieldInput__Group__1__Impl : ( ( rule__FieldInput__NameAssignment_1 ) ) ;
     public final void rule__FieldInput__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:904:1: ( ( ( rule__FieldInput__NameAssignment_1 ) ) )
-            // InternalCalculatorForm.g:905:1: ( ( rule__FieldInput__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:910:1: ( ( ( rule__FieldInput__NameAssignment_1 ) ) )
+            // InternalCalculatorForm.g:911:1: ( ( rule__FieldInput__NameAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:905:1: ( ( rule__FieldInput__NameAssignment_1 ) )
-            // InternalCalculatorForm.g:906:2: ( rule__FieldInput__NameAssignment_1 )
+            // InternalCalculatorForm.g:911:1: ( ( rule__FieldInput__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:912:2: ( rule__FieldInput__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getNameAssignment_1()); 
             }
-            // InternalCalculatorForm.g:907:2: ( rule__FieldInput__NameAssignment_1 )
-            // InternalCalculatorForm.g:907:3: rule__FieldInput__NameAssignment_1
+            // InternalCalculatorForm.g:913:2: ( rule__FieldInput__NameAssignment_1 )
+            // InternalCalculatorForm.g:913:3: rule__FieldInput__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__NameAssignment_1();
@@ -3273,14 +3309,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__2"
-    // InternalCalculatorForm.g:915:1: rule__FieldInput__Group__2 : rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3 ;
+    // InternalCalculatorForm.g:921:1: rule__FieldInput__Group__2 : rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3 ;
     public final void rule__FieldInput__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:919:1: ( rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3 )
-            // InternalCalculatorForm.g:920:2: rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3
+            // InternalCalculatorForm.g:925:1: ( rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3 )
+            // InternalCalculatorForm.g:926:2: rule__FieldInput__Group__2__Impl rule__FieldInput__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__2__Impl();
@@ -3311,31 +3347,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__2__Impl"
-    // InternalCalculatorForm.g:927:1: rule__FieldInput__Group__2__Impl : ( ( rule__FieldInput__AutofocusAssignment_2 )? ) ;
+    // InternalCalculatorForm.g:933:1: rule__FieldInput__Group__2__Impl : ( ( rule__FieldInput__AutofocusAssignment_2 )? ) ;
     public final void rule__FieldInput__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:931:1: ( ( ( rule__FieldInput__AutofocusAssignment_2 )? ) )
-            // InternalCalculatorForm.g:932:1: ( ( rule__FieldInput__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:937:1: ( ( ( rule__FieldInput__AutofocusAssignment_2 )? ) )
+            // InternalCalculatorForm.g:938:1: ( ( rule__FieldInput__AutofocusAssignment_2 )? )
             {
-            // InternalCalculatorForm.g:932:1: ( ( rule__FieldInput__AutofocusAssignment_2 )? )
-            // InternalCalculatorForm.g:933:2: ( rule__FieldInput__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:938:1: ( ( rule__FieldInput__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:939:2: ( rule__FieldInput__AutofocusAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getAutofocusAssignment_2()); 
             }
-            // InternalCalculatorForm.g:934:2: ( rule__FieldInput__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:940:2: ( rule__FieldInput__AutofocusAssignment_2 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==37) ) {
+            if ( (LA11_0==38) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCalculatorForm.g:934:3: rule__FieldInput__AutofocusAssignment_2
+                    // InternalCalculatorForm.g:940:3: rule__FieldInput__AutofocusAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__AutofocusAssignment_2();
@@ -3373,14 +3409,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__3"
-    // InternalCalculatorForm.g:942:1: rule__FieldInput__Group__3 : rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4 ;
+    // InternalCalculatorForm.g:948:1: rule__FieldInput__Group__3 : rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4 ;
     public final void rule__FieldInput__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:946:1: ( rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4 )
-            // InternalCalculatorForm.g:947:2: rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4
+            // InternalCalculatorForm.g:952:1: ( rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4 )
+            // InternalCalculatorForm.g:953:2: rule__FieldInput__Group__3__Impl rule__FieldInput__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__3__Impl();
@@ -3411,31 +3447,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__3__Impl"
-    // InternalCalculatorForm.g:954:1: rule__FieldInput__Group__3__Impl : ( ( rule__FieldInput__DisabledAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:960:1: rule__FieldInput__Group__3__Impl : ( ( rule__FieldInput__DisabledAssignment_3 )? ) ;
     public final void rule__FieldInput__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:958:1: ( ( ( rule__FieldInput__DisabledAssignment_3 )? ) )
-            // InternalCalculatorForm.g:959:1: ( ( rule__FieldInput__DisabledAssignment_3 )? )
+            // InternalCalculatorForm.g:964:1: ( ( ( rule__FieldInput__DisabledAssignment_3 )? ) )
+            // InternalCalculatorForm.g:965:1: ( ( rule__FieldInput__DisabledAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:959:1: ( ( rule__FieldInput__DisabledAssignment_3 )? )
-            // InternalCalculatorForm.g:960:2: ( rule__FieldInput__DisabledAssignment_3 )?
+            // InternalCalculatorForm.g:965:1: ( ( rule__FieldInput__DisabledAssignment_3 )? )
+            // InternalCalculatorForm.g:966:2: ( rule__FieldInput__DisabledAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getDisabledAssignment_3()); 
             }
-            // InternalCalculatorForm.g:961:2: ( rule__FieldInput__DisabledAssignment_3 )?
+            // InternalCalculatorForm.g:967:2: ( rule__FieldInput__DisabledAssignment_3 )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==38) ) {
+            if ( (LA12_0==39) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // InternalCalculatorForm.g:961:3: rule__FieldInput__DisabledAssignment_3
+                    // InternalCalculatorForm.g:967:3: rule__FieldInput__DisabledAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__DisabledAssignment_3();
@@ -3473,14 +3509,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__4"
-    // InternalCalculatorForm.g:969:1: rule__FieldInput__Group__4 : rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5 ;
+    // InternalCalculatorForm.g:975:1: rule__FieldInput__Group__4 : rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5 ;
     public final void rule__FieldInput__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:973:1: ( rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5 )
-            // InternalCalculatorForm.g:974:2: rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5
+            // InternalCalculatorForm.g:979:1: ( rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5 )
+            // InternalCalculatorForm.g:980:2: rule__FieldInput__Group__4__Impl rule__FieldInput__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__4__Impl();
@@ -3511,31 +3547,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__4__Impl"
-    // InternalCalculatorForm.g:981:1: rule__FieldInput__Group__4__Impl : ( ( rule__FieldInput__Group_4__0 )? ) ;
+    // InternalCalculatorForm.g:987:1: rule__FieldInput__Group__4__Impl : ( ( rule__FieldInput__Group_4__0 )? ) ;
     public final void rule__FieldInput__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:985:1: ( ( ( rule__FieldInput__Group_4__0 )? ) )
-            // InternalCalculatorForm.g:986:1: ( ( rule__FieldInput__Group_4__0 )? )
+            // InternalCalculatorForm.g:991:1: ( ( ( rule__FieldInput__Group_4__0 )? ) )
+            // InternalCalculatorForm.g:992:1: ( ( rule__FieldInput__Group_4__0 )? )
             {
-            // InternalCalculatorForm.g:986:1: ( ( rule__FieldInput__Group_4__0 )? )
-            // InternalCalculatorForm.g:987:2: ( rule__FieldInput__Group_4__0 )?
+            // InternalCalculatorForm.g:992:1: ( ( rule__FieldInput__Group_4__0 )? )
+            // InternalCalculatorForm.g:993:2: ( rule__FieldInput__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getGroup_4()); 
             }
-            // InternalCalculatorForm.g:988:2: ( rule__FieldInput__Group_4__0 )?
+            // InternalCalculatorForm.g:994:2: ( rule__FieldInput__Group_4__0 )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==15) ) {
+            if ( (LA13_0==16) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
-                    // InternalCalculatorForm.g:988:3: rule__FieldInput__Group_4__0
+                    // InternalCalculatorForm.g:994:3: rule__FieldInput__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__Group_4__0();
@@ -3573,14 +3609,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__5"
-    // InternalCalculatorForm.g:996:1: rule__FieldInput__Group__5 : rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6 ;
+    // InternalCalculatorForm.g:1002:1: rule__FieldInput__Group__5 : rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6 ;
     public final void rule__FieldInput__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1000:1: ( rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6 )
-            // InternalCalculatorForm.g:1001:2: rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6
+            // InternalCalculatorForm.g:1006:1: ( rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6 )
+            // InternalCalculatorForm.g:1007:2: rule__FieldInput__Group__5__Impl rule__FieldInput__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__5__Impl();
@@ -3611,31 +3647,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__5__Impl"
-    // InternalCalculatorForm.g:1008:1: rule__FieldInput__Group__5__Impl : ( ( rule__FieldInput__Group_5__0 )? ) ;
+    // InternalCalculatorForm.g:1014:1: rule__FieldInput__Group__5__Impl : ( ( rule__FieldInput__Group_5__0 )? ) ;
     public final void rule__FieldInput__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1012:1: ( ( ( rule__FieldInput__Group_5__0 )? ) )
-            // InternalCalculatorForm.g:1013:1: ( ( rule__FieldInput__Group_5__0 )? )
+            // InternalCalculatorForm.g:1018:1: ( ( ( rule__FieldInput__Group_5__0 )? ) )
+            // InternalCalculatorForm.g:1019:1: ( ( rule__FieldInput__Group_5__0 )? )
             {
-            // InternalCalculatorForm.g:1013:1: ( ( rule__FieldInput__Group_5__0 )? )
-            // InternalCalculatorForm.g:1014:2: ( rule__FieldInput__Group_5__0 )?
+            // InternalCalculatorForm.g:1019:1: ( ( rule__FieldInput__Group_5__0 )? )
+            // InternalCalculatorForm.g:1020:2: ( rule__FieldInput__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getGroup_5()); 
             }
-            // InternalCalculatorForm.g:1015:2: ( rule__FieldInput__Group_5__0 )?
+            // InternalCalculatorForm.g:1021:2: ( rule__FieldInput__Group_5__0 )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==16) ) {
+            if ( (LA14_0==17) ) {
                 alt14=1;
             }
             switch (alt14) {
                 case 1 :
-                    // InternalCalculatorForm.g:1015:3: rule__FieldInput__Group_5__0
+                    // InternalCalculatorForm.g:1021:3: rule__FieldInput__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__Group_5__0();
@@ -3673,14 +3709,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__6"
-    // InternalCalculatorForm.g:1023:1: rule__FieldInput__Group__6 : rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7 ;
+    // InternalCalculatorForm.g:1029:1: rule__FieldInput__Group__6 : rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7 ;
     public final void rule__FieldInput__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1027:1: ( rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7 )
-            // InternalCalculatorForm.g:1028:2: rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7
+            // InternalCalculatorForm.g:1033:1: ( rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7 )
+            // InternalCalculatorForm.g:1034:2: rule__FieldInput__Group__6__Impl rule__FieldInput__Group__7
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__6__Impl();
@@ -3711,31 +3747,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__6__Impl"
-    // InternalCalculatorForm.g:1035:1: rule__FieldInput__Group__6__Impl : ( ( rule__FieldInput__NotdisplayedAssignment_6 )? ) ;
+    // InternalCalculatorForm.g:1041:1: rule__FieldInput__Group__6__Impl : ( ( rule__FieldInput__NotdisplayedAssignment_6 )? ) ;
     public final void rule__FieldInput__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1039:1: ( ( ( rule__FieldInput__NotdisplayedAssignment_6 )? ) )
-            // InternalCalculatorForm.g:1040:1: ( ( rule__FieldInput__NotdisplayedAssignment_6 )? )
+            // InternalCalculatorForm.g:1045:1: ( ( ( rule__FieldInput__NotdisplayedAssignment_6 )? ) )
+            // InternalCalculatorForm.g:1046:1: ( ( rule__FieldInput__NotdisplayedAssignment_6 )? )
             {
-            // InternalCalculatorForm.g:1040:1: ( ( rule__FieldInput__NotdisplayedAssignment_6 )? )
-            // InternalCalculatorForm.g:1041:2: ( rule__FieldInput__NotdisplayedAssignment_6 )?
+            // InternalCalculatorForm.g:1046:1: ( ( rule__FieldInput__NotdisplayedAssignment_6 )? )
+            // InternalCalculatorForm.g:1047:2: ( rule__FieldInput__NotdisplayedAssignment_6 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getNotdisplayedAssignment_6()); 
             }
-            // InternalCalculatorForm.g:1042:2: ( rule__FieldInput__NotdisplayedAssignment_6 )?
+            // InternalCalculatorForm.g:1048:2: ( rule__FieldInput__NotdisplayedAssignment_6 )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==39) ) {
+            if ( (LA15_0==40) ) {
                 alt15=1;
             }
             switch (alt15) {
                 case 1 :
-                    // InternalCalculatorForm.g:1042:3: rule__FieldInput__NotdisplayedAssignment_6
+                    // InternalCalculatorForm.g:1048:3: rule__FieldInput__NotdisplayedAssignment_6
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__NotdisplayedAssignment_6();
@@ -3773,14 +3809,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__7"
-    // InternalCalculatorForm.g:1050:1: rule__FieldInput__Group__7 : rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8 ;
+    // InternalCalculatorForm.g:1056:1: rule__FieldInput__Group__7 : rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8 ;
     public final void rule__FieldInput__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1054:1: ( rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8 )
-            // InternalCalculatorForm.g:1055:2: rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8
+            // InternalCalculatorForm.g:1060:1: ( rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8 )
+            // InternalCalculatorForm.g:1061:2: rule__FieldInput__Group__7__Impl rule__FieldInput__Group__8
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__7__Impl();
@@ -3811,31 +3847,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__7__Impl"
-    // InternalCalculatorForm.g:1062:1: rule__FieldInput__Group__7__Impl : ( ( rule__FieldInput__ReadonlyAssignment_7 )? ) ;
+    // InternalCalculatorForm.g:1068:1: rule__FieldInput__Group__7__Impl : ( ( rule__FieldInput__ReadonlyAssignment_7 )? ) ;
     public final void rule__FieldInput__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1066:1: ( ( ( rule__FieldInput__ReadonlyAssignment_7 )? ) )
-            // InternalCalculatorForm.g:1067:1: ( ( rule__FieldInput__ReadonlyAssignment_7 )? )
+            // InternalCalculatorForm.g:1072:1: ( ( ( rule__FieldInput__ReadonlyAssignment_7 )? ) )
+            // InternalCalculatorForm.g:1073:1: ( ( rule__FieldInput__ReadonlyAssignment_7 )? )
             {
-            // InternalCalculatorForm.g:1067:1: ( ( rule__FieldInput__ReadonlyAssignment_7 )? )
-            // InternalCalculatorForm.g:1068:2: ( rule__FieldInput__ReadonlyAssignment_7 )?
+            // InternalCalculatorForm.g:1073:1: ( ( rule__FieldInput__ReadonlyAssignment_7 )? )
+            // InternalCalculatorForm.g:1074:2: ( rule__FieldInput__ReadonlyAssignment_7 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getReadonlyAssignment_7()); 
             }
-            // InternalCalculatorForm.g:1069:2: ( rule__FieldInput__ReadonlyAssignment_7 )?
+            // InternalCalculatorForm.g:1075:2: ( rule__FieldInput__ReadonlyAssignment_7 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==40) ) {
+            if ( (LA16_0==41) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
-                    // InternalCalculatorForm.g:1069:3: rule__FieldInput__ReadonlyAssignment_7
+                    // InternalCalculatorForm.g:1075:3: rule__FieldInput__ReadonlyAssignment_7
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__ReadonlyAssignment_7();
@@ -3873,14 +3909,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__8"
-    // InternalCalculatorForm.g:1077:1: rule__FieldInput__Group__8 : rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9 ;
+    // InternalCalculatorForm.g:1083:1: rule__FieldInput__Group__8 : rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9 ;
     public final void rule__FieldInput__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1081:1: ( rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9 )
-            // InternalCalculatorForm.g:1082:2: rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9
+            // InternalCalculatorForm.g:1087:1: ( rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9 )
+            // InternalCalculatorForm.g:1088:2: rule__FieldInput__Group__8__Impl rule__FieldInput__Group__9
             {
             pushFollow(FOLLOW_7);
             rule__FieldInput__Group__8__Impl();
@@ -3911,31 +3947,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__8__Impl"
-    // InternalCalculatorForm.g:1089:1: rule__FieldInput__Group__8__Impl : ( ( rule__FieldInput__RequiredAssignment_8 )? ) ;
+    // InternalCalculatorForm.g:1095:1: rule__FieldInput__Group__8__Impl : ( ( rule__FieldInput__RequiredAssignment_8 )? ) ;
     public final void rule__FieldInput__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1093:1: ( ( ( rule__FieldInput__RequiredAssignment_8 )? ) )
-            // InternalCalculatorForm.g:1094:1: ( ( rule__FieldInput__RequiredAssignment_8 )? )
+            // InternalCalculatorForm.g:1099:1: ( ( ( rule__FieldInput__RequiredAssignment_8 )? ) )
+            // InternalCalculatorForm.g:1100:1: ( ( rule__FieldInput__RequiredAssignment_8 )? )
             {
-            // InternalCalculatorForm.g:1094:1: ( ( rule__FieldInput__RequiredAssignment_8 )? )
-            // InternalCalculatorForm.g:1095:2: ( rule__FieldInput__RequiredAssignment_8 )?
+            // InternalCalculatorForm.g:1100:1: ( ( rule__FieldInput__RequiredAssignment_8 )? )
+            // InternalCalculatorForm.g:1101:2: ( rule__FieldInput__RequiredAssignment_8 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getRequiredAssignment_8()); 
             }
-            // InternalCalculatorForm.g:1096:2: ( rule__FieldInput__RequiredAssignment_8 )?
+            // InternalCalculatorForm.g:1102:2: ( rule__FieldInput__RequiredAssignment_8 )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==41) ) {
+            if ( (LA17_0==42) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
-                    // InternalCalculatorForm.g:1096:3: rule__FieldInput__RequiredAssignment_8
+                    // InternalCalculatorForm.g:1102:3: rule__FieldInput__RequiredAssignment_8
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__RequiredAssignment_8();
@@ -3973,14 +4009,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__9"
-    // InternalCalculatorForm.g:1104:1: rule__FieldInput__Group__9 : rule__FieldInput__Group__9__Impl ;
+    // InternalCalculatorForm.g:1110:1: rule__FieldInput__Group__9 : rule__FieldInput__Group__9__Impl ;
     public final void rule__FieldInput__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1108:1: ( rule__FieldInput__Group__9__Impl )
-            // InternalCalculatorForm.g:1109:2: rule__FieldInput__Group__9__Impl
+            // InternalCalculatorForm.g:1114:1: ( rule__FieldInput__Group__9__Impl )
+            // InternalCalculatorForm.g:1115:2: rule__FieldInput__Group__9__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__Group__9__Impl();
@@ -4006,31 +4042,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group__9__Impl"
-    // InternalCalculatorForm.g:1115:1: rule__FieldInput__Group__9__Impl : ( ( rule__FieldInput__Group_9__0 )? ) ;
+    // InternalCalculatorForm.g:1121:1: rule__FieldInput__Group__9__Impl : ( ( rule__FieldInput__Group_9__0 )? ) ;
     public final void rule__FieldInput__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1119:1: ( ( ( rule__FieldInput__Group_9__0 )? ) )
-            // InternalCalculatorForm.g:1120:1: ( ( rule__FieldInput__Group_9__0 )? )
+            // InternalCalculatorForm.g:1125:1: ( ( ( rule__FieldInput__Group_9__0 )? ) )
+            // InternalCalculatorForm.g:1126:1: ( ( rule__FieldInput__Group_9__0 )? )
             {
-            // InternalCalculatorForm.g:1120:1: ( ( rule__FieldInput__Group_9__0 )? )
-            // InternalCalculatorForm.g:1121:2: ( rule__FieldInput__Group_9__0 )?
+            // InternalCalculatorForm.g:1126:1: ( ( rule__FieldInput__Group_9__0 )? )
+            // InternalCalculatorForm.g:1127:2: ( rule__FieldInput__Group_9__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getGroup_9()); 
             }
-            // InternalCalculatorForm.g:1122:2: ( rule__FieldInput__Group_9__0 )?
+            // InternalCalculatorForm.g:1128:2: ( rule__FieldInput__Group_9__0 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==17) ) {
+            if ( (LA18_0==18) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalCalculatorForm.g:1122:3: rule__FieldInput__Group_9__0
+                    // InternalCalculatorForm.g:1128:3: rule__FieldInput__Group_9__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldInput__Group_9__0();
@@ -4068,14 +4104,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_4__0"
-    // InternalCalculatorForm.g:1131:1: rule__FieldInput__Group_4__0 : rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1 ;
+    // InternalCalculatorForm.g:1137:1: rule__FieldInput__Group_4__0 : rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1 ;
     public final void rule__FieldInput__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1135:1: ( rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1 )
-            // InternalCalculatorForm.g:1136:2: rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1
+            // InternalCalculatorForm.g:1141:1: ( rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1 )
+            // InternalCalculatorForm.g:1142:2: rule__FieldInput__Group_4__0__Impl rule__FieldInput__Group_4__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldInput__Group_4__0__Impl();
@@ -4106,22 +4142,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_4__0__Impl"
-    // InternalCalculatorForm.g:1143:1: rule__FieldInput__Group_4__0__Impl : ( 'form' ) ;
+    // InternalCalculatorForm.g:1149:1: rule__FieldInput__Group_4__0__Impl : ( 'form' ) ;
     public final void rule__FieldInput__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1147:1: ( ( 'form' ) )
-            // InternalCalculatorForm.g:1148:1: ( 'form' )
+            // InternalCalculatorForm.g:1153:1: ( ( 'form' ) )
+            // InternalCalculatorForm.g:1154:1: ( 'form' )
             {
-            // InternalCalculatorForm.g:1148:1: ( 'form' )
-            // InternalCalculatorForm.g:1149:2: 'form'
+            // InternalCalculatorForm.g:1154:1: ( 'form' )
+            // InternalCalculatorForm.g:1155:2: 'form'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getFormKeyword_4_0()); 
             }
-            match(input,15,FOLLOW_2); if (state.failed) return ;
+            match(input,16,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getFormKeyword_4_0()); 
             }
@@ -4147,14 +4183,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_4__1"
-    // InternalCalculatorForm.g:1158:1: rule__FieldInput__Group_4__1 : rule__FieldInput__Group_4__1__Impl ;
+    // InternalCalculatorForm.g:1164:1: rule__FieldInput__Group_4__1 : rule__FieldInput__Group_4__1__Impl ;
     public final void rule__FieldInput__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1162:1: ( rule__FieldInput__Group_4__1__Impl )
-            // InternalCalculatorForm.g:1163:2: rule__FieldInput__Group_4__1__Impl
+            // InternalCalculatorForm.g:1168:1: ( rule__FieldInput__Group_4__1__Impl )
+            // InternalCalculatorForm.g:1169:2: rule__FieldInput__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__Group_4__1__Impl();
@@ -4180,23 +4216,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_4__1__Impl"
-    // InternalCalculatorForm.g:1169:1: rule__FieldInput__Group_4__1__Impl : ( ( rule__FieldInput__FormAssignment_4_1 ) ) ;
+    // InternalCalculatorForm.g:1175:1: rule__FieldInput__Group_4__1__Impl : ( ( rule__FieldInput__FormAssignment_4_1 ) ) ;
     public final void rule__FieldInput__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1173:1: ( ( ( rule__FieldInput__FormAssignment_4_1 ) ) )
-            // InternalCalculatorForm.g:1174:1: ( ( rule__FieldInput__FormAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1179:1: ( ( ( rule__FieldInput__FormAssignment_4_1 ) ) )
+            // InternalCalculatorForm.g:1180:1: ( ( rule__FieldInput__FormAssignment_4_1 ) )
             {
-            // InternalCalculatorForm.g:1174:1: ( ( rule__FieldInput__FormAssignment_4_1 ) )
-            // InternalCalculatorForm.g:1175:2: ( rule__FieldInput__FormAssignment_4_1 )
+            // InternalCalculatorForm.g:1180:1: ( ( rule__FieldInput__FormAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1181:2: ( rule__FieldInput__FormAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getFormAssignment_4_1()); 
             }
-            // InternalCalculatorForm.g:1176:2: ( rule__FieldInput__FormAssignment_4_1 )
-            // InternalCalculatorForm.g:1176:3: rule__FieldInput__FormAssignment_4_1
+            // InternalCalculatorForm.g:1182:2: ( rule__FieldInput__FormAssignment_4_1 )
+            // InternalCalculatorForm.g:1182:3: rule__FieldInput__FormAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__FormAssignment_4_1();
@@ -4231,14 +4267,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_5__0"
-    // InternalCalculatorForm.g:1185:1: rule__FieldInput__Group_5__0 : rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1 ;
+    // InternalCalculatorForm.g:1191:1: rule__FieldInput__Group_5__0 : rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1 ;
     public final void rule__FieldInput__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1189:1: ( rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1 )
-            // InternalCalculatorForm.g:1190:2: rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1
+            // InternalCalculatorForm.g:1195:1: ( rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1 )
+            // InternalCalculatorForm.g:1196:2: rule__FieldInput__Group_5__0__Impl rule__FieldInput__Group_5__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldInput__Group_5__0__Impl();
@@ -4269,22 +4305,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_5__0__Impl"
-    // InternalCalculatorForm.g:1197:1: rule__FieldInput__Group_5__0__Impl : ( 'label' ) ;
+    // InternalCalculatorForm.g:1203:1: rule__FieldInput__Group_5__0__Impl : ( 'label' ) ;
     public final void rule__FieldInput__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1201:1: ( ( 'label' ) )
-            // InternalCalculatorForm.g:1202:1: ( 'label' )
+            // InternalCalculatorForm.g:1207:1: ( ( 'label' ) )
+            // InternalCalculatorForm.g:1208:1: ( 'label' )
             {
-            // InternalCalculatorForm.g:1202:1: ( 'label' )
-            // InternalCalculatorForm.g:1203:2: 'label'
+            // InternalCalculatorForm.g:1208:1: ( 'label' )
+            // InternalCalculatorForm.g:1209:2: 'label'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getLabelKeyword_5_0()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getLabelKeyword_5_0()); 
             }
@@ -4310,14 +4346,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_5__1"
-    // InternalCalculatorForm.g:1212:1: rule__FieldInput__Group_5__1 : rule__FieldInput__Group_5__1__Impl ;
+    // InternalCalculatorForm.g:1218:1: rule__FieldInput__Group_5__1 : rule__FieldInput__Group_5__1__Impl ;
     public final void rule__FieldInput__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1216:1: ( rule__FieldInput__Group_5__1__Impl )
-            // InternalCalculatorForm.g:1217:2: rule__FieldInput__Group_5__1__Impl
+            // InternalCalculatorForm.g:1222:1: ( rule__FieldInput__Group_5__1__Impl )
+            // InternalCalculatorForm.g:1223:2: rule__FieldInput__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__Group_5__1__Impl();
@@ -4343,23 +4379,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_5__1__Impl"
-    // InternalCalculatorForm.g:1223:1: rule__FieldInput__Group_5__1__Impl : ( ( rule__FieldInput__LabelAssignment_5_1 ) ) ;
+    // InternalCalculatorForm.g:1229:1: rule__FieldInput__Group_5__1__Impl : ( ( rule__FieldInput__LabelAssignment_5_1 ) ) ;
     public final void rule__FieldInput__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1227:1: ( ( ( rule__FieldInput__LabelAssignment_5_1 ) ) )
-            // InternalCalculatorForm.g:1228:1: ( ( rule__FieldInput__LabelAssignment_5_1 ) )
+            // InternalCalculatorForm.g:1233:1: ( ( ( rule__FieldInput__LabelAssignment_5_1 ) ) )
+            // InternalCalculatorForm.g:1234:1: ( ( rule__FieldInput__LabelAssignment_5_1 ) )
             {
-            // InternalCalculatorForm.g:1228:1: ( ( rule__FieldInput__LabelAssignment_5_1 ) )
-            // InternalCalculatorForm.g:1229:2: ( rule__FieldInput__LabelAssignment_5_1 )
+            // InternalCalculatorForm.g:1234:1: ( ( rule__FieldInput__LabelAssignment_5_1 ) )
+            // InternalCalculatorForm.g:1235:2: ( rule__FieldInput__LabelAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getLabelAssignment_5_1()); 
             }
-            // InternalCalculatorForm.g:1230:2: ( rule__FieldInput__LabelAssignment_5_1 )
-            // InternalCalculatorForm.g:1230:3: rule__FieldInput__LabelAssignment_5_1
+            // InternalCalculatorForm.g:1236:2: ( rule__FieldInput__LabelAssignment_5_1 )
+            // InternalCalculatorForm.g:1236:3: rule__FieldInput__LabelAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__LabelAssignment_5_1();
@@ -4394,14 +4430,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_9__0"
-    // InternalCalculatorForm.g:1239:1: rule__FieldInput__Group_9__0 : rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1 ;
+    // InternalCalculatorForm.g:1245:1: rule__FieldInput__Group_9__0 : rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1 ;
     public final void rule__FieldInput__Group_9__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1243:1: ( rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1 )
-            // InternalCalculatorForm.g:1244:2: rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1
+            // InternalCalculatorForm.g:1249:1: ( rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1 )
+            // InternalCalculatorForm.g:1250:2: rule__FieldInput__Group_9__0__Impl rule__FieldInput__Group_9__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldInput__Group_9__0__Impl();
@@ -4432,22 +4468,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_9__0__Impl"
-    // InternalCalculatorForm.g:1251:1: rule__FieldInput__Group_9__0__Impl : ( 'value' ) ;
+    // InternalCalculatorForm.g:1257:1: rule__FieldInput__Group_9__0__Impl : ( 'value' ) ;
     public final void rule__FieldInput__Group_9__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1255:1: ( ( 'value' ) )
-            // InternalCalculatorForm.g:1256:1: ( 'value' )
+            // InternalCalculatorForm.g:1261:1: ( ( 'value' ) )
+            // InternalCalculatorForm.g:1262:1: ( 'value' )
             {
-            // InternalCalculatorForm.g:1256:1: ( 'value' )
-            // InternalCalculatorForm.g:1257:2: 'value'
+            // InternalCalculatorForm.g:1262:1: ( 'value' )
+            // InternalCalculatorForm.g:1263:2: 'value'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getValueKeyword_9_0()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getValueKeyword_9_0()); 
             }
@@ -4473,14 +4509,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_9__1"
-    // InternalCalculatorForm.g:1266:1: rule__FieldInput__Group_9__1 : rule__FieldInput__Group_9__1__Impl ;
+    // InternalCalculatorForm.g:1272:1: rule__FieldInput__Group_9__1 : rule__FieldInput__Group_9__1__Impl ;
     public final void rule__FieldInput__Group_9__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1270:1: ( rule__FieldInput__Group_9__1__Impl )
-            // InternalCalculatorForm.g:1271:2: rule__FieldInput__Group_9__1__Impl
+            // InternalCalculatorForm.g:1276:1: ( rule__FieldInput__Group_9__1__Impl )
+            // InternalCalculatorForm.g:1277:2: rule__FieldInput__Group_9__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__Group_9__1__Impl();
@@ -4506,23 +4542,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__Group_9__1__Impl"
-    // InternalCalculatorForm.g:1277:1: rule__FieldInput__Group_9__1__Impl : ( ( rule__FieldInput__ValueAssignment_9_1 ) ) ;
+    // InternalCalculatorForm.g:1283:1: rule__FieldInput__Group_9__1__Impl : ( ( rule__FieldInput__ValueAssignment_9_1 ) ) ;
     public final void rule__FieldInput__Group_9__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1281:1: ( ( ( rule__FieldInput__ValueAssignment_9_1 ) ) )
-            // InternalCalculatorForm.g:1282:1: ( ( rule__FieldInput__ValueAssignment_9_1 ) )
+            // InternalCalculatorForm.g:1287:1: ( ( ( rule__FieldInput__ValueAssignment_9_1 ) ) )
+            // InternalCalculatorForm.g:1288:1: ( ( rule__FieldInput__ValueAssignment_9_1 ) )
             {
-            // InternalCalculatorForm.g:1282:1: ( ( rule__FieldInput__ValueAssignment_9_1 ) )
-            // InternalCalculatorForm.g:1283:2: ( rule__FieldInput__ValueAssignment_9_1 )
+            // InternalCalculatorForm.g:1288:1: ( ( rule__FieldInput__ValueAssignment_9_1 ) )
+            // InternalCalculatorForm.g:1289:2: ( rule__FieldInput__ValueAssignment_9_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getValueAssignment_9_1()); 
             }
-            // InternalCalculatorForm.g:1284:2: ( rule__FieldInput__ValueAssignment_9_1 )
-            // InternalCalculatorForm.g:1284:3: rule__FieldInput__ValueAssignment_9_1
+            // InternalCalculatorForm.g:1290:2: ( rule__FieldInput__ValueAssignment_9_1 )
+            // InternalCalculatorForm.g:1290:3: rule__FieldInput__ValueAssignment_9_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldInput__ValueAssignment_9_1();
@@ -4557,14 +4593,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__0"
-    // InternalCalculatorForm.g:1293:1: rule__FieldSelect__Group__0 : rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1 ;
+    // InternalCalculatorForm.g:1299:1: rule__FieldSelect__Group__0 : rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1 ;
     public final void rule__FieldSelect__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1297:1: ( rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1 )
-            // InternalCalculatorForm.g:1298:2: rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1
+            // InternalCalculatorForm.g:1303:1: ( rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1 )
+            // InternalCalculatorForm.g:1304:2: rule__FieldSelect__Group__0__Impl rule__FieldSelect__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__FieldSelect__Group__0__Impl();
@@ -4595,22 +4631,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__0__Impl"
-    // InternalCalculatorForm.g:1305:1: rule__FieldSelect__Group__0__Impl : ( 'dropdown' ) ;
+    // InternalCalculatorForm.g:1311:1: rule__FieldSelect__Group__0__Impl : ( 'dropdown' ) ;
     public final void rule__FieldSelect__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1309:1: ( ( 'dropdown' ) )
-            // InternalCalculatorForm.g:1310:1: ( 'dropdown' )
+            // InternalCalculatorForm.g:1315:1: ( ( 'dropdown' ) )
+            // InternalCalculatorForm.g:1316:1: ( 'dropdown' )
             {
-            // InternalCalculatorForm.g:1310:1: ( 'dropdown' )
-            // InternalCalculatorForm.g:1311:2: 'dropdown'
+            // InternalCalculatorForm.g:1316:1: ( 'dropdown' )
+            // InternalCalculatorForm.g:1317:2: 'dropdown'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getDropdownKeyword_0()); 
             }
-            match(input,18,FOLLOW_2); if (state.failed) return ;
+            match(input,19,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getDropdownKeyword_0()); 
             }
@@ -4636,14 +4672,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__1"
-    // InternalCalculatorForm.g:1320:1: rule__FieldSelect__Group__1 : rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2 ;
+    // InternalCalculatorForm.g:1326:1: rule__FieldSelect__Group__1 : rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2 ;
     public final void rule__FieldSelect__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1324:1: ( rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2 )
-            // InternalCalculatorForm.g:1325:2: rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2
+            // InternalCalculatorForm.g:1330:1: ( rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2 )
+            // InternalCalculatorForm.g:1331:2: rule__FieldSelect__Group__1__Impl rule__FieldSelect__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__1__Impl();
@@ -4674,23 +4710,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__1__Impl"
-    // InternalCalculatorForm.g:1332:1: rule__FieldSelect__Group__1__Impl : ( ( rule__FieldSelect__NameAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:1338:1: rule__FieldSelect__Group__1__Impl : ( ( rule__FieldSelect__NameAssignment_1 ) ) ;
     public final void rule__FieldSelect__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1336:1: ( ( ( rule__FieldSelect__NameAssignment_1 ) ) )
-            // InternalCalculatorForm.g:1337:1: ( ( rule__FieldSelect__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:1342:1: ( ( ( rule__FieldSelect__NameAssignment_1 ) ) )
+            // InternalCalculatorForm.g:1343:1: ( ( rule__FieldSelect__NameAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:1337:1: ( ( rule__FieldSelect__NameAssignment_1 ) )
-            // InternalCalculatorForm.g:1338:2: ( rule__FieldSelect__NameAssignment_1 )
+            // InternalCalculatorForm.g:1343:1: ( ( rule__FieldSelect__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:1344:2: ( rule__FieldSelect__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getNameAssignment_1()); 
             }
-            // InternalCalculatorForm.g:1339:2: ( rule__FieldSelect__NameAssignment_1 )
-            // InternalCalculatorForm.g:1339:3: rule__FieldSelect__NameAssignment_1
+            // InternalCalculatorForm.g:1345:2: ( rule__FieldSelect__NameAssignment_1 )
+            // InternalCalculatorForm.g:1345:3: rule__FieldSelect__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__NameAssignment_1();
@@ -4725,14 +4761,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__2"
-    // InternalCalculatorForm.g:1347:1: rule__FieldSelect__Group__2 : rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3 ;
+    // InternalCalculatorForm.g:1353:1: rule__FieldSelect__Group__2 : rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3 ;
     public final void rule__FieldSelect__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1351:1: ( rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3 )
-            // InternalCalculatorForm.g:1352:2: rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3
+            // InternalCalculatorForm.g:1357:1: ( rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3 )
+            // InternalCalculatorForm.g:1358:2: rule__FieldSelect__Group__2__Impl rule__FieldSelect__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__2__Impl();
@@ -4763,31 +4799,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__2__Impl"
-    // InternalCalculatorForm.g:1359:1: rule__FieldSelect__Group__2__Impl : ( ( rule__FieldSelect__AutofocusAssignment_2 )? ) ;
+    // InternalCalculatorForm.g:1365:1: rule__FieldSelect__Group__2__Impl : ( ( rule__FieldSelect__AutofocusAssignment_2 )? ) ;
     public final void rule__FieldSelect__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1363:1: ( ( ( rule__FieldSelect__AutofocusAssignment_2 )? ) )
-            // InternalCalculatorForm.g:1364:1: ( ( rule__FieldSelect__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:1369:1: ( ( ( rule__FieldSelect__AutofocusAssignment_2 )? ) )
+            // InternalCalculatorForm.g:1370:1: ( ( rule__FieldSelect__AutofocusAssignment_2 )? )
             {
-            // InternalCalculatorForm.g:1364:1: ( ( rule__FieldSelect__AutofocusAssignment_2 )? )
-            // InternalCalculatorForm.g:1365:2: ( rule__FieldSelect__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:1370:1: ( ( rule__FieldSelect__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:1371:2: ( rule__FieldSelect__AutofocusAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getAutofocusAssignment_2()); 
             }
-            // InternalCalculatorForm.g:1366:2: ( rule__FieldSelect__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:1372:2: ( rule__FieldSelect__AutofocusAssignment_2 )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==37) ) {
+            if ( (LA19_0==38) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
-                    // InternalCalculatorForm.g:1366:3: rule__FieldSelect__AutofocusAssignment_2
+                    // InternalCalculatorForm.g:1372:3: rule__FieldSelect__AutofocusAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__AutofocusAssignment_2();
@@ -4825,14 +4861,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__3"
-    // InternalCalculatorForm.g:1374:1: rule__FieldSelect__Group__3 : rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4 ;
+    // InternalCalculatorForm.g:1380:1: rule__FieldSelect__Group__3 : rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4 ;
     public final void rule__FieldSelect__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1378:1: ( rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4 )
-            // InternalCalculatorForm.g:1379:2: rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4
+            // InternalCalculatorForm.g:1384:1: ( rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4 )
+            // InternalCalculatorForm.g:1385:2: rule__FieldSelect__Group__3__Impl rule__FieldSelect__Group__4
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__3__Impl();
@@ -4863,31 +4899,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__3__Impl"
-    // InternalCalculatorForm.g:1386:1: rule__FieldSelect__Group__3__Impl : ( ( rule__FieldSelect__DisabledAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:1392:1: rule__FieldSelect__Group__3__Impl : ( ( rule__FieldSelect__DisabledAssignment_3 )? ) ;
     public final void rule__FieldSelect__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1390:1: ( ( ( rule__FieldSelect__DisabledAssignment_3 )? ) )
-            // InternalCalculatorForm.g:1391:1: ( ( rule__FieldSelect__DisabledAssignment_3 )? )
+            // InternalCalculatorForm.g:1396:1: ( ( ( rule__FieldSelect__DisabledAssignment_3 )? ) )
+            // InternalCalculatorForm.g:1397:1: ( ( rule__FieldSelect__DisabledAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:1391:1: ( ( rule__FieldSelect__DisabledAssignment_3 )? )
-            // InternalCalculatorForm.g:1392:2: ( rule__FieldSelect__DisabledAssignment_3 )?
+            // InternalCalculatorForm.g:1397:1: ( ( rule__FieldSelect__DisabledAssignment_3 )? )
+            // InternalCalculatorForm.g:1398:2: ( rule__FieldSelect__DisabledAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getDisabledAssignment_3()); 
             }
-            // InternalCalculatorForm.g:1393:2: ( rule__FieldSelect__DisabledAssignment_3 )?
+            // InternalCalculatorForm.g:1399:2: ( rule__FieldSelect__DisabledAssignment_3 )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==38) ) {
+            if ( (LA20_0==39) ) {
                 alt20=1;
             }
             switch (alt20) {
                 case 1 :
-                    // InternalCalculatorForm.g:1393:3: rule__FieldSelect__DisabledAssignment_3
+                    // InternalCalculatorForm.g:1399:3: rule__FieldSelect__DisabledAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__DisabledAssignment_3();
@@ -4925,14 +4961,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__4"
-    // InternalCalculatorForm.g:1401:1: rule__FieldSelect__Group__4 : rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5 ;
+    // InternalCalculatorForm.g:1407:1: rule__FieldSelect__Group__4 : rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5 ;
     public final void rule__FieldSelect__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1405:1: ( rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5 )
-            // InternalCalculatorForm.g:1406:2: rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5
+            // InternalCalculatorForm.g:1411:1: ( rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5 )
+            // InternalCalculatorForm.g:1412:2: rule__FieldSelect__Group__4__Impl rule__FieldSelect__Group__5
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__4__Impl();
@@ -4963,31 +4999,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__4__Impl"
-    // InternalCalculatorForm.g:1413:1: rule__FieldSelect__Group__4__Impl : ( ( rule__FieldSelect__Group_4__0 )? ) ;
+    // InternalCalculatorForm.g:1419:1: rule__FieldSelect__Group__4__Impl : ( ( rule__FieldSelect__Group_4__0 )? ) ;
     public final void rule__FieldSelect__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1417:1: ( ( ( rule__FieldSelect__Group_4__0 )? ) )
-            // InternalCalculatorForm.g:1418:1: ( ( rule__FieldSelect__Group_4__0 )? )
+            // InternalCalculatorForm.g:1423:1: ( ( ( rule__FieldSelect__Group_4__0 )? ) )
+            // InternalCalculatorForm.g:1424:1: ( ( rule__FieldSelect__Group_4__0 )? )
             {
-            // InternalCalculatorForm.g:1418:1: ( ( rule__FieldSelect__Group_4__0 )? )
-            // InternalCalculatorForm.g:1419:2: ( rule__FieldSelect__Group_4__0 )?
+            // InternalCalculatorForm.g:1424:1: ( ( rule__FieldSelect__Group_4__0 )? )
+            // InternalCalculatorForm.g:1425:2: ( rule__FieldSelect__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getGroup_4()); 
             }
-            // InternalCalculatorForm.g:1420:2: ( rule__FieldSelect__Group_4__0 )?
+            // InternalCalculatorForm.g:1426:2: ( rule__FieldSelect__Group_4__0 )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==15) ) {
+            if ( (LA21_0==16) ) {
                 alt21=1;
             }
             switch (alt21) {
                 case 1 :
-                    // InternalCalculatorForm.g:1420:3: rule__FieldSelect__Group_4__0
+                    // InternalCalculatorForm.g:1426:3: rule__FieldSelect__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__Group_4__0();
@@ -5025,14 +5061,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__5"
-    // InternalCalculatorForm.g:1428:1: rule__FieldSelect__Group__5 : rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6 ;
+    // InternalCalculatorForm.g:1434:1: rule__FieldSelect__Group__5 : rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6 ;
     public final void rule__FieldSelect__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1432:1: ( rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6 )
-            // InternalCalculatorForm.g:1433:2: rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6
+            // InternalCalculatorForm.g:1438:1: ( rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6 )
+            // InternalCalculatorForm.g:1439:2: rule__FieldSelect__Group__5__Impl rule__FieldSelect__Group__6
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__5__Impl();
@@ -5063,31 +5099,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__5__Impl"
-    // InternalCalculatorForm.g:1440:1: rule__FieldSelect__Group__5__Impl : ( ( rule__FieldSelect__Group_5__0 )? ) ;
+    // InternalCalculatorForm.g:1446:1: rule__FieldSelect__Group__5__Impl : ( ( rule__FieldSelect__Group_5__0 )? ) ;
     public final void rule__FieldSelect__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1444:1: ( ( ( rule__FieldSelect__Group_5__0 )? ) )
-            // InternalCalculatorForm.g:1445:1: ( ( rule__FieldSelect__Group_5__0 )? )
+            // InternalCalculatorForm.g:1450:1: ( ( ( rule__FieldSelect__Group_5__0 )? ) )
+            // InternalCalculatorForm.g:1451:1: ( ( rule__FieldSelect__Group_5__0 )? )
             {
-            // InternalCalculatorForm.g:1445:1: ( ( rule__FieldSelect__Group_5__0 )? )
-            // InternalCalculatorForm.g:1446:2: ( rule__FieldSelect__Group_5__0 )?
+            // InternalCalculatorForm.g:1451:1: ( ( rule__FieldSelect__Group_5__0 )? )
+            // InternalCalculatorForm.g:1452:2: ( rule__FieldSelect__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getGroup_5()); 
             }
-            // InternalCalculatorForm.g:1447:2: ( rule__FieldSelect__Group_5__0 )?
+            // InternalCalculatorForm.g:1453:2: ( rule__FieldSelect__Group_5__0 )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==16) ) {
+            if ( (LA22_0==17) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // InternalCalculatorForm.g:1447:3: rule__FieldSelect__Group_5__0
+                    // InternalCalculatorForm.g:1453:3: rule__FieldSelect__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__Group_5__0();
@@ -5125,14 +5161,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__6"
-    // InternalCalculatorForm.g:1455:1: rule__FieldSelect__Group__6 : rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7 ;
+    // InternalCalculatorForm.g:1461:1: rule__FieldSelect__Group__6 : rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7 ;
     public final void rule__FieldSelect__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1459:1: ( rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7 )
-            // InternalCalculatorForm.g:1460:2: rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7
+            // InternalCalculatorForm.g:1465:1: ( rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7 )
+            // InternalCalculatorForm.g:1466:2: rule__FieldSelect__Group__6__Impl rule__FieldSelect__Group__7
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__6__Impl();
@@ -5163,31 +5199,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__6__Impl"
-    // InternalCalculatorForm.g:1467:1: rule__FieldSelect__Group__6__Impl : ( ( rule__FieldSelect__MultipleAssignment_6 )? ) ;
+    // InternalCalculatorForm.g:1473:1: rule__FieldSelect__Group__6__Impl : ( ( rule__FieldSelect__MultipleAssignment_6 )? ) ;
     public final void rule__FieldSelect__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1471:1: ( ( ( rule__FieldSelect__MultipleAssignment_6 )? ) )
-            // InternalCalculatorForm.g:1472:1: ( ( rule__FieldSelect__MultipleAssignment_6 )? )
+            // InternalCalculatorForm.g:1477:1: ( ( ( rule__FieldSelect__MultipleAssignment_6 )? ) )
+            // InternalCalculatorForm.g:1478:1: ( ( rule__FieldSelect__MultipleAssignment_6 )? )
             {
-            // InternalCalculatorForm.g:1472:1: ( ( rule__FieldSelect__MultipleAssignment_6 )? )
-            // InternalCalculatorForm.g:1473:2: ( rule__FieldSelect__MultipleAssignment_6 )?
+            // InternalCalculatorForm.g:1478:1: ( ( rule__FieldSelect__MultipleAssignment_6 )? )
+            // InternalCalculatorForm.g:1479:2: ( rule__FieldSelect__MultipleAssignment_6 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getMultipleAssignment_6()); 
             }
-            // InternalCalculatorForm.g:1474:2: ( rule__FieldSelect__MultipleAssignment_6 )?
+            // InternalCalculatorForm.g:1480:2: ( rule__FieldSelect__MultipleAssignment_6 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==42) ) {
+            if ( (LA23_0==43) ) {
                 alt23=1;
             }
             switch (alt23) {
                 case 1 :
-                    // InternalCalculatorForm.g:1474:3: rule__FieldSelect__MultipleAssignment_6
+                    // InternalCalculatorForm.g:1480:3: rule__FieldSelect__MultipleAssignment_6
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__MultipleAssignment_6();
@@ -5225,14 +5261,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__7"
-    // InternalCalculatorForm.g:1482:1: rule__FieldSelect__Group__7 : rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8 ;
+    // InternalCalculatorForm.g:1488:1: rule__FieldSelect__Group__7 : rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8 ;
     public final void rule__FieldSelect__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1486:1: ( rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8 )
-            // InternalCalculatorForm.g:1487:2: rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8
+            // InternalCalculatorForm.g:1492:1: ( rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8 )
+            // InternalCalculatorForm.g:1493:2: rule__FieldSelect__Group__7__Impl rule__FieldSelect__Group__8
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__7__Impl();
@@ -5263,31 +5299,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__7__Impl"
-    // InternalCalculatorForm.g:1494:1: rule__FieldSelect__Group__7__Impl : ( ( rule__FieldSelect__RequiredAssignment_7 )? ) ;
+    // InternalCalculatorForm.g:1500:1: rule__FieldSelect__Group__7__Impl : ( ( rule__FieldSelect__RequiredAssignment_7 )? ) ;
     public final void rule__FieldSelect__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1498:1: ( ( ( rule__FieldSelect__RequiredAssignment_7 )? ) )
-            // InternalCalculatorForm.g:1499:1: ( ( rule__FieldSelect__RequiredAssignment_7 )? )
+            // InternalCalculatorForm.g:1504:1: ( ( ( rule__FieldSelect__RequiredAssignment_7 )? ) )
+            // InternalCalculatorForm.g:1505:1: ( ( rule__FieldSelect__RequiredAssignment_7 )? )
             {
-            // InternalCalculatorForm.g:1499:1: ( ( rule__FieldSelect__RequiredAssignment_7 )? )
-            // InternalCalculatorForm.g:1500:2: ( rule__FieldSelect__RequiredAssignment_7 )?
+            // InternalCalculatorForm.g:1505:1: ( ( rule__FieldSelect__RequiredAssignment_7 )? )
+            // InternalCalculatorForm.g:1506:2: ( rule__FieldSelect__RequiredAssignment_7 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getRequiredAssignment_7()); 
             }
-            // InternalCalculatorForm.g:1501:2: ( rule__FieldSelect__RequiredAssignment_7 )?
+            // InternalCalculatorForm.g:1507:2: ( rule__FieldSelect__RequiredAssignment_7 )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==41) ) {
+            if ( (LA24_0==42) ) {
                 alt24=1;
             }
             switch (alt24) {
                 case 1 :
-                    // InternalCalculatorForm.g:1501:3: rule__FieldSelect__RequiredAssignment_7
+                    // InternalCalculatorForm.g:1507:3: rule__FieldSelect__RequiredAssignment_7
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__RequiredAssignment_7();
@@ -5325,14 +5361,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__8"
-    // InternalCalculatorForm.g:1509:1: rule__FieldSelect__Group__8 : rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9 ;
+    // InternalCalculatorForm.g:1515:1: rule__FieldSelect__Group__8 : rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9 ;
     public final void rule__FieldSelect__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1513:1: ( rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9 )
-            // InternalCalculatorForm.g:1514:2: rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9
+            // InternalCalculatorForm.g:1519:1: ( rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9 )
+            // InternalCalculatorForm.g:1520:2: rule__FieldSelect__Group__8__Impl rule__FieldSelect__Group__9
             {
             pushFollow(FOLLOW_9);
             rule__FieldSelect__Group__8__Impl();
@@ -5363,31 +5399,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__8__Impl"
-    // InternalCalculatorForm.g:1521:1: rule__FieldSelect__Group__8__Impl : ( ( rule__FieldSelect__Group_8__0 )? ) ;
+    // InternalCalculatorForm.g:1527:1: rule__FieldSelect__Group__8__Impl : ( ( rule__FieldSelect__Group_8__0 )? ) ;
     public final void rule__FieldSelect__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1525:1: ( ( ( rule__FieldSelect__Group_8__0 )? ) )
-            // InternalCalculatorForm.g:1526:1: ( ( rule__FieldSelect__Group_8__0 )? )
+            // InternalCalculatorForm.g:1531:1: ( ( ( rule__FieldSelect__Group_8__0 )? ) )
+            // InternalCalculatorForm.g:1532:1: ( ( rule__FieldSelect__Group_8__0 )? )
             {
-            // InternalCalculatorForm.g:1526:1: ( ( rule__FieldSelect__Group_8__0 )? )
-            // InternalCalculatorForm.g:1527:2: ( rule__FieldSelect__Group_8__0 )?
+            // InternalCalculatorForm.g:1532:1: ( ( rule__FieldSelect__Group_8__0 )? )
+            // InternalCalculatorForm.g:1533:2: ( rule__FieldSelect__Group_8__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getGroup_8()); 
             }
-            // InternalCalculatorForm.g:1528:2: ( rule__FieldSelect__Group_8__0 )?
+            // InternalCalculatorForm.g:1534:2: ( rule__FieldSelect__Group_8__0 )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( (LA25_0==21) ) {
+            if ( (LA25_0==22) ) {
                 alt25=1;
             }
             switch (alt25) {
                 case 1 :
-                    // InternalCalculatorForm.g:1528:3: rule__FieldSelect__Group_8__0
+                    // InternalCalculatorForm.g:1534:3: rule__FieldSelect__Group_8__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldSelect__Group_8__0();
@@ -5425,14 +5461,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__9"
-    // InternalCalculatorForm.g:1536:1: rule__FieldSelect__Group__9 : rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10 ;
+    // InternalCalculatorForm.g:1542:1: rule__FieldSelect__Group__9 : rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10 ;
     public final void rule__FieldSelect__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1540:1: ( rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10 )
-            // InternalCalculatorForm.g:1541:2: rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10
+            // InternalCalculatorForm.g:1546:1: ( rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10 )
+            // InternalCalculatorForm.g:1547:2: rule__FieldSelect__Group__9__Impl rule__FieldSelect__Group__10
             {
             pushFollow(FOLLOW_10);
             rule__FieldSelect__Group__9__Impl();
@@ -5463,22 +5499,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__9__Impl"
-    // InternalCalculatorForm.g:1548:1: rule__FieldSelect__Group__9__Impl : ( '{' ) ;
+    // InternalCalculatorForm.g:1554:1: rule__FieldSelect__Group__9__Impl : ( '{' ) ;
     public final void rule__FieldSelect__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1552:1: ( ( '{' ) )
-            // InternalCalculatorForm.g:1553:1: ( '{' )
+            // InternalCalculatorForm.g:1558:1: ( ( '{' ) )
+            // InternalCalculatorForm.g:1559:1: ( '{' )
             {
-            // InternalCalculatorForm.g:1553:1: ( '{' )
-            // InternalCalculatorForm.g:1554:2: '{'
+            // InternalCalculatorForm.g:1559:1: ( '{' )
+            // InternalCalculatorForm.g:1560:2: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getLeftCurlyBracketKeyword_9()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getLeftCurlyBracketKeyword_9()); 
             }
@@ -5504,14 +5540,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__10"
-    // InternalCalculatorForm.g:1563:1: rule__FieldSelect__Group__10 : rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11 ;
+    // InternalCalculatorForm.g:1569:1: rule__FieldSelect__Group__10 : rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11 ;
     public final void rule__FieldSelect__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1567:1: ( rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11 )
-            // InternalCalculatorForm.g:1568:2: rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11
+            // InternalCalculatorForm.g:1573:1: ( rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11 )
+            // InternalCalculatorForm.g:1574:2: rule__FieldSelect__Group__10__Impl rule__FieldSelect__Group__11
             {
             pushFollow(FOLLOW_10);
             rule__FieldSelect__Group__10__Impl();
@@ -5542,35 +5578,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__10__Impl"
-    // InternalCalculatorForm.g:1575:1: rule__FieldSelect__Group__10__Impl : ( ( rule__FieldSelect__ChildsAssignment_10 )* ) ;
+    // InternalCalculatorForm.g:1581:1: rule__FieldSelect__Group__10__Impl : ( ( rule__FieldSelect__ChildsAssignment_10 )* ) ;
     public final void rule__FieldSelect__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1579:1: ( ( ( rule__FieldSelect__ChildsAssignment_10 )* ) )
-            // InternalCalculatorForm.g:1580:1: ( ( rule__FieldSelect__ChildsAssignment_10 )* )
+            // InternalCalculatorForm.g:1585:1: ( ( ( rule__FieldSelect__ChildsAssignment_10 )* ) )
+            // InternalCalculatorForm.g:1586:1: ( ( rule__FieldSelect__ChildsAssignment_10 )* )
             {
-            // InternalCalculatorForm.g:1580:1: ( ( rule__FieldSelect__ChildsAssignment_10 )* )
-            // InternalCalculatorForm.g:1581:2: ( rule__FieldSelect__ChildsAssignment_10 )*
+            // InternalCalculatorForm.g:1586:1: ( ( rule__FieldSelect__ChildsAssignment_10 )* )
+            // InternalCalculatorForm.g:1587:2: ( rule__FieldSelect__ChildsAssignment_10 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getChildsAssignment_10()); 
             }
-            // InternalCalculatorForm.g:1582:2: ( rule__FieldSelect__ChildsAssignment_10 )*
+            // InternalCalculatorForm.g:1588:2: ( rule__FieldSelect__ChildsAssignment_10 )*
             loop26:
             do {
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( (LA26_0==22||LA26_0==24) ) {
+                if ( (LA26_0==23||LA26_0==25) ) {
                     alt26=1;
                 }
 
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalCalculatorForm.g:1582:3: rule__FieldSelect__ChildsAssignment_10
+            	    // InternalCalculatorForm.g:1588:3: rule__FieldSelect__ChildsAssignment_10
             	    {
             	    pushFollow(FOLLOW_11);
             	    rule__FieldSelect__ChildsAssignment_10();
@@ -5611,14 +5647,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__11"
-    // InternalCalculatorForm.g:1590:1: rule__FieldSelect__Group__11 : rule__FieldSelect__Group__11__Impl ;
+    // InternalCalculatorForm.g:1596:1: rule__FieldSelect__Group__11 : rule__FieldSelect__Group__11__Impl ;
     public final void rule__FieldSelect__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1594:1: ( rule__FieldSelect__Group__11__Impl )
-            // InternalCalculatorForm.g:1595:2: rule__FieldSelect__Group__11__Impl
+            // InternalCalculatorForm.g:1600:1: ( rule__FieldSelect__Group__11__Impl )
+            // InternalCalculatorForm.g:1601:2: rule__FieldSelect__Group__11__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__Group__11__Impl();
@@ -5644,22 +5680,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group__11__Impl"
-    // InternalCalculatorForm.g:1601:1: rule__FieldSelect__Group__11__Impl : ( '}' ) ;
+    // InternalCalculatorForm.g:1607:1: rule__FieldSelect__Group__11__Impl : ( '}' ) ;
     public final void rule__FieldSelect__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1605:1: ( ( '}' ) )
-            // InternalCalculatorForm.g:1606:1: ( '}' )
+            // InternalCalculatorForm.g:1611:1: ( ( '}' ) )
+            // InternalCalculatorForm.g:1612:1: ( '}' )
             {
-            // InternalCalculatorForm.g:1606:1: ( '}' )
-            // InternalCalculatorForm.g:1607:2: '}'
+            // InternalCalculatorForm.g:1612:1: ( '}' )
+            // InternalCalculatorForm.g:1613:2: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getRightCurlyBracketKeyword_11()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getRightCurlyBracketKeyword_11()); 
             }
@@ -5685,14 +5721,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_4__0"
-    // InternalCalculatorForm.g:1617:1: rule__FieldSelect__Group_4__0 : rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1 ;
+    // InternalCalculatorForm.g:1623:1: rule__FieldSelect__Group_4__0 : rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1 ;
     public final void rule__FieldSelect__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1621:1: ( rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1 )
-            // InternalCalculatorForm.g:1622:2: rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1
+            // InternalCalculatorForm.g:1627:1: ( rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1 )
+            // InternalCalculatorForm.g:1628:2: rule__FieldSelect__Group_4__0__Impl rule__FieldSelect__Group_4__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldSelect__Group_4__0__Impl();
@@ -5723,22 +5759,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_4__0__Impl"
-    // InternalCalculatorForm.g:1629:1: rule__FieldSelect__Group_4__0__Impl : ( 'form' ) ;
+    // InternalCalculatorForm.g:1635:1: rule__FieldSelect__Group_4__0__Impl : ( 'form' ) ;
     public final void rule__FieldSelect__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1633:1: ( ( 'form' ) )
-            // InternalCalculatorForm.g:1634:1: ( 'form' )
+            // InternalCalculatorForm.g:1639:1: ( ( 'form' ) )
+            // InternalCalculatorForm.g:1640:1: ( 'form' )
             {
-            // InternalCalculatorForm.g:1634:1: ( 'form' )
-            // InternalCalculatorForm.g:1635:2: 'form'
+            // InternalCalculatorForm.g:1640:1: ( 'form' )
+            // InternalCalculatorForm.g:1641:2: 'form'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getFormKeyword_4_0()); 
             }
-            match(input,15,FOLLOW_2); if (state.failed) return ;
+            match(input,16,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getFormKeyword_4_0()); 
             }
@@ -5764,14 +5800,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_4__1"
-    // InternalCalculatorForm.g:1644:1: rule__FieldSelect__Group_4__1 : rule__FieldSelect__Group_4__1__Impl ;
+    // InternalCalculatorForm.g:1650:1: rule__FieldSelect__Group_4__1 : rule__FieldSelect__Group_4__1__Impl ;
     public final void rule__FieldSelect__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1648:1: ( rule__FieldSelect__Group_4__1__Impl )
-            // InternalCalculatorForm.g:1649:2: rule__FieldSelect__Group_4__1__Impl
+            // InternalCalculatorForm.g:1654:1: ( rule__FieldSelect__Group_4__1__Impl )
+            // InternalCalculatorForm.g:1655:2: rule__FieldSelect__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__Group_4__1__Impl();
@@ -5797,23 +5833,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_4__1__Impl"
-    // InternalCalculatorForm.g:1655:1: rule__FieldSelect__Group_4__1__Impl : ( ( rule__FieldSelect__FormAssignment_4_1 ) ) ;
+    // InternalCalculatorForm.g:1661:1: rule__FieldSelect__Group_4__1__Impl : ( ( rule__FieldSelect__FormAssignment_4_1 ) ) ;
     public final void rule__FieldSelect__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1659:1: ( ( ( rule__FieldSelect__FormAssignment_4_1 ) ) )
-            // InternalCalculatorForm.g:1660:1: ( ( rule__FieldSelect__FormAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1665:1: ( ( ( rule__FieldSelect__FormAssignment_4_1 ) ) )
+            // InternalCalculatorForm.g:1666:1: ( ( rule__FieldSelect__FormAssignment_4_1 ) )
             {
-            // InternalCalculatorForm.g:1660:1: ( ( rule__FieldSelect__FormAssignment_4_1 ) )
-            // InternalCalculatorForm.g:1661:2: ( rule__FieldSelect__FormAssignment_4_1 )
+            // InternalCalculatorForm.g:1666:1: ( ( rule__FieldSelect__FormAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1667:2: ( rule__FieldSelect__FormAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getFormAssignment_4_1()); 
             }
-            // InternalCalculatorForm.g:1662:2: ( rule__FieldSelect__FormAssignment_4_1 )
-            // InternalCalculatorForm.g:1662:3: rule__FieldSelect__FormAssignment_4_1
+            // InternalCalculatorForm.g:1668:2: ( rule__FieldSelect__FormAssignment_4_1 )
+            // InternalCalculatorForm.g:1668:3: rule__FieldSelect__FormAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__FormAssignment_4_1();
@@ -5848,14 +5884,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_5__0"
-    // InternalCalculatorForm.g:1671:1: rule__FieldSelect__Group_5__0 : rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1 ;
+    // InternalCalculatorForm.g:1677:1: rule__FieldSelect__Group_5__0 : rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1 ;
     public final void rule__FieldSelect__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1675:1: ( rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1 )
-            // InternalCalculatorForm.g:1676:2: rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1
+            // InternalCalculatorForm.g:1681:1: ( rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1 )
+            // InternalCalculatorForm.g:1682:2: rule__FieldSelect__Group_5__0__Impl rule__FieldSelect__Group_5__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldSelect__Group_5__0__Impl();
@@ -5886,22 +5922,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_5__0__Impl"
-    // InternalCalculatorForm.g:1683:1: rule__FieldSelect__Group_5__0__Impl : ( 'label' ) ;
+    // InternalCalculatorForm.g:1689:1: rule__FieldSelect__Group_5__0__Impl : ( 'label' ) ;
     public final void rule__FieldSelect__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1687:1: ( ( 'label' ) )
-            // InternalCalculatorForm.g:1688:1: ( 'label' )
+            // InternalCalculatorForm.g:1693:1: ( ( 'label' ) )
+            // InternalCalculatorForm.g:1694:1: ( 'label' )
             {
-            // InternalCalculatorForm.g:1688:1: ( 'label' )
-            // InternalCalculatorForm.g:1689:2: 'label'
+            // InternalCalculatorForm.g:1694:1: ( 'label' )
+            // InternalCalculatorForm.g:1695:2: 'label'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getLabelKeyword_5_0()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getLabelKeyword_5_0()); 
             }
@@ -5927,14 +5963,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_5__1"
-    // InternalCalculatorForm.g:1698:1: rule__FieldSelect__Group_5__1 : rule__FieldSelect__Group_5__1__Impl ;
+    // InternalCalculatorForm.g:1704:1: rule__FieldSelect__Group_5__1 : rule__FieldSelect__Group_5__1__Impl ;
     public final void rule__FieldSelect__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1702:1: ( rule__FieldSelect__Group_5__1__Impl )
-            // InternalCalculatorForm.g:1703:2: rule__FieldSelect__Group_5__1__Impl
+            // InternalCalculatorForm.g:1708:1: ( rule__FieldSelect__Group_5__1__Impl )
+            // InternalCalculatorForm.g:1709:2: rule__FieldSelect__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__Group_5__1__Impl();
@@ -5960,23 +5996,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_5__1__Impl"
-    // InternalCalculatorForm.g:1709:1: rule__FieldSelect__Group_5__1__Impl : ( ( rule__FieldSelect__LabelAssignment_5_1 ) ) ;
+    // InternalCalculatorForm.g:1715:1: rule__FieldSelect__Group_5__1__Impl : ( ( rule__FieldSelect__LabelAssignment_5_1 ) ) ;
     public final void rule__FieldSelect__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1713:1: ( ( ( rule__FieldSelect__LabelAssignment_5_1 ) ) )
-            // InternalCalculatorForm.g:1714:1: ( ( rule__FieldSelect__LabelAssignment_5_1 ) )
+            // InternalCalculatorForm.g:1719:1: ( ( ( rule__FieldSelect__LabelAssignment_5_1 ) ) )
+            // InternalCalculatorForm.g:1720:1: ( ( rule__FieldSelect__LabelAssignment_5_1 ) )
             {
-            // InternalCalculatorForm.g:1714:1: ( ( rule__FieldSelect__LabelAssignment_5_1 ) )
-            // InternalCalculatorForm.g:1715:2: ( rule__FieldSelect__LabelAssignment_5_1 )
+            // InternalCalculatorForm.g:1720:1: ( ( rule__FieldSelect__LabelAssignment_5_1 ) )
+            // InternalCalculatorForm.g:1721:2: ( rule__FieldSelect__LabelAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getLabelAssignment_5_1()); 
             }
-            // InternalCalculatorForm.g:1716:2: ( rule__FieldSelect__LabelAssignment_5_1 )
-            // InternalCalculatorForm.g:1716:3: rule__FieldSelect__LabelAssignment_5_1
+            // InternalCalculatorForm.g:1722:2: ( rule__FieldSelect__LabelAssignment_5_1 )
+            // InternalCalculatorForm.g:1722:3: rule__FieldSelect__LabelAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__LabelAssignment_5_1();
@@ -6011,14 +6047,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_8__0"
-    // InternalCalculatorForm.g:1725:1: rule__FieldSelect__Group_8__0 : rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1 ;
+    // InternalCalculatorForm.g:1731:1: rule__FieldSelect__Group_8__0 : rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1 ;
     public final void rule__FieldSelect__Group_8__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1729:1: ( rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1 )
-            // InternalCalculatorForm.g:1730:2: rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1
+            // InternalCalculatorForm.g:1735:1: ( rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1 )
+            // InternalCalculatorForm.g:1736:2: rule__FieldSelect__Group_8__0__Impl rule__FieldSelect__Group_8__1
             {
             pushFollow(FOLLOW_12);
             rule__FieldSelect__Group_8__0__Impl();
@@ -6049,22 +6085,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_8__0__Impl"
-    // InternalCalculatorForm.g:1737:1: rule__FieldSelect__Group_8__0__Impl : ( 'size' ) ;
+    // InternalCalculatorForm.g:1743:1: rule__FieldSelect__Group_8__0__Impl : ( 'size' ) ;
     public final void rule__FieldSelect__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1741:1: ( ( 'size' ) )
-            // InternalCalculatorForm.g:1742:1: ( 'size' )
+            // InternalCalculatorForm.g:1747:1: ( ( 'size' ) )
+            // InternalCalculatorForm.g:1748:1: ( 'size' )
             {
-            // InternalCalculatorForm.g:1742:1: ( 'size' )
-            // InternalCalculatorForm.g:1743:2: 'size'
+            // InternalCalculatorForm.g:1748:1: ( 'size' )
+            // InternalCalculatorForm.g:1749:2: 'size'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getSizeKeyword_8_0()); 
             }
-            match(input,21,FOLLOW_2); if (state.failed) return ;
+            match(input,22,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getSizeKeyword_8_0()); 
             }
@@ -6090,14 +6126,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_8__1"
-    // InternalCalculatorForm.g:1752:1: rule__FieldSelect__Group_8__1 : rule__FieldSelect__Group_8__1__Impl ;
+    // InternalCalculatorForm.g:1758:1: rule__FieldSelect__Group_8__1 : rule__FieldSelect__Group_8__1__Impl ;
     public final void rule__FieldSelect__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1756:1: ( rule__FieldSelect__Group_8__1__Impl )
-            // InternalCalculatorForm.g:1757:2: rule__FieldSelect__Group_8__1__Impl
+            // InternalCalculatorForm.g:1762:1: ( rule__FieldSelect__Group_8__1__Impl )
+            // InternalCalculatorForm.g:1763:2: rule__FieldSelect__Group_8__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__Group_8__1__Impl();
@@ -6123,23 +6159,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__Group_8__1__Impl"
-    // InternalCalculatorForm.g:1763:1: rule__FieldSelect__Group_8__1__Impl : ( ( rule__FieldSelect__SizeAssignment_8_1 ) ) ;
+    // InternalCalculatorForm.g:1769:1: rule__FieldSelect__Group_8__1__Impl : ( ( rule__FieldSelect__SizeAssignment_8_1 ) ) ;
     public final void rule__FieldSelect__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1767:1: ( ( ( rule__FieldSelect__SizeAssignment_8_1 ) ) )
-            // InternalCalculatorForm.g:1768:1: ( ( rule__FieldSelect__SizeAssignment_8_1 ) )
+            // InternalCalculatorForm.g:1773:1: ( ( ( rule__FieldSelect__SizeAssignment_8_1 ) ) )
+            // InternalCalculatorForm.g:1774:1: ( ( rule__FieldSelect__SizeAssignment_8_1 ) )
             {
-            // InternalCalculatorForm.g:1768:1: ( ( rule__FieldSelect__SizeAssignment_8_1 ) )
-            // InternalCalculatorForm.g:1769:2: ( rule__FieldSelect__SizeAssignment_8_1 )
+            // InternalCalculatorForm.g:1774:1: ( ( rule__FieldSelect__SizeAssignment_8_1 ) )
+            // InternalCalculatorForm.g:1775:2: ( rule__FieldSelect__SizeAssignment_8_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getSizeAssignment_8_1()); 
             }
-            // InternalCalculatorForm.g:1770:2: ( rule__FieldSelect__SizeAssignment_8_1 )
-            // InternalCalculatorForm.g:1770:3: rule__FieldSelect__SizeAssignment_8_1
+            // InternalCalculatorForm.g:1776:2: ( rule__FieldSelect__SizeAssignment_8_1 )
+            // InternalCalculatorForm.g:1776:3: rule__FieldSelect__SizeAssignment_8_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldSelect__SizeAssignment_8_1();
@@ -6174,14 +6210,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__0"
-    // InternalCalculatorForm.g:1779:1: rule__FieldOption__Group__0 : rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1 ;
+    // InternalCalculatorForm.g:1785:1: rule__FieldOption__Group__0 : rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1 ;
     public final void rule__FieldOption__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1783:1: ( rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1 )
-            // InternalCalculatorForm.g:1784:2: rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1
+            // InternalCalculatorForm.g:1789:1: ( rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1 )
+            // InternalCalculatorForm.g:1790:2: rule__FieldOption__Group__0__Impl rule__FieldOption__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldOption__Group__0__Impl();
@@ -6212,22 +6248,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__0__Impl"
-    // InternalCalculatorForm.g:1791:1: rule__FieldOption__Group__0__Impl : ( 'option' ) ;
+    // InternalCalculatorForm.g:1797:1: rule__FieldOption__Group__0__Impl : ( 'option' ) ;
     public final void rule__FieldOption__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1795:1: ( ( 'option' ) )
-            // InternalCalculatorForm.g:1796:1: ( 'option' )
+            // InternalCalculatorForm.g:1801:1: ( ( 'option' ) )
+            // InternalCalculatorForm.g:1802:1: ( 'option' )
             {
-            // InternalCalculatorForm.g:1796:1: ( 'option' )
-            // InternalCalculatorForm.g:1797:2: 'option'
+            // InternalCalculatorForm.g:1802:1: ( 'option' )
+            // InternalCalculatorForm.g:1803:2: 'option'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getOptionKeyword_0()); 
             }
-            match(input,22,FOLLOW_2); if (state.failed) return ;
+            match(input,23,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionAccess().getOptionKeyword_0()); 
             }
@@ -6253,14 +6289,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__1"
-    // InternalCalculatorForm.g:1806:1: rule__FieldOption__Group__1 : rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2 ;
+    // InternalCalculatorForm.g:1812:1: rule__FieldOption__Group__1 : rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2 ;
     public final void rule__FieldOption__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1810:1: ( rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2 )
-            // InternalCalculatorForm.g:1811:2: rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2
+            // InternalCalculatorForm.g:1816:1: ( rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2 )
+            // InternalCalculatorForm.g:1817:2: rule__FieldOption__Group__1__Impl rule__FieldOption__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__FieldOption__Group__1__Impl();
@@ -6291,23 +6327,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__1__Impl"
-    // InternalCalculatorForm.g:1818:1: rule__FieldOption__Group__1__Impl : ( ( rule__FieldOption__TextAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:1824:1: rule__FieldOption__Group__1__Impl : ( ( rule__FieldOption__TextAssignment_1 ) ) ;
     public final void rule__FieldOption__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1822:1: ( ( ( rule__FieldOption__TextAssignment_1 ) ) )
-            // InternalCalculatorForm.g:1823:1: ( ( rule__FieldOption__TextAssignment_1 ) )
+            // InternalCalculatorForm.g:1828:1: ( ( ( rule__FieldOption__TextAssignment_1 ) ) )
+            // InternalCalculatorForm.g:1829:1: ( ( rule__FieldOption__TextAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:1823:1: ( ( rule__FieldOption__TextAssignment_1 ) )
-            // InternalCalculatorForm.g:1824:2: ( rule__FieldOption__TextAssignment_1 )
+            // InternalCalculatorForm.g:1829:1: ( ( rule__FieldOption__TextAssignment_1 ) )
+            // InternalCalculatorForm.g:1830:2: ( rule__FieldOption__TextAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getTextAssignment_1()); 
             }
-            // InternalCalculatorForm.g:1825:2: ( rule__FieldOption__TextAssignment_1 )
-            // InternalCalculatorForm.g:1825:3: rule__FieldOption__TextAssignment_1
+            // InternalCalculatorForm.g:1831:2: ( rule__FieldOption__TextAssignment_1 )
+            // InternalCalculatorForm.g:1831:3: rule__FieldOption__TextAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__TextAssignment_1();
@@ -6342,14 +6378,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__2"
-    // InternalCalculatorForm.g:1833:1: rule__FieldOption__Group__2 : rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3 ;
+    // InternalCalculatorForm.g:1839:1: rule__FieldOption__Group__2 : rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3 ;
     public final void rule__FieldOption__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1837:1: ( rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3 )
-            // InternalCalculatorForm.g:1838:2: rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3
+            // InternalCalculatorForm.g:1843:1: ( rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3 )
+            // InternalCalculatorForm.g:1844:2: rule__FieldOption__Group__2__Impl rule__FieldOption__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__FieldOption__Group__2__Impl();
@@ -6380,31 +6416,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__2__Impl"
-    // InternalCalculatorForm.g:1845:1: rule__FieldOption__Group__2__Impl : ( ( rule__FieldOption__DisabledAssignment_2 )? ) ;
+    // InternalCalculatorForm.g:1851:1: rule__FieldOption__Group__2__Impl : ( ( rule__FieldOption__DisabledAssignment_2 )? ) ;
     public final void rule__FieldOption__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1849:1: ( ( ( rule__FieldOption__DisabledAssignment_2 )? ) )
-            // InternalCalculatorForm.g:1850:1: ( ( rule__FieldOption__DisabledAssignment_2 )? )
+            // InternalCalculatorForm.g:1855:1: ( ( ( rule__FieldOption__DisabledAssignment_2 )? ) )
+            // InternalCalculatorForm.g:1856:1: ( ( rule__FieldOption__DisabledAssignment_2 )? )
             {
-            // InternalCalculatorForm.g:1850:1: ( ( rule__FieldOption__DisabledAssignment_2 )? )
-            // InternalCalculatorForm.g:1851:2: ( rule__FieldOption__DisabledAssignment_2 )?
+            // InternalCalculatorForm.g:1856:1: ( ( rule__FieldOption__DisabledAssignment_2 )? )
+            // InternalCalculatorForm.g:1857:2: ( rule__FieldOption__DisabledAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getDisabledAssignment_2()); 
             }
-            // InternalCalculatorForm.g:1852:2: ( rule__FieldOption__DisabledAssignment_2 )?
+            // InternalCalculatorForm.g:1858:2: ( rule__FieldOption__DisabledAssignment_2 )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==38) ) {
+            if ( (LA27_0==39) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
-                    // InternalCalculatorForm.g:1852:3: rule__FieldOption__DisabledAssignment_2
+                    // InternalCalculatorForm.g:1858:3: rule__FieldOption__DisabledAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOption__DisabledAssignment_2();
@@ -6442,14 +6478,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__3"
-    // InternalCalculatorForm.g:1860:1: rule__FieldOption__Group__3 : rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4 ;
+    // InternalCalculatorForm.g:1866:1: rule__FieldOption__Group__3 : rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4 ;
     public final void rule__FieldOption__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1864:1: ( rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4 )
-            // InternalCalculatorForm.g:1865:2: rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4
+            // InternalCalculatorForm.g:1870:1: ( rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4 )
+            // InternalCalculatorForm.g:1871:2: rule__FieldOption__Group__3__Impl rule__FieldOption__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__FieldOption__Group__3__Impl();
@@ -6480,31 +6516,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__3__Impl"
-    // InternalCalculatorForm.g:1872:1: rule__FieldOption__Group__3__Impl : ( ( rule__FieldOption__SelectedAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:1878:1: rule__FieldOption__Group__3__Impl : ( ( rule__FieldOption__SelectedAssignment_3 )? ) ;
     public final void rule__FieldOption__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1876:1: ( ( ( rule__FieldOption__SelectedAssignment_3 )? ) )
-            // InternalCalculatorForm.g:1877:1: ( ( rule__FieldOption__SelectedAssignment_3 )? )
+            // InternalCalculatorForm.g:1882:1: ( ( ( rule__FieldOption__SelectedAssignment_3 )? ) )
+            // InternalCalculatorForm.g:1883:1: ( ( rule__FieldOption__SelectedAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:1877:1: ( ( rule__FieldOption__SelectedAssignment_3 )? )
-            // InternalCalculatorForm.g:1878:2: ( rule__FieldOption__SelectedAssignment_3 )?
+            // InternalCalculatorForm.g:1883:1: ( ( rule__FieldOption__SelectedAssignment_3 )? )
+            // InternalCalculatorForm.g:1884:2: ( rule__FieldOption__SelectedAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getSelectedAssignment_3()); 
             }
-            // InternalCalculatorForm.g:1879:2: ( rule__FieldOption__SelectedAssignment_3 )?
+            // InternalCalculatorForm.g:1885:2: ( rule__FieldOption__SelectedAssignment_3 )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
-            if ( (LA28_0==43) ) {
+            if ( (LA28_0==44) ) {
                 alt28=1;
             }
             switch (alt28) {
                 case 1 :
-                    // InternalCalculatorForm.g:1879:3: rule__FieldOption__SelectedAssignment_3
+                    // InternalCalculatorForm.g:1885:3: rule__FieldOption__SelectedAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOption__SelectedAssignment_3();
@@ -6542,14 +6578,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__4"
-    // InternalCalculatorForm.g:1887:1: rule__FieldOption__Group__4 : rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5 ;
+    // InternalCalculatorForm.g:1893:1: rule__FieldOption__Group__4 : rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5 ;
     public final void rule__FieldOption__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1891:1: ( rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5 )
-            // InternalCalculatorForm.g:1892:2: rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5
+            // InternalCalculatorForm.g:1897:1: ( rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5 )
+            // InternalCalculatorForm.g:1898:2: rule__FieldOption__Group__4__Impl rule__FieldOption__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__FieldOption__Group__4__Impl();
@@ -6580,31 +6616,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__4__Impl"
-    // InternalCalculatorForm.g:1899:1: rule__FieldOption__Group__4__Impl : ( ( rule__FieldOption__Group_4__0 )? ) ;
+    // InternalCalculatorForm.g:1905:1: rule__FieldOption__Group__4__Impl : ( ( rule__FieldOption__Group_4__0 )? ) ;
     public final void rule__FieldOption__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1903:1: ( ( ( rule__FieldOption__Group_4__0 )? ) )
-            // InternalCalculatorForm.g:1904:1: ( ( rule__FieldOption__Group_4__0 )? )
+            // InternalCalculatorForm.g:1909:1: ( ( ( rule__FieldOption__Group_4__0 )? ) )
+            // InternalCalculatorForm.g:1910:1: ( ( rule__FieldOption__Group_4__0 )? )
             {
-            // InternalCalculatorForm.g:1904:1: ( ( rule__FieldOption__Group_4__0 )? )
-            // InternalCalculatorForm.g:1905:2: ( rule__FieldOption__Group_4__0 )?
+            // InternalCalculatorForm.g:1910:1: ( ( rule__FieldOption__Group_4__0 )? )
+            // InternalCalculatorForm.g:1911:2: ( rule__FieldOption__Group_4__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getGroup_4()); 
             }
-            // InternalCalculatorForm.g:1906:2: ( rule__FieldOption__Group_4__0 )?
+            // InternalCalculatorForm.g:1912:2: ( rule__FieldOption__Group_4__0 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==23) ) {
+            if ( (LA29_0==24) ) {
                 alt29=1;
             }
             switch (alt29) {
                 case 1 :
-                    // InternalCalculatorForm.g:1906:3: rule__FieldOption__Group_4__0
+                    // InternalCalculatorForm.g:1912:3: rule__FieldOption__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOption__Group_4__0();
@@ -6642,14 +6678,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__5"
-    // InternalCalculatorForm.g:1914:1: rule__FieldOption__Group__5 : rule__FieldOption__Group__5__Impl ;
+    // InternalCalculatorForm.g:1920:1: rule__FieldOption__Group__5 : rule__FieldOption__Group__5__Impl ;
     public final void rule__FieldOption__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1918:1: ( rule__FieldOption__Group__5__Impl )
-            // InternalCalculatorForm.g:1919:2: rule__FieldOption__Group__5__Impl
+            // InternalCalculatorForm.g:1924:1: ( rule__FieldOption__Group__5__Impl )
+            // InternalCalculatorForm.g:1925:2: rule__FieldOption__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__Group__5__Impl();
@@ -6675,31 +6711,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group__5__Impl"
-    // InternalCalculatorForm.g:1925:1: rule__FieldOption__Group__5__Impl : ( ( rule__FieldOption__Group_5__0 )? ) ;
+    // InternalCalculatorForm.g:1931:1: rule__FieldOption__Group__5__Impl : ( ( rule__FieldOption__Group_5__0 )? ) ;
     public final void rule__FieldOption__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1929:1: ( ( ( rule__FieldOption__Group_5__0 )? ) )
-            // InternalCalculatorForm.g:1930:1: ( ( rule__FieldOption__Group_5__0 )? )
+            // InternalCalculatorForm.g:1935:1: ( ( ( rule__FieldOption__Group_5__0 )? ) )
+            // InternalCalculatorForm.g:1936:1: ( ( rule__FieldOption__Group_5__0 )? )
             {
-            // InternalCalculatorForm.g:1930:1: ( ( rule__FieldOption__Group_5__0 )? )
-            // InternalCalculatorForm.g:1931:2: ( rule__FieldOption__Group_5__0 )?
+            // InternalCalculatorForm.g:1936:1: ( ( rule__FieldOption__Group_5__0 )? )
+            // InternalCalculatorForm.g:1937:2: ( rule__FieldOption__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getGroup_5()); 
             }
-            // InternalCalculatorForm.g:1932:2: ( rule__FieldOption__Group_5__0 )?
+            // InternalCalculatorForm.g:1938:2: ( rule__FieldOption__Group_5__0 )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==17) ) {
+            if ( (LA30_0==18) ) {
                 alt30=1;
             }
             switch (alt30) {
                 case 1 :
-                    // InternalCalculatorForm.g:1932:3: rule__FieldOption__Group_5__0
+                    // InternalCalculatorForm.g:1938:3: rule__FieldOption__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOption__Group_5__0();
@@ -6737,14 +6773,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_4__0"
-    // InternalCalculatorForm.g:1941:1: rule__FieldOption__Group_4__0 : rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1 ;
+    // InternalCalculatorForm.g:1947:1: rule__FieldOption__Group_4__0 : rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1 ;
     public final void rule__FieldOption__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1945:1: ( rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1 )
-            // InternalCalculatorForm.g:1946:2: rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1
+            // InternalCalculatorForm.g:1951:1: ( rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1 )
+            // InternalCalculatorForm.g:1952:2: rule__FieldOption__Group_4__0__Impl rule__FieldOption__Group_4__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldOption__Group_4__0__Impl();
@@ -6775,22 +6811,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_4__0__Impl"
-    // InternalCalculatorForm.g:1953:1: rule__FieldOption__Group_4__0__Impl : ( 'text' ) ;
+    // InternalCalculatorForm.g:1959:1: rule__FieldOption__Group_4__0__Impl : ( 'text' ) ;
     public final void rule__FieldOption__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1957:1: ( ( 'text' ) )
-            // InternalCalculatorForm.g:1958:1: ( 'text' )
+            // InternalCalculatorForm.g:1963:1: ( ( 'text' ) )
+            // InternalCalculatorForm.g:1964:1: ( 'text' )
             {
-            // InternalCalculatorForm.g:1958:1: ( 'text' )
-            // InternalCalculatorForm.g:1959:2: 'text'
+            // InternalCalculatorForm.g:1964:1: ( 'text' )
+            // InternalCalculatorForm.g:1965:2: 'text'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getTextKeyword_4_0()); 
             }
-            match(input,23,FOLLOW_2); if (state.failed) return ;
+            match(input,24,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionAccess().getTextKeyword_4_0()); 
             }
@@ -6816,14 +6852,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_4__1"
-    // InternalCalculatorForm.g:1968:1: rule__FieldOption__Group_4__1 : rule__FieldOption__Group_4__1__Impl ;
+    // InternalCalculatorForm.g:1974:1: rule__FieldOption__Group_4__1 : rule__FieldOption__Group_4__1__Impl ;
     public final void rule__FieldOption__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1972:1: ( rule__FieldOption__Group_4__1__Impl )
-            // InternalCalculatorForm.g:1973:2: rule__FieldOption__Group_4__1__Impl
+            // InternalCalculatorForm.g:1978:1: ( rule__FieldOption__Group_4__1__Impl )
+            // InternalCalculatorForm.g:1979:2: rule__FieldOption__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__Group_4__1__Impl();
@@ -6849,23 +6885,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_4__1__Impl"
-    // InternalCalculatorForm.g:1979:1: rule__FieldOption__Group_4__1__Impl : ( ( rule__FieldOption__TextAssignment_4_1 ) ) ;
+    // InternalCalculatorForm.g:1985:1: rule__FieldOption__Group_4__1__Impl : ( ( rule__FieldOption__TextAssignment_4_1 ) ) ;
     public final void rule__FieldOption__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1983:1: ( ( ( rule__FieldOption__TextAssignment_4_1 ) ) )
-            // InternalCalculatorForm.g:1984:1: ( ( rule__FieldOption__TextAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1989:1: ( ( ( rule__FieldOption__TextAssignment_4_1 ) ) )
+            // InternalCalculatorForm.g:1990:1: ( ( rule__FieldOption__TextAssignment_4_1 ) )
             {
-            // InternalCalculatorForm.g:1984:1: ( ( rule__FieldOption__TextAssignment_4_1 ) )
-            // InternalCalculatorForm.g:1985:2: ( rule__FieldOption__TextAssignment_4_1 )
+            // InternalCalculatorForm.g:1990:1: ( ( rule__FieldOption__TextAssignment_4_1 ) )
+            // InternalCalculatorForm.g:1991:2: ( rule__FieldOption__TextAssignment_4_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getTextAssignment_4_1()); 
             }
-            // InternalCalculatorForm.g:1986:2: ( rule__FieldOption__TextAssignment_4_1 )
-            // InternalCalculatorForm.g:1986:3: rule__FieldOption__TextAssignment_4_1
+            // InternalCalculatorForm.g:1992:2: ( rule__FieldOption__TextAssignment_4_1 )
+            // InternalCalculatorForm.g:1992:3: rule__FieldOption__TextAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__TextAssignment_4_1();
@@ -6900,14 +6936,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_5__0"
-    // InternalCalculatorForm.g:1995:1: rule__FieldOption__Group_5__0 : rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1 ;
+    // InternalCalculatorForm.g:2001:1: rule__FieldOption__Group_5__0 : rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1 ;
     public final void rule__FieldOption__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:1999:1: ( rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1 )
-            // InternalCalculatorForm.g:2000:2: rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1
+            // InternalCalculatorForm.g:2005:1: ( rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1 )
+            // InternalCalculatorForm.g:2006:2: rule__FieldOption__Group_5__0__Impl rule__FieldOption__Group_5__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldOption__Group_5__0__Impl();
@@ -6938,22 +6974,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_5__0__Impl"
-    // InternalCalculatorForm.g:2007:1: rule__FieldOption__Group_5__0__Impl : ( 'value' ) ;
+    // InternalCalculatorForm.g:2013:1: rule__FieldOption__Group_5__0__Impl : ( 'value' ) ;
     public final void rule__FieldOption__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2011:1: ( ( 'value' ) )
-            // InternalCalculatorForm.g:2012:1: ( 'value' )
+            // InternalCalculatorForm.g:2017:1: ( ( 'value' ) )
+            // InternalCalculatorForm.g:2018:1: ( 'value' )
             {
-            // InternalCalculatorForm.g:2012:1: ( 'value' )
-            // InternalCalculatorForm.g:2013:2: 'value'
+            // InternalCalculatorForm.g:2018:1: ( 'value' )
+            // InternalCalculatorForm.g:2019:2: 'value'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getValueKeyword_5_0()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionAccess().getValueKeyword_5_0()); 
             }
@@ -6979,14 +7015,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_5__1"
-    // InternalCalculatorForm.g:2022:1: rule__FieldOption__Group_5__1 : rule__FieldOption__Group_5__1__Impl ;
+    // InternalCalculatorForm.g:2028:1: rule__FieldOption__Group_5__1 : rule__FieldOption__Group_5__1__Impl ;
     public final void rule__FieldOption__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2026:1: ( rule__FieldOption__Group_5__1__Impl )
-            // InternalCalculatorForm.g:2027:2: rule__FieldOption__Group_5__1__Impl
+            // InternalCalculatorForm.g:2032:1: ( rule__FieldOption__Group_5__1__Impl )
+            // InternalCalculatorForm.g:2033:2: rule__FieldOption__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__Group_5__1__Impl();
@@ -7012,23 +7048,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__Group_5__1__Impl"
-    // InternalCalculatorForm.g:2033:1: rule__FieldOption__Group_5__1__Impl : ( ( rule__FieldOption__ValueAssignment_5_1 ) ) ;
+    // InternalCalculatorForm.g:2039:1: rule__FieldOption__Group_5__1__Impl : ( ( rule__FieldOption__ValueAssignment_5_1 ) ) ;
     public final void rule__FieldOption__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2037:1: ( ( ( rule__FieldOption__ValueAssignment_5_1 ) ) )
-            // InternalCalculatorForm.g:2038:1: ( ( rule__FieldOption__ValueAssignment_5_1 ) )
+            // InternalCalculatorForm.g:2043:1: ( ( ( rule__FieldOption__ValueAssignment_5_1 ) ) )
+            // InternalCalculatorForm.g:2044:1: ( ( rule__FieldOption__ValueAssignment_5_1 ) )
             {
-            // InternalCalculatorForm.g:2038:1: ( ( rule__FieldOption__ValueAssignment_5_1 ) )
-            // InternalCalculatorForm.g:2039:2: ( rule__FieldOption__ValueAssignment_5_1 )
+            // InternalCalculatorForm.g:2044:1: ( ( rule__FieldOption__ValueAssignment_5_1 ) )
+            // InternalCalculatorForm.g:2045:2: ( rule__FieldOption__ValueAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getValueAssignment_5_1()); 
             }
-            // InternalCalculatorForm.g:2040:2: ( rule__FieldOption__ValueAssignment_5_1 )
-            // InternalCalculatorForm.g:2040:3: rule__FieldOption__ValueAssignment_5_1
+            // InternalCalculatorForm.g:2046:2: ( rule__FieldOption__ValueAssignment_5_1 )
+            // InternalCalculatorForm.g:2046:3: rule__FieldOption__ValueAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldOption__ValueAssignment_5_1();
@@ -7063,14 +7099,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__0"
-    // InternalCalculatorForm.g:2049:1: rule__FieldOptionGroup__Group__0 : rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1 ;
+    // InternalCalculatorForm.g:2055:1: rule__FieldOptionGroup__Group__0 : rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1 ;
     public final void rule__FieldOptionGroup__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2053:1: ( rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1 )
-            // InternalCalculatorForm.g:2054:2: rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1
+            // InternalCalculatorForm.g:2059:1: ( rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1 )
+            // InternalCalculatorForm.g:2060:2: rule__FieldOptionGroup__Group__0__Impl rule__FieldOptionGroup__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__FieldOptionGroup__Group__0__Impl();
@@ -7101,22 +7137,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__0__Impl"
-    // InternalCalculatorForm.g:2061:1: rule__FieldOptionGroup__Group__0__Impl : ( 'option-group' ) ;
+    // InternalCalculatorForm.g:2067:1: rule__FieldOptionGroup__Group__0__Impl : ( 'option-group' ) ;
     public final void rule__FieldOptionGroup__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2065:1: ( ( 'option-group' ) )
-            // InternalCalculatorForm.g:2066:1: ( 'option-group' )
+            // InternalCalculatorForm.g:2071:1: ( ( 'option-group' ) )
+            // InternalCalculatorForm.g:2072:1: ( 'option-group' )
             {
-            // InternalCalculatorForm.g:2066:1: ( 'option-group' )
-            // InternalCalculatorForm.g:2067:2: 'option-group'
+            // InternalCalculatorForm.g:2072:1: ( 'option-group' )
+            // InternalCalculatorForm.g:2073:2: 'option-group'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getOptionGroupKeyword_0()); 
             }
-            match(input,24,FOLLOW_2); if (state.failed) return ;
+            match(input,25,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionGroupAccess().getOptionGroupKeyword_0()); 
             }
@@ -7142,14 +7178,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__1"
-    // InternalCalculatorForm.g:2076:1: rule__FieldOptionGroup__Group__1 : rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2 ;
+    // InternalCalculatorForm.g:2082:1: rule__FieldOptionGroup__Group__1 : rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2 ;
     public final void rule__FieldOptionGroup__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2080:1: ( rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2 )
-            // InternalCalculatorForm.g:2081:2: rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2
+            // InternalCalculatorForm.g:2086:1: ( rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2 )
+            // InternalCalculatorForm.g:2087:2: rule__FieldOptionGroup__Group__1__Impl rule__FieldOptionGroup__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__FieldOptionGroup__Group__1__Impl();
@@ -7180,31 +7216,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__1__Impl"
-    // InternalCalculatorForm.g:2088:1: rule__FieldOptionGroup__Group__1__Impl : ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? ) ;
+    // InternalCalculatorForm.g:2094:1: rule__FieldOptionGroup__Group__1__Impl : ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? ) ;
     public final void rule__FieldOptionGroup__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2092:1: ( ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? ) )
-            // InternalCalculatorForm.g:2093:1: ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? )
+            // InternalCalculatorForm.g:2098:1: ( ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? ) )
+            // InternalCalculatorForm.g:2099:1: ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? )
             {
-            // InternalCalculatorForm.g:2093:1: ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? )
-            // InternalCalculatorForm.g:2094:2: ( rule__FieldOptionGroup__DisabledAssignment_1 )?
+            // InternalCalculatorForm.g:2099:1: ( ( rule__FieldOptionGroup__DisabledAssignment_1 )? )
+            // InternalCalculatorForm.g:2100:2: ( rule__FieldOptionGroup__DisabledAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getDisabledAssignment_1()); 
             }
-            // InternalCalculatorForm.g:2095:2: ( rule__FieldOptionGroup__DisabledAssignment_1 )?
+            // InternalCalculatorForm.g:2101:2: ( rule__FieldOptionGroup__DisabledAssignment_1 )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0==38) ) {
+            if ( (LA31_0==39) ) {
                 alt31=1;
             }
             switch (alt31) {
                 case 1 :
-                    // InternalCalculatorForm.g:2095:3: rule__FieldOptionGroup__DisabledAssignment_1
+                    // InternalCalculatorForm.g:2101:3: rule__FieldOptionGroup__DisabledAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOptionGroup__DisabledAssignment_1();
@@ -7242,14 +7278,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__2"
-    // InternalCalculatorForm.g:2103:1: rule__FieldOptionGroup__Group__2 : rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3 ;
+    // InternalCalculatorForm.g:2109:1: rule__FieldOptionGroup__Group__2 : rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3 ;
     public final void rule__FieldOptionGroup__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2107:1: ( rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3 )
-            // InternalCalculatorForm.g:2108:2: rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3
+            // InternalCalculatorForm.g:2113:1: ( rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3 )
+            // InternalCalculatorForm.g:2114:2: rule__FieldOptionGroup__Group__2__Impl rule__FieldOptionGroup__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__FieldOptionGroup__Group__2__Impl();
@@ -7280,31 +7316,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__2__Impl"
-    // InternalCalculatorForm.g:2115:1: rule__FieldOptionGroup__Group__2__Impl : ( ( rule__FieldOptionGroup__Group_2__0 )? ) ;
+    // InternalCalculatorForm.g:2121:1: rule__FieldOptionGroup__Group__2__Impl : ( ( rule__FieldOptionGroup__Group_2__0 )? ) ;
     public final void rule__FieldOptionGroup__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2119:1: ( ( ( rule__FieldOptionGroup__Group_2__0 )? ) )
-            // InternalCalculatorForm.g:2120:1: ( ( rule__FieldOptionGroup__Group_2__0 )? )
+            // InternalCalculatorForm.g:2125:1: ( ( ( rule__FieldOptionGroup__Group_2__0 )? ) )
+            // InternalCalculatorForm.g:2126:1: ( ( rule__FieldOptionGroup__Group_2__0 )? )
             {
-            // InternalCalculatorForm.g:2120:1: ( ( rule__FieldOptionGroup__Group_2__0 )? )
-            // InternalCalculatorForm.g:2121:2: ( rule__FieldOptionGroup__Group_2__0 )?
+            // InternalCalculatorForm.g:2126:1: ( ( rule__FieldOptionGroup__Group_2__0 )? )
+            // InternalCalculatorForm.g:2127:2: ( rule__FieldOptionGroup__Group_2__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getGroup_2()); 
             }
-            // InternalCalculatorForm.g:2122:2: ( rule__FieldOptionGroup__Group_2__0 )?
+            // InternalCalculatorForm.g:2128:2: ( rule__FieldOptionGroup__Group_2__0 )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
-            if ( (LA32_0==16) ) {
+            if ( (LA32_0==17) ) {
                 alt32=1;
             }
             switch (alt32) {
                 case 1 :
-                    // InternalCalculatorForm.g:2122:3: rule__FieldOptionGroup__Group_2__0
+                    // InternalCalculatorForm.g:2128:3: rule__FieldOptionGroup__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldOptionGroup__Group_2__0();
@@ -7342,14 +7378,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__3"
-    // InternalCalculatorForm.g:2130:1: rule__FieldOptionGroup__Group__3 : rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4 ;
+    // InternalCalculatorForm.g:2136:1: rule__FieldOptionGroup__Group__3 : rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4 ;
     public final void rule__FieldOptionGroup__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2134:1: ( rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4 )
-            // InternalCalculatorForm.g:2135:2: rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4
+            // InternalCalculatorForm.g:2140:1: ( rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4 )
+            // InternalCalculatorForm.g:2141:2: rule__FieldOptionGroup__Group__3__Impl rule__FieldOptionGroup__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__FieldOptionGroup__Group__3__Impl();
@@ -7380,22 +7416,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__3__Impl"
-    // InternalCalculatorForm.g:2142:1: rule__FieldOptionGroup__Group__3__Impl : ( '{' ) ;
+    // InternalCalculatorForm.g:2148:1: rule__FieldOptionGroup__Group__3__Impl : ( '{' ) ;
     public final void rule__FieldOptionGroup__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2146:1: ( ( '{' ) )
-            // InternalCalculatorForm.g:2147:1: ( '{' )
+            // InternalCalculatorForm.g:2152:1: ( ( '{' ) )
+            // InternalCalculatorForm.g:2153:1: ( '{' )
             {
-            // InternalCalculatorForm.g:2147:1: ( '{' )
-            // InternalCalculatorForm.g:2148:2: '{'
+            // InternalCalculatorForm.g:2153:1: ( '{' )
+            // InternalCalculatorForm.g:2154:2: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionGroupAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -7421,14 +7457,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__4"
-    // InternalCalculatorForm.g:2157:1: rule__FieldOptionGroup__Group__4 : rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5 ;
+    // InternalCalculatorForm.g:2163:1: rule__FieldOptionGroup__Group__4 : rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5 ;
     public final void rule__FieldOptionGroup__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2161:1: ( rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5 )
-            // InternalCalculatorForm.g:2162:2: rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5
+            // InternalCalculatorForm.g:2167:1: ( rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5 )
+            // InternalCalculatorForm.g:2168:2: rule__FieldOptionGroup__Group__4__Impl rule__FieldOptionGroup__Group__5
             {
             pushFollow(FOLLOW_15);
             rule__FieldOptionGroup__Group__4__Impl();
@@ -7459,35 +7495,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__4__Impl"
-    // InternalCalculatorForm.g:2169:1: rule__FieldOptionGroup__Group__4__Impl : ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* ) ;
+    // InternalCalculatorForm.g:2175:1: rule__FieldOptionGroup__Group__4__Impl : ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* ) ;
     public final void rule__FieldOptionGroup__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2173:1: ( ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* ) )
-            // InternalCalculatorForm.g:2174:1: ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* )
+            // InternalCalculatorForm.g:2179:1: ( ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* ) )
+            // InternalCalculatorForm.g:2180:1: ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* )
             {
-            // InternalCalculatorForm.g:2174:1: ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* )
-            // InternalCalculatorForm.g:2175:2: ( rule__FieldOptionGroup__OptionsAssignment_4 )*
+            // InternalCalculatorForm.g:2180:1: ( ( rule__FieldOptionGroup__OptionsAssignment_4 )* )
+            // InternalCalculatorForm.g:2181:2: ( rule__FieldOptionGroup__OptionsAssignment_4 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getOptionsAssignment_4()); 
             }
-            // InternalCalculatorForm.g:2176:2: ( rule__FieldOptionGroup__OptionsAssignment_4 )*
+            // InternalCalculatorForm.g:2182:2: ( rule__FieldOptionGroup__OptionsAssignment_4 )*
             loop33:
             do {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==22) ) {
+                if ( (LA33_0==23) ) {
                     alt33=1;
                 }
 
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalCalculatorForm.g:2176:3: rule__FieldOptionGroup__OptionsAssignment_4
+            	    // InternalCalculatorForm.g:2182:3: rule__FieldOptionGroup__OptionsAssignment_4
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__FieldOptionGroup__OptionsAssignment_4();
@@ -7528,14 +7564,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__5"
-    // InternalCalculatorForm.g:2184:1: rule__FieldOptionGroup__Group__5 : rule__FieldOptionGroup__Group__5__Impl ;
+    // InternalCalculatorForm.g:2190:1: rule__FieldOptionGroup__Group__5 : rule__FieldOptionGroup__Group__5__Impl ;
     public final void rule__FieldOptionGroup__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2188:1: ( rule__FieldOptionGroup__Group__5__Impl )
-            // InternalCalculatorForm.g:2189:2: rule__FieldOptionGroup__Group__5__Impl
+            // InternalCalculatorForm.g:2194:1: ( rule__FieldOptionGroup__Group__5__Impl )
+            // InternalCalculatorForm.g:2195:2: rule__FieldOptionGroup__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldOptionGroup__Group__5__Impl();
@@ -7561,22 +7597,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group__5__Impl"
-    // InternalCalculatorForm.g:2195:1: rule__FieldOptionGroup__Group__5__Impl : ( '}' ) ;
+    // InternalCalculatorForm.g:2201:1: rule__FieldOptionGroup__Group__5__Impl : ( '}' ) ;
     public final void rule__FieldOptionGroup__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2199:1: ( ( '}' ) )
-            // InternalCalculatorForm.g:2200:1: ( '}' )
+            // InternalCalculatorForm.g:2205:1: ( ( '}' ) )
+            // InternalCalculatorForm.g:2206:1: ( '}' )
             {
-            // InternalCalculatorForm.g:2200:1: ( '}' )
-            // InternalCalculatorForm.g:2201:2: '}'
+            // InternalCalculatorForm.g:2206:1: ( '}' )
+            // InternalCalculatorForm.g:2207:2: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getRightCurlyBracketKeyword_5()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionGroupAccess().getRightCurlyBracketKeyword_5()); 
             }
@@ -7602,14 +7638,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group_2__0"
-    // InternalCalculatorForm.g:2211:1: rule__FieldOptionGroup__Group_2__0 : rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1 ;
+    // InternalCalculatorForm.g:2217:1: rule__FieldOptionGroup__Group_2__0 : rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1 ;
     public final void rule__FieldOptionGroup__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2215:1: ( rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1 )
-            // InternalCalculatorForm.g:2216:2: rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1
+            // InternalCalculatorForm.g:2221:1: ( rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1 )
+            // InternalCalculatorForm.g:2222:2: rule__FieldOptionGroup__Group_2__0__Impl rule__FieldOptionGroup__Group_2__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldOptionGroup__Group_2__0__Impl();
@@ -7640,22 +7676,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group_2__0__Impl"
-    // InternalCalculatorForm.g:2223:1: rule__FieldOptionGroup__Group_2__0__Impl : ( 'label' ) ;
+    // InternalCalculatorForm.g:2229:1: rule__FieldOptionGroup__Group_2__0__Impl : ( 'label' ) ;
     public final void rule__FieldOptionGroup__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2227:1: ( ( 'label' ) )
-            // InternalCalculatorForm.g:2228:1: ( 'label' )
+            // InternalCalculatorForm.g:2233:1: ( ( 'label' ) )
+            // InternalCalculatorForm.g:2234:1: ( 'label' )
             {
-            // InternalCalculatorForm.g:2228:1: ( 'label' )
-            // InternalCalculatorForm.g:2229:2: 'label'
+            // InternalCalculatorForm.g:2234:1: ( 'label' )
+            // InternalCalculatorForm.g:2235:2: 'label'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getLabelKeyword_2_0()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionGroupAccess().getLabelKeyword_2_0()); 
             }
@@ -7681,14 +7717,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group_2__1"
-    // InternalCalculatorForm.g:2238:1: rule__FieldOptionGroup__Group_2__1 : rule__FieldOptionGroup__Group_2__1__Impl ;
+    // InternalCalculatorForm.g:2244:1: rule__FieldOptionGroup__Group_2__1 : rule__FieldOptionGroup__Group_2__1__Impl ;
     public final void rule__FieldOptionGroup__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2242:1: ( rule__FieldOptionGroup__Group_2__1__Impl )
-            // InternalCalculatorForm.g:2243:2: rule__FieldOptionGroup__Group_2__1__Impl
+            // InternalCalculatorForm.g:2248:1: ( rule__FieldOptionGroup__Group_2__1__Impl )
+            // InternalCalculatorForm.g:2249:2: rule__FieldOptionGroup__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldOptionGroup__Group_2__1__Impl();
@@ -7714,23 +7750,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__Group_2__1__Impl"
-    // InternalCalculatorForm.g:2249:1: rule__FieldOptionGroup__Group_2__1__Impl : ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) ) ;
+    // InternalCalculatorForm.g:2255:1: rule__FieldOptionGroup__Group_2__1__Impl : ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) ) ;
     public final void rule__FieldOptionGroup__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2253:1: ( ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) ) )
-            // InternalCalculatorForm.g:2254:1: ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) )
+            // InternalCalculatorForm.g:2259:1: ( ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) ) )
+            // InternalCalculatorForm.g:2260:1: ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) )
             {
-            // InternalCalculatorForm.g:2254:1: ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) )
-            // InternalCalculatorForm.g:2255:2: ( rule__FieldOptionGroup__LabelAssignment_2_1 )
+            // InternalCalculatorForm.g:2260:1: ( ( rule__FieldOptionGroup__LabelAssignment_2_1 ) )
+            // InternalCalculatorForm.g:2261:2: ( rule__FieldOptionGroup__LabelAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getLabelAssignment_2_1()); 
             }
-            // InternalCalculatorForm.g:2256:2: ( rule__FieldOptionGroup__LabelAssignment_2_1 )
-            // InternalCalculatorForm.g:2256:3: rule__FieldOptionGroup__LabelAssignment_2_1
+            // InternalCalculatorForm.g:2262:2: ( rule__FieldOptionGroup__LabelAssignment_2_1 )
+            // InternalCalculatorForm.g:2262:3: rule__FieldOptionGroup__LabelAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldOptionGroup__LabelAssignment_2_1();
@@ -7765,14 +7801,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__0"
-    // InternalCalculatorForm.g:2265:1: rule__FieldChoice__Group__0 : rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1 ;
+    // InternalCalculatorForm.g:2271:1: rule__FieldChoice__Group__0 : rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1 ;
     public final void rule__FieldChoice__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2269:1: ( rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1 )
-            // InternalCalculatorForm.g:2270:2: rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1
+            // InternalCalculatorForm.g:2275:1: ( rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1 )
+            // InternalCalculatorForm.g:2276:2: rule__FieldChoice__Group__0__Impl rule__FieldChoice__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__FieldChoice__Group__0__Impl();
@@ -7803,22 +7839,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__0__Impl"
-    // InternalCalculatorForm.g:2277:1: rule__FieldChoice__Group__0__Impl : ( 'choice' ) ;
+    // InternalCalculatorForm.g:2283:1: rule__FieldChoice__Group__0__Impl : ( 'choice' ) ;
     public final void rule__FieldChoice__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2281:1: ( ( 'choice' ) )
-            // InternalCalculatorForm.g:2282:1: ( 'choice' )
+            // InternalCalculatorForm.g:2287:1: ( ( 'choice' ) )
+            // InternalCalculatorForm.g:2288:1: ( 'choice' )
             {
-            // InternalCalculatorForm.g:2282:1: ( 'choice' )
-            // InternalCalculatorForm.g:2283:2: 'choice'
+            // InternalCalculatorForm.g:2288:1: ( 'choice' )
+            // InternalCalculatorForm.g:2289:2: 'choice'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getChoiceKeyword_0()); 
             }
-            match(input,25,FOLLOW_2); if (state.failed) return ;
+            match(input,26,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getChoiceKeyword_0()); 
             }
@@ -7844,14 +7880,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__1"
-    // InternalCalculatorForm.g:2292:1: rule__FieldChoice__Group__1 : rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2 ;
+    // InternalCalculatorForm.g:2298:1: rule__FieldChoice__Group__1 : rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2 ;
     public final void rule__FieldChoice__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2296:1: ( rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2 )
-            // InternalCalculatorForm.g:2297:2: rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2
+            // InternalCalculatorForm.g:2302:1: ( rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2 )
+            // InternalCalculatorForm.g:2303:2: rule__FieldChoice__Group__1__Impl rule__FieldChoice__Group__2
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__1__Impl();
@@ -7882,23 +7918,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__1__Impl"
-    // InternalCalculatorForm.g:2304:1: rule__FieldChoice__Group__1__Impl : ( ( rule__FieldChoice__NameAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:2310:1: rule__FieldChoice__Group__1__Impl : ( ( rule__FieldChoice__NameAssignment_1 ) ) ;
     public final void rule__FieldChoice__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2308:1: ( ( ( rule__FieldChoice__NameAssignment_1 ) ) )
-            // InternalCalculatorForm.g:2309:1: ( ( rule__FieldChoice__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:2314:1: ( ( ( rule__FieldChoice__NameAssignment_1 ) ) )
+            // InternalCalculatorForm.g:2315:1: ( ( rule__FieldChoice__NameAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:2309:1: ( ( rule__FieldChoice__NameAssignment_1 ) )
-            // InternalCalculatorForm.g:2310:2: ( rule__FieldChoice__NameAssignment_1 )
+            // InternalCalculatorForm.g:2315:1: ( ( rule__FieldChoice__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:2316:2: ( rule__FieldChoice__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getNameAssignment_1()); 
             }
-            // InternalCalculatorForm.g:2311:2: ( rule__FieldChoice__NameAssignment_1 )
-            // InternalCalculatorForm.g:2311:3: rule__FieldChoice__NameAssignment_1
+            // InternalCalculatorForm.g:2317:2: ( rule__FieldChoice__NameAssignment_1 )
+            // InternalCalculatorForm.g:2317:3: rule__FieldChoice__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__NameAssignment_1();
@@ -7933,14 +7969,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__2"
-    // InternalCalculatorForm.g:2319:1: rule__FieldChoice__Group__2 : rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3 ;
+    // InternalCalculatorForm.g:2325:1: rule__FieldChoice__Group__2 : rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3 ;
     public final void rule__FieldChoice__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2323:1: ( rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3 )
-            // InternalCalculatorForm.g:2324:2: rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3
+            // InternalCalculatorForm.g:2329:1: ( rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3 )
+            // InternalCalculatorForm.g:2330:2: rule__FieldChoice__Group__2__Impl rule__FieldChoice__Group__3
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__2__Impl();
@@ -7971,31 +8007,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__2__Impl"
-    // InternalCalculatorForm.g:2331:1: rule__FieldChoice__Group__2__Impl : ( ( rule__FieldChoice__AutofocusAssignment_2 )? ) ;
+    // InternalCalculatorForm.g:2337:1: rule__FieldChoice__Group__2__Impl : ( ( rule__FieldChoice__AutofocusAssignment_2 )? ) ;
     public final void rule__FieldChoice__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2335:1: ( ( ( rule__FieldChoice__AutofocusAssignment_2 )? ) )
-            // InternalCalculatorForm.g:2336:1: ( ( rule__FieldChoice__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:2341:1: ( ( ( rule__FieldChoice__AutofocusAssignment_2 )? ) )
+            // InternalCalculatorForm.g:2342:1: ( ( rule__FieldChoice__AutofocusAssignment_2 )? )
             {
-            // InternalCalculatorForm.g:2336:1: ( ( rule__FieldChoice__AutofocusAssignment_2 )? )
-            // InternalCalculatorForm.g:2337:2: ( rule__FieldChoice__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:2342:1: ( ( rule__FieldChoice__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:2343:2: ( rule__FieldChoice__AutofocusAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getAutofocusAssignment_2()); 
             }
-            // InternalCalculatorForm.g:2338:2: ( rule__FieldChoice__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:2344:2: ( rule__FieldChoice__AutofocusAssignment_2 )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
-            if ( (LA34_0==37) ) {
+            if ( (LA34_0==38) ) {
                 alt34=1;
             }
             switch (alt34) {
                 case 1 :
-                    // InternalCalculatorForm.g:2338:3: rule__FieldChoice__AutofocusAssignment_2
+                    // InternalCalculatorForm.g:2344:3: rule__FieldChoice__AutofocusAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__AutofocusAssignment_2();
@@ -8033,14 +8069,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__3"
-    // InternalCalculatorForm.g:2346:1: rule__FieldChoice__Group__3 : rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4 ;
+    // InternalCalculatorForm.g:2352:1: rule__FieldChoice__Group__3 : rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4 ;
     public final void rule__FieldChoice__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2350:1: ( rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4 )
-            // InternalCalculatorForm.g:2351:2: rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4
+            // InternalCalculatorForm.g:2356:1: ( rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4 )
+            // InternalCalculatorForm.g:2357:2: rule__FieldChoice__Group__3__Impl rule__FieldChoice__Group__4
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__3__Impl();
@@ -8071,31 +8107,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__3__Impl"
-    // InternalCalculatorForm.g:2358:1: rule__FieldChoice__Group__3__Impl : ( ( rule__FieldChoice__CheckedAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:2364:1: rule__FieldChoice__Group__3__Impl : ( ( rule__FieldChoice__CheckedAssignment_3 )? ) ;
     public final void rule__FieldChoice__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2362:1: ( ( ( rule__FieldChoice__CheckedAssignment_3 )? ) )
-            // InternalCalculatorForm.g:2363:1: ( ( rule__FieldChoice__CheckedAssignment_3 )? )
+            // InternalCalculatorForm.g:2368:1: ( ( ( rule__FieldChoice__CheckedAssignment_3 )? ) )
+            // InternalCalculatorForm.g:2369:1: ( ( rule__FieldChoice__CheckedAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:2363:1: ( ( rule__FieldChoice__CheckedAssignment_3 )? )
-            // InternalCalculatorForm.g:2364:2: ( rule__FieldChoice__CheckedAssignment_3 )?
+            // InternalCalculatorForm.g:2369:1: ( ( rule__FieldChoice__CheckedAssignment_3 )? )
+            // InternalCalculatorForm.g:2370:2: ( rule__FieldChoice__CheckedAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getCheckedAssignment_3()); 
             }
-            // InternalCalculatorForm.g:2365:2: ( rule__FieldChoice__CheckedAssignment_3 )?
+            // InternalCalculatorForm.g:2371:2: ( rule__FieldChoice__CheckedAssignment_3 )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
-            if ( (LA35_0==44) ) {
+            if ( (LA35_0==45) ) {
                 alt35=1;
             }
             switch (alt35) {
                 case 1 :
-                    // InternalCalculatorForm.g:2365:3: rule__FieldChoice__CheckedAssignment_3
+                    // InternalCalculatorForm.g:2371:3: rule__FieldChoice__CheckedAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__CheckedAssignment_3();
@@ -8133,14 +8169,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__4"
-    // InternalCalculatorForm.g:2373:1: rule__FieldChoice__Group__4 : rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5 ;
+    // InternalCalculatorForm.g:2379:1: rule__FieldChoice__Group__4 : rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5 ;
     public final void rule__FieldChoice__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2377:1: ( rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5 )
-            // InternalCalculatorForm.g:2378:2: rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5
+            // InternalCalculatorForm.g:2383:1: ( rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5 )
+            // InternalCalculatorForm.g:2384:2: rule__FieldChoice__Group__4__Impl rule__FieldChoice__Group__5
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__4__Impl();
@@ -8171,31 +8207,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__4__Impl"
-    // InternalCalculatorForm.g:2385:1: rule__FieldChoice__Group__4__Impl : ( ( rule__FieldChoice__DisabledAssignment_4 )? ) ;
+    // InternalCalculatorForm.g:2391:1: rule__FieldChoice__Group__4__Impl : ( ( rule__FieldChoice__DisabledAssignment_4 )? ) ;
     public final void rule__FieldChoice__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2389:1: ( ( ( rule__FieldChoice__DisabledAssignment_4 )? ) )
-            // InternalCalculatorForm.g:2390:1: ( ( rule__FieldChoice__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:2395:1: ( ( ( rule__FieldChoice__DisabledAssignment_4 )? ) )
+            // InternalCalculatorForm.g:2396:1: ( ( rule__FieldChoice__DisabledAssignment_4 )? )
             {
-            // InternalCalculatorForm.g:2390:1: ( ( rule__FieldChoice__DisabledAssignment_4 )? )
-            // InternalCalculatorForm.g:2391:2: ( rule__FieldChoice__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:2396:1: ( ( rule__FieldChoice__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:2397:2: ( rule__FieldChoice__DisabledAssignment_4 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getDisabledAssignment_4()); 
             }
-            // InternalCalculatorForm.g:2392:2: ( rule__FieldChoice__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:2398:2: ( rule__FieldChoice__DisabledAssignment_4 )?
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==38) ) {
+            if ( (LA36_0==39) ) {
                 alt36=1;
             }
             switch (alt36) {
                 case 1 :
-                    // InternalCalculatorForm.g:2392:3: rule__FieldChoice__DisabledAssignment_4
+                    // InternalCalculatorForm.g:2398:3: rule__FieldChoice__DisabledAssignment_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__DisabledAssignment_4();
@@ -8233,14 +8269,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__5"
-    // InternalCalculatorForm.g:2400:1: rule__FieldChoice__Group__5 : rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6 ;
+    // InternalCalculatorForm.g:2406:1: rule__FieldChoice__Group__5 : rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6 ;
     public final void rule__FieldChoice__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2404:1: ( rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6 )
-            // InternalCalculatorForm.g:2405:2: rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6
+            // InternalCalculatorForm.g:2410:1: ( rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6 )
+            // InternalCalculatorForm.g:2411:2: rule__FieldChoice__Group__5__Impl rule__FieldChoice__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__5__Impl();
@@ -8271,31 +8307,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__5__Impl"
-    // InternalCalculatorForm.g:2412:1: rule__FieldChoice__Group__5__Impl : ( ( rule__FieldChoice__Group_5__0 )? ) ;
+    // InternalCalculatorForm.g:2418:1: rule__FieldChoice__Group__5__Impl : ( ( rule__FieldChoice__Group_5__0 )? ) ;
     public final void rule__FieldChoice__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2416:1: ( ( ( rule__FieldChoice__Group_5__0 )? ) )
-            // InternalCalculatorForm.g:2417:1: ( ( rule__FieldChoice__Group_5__0 )? )
+            // InternalCalculatorForm.g:2422:1: ( ( ( rule__FieldChoice__Group_5__0 )? ) )
+            // InternalCalculatorForm.g:2423:1: ( ( rule__FieldChoice__Group_5__0 )? )
             {
-            // InternalCalculatorForm.g:2417:1: ( ( rule__FieldChoice__Group_5__0 )? )
-            // InternalCalculatorForm.g:2418:2: ( rule__FieldChoice__Group_5__0 )?
+            // InternalCalculatorForm.g:2423:1: ( ( rule__FieldChoice__Group_5__0 )? )
+            // InternalCalculatorForm.g:2424:2: ( rule__FieldChoice__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getGroup_5()); 
             }
-            // InternalCalculatorForm.g:2419:2: ( rule__FieldChoice__Group_5__0 )?
+            // InternalCalculatorForm.g:2425:2: ( rule__FieldChoice__Group_5__0 )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
-            if ( (LA37_0==15) ) {
+            if ( (LA37_0==16) ) {
                 alt37=1;
             }
             switch (alt37) {
                 case 1 :
-                    // InternalCalculatorForm.g:2419:3: rule__FieldChoice__Group_5__0
+                    // InternalCalculatorForm.g:2425:3: rule__FieldChoice__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__Group_5__0();
@@ -8333,14 +8369,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__6"
-    // InternalCalculatorForm.g:2427:1: rule__FieldChoice__Group__6 : rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7 ;
+    // InternalCalculatorForm.g:2433:1: rule__FieldChoice__Group__6 : rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7 ;
     public final void rule__FieldChoice__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2431:1: ( rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7 )
-            // InternalCalculatorForm.g:2432:2: rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7
+            // InternalCalculatorForm.g:2437:1: ( rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7 )
+            // InternalCalculatorForm.g:2438:2: rule__FieldChoice__Group__6__Impl rule__FieldChoice__Group__7
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__6__Impl();
@@ -8371,31 +8407,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__6__Impl"
-    // InternalCalculatorForm.g:2439:1: rule__FieldChoice__Group__6__Impl : ( ( rule__FieldChoice__Group_6__0 )? ) ;
+    // InternalCalculatorForm.g:2445:1: rule__FieldChoice__Group__6__Impl : ( ( rule__FieldChoice__Group_6__0 )? ) ;
     public final void rule__FieldChoice__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2443:1: ( ( ( rule__FieldChoice__Group_6__0 )? ) )
-            // InternalCalculatorForm.g:2444:1: ( ( rule__FieldChoice__Group_6__0 )? )
+            // InternalCalculatorForm.g:2449:1: ( ( ( rule__FieldChoice__Group_6__0 )? ) )
+            // InternalCalculatorForm.g:2450:1: ( ( rule__FieldChoice__Group_6__0 )? )
             {
-            // InternalCalculatorForm.g:2444:1: ( ( rule__FieldChoice__Group_6__0 )? )
-            // InternalCalculatorForm.g:2445:2: ( rule__FieldChoice__Group_6__0 )?
+            // InternalCalculatorForm.g:2450:1: ( ( rule__FieldChoice__Group_6__0 )? )
+            // InternalCalculatorForm.g:2451:2: ( rule__FieldChoice__Group_6__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getGroup_6()); 
             }
-            // InternalCalculatorForm.g:2446:2: ( rule__FieldChoice__Group_6__0 )?
+            // InternalCalculatorForm.g:2452:2: ( rule__FieldChoice__Group_6__0 )?
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( (LA38_0==16) ) {
+            if ( (LA38_0==17) ) {
                 alt38=1;
             }
             switch (alt38) {
                 case 1 :
-                    // InternalCalculatorForm.g:2446:3: rule__FieldChoice__Group_6__0
+                    // InternalCalculatorForm.g:2452:3: rule__FieldChoice__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__Group_6__0();
@@ -8433,14 +8469,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__7"
-    // InternalCalculatorForm.g:2454:1: rule__FieldChoice__Group__7 : rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8 ;
+    // InternalCalculatorForm.g:2460:1: rule__FieldChoice__Group__7 : rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8 ;
     public final void rule__FieldChoice__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2458:1: ( rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8 )
-            // InternalCalculatorForm.g:2459:2: rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8
+            // InternalCalculatorForm.g:2464:1: ( rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8 )
+            // InternalCalculatorForm.g:2465:2: rule__FieldChoice__Group__7__Impl rule__FieldChoice__Group__8
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__7__Impl();
@@ -8471,31 +8507,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__7__Impl"
-    // InternalCalculatorForm.g:2466:1: rule__FieldChoice__Group__7__Impl : ( ( rule__FieldChoice__MultipleAssignment_7 )? ) ;
+    // InternalCalculatorForm.g:2472:1: rule__FieldChoice__Group__7__Impl : ( ( rule__FieldChoice__MultipleAssignment_7 )? ) ;
     public final void rule__FieldChoice__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2470:1: ( ( ( rule__FieldChoice__MultipleAssignment_7 )? ) )
-            // InternalCalculatorForm.g:2471:1: ( ( rule__FieldChoice__MultipleAssignment_7 )? )
+            // InternalCalculatorForm.g:2476:1: ( ( ( rule__FieldChoice__MultipleAssignment_7 )? ) )
+            // InternalCalculatorForm.g:2477:1: ( ( rule__FieldChoice__MultipleAssignment_7 )? )
             {
-            // InternalCalculatorForm.g:2471:1: ( ( rule__FieldChoice__MultipleAssignment_7 )? )
-            // InternalCalculatorForm.g:2472:2: ( rule__FieldChoice__MultipleAssignment_7 )?
+            // InternalCalculatorForm.g:2477:1: ( ( rule__FieldChoice__MultipleAssignment_7 )? )
+            // InternalCalculatorForm.g:2478:2: ( rule__FieldChoice__MultipleAssignment_7 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getMultipleAssignment_7()); 
             }
-            // InternalCalculatorForm.g:2473:2: ( rule__FieldChoice__MultipleAssignment_7 )?
+            // InternalCalculatorForm.g:2479:2: ( rule__FieldChoice__MultipleAssignment_7 )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
-            if ( (LA39_0==42) ) {
+            if ( (LA39_0==43) ) {
                 alt39=1;
             }
             switch (alt39) {
                 case 1 :
-                    // InternalCalculatorForm.g:2473:3: rule__FieldChoice__MultipleAssignment_7
+                    // InternalCalculatorForm.g:2479:3: rule__FieldChoice__MultipleAssignment_7
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__MultipleAssignment_7();
@@ -8533,14 +8569,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__8"
-    // InternalCalculatorForm.g:2481:1: rule__FieldChoice__Group__8 : rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9 ;
+    // InternalCalculatorForm.g:2487:1: rule__FieldChoice__Group__8 : rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9 ;
     public final void rule__FieldChoice__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2485:1: ( rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9 )
-            // InternalCalculatorForm.g:2486:2: rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9
+            // InternalCalculatorForm.g:2491:1: ( rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9 )
+            // InternalCalculatorForm.g:2492:2: rule__FieldChoice__Group__8__Impl rule__FieldChoice__Group__9
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__8__Impl();
@@ -8571,31 +8607,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__8__Impl"
-    // InternalCalculatorForm.g:2493:1: rule__FieldChoice__Group__8__Impl : ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? ) ;
+    // InternalCalculatorForm.g:2499:1: rule__FieldChoice__Group__8__Impl : ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? ) ;
     public final void rule__FieldChoice__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2497:1: ( ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? ) )
-            // InternalCalculatorForm.g:2498:1: ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? )
+            // InternalCalculatorForm.g:2503:1: ( ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? ) )
+            // InternalCalculatorForm.g:2504:1: ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? )
             {
-            // InternalCalculatorForm.g:2498:1: ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? )
-            // InternalCalculatorForm.g:2499:2: ( rule__FieldChoice__NotdisplayedAssignment_8 )?
+            // InternalCalculatorForm.g:2504:1: ( ( rule__FieldChoice__NotdisplayedAssignment_8 )? )
+            // InternalCalculatorForm.g:2505:2: ( rule__FieldChoice__NotdisplayedAssignment_8 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getNotdisplayedAssignment_8()); 
             }
-            // InternalCalculatorForm.g:2500:2: ( rule__FieldChoice__NotdisplayedAssignment_8 )?
+            // InternalCalculatorForm.g:2506:2: ( rule__FieldChoice__NotdisplayedAssignment_8 )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==39) ) {
+            if ( (LA40_0==40) ) {
                 alt40=1;
             }
             switch (alt40) {
                 case 1 :
-                    // InternalCalculatorForm.g:2500:3: rule__FieldChoice__NotdisplayedAssignment_8
+                    // InternalCalculatorForm.g:2506:3: rule__FieldChoice__NotdisplayedAssignment_8
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__NotdisplayedAssignment_8();
@@ -8633,14 +8669,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__9"
-    // InternalCalculatorForm.g:2508:1: rule__FieldChoice__Group__9 : rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10 ;
+    // InternalCalculatorForm.g:2514:1: rule__FieldChoice__Group__9 : rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10 ;
     public final void rule__FieldChoice__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2512:1: ( rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10 )
-            // InternalCalculatorForm.g:2513:2: rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10
+            // InternalCalculatorForm.g:2518:1: ( rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10 )
+            // InternalCalculatorForm.g:2519:2: rule__FieldChoice__Group__9__Impl rule__FieldChoice__Group__10
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__9__Impl();
@@ -8671,31 +8707,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__9__Impl"
-    // InternalCalculatorForm.g:2520:1: rule__FieldChoice__Group__9__Impl : ( ( rule__FieldChoice__ReadonlyAssignment_9 )? ) ;
+    // InternalCalculatorForm.g:2526:1: rule__FieldChoice__Group__9__Impl : ( ( rule__FieldChoice__ReadonlyAssignment_9 )? ) ;
     public final void rule__FieldChoice__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2524:1: ( ( ( rule__FieldChoice__ReadonlyAssignment_9 )? ) )
-            // InternalCalculatorForm.g:2525:1: ( ( rule__FieldChoice__ReadonlyAssignment_9 )? )
+            // InternalCalculatorForm.g:2530:1: ( ( ( rule__FieldChoice__ReadonlyAssignment_9 )? ) )
+            // InternalCalculatorForm.g:2531:1: ( ( rule__FieldChoice__ReadonlyAssignment_9 )? )
             {
-            // InternalCalculatorForm.g:2525:1: ( ( rule__FieldChoice__ReadonlyAssignment_9 )? )
-            // InternalCalculatorForm.g:2526:2: ( rule__FieldChoice__ReadonlyAssignment_9 )?
+            // InternalCalculatorForm.g:2531:1: ( ( rule__FieldChoice__ReadonlyAssignment_9 )? )
+            // InternalCalculatorForm.g:2532:2: ( rule__FieldChoice__ReadonlyAssignment_9 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getReadonlyAssignment_9()); 
             }
-            // InternalCalculatorForm.g:2527:2: ( rule__FieldChoice__ReadonlyAssignment_9 )?
+            // InternalCalculatorForm.g:2533:2: ( rule__FieldChoice__ReadonlyAssignment_9 )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==40) ) {
+            if ( (LA41_0==41) ) {
                 alt41=1;
             }
             switch (alt41) {
                 case 1 :
-                    // InternalCalculatorForm.g:2527:3: rule__FieldChoice__ReadonlyAssignment_9
+                    // InternalCalculatorForm.g:2533:3: rule__FieldChoice__ReadonlyAssignment_9
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__ReadonlyAssignment_9();
@@ -8733,14 +8769,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__10"
-    // InternalCalculatorForm.g:2535:1: rule__FieldChoice__Group__10 : rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11 ;
+    // InternalCalculatorForm.g:2541:1: rule__FieldChoice__Group__10 : rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11 ;
     public final void rule__FieldChoice__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2539:1: ( rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11 )
-            // InternalCalculatorForm.g:2540:2: rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11
+            // InternalCalculatorForm.g:2545:1: ( rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11 )
+            // InternalCalculatorForm.g:2546:2: rule__FieldChoice__Group__10__Impl rule__FieldChoice__Group__11
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__10__Impl();
@@ -8771,31 +8807,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__10__Impl"
-    // InternalCalculatorForm.g:2547:1: rule__FieldChoice__Group__10__Impl : ( ( rule__FieldChoice__RequiredAssignment_10 )? ) ;
+    // InternalCalculatorForm.g:2553:1: rule__FieldChoice__Group__10__Impl : ( ( rule__FieldChoice__RequiredAssignment_10 )? ) ;
     public final void rule__FieldChoice__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2551:1: ( ( ( rule__FieldChoice__RequiredAssignment_10 )? ) )
-            // InternalCalculatorForm.g:2552:1: ( ( rule__FieldChoice__RequiredAssignment_10 )? )
+            // InternalCalculatorForm.g:2557:1: ( ( ( rule__FieldChoice__RequiredAssignment_10 )? ) )
+            // InternalCalculatorForm.g:2558:1: ( ( rule__FieldChoice__RequiredAssignment_10 )? )
             {
-            // InternalCalculatorForm.g:2552:1: ( ( rule__FieldChoice__RequiredAssignment_10 )? )
-            // InternalCalculatorForm.g:2553:2: ( rule__FieldChoice__RequiredAssignment_10 )?
+            // InternalCalculatorForm.g:2558:1: ( ( rule__FieldChoice__RequiredAssignment_10 )? )
+            // InternalCalculatorForm.g:2559:2: ( rule__FieldChoice__RequiredAssignment_10 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getRequiredAssignment_10()); 
             }
-            // InternalCalculatorForm.g:2554:2: ( rule__FieldChoice__RequiredAssignment_10 )?
+            // InternalCalculatorForm.g:2560:2: ( rule__FieldChoice__RequiredAssignment_10 )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==41) ) {
+            if ( (LA42_0==42) ) {
                 alt42=1;
             }
             switch (alt42) {
                 case 1 :
-                    // InternalCalculatorForm.g:2554:3: rule__FieldChoice__RequiredAssignment_10
+                    // InternalCalculatorForm.g:2560:3: rule__FieldChoice__RequiredAssignment_10
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__RequiredAssignment_10();
@@ -8833,14 +8869,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__11"
-    // InternalCalculatorForm.g:2562:1: rule__FieldChoice__Group__11 : rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12 ;
+    // InternalCalculatorForm.g:2568:1: rule__FieldChoice__Group__11 : rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12 ;
     public final void rule__FieldChoice__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2566:1: ( rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12 )
-            // InternalCalculatorForm.g:2567:2: rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12
+            // InternalCalculatorForm.g:2572:1: ( rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12 )
+            // InternalCalculatorForm.g:2573:2: rule__FieldChoice__Group__11__Impl rule__FieldChoice__Group__12
             {
             pushFollow(FOLLOW_17);
             rule__FieldChoice__Group__11__Impl();
@@ -8871,31 +8907,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__11__Impl"
-    // InternalCalculatorForm.g:2574:1: rule__FieldChoice__Group__11__Impl : ( ( rule__FieldChoice__Group_11__0 )? ) ;
+    // InternalCalculatorForm.g:2580:1: rule__FieldChoice__Group__11__Impl : ( ( rule__FieldChoice__Group_11__0 )? ) ;
     public final void rule__FieldChoice__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2578:1: ( ( ( rule__FieldChoice__Group_11__0 )? ) )
-            // InternalCalculatorForm.g:2579:1: ( ( rule__FieldChoice__Group_11__0 )? )
+            // InternalCalculatorForm.g:2584:1: ( ( ( rule__FieldChoice__Group_11__0 )? ) )
+            // InternalCalculatorForm.g:2585:1: ( ( rule__FieldChoice__Group_11__0 )? )
             {
-            // InternalCalculatorForm.g:2579:1: ( ( rule__FieldChoice__Group_11__0 )? )
-            // InternalCalculatorForm.g:2580:2: ( rule__FieldChoice__Group_11__0 )?
+            // InternalCalculatorForm.g:2585:1: ( ( rule__FieldChoice__Group_11__0 )? )
+            // InternalCalculatorForm.g:2586:2: ( rule__FieldChoice__Group_11__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getGroup_11()); 
             }
-            // InternalCalculatorForm.g:2581:2: ( rule__FieldChoice__Group_11__0 )?
+            // InternalCalculatorForm.g:2587:2: ( rule__FieldChoice__Group_11__0 )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==17) ) {
+            if ( (LA43_0==18) ) {
                 alt43=1;
             }
             switch (alt43) {
                 case 1 :
-                    // InternalCalculatorForm.g:2581:3: rule__FieldChoice__Group_11__0
+                    // InternalCalculatorForm.g:2587:3: rule__FieldChoice__Group_11__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__Group_11__0();
@@ -8933,14 +8969,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__12"
-    // InternalCalculatorForm.g:2589:1: rule__FieldChoice__Group__12 : rule__FieldChoice__Group__12__Impl ;
+    // InternalCalculatorForm.g:2595:1: rule__FieldChoice__Group__12 : rule__FieldChoice__Group__12__Impl ;
     public final void rule__FieldChoice__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2593:1: ( rule__FieldChoice__Group__12__Impl )
-            // InternalCalculatorForm.g:2594:2: rule__FieldChoice__Group__12__Impl
+            // InternalCalculatorForm.g:2599:1: ( rule__FieldChoice__Group__12__Impl )
+            // InternalCalculatorForm.g:2600:2: rule__FieldChoice__Group__12__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__Group__12__Impl();
@@ -8966,31 +9002,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group__12__Impl"
-    // InternalCalculatorForm.g:2600:1: rule__FieldChoice__Group__12__Impl : ( ( rule__FieldChoice__Group_12__0 )? ) ;
+    // InternalCalculatorForm.g:2606:1: rule__FieldChoice__Group__12__Impl : ( ( rule__FieldChoice__Group_12__0 )? ) ;
     public final void rule__FieldChoice__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2604:1: ( ( ( rule__FieldChoice__Group_12__0 )? ) )
-            // InternalCalculatorForm.g:2605:1: ( ( rule__FieldChoice__Group_12__0 )? )
+            // InternalCalculatorForm.g:2610:1: ( ( ( rule__FieldChoice__Group_12__0 )? ) )
+            // InternalCalculatorForm.g:2611:1: ( ( rule__FieldChoice__Group_12__0 )? )
             {
-            // InternalCalculatorForm.g:2605:1: ( ( rule__FieldChoice__Group_12__0 )? )
-            // InternalCalculatorForm.g:2606:2: ( rule__FieldChoice__Group_12__0 )?
+            // InternalCalculatorForm.g:2611:1: ( ( rule__FieldChoice__Group_12__0 )? )
+            // InternalCalculatorForm.g:2612:2: ( rule__FieldChoice__Group_12__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getGroup_12()); 
             }
-            // InternalCalculatorForm.g:2607:2: ( rule__FieldChoice__Group_12__0 )?
+            // InternalCalculatorForm.g:2613:2: ( rule__FieldChoice__Group_12__0 )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==19) ) {
+            if ( (LA44_0==20) ) {
                 alt44=1;
             }
             switch (alt44) {
                 case 1 :
-                    // InternalCalculatorForm.g:2607:3: rule__FieldChoice__Group_12__0
+                    // InternalCalculatorForm.g:2613:3: rule__FieldChoice__Group_12__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoice__Group_12__0();
@@ -9028,14 +9064,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_5__0"
-    // InternalCalculatorForm.g:2616:1: rule__FieldChoice__Group_5__0 : rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1 ;
+    // InternalCalculatorForm.g:2622:1: rule__FieldChoice__Group_5__0 : rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1 ;
     public final void rule__FieldChoice__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2620:1: ( rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1 )
-            // InternalCalculatorForm.g:2621:2: rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1
+            // InternalCalculatorForm.g:2626:1: ( rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1 )
+            // InternalCalculatorForm.g:2627:2: rule__FieldChoice__Group_5__0__Impl rule__FieldChoice__Group_5__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldChoice__Group_5__0__Impl();
@@ -9066,22 +9102,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_5__0__Impl"
-    // InternalCalculatorForm.g:2628:1: rule__FieldChoice__Group_5__0__Impl : ( 'form' ) ;
+    // InternalCalculatorForm.g:2634:1: rule__FieldChoice__Group_5__0__Impl : ( 'form' ) ;
     public final void rule__FieldChoice__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2632:1: ( ( 'form' ) )
-            // InternalCalculatorForm.g:2633:1: ( 'form' )
+            // InternalCalculatorForm.g:2638:1: ( ( 'form' ) )
+            // InternalCalculatorForm.g:2639:1: ( 'form' )
             {
-            // InternalCalculatorForm.g:2633:1: ( 'form' )
-            // InternalCalculatorForm.g:2634:2: 'form'
+            // InternalCalculatorForm.g:2639:1: ( 'form' )
+            // InternalCalculatorForm.g:2640:2: 'form'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getFormKeyword_5_0()); 
             }
-            match(input,15,FOLLOW_2); if (state.failed) return ;
+            match(input,16,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getFormKeyword_5_0()); 
             }
@@ -9107,14 +9143,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_5__1"
-    // InternalCalculatorForm.g:2643:1: rule__FieldChoice__Group_5__1 : rule__FieldChoice__Group_5__1__Impl ;
+    // InternalCalculatorForm.g:2649:1: rule__FieldChoice__Group_5__1 : rule__FieldChoice__Group_5__1__Impl ;
     public final void rule__FieldChoice__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2647:1: ( rule__FieldChoice__Group_5__1__Impl )
-            // InternalCalculatorForm.g:2648:2: rule__FieldChoice__Group_5__1__Impl
+            // InternalCalculatorForm.g:2653:1: ( rule__FieldChoice__Group_5__1__Impl )
+            // InternalCalculatorForm.g:2654:2: rule__FieldChoice__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__Group_5__1__Impl();
@@ -9140,23 +9176,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_5__1__Impl"
-    // InternalCalculatorForm.g:2654:1: rule__FieldChoice__Group_5__1__Impl : ( ( rule__FieldChoice__FormAssignment_5_1 ) ) ;
+    // InternalCalculatorForm.g:2660:1: rule__FieldChoice__Group_5__1__Impl : ( ( rule__FieldChoice__FormAssignment_5_1 ) ) ;
     public final void rule__FieldChoice__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2658:1: ( ( ( rule__FieldChoice__FormAssignment_5_1 ) ) )
-            // InternalCalculatorForm.g:2659:1: ( ( rule__FieldChoice__FormAssignment_5_1 ) )
+            // InternalCalculatorForm.g:2664:1: ( ( ( rule__FieldChoice__FormAssignment_5_1 ) ) )
+            // InternalCalculatorForm.g:2665:1: ( ( rule__FieldChoice__FormAssignment_5_1 ) )
             {
-            // InternalCalculatorForm.g:2659:1: ( ( rule__FieldChoice__FormAssignment_5_1 ) )
-            // InternalCalculatorForm.g:2660:2: ( rule__FieldChoice__FormAssignment_5_1 )
+            // InternalCalculatorForm.g:2665:1: ( ( rule__FieldChoice__FormAssignment_5_1 ) )
+            // InternalCalculatorForm.g:2666:2: ( rule__FieldChoice__FormAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getFormAssignment_5_1()); 
             }
-            // InternalCalculatorForm.g:2661:2: ( rule__FieldChoice__FormAssignment_5_1 )
-            // InternalCalculatorForm.g:2661:3: rule__FieldChoice__FormAssignment_5_1
+            // InternalCalculatorForm.g:2667:2: ( rule__FieldChoice__FormAssignment_5_1 )
+            // InternalCalculatorForm.g:2667:3: rule__FieldChoice__FormAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__FormAssignment_5_1();
@@ -9191,14 +9227,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_6__0"
-    // InternalCalculatorForm.g:2670:1: rule__FieldChoice__Group_6__0 : rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1 ;
+    // InternalCalculatorForm.g:2676:1: rule__FieldChoice__Group_6__0 : rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1 ;
     public final void rule__FieldChoice__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2674:1: ( rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1 )
-            // InternalCalculatorForm.g:2675:2: rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1
+            // InternalCalculatorForm.g:2680:1: ( rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1 )
+            // InternalCalculatorForm.g:2681:2: rule__FieldChoice__Group_6__0__Impl rule__FieldChoice__Group_6__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldChoice__Group_6__0__Impl();
@@ -9229,22 +9265,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_6__0__Impl"
-    // InternalCalculatorForm.g:2682:1: rule__FieldChoice__Group_6__0__Impl : ( 'label' ) ;
+    // InternalCalculatorForm.g:2688:1: rule__FieldChoice__Group_6__0__Impl : ( 'label' ) ;
     public final void rule__FieldChoice__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2686:1: ( ( 'label' ) )
-            // InternalCalculatorForm.g:2687:1: ( 'label' )
+            // InternalCalculatorForm.g:2692:1: ( ( 'label' ) )
+            // InternalCalculatorForm.g:2693:1: ( 'label' )
             {
-            // InternalCalculatorForm.g:2687:1: ( 'label' )
-            // InternalCalculatorForm.g:2688:2: 'label'
+            // InternalCalculatorForm.g:2693:1: ( 'label' )
+            // InternalCalculatorForm.g:2694:2: 'label'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getLabelKeyword_6_0()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getLabelKeyword_6_0()); 
             }
@@ -9270,14 +9306,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_6__1"
-    // InternalCalculatorForm.g:2697:1: rule__FieldChoice__Group_6__1 : rule__FieldChoice__Group_6__1__Impl ;
+    // InternalCalculatorForm.g:2703:1: rule__FieldChoice__Group_6__1 : rule__FieldChoice__Group_6__1__Impl ;
     public final void rule__FieldChoice__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2701:1: ( rule__FieldChoice__Group_6__1__Impl )
-            // InternalCalculatorForm.g:2702:2: rule__FieldChoice__Group_6__1__Impl
+            // InternalCalculatorForm.g:2707:1: ( rule__FieldChoice__Group_6__1__Impl )
+            // InternalCalculatorForm.g:2708:2: rule__FieldChoice__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__Group_6__1__Impl();
@@ -9303,23 +9339,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_6__1__Impl"
-    // InternalCalculatorForm.g:2708:1: rule__FieldChoice__Group_6__1__Impl : ( ( rule__FieldChoice__LabelAssignment_6_1 ) ) ;
+    // InternalCalculatorForm.g:2714:1: rule__FieldChoice__Group_6__1__Impl : ( ( rule__FieldChoice__LabelAssignment_6_1 ) ) ;
     public final void rule__FieldChoice__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2712:1: ( ( ( rule__FieldChoice__LabelAssignment_6_1 ) ) )
-            // InternalCalculatorForm.g:2713:1: ( ( rule__FieldChoice__LabelAssignment_6_1 ) )
+            // InternalCalculatorForm.g:2718:1: ( ( ( rule__FieldChoice__LabelAssignment_6_1 ) ) )
+            // InternalCalculatorForm.g:2719:1: ( ( rule__FieldChoice__LabelAssignment_6_1 ) )
             {
-            // InternalCalculatorForm.g:2713:1: ( ( rule__FieldChoice__LabelAssignment_6_1 ) )
-            // InternalCalculatorForm.g:2714:2: ( rule__FieldChoice__LabelAssignment_6_1 )
+            // InternalCalculatorForm.g:2719:1: ( ( rule__FieldChoice__LabelAssignment_6_1 ) )
+            // InternalCalculatorForm.g:2720:2: ( rule__FieldChoice__LabelAssignment_6_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getLabelAssignment_6_1()); 
             }
-            // InternalCalculatorForm.g:2715:2: ( rule__FieldChoice__LabelAssignment_6_1 )
-            // InternalCalculatorForm.g:2715:3: rule__FieldChoice__LabelAssignment_6_1
+            // InternalCalculatorForm.g:2721:2: ( rule__FieldChoice__LabelAssignment_6_1 )
+            // InternalCalculatorForm.g:2721:3: rule__FieldChoice__LabelAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__LabelAssignment_6_1();
@@ -9354,14 +9390,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_11__0"
-    // InternalCalculatorForm.g:2724:1: rule__FieldChoice__Group_11__0 : rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1 ;
+    // InternalCalculatorForm.g:2730:1: rule__FieldChoice__Group_11__0 : rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1 ;
     public final void rule__FieldChoice__Group_11__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2728:1: ( rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1 )
-            // InternalCalculatorForm.g:2729:2: rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1
+            // InternalCalculatorForm.g:2734:1: ( rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1 )
+            // InternalCalculatorForm.g:2735:2: rule__FieldChoice__Group_11__0__Impl rule__FieldChoice__Group_11__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldChoice__Group_11__0__Impl();
@@ -9392,22 +9428,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_11__0__Impl"
-    // InternalCalculatorForm.g:2736:1: rule__FieldChoice__Group_11__0__Impl : ( 'value' ) ;
+    // InternalCalculatorForm.g:2742:1: rule__FieldChoice__Group_11__0__Impl : ( 'value' ) ;
     public final void rule__FieldChoice__Group_11__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2740:1: ( ( 'value' ) )
-            // InternalCalculatorForm.g:2741:1: ( 'value' )
+            // InternalCalculatorForm.g:2746:1: ( ( 'value' ) )
+            // InternalCalculatorForm.g:2747:1: ( 'value' )
             {
-            // InternalCalculatorForm.g:2741:1: ( 'value' )
-            // InternalCalculatorForm.g:2742:2: 'value'
+            // InternalCalculatorForm.g:2747:1: ( 'value' )
+            // InternalCalculatorForm.g:2748:2: 'value'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getValueKeyword_11_0()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getValueKeyword_11_0()); 
             }
@@ -9433,14 +9469,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_11__1"
-    // InternalCalculatorForm.g:2751:1: rule__FieldChoice__Group_11__1 : rule__FieldChoice__Group_11__1__Impl ;
+    // InternalCalculatorForm.g:2757:1: rule__FieldChoice__Group_11__1 : rule__FieldChoice__Group_11__1__Impl ;
     public final void rule__FieldChoice__Group_11__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2755:1: ( rule__FieldChoice__Group_11__1__Impl )
-            // InternalCalculatorForm.g:2756:2: rule__FieldChoice__Group_11__1__Impl
+            // InternalCalculatorForm.g:2761:1: ( rule__FieldChoice__Group_11__1__Impl )
+            // InternalCalculatorForm.g:2762:2: rule__FieldChoice__Group_11__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__Group_11__1__Impl();
@@ -9466,23 +9502,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_11__1__Impl"
-    // InternalCalculatorForm.g:2762:1: rule__FieldChoice__Group_11__1__Impl : ( ( rule__FieldChoice__ValueAssignment_11_1 ) ) ;
+    // InternalCalculatorForm.g:2768:1: rule__FieldChoice__Group_11__1__Impl : ( ( rule__FieldChoice__ValueAssignment_11_1 ) ) ;
     public final void rule__FieldChoice__Group_11__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2766:1: ( ( ( rule__FieldChoice__ValueAssignment_11_1 ) ) )
-            // InternalCalculatorForm.g:2767:1: ( ( rule__FieldChoice__ValueAssignment_11_1 ) )
+            // InternalCalculatorForm.g:2772:1: ( ( ( rule__FieldChoice__ValueAssignment_11_1 ) ) )
+            // InternalCalculatorForm.g:2773:1: ( ( rule__FieldChoice__ValueAssignment_11_1 ) )
             {
-            // InternalCalculatorForm.g:2767:1: ( ( rule__FieldChoice__ValueAssignment_11_1 ) )
-            // InternalCalculatorForm.g:2768:2: ( rule__FieldChoice__ValueAssignment_11_1 )
+            // InternalCalculatorForm.g:2773:1: ( ( rule__FieldChoice__ValueAssignment_11_1 ) )
+            // InternalCalculatorForm.g:2774:2: ( rule__FieldChoice__ValueAssignment_11_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getValueAssignment_11_1()); 
             }
-            // InternalCalculatorForm.g:2769:2: ( rule__FieldChoice__ValueAssignment_11_1 )
-            // InternalCalculatorForm.g:2769:3: rule__FieldChoice__ValueAssignment_11_1
+            // InternalCalculatorForm.g:2775:2: ( rule__FieldChoice__ValueAssignment_11_1 )
+            // InternalCalculatorForm.g:2775:3: rule__FieldChoice__ValueAssignment_11_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__ValueAssignment_11_1();
@@ -9517,14 +9553,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__0"
-    // InternalCalculatorForm.g:2778:1: rule__FieldChoice__Group_12__0 : rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1 ;
+    // InternalCalculatorForm.g:2784:1: rule__FieldChoice__Group_12__0 : rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1 ;
     public final void rule__FieldChoice__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2782:1: ( rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1 )
-            // InternalCalculatorForm.g:2783:2: rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1
+            // InternalCalculatorForm.g:2788:1: ( rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1 )
+            // InternalCalculatorForm.g:2789:2: rule__FieldChoice__Group_12__0__Impl rule__FieldChoice__Group_12__1
             {
             pushFollow(FOLLOW_15);
             rule__FieldChoice__Group_12__0__Impl();
@@ -9555,22 +9591,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__0__Impl"
-    // InternalCalculatorForm.g:2790:1: rule__FieldChoice__Group_12__0__Impl : ( '{' ) ;
+    // InternalCalculatorForm.g:2796:1: rule__FieldChoice__Group_12__0__Impl : ( '{' ) ;
     public final void rule__FieldChoice__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2794:1: ( ( '{' ) )
-            // InternalCalculatorForm.g:2795:1: ( '{' )
+            // InternalCalculatorForm.g:2800:1: ( ( '{' ) )
+            // InternalCalculatorForm.g:2801:1: ( '{' )
             {
-            // InternalCalculatorForm.g:2795:1: ( '{' )
-            // InternalCalculatorForm.g:2796:2: '{'
+            // InternalCalculatorForm.g:2801:1: ( '{' )
+            // InternalCalculatorForm.g:2802:2: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0()); 
             }
@@ -9596,14 +9632,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__1"
-    // InternalCalculatorForm.g:2805:1: rule__FieldChoice__Group_12__1 : rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2 ;
+    // InternalCalculatorForm.g:2811:1: rule__FieldChoice__Group_12__1 : rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2 ;
     public final void rule__FieldChoice__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2809:1: ( rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2 )
-            // InternalCalculatorForm.g:2810:2: rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2
+            // InternalCalculatorForm.g:2815:1: ( rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2 )
+            // InternalCalculatorForm.g:2816:2: rule__FieldChoice__Group_12__1__Impl rule__FieldChoice__Group_12__2
             {
             pushFollow(FOLLOW_15);
             rule__FieldChoice__Group_12__1__Impl();
@@ -9634,35 +9670,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__1__Impl"
-    // InternalCalculatorForm.g:2817:1: rule__FieldChoice__Group_12__1__Impl : ( ( rule__FieldChoice__OptionsAssignment_12_1 )* ) ;
+    // InternalCalculatorForm.g:2823:1: rule__FieldChoice__Group_12__1__Impl : ( ( rule__FieldChoice__OptionsAssignment_12_1 )* ) ;
     public final void rule__FieldChoice__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2821:1: ( ( ( rule__FieldChoice__OptionsAssignment_12_1 )* ) )
-            // InternalCalculatorForm.g:2822:1: ( ( rule__FieldChoice__OptionsAssignment_12_1 )* )
+            // InternalCalculatorForm.g:2827:1: ( ( ( rule__FieldChoice__OptionsAssignment_12_1 )* ) )
+            // InternalCalculatorForm.g:2828:1: ( ( rule__FieldChoice__OptionsAssignment_12_1 )* )
             {
-            // InternalCalculatorForm.g:2822:1: ( ( rule__FieldChoice__OptionsAssignment_12_1 )* )
-            // InternalCalculatorForm.g:2823:2: ( rule__FieldChoice__OptionsAssignment_12_1 )*
+            // InternalCalculatorForm.g:2828:1: ( ( rule__FieldChoice__OptionsAssignment_12_1 )* )
+            // InternalCalculatorForm.g:2829:2: ( rule__FieldChoice__OptionsAssignment_12_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getOptionsAssignment_12_1()); 
             }
-            // InternalCalculatorForm.g:2824:2: ( rule__FieldChoice__OptionsAssignment_12_1 )*
+            // InternalCalculatorForm.g:2830:2: ( rule__FieldChoice__OptionsAssignment_12_1 )*
             loop45:
             do {
                 int alt45=2;
                 int LA45_0 = input.LA(1);
 
-                if ( (LA45_0==22) ) {
+                if ( (LA45_0==23) ) {
                     alt45=1;
                 }
 
 
                 switch (alt45) {
             	case 1 :
-            	    // InternalCalculatorForm.g:2824:3: rule__FieldChoice__OptionsAssignment_12_1
+            	    // InternalCalculatorForm.g:2830:3: rule__FieldChoice__OptionsAssignment_12_1
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__FieldChoice__OptionsAssignment_12_1();
@@ -9703,14 +9739,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__2"
-    // InternalCalculatorForm.g:2832:1: rule__FieldChoice__Group_12__2 : rule__FieldChoice__Group_12__2__Impl ;
+    // InternalCalculatorForm.g:2838:1: rule__FieldChoice__Group_12__2 : rule__FieldChoice__Group_12__2__Impl ;
     public final void rule__FieldChoice__Group_12__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2836:1: ( rule__FieldChoice__Group_12__2__Impl )
-            // InternalCalculatorForm.g:2837:2: rule__FieldChoice__Group_12__2__Impl
+            // InternalCalculatorForm.g:2842:1: ( rule__FieldChoice__Group_12__2__Impl )
+            // InternalCalculatorForm.g:2843:2: rule__FieldChoice__Group_12__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoice__Group_12__2__Impl();
@@ -9736,22 +9772,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__Group_12__2__Impl"
-    // InternalCalculatorForm.g:2843:1: rule__FieldChoice__Group_12__2__Impl : ( '}' ) ;
+    // InternalCalculatorForm.g:2849:1: rule__FieldChoice__Group_12__2__Impl : ( '}' ) ;
     public final void rule__FieldChoice__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2847:1: ( ( '}' ) )
-            // InternalCalculatorForm.g:2848:1: ( '}' )
+            // InternalCalculatorForm.g:2853:1: ( ( '}' ) )
+            // InternalCalculatorForm.g:2854:1: ( '}' )
             {
-            // InternalCalculatorForm.g:2848:1: ( '}' )
-            // InternalCalculatorForm.g:2849:2: '}'
+            // InternalCalculatorForm.g:2854:1: ( '}' )
+            // InternalCalculatorForm.g:2855:2: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2()); 
             }
@@ -9777,14 +9813,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__0"
-    // InternalCalculatorForm.g:2859:1: rule__FieldChoiceOption__Group__0 : rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1 ;
+    // InternalCalculatorForm.g:2865:1: rule__FieldChoiceOption__Group__0 : rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1 ;
     public final void rule__FieldChoiceOption__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2863:1: ( rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1 )
-            // InternalCalculatorForm.g:2864:2: rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1
+            // InternalCalculatorForm.g:2869:1: ( rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1 )
+            // InternalCalculatorForm.g:2870:2: rule__FieldChoiceOption__Group__0__Impl rule__FieldChoiceOption__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldChoiceOption__Group__0__Impl();
@@ -9815,22 +9851,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__0__Impl"
-    // InternalCalculatorForm.g:2871:1: rule__FieldChoiceOption__Group__0__Impl : ( 'option' ) ;
+    // InternalCalculatorForm.g:2877:1: rule__FieldChoiceOption__Group__0__Impl : ( 'option' ) ;
     public final void rule__FieldChoiceOption__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2875:1: ( ( 'option' ) )
-            // InternalCalculatorForm.g:2876:1: ( 'option' )
+            // InternalCalculatorForm.g:2881:1: ( ( 'option' ) )
+            // InternalCalculatorForm.g:2882:1: ( 'option' )
             {
-            // InternalCalculatorForm.g:2876:1: ( 'option' )
-            // InternalCalculatorForm.g:2877:2: 'option'
+            // InternalCalculatorForm.g:2882:1: ( 'option' )
+            // InternalCalculatorForm.g:2883:2: 'option'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getOptionKeyword_0()); 
             }
-            match(input,22,FOLLOW_2); if (state.failed) return ;
+            match(input,23,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getOptionKeyword_0()); 
             }
@@ -9856,14 +9892,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__1"
-    // InternalCalculatorForm.g:2886:1: rule__FieldChoiceOption__Group__1 : rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2 ;
+    // InternalCalculatorForm.g:2892:1: rule__FieldChoiceOption__Group__1 : rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2 ;
     public final void rule__FieldChoiceOption__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2890:1: ( rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2 )
-            // InternalCalculatorForm.g:2891:2: rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2
+            // InternalCalculatorForm.g:2896:1: ( rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2 )
+            // InternalCalculatorForm.g:2897:2: rule__FieldChoiceOption__Group__1__Impl rule__FieldChoiceOption__Group__2
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__1__Impl();
@@ -9894,23 +9930,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__1__Impl"
-    // InternalCalculatorForm.g:2898:1: rule__FieldChoiceOption__Group__1__Impl : ( ( rule__FieldChoiceOption__LabelAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:2904:1: rule__FieldChoiceOption__Group__1__Impl : ( ( rule__FieldChoiceOption__LabelAssignment_1 ) ) ;
     public final void rule__FieldChoiceOption__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2902:1: ( ( ( rule__FieldChoiceOption__LabelAssignment_1 ) ) )
-            // InternalCalculatorForm.g:2903:1: ( ( rule__FieldChoiceOption__LabelAssignment_1 ) )
+            // InternalCalculatorForm.g:2908:1: ( ( ( rule__FieldChoiceOption__LabelAssignment_1 ) ) )
+            // InternalCalculatorForm.g:2909:1: ( ( rule__FieldChoiceOption__LabelAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:2903:1: ( ( rule__FieldChoiceOption__LabelAssignment_1 ) )
-            // InternalCalculatorForm.g:2904:2: ( rule__FieldChoiceOption__LabelAssignment_1 )
+            // InternalCalculatorForm.g:2909:1: ( ( rule__FieldChoiceOption__LabelAssignment_1 ) )
+            // InternalCalculatorForm.g:2910:2: ( rule__FieldChoiceOption__LabelAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getLabelAssignment_1()); 
             }
-            // InternalCalculatorForm.g:2905:2: ( rule__FieldChoiceOption__LabelAssignment_1 )
-            // InternalCalculatorForm.g:2905:3: rule__FieldChoiceOption__LabelAssignment_1
+            // InternalCalculatorForm.g:2911:2: ( rule__FieldChoiceOption__LabelAssignment_1 )
+            // InternalCalculatorForm.g:2911:3: rule__FieldChoiceOption__LabelAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoiceOption__LabelAssignment_1();
@@ -9945,14 +9981,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__2"
-    // InternalCalculatorForm.g:2913:1: rule__FieldChoiceOption__Group__2 : rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3 ;
+    // InternalCalculatorForm.g:2919:1: rule__FieldChoiceOption__Group__2 : rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3 ;
     public final void rule__FieldChoiceOption__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2917:1: ( rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3 )
-            // InternalCalculatorForm.g:2918:2: rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3
+            // InternalCalculatorForm.g:2923:1: ( rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3 )
+            // InternalCalculatorForm.g:2924:2: rule__FieldChoiceOption__Group__2__Impl rule__FieldChoiceOption__Group__3
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__2__Impl();
@@ -9983,31 +10019,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__2__Impl"
-    // InternalCalculatorForm.g:2925:1: rule__FieldChoiceOption__Group__2__Impl : ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? ) ;
+    // InternalCalculatorForm.g:2931:1: rule__FieldChoiceOption__Group__2__Impl : ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? ) ;
     public final void rule__FieldChoiceOption__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2929:1: ( ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? ) )
-            // InternalCalculatorForm.g:2930:1: ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:2935:1: ( ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? ) )
+            // InternalCalculatorForm.g:2936:1: ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? )
             {
-            // InternalCalculatorForm.g:2930:1: ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? )
-            // InternalCalculatorForm.g:2931:2: ( rule__FieldChoiceOption__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:2936:1: ( ( rule__FieldChoiceOption__AutofocusAssignment_2 )? )
+            // InternalCalculatorForm.g:2937:2: ( rule__FieldChoiceOption__AutofocusAssignment_2 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getAutofocusAssignment_2()); 
             }
-            // InternalCalculatorForm.g:2932:2: ( rule__FieldChoiceOption__AutofocusAssignment_2 )?
+            // InternalCalculatorForm.g:2938:2: ( rule__FieldChoiceOption__AutofocusAssignment_2 )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==37) ) {
+            if ( (LA46_0==38) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
-                    // InternalCalculatorForm.g:2932:3: rule__FieldChoiceOption__AutofocusAssignment_2
+                    // InternalCalculatorForm.g:2938:3: rule__FieldChoiceOption__AutofocusAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__AutofocusAssignment_2();
@@ -10045,14 +10081,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__3"
-    // InternalCalculatorForm.g:2940:1: rule__FieldChoiceOption__Group__3 : rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4 ;
+    // InternalCalculatorForm.g:2946:1: rule__FieldChoiceOption__Group__3 : rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4 ;
     public final void rule__FieldChoiceOption__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2944:1: ( rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4 )
-            // InternalCalculatorForm.g:2945:2: rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4
+            // InternalCalculatorForm.g:2950:1: ( rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4 )
+            // InternalCalculatorForm.g:2951:2: rule__FieldChoiceOption__Group__3__Impl rule__FieldChoiceOption__Group__4
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__3__Impl();
@@ -10083,31 +10119,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__3__Impl"
-    // InternalCalculatorForm.g:2952:1: rule__FieldChoiceOption__Group__3__Impl : ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:2958:1: rule__FieldChoiceOption__Group__3__Impl : ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? ) ;
     public final void rule__FieldChoiceOption__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2956:1: ( ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? ) )
-            // InternalCalculatorForm.g:2957:1: ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? )
+            // InternalCalculatorForm.g:2962:1: ( ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? ) )
+            // InternalCalculatorForm.g:2963:1: ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:2957:1: ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? )
-            // InternalCalculatorForm.g:2958:2: ( rule__FieldChoiceOption__CheckedAssignment_3 )?
+            // InternalCalculatorForm.g:2963:1: ( ( rule__FieldChoiceOption__CheckedAssignment_3 )? )
+            // InternalCalculatorForm.g:2964:2: ( rule__FieldChoiceOption__CheckedAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getCheckedAssignment_3()); 
             }
-            // InternalCalculatorForm.g:2959:2: ( rule__FieldChoiceOption__CheckedAssignment_3 )?
+            // InternalCalculatorForm.g:2965:2: ( rule__FieldChoiceOption__CheckedAssignment_3 )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==44) ) {
+            if ( (LA47_0==45) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
-                    // InternalCalculatorForm.g:2959:3: rule__FieldChoiceOption__CheckedAssignment_3
+                    // InternalCalculatorForm.g:2965:3: rule__FieldChoiceOption__CheckedAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__CheckedAssignment_3();
@@ -10145,14 +10181,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__4"
-    // InternalCalculatorForm.g:2967:1: rule__FieldChoiceOption__Group__4 : rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5 ;
+    // InternalCalculatorForm.g:2973:1: rule__FieldChoiceOption__Group__4 : rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5 ;
     public final void rule__FieldChoiceOption__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2971:1: ( rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5 )
-            // InternalCalculatorForm.g:2972:2: rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5
+            // InternalCalculatorForm.g:2977:1: ( rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5 )
+            // InternalCalculatorForm.g:2978:2: rule__FieldChoiceOption__Group__4__Impl rule__FieldChoiceOption__Group__5
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__4__Impl();
@@ -10183,31 +10219,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__4__Impl"
-    // InternalCalculatorForm.g:2979:1: rule__FieldChoiceOption__Group__4__Impl : ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? ) ;
+    // InternalCalculatorForm.g:2985:1: rule__FieldChoiceOption__Group__4__Impl : ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? ) ;
     public final void rule__FieldChoiceOption__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2983:1: ( ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? ) )
-            // InternalCalculatorForm.g:2984:1: ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:2989:1: ( ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? ) )
+            // InternalCalculatorForm.g:2990:1: ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? )
             {
-            // InternalCalculatorForm.g:2984:1: ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? )
-            // InternalCalculatorForm.g:2985:2: ( rule__FieldChoiceOption__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:2990:1: ( ( rule__FieldChoiceOption__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:2991:2: ( rule__FieldChoiceOption__DisabledAssignment_4 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getDisabledAssignment_4()); 
             }
-            // InternalCalculatorForm.g:2986:2: ( rule__FieldChoiceOption__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:2992:2: ( rule__FieldChoiceOption__DisabledAssignment_4 )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( (LA48_0==38) ) {
+            if ( (LA48_0==39) ) {
                 alt48=1;
             }
             switch (alt48) {
                 case 1 :
-                    // InternalCalculatorForm.g:2986:3: rule__FieldChoiceOption__DisabledAssignment_4
+                    // InternalCalculatorForm.g:2992:3: rule__FieldChoiceOption__DisabledAssignment_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__DisabledAssignment_4();
@@ -10245,14 +10281,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__5"
-    // InternalCalculatorForm.g:2994:1: rule__FieldChoiceOption__Group__5 : rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6 ;
+    // InternalCalculatorForm.g:3000:1: rule__FieldChoiceOption__Group__5 : rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6 ;
     public final void rule__FieldChoiceOption__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:2998:1: ( rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6 )
-            // InternalCalculatorForm.g:2999:2: rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6
+            // InternalCalculatorForm.g:3004:1: ( rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6 )
+            // InternalCalculatorForm.g:3005:2: rule__FieldChoiceOption__Group__5__Impl rule__FieldChoiceOption__Group__6
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__5__Impl();
@@ -10283,31 +10319,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__5__Impl"
-    // InternalCalculatorForm.g:3006:1: rule__FieldChoiceOption__Group__5__Impl : ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? ) ;
+    // InternalCalculatorForm.g:3012:1: rule__FieldChoiceOption__Group__5__Impl : ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? ) ;
     public final void rule__FieldChoiceOption__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3010:1: ( ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? ) )
-            // InternalCalculatorForm.g:3011:1: ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? )
+            // InternalCalculatorForm.g:3016:1: ( ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? ) )
+            // InternalCalculatorForm.g:3017:1: ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? )
             {
-            // InternalCalculatorForm.g:3011:1: ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? )
-            // InternalCalculatorForm.g:3012:2: ( rule__FieldChoiceOption__ReadonlyAssignment_5 )?
+            // InternalCalculatorForm.g:3017:1: ( ( rule__FieldChoiceOption__ReadonlyAssignment_5 )? )
+            // InternalCalculatorForm.g:3018:2: ( rule__FieldChoiceOption__ReadonlyAssignment_5 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getReadonlyAssignment_5()); 
             }
-            // InternalCalculatorForm.g:3013:2: ( rule__FieldChoiceOption__ReadonlyAssignment_5 )?
+            // InternalCalculatorForm.g:3019:2: ( rule__FieldChoiceOption__ReadonlyAssignment_5 )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( (LA49_0==40) ) {
+            if ( (LA49_0==41) ) {
                 alt49=1;
             }
             switch (alt49) {
                 case 1 :
-                    // InternalCalculatorForm.g:3013:3: rule__FieldChoiceOption__ReadonlyAssignment_5
+                    // InternalCalculatorForm.g:3019:3: rule__FieldChoiceOption__ReadonlyAssignment_5
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__ReadonlyAssignment_5();
@@ -10345,14 +10381,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__6"
-    // InternalCalculatorForm.g:3021:1: rule__FieldChoiceOption__Group__6 : rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7 ;
+    // InternalCalculatorForm.g:3027:1: rule__FieldChoiceOption__Group__6 : rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7 ;
     public final void rule__FieldChoiceOption__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3025:1: ( rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7 )
-            // InternalCalculatorForm.g:3026:2: rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7
+            // InternalCalculatorForm.g:3031:1: ( rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7 )
+            // InternalCalculatorForm.g:3032:2: rule__FieldChoiceOption__Group__6__Impl rule__FieldChoiceOption__Group__7
             {
             pushFollow(FOLLOW_18);
             rule__FieldChoiceOption__Group__6__Impl();
@@ -10383,31 +10419,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__6__Impl"
-    // InternalCalculatorForm.g:3033:1: rule__FieldChoiceOption__Group__6__Impl : ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? ) ;
+    // InternalCalculatorForm.g:3039:1: rule__FieldChoiceOption__Group__6__Impl : ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? ) ;
     public final void rule__FieldChoiceOption__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3037:1: ( ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? ) )
-            // InternalCalculatorForm.g:3038:1: ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? )
+            // InternalCalculatorForm.g:3043:1: ( ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? ) )
+            // InternalCalculatorForm.g:3044:1: ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? )
             {
-            // InternalCalculatorForm.g:3038:1: ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? )
-            // InternalCalculatorForm.g:3039:2: ( rule__FieldChoiceOption__RequiredAssignment_6 )?
+            // InternalCalculatorForm.g:3044:1: ( ( rule__FieldChoiceOption__RequiredAssignment_6 )? )
+            // InternalCalculatorForm.g:3045:2: ( rule__FieldChoiceOption__RequiredAssignment_6 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getRequiredAssignment_6()); 
             }
-            // InternalCalculatorForm.g:3040:2: ( rule__FieldChoiceOption__RequiredAssignment_6 )?
+            // InternalCalculatorForm.g:3046:2: ( rule__FieldChoiceOption__RequiredAssignment_6 )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( (LA50_0==41) ) {
+            if ( (LA50_0==42) ) {
                 alt50=1;
             }
             switch (alt50) {
                 case 1 :
-                    // InternalCalculatorForm.g:3040:3: rule__FieldChoiceOption__RequiredAssignment_6
+                    // InternalCalculatorForm.g:3046:3: rule__FieldChoiceOption__RequiredAssignment_6
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__RequiredAssignment_6();
@@ -10445,14 +10481,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__7"
-    // InternalCalculatorForm.g:3048:1: rule__FieldChoiceOption__Group__7 : rule__FieldChoiceOption__Group__7__Impl ;
+    // InternalCalculatorForm.g:3054:1: rule__FieldChoiceOption__Group__7 : rule__FieldChoiceOption__Group__7__Impl ;
     public final void rule__FieldChoiceOption__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3052:1: ( rule__FieldChoiceOption__Group__7__Impl )
-            // InternalCalculatorForm.g:3053:2: rule__FieldChoiceOption__Group__7__Impl
+            // InternalCalculatorForm.g:3058:1: ( rule__FieldChoiceOption__Group__7__Impl )
+            // InternalCalculatorForm.g:3059:2: rule__FieldChoiceOption__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoiceOption__Group__7__Impl();
@@ -10478,31 +10514,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group__7__Impl"
-    // InternalCalculatorForm.g:3059:1: rule__FieldChoiceOption__Group__7__Impl : ( ( rule__FieldChoiceOption__Group_7__0 )? ) ;
+    // InternalCalculatorForm.g:3065:1: rule__FieldChoiceOption__Group__7__Impl : ( ( rule__FieldChoiceOption__Group_7__0 )? ) ;
     public final void rule__FieldChoiceOption__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3063:1: ( ( ( rule__FieldChoiceOption__Group_7__0 )? ) )
-            // InternalCalculatorForm.g:3064:1: ( ( rule__FieldChoiceOption__Group_7__0 )? )
+            // InternalCalculatorForm.g:3069:1: ( ( ( rule__FieldChoiceOption__Group_7__0 )? ) )
+            // InternalCalculatorForm.g:3070:1: ( ( rule__FieldChoiceOption__Group_7__0 )? )
             {
-            // InternalCalculatorForm.g:3064:1: ( ( rule__FieldChoiceOption__Group_7__0 )? )
-            // InternalCalculatorForm.g:3065:2: ( rule__FieldChoiceOption__Group_7__0 )?
+            // InternalCalculatorForm.g:3070:1: ( ( rule__FieldChoiceOption__Group_7__0 )? )
+            // InternalCalculatorForm.g:3071:2: ( rule__FieldChoiceOption__Group_7__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getGroup_7()); 
             }
-            // InternalCalculatorForm.g:3066:2: ( rule__FieldChoiceOption__Group_7__0 )?
+            // InternalCalculatorForm.g:3072:2: ( rule__FieldChoiceOption__Group_7__0 )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==17) ) {
+            if ( (LA51_0==18) ) {
                 alt51=1;
             }
             switch (alt51) {
                 case 1 :
-                    // InternalCalculatorForm.g:3066:3: rule__FieldChoiceOption__Group_7__0
+                    // InternalCalculatorForm.g:3072:3: rule__FieldChoiceOption__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__FieldChoiceOption__Group_7__0();
@@ -10540,14 +10576,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group_7__0"
-    // InternalCalculatorForm.g:3075:1: rule__FieldChoiceOption__Group_7__0 : rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1 ;
+    // InternalCalculatorForm.g:3081:1: rule__FieldChoiceOption__Group_7__0 : rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1 ;
     public final void rule__FieldChoiceOption__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3079:1: ( rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1 )
-            // InternalCalculatorForm.g:3080:2: rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1
+            // InternalCalculatorForm.g:3085:1: ( rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1 )
+            // InternalCalculatorForm.g:3086:2: rule__FieldChoiceOption__Group_7__0__Impl rule__FieldChoiceOption__Group_7__1
             {
             pushFollow(FOLLOW_8);
             rule__FieldChoiceOption__Group_7__0__Impl();
@@ -10578,22 +10614,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group_7__0__Impl"
-    // InternalCalculatorForm.g:3087:1: rule__FieldChoiceOption__Group_7__0__Impl : ( 'value' ) ;
+    // InternalCalculatorForm.g:3093:1: rule__FieldChoiceOption__Group_7__0__Impl : ( 'value' ) ;
     public final void rule__FieldChoiceOption__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3091:1: ( ( 'value' ) )
-            // InternalCalculatorForm.g:3092:1: ( 'value' )
+            // InternalCalculatorForm.g:3097:1: ( ( 'value' ) )
+            // InternalCalculatorForm.g:3098:1: ( 'value' )
             {
-            // InternalCalculatorForm.g:3092:1: ( 'value' )
-            // InternalCalculatorForm.g:3093:2: 'value'
+            // InternalCalculatorForm.g:3098:1: ( 'value' )
+            // InternalCalculatorForm.g:3099:2: 'value'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getValueKeyword_7_0()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getValueKeyword_7_0()); 
             }
@@ -10619,14 +10655,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group_7__1"
-    // InternalCalculatorForm.g:3102:1: rule__FieldChoiceOption__Group_7__1 : rule__FieldChoiceOption__Group_7__1__Impl ;
+    // InternalCalculatorForm.g:3108:1: rule__FieldChoiceOption__Group_7__1 : rule__FieldChoiceOption__Group_7__1__Impl ;
     public final void rule__FieldChoiceOption__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3106:1: ( rule__FieldChoiceOption__Group_7__1__Impl )
-            // InternalCalculatorForm.g:3107:2: rule__FieldChoiceOption__Group_7__1__Impl
+            // InternalCalculatorForm.g:3112:1: ( rule__FieldChoiceOption__Group_7__1__Impl )
+            // InternalCalculatorForm.g:3113:2: rule__FieldChoiceOption__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoiceOption__Group_7__1__Impl();
@@ -10652,23 +10688,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__Group_7__1__Impl"
-    // InternalCalculatorForm.g:3113:1: rule__FieldChoiceOption__Group_7__1__Impl : ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) ) ;
+    // InternalCalculatorForm.g:3119:1: rule__FieldChoiceOption__Group_7__1__Impl : ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) ) ;
     public final void rule__FieldChoiceOption__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3117:1: ( ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) ) )
-            // InternalCalculatorForm.g:3118:1: ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) )
+            // InternalCalculatorForm.g:3123:1: ( ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) ) )
+            // InternalCalculatorForm.g:3124:1: ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) )
             {
-            // InternalCalculatorForm.g:3118:1: ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) )
-            // InternalCalculatorForm.g:3119:2: ( rule__FieldChoiceOption__ValueAssignment_7_1 )
+            // InternalCalculatorForm.g:3124:1: ( ( rule__FieldChoiceOption__ValueAssignment_7_1 ) )
+            // InternalCalculatorForm.g:3125:2: ( rule__FieldChoiceOption__ValueAssignment_7_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getValueAssignment_7_1()); 
             }
-            // InternalCalculatorForm.g:3120:2: ( rule__FieldChoiceOption__ValueAssignment_7_1 )
-            // InternalCalculatorForm.g:3120:3: rule__FieldChoiceOption__ValueAssignment_7_1
+            // InternalCalculatorForm.g:3126:2: ( rule__FieldChoiceOption__ValueAssignment_7_1 )
+            // InternalCalculatorForm.g:3126:3: rule__FieldChoiceOption__ValueAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__FieldChoiceOption__ValueAssignment_7_1();
@@ -10703,14 +10739,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__0"
-    // InternalCalculatorForm.g:3129:1: rule__Group__Group__0 : rule__Group__Group__0__Impl rule__Group__Group__1 ;
+    // InternalCalculatorForm.g:3135:1: rule__Group__Group__0 : rule__Group__Group__0__Impl rule__Group__Group__1 ;
     public final void rule__Group__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3133:1: ( rule__Group__Group__0__Impl rule__Group__Group__1 )
-            // InternalCalculatorForm.g:3134:2: rule__Group__Group__0__Impl rule__Group__Group__1
+            // InternalCalculatorForm.g:3139:1: ( rule__Group__Group__0__Impl rule__Group__Group__1 )
+            // InternalCalculatorForm.g:3140:2: rule__Group__Group__0__Impl rule__Group__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Group__Group__0__Impl();
@@ -10741,22 +10777,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__0__Impl"
-    // InternalCalculatorForm.g:3141:1: rule__Group__Group__0__Impl : ( 'group' ) ;
+    // InternalCalculatorForm.g:3147:1: rule__Group__Group__0__Impl : ( 'group' ) ;
     public final void rule__Group__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3145:1: ( ( 'group' ) )
-            // InternalCalculatorForm.g:3146:1: ( 'group' )
+            // InternalCalculatorForm.g:3151:1: ( ( 'group' ) )
+            // InternalCalculatorForm.g:3152:1: ( 'group' )
             {
-            // InternalCalculatorForm.g:3146:1: ( 'group' )
-            // InternalCalculatorForm.g:3147:2: 'group'
+            // InternalCalculatorForm.g:3152:1: ( 'group' )
+            // InternalCalculatorForm.g:3153:2: 'group'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getGroupKeyword_0()); 
             }
-            match(input,26,FOLLOW_2); if (state.failed) return ;
+            match(input,27,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getGroupAccess().getGroupKeyword_0()); 
             }
@@ -10782,14 +10818,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__1"
-    // InternalCalculatorForm.g:3156:1: rule__Group__Group__1 : rule__Group__Group__1__Impl rule__Group__Group__2 ;
+    // InternalCalculatorForm.g:3162:1: rule__Group__Group__1 : rule__Group__Group__1__Impl rule__Group__Group__2 ;
     public final void rule__Group__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3160:1: ( rule__Group__Group__1__Impl rule__Group__Group__2 )
-            // InternalCalculatorForm.g:3161:2: rule__Group__Group__1__Impl rule__Group__Group__2
+            // InternalCalculatorForm.g:3166:1: ( rule__Group__Group__1__Impl rule__Group__Group__2 )
+            // InternalCalculatorForm.g:3167:2: rule__Group__Group__1__Impl rule__Group__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__Group__Group__1__Impl();
@@ -10820,23 +10856,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__1__Impl"
-    // InternalCalculatorForm.g:3168:1: rule__Group__Group__1__Impl : ( ( rule__Group__NameAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:3174:1: rule__Group__Group__1__Impl : ( ( rule__Group__NameAssignment_1 ) ) ;
     public final void rule__Group__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3172:1: ( ( ( rule__Group__NameAssignment_1 ) ) )
-            // InternalCalculatorForm.g:3173:1: ( ( rule__Group__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:3178:1: ( ( ( rule__Group__NameAssignment_1 ) ) )
+            // InternalCalculatorForm.g:3179:1: ( ( rule__Group__NameAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:3173:1: ( ( rule__Group__NameAssignment_1 ) )
-            // InternalCalculatorForm.g:3174:2: ( rule__Group__NameAssignment_1 )
+            // InternalCalculatorForm.g:3179:1: ( ( rule__Group__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:3180:2: ( rule__Group__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getNameAssignment_1()); 
             }
-            // InternalCalculatorForm.g:3175:2: ( rule__Group__NameAssignment_1 )
-            // InternalCalculatorForm.g:3175:3: rule__Group__NameAssignment_1
+            // InternalCalculatorForm.g:3181:2: ( rule__Group__NameAssignment_1 )
+            // InternalCalculatorForm.g:3181:3: rule__Group__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Group__NameAssignment_1();
@@ -10871,14 +10907,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__2"
-    // InternalCalculatorForm.g:3183:1: rule__Group__Group__2 : rule__Group__Group__2__Impl rule__Group__Group__3 ;
+    // InternalCalculatorForm.g:3189:1: rule__Group__Group__2 : rule__Group__Group__2__Impl rule__Group__Group__3 ;
     public final void rule__Group__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3187:1: ( rule__Group__Group__2__Impl rule__Group__Group__3 )
-            // InternalCalculatorForm.g:3188:2: rule__Group__Group__2__Impl rule__Group__Group__3
+            // InternalCalculatorForm.g:3193:1: ( rule__Group__Group__2__Impl rule__Group__Group__3 )
+            // InternalCalculatorForm.g:3194:2: rule__Group__Group__2__Impl rule__Group__Group__3
             {
             pushFollow(FOLLOW_19);
             rule__Group__Group__2__Impl();
@@ -10909,31 +10945,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__2__Impl"
-    // InternalCalculatorForm.g:3195:1: rule__Group__Group__2__Impl : ( ( rule__Group__Group_2__0 )? ) ;
+    // InternalCalculatorForm.g:3201:1: rule__Group__Group__2__Impl : ( ( rule__Group__Group_2__0 )? ) ;
     public final void rule__Group__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3199:1: ( ( ( rule__Group__Group_2__0 )? ) )
-            // InternalCalculatorForm.g:3200:1: ( ( rule__Group__Group_2__0 )? )
+            // InternalCalculatorForm.g:3205:1: ( ( ( rule__Group__Group_2__0 )? ) )
+            // InternalCalculatorForm.g:3206:1: ( ( rule__Group__Group_2__0 )? )
             {
-            // InternalCalculatorForm.g:3200:1: ( ( rule__Group__Group_2__0 )? )
-            // InternalCalculatorForm.g:3201:2: ( rule__Group__Group_2__0 )?
+            // InternalCalculatorForm.g:3206:1: ( ( rule__Group__Group_2__0 )? )
+            // InternalCalculatorForm.g:3207:2: ( rule__Group__Group_2__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getGroup_2()); 
             }
-            // InternalCalculatorForm.g:3202:2: ( rule__Group__Group_2__0 )?
+            // InternalCalculatorForm.g:3208:2: ( rule__Group__Group_2__0 )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==16) ) {
+            if ( (LA52_0==17) ) {
                 alt52=1;
             }
             switch (alt52) {
                 case 1 :
-                    // InternalCalculatorForm.g:3202:3: rule__Group__Group_2__0
+                    // InternalCalculatorForm.g:3208:3: rule__Group__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Group__Group_2__0();
@@ -10971,14 +11007,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__3"
-    // InternalCalculatorForm.g:3210:1: rule__Group__Group__3 : rule__Group__Group__3__Impl rule__Group__Group__4 ;
+    // InternalCalculatorForm.g:3216:1: rule__Group__Group__3 : rule__Group__Group__3__Impl rule__Group__Group__4 ;
     public final void rule__Group__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3214:1: ( rule__Group__Group__3__Impl rule__Group__Group__4 )
-            // InternalCalculatorForm.g:3215:2: rule__Group__Group__3__Impl rule__Group__Group__4
+            // InternalCalculatorForm.g:3220:1: ( rule__Group__Group__3__Impl rule__Group__Group__4 )
+            // InternalCalculatorForm.g:3221:2: rule__Group__Group__3__Impl rule__Group__Group__4
             {
             pushFollow(FOLLOW_20);
             rule__Group__Group__3__Impl();
@@ -11009,22 +11045,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__3__Impl"
-    // InternalCalculatorForm.g:3222:1: rule__Group__Group__3__Impl : ( '{' ) ;
+    // InternalCalculatorForm.g:3228:1: rule__Group__Group__3__Impl : ( '{' ) ;
     public final void rule__Group__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3226:1: ( ( '{' ) )
-            // InternalCalculatorForm.g:3227:1: ( '{' )
+            // InternalCalculatorForm.g:3232:1: ( ( '{' ) )
+            // InternalCalculatorForm.g:3233:1: ( '{' )
             {
-            // InternalCalculatorForm.g:3227:1: ( '{' )
-            // InternalCalculatorForm.g:3228:2: '{'
+            // InternalCalculatorForm.g:3233:1: ( '{' )
+            // InternalCalculatorForm.g:3234:2: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getLeftCurlyBracketKeyword_3()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getGroupAccess().getLeftCurlyBracketKeyword_3()); 
             }
@@ -11050,14 +11086,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__4"
-    // InternalCalculatorForm.g:3237:1: rule__Group__Group__4 : rule__Group__Group__4__Impl rule__Group__Group__5 ;
+    // InternalCalculatorForm.g:3243:1: rule__Group__Group__4 : rule__Group__Group__4__Impl rule__Group__Group__5 ;
     public final void rule__Group__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3241:1: ( rule__Group__Group__4__Impl rule__Group__Group__5 )
-            // InternalCalculatorForm.g:3242:2: rule__Group__Group__4__Impl rule__Group__Group__5
+            // InternalCalculatorForm.g:3247:1: ( rule__Group__Group__4__Impl rule__Group__Group__5 )
+            // InternalCalculatorForm.g:3248:2: rule__Group__Group__4__Impl rule__Group__Group__5
             {
             pushFollow(FOLLOW_20);
             rule__Group__Group__4__Impl();
@@ -11088,35 +11124,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__4__Impl"
-    // InternalCalculatorForm.g:3249:1: rule__Group__Group__4__Impl : ( ( rule__Group__FieldsAssignment_4 )* ) ;
+    // InternalCalculatorForm.g:3255:1: rule__Group__Group__4__Impl : ( ( rule__Group__FieldsAssignment_4 )* ) ;
     public final void rule__Group__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3253:1: ( ( ( rule__Group__FieldsAssignment_4 )* ) )
-            // InternalCalculatorForm.g:3254:1: ( ( rule__Group__FieldsAssignment_4 )* )
+            // InternalCalculatorForm.g:3259:1: ( ( ( rule__Group__FieldsAssignment_4 )* ) )
+            // InternalCalculatorForm.g:3260:1: ( ( rule__Group__FieldsAssignment_4 )* )
             {
-            // InternalCalculatorForm.g:3254:1: ( ( rule__Group__FieldsAssignment_4 )* )
-            // InternalCalculatorForm.g:3255:2: ( rule__Group__FieldsAssignment_4 )*
+            // InternalCalculatorForm.g:3260:1: ( ( rule__Group__FieldsAssignment_4 )* )
+            // InternalCalculatorForm.g:3261:2: ( rule__Group__FieldsAssignment_4 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getFieldsAssignment_4()); 
             }
-            // InternalCalculatorForm.g:3256:2: ( rule__Group__FieldsAssignment_4 )*
+            // InternalCalculatorForm.g:3262:2: ( rule__Group__FieldsAssignment_4 )*
             loop53:
             do {
                 int alt53=2;
                 int LA53_0 = input.LA(1);
 
-                if ( (LA53_0==14||LA53_0==18||LA53_0==25||LA53_0==28) ) {
+                if ( (LA53_0==15||LA53_0==19||LA53_0==26||LA53_0==29) ) {
                     alt53=1;
                 }
 
 
                 switch (alt53) {
             	case 1 :
-            	    // InternalCalculatorForm.g:3256:3: rule__Group__FieldsAssignment_4
+            	    // InternalCalculatorForm.g:3262:3: rule__Group__FieldsAssignment_4
             	    {
             	    pushFollow(FOLLOW_21);
             	    rule__Group__FieldsAssignment_4();
@@ -11157,14 +11193,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__5"
-    // InternalCalculatorForm.g:3264:1: rule__Group__Group__5 : rule__Group__Group__5__Impl ;
+    // InternalCalculatorForm.g:3270:1: rule__Group__Group__5 : rule__Group__Group__5__Impl ;
     public final void rule__Group__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3268:1: ( rule__Group__Group__5__Impl )
-            // InternalCalculatorForm.g:3269:2: rule__Group__Group__5__Impl
+            // InternalCalculatorForm.g:3274:1: ( rule__Group__Group__5__Impl )
+            // InternalCalculatorForm.g:3275:2: rule__Group__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Group__Group__5__Impl();
@@ -11190,22 +11226,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group__5__Impl"
-    // InternalCalculatorForm.g:3275:1: rule__Group__Group__5__Impl : ( '}' ) ;
+    // InternalCalculatorForm.g:3281:1: rule__Group__Group__5__Impl : ( '}' ) ;
     public final void rule__Group__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3279:1: ( ( '}' ) )
-            // InternalCalculatorForm.g:3280:1: ( '}' )
+            // InternalCalculatorForm.g:3285:1: ( ( '}' ) )
+            // InternalCalculatorForm.g:3286:1: ( '}' )
             {
-            // InternalCalculatorForm.g:3280:1: ( '}' )
-            // InternalCalculatorForm.g:3281:2: '}'
+            // InternalCalculatorForm.g:3286:1: ( '}' )
+            // InternalCalculatorForm.g:3287:2: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getRightCurlyBracketKeyword_5()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getGroupAccess().getRightCurlyBracketKeyword_5()); 
             }
@@ -11231,14 +11267,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group_2__0"
-    // InternalCalculatorForm.g:3291:1: rule__Group__Group_2__0 : rule__Group__Group_2__0__Impl rule__Group__Group_2__1 ;
+    // InternalCalculatorForm.g:3297:1: rule__Group__Group_2__0 : rule__Group__Group_2__0__Impl rule__Group__Group_2__1 ;
     public final void rule__Group__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3295:1: ( rule__Group__Group_2__0__Impl rule__Group__Group_2__1 )
-            // InternalCalculatorForm.g:3296:2: rule__Group__Group_2__0__Impl rule__Group__Group_2__1
+            // InternalCalculatorForm.g:3301:1: ( rule__Group__Group_2__0__Impl rule__Group__Group_2__1 )
+            // InternalCalculatorForm.g:3302:2: rule__Group__Group_2__0__Impl rule__Group__Group_2__1
             {
             pushFollow(FOLLOW_8);
             rule__Group__Group_2__0__Impl();
@@ -11269,22 +11305,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group_2__0__Impl"
-    // InternalCalculatorForm.g:3303:1: rule__Group__Group_2__0__Impl : ( 'label' ) ;
+    // InternalCalculatorForm.g:3309:1: rule__Group__Group_2__0__Impl : ( 'label' ) ;
     public final void rule__Group__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3307:1: ( ( 'label' ) )
-            // InternalCalculatorForm.g:3308:1: ( 'label' )
+            // InternalCalculatorForm.g:3313:1: ( ( 'label' ) )
+            // InternalCalculatorForm.g:3314:1: ( 'label' )
             {
-            // InternalCalculatorForm.g:3308:1: ( 'label' )
-            // InternalCalculatorForm.g:3309:2: 'label'
+            // InternalCalculatorForm.g:3314:1: ( 'label' )
+            // InternalCalculatorForm.g:3315:2: 'label'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getLabelKeyword_2_0()); 
             }
-            match(input,16,FOLLOW_2); if (state.failed) return ;
+            match(input,17,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getGroupAccess().getLabelKeyword_2_0()); 
             }
@@ -11310,14 +11346,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group_2__1"
-    // InternalCalculatorForm.g:3318:1: rule__Group__Group_2__1 : rule__Group__Group_2__1__Impl ;
+    // InternalCalculatorForm.g:3324:1: rule__Group__Group_2__1 : rule__Group__Group_2__1__Impl ;
     public final void rule__Group__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3322:1: ( rule__Group__Group_2__1__Impl )
-            // InternalCalculatorForm.g:3323:2: rule__Group__Group_2__1__Impl
+            // InternalCalculatorForm.g:3328:1: ( rule__Group__Group_2__1__Impl )
+            // InternalCalculatorForm.g:3329:2: rule__Group__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Group__Group_2__1__Impl();
@@ -11343,23 +11379,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__Group_2__1__Impl"
-    // InternalCalculatorForm.g:3329:1: rule__Group__Group_2__1__Impl : ( ( rule__Group__LabelAssignment_2_1 ) ) ;
+    // InternalCalculatorForm.g:3335:1: rule__Group__Group_2__1__Impl : ( ( rule__Group__LabelAssignment_2_1 ) ) ;
     public final void rule__Group__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3333:1: ( ( ( rule__Group__LabelAssignment_2_1 ) ) )
-            // InternalCalculatorForm.g:3334:1: ( ( rule__Group__LabelAssignment_2_1 ) )
+            // InternalCalculatorForm.g:3339:1: ( ( ( rule__Group__LabelAssignment_2_1 ) ) )
+            // InternalCalculatorForm.g:3340:1: ( ( rule__Group__LabelAssignment_2_1 ) )
             {
-            // InternalCalculatorForm.g:3334:1: ( ( rule__Group__LabelAssignment_2_1 ) )
-            // InternalCalculatorForm.g:3335:2: ( rule__Group__LabelAssignment_2_1 )
+            // InternalCalculatorForm.g:3340:1: ( ( rule__Group__LabelAssignment_2_1 ) )
+            // InternalCalculatorForm.g:3341:2: ( rule__Group__LabelAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getLabelAssignment_2_1()); 
             }
-            // InternalCalculatorForm.g:3336:2: ( rule__Group__LabelAssignment_2_1 )
-            // InternalCalculatorForm.g:3336:3: rule__Group__LabelAssignment_2_1
+            // InternalCalculatorForm.g:3342:2: ( rule__Group__LabelAssignment_2_1 )
+            // InternalCalculatorForm.g:3342:3: rule__Group__LabelAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Group__LabelAssignment_2_1();
@@ -11394,14 +11430,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__0"
-    // InternalCalculatorForm.g:3345:1: rule__Page__Group__0 : rule__Page__Group__0__Impl rule__Page__Group__1 ;
+    // InternalCalculatorForm.g:3351:1: rule__Page__Group__0 : rule__Page__Group__0__Impl rule__Page__Group__1 ;
     public final void rule__Page__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3349:1: ( rule__Page__Group__0__Impl rule__Page__Group__1 )
-            // InternalCalculatorForm.g:3350:2: rule__Page__Group__0__Impl rule__Page__Group__1
+            // InternalCalculatorForm.g:3355:1: ( rule__Page__Group__0__Impl rule__Page__Group__1 )
+            // InternalCalculatorForm.g:3356:2: rule__Page__Group__0__Impl rule__Page__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__Page__Group__0__Impl();
@@ -11432,22 +11468,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__0__Impl"
-    // InternalCalculatorForm.g:3357:1: rule__Page__Group__0__Impl : ( 'page' ) ;
+    // InternalCalculatorForm.g:3363:1: rule__Page__Group__0__Impl : ( 'page' ) ;
     public final void rule__Page__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3361:1: ( ( 'page' ) )
-            // InternalCalculatorForm.g:3362:1: ( 'page' )
+            // InternalCalculatorForm.g:3367:1: ( ( 'page' ) )
+            // InternalCalculatorForm.g:3368:1: ( 'page' )
             {
-            // InternalCalculatorForm.g:3362:1: ( 'page' )
-            // InternalCalculatorForm.g:3363:2: 'page'
+            // InternalCalculatorForm.g:3368:1: ( 'page' )
+            // InternalCalculatorForm.g:3369:2: 'page'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getPageKeyword_0()); 
             }
-            match(input,27,FOLLOW_2); if (state.failed) return ;
+            match(input,28,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getPageKeyword_0()); 
             }
@@ -11473,14 +11509,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__1"
-    // InternalCalculatorForm.g:3372:1: rule__Page__Group__1 : rule__Page__Group__1__Impl rule__Page__Group__2 ;
+    // InternalCalculatorForm.g:3378:1: rule__Page__Group__1 : rule__Page__Group__1__Impl rule__Page__Group__2 ;
     public final void rule__Page__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3376:1: ( rule__Page__Group__1__Impl rule__Page__Group__2 )
-            // InternalCalculatorForm.g:3377:2: rule__Page__Group__1__Impl rule__Page__Group__2
+            // InternalCalculatorForm.g:3382:1: ( rule__Page__Group__1__Impl rule__Page__Group__2 )
+            // InternalCalculatorForm.g:3383:2: rule__Page__Group__1__Impl rule__Page__Group__2
             {
             pushFollow(FOLLOW_23);
             rule__Page__Group__1__Impl();
@@ -11511,22 +11547,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__1__Impl"
-    // InternalCalculatorForm.g:3384:1: rule__Page__Group__1__Impl : ( '{' ) ;
+    // InternalCalculatorForm.g:3390:1: rule__Page__Group__1__Impl : ( '{' ) ;
     public final void rule__Page__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3388:1: ( ( '{' ) )
-            // InternalCalculatorForm.g:3389:1: ( '{' )
+            // InternalCalculatorForm.g:3394:1: ( ( '{' ) )
+            // InternalCalculatorForm.g:3395:1: ( '{' )
             {
-            // InternalCalculatorForm.g:3389:1: ( '{' )
-            // InternalCalculatorForm.g:3390:2: '{'
+            // InternalCalculatorForm.g:3395:1: ( '{' )
+            // InternalCalculatorForm.g:3396:2: '{'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1()); 
             }
-            match(input,19,FOLLOW_2); if (state.failed) return ;
+            match(input,20,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1()); 
             }
@@ -11552,14 +11588,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__2"
-    // InternalCalculatorForm.g:3399:1: rule__Page__Group__2 : rule__Page__Group__2__Impl rule__Page__Group__3 ;
+    // InternalCalculatorForm.g:3405:1: rule__Page__Group__2 : rule__Page__Group__2__Impl rule__Page__Group__3 ;
     public final void rule__Page__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3403:1: ( rule__Page__Group__2__Impl rule__Page__Group__3 )
-            // InternalCalculatorForm.g:3404:2: rule__Page__Group__2__Impl rule__Page__Group__3
+            // InternalCalculatorForm.g:3409:1: ( rule__Page__Group__2__Impl rule__Page__Group__3 )
+            // InternalCalculatorForm.g:3410:2: rule__Page__Group__2__Impl rule__Page__Group__3
             {
             pushFollow(FOLLOW_23);
             rule__Page__Group__2__Impl();
@@ -11590,35 +11626,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__2__Impl"
-    // InternalCalculatorForm.g:3411:1: rule__Page__Group__2__Impl : ( ( rule__Page__ChildsAssignment_2 )* ) ;
+    // InternalCalculatorForm.g:3417:1: rule__Page__Group__2__Impl : ( ( rule__Page__ChildsAssignment_2 )* ) ;
     public final void rule__Page__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3415:1: ( ( ( rule__Page__ChildsAssignment_2 )* ) )
-            // InternalCalculatorForm.g:3416:1: ( ( rule__Page__ChildsAssignment_2 )* )
+            // InternalCalculatorForm.g:3421:1: ( ( ( rule__Page__ChildsAssignment_2 )* ) )
+            // InternalCalculatorForm.g:3422:1: ( ( rule__Page__ChildsAssignment_2 )* )
             {
-            // InternalCalculatorForm.g:3416:1: ( ( rule__Page__ChildsAssignment_2 )* )
-            // InternalCalculatorForm.g:3417:2: ( rule__Page__ChildsAssignment_2 )*
+            // InternalCalculatorForm.g:3422:1: ( ( rule__Page__ChildsAssignment_2 )* )
+            // InternalCalculatorForm.g:3423:2: ( rule__Page__ChildsAssignment_2 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getChildsAssignment_2()); 
             }
-            // InternalCalculatorForm.g:3418:2: ( rule__Page__ChildsAssignment_2 )*
+            // InternalCalculatorForm.g:3424:2: ( rule__Page__ChildsAssignment_2 )*
             loop54:
             do {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( (LA54_0==14||LA54_0==18||(LA54_0>=25 && LA54_0<=26)||LA54_0==28) ) {
+                if ( (LA54_0==15||LA54_0==19||(LA54_0>=26 && LA54_0<=27)||LA54_0==29) ) {
                     alt54=1;
                 }
 
 
                 switch (alt54) {
             	case 1 :
-            	    // InternalCalculatorForm.g:3418:3: rule__Page__ChildsAssignment_2
+            	    // InternalCalculatorForm.g:3424:3: rule__Page__ChildsAssignment_2
             	    {
             	    pushFollow(FOLLOW_24);
             	    rule__Page__ChildsAssignment_2();
@@ -11659,14 +11695,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__3"
-    // InternalCalculatorForm.g:3426:1: rule__Page__Group__3 : rule__Page__Group__3__Impl ;
+    // InternalCalculatorForm.g:3432:1: rule__Page__Group__3 : rule__Page__Group__3__Impl ;
     public final void rule__Page__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3430:1: ( rule__Page__Group__3__Impl )
-            // InternalCalculatorForm.g:3431:2: rule__Page__Group__3__Impl
+            // InternalCalculatorForm.g:3436:1: ( rule__Page__Group__3__Impl )
+            // InternalCalculatorForm.g:3437:2: rule__Page__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Page__Group__3__Impl();
@@ -11692,22 +11728,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__Group__3__Impl"
-    // InternalCalculatorForm.g:3437:1: rule__Page__Group__3__Impl : ( '}' ) ;
+    // InternalCalculatorForm.g:3443:1: rule__Page__Group__3__Impl : ( '}' ) ;
     public final void rule__Page__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3441:1: ( ( '}' ) )
-            // InternalCalculatorForm.g:3442:1: ( '}' )
+            // InternalCalculatorForm.g:3447:1: ( ( '}' ) )
+            // InternalCalculatorForm.g:3448:1: ( '}' )
             {
-            // InternalCalculatorForm.g:3442:1: ( '}' )
-            // InternalCalculatorForm.g:3443:2: '}'
+            // InternalCalculatorForm.g:3448:1: ( '}' )
+            // InternalCalculatorForm.g:3449:2: '}'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3()); 
             }
-            match(input,20,FOLLOW_2); if (state.failed) return ;
+            match(input,21,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3()); 
             }
@@ -11733,14 +11769,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__0"
-    // InternalCalculatorForm.g:3453:1: rule__ButtonSubmit__Group__0 : rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1 ;
+    // InternalCalculatorForm.g:3459:1: rule__ButtonSubmit__Group__0 : rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1 ;
     public final void rule__ButtonSubmit__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3457:1: ( rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1 )
-            // InternalCalculatorForm.g:3458:2: rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1
+            // InternalCalculatorForm.g:3463:1: ( rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1 )
+            // InternalCalculatorForm.g:3464:2: rule__ButtonSubmit__Group__0__Impl rule__ButtonSubmit__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__ButtonSubmit__Group__0__Impl();
@@ -11771,22 +11807,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__0__Impl"
-    // InternalCalculatorForm.g:3465:1: rule__ButtonSubmit__Group__0__Impl : ( 'submit-button' ) ;
+    // InternalCalculatorForm.g:3471:1: rule__ButtonSubmit__Group__0__Impl : ( 'submit-button' ) ;
     public final void rule__ButtonSubmit__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3469:1: ( ( 'submit-button' ) )
-            // InternalCalculatorForm.g:3470:1: ( 'submit-button' )
+            // InternalCalculatorForm.g:3475:1: ( ( 'submit-button' ) )
+            // InternalCalculatorForm.g:3476:1: ( 'submit-button' )
             {
-            // InternalCalculatorForm.g:3470:1: ( 'submit-button' )
-            // InternalCalculatorForm.g:3471:2: 'submit-button'
+            // InternalCalculatorForm.g:3476:1: ( 'submit-button' )
+            // InternalCalculatorForm.g:3477:2: 'submit-button'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getSubmitButtonKeyword_0()); 
             }
-            match(input,28,FOLLOW_2); if (state.failed) return ;
+            match(input,29,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getButtonSubmitAccess().getSubmitButtonKeyword_0()); 
             }
@@ -11812,14 +11848,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__1"
-    // InternalCalculatorForm.g:3480:1: rule__ButtonSubmit__Group__1 : rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2 ;
+    // InternalCalculatorForm.g:3486:1: rule__ButtonSubmit__Group__1 : rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2 ;
     public final void rule__ButtonSubmit__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3484:1: ( rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2 )
-            // InternalCalculatorForm.g:3485:2: rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2
+            // InternalCalculatorForm.g:3490:1: ( rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2 )
+            // InternalCalculatorForm.g:3491:2: rule__ButtonSubmit__Group__1__Impl rule__ButtonSubmit__Group__2
             {
             pushFollow(FOLLOW_8);
             rule__ButtonSubmit__Group__1__Impl();
@@ -11850,23 +11886,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__1__Impl"
-    // InternalCalculatorForm.g:3492:1: rule__ButtonSubmit__Group__1__Impl : ( ( rule__ButtonSubmit__NameAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:3498:1: rule__ButtonSubmit__Group__1__Impl : ( ( rule__ButtonSubmit__NameAssignment_1 ) ) ;
     public final void rule__ButtonSubmit__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3496:1: ( ( ( rule__ButtonSubmit__NameAssignment_1 ) ) )
-            // InternalCalculatorForm.g:3497:1: ( ( rule__ButtonSubmit__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:3502:1: ( ( ( rule__ButtonSubmit__NameAssignment_1 ) ) )
+            // InternalCalculatorForm.g:3503:1: ( ( rule__ButtonSubmit__NameAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:3497:1: ( ( rule__ButtonSubmit__NameAssignment_1 ) )
-            // InternalCalculatorForm.g:3498:2: ( rule__ButtonSubmit__NameAssignment_1 )
+            // InternalCalculatorForm.g:3503:1: ( ( rule__ButtonSubmit__NameAssignment_1 ) )
+            // InternalCalculatorForm.g:3504:2: ( rule__ButtonSubmit__NameAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getNameAssignment_1()); 
             }
-            // InternalCalculatorForm.g:3499:2: ( rule__ButtonSubmit__NameAssignment_1 )
-            // InternalCalculatorForm.g:3499:3: rule__ButtonSubmit__NameAssignment_1
+            // InternalCalculatorForm.g:3505:2: ( rule__ButtonSubmit__NameAssignment_1 )
+            // InternalCalculatorForm.g:3505:3: rule__ButtonSubmit__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ButtonSubmit__NameAssignment_1();
@@ -11901,14 +11937,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__2"
-    // InternalCalculatorForm.g:3507:1: rule__ButtonSubmit__Group__2 : rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3 ;
+    // InternalCalculatorForm.g:3513:1: rule__ButtonSubmit__Group__2 : rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3 ;
     public final void rule__ButtonSubmit__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3511:1: ( rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3 )
-            // InternalCalculatorForm.g:3512:2: rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3
+            // InternalCalculatorForm.g:3517:1: ( rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3 )
+            // InternalCalculatorForm.g:3518:2: rule__ButtonSubmit__Group__2__Impl rule__ButtonSubmit__Group__3
             {
             pushFollow(FOLLOW_25);
             rule__ButtonSubmit__Group__2__Impl();
@@ -11939,23 +11975,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__2__Impl"
-    // InternalCalculatorForm.g:3519:1: rule__ButtonSubmit__Group__2__Impl : ( ( rule__ButtonSubmit__TextAssignment_2 ) ) ;
+    // InternalCalculatorForm.g:3525:1: rule__ButtonSubmit__Group__2__Impl : ( ( rule__ButtonSubmit__TextAssignment_2 ) ) ;
     public final void rule__ButtonSubmit__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3523:1: ( ( ( rule__ButtonSubmit__TextAssignment_2 ) ) )
-            // InternalCalculatorForm.g:3524:1: ( ( rule__ButtonSubmit__TextAssignment_2 ) )
+            // InternalCalculatorForm.g:3529:1: ( ( ( rule__ButtonSubmit__TextAssignment_2 ) ) )
+            // InternalCalculatorForm.g:3530:1: ( ( rule__ButtonSubmit__TextAssignment_2 ) )
             {
-            // InternalCalculatorForm.g:3524:1: ( ( rule__ButtonSubmit__TextAssignment_2 ) )
-            // InternalCalculatorForm.g:3525:2: ( rule__ButtonSubmit__TextAssignment_2 )
+            // InternalCalculatorForm.g:3530:1: ( ( rule__ButtonSubmit__TextAssignment_2 ) )
+            // InternalCalculatorForm.g:3531:2: ( rule__ButtonSubmit__TextAssignment_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getTextAssignment_2()); 
             }
-            // InternalCalculatorForm.g:3526:2: ( rule__ButtonSubmit__TextAssignment_2 )
-            // InternalCalculatorForm.g:3526:3: rule__ButtonSubmit__TextAssignment_2
+            // InternalCalculatorForm.g:3532:2: ( rule__ButtonSubmit__TextAssignment_2 )
+            // InternalCalculatorForm.g:3532:3: rule__ButtonSubmit__TextAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ButtonSubmit__TextAssignment_2();
@@ -11990,14 +12026,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__3"
-    // InternalCalculatorForm.g:3534:1: rule__ButtonSubmit__Group__3 : rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4 ;
+    // InternalCalculatorForm.g:3540:1: rule__ButtonSubmit__Group__3 : rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4 ;
     public final void rule__ButtonSubmit__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3538:1: ( rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4 )
-            // InternalCalculatorForm.g:3539:2: rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4
+            // InternalCalculatorForm.g:3544:1: ( rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4 )
+            // InternalCalculatorForm.g:3545:2: rule__ButtonSubmit__Group__3__Impl rule__ButtonSubmit__Group__4
             {
             pushFollow(FOLLOW_25);
             rule__ButtonSubmit__Group__3__Impl();
@@ -12028,31 +12064,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__3__Impl"
-    // InternalCalculatorForm.g:3546:1: rule__ButtonSubmit__Group__3__Impl : ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? ) ;
+    // InternalCalculatorForm.g:3552:1: rule__ButtonSubmit__Group__3__Impl : ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? ) ;
     public final void rule__ButtonSubmit__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3550:1: ( ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? ) )
-            // InternalCalculatorForm.g:3551:1: ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? )
+            // InternalCalculatorForm.g:3556:1: ( ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? ) )
+            // InternalCalculatorForm.g:3557:1: ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? )
             {
-            // InternalCalculatorForm.g:3551:1: ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? )
-            // InternalCalculatorForm.g:3552:2: ( rule__ButtonSubmit__AutofocusAssignment_3 )?
+            // InternalCalculatorForm.g:3557:1: ( ( rule__ButtonSubmit__AutofocusAssignment_3 )? )
+            // InternalCalculatorForm.g:3558:2: ( rule__ButtonSubmit__AutofocusAssignment_3 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getAutofocusAssignment_3()); 
             }
-            // InternalCalculatorForm.g:3553:2: ( rule__ButtonSubmit__AutofocusAssignment_3 )?
+            // InternalCalculatorForm.g:3559:2: ( rule__ButtonSubmit__AutofocusAssignment_3 )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( (LA55_0==37) ) {
+            if ( (LA55_0==38) ) {
                 alt55=1;
             }
             switch (alt55) {
                 case 1 :
-                    // InternalCalculatorForm.g:3553:3: rule__ButtonSubmit__AutofocusAssignment_3
+                    // InternalCalculatorForm.g:3559:3: rule__ButtonSubmit__AutofocusAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__ButtonSubmit__AutofocusAssignment_3();
@@ -12090,14 +12126,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__4"
-    // InternalCalculatorForm.g:3561:1: rule__ButtonSubmit__Group__4 : rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5 ;
+    // InternalCalculatorForm.g:3567:1: rule__ButtonSubmit__Group__4 : rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5 ;
     public final void rule__ButtonSubmit__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3565:1: ( rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5 )
-            // InternalCalculatorForm.g:3566:2: rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5
+            // InternalCalculatorForm.g:3571:1: ( rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5 )
+            // InternalCalculatorForm.g:3572:2: rule__ButtonSubmit__Group__4__Impl rule__ButtonSubmit__Group__5
             {
             pushFollow(FOLLOW_25);
             rule__ButtonSubmit__Group__4__Impl();
@@ -12128,31 +12164,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__4__Impl"
-    // InternalCalculatorForm.g:3573:1: rule__ButtonSubmit__Group__4__Impl : ( ( rule__ButtonSubmit__DisabledAssignment_4 )? ) ;
+    // InternalCalculatorForm.g:3579:1: rule__ButtonSubmit__Group__4__Impl : ( ( rule__ButtonSubmit__DisabledAssignment_4 )? ) ;
     public final void rule__ButtonSubmit__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3577:1: ( ( ( rule__ButtonSubmit__DisabledAssignment_4 )? ) )
-            // InternalCalculatorForm.g:3578:1: ( ( rule__ButtonSubmit__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:3583:1: ( ( ( rule__ButtonSubmit__DisabledAssignment_4 )? ) )
+            // InternalCalculatorForm.g:3584:1: ( ( rule__ButtonSubmit__DisabledAssignment_4 )? )
             {
-            // InternalCalculatorForm.g:3578:1: ( ( rule__ButtonSubmit__DisabledAssignment_4 )? )
-            // InternalCalculatorForm.g:3579:2: ( rule__ButtonSubmit__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:3584:1: ( ( rule__ButtonSubmit__DisabledAssignment_4 )? )
+            // InternalCalculatorForm.g:3585:2: ( rule__ButtonSubmit__DisabledAssignment_4 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getDisabledAssignment_4()); 
             }
-            // InternalCalculatorForm.g:3580:2: ( rule__ButtonSubmit__DisabledAssignment_4 )?
+            // InternalCalculatorForm.g:3586:2: ( rule__ButtonSubmit__DisabledAssignment_4 )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( (LA56_0==38) ) {
+            if ( (LA56_0==39) ) {
                 alt56=1;
             }
             switch (alt56) {
                 case 1 :
-                    // InternalCalculatorForm.g:3580:3: rule__ButtonSubmit__DisabledAssignment_4
+                    // InternalCalculatorForm.g:3586:3: rule__ButtonSubmit__DisabledAssignment_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__ButtonSubmit__DisabledAssignment_4();
@@ -12190,14 +12226,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__5"
-    // InternalCalculatorForm.g:3588:1: rule__ButtonSubmit__Group__5 : rule__ButtonSubmit__Group__5__Impl ;
+    // InternalCalculatorForm.g:3594:1: rule__ButtonSubmit__Group__5 : rule__ButtonSubmit__Group__5__Impl ;
     public final void rule__ButtonSubmit__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3592:1: ( rule__ButtonSubmit__Group__5__Impl )
-            // InternalCalculatorForm.g:3593:2: rule__ButtonSubmit__Group__5__Impl
+            // InternalCalculatorForm.g:3598:1: ( rule__ButtonSubmit__Group__5__Impl )
+            // InternalCalculatorForm.g:3599:2: rule__ButtonSubmit__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ButtonSubmit__Group__5__Impl();
@@ -12223,31 +12259,31 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group__5__Impl"
-    // InternalCalculatorForm.g:3599:1: rule__ButtonSubmit__Group__5__Impl : ( ( rule__ButtonSubmit__Group_5__0 )? ) ;
+    // InternalCalculatorForm.g:3605:1: rule__ButtonSubmit__Group__5__Impl : ( ( rule__ButtonSubmit__Group_5__0 )? ) ;
     public final void rule__ButtonSubmit__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3603:1: ( ( ( rule__ButtonSubmit__Group_5__0 )? ) )
-            // InternalCalculatorForm.g:3604:1: ( ( rule__ButtonSubmit__Group_5__0 )? )
+            // InternalCalculatorForm.g:3609:1: ( ( ( rule__ButtonSubmit__Group_5__0 )? ) )
+            // InternalCalculatorForm.g:3610:1: ( ( rule__ButtonSubmit__Group_5__0 )? )
             {
-            // InternalCalculatorForm.g:3604:1: ( ( rule__ButtonSubmit__Group_5__0 )? )
-            // InternalCalculatorForm.g:3605:2: ( rule__ButtonSubmit__Group_5__0 )?
+            // InternalCalculatorForm.g:3610:1: ( ( rule__ButtonSubmit__Group_5__0 )? )
+            // InternalCalculatorForm.g:3611:2: ( rule__ButtonSubmit__Group_5__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getGroup_5()); 
             }
-            // InternalCalculatorForm.g:3606:2: ( rule__ButtonSubmit__Group_5__0 )?
+            // InternalCalculatorForm.g:3612:2: ( rule__ButtonSubmit__Group_5__0 )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( (LA57_0==17) ) {
+            if ( (LA57_0==18) ) {
                 alt57=1;
             }
             switch (alt57) {
                 case 1 :
-                    // InternalCalculatorForm.g:3606:3: rule__ButtonSubmit__Group_5__0
+                    // InternalCalculatorForm.g:3612:3: rule__ButtonSubmit__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ButtonSubmit__Group_5__0();
@@ -12285,14 +12321,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group_5__0"
-    // InternalCalculatorForm.g:3615:1: rule__ButtonSubmit__Group_5__0 : rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1 ;
+    // InternalCalculatorForm.g:3621:1: rule__ButtonSubmit__Group_5__0 : rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1 ;
     public final void rule__ButtonSubmit__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3619:1: ( rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1 )
-            // InternalCalculatorForm.g:3620:2: rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1
+            // InternalCalculatorForm.g:3625:1: ( rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1 )
+            // InternalCalculatorForm.g:3626:2: rule__ButtonSubmit__Group_5__0__Impl rule__ButtonSubmit__Group_5__1
             {
             pushFollow(FOLLOW_8);
             rule__ButtonSubmit__Group_5__0__Impl();
@@ -12323,22 +12359,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group_5__0__Impl"
-    // InternalCalculatorForm.g:3627:1: rule__ButtonSubmit__Group_5__0__Impl : ( 'value' ) ;
+    // InternalCalculatorForm.g:3633:1: rule__ButtonSubmit__Group_5__0__Impl : ( 'value' ) ;
     public final void rule__ButtonSubmit__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3631:1: ( ( 'value' ) )
-            // InternalCalculatorForm.g:3632:1: ( 'value' )
+            // InternalCalculatorForm.g:3637:1: ( ( 'value' ) )
+            // InternalCalculatorForm.g:3638:1: ( 'value' )
             {
-            // InternalCalculatorForm.g:3632:1: ( 'value' )
-            // InternalCalculatorForm.g:3633:2: 'value'
+            // InternalCalculatorForm.g:3638:1: ( 'value' )
+            // InternalCalculatorForm.g:3639:2: 'value'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getValueKeyword_5_0()); 
             }
-            match(input,17,FOLLOW_2); if (state.failed) return ;
+            match(input,18,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getButtonSubmitAccess().getValueKeyword_5_0()); 
             }
@@ -12364,14 +12400,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group_5__1"
-    // InternalCalculatorForm.g:3642:1: rule__ButtonSubmit__Group_5__1 : rule__ButtonSubmit__Group_5__1__Impl ;
+    // InternalCalculatorForm.g:3648:1: rule__ButtonSubmit__Group_5__1 : rule__ButtonSubmit__Group_5__1__Impl ;
     public final void rule__ButtonSubmit__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3646:1: ( rule__ButtonSubmit__Group_5__1__Impl )
-            // InternalCalculatorForm.g:3647:2: rule__ButtonSubmit__Group_5__1__Impl
+            // InternalCalculatorForm.g:3652:1: ( rule__ButtonSubmit__Group_5__1__Impl )
+            // InternalCalculatorForm.g:3653:2: rule__ButtonSubmit__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ButtonSubmit__Group_5__1__Impl();
@@ -12397,23 +12433,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__Group_5__1__Impl"
-    // InternalCalculatorForm.g:3653:1: rule__ButtonSubmit__Group_5__1__Impl : ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) ) ;
+    // InternalCalculatorForm.g:3659:1: rule__ButtonSubmit__Group_5__1__Impl : ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) ) ;
     public final void rule__ButtonSubmit__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3657:1: ( ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) ) )
-            // InternalCalculatorForm.g:3658:1: ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) )
+            // InternalCalculatorForm.g:3663:1: ( ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) ) )
+            // InternalCalculatorForm.g:3664:1: ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) )
             {
-            // InternalCalculatorForm.g:3658:1: ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) )
-            // InternalCalculatorForm.g:3659:2: ( rule__ButtonSubmit__ValueAssignment_5_1 )
+            // InternalCalculatorForm.g:3664:1: ( ( rule__ButtonSubmit__ValueAssignment_5_1 ) )
+            // InternalCalculatorForm.g:3665:2: ( rule__ButtonSubmit__ValueAssignment_5_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getValueAssignment_5_1()); 
             }
-            // InternalCalculatorForm.g:3660:2: ( rule__ButtonSubmit__ValueAssignment_5_1 )
-            // InternalCalculatorForm.g:3660:3: rule__ButtonSubmit__ValueAssignment_5_1
+            // InternalCalculatorForm.g:3666:2: ( rule__ButtonSubmit__ValueAssignment_5_1 )
+            // InternalCalculatorForm.g:3666:3: rule__ButtonSubmit__ValueAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__ButtonSubmit__ValueAssignment_5_1();
@@ -12448,14 +12484,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__0"
-    // InternalCalculatorForm.g:3669:1: rule__Calculate__Group__0 : rule__Calculate__Group__0__Impl rule__Calculate__Group__1 ;
+    // InternalCalculatorForm.g:3675:1: rule__Calculate__Group__0 : rule__Calculate__Group__0__Impl rule__Calculate__Group__1 ;
     public final void rule__Calculate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3673:1: ( rule__Calculate__Group__0__Impl rule__Calculate__Group__1 )
-            // InternalCalculatorForm.g:3674:2: rule__Calculate__Group__0__Impl rule__Calculate__Group__1
+            // InternalCalculatorForm.g:3679:1: ( rule__Calculate__Group__0__Impl rule__Calculate__Group__1 )
+            // InternalCalculatorForm.g:3680:2: rule__Calculate__Group__0__Impl rule__Calculate__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Calculate__Group__0__Impl();
@@ -12486,22 +12522,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__0__Impl"
-    // InternalCalculatorForm.g:3681:1: rule__Calculate__Group__0__Impl : ( 'calculate' ) ;
+    // InternalCalculatorForm.g:3687:1: rule__Calculate__Group__0__Impl : ( 'calculate' ) ;
     public final void rule__Calculate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3685:1: ( ( 'calculate' ) )
-            // InternalCalculatorForm.g:3686:1: ( 'calculate' )
+            // InternalCalculatorForm.g:3691:1: ( ( 'calculate' ) )
+            // InternalCalculatorForm.g:3692:1: ( 'calculate' )
             {
-            // InternalCalculatorForm.g:3686:1: ( 'calculate' )
-            // InternalCalculatorForm.g:3687:2: 'calculate'
+            // InternalCalculatorForm.g:3692:1: ( 'calculate' )
+            // InternalCalculatorForm.g:3693:2: 'calculate'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getCalculateKeyword_0()); 
             }
-            match(input,29,FOLLOW_2); if (state.failed) return ;
+            match(input,30,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getCalculateAccess().getCalculateKeyword_0()); 
             }
@@ -12527,14 +12563,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__1"
-    // InternalCalculatorForm.g:3696:1: rule__Calculate__Group__1 : rule__Calculate__Group__1__Impl rule__Calculate__Group__2 ;
+    // InternalCalculatorForm.g:3702:1: rule__Calculate__Group__1 : rule__Calculate__Group__1__Impl rule__Calculate__Group__2 ;
     public final void rule__Calculate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3700:1: ( rule__Calculate__Group__1__Impl rule__Calculate__Group__2 )
-            // InternalCalculatorForm.g:3701:2: rule__Calculate__Group__1__Impl rule__Calculate__Group__2
+            // InternalCalculatorForm.g:3706:1: ( rule__Calculate__Group__1__Impl rule__Calculate__Group__2 )
+            // InternalCalculatorForm.g:3707:2: rule__Calculate__Group__1__Impl rule__Calculate__Group__2
             {
             pushFollow(FOLLOW_26);
             rule__Calculate__Group__1__Impl();
@@ -12565,23 +12601,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__1__Impl"
-    // InternalCalculatorForm.g:3708:1: rule__Calculate__Group__1__Impl : ( ( rule__Calculate__ResultAssignment_1 ) ) ;
+    // InternalCalculatorForm.g:3714:1: rule__Calculate__Group__1__Impl : ( ( rule__Calculate__ResultAssignment_1 ) ) ;
     public final void rule__Calculate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3712:1: ( ( ( rule__Calculate__ResultAssignment_1 ) ) )
-            // InternalCalculatorForm.g:3713:1: ( ( rule__Calculate__ResultAssignment_1 ) )
+            // InternalCalculatorForm.g:3718:1: ( ( ( rule__Calculate__ResultAssignment_1 ) ) )
+            // InternalCalculatorForm.g:3719:1: ( ( rule__Calculate__ResultAssignment_1 ) )
             {
-            // InternalCalculatorForm.g:3713:1: ( ( rule__Calculate__ResultAssignment_1 ) )
-            // InternalCalculatorForm.g:3714:2: ( rule__Calculate__ResultAssignment_1 )
+            // InternalCalculatorForm.g:3719:1: ( ( rule__Calculate__ResultAssignment_1 ) )
+            // InternalCalculatorForm.g:3720:2: ( rule__Calculate__ResultAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getResultAssignment_1()); 
             }
-            // InternalCalculatorForm.g:3715:2: ( rule__Calculate__ResultAssignment_1 )
-            // InternalCalculatorForm.g:3715:3: rule__Calculate__ResultAssignment_1
+            // InternalCalculatorForm.g:3721:2: ( rule__Calculate__ResultAssignment_1 )
+            // InternalCalculatorForm.g:3721:3: rule__Calculate__ResultAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Calculate__ResultAssignment_1();
@@ -12616,14 +12652,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__2"
-    // InternalCalculatorForm.g:3723:1: rule__Calculate__Group__2 : rule__Calculate__Group__2__Impl rule__Calculate__Group__3 ;
+    // InternalCalculatorForm.g:3729:1: rule__Calculate__Group__2 : rule__Calculate__Group__2__Impl rule__Calculate__Group__3 ;
     public final void rule__Calculate__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3727:1: ( rule__Calculate__Group__2__Impl rule__Calculate__Group__3 )
-            // InternalCalculatorForm.g:3728:2: rule__Calculate__Group__2__Impl rule__Calculate__Group__3
+            // InternalCalculatorForm.g:3733:1: ( rule__Calculate__Group__2__Impl rule__Calculate__Group__3 )
+            // InternalCalculatorForm.g:3734:2: rule__Calculate__Group__2__Impl rule__Calculate__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__Calculate__Group__2__Impl();
@@ -12654,22 +12690,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__2__Impl"
-    // InternalCalculatorForm.g:3735:1: rule__Calculate__Group__2__Impl : ( '=' ) ;
+    // InternalCalculatorForm.g:3741:1: rule__Calculate__Group__2__Impl : ( '=' ) ;
     public final void rule__Calculate__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3739:1: ( ( '=' ) )
-            // InternalCalculatorForm.g:3740:1: ( '=' )
+            // InternalCalculatorForm.g:3745:1: ( ( '=' ) )
+            // InternalCalculatorForm.g:3746:1: ( '=' )
             {
-            // InternalCalculatorForm.g:3740:1: ( '=' )
-            // InternalCalculatorForm.g:3741:2: '='
+            // InternalCalculatorForm.g:3746:1: ( '=' )
+            // InternalCalculatorForm.g:3747:2: '='
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getEqualsSignKeyword_2()); 
             }
-            match(input,30,FOLLOW_2); if (state.failed) return ;
+            match(input,31,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getCalculateAccess().getEqualsSignKeyword_2()); 
             }
@@ -12695,14 +12731,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__3"
-    // InternalCalculatorForm.g:3750:1: rule__Calculate__Group__3 : rule__Calculate__Group__3__Impl ;
+    // InternalCalculatorForm.g:3756:1: rule__Calculate__Group__3 : rule__Calculate__Group__3__Impl ;
     public final void rule__Calculate__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3754:1: ( rule__Calculate__Group__3__Impl )
-            // InternalCalculatorForm.g:3755:2: rule__Calculate__Group__3__Impl
+            // InternalCalculatorForm.g:3760:1: ( rule__Calculate__Group__3__Impl )
+            // InternalCalculatorForm.g:3761:2: rule__Calculate__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Calculate__Group__3__Impl();
@@ -12728,23 +12764,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__Group__3__Impl"
-    // InternalCalculatorForm.g:3761:1: rule__Calculate__Group__3__Impl : ( ( rule__Calculate__ExpressionAssignment_3 ) ) ;
+    // InternalCalculatorForm.g:3767:1: rule__Calculate__Group__3__Impl : ( ( rule__Calculate__ExpressionAssignment_3 ) ) ;
     public final void rule__Calculate__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3765:1: ( ( ( rule__Calculate__ExpressionAssignment_3 ) ) )
-            // InternalCalculatorForm.g:3766:1: ( ( rule__Calculate__ExpressionAssignment_3 ) )
+            // InternalCalculatorForm.g:3771:1: ( ( ( rule__Calculate__ExpressionAssignment_3 ) ) )
+            // InternalCalculatorForm.g:3772:1: ( ( rule__Calculate__ExpressionAssignment_3 ) )
             {
-            // InternalCalculatorForm.g:3766:1: ( ( rule__Calculate__ExpressionAssignment_3 ) )
-            // InternalCalculatorForm.g:3767:2: ( rule__Calculate__ExpressionAssignment_3 )
+            // InternalCalculatorForm.g:3772:1: ( ( rule__Calculate__ExpressionAssignment_3 ) )
+            // InternalCalculatorForm.g:3773:2: ( rule__Calculate__ExpressionAssignment_3 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getExpressionAssignment_3()); 
             }
-            // InternalCalculatorForm.g:3768:2: ( rule__Calculate__ExpressionAssignment_3 )
-            // InternalCalculatorForm.g:3768:3: rule__Calculate__ExpressionAssignment_3
+            // InternalCalculatorForm.g:3774:2: ( rule__Calculate__ExpressionAssignment_3 )
+            // InternalCalculatorForm.g:3774:3: rule__Calculate__ExpressionAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Calculate__ExpressionAssignment_3();
@@ -12779,14 +12815,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalCalculatorForm.g:3777:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalCalculatorForm.g:3783:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3781:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalCalculatorForm.g:3782:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalCalculatorForm.g:3787:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalCalculatorForm.g:3788:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__QualifiedName__Group__0__Impl();
@@ -12817,17 +12853,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalCalculatorForm.g:3789:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:3795:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3793:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:3794:1: ( RULE_ID )
+            // InternalCalculatorForm.g:3799:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:3800:1: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:3794:1: ( RULE_ID )
-            // InternalCalculatorForm.g:3795:2: RULE_ID
+            // InternalCalculatorForm.g:3800:1: ( RULE_ID )
+            // InternalCalculatorForm.g:3801:2: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
@@ -12858,14 +12894,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalCalculatorForm.g:3804:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalCalculatorForm.g:3810:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3808:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalCalculatorForm.g:3809:2: rule__QualifiedName__Group__1__Impl
+            // InternalCalculatorForm.g:3814:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalCalculatorForm.g:3815:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -12891,35 +12927,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalCalculatorForm.g:3815:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalCalculatorForm.g:3821:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3819:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalCalculatorForm.g:3820:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalCalculatorForm.g:3825:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalCalculatorForm.g:3826:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalCalculatorForm.g:3820:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalCalculatorForm.g:3821:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalCalculatorForm.g:3826:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalCalculatorForm.g:3827:2: ( rule__QualifiedName__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
             }
-            // InternalCalculatorForm.g:3822:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalCalculatorForm.g:3828:2: ( rule__QualifiedName__Group_1__0 )*
             loop58:
             do {
                 int alt58=2;
                 int LA58_0 = input.LA(1);
 
-                if ( (LA58_0==31) ) {
+                if ( (LA58_0==32) ) {
                     alt58=1;
                 }
 
 
                 switch (alt58) {
             	case 1 :
-            	    // InternalCalculatorForm.g:3822:3: rule__QualifiedName__Group_1__0
+            	    // InternalCalculatorForm.g:3828:3: rule__QualifiedName__Group_1__0
             	    {
             	    pushFollow(FOLLOW_29);
             	    rule__QualifiedName__Group_1__0();
@@ -12960,14 +12996,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalCalculatorForm.g:3831:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalCalculatorForm.g:3837:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3835:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalCalculatorForm.g:3836:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalCalculatorForm.g:3841:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalCalculatorForm.g:3842:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__QualifiedName__Group_1__0__Impl();
@@ -12998,22 +13034,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalCalculatorForm.g:3843:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalCalculatorForm.g:3849:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3847:1: ( ( '.' ) )
-            // InternalCalculatorForm.g:3848:1: ( '.' )
+            // InternalCalculatorForm.g:3853:1: ( ( '.' ) )
+            // InternalCalculatorForm.g:3854:1: ( '.' )
             {
-            // InternalCalculatorForm.g:3848:1: ( '.' )
-            // InternalCalculatorForm.g:3849:2: '.'
+            // InternalCalculatorForm.g:3854:1: ( '.' )
+            // InternalCalculatorForm.g:3855:2: '.'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             }
-            match(input,31,FOLLOW_2); if (state.failed) return ;
+            match(input,32,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             }
@@ -13039,14 +13075,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalCalculatorForm.g:3858:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalCalculatorForm.g:3864:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3862:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalCalculatorForm.g:3863:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalCalculatorForm.g:3868:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalCalculatorForm.g:3869:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -13072,17 +13108,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalCalculatorForm.g:3869:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:3875:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3873:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:3874:1: ( RULE_ID )
+            // InternalCalculatorForm.g:3879:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:3880:1: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:3874:1: ( RULE_ID )
-            // InternalCalculatorForm.g:3875:2: RULE_ID
+            // InternalCalculatorForm.g:3880:1: ( RULE_ID )
+            // InternalCalculatorForm.g:3881:2: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
@@ -13113,14 +13149,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group__0"
-    // InternalCalculatorForm.g:3885:1: rule__Addition__Group__0 : rule__Addition__Group__0__Impl rule__Addition__Group__1 ;
+    // InternalCalculatorForm.g:3891:1: rule__Addition__Group__0 : rule__Addition__Group__0__Impl rule__Addition__Group__1 ;
     public final void rule__Addition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3889:1: ( rule__Addition__Group__0__Impl rule__Addition__Group__1 )
-            // InternalCalculatorForm.g:3890:2: rule__Addition__Group__0__Impl rule__Addition__Group__1
+            // InternalCalculatorForm.g:3895:1: ( rule__Addition__Group__0__Impl rule__Addition__Group__1 )
+            // InternalCalculatorForm.g:3896:2: rule__Addition__Group__0__Impl rule__Addition__Group__1
             {
             pushFollow(FOLLOW_30);
             rule__Addition__Group__0__Impl();
@@ -13151,17 +13187,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group__0__Impl"
-    // InternalCalculatorForm.g:3897:1: rule__Addition__Group__0__Impl : ( ruleMultiplication ) ;
+    // InternalCalculatorForm.g:3903:1: rule__Addition__Group__0__Impl : ( ruleMultiplication ) ;
     public final void rule__Addition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3901:1: ( ( ruleMultiplication ) )
-            // InternalCalculatorForm.g:3902:1: ( ruleMultiplication )
+            // InternalCalculatorForm.g:3907:1: ( ( ruleMultiplication ) )
+            // InternalCalculatorForm.g:3908:1: ( ruleMultiplication )
             {
-            // InternalCalculatorForm.g:3902:1: ( ruleMultiplication )
-            // InternalCalculatorForm.g:3903:2: ruleMultiplication
+            // InternalCalculatorForm.g:3908:1: ( ruleMultiplication )
+            // InternalCalculatorForm.g:3909:2: ruleMultiplication
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0()); 
@@ -13196,14 +13232,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group__1"
-    // InternalCalculatorForm.g:3912:1: rule__Addition__Group__1 : rule__Addition__Group__1__Impl ;
+    // InternalCalculatorForm.g:3918:1: rule__Addition__Group__1 : rule__Addition__Group__1__Impl ;
     public final void rule__Addition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3916:1: ( rule__Addition__Group__1__Impl )
-            // InternalCalculatorForm.g:3917:2: rule__Addition__Group__1__Impl
+            // InternalCalculatorForm.g:3922:1: ( rule__Addition__Group__1__Impl )
+            // InternalCalculatorForm.g:3923:2: rule__Addition__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group__1__Impl();
@@ -13229,35 +13265,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group__1__Impl"
-    // InternalCalculatorForm.g:3923:1: rule__Addition__Group__1__Impl : ( ( rule__Addition__Group_1__0 )* ) ;
+    // InternalCalculatorForm.g:3929:1: rule__Addition__Group__1__Impl : ( ( rule__Addition__Group_1__0 )* ) ;
     public final void rule__Addition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3927:1: ( ( ( rule__Addition__Group_1__0 )* ) )
-            // InternalCalculatorForm.g:3928:1: ( ( rule__Addition__Group_1__0 )* )
+            // InternalCalculatorForm.g:3933:1: ( ( ( rule__Addition__Group_1__0 )* ) )
+            // InternalCalculatorForm.g:3934:1: ( ( rule__Addition__Group_1__0 )* )
             {
-            // InternalCalculatorForm.g:3928:1: ( ( rule__Addition__Group_1__0 )* )
-            // InternalCalculatorForm.g:3929:2: ( rule__Addition__Group_1__0 )*
+            // InternalCalculatorForm.g:3934:1: ( ( rule__Addition__Group_1__0 )* )
+            // InternalCalculatorForm.g:3935:2: ( rule__Addition__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getGroup_1()); 
             }
-            // InternalCalculatorForm.g:3930:2: ( rule__Addition__Group_1__0 )*
+            // InternalCalculatorForm.g:3936:2: ( rule__Addition__Group_1__0 )*
             loop59:
             do {
                 int alt59=2;
                 int LA59_0 = input.LA(1);
 
-                if ( ((LA59_0>=32 && LA59_0<=33)) ) {
+                if ( ((LA59_0>=33 && LA59_0<=34)) ) {
                     alt59=1;
                 }
 
 
                 switch (alt59) {
             	case 1 :
-            	    // InternalCalculatorForm.g:3930:3: rule__Addition__Group_1__0
+            	    // InternalCalculatorForm.g:3936:3: rule__Addition__Group_1__0
             	    {
             	    pushFollow(FOLLOW_31);
             	    rule__Addition__Group_1__0();
@@ -13298,14 +13334,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1__0"
-    // InternalCalculatorForm.g:3939:1: rule__Addition__Group_1__0 : rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 ;
+    // InternalCalculatorForm.g:3945:1: rule__Addition__Group_1__0 : rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 ;
     public final void rule__Addition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3943:1: ( rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 )
-            // InternalCalculatorForm.g:3944:2: rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1
+            // InternalCalculatorForm.g:3949:1: ( rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 )
+            // InternalCalculatorForm.g:3950:2: rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1
             {
             pushFollow(FOLLOW_27);
             rule__Addition__Group_1__0__Impl();
@@ -13336,23 +13372,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1__0__Impl"
-    // InternalCalculatorForm.g:3951:1: rule__Addition__Group_1__0__Impl : ( ( rule__Addition__Alternatives_1_0 ) ) ;
+    // InternalCalculatorForm.g:3957:1: rule__Addition__Group_1__0__Impl : ( ( rule__Addition__Alternatives_1_0 ) ) ;
     public final void rule__Addition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3955:1: ( ( ( rule__Addition__Alternatives_1_0 ) ) )
-            // InternalCalculatorForm.g:3956:1: ( ( rule__Addition__Alternatives_1_0 ) )
+            // InternalCalculatorForm.g:3961:1: ( ( ( rule__Addition__Alternatives_1_0 ) ) )
+            // InternalCalculatorForm.g:3962:1: ( ( rule__Addition__Alternatives_1_0 ) )
             {
-            // InternalCalculatorForm.g:3956:1: ( ( rule__Addition__Alternatives_1_0 ) )
-            // InternalCalculatorForm.g:3957:2: ( rule__Addition__Alternatives_1_0 )
+            // InternalCalculatorForm.g:3962:1: ( ( rule__Addition__Alternatives_1_0 ) )
+            // InternalCalculatorForm.g:3963:2: ( rule__Addition__Alternatives_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getAlternatives_1_0()); 
             }
-            // InternalCalculatorForm.g:3958:2: ( rule__Addition__Alternatives_1_0 )
-            // InternalCalculatorForm.g:3958:3: rule__Addition__Alternatives_1_0
+            // InternalCalculatorForm.g:3964:2: ( rule__Addition__Alternatives_1_0 )
+            // InternalCalculatorForm.g:3964:3: rule__Addition__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Alternatives_1_0();
@@ -13387,14 +13423,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1__1"
-    // InternalCalculatorForm.g:3966:1: rule__Addition__Group_1__1 : rule__Addition__Group_1__1__Impl ;
+    // InternalCalculatorForm.g:3972:1: rule__Addition__Group_1__1 : rule__Addition__Group_1__1__Impl ;
     public final void rule__Addition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3970:1: ( rule__Addition__Group_1__1__Impl )
-            // InternalCalculatorForm.g:3971:2: rule__Addition__Group_1__1__Impl
+            // InternalCalculatorForm.g:3976:1: ( rule__Addition__Group_1__1__Impl )
+            // InternalCalculatorForm.g:3977:2: rule__Addition__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group_1__1__Impl();
@@ -13420,23 +13456,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1__1__Impl"
-    // InternalCalculatorForm.g:3977:1: rule__Addition__Group_1__1__Impl : ( ( rule__Addition__RightAssignment_1_1 ) ) ;
+    // InternalCalculatorForm.g:3983:1: rule__Addition__Group_1__1__Impl : ( ( rule__Addition__RightAssignment_1_1 ) ) ;
     public final void rule__Addition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3981:1: ( ( ( rule__Addition__RightAssignment_1_1 ) ) )
-            // InternalCalculatorForm.g:3982:1: ( ( rule__Addition__RightAssignment_1_1 ) )
+            // InternalCalculatorForm.g:3987:1: ( ( ( rule__Addition__RightAssignment_1_1 ) ) )
+            // InternalCalculatorForm.g:3988:1: ( ( rule__Addition__RightAssignment_1_1 ) )
             {
-            // InternalCalculatorForm.g:3982:1: ( ( rule__Addition__RightAssignment_1_1 ) )
-            // InternalCalculatorForm.g:3983:2: ( rule__Addition__RightAssignment_1_1 )
+            // InternalCalculatorForm.g:3988:1: ( ( rule__Addition__RightAssignment_1_1 ) )
+            // InternalCalculatorForm.g:3989:2: ( rule__Addition__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getRightAssignment_1_1()); 
             }
-            // InternalCalculatorForm.g:3984:2: ( rule__Addition__RightAssignment_1_1 )
-            // InternalCalculatorForm.g:3984:3: rule__Addition__RightAssignment_1_1
+            // InternalCalculatorForm.g:3990:2: ( rule__Addition__RightAssignment_1_1 )
+            // InternalCalculatorForm.g:3990:3: rule__Addition__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Addition__RightAssignment_1_1();
@@ -13471,14 +13507,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_0__0"
-    // InternalCalculatorForm.g:3993:1: rule__Addition__Group_1_0_0__0 : rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1 ;
+    // InternalCalculatorForm.g:3999:1: rule__Addition__Group_1_0_0__0 : rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1 ;
     public final void rule__Addition__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:3997:1: ( rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1 )
-            // InternalCalculatorForm.g:3998:2: rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1
+            // InternalCalculatorForm.g:4003:1: ( rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1 )
+            // InternalCalculatorForm.g:4004:2: rule__Addition__Group_1_0_0__0__Impl rule__Addition__Group_1_0_0__1
             {
             pushFollow(FOLLOW_32);
             rule__Addition__Group_1_0_0__0__Impl();
@@ -13509,23 +13545,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_0__0__Impl"
-    // InternalCalculatorForm.g:4005:1: rule__Addition__Group_1_0_0__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4011:1: rule__Addition__Group_1_0_0__0__Impl : ( () ) ;
     public final void rule__Addition__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4009:1: ( ( () ) )
-            // InternalCalculatorForm.g:4010:1: ( () )
+            // InternalCalculatorForm.g:4015:1: ( ( () ) )
+            // InternalCalculatorForm.g:4016:1: ( () )
             {
-            // InternalCalculatorForm.g:4010:1: ( () )
-            // InternalCalculatorForm.g:4011:2: ()
+            // InternalCalculatorForm.g:4016:1: ( () )
+            // InternalCalculatorForm.g:4017:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getPlusLeftAction_1_0_0_0()); 
             }
-            // InternalCalculatorForm.g:4012:2: ()
-            // InternalCalculatorForm.g:4012:3: 
+            // InternalCalculatorForm.g:4018:2: ()
+            // InternalCalculatorForm.g:4018:3: 
             {
             }
 
@@ -13550,14 +13586,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_0__1"
-    // InternalCalculatorForm.g:4020:1: rule__Addition__Group_1_0_0__1 : rule__Addition__Group_1_0_0__1__Impl ;
+    // InternalCalculatorForm.g:4026:1: rule__Addition__Group_1_0_0__1 : rule__Addition__Group_1_0_0__1__Impl ;
     public final void rule__Addition__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4024:1: ( rule__Addition__Group_1_0_0__1__Impl )
-            // InternalCalculatorForm.g:4025:2: rule__Addition__Group_1_0_0__1__Impl
+            // InternalCalculatorForm.g:4030:1: ( rule__Addition__Group_1_0_0__1__Impl )
+            // InternalCalculatorForm.g:4031:2: rule__Addition__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group_1_0_0__1__Impl();
@@ -13583,22 +13619,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_0__1__Impl"
-    // InternalCalculatorForm.g:4031:1: rule__Addition__Group_1_0_0__1__Impl : ( '+' ) ;
+    // InternalCalculatorForm.g:4037:1: rule__Addition__Group_1_0_0__1__Impl : ( '+' ) ;
     public final void rule__Addition__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4035:1: ( ( '+' ) )
-            // InternalCalculatorForm.g:4036:1: ( '+' )
+            // InternalCalculatorForm.g:4041:1: ( ( '+' ) )
+            // InternalCalculatorForm.g:4042:1: ( '+' )
             {
-            // InternalCalculatorForm.g:4036:1: ( '+' )
-            // InternalCalculatorForm.g:4037:2: '+'
+            // InternalCalculatorForm.g:4042:1: ( '+' )
+            // InternalCalculatorForm.g:4043:2: '+'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1()); 
             }
-            match(input,32,FOLLOW_2); if (state.failed) return ;
+            match(input,33,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1()); 
             }
@@ -13624,14 +13660,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_1__0"
-    // InternalCalculatorForm.g:4047:1: rule__Addition__Group_1_0_1__0 : rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1 ;
+    // InternalCalculatorForm.g:4053:1: rule__Addition__Group_1_0_1__0 : rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1 ;
     public final void rule__Addition__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4051:1: ( rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1 )
-            // InternalCalculatorForm.g:4052:2: rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1
+            // InternalCalculatorForm.g:4057:1: ( rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1 )
+            // InternalCalculatorForm.g:4058:2: rule__Addition__Group_1_0_1__0__Impl rule__Addition__Group_1_0_1__1
             {
             pushFollow(FOLLOW_30);
             rule__Addition__Group_1_0_1__0__Impl();
@@ -13662,23 +13698,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_1__0__Impl"
-    // InternalCalculatorForm.g:4059:1: rule__Addition__Group_1_0_1__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4065:1: rule__Addition__Group_1_0_1__0__Impl : ( () ) ;
     public final void rule__Addition__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4063:1: ( ( () ) )
-            // InternalCalculatorForm.g:4064:1: ( () )
+            // InternalCalculatorForm.g:4069:1: ( ( () ) )
+            // InternalCalculatorForm.g:4070:1: ( () )
             {
-            // InternalCalculatorForm.g:4064:1: ( () )
-            // InternalCalculatorForm.g:4065:2: ()
+            // InternalCalculatorForm.g:4070:1: ( () )
+            // InternalCalculatorForm.g:4071:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getMinusLeftAction_1_0_1_0()); 
             }
-            // InternalCalculatorForm.g:4066:2: ()
-            // InternalCalculatorForm.g:4066:3: 
+            // InternalCalculatorForm.g:4072:2: ()
+            // InternalCalculatorForm.g:4072:3: 
             {
             }
 
@@ -13703,14 +13739,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_1__1"
-    // InternalCalculatorForm.g:4074:1: rule__Addition__Group_1_0_1__1 : rule__Addition__Group_1_0_1__1__Impl ;
+    // InternalCalculatorForm.g:4080:1: rule__Addition__Group_1_0_1__1 : rule__Addition__Group_1_0_1__1__Impl ;
     public final void rule__Addition__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4078:1: ( rule__Addition__Group_1_0_1__1__Impl )
-            // InternalCalculatorForm.g:4079:2: rule__Addition__Group_1_0_1__1__Impl
+            // InternalCalculatorForm.g:4084:1: ( rule__Addition__Group_1_0_1__1__Impl )
+            // InternalCalculatorForm.g:4085:2: rule__Addition__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group_1_0_1__1__Impl();
@@ -13736,22 +13772,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__Group_1_0_1__1__Impl"
-    // InternalCalculatorForm.g:4085:1: rule__Addition__Group_1_0_1__1__Impl : ( '-' ) ;
+    // InternalCalculatorForm.g:4091:1: rule__Addition__Group_1_0_1__1__Impl : ( '-' ) ;
     public final void rule__Addition__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4089:1: ( ( '-' ) )
-            // InternalCalculatorForm.g:4090:1: ( '-' )
+            // InternalCalculatorForm.g:4095:1: ( ( '-' ) )
+            // InternalCalculatorForm.g:4096:1: ( '-' )
             {
-            // InternalCalculatorForm.g:4090:1: ( '-' )
-            // InternalCalculatorForm.g:4091:2: '-'
+            // InternalCalculatorForm.g:4096:1: ( '-' )
+            // InternalCalculatorForm.g:4097:2: '-'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1()); 
             }
-            match(input,33,FOLLOW_2); if (state.failed) return ;
+            match(input,34,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1()); 
             }
@@ -13777,14 +13813,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group__0"
-    // InternalCalculatorForm.g:4101:1: rule__Multiplication__Group__0 : rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 ;
+    // InternalCalculatorForm.g:4107:1: rule__Multiplication__Group__0 : rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 ;
     public final void rule__Multiplication__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4105:1: ( rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 )
-            // InternalCalculatorForm.g:4106:2: rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1
+            // InternalCalculatorForm.g:4111:1: ( rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 )
+            // InternalCalculatorForm.g:4112:2: rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1
             {
             pushFollow(FOLLOW_33);
             rule__Multiplication__Group__0__Impl();
@@ -13815,17 +13851,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group__0__Impl"
-    // InternalCalculatorForm.g:4113:1: rule__Multiplication__Group__0__Impl : ( rulePrefixed ) ;
+    // InternalCalculatorForm.g:4119:1: rule__Multiplication__Group__0__Impl : ( rulePrefixed ) ;
     public final void rule__Multiplication__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4117:1: ( ( rulePrefixed ) )
-            // InternalCalculatorForm.g:4118:1: ( rulePrefixed )
+            // InternalCalculatorForm.g:4123:1: ( ( rulePrefixed ) )
+            // InternalCalculatorForm.g:4124:1: ( rulePrefixed )
             {
-            // InternalCalculatorForm.g:4118:1: ( rulePrefixed )
-            // InternalCalculatorForm.g:4119:2: rulePrefixed
+            // InternalCalculatorForm.g:4124:1: ( rulePrefixed )
+            // InternalCalculatorForm.g:4125:2: rulePrefixed
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getPrefixedParserRuleCall_0()); 
@@ -13860,14 +13896,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group__1"
-    // InternalCalculatorForm.g:4128:1: rule__Multiplication__Group__1 : rule__Multiplication__Group__1__Impl ;
+    // InternalCalculatorForm.g:4134:1: rule__Multiplication__Group__1 : rule__Multiplication__Group__1__Impl ;
     public final void rule__Multiplication__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4132:1: ( rule__Multiplication__Group__1__Impl )
-            // InternalCalculatorForm.g:4133:2: rule__Multiplication__Group__1__Impl
+            // InternalCalculatorForm.g:4138:1: ( rule__Multiplication__Group__1__Impl )
+            // InternalCalculatorForm.g:4139:2: rule__Multiplication__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group__1__Impl();
@@ -13893,35 +13929,35 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group__1__Impl"
-    // InternalCalculatorForm.g:4139:1: rule__Multiplication__Group__1__Impl : ( ( rule__Multiplication__Group_1__0 )* ) ;
+    // InternalCalculatorForm.g:4145:1: rule__Multiplication__Group__1__Impl : ( ( rule__Multiplication__Group_1__0 )* ) ;
     public final void rule__Multiplication__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4143:1: ( ( ( rule__Multiplication__Group_1__0 )* ) )
-            // InternalCalculatorForm.g:4144:1: ( ( rule__Multiplication__Group_1__0 )* )
+            // InternalCalculatorForm.g:4149:1: ( ( ( rule__Multiplication__Group_1__0 )* ) )
+            // InternalCalculatorForm.g:4150:1: ( ( rule__Multiplication__Group_1__0 )* )
             {
-            // InternalCalculatorForm.g:4144:1: ( ( rule__Multiplication__Group_1__0 )* )
-            // InternalCalculatorForm.g:4145:2: ( rule__Multiplication__Group_1__0 )*
+            // InternalCalculatorForm.g:4150:1: ( ( rule__Multiplication__Group_1__0 )* )
+            // InternalCalculatorForm.g:4151:2: ( rule__Multiplication__Group_1__0 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getGroup_1()); 
             }
-            // InternalCalculatorForm.g:4146:2: ( rule__Multiplication__Group_1__0 )*
+            // InternalCalculatorForm.g:4152:2: ( rule__Multiplication__Group_1__0 )*
             loop60:
             do {
                 int alt60=2;
                 int LA60_0 = input.LA(1);
 
-                if ( ((LA60_0>=12 && LA60_0<=13)) ) {
+                if ( ((LA60_0>=13 && LA60_0<=14)) ) {
                     alt60=1;
                 }
 
 
                 switch (alt60) {
             	case 1 :
-            	    // InternalCalculatorForm.g:4146:3: rule__Multiplication__Group_1__0
+            	    // InternalCalculatorForm.g:4152:3: rule__Multiplication__Group_1__0
             	    {
             	    pushFollow(FOLLOW_34);
             	    rule__Multiplication__Group_1__0();
@@ -13962,14 +13998,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1__0"
-    // InternalCalculatorForm.g:4155:1: rule__Multiplication__Group_1__0 : rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 ;
+    // InternalCalculatorForm.g:4161:1: rule__Multiplication__Group_1__0 : rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 ;
     public final void rule__Multiplication__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4159:1: ( rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 )
-            // InternalCalculatorForm.g:4160:2: rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1
+            // InternalCalculatorForm.g:4165:1: ( rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 )
+            // InternalCalculatorForm.g:4166:2: rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1
             {
             pushFollow(FOLLOW_27);
             rule__Multiplication__Group_1__0__Impl();
@@ -14000,23 +14036,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1__0__Impl"
-    // InternalCalculatorForm.g:4167:1: rule__Multiplication__Group_1__0__Impl : ( ( rule__Multiplication__Group_1_0__0 ) ) ;
+    // InternalCalculatorForm.g:4173:1: rule__Multiplication__Group_1__0__Impl : ( ( rule__Multiplication__Group_1_0__0 ) ) ;
     public final void rule__Multiplication__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4171:1: ( ( ( rule__Multiplication__Group_1_0__0 ) ) )
-            // InternalCalculatorForm.g:4172:1: ( ( rule__Multiplication__Group_1_0__0 ) )
+            // InternalCalculatorForm.g:4177:1: ( ( ( rule__Multiplication__Group_1_0__0 ) ) )
+            // InternalCalculatorForm.g:4178:1: ( ( rule__Multiplication__Group_1_0__0 ) )
             {
-            // InternalCalculatorForm.g:4172:1: ( ( rule__Multiplication__Group_1_0__0 ) )
-            // InternalCalculatorForm.g:4173:2: ( rule__Multiplication__Group_1_0__0 )
+            // InternalCalculatorForm.g:4178:1: ( ( rule__Multiplication__Group_1_0__0 ) )
+            // InternalCalculatorForm.g:4179:2: ( rule__Multiplication__Group_1_0__0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getGroup_1_0()); 
             }
-            // InternalCalculatorForm.g:4174:2: ( rule__Multiplication__Group_1_0__0 )
-            // InternalCalculatorForm.g:4174:3: rule__Multiplication__Group_1_0__0
+            // InternalCalculatorForm.g:4180:2: ( rule__Multiplication__Group_1_0__0 )
+            // InternalCalculatorForm.g:4180:3: rule__Multiplication__Group_1_0__0
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group_1_0__0();
@@ -14051,14 +14087,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1__1"
-    // InternalCalculatorForm.g:4182:1: rule__Multiplication__Group_1__1 : rule__Multiplication__Group_1__1__Impl ;
+    // InternalCalculatorForm.g:4188:1: rule__Multiplication__Group_1__1 : rule__Multiplication__Group_1__1__Impl ;
     public final void rule__Multiplication__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4186:1: ( rule__Multiplication__Group_1__1__Impl )
-            // InternalCalculatorForm.g:4187:2: rule__Multiplication__Group_1__1__Impl
+            // InternalCalculatorForm.g:4192:1: ( rule__Multiplication__Group_1__1__Impl )
+            // InternalCalculatorForm.g:4193:2: rule__Multiplication__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group_1__1__Impl();
@@ -14084,23 +14120,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1__1__Impl"
-    // InternalCalculatorForm.g:4193:1: rule__Multiplication__Group_1__1__Impl : ( ( rule__Multiplication__RightAssignment_1_1 ) ) ;
+    // InternalCalculatorForm.g:4199:1: rule__Multiplication__Group_1__1__Impl : ( ( rule__Multiplication__RightAssignment_1_1 ) ) ;
     public final void rule__Multiplication__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4197:1: ( ( ( rule__Multiplication__RightAssignment_1_1 ) ) )
-            // InternalCalculatorForm.g:4198:1: ( ( rule__Multiplication__RightAssignment_1_1 ) )
+            // InternalCalculatorForm.g:4203:1: ( ( ( rule__Multiplication__RightAssignment_1_1 ) ) )
+            // InternalCalculatorForm.g:4204:1: ( ( rule__Multiplication__RightAssignment_1_1 ) )
             {
-            // InternalCalculatorForm.g:4198:1: ( ( rule__Multiplication__RightAssignment_1_1 ) )
-            // InternalCalculatorForm.g:4199:2: ( rule__Multiplication__RightAssignment_1_1 )
+            // InternalCalculatorForm.g:4204:1: ( ( rule__Multiplication__RightAssignment_1_1 ) )
+            // InternalCalculatorForm.g:4205:2: ( rule__Multiplication__RightAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1()); 
             }
-            // InternalCalculatorForm.g:4200:2: ( rule__Multiplication__RightAssignment_1_1 )
-            // InternalCalculatorForm.g:4200:3: rule__Multiplication__RightAssignment_1_1
+            // InternalCalculatorForm.g:4206:2: ( rule__Multiplication__RightAssignment_1_1 )
+            // InternalCalculatorForm.g:4206:3: rule__Multiplication__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__RightAssignment_1_1();
@@ -14135,14 +14171,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1_0__0"
-    // InternalCalculatorForm.g:4209:1: rule__Multiplication__Group_1_0__0 : rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1 ;
+    // InternalCalculatorForm.g:4215:1: rule__Multiplication__Group_1_0__0 : rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1 ;
     public final void rule__Multiplication__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4213:1: ( rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1 )
-            // InternalCalculatorForm.g:4214:2: rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1
+            // InternalCalculatorForm.g:4219:1: ( rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1 )
+            // InternalCalculatorForm.g:4220:2: rule__Multiplication__Group_1_0__0__Impl rule__Multiplication__Group_1_0__1
             {
             pushFollow(FOLLOW_33);
             rule__Multiplication__Group_1_0__0__Impl();
@@ -14173,23 +14209,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1_0__0__Impl"
-    // InternalCalculatorForm.g:4221:1: rule__Multiplication__Group_1_0__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4227:1: rule__Multiplication__Group_1_0__0__Impl : ( () ) ;
     public final void rule__Multiplication__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4225:1: ( ( () ) )
-            // InternalCalculatorForm.g:4226:1: ( () )
+            // InternalCalculatorForm.g:4231:1: ( ( () ) )
+            // InternalCalculatorForm.g:4232:1: ( () )
             {
-            // InternalCalculatorForm.g:4226:1: ( () )
-            // InternalCalculatorForm.g:4227:2: ()
+            // InternalCalculatorForm.g:4232:1: ( () )
+            // InternalCalculatorForm.g:4233:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getMultiOrDivLeftAction_1_0_0()); 
             }
-            // InternalCalculatorForm.g:4228:2: ()
-            // InternalCalculatorForm.g:4228:3: 
+            // InternalCalculatorForm.g:4234:2: ()
+            // InternalCalculatorForm.g:4234:3: 
             {
             }
 
@@ -14214,14 +14250,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1_0__1"
-    // InternalCalculatorForm.g:4236:1: rule__Multiplication__Group_1_0__1 : rule__Multiplication__Group_1_0__1__Impl ;
+    // InternalCalculatorForm.g:4242:1: rule__Multiplication__Group_1_0__1 : rule__Multiplication__Group_1_0__1__Impl ;
     public final void rule__Multiplication__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4240:1: ( rule__Multiplication__Group_1_0__1__Impl )
-            // InternalCalculatorForm.g:4241:2: rule__Multiplication__Group_1_0__1__Impl
+            // InternalCalculatorForm.g:4246:1: ( rule__Multiplication__Group_1_0__1__Impl )
+            // InternalCalculatorForm.g:4247:2: rule__Multiplication__Group_1_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group_1_0__1__Impl();
@@ -14247,23 +14283,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__Group_1_0__1__Impl"
-    // InternalCalculatorForm.g:4247:1: rule__Multiplication__Group_1_0__1__Impl : ( ( rule__Multiplication__OpAssignment_1_0_1 ) ) ;
+    // InternalCalculatorForm.g:4253:1: rule__Multiplication__Group_1_0__1__Impl : ( ( rule__Multiplication__OpAssignment_1_0_1 ) ) ;
     public final void rule__Multiplication__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4251:1: ( ( ( rule__Multiplication__OpAssignment_1_0_1 ) ) )
-            // InternalCalculatorForm.g:4252:1: ( ( rule__Multiplication__OpAssignment_1_0_1 ) )
+            // InternalCalculatorForm.g:4257:1: ( ( ( rule__Multiplication__OpAssignment_1_0_1 ) ) )
+            // InternalCalculatorForm.g:4258:1: ( ( rule__Multiplication__OpAssignment_1_0_1 ) )
             {
-            // InternalCalculatorForm.g:4252:1: ( ( rule__Multiplication__OpAssignment_1_0_1 ) )
-            // InternalCalculatorForm.g:4253:2: ( rule__Multiplication__OpAssignment_1_0_1 )
+            // InternalCalculatorForm.g:4258:1: ( ( rule__Multiplication__OpAssignment_1_0_1 ) )
+            // InternalCalculatorForm.g:4259:2: ( rule__Multiplication__OpAssignment_1_0_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getOpAssignment_1_0_1()); 
             }
-            // InternalCalculatorForm.g:4254:2: ( rule__Multiplication__OpAssignment_1_0_1 )
-            // InternalCalculatorForm.g:4254:3: rule__Multiplication__OpAssignment_1_0_1
+            // InternalCalculatorForm.g:4260:2: ( rule__Multiplication__OpAssignment_1_0_1 )
+            // InternalCalculatorForm.g:4260:3: rule__Multiplication__OpAssignment_1_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__OpAssignment_1_0_1();
@@ -14298,14 +14334,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__0"
-    // InternalCalculatorForm.g:4263:1: rule__Prefixed__Group_0__0 : rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1 ;
+    // InternalCalculatorForm.g:4269:1: rule__Prefixed__Group_0__0 : rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1 ;
     public final void rule__Prefixed__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4267:1: ( rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1 )
-            // InternalCalculatorForm.g:4268:2: rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1
+            // InternalCalculatorForm.g:4273:1: ( rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1 )
+            // InternalCalculatorForm.g:4274:2: rule__Prefixed__Group_0__0__Impl rule__Prefixed__Group_0__1
             {
             pushFollow(FOLLOW_35);
             rule__Prefixed__Group_0__0__Impl();
@@ -14336,23 +14372,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__0__Impl"
-    // InternalCalculatorForm.g:4275:1: rule__Prefixed__Group_0__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4281:1: rule__Prefixed__Group_0__0__Impl : ( () ) ;
     public final void rule__Prefixed__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4279:1: ( ( () ) )
-            // InternalCalculatorForm.g:4280:1: ( () )
+            // InternalCalculatorForm.g:4285:1: ( ( () ) )
+            // InternalCalculatorForm.g:4286:1: ( () )
             {
-            // InternalCalculatorForm.g:4280:1: ( () )
-            // InternalCalculatorForm.g:4281:2: ()
+            // InternalCalculatorForm.g:4286:1: ( () )
+            // InternalCalculatorForm.g:4287:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getBooleanNegationAction_0_0()); 
             }
-            // InternalCalculatorForm.g:4282:2: ()
-            // InternalCalculatorForm.g:4282:3: 
+            // InternalCalculatorForm.g:4288:2: ()
+            // InternalCalculatorForm.g:4288:3: 
             {
             }
 
@@ -14377,14 +14413,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__1"
-    // InternalCalculatorForm.g:4290:1: rule__Prefixed__Group_0__1 : rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2 ;
+    // InternalCalculatorForm.g:4296:1: rule__Prefixed__Group_0__1 : rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2 ;
     public final void rule__Prefixed__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4294:1: ( rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2 )
-            // InternalCalculatorForm.g:4295:2: rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2
+            // InternalCalculatorForm.g:4300:1: ( rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2 )
+            // InternalCalculatorForm.g:4301:2: rule__Prefixed__Group_0__1__Impl rule__Prefixed__Group_0__2
             {
             pushFollow(FOLLOW_27);
             rule__Prefixed__Group_0__1__Impl();
@@ -14415,25 +14451,25 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__1__Impl"
-    // InternalCalculatorForm.g:4302:1: rule__Prefixed__Group_0__1__Impl : ( ( '!' ) ) ;
+    // InternalCalculatorForm.g:4308:1: rule__Prefixed__Group_0__1__Impl : ( ( '!' ) ) ;
     public final void rule__Prefixed__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4306:1: ( ( ( '!' ) ) )
-            // InternalCalculatorForm.g:4307:1: ( ( '!' ) )
+            // InternalCalculatorForm.g:4312:1: ( ( ( '!' ) ) )
+            // InternalCalculatorForm.g:4313:1: ( ( '!' ) )
             {
-            // InternalCalculatorForm.g:4307:1: ( ( '!' ) )
-            // InternalCalculatorForm.g:4308:2: ( '!' )
+            // InternalCalculatorForm.g:4313:1: ( ( '!' ) )
+            // InternalCalculatorForm.g:4314:2: ( '!' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getExclamationMarkKeyword_0_1()); 
             }
-            // InternalCalculatorForm.g:4309:2: ( '!' )
-            // InternalCalculatorForm.g:4309:3: '!'
+            // InternalCalculatorForm.g:4315:2: ( '!' )
+            // InternalCalculatorForm.g:4315:3: '!'
             {
-            match(input,34,FOLLOW_2); if (state.failed) return ;
+            match(input,35,FOLLOW_2); if (state.failed) return ;
 
             }
 
@@ -14462,14 +14498,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__2"
-    // InternalCalculatorForm.g:4317:1: rule__Prefixed__Group_0__2 : rule__Prefixed__Group_0__2__Impl ;
+    // InternalCalculatorForm.g:4323:1: rule__Prefixed__Group_0__2 : rule__Prefixed__Group_0__2__Impl ;
     public final void rule__Prefixed__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4321:1: ( rule__Prefixed__Group_0__2__Impl )
-            // InternalCalculatorForm.g:4322:2: rule__Prefixed__Group_0__2__Impl
+            // InternalCalculatorForm.g:4327:1: ( rule__Prefixed__Group_0__2__Impl )
+            // InternalCalculatorForm.g:4328:2: rule__Prefixed__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Prefixed__Group_0__2__Impl();
@@ -14495,23 +14531,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_0__2__Impl"
-    // InternalCalculatorForm.g:4328:1: rule__Prefixed__Group_0__2__Impl : ( ( rule__Prefixed__ExpressionAssignment_0_2 ) ) ;
+    // InternalCalculatorForm.g:4334:1: rule__Prefixed__Group_0__2__Impl : ( ( rule__Prefixed__ExpressionAssignment_0_2 ) ) ;
     public final void rule__Prefixed__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4332:1: ( ( ( rule__Prefixed__ExpressionAssignment_0_2 ) ) )
-            // InternalCalculatorForm.g:4333:1: ( ( rule__Prefixed__ExpressionAssignment_0_2 ) )
+            // InternalCalculatorForm.g:4338:1: ( ( ( rule__Prefixed__ExpressionAssignment_0_2 ) ) )
+            // InternalCalculatorForm.g:4339:1: ( ( rule__Prefixed__ExpressionAssignment_0_2 ) )
             {
-            // InternalCalculatorForm.g:4333:1: ( ( rule__Prefixed__ExpressionAssignment_0_2 ) )
-            // InternalCalculatorForm.g:4334:2: ( rule__Prefixed__ExpressionAssignment_0_2 )
+            // InternalCalculatorForm.g:4339:1: ( ( rule__Prefixed__ExpressionAssignment_0_2 ) )
+            // InternalCalculatorForm.g:4340:2: ( rule__Prefixed__ExpressionAssignment_0_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getExpressionAssignment_0_2()); 
             }
-            // InternalCalculatorForm.g:4335:2: ( rule__Prefixed__ExpressionAssignment_0_2 )
-            // InternalCalculatorForm.g:4335:3: rule__Prefixed__ExpressionAssignment_0_2
+            // InternalCalculatorForm.g:4341:2: ( rule__Prefixed__ExpressionAssignment_0_2 )
+            // InternalCalculatorForm.g:4341:3: rule__Prefixed__ExpressionAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__Prefixed__ExpressionAssignment_0_2();
@@ -14546,14 +14582,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__0"
-    // InternalCalculatorForm.g:4344:1: rule__Prefixed__Group_1__0 : rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1 ;
+    // InternalCalculatorForm.g:4350:1: rule__Prefixed__Group_1__0 : rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1 ;
     public final void rule__Prefixed__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4348:1: ( rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1 )
-            // InternalCalculatorForm.g:4349:2: rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1
+            // InternalCalculatorForm.g:4354:1: ( rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1 )
+            // InternalCalculatorForm.g:4355:2: rule__Prefixed__Group_1__0__Impl rule__Prefixed__Group_1__1
             {
             pushFollow(FOLLOW_36);
             rule__Prefixed__Group_1__0__Impl();
@@ -14584,23 +14620,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__0__Impl"
-    // InternalCalculatorForm.g:4356:1: rule__Prefixed__Group_1__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4362:1: rule__Prefixed__Group_1__0__Impl : ( () ) ;
     public final void rule__Prefixed__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4360:1: ( ( () ) )
-            // InternalCalculatorForm.g:4361:1: ( () )
+            // InternalCalculatorForm.g:4366:1: ( ( () ) )
+            // InternalCalculatorForm.g:4367:1: ( () )
             {
-            // InternalCalculatorForm.g:4361:1: ( () )
-            // InternalCalculatorForm.g:4362:2: ()
+            // InternalCalculatorForm.g:4367:1: ( () )
+            // InternalCalculatorForm.g:4368:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getArithmeticSignedAction_1_0()); 
             }
-            // InternalCalculatorForm.g:4363:2: ()
-            // InternalCalculatorForm.g:4363:3: 
+            // InternalCalculatorForm.g:4369:2: ()
+            // InternalCalculatorForm.g:4369:3: 
             {
             }
 
@@ -14625,14 +14661,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__1"
-    // InternalCalculatorForm.g:4371:1: rule__Prefixed__Group_1__1 : rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2 ;
+    // InternalCalculatorForm.g:4377:1: rule__Prefixed__Group_1__1 : rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2 ;
     public final void rule__Prefixed__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4375:1: ( rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2 )
-            // InternalCalculatorForm.g:4376:2: rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2
+            // InternalCalculatorForm.g:4381:1: ( rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2 )
+            // InternalCalculatorForm.g:4382:2: rule__Prefixed__Group_1__1__Impl rule__Prefixed__Group_1__2
             {
             pushFollow(FOLLOW_27);
             rule__Prefixed__Group_1__1__Impl();
@@ -14663,25 +14699,25 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__1__Impl"
-    // InternalCalculatorForm.g:4383:1: rule__Prefixed__Group_1__1__Impl : ( ( '-' ) ) ;
+    // InternalCalculatorForm.g:4389:1: rule__Prefixed__Group_1__1__Impl : ( ( '-' ) ) ;
     public final void rule__Prefixed__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4387:1: ( ( ( '-' ) ) )
-            // InternalCalculatorForm.g:4388:1: ( ( '-' ) )
+            // InternalCalculatorForm.g:4393:1: ( ( ( '-' ) ) )
+            // InternalCalculatorForm.g:4394:1: ( ( '-' ) )
             {
-            // InternalCalculatorForm.g:4388:1: ( ( '-' ) )
-            // InternalCalculatorForm.g:4389:2: ( '-' )
+            // InternalCalculatorForm.g:4394:1: ( ( '-' ) )
+            // InternalCalculatorForm.g:4395:2: ( '-' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getHyphenMinusKeyword_1_1()); 
             }
-            // InternalCalculatorForm.g:4390:2: ( '-' )
-            // InternalCalculatorForm.g:4390:3: '-'
+            // InternalCalculatorForm.g:4396:2: ( '-' )
+            // InternalCalculatorForm.g:4396:3: '-'
             {
-            match(input,33,FOLLOW_2); if (state.failed) return ;
+            match(input,34,FOLLOW_2); if (state.failed) return ;
 
             }
 
@@ -14710,14 +14746,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__2"
-    // InternalCalculatorForm.g:4398:1: rule__Prefixed__Group_1__2 : rule__Prefixed__Group_1__2__Impl ;
+    // InternalCalculatorForm.g:4404:1: rule__Prefixed__Group_1__2 : rule__Prefixed__Group_1__2__Impl ;
     public final void rule__Prefixed__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4402:1: ( rule__Prefixed__Group_1__2__Impl )
-            // InternalCalculatorForm.g:4403:2: rule__Prefixed__Group_1__2__Impl
+            // InternalCalculatorForm.g:4408:1: ( rule__Prefixed__Group_1__2__Impl )
+            // InternalCalculatorForm.g:4409:2: rule__Prefixed__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Prefixed__Group_1__2__Impl();
@@ -14743,23 +14779,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__Group_1__2__Impl"
-    // InternalCalculatorForm.g:4409:1: rule__Prefixed__Group_1__2__Impl : ( ( rule__Prefixed__ExpressionAssignment_1_2 ) ) ;
+    // InternalCalculatorForm.g:4415:1: rule__Prefixed__Group_1__2__Impl : ( ( rule__Prefixed__ExpressionAssignment_1_2 ) ) ;
     public final void rule__Prefixed__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4413:1: ( ( ( rule__Prefixed__ExpressionAssignment_1_2 ) ) )
-            // InternalCalculatorForm.g:4414:1: ( ( rule__Prefixed__ExpressionAssignment_1_2 ) )
+            // InternalCalculatorForm.g:4419:1: ( ( ( rule__Prefixed__ExpressionAssignment_1_2 ) ) )
+            // InternalCalculatorForm.g:4420:1: ( ( rule__Prefixed__ExpressionAssignment_1_2 ) )
             {
-            // InternalCalculatorForm.g:4414:1: ( ( rule__Prefixed__ExpressionAssignment_1_2 ) )
-            // InternalCalculatorForm.g:4415:2: ( rule__Prefixed__ExpressionAssignment_1_2 )
+            // InternalCalculatorForm.g:4420:1: ( ( rule__Prefixed__ExpressionAssignment_1_2 ) )
+            // InternalCalculatorForm.g:4421:2: ( rule__Prefixed__ExpressionAssignment_1_2 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getExpressionAssignment_1_2()); 
             }
-            // InternalCalculatorForm.g:4416:2: ( rule__Prefixed__ExpressionAssignment_1_2 )
-            // InternalCalculatorForm.g:4416:3: rule__Prefixed__ExpressionAssignment_1_2
+            // InternalCalculatorForm.g:4422:2: ( rule__Prefixed__ExpressionAssignment_1_2 )
+            // InternalCalculatorForm.g:4422:3: rule__Prefixed__ExpressionAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Prefixed__ExpressionAssignment_1_2();
@@ -14794,14 +14830,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__0"
-    // InternalCalculatorForm.g:4425:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
+    // InternalCalculatorForm.g:4431:1: rule__Atomic__Group_0__0 : rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 ;
     public final void rule__Atomic__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4429:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
-            // InternalCalculatorForm.g:4430:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
+            // InternalCalculatorForm.g:4435:1: ( rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1 )
+            // InternalCalculatorForm.g:4436:2: rule__Atomic__Group_0__0__Impl rule__Atomic__Group_0__1
             {
             pushFollow(FOLLOW_27);
             rule__Atomic__Group_0__0__Impl();
@@ -14832,22 +14868,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__0__Impl"
-    // InternalCalculatorForm.g:4437:1: rule__Atomic__Group_0__0__Impl : ( '(' ) ;
+    // InternalCalculatorForm.g:4443:1: rule__Atomic__Group_0__0__Impl : ( '(' ) ;
     public final void rule__Atomic__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4441:1: ( ( '(' ) )
-            // InternalCalculatorForm.g:4442:1: ( '(' )
+            // InternalCalculatorForm.g:4447:1: ( ( '(' ) )
+            // InternalCalculatorForm.g:4448:1: ( '(' )
             {
-            // InternalCalculatorForm.g:4442:1: ( '(' )
-            // InternalCalculatorForm.g:4443:2: '('
+            // InternalCalculatorForm.g:4448:1: ( '(' )
+            // InternalCalculatorForm.g:4449:2: '('
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0()); 
             }
-            match(input,35,FOLLOW_2); if (state.failed) return ;
+            match(input,36,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0()); 
             }
@@ -14873,14 +14909,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__1"
-    // InternalCalculatorForm.g:4452:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 ;
+    // InternalCalculatorForm.g:4458:1: rule__Atomic__Group_0__1 : rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 ;
     public final void rule__Atomic__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4456:1: ( rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 )
-            // InternalCalculatorForm.g:4457:2: rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2
+            // InternalCalculatorForm.g:4462:1: ( rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2 )
+            // InternalCalculatorForm.g:4463:2: rule__Atomic__Group_0__1__Impl rule__Atomic__Group_0__2
             {
             pushFollow(FOLLOW_37);
             rule__Atomic__Group_0__1__Impl();
@@ -14911,17 +14947,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__1__Impl"
-    // InternalCalculatorForm.g:4464:1: rule__Atomic__Group_0__1__Impl : ( ruleExpression ) ;
+    // InternalCalculatorForm.g:4470:1: rule__Atomic__Group_0__1__Impl : ( ruleExpression ) ;
     public final void rule__Atomic__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4468:1: ( ( ruleExpression ) )
-            // InternalCalculatorForm.g:4469:1: ( ruleExpression )
+            // InternalCalculatorForm.g:4474:1: ( ( ruleExpression ) )
+            // InternalCalculatorForm.g:4475:1: ( ruleExpression )
             {
-            // InternalCalculatorForm.g:4469:1: ( ruleExpression )
-            // InternalCalculatorForm.g:4470:2: ruleExpression
+            // InternalCalculatorForm.g:4475:1: ( ruleExpression )
+            // InternalCalculatorForm.g:4476:2: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getExpressionParserRuleCall_0_1()); 
@@ -14956,14 +14992,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__2"
-    // InternalCalculatorForm.g:4479:1: rule__Atomic__Group_0__2 : rule__Atomic__Group_0__2__Impl ;
+    // InternalCalculatorForm.g:4485:1: rule__Atomic__Group_0__2 : rule__Atomic__Group_0__2__Impl ;
     public final void rule__Atomic__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4483:1: ( rule__Atomic__Group_0__2__Impl )
-            // InternalCalculatorForm.g:4484:2: rule__Atomic__Group_0__2__Impl
+            // InternalCalculatorForm.g:4489:1: ( rule__Atomic__Group_0__2__Impl )
+            // InternalCalculatorForm.g:4490:2: rule__Atomic__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__Group_0__2__Impl();
@@ -14989,22 +15025,22 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_0__2__Impl"
-    // InternalCalculatorForm.g:4490:1: rule__Atomic__Group_0__2__Impl : ( ')' ) ;
+    // InternalCalculatorForm.g:4496:1: rule__Atomic__Group_0__2__Impl : ( ')' ) ;
     public final void rule__Atomic__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4494:1: ( ( ')' ) )
-            // InternalCalculatorForm.g:4495:1: ( ')' )
+            // InternalCalculatorForm.g:4500:1: ( ( ')' ) )
+            // InternalCalculatorForm.g:4501:1: ( ')' )
             {
-            // InternalCalculatorForm.g:4495:1: ( ')' )
-            // InternalCalculatorForm.g:4496:2: ')'
+            // InternalCalculatorForm.g:4501:1: ( ')' )
+            // InternalCalculatorForm.g:4502:2: ')'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2()); 
             }
-            match(input,36,FOLLOW_2); if (state.failed) return ;
+            match(input,37,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2()); 
             }
@@ -15030,14 +15066,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_1__0"
-    // InternalCalculatorForm.g:4506:1: rule__Atomic__Group_1__0 : rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 ;
+    // InternalCalculatorForm.g:4512:1: rule__Atomic__Group_1__0 : rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 ;
     public final void rule__Atomic__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4510:1: ( rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 )
-            // InternalCalculatorForm.g:4511:2: rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1
+            // InternalCalculatorForm.g:4516:1: ( rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1 )
+            // InternalCalculatorForm.g:4517:2: rule__Atomic__Group_1__0__Impl rule__Atomic__Group_1__1
             {
             pushFollow(FOLLOW_12);
             rule__Atomic__Group_1__0__Impl();
@@ -15068,23 +15104,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_1__0__Impl"
-    // InternalCalculatorForm.g:4518:1: rule__Atomic__Group_1__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4524:1: rule__Atomic__Group_1__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4522:1: ( ( () ) )
-            // InternalCalculatorForm.g:4523:1: ( () )
+            // InternalCalculatorForm.g:4528:1: ( ( () ) )
+            // InternalCalculatorForm.g:4529:1: ( () )
             {
-            // InternalCalculatorForm.g:4523:1: ( () )
-            // InternalCalculatorForm.g:4524:2: ()
+            // InternalCalculatorForm.g:4529:1: ( () )
+            // InternalCalculatorForm.g:4530:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getNumberLiteralAction_1_0()); 
             }
-            // InternalCalculatorForm.g:4525:2: ()
-            // InternalCalculatorForm.g:4525:3: 
+            // InternalCalculatorForm.g:4531:2: ()
+            // InternalCalculatorForm.g:4531:3: 
             {
             }
 
@@ -15109,14 +15145,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_1__1"
-    // InternalCalculatorForm.g:4533:1: rule__Atomic__Group_1__1 : rule__Atomic__Group_1__1__Impl ;
+    // InternalCalculatorForm.g:4539:1: rule__Atomic__Group_1__1 : rule__Atomic__Group_1__1__Impl ;
     public final void rule__Atomic__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4537:1: ( rule__Atomic__Group_1__1__Impl )
-            // InternalCalculatorForm.g:4538:2: rule__Atomic__Group_1__1__Impl
+            // InternalCalculatorForm.g:4543:1: ( rule__Atomic__Group_1__1__Impl )
+            // InternalCalculatorForm.g:4544:2: rule__Atomic__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__Group_1__1__Impl();
@@ -15142,23 +15178,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_1__1__Impl"
-    // InternalCalculatorForm.g:4544:1: rule__Atomic__Group_1__1__Impl : ( ( rule__Atomic__ValueAssignment_1_1 ) ) ;
+    // InternalCalculatorForm.g:4550:1: rule__Atomic__Group_1__1__Impl : ( ( rule__Atomic__ValueAssignment_1_1 ) ) ;
     public final void rule__Atomic__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4548:1: ( ( ( rule__Atomic__ValueAssignment_1_1 ) ) )
-            // InternalCalculatorForm.g:4549:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
+            // InternalCalculatorForm.g:4554:1: ( ( ( rule__Atomic__ValueAssignment_1_1 ) ) )
+            // InternalCalculatorForm.g:4555:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
             {
-            // InternalCalculatorForm.g:4549:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
-            // InternalCalculatorForm.g:4550:2: ( rule__Atomic__ValueAssignment_1_1 )
+            // InternalCalculatorForm.g:4555:1: ( ( rule__Atomic__ValueAssignment_1_1 ) )
+            // InternalCalculatorForm.g:4556:2: ( rule__Atomic__ValueAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getValueAssignment_1_1()); 
             }
-            // InternalCalculatorForm.g:4551:2: ( rule__Atomic__ValueAssignment_1_1 )
-            // InternalCalculatorForm.g:4551:3: rule__Atomic__ValueAssignment_1_1
+            // InternalCalculatorForm.g:4557:2: ( rule__Atomic__ValueAssignment_1_1 )
+            // InternalCalculatorForm.g:4557:3: rule__Atomic__ValueAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__ValueAssignment_1_1();
@@ -15193,14 +15229,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_2__0"
-    // InternalCalculatorForm.g:4560:1: rule__Atomic__Group_2__0 : rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 ;
+    // InternalCalculatorForm.g:4566:1: rule__Atomic__Group_2__0 : rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 ;
     public final void rule__Atomic__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4564:1: ( rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 )
-            // InternalCalculatorForm.g:4565:2: rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1
+            // InternalCalculatorForm.g:4570:1: ( rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1 )
+            // InternalCalculatorForm.g:4571:2: rule__Atomic__Group_2__0__Impl rule__Atomic__Group_2__1
             {
             pushFollow(FOLLOW_38);
             rule__Atomic__Group_2__0__Impl();
@@ -15231,23 +15267,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_2__0__Impl"
-    // InternalCalculatorForm.g:4572:1: rule__Atomic__Group_2__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4578:1: rule__Atomic__Group_2__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4576:1: ( ( () ) )
-            // InternalCalculatorForm.g:4577:1: ( () )
+            // InternalCalculatorForm.g:4582:1: ( ( () ) )
+            // InternalCalculatorForm.g:4583:1: ( () )
             {
-            // InternalCalculatorForm.g:4577:1: ( () )
-            // InternalCalculatorForm.g:4578:2: ()
+            // InternalCalculatorForm.g:4583:1: ( () )
+            // InternalCalculatorForm.g:4584:2: ()
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getFloatLiteralAction_2_0()); 
             }
-            // InternalCalculatorForm.g:4579:2: ()
-            // InternalCalculatorForm.g:4579:3: 
+            // InternalCalculatorForm.g:4585:2: ()
+            // InternalCalculatorForm.g:4585:3: 
             {
             }
 
@@ -15272,14 +15308,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_2__1"
-    // InternalCalculatorForm.g:4587:1: rule__Atomic__Group_2__1 : rule__Atomic__Group_2__1__Impl ;
+    // InternalCalculatorForm.g:4593:1: rule__Atomic__Group_2__1 : rule__Atomic__Group_2__1__Impl ;
     public final void rule__Atomic__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4591:1: ( rule__Atomic__Group_2__1__Impl )
-            // InternalCalculatorForm.g:4592:2: rule__Atomic__Group_2__1__Impl
+            // InternalCalculatorForm.g:4597:1: ( rule__Atomic__Group_2__1__Impl )
+            // InternalCalculatorForm.g:4598:2: rule__Atomic__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__Group_2__1__Impl();
@@ -15305,23 +15341,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_2__1__Impl"
-    // InternalCalculatorForm.g:4598:1: rule__Atomic__Group_2__1__Impl : ( ( rule__Atomic__ValueAssignment_2_1 ) ) ;
+    // InternalCalculatorForm.g:4604:1: rule__Atomic__Group_2__1__Impl : ( ( rule__Atomic__ValueAssignment_2_1 ) ) ;
     public final void rule__Atomic__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4602:1: ( ( ( rule__Atomic__ValueAssignment_2_1 ) ) )
-            // InternalCalculatorForm.g:4603:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
+            // InternalCalculatorForm.g:4608:1: ( ( ( rule__Atomic__ValueAssignment_2_1 ) ) )
+            // InternalCalculatorForm.g:4609:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
             {
-            // InternalCalculatorForm.g:4603:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
-            // InternalCalculatorForm.g:4604:2: ( rule__Atomic__ValueAssignment_2_1 )
+            // InternalCalculatorForm.g:4609:1: ( ( rule__Atomic__ValueAssignment_2_1 ) )
+            // InternalCalculatorForm.g:4610:2: ( rule__Atomic__ValueAssignment_2_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getValueAssignment_2_1()); 
             }
-            // InternalCalculatorForm.g:4605:2: ( rule__Atomic__ValueAssignment_2_1 )
-            // InternalCalculatorForm.g:4605:3: rule__Atomic__ValueAssignment_2_1
+            // InternalCalculatorForm.g:4611:2: ( rule__Atomic__ValueAssignment_2_1 )
+            // InternalCalculatorForm.g:4611:3: rule__Atomic__ValueAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__ValueAssignment_2_1();
@@ -15356,16 +15392,16 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_3__0"
-    // InternalCalculatorForm.g:4614:1: rule__Atomic__Group_3__0 : rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 ;
+    // InternalCalculatorForm.g:4620:1: rule__Atomic__Group_3__0 : rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 ;
     public final void rule__Atomic__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4618:1: ( rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 )
-            // InternalCalculatorForm.g:4619:2: rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1
+            // InternalCalculatorForm.g:4624:1: ( rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1 )
+            // InternalCalculatorForm.g:4625:2: rule__Atomic__Group_3__0__Impl rule__Atomic__Group_3__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_39);
             rule__Atomic__Group_3__0__Impl();
 
             state._fsp--;
@@ -15394,28 +15430,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_3__0__Impl"
-    // InternalCalculatorForm.g:4626:1: rule__Atomic__Group_3__0__Impl : ( () ) ;
+    // InternalCalculatorForm.g:4632:1: rule__Atomic__Group_3__0__Impl : ( () ) ;
     public final void rule__Atomic__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4630:1: ( ( () ) )
-            // InternalCalculatorForm.g:4631:1: ( () )
+            // InternalCalculatorForm.g:4636:1: ( ( () ) )
+            // InternalCalculatorForm.g:4637:1: ( () )
             {
-            // InternalCalculatorForm.g:4631:1: ( () )
-            // InternalCalculatorForm.g:4632:2: ()
+            // InternalCalculatorForm.g:4637:1: ( () )
+            // InternalCalculatorForm.g:4638:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0()); 
+               before(grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0()); 
             }
-            // InternalCalculatorForm.g:4633:2: ()
-            // InternalCalculatorForm.g:4633:3: 
+            // InternalCalculatorForm.g:4639:2: ()
+            // InternalCalculatorForm.g:4639:3: 
             {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0()); 
+               after(grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0()); 
             }
 
             }
@@ -15435,14 +15471,14 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_3__1"
-    // InternalCalculatorForm.g:4641:1: rule__Atomic__Group_3__1 : rule__Atomic__Group_3__1__Impl ;
+    // InternalCalculatorForm.g:4647:1: rule__Atomic__Group_3__1 : rule__Atomic__Group_3__1__Impl ;
     public final void rule__Atomic__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4645:1: ( rule__Atomic__Group_3__1__Impl )
-            // InternalCalculatorForm.g:4646:2: rule__Atomic__Group_3__1__Impl
+            // InternalCalculatorForm.g:4651:1: ( rule__Atomic__Group_3__1__Impl )
+            // InternalCalculatorForm.g:4652:2: rule__Atomic__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Atomic__Group_3__1__Impl();
@@ -15468,26 +15504,26 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__Group_3__1__Impl"
-    // InternalCalculatorForm.g:4652:1: rule__Atomic__Group_3__1__Impl : ( ( rule__Atomic__RefAssignment_3_1 ) ) ;
+    // InternalCalculatorForm.g:4658:1: rule__Atomic__Group_3__1__Impl : ( ( rule__Atomic__ValueAssignment_3_1 ) ) ;
     public final void rule__Atomic__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4656:1: ( ( ( rule__Atomic__RefAssignment_3_1 ) ) )
-            // InternalCalculatorForm.g:4657:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
+            // InternalCalculatorForm.g:4662:1: ( ( ( rule__Atomic__ValueAssignment_3_1 ) ) )
+            // InternalCalculatorForm.g:4663:1: ( ( rule__Atomic__ValueAssignment_3_1 ) )
             {
-            // InternalCalculatorForm.g:4657:1: ( ( rule__Atomic__RefAssignment_3_1 ) )
-            // InternalCalculatorForm.g:4658:2: ( rule__Atomic__RefAssignment_3_1 )
+            // InternalCalculatorForm.g:4663:1: ( ( rule__Atomic__ValueAssignment_3_1 ) )
+            // InternalCalculatorForm.g:4664:2: ( rule__Atomic__ValueAssignment_3_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAtomicAccess().getRefAssignment_3_1()); 
+               before(grammarAccess.getAtomicAccess().getValueAssignment_3_1()); 
             }
-            // InternalCalculatorForm.g:4659:2: ( rule__Atomic__RefAssignment_3_1 )
-            // InternalCalculatorForm.g:4659:3: rule__Atomic__RefAssignment_3_1
+            // InternalCalculatorForm.g:4665:2: ( rule__Atomic__ValueAssignment_3_1 )
+            // InternalCalculatorForm.g:4665:3: rule__Atomic__ValueAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__Atomic__RefAssignment_3_1();
+            rule__Atomic__ValueAssignment_3_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -15495,7 +15531,7 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAtomicAccess().getRefAssignment_3_1()); 
+               after(grammarAccess.getAtomicAccess().getValueAssignment_3_1()); 
             }
 
             }
@@ -15518,18 +15554,181 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Atomic__Group_3__1__Impl"
 
 
+    // $ANTLR start "rule__Atomic__Group_4__0"
+    // InternalCalculatorForm.g:4674:1: rule__Atomic__Group_4__0 : rule__Atomic__Group_4__0__Impl rule__Atomic__Group_4__1 ;
+    public final void rule__Atomic__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCalculatorForm.g:4678:1: ( rule__Atomic__Group_4__0__Impl rule__Atomic__Group_4__1 )
+            // InternalCalculatorForm.g:4679:2: rule__Atomic__Group_4__0__Impl rule__Atomic__Group_4__1
+            {
+            pushFollow(FOLLOW_27);
+            rule__Atomic__Group_4__0__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+            pushFollow(FOLLOW_2);
+            rule__Atomic__Group_4__1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Atomic__Group_4__0"
+
+
+    // $ANTLR start "rule__Atomic__Group_4__0__Impl"
+    // InternalCalculatorForm.g:4686:1: rule__Atomic__Group_4__0__Impl : ( () ) ;
+    public final void rule__Atomic__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCalculatorForm.g:4690:1: ( ( () ) )
+            // InternalCalculatorForm.g:4691:1: ( () )
+            {
+            // InternalCalculatorForm.g:4691:1: ( () )
+            // InternalCalculatorForm.g:4692:2: ()
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0()); 
+            }
+            // InternalCalculatorForm.g:4693:2: ()
+            // InternalCalculatorForm.g:4693:3: 
+            {
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Atomic__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__Atomic__Group_4__1"
+    // InternalCalculatorForm.g:4701:1: rule__Atomic__Group_4__1 : rule__Atomic__Group_4__1__Impl ;
+    public final void rule__Atomic__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCalculatorForm.g:4705:1: ( rule__Atomic__Group_4__1__Impl )
+            // InternalCalculatorForm.g:4706:2: rule__Atomic__Group_4__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Atomic__Group_4__1__Impl();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Atomic__Group_4__1"
+
+
+    // $ANTLR start "rule__Atomic__Group_4__1__Impl"
+    // InternalCalculatorForm.g:4712:1: rule__Atomic__Group_4__1__Impl : ( ( rule__Atomic__RefAssignment_4_1 ) ) ;
+    public final void rule__Atomic__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCalculatorForm.g:4716:1: ( ( ( rule__Atomic__RefAssignment_4_1 ) ) )
+            // InternalCalculatorForm.g:4717:1: ( ( rule__Atomic__RefAssignment_4_1 ) )
+            {
+            // InternalCalculatorForm.g:4717:1: ( ( rule__Atomic__RefAssignment_4_1 ) )
+            // InternalCalculatorForm.g:4718:2: ( rule__Atomic__RefAssignment_4_1 )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAtomicAccess().getRefAssignment_4_1()); 
+            }
+            // InternalCalculatorForm.g:4719:2: ( rule__Atomic__RefAssignment_4_1 )
+            // InternalCalculatorForm.g:4719:3: rule__Atomic__RefAssignment_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Atomic__RefAssignment_4_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAtomicAccess().getRefAssignment_4_1()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Atomic__Group_4__1__Impl"
+
+
     // $ANTLR start "rule__Model__FormElementsAssignment_0"
-    // InternalCalculatorForm.g:4668:1: rule__Model__FormElementsAssignment_0 : ( ruleFormElement ) ;
+    // InternalCalculatorForm.g:4728:1: rule__Model__FormElementsAssignment_0 : ( ruleFormElement ) ;
     public final void rule__Model__FormElementsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4672:1: ( ( ruleFormElement ) )
-            // InternalCalculatorForm.g:4673:2: ( ruleFormElement )
+            // InternalCalculatorForm.g:4732:1: ( ( ruleFormElement ) )
+            // InternalCalculatorForm.g:4733:2: ( ruleFormElement )
             {
-            // InternalCalculatorForm.g:4673:2: ( ruleFormElement )
-            // InternalCalculatorForm.g:4674:3: ruleFormElement
+            // InternalCalculatorForm.g:4733:2: ( ruleFormElement )
+            // InternalCalculatorForm.g:4734:3: ruleFormElement
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getFormElementsFormElementParserRuleCall_0_0()); 
@@ -15564,17 +15763,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Model__CalculationsAssignment_1"
-    // InternalCalculatorForm.g:4683:1: rule__Model__CalculationsAssignment_1 : ( ruleCalculate ) ;
+    // InternalCalculatorForm.g:4743:1: rule__Model__CalculationsAssignment_1 : ( ruleCalculate ) ;
     public final void rule__Model__CalculationsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4687:1: ( ( ruleCalculate ) )
-            // InternalCalculatorForm.g:4688:2: ( ruleCalculate )
+            // InternalCalculatorForm.g:4747:1: ( ( ruleCalculate ) )
+            // InternalCalculatorForm.g:4748:2: ( ruleCalculate )
             {
-            // InternalCalculatorForm.g:4688:2: ( ruleCalculate )
-            // InternalCalculatorForm.g:4689:3: ruleCalculate
+            // InternalCalculatorForm.g:4748:2: ( ruleCalculate )
+            // InternalCalculatorForm.g:4749:3: ruleCalculate
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getModelAccess().getCalculationsCalculateParserRuleCall_1_0()); 
@@ -15609,17 +15808,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__NameAssignment_1"
-    // InternalCalculatorForm.g:4698:1: rule__FieldInput__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:4758:1: rule__FieldInput__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FieldInput__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4702:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:4703:2: ( RULE_ID )
+            // InternalCalculatorForm.g:4762:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:4763:2: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:4703:2: ( RULE_ID )
-            // InternalCalculatorForm.g:4704:3: RULE_ID
+            // InternalCalculatorForm.g:4763:2: ( RULE_ID )
+            // InternalCalculatorForm.g:4764:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -15650,28 +15849,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__AutofocusAssignment_2"
-    // InternalCalculatorForm.g:4713:1: rule__FieldInput__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
+    // InternalCalculatorForm.g:4773:1: rule__FieldInput__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
     public final void rule__FieldInput__AutofocusAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4717:1: ( ( ( 'autofocus' ) ) )
-            // InternalCalculatorForm.g:4718:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:4777:1: ( ( ( 'autofocus' ) ) )
+            // InternalCalculatorForm.g:4778:2: ( ( 'autofocus' ) )
             {
-            // InternalCalculatorForm.g:4718:2: ( ( 'autofocus' ) )
-            // InternalCalculatorForm.g:4719:3: ( 'autofocus' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0()); 
-            }
-            // InternalCalculatorForm.g:4720:3: ( 'autofocus' )
-            // InternalCalculatorForm.g:4721:4: 'autofocus'
+            // InternalCalculatorForm.g:4778:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:4779:3: ( 'autofocus' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
-            match(input,37,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4780:3: ( 'autofocus' )
+            // InternalCalculatorForm.g:4781:4: 'autofocus'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
@@ -15703,28 +15902,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__DisabledAssignment_3"
-    // InternalCalculatorForm.g:4732:1: rule__FieldInput__DisabledAssignment_3 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:4792:1: rule__FieldInput__DisabledAssignment_3 : ( ( 'disabled' ) ) ;
     public final void rule__FieldInput__DisabledAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4736:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:4737:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:4796:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:4797:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:4737:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:4738:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:4739:3: ( 'disabled' )
-            // InternalCalculatorForm.g:4740:4: 'disabled'
+            // InternalCalculatorForm.g:4797:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:4798:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4799:3: ( 'disabled' )
+            // InternalCalculatorForm.g:4800:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0()); 
             }
@@ -15756,17 +15955,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__FormAssignment_4_1"
-    // InternalCalculatorForm.g:4751:1: rule__FieldInput__FormAssignment_4_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:4811:1: rule__FieldInput__FormAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__FieldInput__FormAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4755:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:4756:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4815:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:4816:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:4756:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:4757:3: RULE_STRING
+            // InternalCalculatorForm.g:4816:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4817:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getFormSTRINGTerminalRuleCall_4_1_0()); 
@@ -15797,17 +15996,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__LabelAssignment_5_1"
-    // InternalCalculatorForm.g:4766:1: rule__FieldInput__LabelAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:4826:1: rule__FieldInput__LabelAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__FieldInput__LabelAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4770:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:4771:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4830:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:4831:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:4771:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:4772:3: RULE_STRING
+            // InternalCalculatorForm.g:4831:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4832:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getLabelSTRINGTerminalRuleCall_5_1_0()); 
@@ -15838,28 +16037,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__NotdisplayedAssignment_6"
-    // InternalCalculatorForm.g:4781:1: rule__FieldInput__NotdisplayedAssignment_6 : ( ( 'notdisplayed' ) ) ;
+    // InternalCalculatorForm.g:4841:1: rule__FieldInput__NotdisplayedAssignment_6 : ( ( 'notdisplayed' ) ) ;
     public final void rule__FieldInput__NotdisplayedAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4785:1: ( ( ( 'notdisplayed' ) ) )
-            // InternalCalculatorForm.g:4786:2: ( ( 'notdisplayed' ) )
+            // InternalCalculatorForm.g:4845:1: ( ( ( 'notdisplayed' ) ) )
+            // InternalCalculatorForm.g:4846:2: ( ( 'notdisplayed' ) )
             {
-            // InternalCalculatorForm.g:4786:2: ( ( 'notdisplayed' ) )
-            // InternalCalculatorForm.g:4787:3: ( 'notdisplayed' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0()); 
-            }
-            // InternalCalculatorForm.g:4788:3: ( 'notdisplayed' )
-            // InternalCalculatorForm.g:4789:4: 'notdisplayed'
+            // InternalCalculatorForm.g:4846:2: ( ( 'notdisplayed' ) )
+            // InternalCalculatorForm.g:4847:3: ( 'notdisplayed' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0()); 
             }
-            match(input,39,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4848:3: ( 'notdisplayed' )
+            // InternalCalculatorForm.g:4849:4: 'notdisplayed'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0()); 
+            }
+            match(input,40,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0()); 
             }
@@ -15891,28 +16090,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__ReadonlyAssignment_7"
-    // InternalCalculatorForm.g:4800:1: rule__FieldInput__ReadonlyAssignment_7 : ( ( 'readonly' ) ) ;
+    // InternalCalculatorForm.g:4860:1: rule__FieldInput__ReadonlyAssignment_7 : ( ( 'readonly' ) ) ;
     public final void rule__FieldInput__ReadonlyAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4804:1: ( ( ( 'readonly' ) ) )
-            // InternalCalculatorForm.g:4805:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:4864:1: ( ( ( 'readonly' ) ) )
+            // InternalCalculatorForm.g:4865:2: ( ( 'readonly' ) )
             {
-            // InternalCalculatorForm.g:4805:2: ( ( 'readonly' ) )
-            // InternalCalculatorForm.g:4806:3: ( 'readonly' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0()); 
-            }
-            // InternalCalculatorForm.g:4807:3: ( 'readonly' )
-            // InternalCalculatorForm.g:4808:4: 'readonly'
+            // InternalCalculatorForm.g:4865:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:4866:3: ( 'readonly' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0()); 
             }
-            match(input,40,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4867:3: ( 'readonly' )
+            // InternalCalculatorForm.g:4868:4: 'readonly'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0()); 
+            }
+            match(input,41,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0()); 
             }
@@ -15944,28 +16143,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__RequiredAssignment_8"
-    // InternalCalculatorForm.g:4819:1: rule__FieldInput__RequiredAssignment_8 : ( ( 'required' ) ) ;
+    // InternalCalculatorForm.g:4879:1: rule__FieldInput__RequiredAssignment_8 : ( ( 'required' ) ) ;
     public final void rule__FieldInput__RequiredAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4823:1: ( ( ( 'required' ) ) )
-            // InternalCalculatorForm.g:4824:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:4883:1: ( ( ( 'required' ) ) )
+            // InternalCalculatorForm.g:4884:2: ( ( 'required' ) )
             {
-            // InternalCalculatorForm.g:4824:2: ( ( 'required' ) )
-            // InternalCalculatorForm.g:4825:3: ( 'required' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0()); 
-            }
-            // InternalCalculatorForm.g:4826:3: ( 'required' )
-            // InternalCalculatorForm.g:4827:4: 'required'
+            // InternalCalculatorForm.g:4884:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:4885:3: ( 'required' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0()); 
             }
-            match(input,41,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4886:3: ( 'required' )
+            // InternalCalculatorForm.g:4887:4: 'required'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0()); 
+            }
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0()); 
             }
@@ -15997,17 +16196,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldInput__ValueAssignment_9_1"
-    // InternalCalculatorForm.g:4838:1: rule__FieldInput__ValueAssignment_9_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:4898:1: rule__FieldInput__ValueAssignment_9_1 : ( RULE_STRING ) ;
     public final void rule__FieldInput__ValueAssignment_9_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4842:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:4843:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4902:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:4903:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:4843:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:4844:3: RULE_STRING
+            // InternalCalculatorForm.g:4903:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4904:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldInputAccess().getValueSTRINGTerminalRuleCall_9_1_0()); 
@@ -16038,17 +16237,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__NameAssignment_1"
-    // InternalCalculatorForm.g:4853:1: rule__FieldSelect__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:4913:1: rule__FieldSelect__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FieldSelect__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4857:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:4858:2: ( RULE_ID )
+            // InternalCalculatorForm.g:4917:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:4918:2: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:4858:2: ( RULE_ID )
-            // InternalCalculatorForm.g:4859:3: RULE_ID
+            // InternalCalculatorForm.g:4918:2: ( RULE_ID )
+            // InternalCalculatorForm.g:4919:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -16079,28 +16278,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__AutofocusAssignment_2"
-    // InternalCalculatorForm.g:4868:1: rule__FieldSelect__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
+    // InternalCalculatorForm.g:4928:1: rule__FieldSelect__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
     public final void rule__FieldSelect__AutofocusAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4872:1: ( ( ( 'autofocus' ) ) )
-            // InternalCalculatorForm.g:4873:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:4932:1: ( ( ( 'autofocus' ) ) )
+            // InternalCalculatorForm.g:4933:2: ( ( 'autofocus' ) )
             {
-            // InternalCalculatorForm.g:4873:2: ( ( 'autofocus' ) )
-            // InternalCalculatorForm.g:4874:3: ( 'autofocus' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0()); 
-            }
-            // InternalCalculatorForm.g:4875:3: ( 'autofocus' )
-            // InternalCalculatorForm.g:4876:4: 'autofocus'
+            // InternalCalculatorForm.g:4933:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:4934:3: ( 'autofocus' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
-            match(input,37,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4935:3: ( 'autofocus' )
+            // InternalCalculatorForm.g:4936:4: 'autofocus'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
@@ -16132,28 +16331,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__DisabledAssignment_3"
-    // InternalCalculatorForm.g:4887:1: rule__FieldSelect__DisabledAssignment_3 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:4947:1: rule__FieldSelect__DisabledAssignment_3 : ( ( 'disabled' ) ) ;
     public final void rule__FieldSelect__DisabledAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4891:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:4892:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:4951:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:4952:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:4892:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:4893:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:4894:3: ( 'disabled' )
-            // InternalCalculatorForm.g:4895:4: 'disabled'
+            // InternalCalculatorForm.g:4952:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:4953:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:4954:3: ( 'disabled' )
+            // InternalCalculatorForm.g:4955:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0()); 
             }
@@ -16185,17 +16384,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__FormAssignment_4_1"
-    // InternalCalculatorForm.g:4906:1: rule__FieldSelect__FormAssignment_4_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:4966:1: rule__FieldSelect__FormAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__FieldSelect__FormAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4910:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:4911:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4970:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:4971:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:4911:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:4912:3: RULE_STRING
+            // InternalCalculatorForm.g:4971:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4972:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getFormSTRINGTerminalRuleCall_4_1_0()); 
@@ -16226,17 +16425,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__LabelAssignment_5_1"
-    // InternalCalculatorForm.g:4921:1: rule__FieldSelect__LabelAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:4981:1: rule__FieldSelect__LabelAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__FieldSelect__LabelAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4925:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:4926:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4985:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:4986:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:4926:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:4927:3: RULE_STRING
+            // InternalCalculatorForm.g:4986:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:4987:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getLabelSTRINGTerminalRuleCall_5_1_0()); 
@@ -16267,28 +16466,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__MultipleAssignment_6"
-    // InternalCalculatorForm.g:4936:1: rule__FieldSelect__MultipleAssignment_6 : ( ( 'multiple' ) ) ;
+    // InternalCalculatorForm.g:4996:1: rule__FieldSelect__MultipleAssignment_6 : ( ( 'multiple' ) ) ;
     public final void rule__FieldSelect__MultipleAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4940:1: ( ( ( 'multiple' ) ) )
-            // InternalCalculatorForm.g:4941:2: ( ( 'multiple' ) )
+            // InternalCalculatorForm.g:5000:1: ( ( ( 'multiple' ) ) )
+            // InternalCalculatorForm.g:5001:2: ( ( 'multiple' ) )
             {
-            // InternalCalculatorForm.g:4941:2: ( ( 'multiple' ) )
-            // InternalCalculatorForm.g:4942:3: ( 'multiple' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0()); 
-            }
-            // InternalCalculatorForm.g:4943:3: ( 'multiple' )
-            // InternalCalculatorForm.g:4944:4: 'multiple'
+            // InternalCalculatorForm.g:5001:2: ( ( 'multiple' ) )
+            // InternalCalculatorForm.g:5002:3: ( 'multiple' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0()); 
             }
-            match(input,42,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5003:3: ( 'multiple' )
+            // InternalCalculatorForm.g:5004:4: 'multiple'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0()); 
+            }
+            match(input,43,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0()); 
             }
@@ -16320,28 +16519,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__RequiredAssignment_7"
-    // InternalCalculatorForm.g:4955:1: rule__FieldSelect__RequiredAssignment_7 : ( ( 'required' ) ) ;
+    // InternalCalculatorForm.g:5015:1: rule__FieldSelect__RequiredAssignment_7 : ( ( 'required' ) ) ;
     public final void rule__FieldSelect__RequiredAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4959:1: ( ( ( 'required' ) ) )
-            // InternalCalculatorForm.g:4960:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5019:1: ( ( ( 'required' ) ) )
+            // InternalCalculatorForm.g:5020:2: ( ( 'required' ) )
             {
-            // InternalCalculatorForm.g:4960:2: ( ( 'required' ) )
-            // InternalCalculatorForm.g:4961:3: ( 'required' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0()); 
-            }
-            // InternalCalculatorForm.g:4962:3: ( 'required' )
-            // InternalCalculatorForm.g:4963:4: 'required'
+            // InternalCalculatorForm.g:5020:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5021:3: ( 'required' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0()); 
             }
-            match(input,41,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5022:3: ( 'required' )
+            // InternalCalculatorForm.g:5023:4: 'required'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0()); 
+            }
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0()); 
             }
@@ -16373,17 +16572,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__SizeAssignment_8_1"
-    // InternalCalculatorForm.g:4974:1: rule__FieldSelect__SizeAssignment_8_1 : ( RULE_INT ) ;
+    // InternalCalculatorForm.g:5034:1: rule__FieldSelect__SizeAssignment_8_1 : ( RULE_INT ) ;
     public final void rule__FieldSelect__SizeAssignment_8_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4978:1: ( ( RULE_INT ) )
-            // InternalCalculatorForm.g:4979:2: ( RULE_INT )
+            // InternalCalculatorForm.g:5038:1: ( ( RULE_INT ) )
+            // InternalCalculatorForm.g:5039:2: ( RULE_INT )
             {
-            // InternalCalculatorForm.g:4979:2: ( RULE_INT )
-            // InternalCalculatorForm.g:4980:3: RULE_INT
+            // InternalCalculatorForm.g:5039:2: ( RULE_INT )
+            // InternalCalculatorForm.g:5040:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getSizeINTTerminalRuleCall_8_1_0()); 
@@ -16414,17 +16613,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldSelect__ChildsAssignment_10"
-    // InternalCalculatorForm.g:4989:1: rule__FieldSelect__ChildsAssignment_10 : ( ruleFieldSelectChild ) ;
+    // InternalCalculatorForm.g:5049:1: rule__FieldSelect__ChildsAssignment_10 : ( ruleFieldSelectChild ) ;
     public final void rule__FieldSelect__ChildsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:4993:1: ( ( ruleFieldSelectChild ) )
-            // InternalCalculatorForm.g:4994:2: ( ruleFieldSelectChild )
+            // InternalCalculatorForm.g:5053:1: ( ( ruleFieldSelectChild ) )
+            // InternalCalculatorForm.g:5054:2: ( ruleFieldSelectChild )
             {
-            // InternalCalculatorForm.g:4994:2: ( ruleFieldSelectChild )
-            // InternalCalculatorForm.g:4995:3: ruleFieldSelectChild
+            // InternalCalculatorForm.g:5054:2: ( ruleFieldSelectChild )
+            // InternalCalculatorForm.g:5055:3: ruleFieldSelectChild
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldSelectAccess().getChildsFieldSelectChildParserRuleCall_10_0()); 
@@ -16459,17 +16658,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__TextAssignment_1"
-    // InternalCalculatorForm.g:5004:1: rule__FieldOption__TextAssignment_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5064:1: rule__FieldOption__TextAssignment_1 : ( RULE_STRING ) ;
     public final void rule__FieldOption__TextAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5008:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5009:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5068:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5069:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5009:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5010:3: RULE_STRING
+            // InternalCalculatorForm.g:5069:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5070:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_1_0()); 
@@ -16500,28 +16699,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__DisabledAssignment_2"
-    // InternalCalculatorForm.g:5019:1: rule__FieldOption__DisabledAssignment_2 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:5079:1: rule__FieldOption__DisabledAssignment_2 : ( ( 'disabled' ) ) ;
     public final void rule__FieldOption__DisabledAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5023:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:5024:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5083:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:5084:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:5024:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:5025:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0()); 
-            }
-            // InternalCalculatorForm.g:5026:3: ( 'disabled' )
-            // InternalCalculatorForm.g:5027:4: 'disabled'
+            // InternalCalculatorForm.g:5084:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5085:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5086:3: ( 'disabled' )
+            // InternalCalculatorForm.g:5087:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0()); 
             }
@@ -16553,28 +16752,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__SelectedAssignment_3"
-    // InternalCalculatorForm.g:5038:1: rule__FieldOption__SelectedAssignment_3 : ( ( 'selected' ) ) ;
+    // InternalCalculatorForm.g:5098:1: rule__FieldOption__SelectedAssignment_3 : ( ( 'selected' ) ) ;
     public final void rule__FieldOption__SelectedAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5042:1: ( ( ( 'selected' ) ) )
-            // InternalCalculatorForm.g:5043:2: ( ( 'selected' ) )
+            // InternalCalculatorForm.g:5102:1: ( ( ( 'selected' ) ) )
+            // InternalCalculatorForm.g:5103:2: ( ( 'selected' ) )
             {
-            // InternalCalculatorForm.g:5043:2: ( ( 'selected' ) )
-            // InternalCalculatorForm.g:5044:3: ( 'selected' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:5045:3: ( 'selected' )
-            // InternalCalculatorForm.g:5046:4: 'selected'
+            // InternalCalculatorForm.g:5103:2: ( ( 'selected' ) )
+            // InternalCalculatorForm.g:5104:3: ( 'selected' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0()); 
             }
-            match(input,43,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5105:3: ( 'selected' )
+            // InternalCalculatorForm.g:5106:4: 'selected'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0()); 
+            }
+            match(input,44,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0()); 
             }
@@ -16606,17 +16805,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__TextAssignment_4_1"
-    // InternalCalculatorForm.g:5057:1: rule__FieldOption__TextAssignment_4_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5117:1: rule__FieldOption__TextAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__FieldOption__TextAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5061:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5062:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5121:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5122:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5062:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5063:3: RULE_STRING
+            // InternalCalculatorForm.g:5122:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5123:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getTextSTRINGTerminalRuleCall_4_1_0()); 
@@ -16647,17 +16846,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOption__ValueAssignment_5_1"
-    // InternalCalculatorForm.g:5072:1: rule__FieldOption__ValueAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5132:1: rule__FieldOption__ValueAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__FieldOption__ValueAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5076:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5077:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5136:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5137:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5077:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5078:3: RULE_STRING
+            // InternalCalculatorForm.g:5137:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5138:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionAccess().getValueSTRINGTerminalRuleCall_5_1_0()); 
@@ -16688,28 +16887,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__DisabledAssignment_1"
-    // InternalCalculatorForm.g:5087:1: rule__FieldOptionGroup__DisabledAssignment_1 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:5147:1: rule__FieldOptionGroup__DisabledAssignment_1 : ( ( 'disabled' ) ) ;
     public final void rule__FieldOptionGroup__DisabledAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5091:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:5092:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5151:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:5152:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:5092:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:5093:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0()); 
-            }
-            // InternalCalculatorForm.g:5094:3: ( 'disabled' )
-            // InternalCalculatorForm.g:5095:4: 'disabled'
+            // InternalCalculatorForm.g:5152:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5153:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5154:3: ( 'disabled' )
+            // InternalCalculatorForm.g:5155:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0()); 
             }
@@ -16741,17 +16940,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__LabelAssignment_2_1"
-    // InternalCalculatorForm.g:5106:1: rule__FieldOptionGroup__LabelAssignment_2_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5166:1: rule__FieldOptionGroup__LabelAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__FieldOptionGroup__LabelAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5110:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5111:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5170:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5171:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5111:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5112:3: RULE_STRING
+            // InternalCalculatorForm.g:5171:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5172:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0()); 
@@ -16782,17 +16981,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldOptionGroup__OptionsAssignment_4"
-    // InternalCalculatorForm.g:5121:1: rule__FieldOptionGroup__OptionsAssignment_4 : ( ruleFieldOption ) ;
+    // InternalCalculatorForm.g:5181:1: rule__FieldOptionGroup__OptionsAssignment_4 : ( ruleFieldOption ) ;
     public final void rule__FieldOptionGroup__OptionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5125:1: ( ( ruleFieldOption ) )
-            // InternalCalculatorForm.g:5126:2: ( ruleFieldOption )
+            // InternalCalculatorForm.g:5185:1: ( ( ruleFieldOption ) )
+            // InternalCalculatorForm.g:5186:2: ( ruleFieldOption )
             {
-            // InternalCalculatorForm.g:5126:2: ( ruleFieldOption )
-            // InternalCalculatorForm.g:5127:3: ruleFieldOption
+            // InternalCalculatorForm.g:5186:2: ( ruleFieldOption )
+            // InternalCalculatorForm.g:5187:3: ruleFieldOption
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldOptionGroupAccess().getOptionsFieldOptionParserRuleCall_4_0()); 
@@ -16827,17 +17026,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__NameAssignment_1"
-    // InternalCalculatorForm.g:5136:1: rule__FieldChoice__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:5196:1: rule__FieldChoice__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__FieldChoice__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5140:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:5141:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5200:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:5201:2: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:5141:2: ( RULE_ID )
-            // InternalCalculatorForm.g:5142:3: RULE_ID
+            // InternalCalculatorForm.g:5201:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5202:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -16868,28 +17067,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__AutofocusAssignment_2"
-    // InternalCalculatorForm.g:5151:1: rule__FieldChoice__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
+    // InternalCalculatorForm.g:5211:1: rule__FieldChoice__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
     public final void rule__FieldChoice__AutofocusAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5155:1: ( ( ( 'autofocus' ) ) )
-            // InternalCalculatorForm.g:5156:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5215:1: ( ( ( 'autofocus' ) ) )
+            // InternalCalculatorForm.g:5216:2: ( ( 'autofocus' ) )
             {
-            // InternalCalculatorForm.g:5156:2: ( ( 'autofocus' ) )
-            // InternalCalculatorForm.g:5157:3: ( 'autofocus' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0()); 
-            }
-            // InternalCalculatorForm.g:5158:3: ( 'autofocus' )
-            // InternalCalculatorForm.g:5159:4: 'autofocus'
+            // InternalCalculatorForm.g:5216:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5217:3: ( 'autofocus' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
-            match(input,37,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5218:3: ( 'autofocus' )
+            // InternalCalculatorForm.g:5219:4: 'autofocus'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
@@ -16921,28 +17120,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__CheckedAssignment_3"
-    // InternalCalculatorForm.g:5170:1: rule__FieldChoice__CheckedAssignment_3 : ( ( 'checked' ) ) ;
+    // InternalCalculatorForm.g:5230:1: rule__FieldChoice__CheckedAssignment_3 : ( ( 'checked' ) ) ;
     public final void rule__FieldChoice__CheckedAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5174:1: ( ( ( 'checked' ) ) )
-            // InternalCalculatorForm.g:5175:2: ( ( 'checked' ) )
+            // InternalCalculatorForm.g:5234:1: ( ( ( 'checked' ) ) )
+            // InternalCalculatorForm.g:5235:2: ( ( 'checked' ) )
             {
-            // InternalCalculatorForm.g:5175:2: ( ( 'checked' ) )
-            // InternalCalculatorForm.g:5176:3: ( 'checked' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:5177:3: ( 'checked' )
-            // InternalCalculatorForm.g:5178:4: 'checked'
+            // InternalCalculatorForm.g:5235:2: ( ( 'checked' ) )
+            // InternalCalculatorForm.g:5236:3: ( 'checked' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0()); 
             }
-            match(input,44,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5237:3: ( 'checked' )
+            // InternalCalculatorForm.g:5238:4: 'checked'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0()); 
+            }
+            match(input,45,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0()); 
             }
@@ -16974,28 +17173,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__DisabledAssignment_4"
-    // InternalCalculatorForm.g:5189:1: rule__FieldChoice__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:5249:1: rule__FieldChoice__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
     public final void rule__FieldChoice__DisabledAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5193:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:5194:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5253:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:5254:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:5194:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:5195:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0()); 
-            }
-            // InternalCalculatorForm.g:5196:3: ( 'disabled' )
-            // InternalCalculatorForm.g:5197:4: 'disabled'
+            // InternalCalculatorForm.g:5254:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5255:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5256:3: ( 'disabled' )
+            // InternalCalculatorForm.g:5257:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0()); 
             }
@@ -17027,17 +17226,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__FormAssignment_5_1"
-    // InternalCalculatorForm.g:5208:1: rule__FieldChoice__FormAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5268:1: rule__FieldChoice__FormAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__FieldChoice__FormAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5212:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5213:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5272:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5273:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5213:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5214:3: RULE_STRING
+            // InternalCalculatorForm.g:5273:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5274:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getFormSTRINGTerminalRuleCall_5_1_0()); 
@@ -17068,17 +17267,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__LabelAssignment_6_1"
-    // InternalCalculatorForm.g:5223:1: rule__FieldChoice__LabelAssignment_6_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5283:1: rule__FieldChoice__LabelAssignment_6_1 : ( RULE_STRING ) ;
     public final void rule__FieldChoice__LabelAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5227:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5228:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5287:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5288:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5228:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5229:3: RULE_STRING
+            // InternalCalculatorForm.g:5288:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5289:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getLabelSTRINGTerminalRuleCall_6_1_0()); 
@@ -17109,28 +17308,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__MultipleAssignment_7"
-    // InternalCalculatorForm.g:5238:1: rule__FieldChoice__MultipleAssignment_7 : ( ( 'multiple' ) ) ;
+    // InternalCalculatorForm.g:5298:1: rule__FieldChoice__MultipleAssignment_7 : ( ( 'multiple' ) ) ;
     public final void rule__FieldChoice__MultipleAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5242:1: ( ( ( 'multiple' ) ) )
-            // InternalCalculatorForm.g:5243:2: ( ( 'multiple' ) )
+            // InternalCalculatorForm.g:5302:1: ( ( ( 'multiple' ) ) )
+            // InternalCalculatorForm.g:5303:2: ( ( 'multiple' ) )
             {
-            // InternalCalculatorForm.g:5243:2: ( ( 'multiple' ) )
-            // InternalCalculatorForm.g:5244:3: ( 'multiple' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0()); 
-            }
-            // InternalCalculatorForm.g:5245:3: ( 'multiple' )
-            // InternalCalculatorForm.g:5246:4: 'multiple'
+            // InternalCalculatorForm.g:5303:2: ( ( 'multiple' ) )
+            // InternalCalculatorForm.g:5304:3: ( 'multiple' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0()); 
             }
-            match(input,42,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5305:3: ( 'multiple' )
+            // InternalCalculatorForm.g:5306:4: 'multiple'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0()); 
+            }
+            match(input,43,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0()); 
             }
@@ -17162,28 +17361,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__NotdisplayedAssignment_8"
-    // InternalCalculatorForm.g:5257:1: rule__FieldChoice__NotdisplayedAssignment_8 : ( ( 'notdisplayed' ) ) ;
+    // InternalCalculatorForm.g:5317:1: rule__FieldChoice__NotdisplayedAssignment_8 : ( ( 'notdisplayed' ) ) ;
     public final void rule__FieldChoice__NotdisplayedAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5261:1: ( ( ( 'notdisplayed' ) ) )
-            // InternalCalculatorForm.g:5262:2: ( ( 'notdisplayed' ) )
+            // InternalCalculatorForm.g:5321:1: ( ( ( 'notdisplayed' ) ) )
+            // InternalCalculatorForm.g:5322:2: ( ( 'notdisplayed' ) )
             {
-            // InternalCalculatorForm.g:5262:2: ( ( 'notdisplayed' ) )
-            // InternalCalculatorForm.g:5263:3: ( 'notdisplayed' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0()); 
-            }
-            // InternalCalculatorForm.g:5264:3: ( 'notdisplayed' )
-            // InternalCalculatorForm.g:5265:4: 'notdisplayed'
+            // InternalCalculatorForm.g:5322:2: ( ( 'notdisplayed' ) )
+            // InternalCalculatorForm.g:5323:3: ( 'notdisplayed' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0()); 
             }
-            match(input,39,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5324:3: ( 'notdisplayed' )
+            // InternalCalculatorForm.g:5325:4: 'notdisplayed'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0()); 
+            }
+            match(input,40,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0()); 
             }
@@ -17215,28 +17414,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__ReadonlyAssignment_9"
-    // InternalCalculatorForm.g:5276:1: rule__FieldChoice__ReadonlyAssignment_9 : ( ( 'readonly' ) ) ;
+    // InternalCalculatorForm.g:5336:1: rule__FieldChoice__ReadonlyAssignment_9 : ( ( 'readonly' ) ) ;
     public final void rule__FieldChoice__ReadonlyAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5280:1: ( ( ( 'readonly' ) ) )
-            // InternalCalculatorForm.g:5281:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:5340:1: ( ( ( 'readonly' ) ) )
+            // InternalCalculatorForm.g:5341:2: ( ( 'readonly' ) )
             {
-            // InternalCalculatorForm.g:5281:2: ( ( 'readonly' ) )
-            // InternalCalculatorForm.g:5282:3: ( 'readonly' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0()); 
-            }
-            // InternalCalculatorForm.g:5283:3: ( 'readonly' )
-            // InternalCalculatorForm.g:5284:4: 'readonly'
+            // InternalCalculatorForm.g:5341:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:5342:3: ( 'readonly' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0()); 
             }
-            match(input,40,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5343:3: ( 'readonly' )
+            // InternalCalculatorForm.g:5344:4: 'readonly'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0()); 
+            }
+            match(input,41,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0()); 
             }
@@ -17268,28 +17467,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__RequiredAssignment_10"
-    // InternalCalculatorForm.g:5295:1: rule__FieldChoice__RequiredAssignment_10 : ( ( 'required' ) ) ;
+    // InternalCalculatorForm.g:5355:1: rule__FieldChoice__RequiredAssignment_10 : ( ( 'required' ) ) ;
     public final void rule__FieldChoice__RequiredAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5299:1: ( ( ( 'required' ) ) )
-            // InternalCalculatorForm.g:5300:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5359:1: ( ( ( 'required' ) ) )
+            // InternalCalculatorForm.g:5360:2: ( ( 'required' ) )
             {
-            // InternalCalculatorForm.g:5300:2: ( ( 'required' ) )
-            // InternalCalculatorForm.g:5301:3: ( 'required' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0()); 
-            }
-            // InternalCalculatorForm.g:5302:3: ( 'required' )
-            // InternalCalculatorForm.g:5303:4: 'required'
+            // InternalCalculatorForm.g:5360:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5361:3: ( 'required' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0()); 
             }
-            match(input,41,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5362:3: ( 'required' )
+            // InternalCalculatorForm.g:5363:4: 'required'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0()); 
+            }
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0()); 
             }
@@ -17321,17 +17520,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__ValueAssignment_11_1"
-    // InternalCalculatorForm.g:5314:1: rule__FieldChoice__ValueAssignment_11_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5374:1: rule__FieldChoice__ValueAssignment_11_1 : ( RULE_STRING ) ;
     public final void rule__FieldChoice__ValueAssignment_11_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5318:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5319:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5378:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5379:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5319:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5320:3: RULE_STRING
+            // InternalCalculatorForm.g:5379:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5380:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getValueSTRINGTerminalRuleCall_11_1_0()); 
@@ -17362,17 +17561,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoice__OptionsAssignment_12_1"
-    // InternalCalculatorForm.g:5329:1: rule__FieldChoice__OptionsAssignment_12_1 : ( ruleFieldChoiceOption ) ;
+    // InternalCalculatorForm.g:5389:1: rule__FieldChoice__OptionsAssignment_12_1 : ( ruleFieldChoiceOption ) ;
     public final void rule__FieldChoice__OptionsAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5333:1: ( ( ruleFieldChoiceOption ) )
-            // InternalCalculatorForm.g:5334:2: ( ruleFieldChoiceOption )
+            // InternalCalculatorForm.g:5393:1: ( ( ruleFieldChoiceOption ) )
+            // InternalCalculatorForm.g:5394:2: ( ruleFieldChoiceOption )
             {
-            // InternalCalculatorForm.g:5334:2: ( ruleFieldChoiceOption )
-            // InternalCalculatorForm.g:5335:3: ruleFieldChoiceOption
+            // InternalCalculatorForm.g:5394:2: ( ruleFieldChoiceOption )
+            // InternalCalculatorForm.g:5395:3: ruleFieldChoiceOption
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceAccess().getOptionsFieldChoiceOptionParserRuleCall_12_1_0()); 
@@ -17407,17 +17606,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__LabelAssignment_1"
-    // InternalCalculatorForm.g:5344:1: rule__FieldChoiceOption__LabelAssignment_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5404:1: rule__FieldChoiceOption__LabelAssignment_1 : ( RULE_STRING ) ;
     public final void rule__FieldChoiceOption__LabelAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5348:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5349:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5408:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5409:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5349:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5350:3: RULE_STRING
+            // InternalCalculatorForm.g:5409:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5410:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getLabelSTRINGTerminalRuleCall_1_0()); 
@@ -17448,28 +17647,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__AutofocusAssignment_2"
-    // InternalCalculatorForm.g:5359:1: rule__FieldChoiceOption__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
+    // InternalCalculatorForm.g:5419:1: rule__FieldChoiceOption__AutofocusAssignment_2 : ( ( 'autofocus' ) ) ;
     public final void rule__FieldChoiceOption__AutofocusAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5363:1: ( ( ( 'autofocus' ) ) )
-            // InternalCalculatorForm.g:5364:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5423:1: ( ( ( 'autofocus' ) ) )
+            // InternalCalculatorForm.g:5424:2: ( ( 'autofocus' ) )
             {
-            // InternalCalculatorForm.g:5364:2: ( ( 'autofocus' ) )
-            // InternalCalculatorForm.g:5365:3: ( 'autofocus' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0()); 
-            }
-            // InternalCalculatorForm.g:5366:3: ( 'autofocus' )
-            // InternalCalculatorForm.g:5367:4: 'autofocus'
+            // InternalCalculatorForm.g:5424:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5425:3: ( 'autofocus' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
-            match(input,37,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5426:3: ( 'autofocus' )
+            // InternalCalculatorForm.g:5427:4: 'autofocus'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0()); 
             }
@@ -17501,28 +17700,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__CheckedAssignment_3"
-    // InternalCalculatorForm.g:5378:1: rule__FieldChoiceOption__CheckedAssignment_3 : ( ( 'checked' ) ) ;
+    // InternalCalculatorForm.g:5438:1: rule__FieldChoiceOption__CheckedAssignment_3 : ( ( 'checked' ) ) ;
     public final void rule__FieldChoiceOption__CheckedAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5382:1: ( ( ( 'checked' ) ) )
-            // InternalCalculatorForm.g:5383:2: ( ( 'checked' ) )
+            // InternalCalculatorForm.g:5442:1: ( ( ( 'checked' ) ) )
+            // InternalCalculatorForm.g:5443:2: ( ( 'checked' ) )
             {
-            // InternalCalculatorForm.g:5383:2: ( ( 'checked' ) )
-            // InternalCalculatorForm.g:5384:3: ( 'checked' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:5385:3: ( 'checked' )
-            // InternalCalculatorForm.g:5386:4: 'checked'
+            // InternalCalculatorForm.g:5443:2: ( ( 'checked' ) )
+            // InternalCalculatorForm.g:5444:3: ( 'checked' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0()); 
             }
-            match(input,44,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5445:3: ( 'checked' )
+            // InternalCalculatorForm.g:5446:4: 'checked'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0()); 
+            }
+            match(input,45,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0()); 
             }
@@ -17554,28 +17753,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__DisabledAssignment_4"
-    // InternalCalculatorForm.g:5397:1: rule__FieldChoiceOption__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:5457:1: rule__FieldChoiceOption__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
     public final void rule__FieldChoiceOption__DisabledAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5401:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:5402:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5461:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:5462:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:5402:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:5403:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0()); 
-            }
-            // InternalCalculatorForm.g:5404:3: ( 'disabled' )
-            // InternalCalculatorForm.g:5405:4: 'disabled'
+            // InternalCalculatorForm.g:5462:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5463:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5464:3: ( 'disabled' )
+            // InternalCalculatorForm.g:5465:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0()); 
             }
@@ -17607,28 +17806,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__ReadonlyAssignment_5"
-    // InternalCalculatorForm.g:5416:1: rule__FieldChoiceOption__ReadonlyAssignment_5 : ( ( 'readonly' ) ) ;
+    // InternalCalculatorForm.g:5476:1: rule__FieldChoiceOption__ReadonlyAssignment_5 : ( ( 'readonly' ) ) ;
     public final void rule__FieldChoiceOption__ReadonlyAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5420:1: ( ( ( 'readonly' ) ) )
-            // InternalCalculatorForm.g:5421:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:5480:1: ( ( ( 'readonly' ) ) )
+            // InternalCalculatorForm.g:5481:2: ( ( 'readonly' ) )
             {
-            // InternalCalculatorForm.g:5421:2: ( ( 'readonly' ) )
-            // InternalCalculatorForm.g:5422:3: ( 'readonly' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0()); 
-            }
-            // InternalCalculatorForm.g:5423:3: ( 'readonly' )
-            // InternalCalculatorForm.g:5424:4: 'readonly'
+            // InternalCalculatorForm.g:5481:2: ( ( 'readonly' ) )
+            // InternalCalculatorForm.g:5482:3: ( 'readonly' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0()); 
             }
-            match(input,40,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5483:3: ( 'readonly' )
+            // InternalCalculatorForm.g:5484:4: 'readonly'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0()); 
+            }
+            match(input,41,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0()); 
             }
@@ -17660,28 +17859,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__RequiredAssignment_6"
-    // InternalCalculatorForm.g:5435:1: rule__FieldChoiceOption__RequiredAssignment_6 : ( ( 'required' ) ) ;
+    // InternalCalculatorForm.g:5495:1: rule__FieldChoiceOption__RequiredAssignment_6 : ( ( 'required' ) ) ;
     public final void rule__FieldChoiceOption__RequiredAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5439:1: ( ( ( 'required' ) ) )
-            // InternalCalculatorForm.g:5440:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5499:1: ( ( ( 'required' ) ) )
+            // InternalCalculatorForm.g:5500:2: ( ( 'required' ) )
             {
-            // InternalCalculatorForm.g:5440:2: ( ( 'required' ) )
-            // InternalCalculatorForm.g:5441:3: ( 'required' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0()); 
-            }
-            // InternalCalculatorForm.g:5442:3: ( 'required' )
-            // InternalCalculatorForm.g:5443:4: 'required'
+            // InternalCalculatorForm.g:5500:2: ( ( 'required' ) )
+            // InternalCalculatorForm.g:5501:3: ( 'required' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0()); 
             }
-            match(input,41,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5502:3: ( 'required' )
+            // InternalCalculatorForm.g:5503:4: 'required'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0()); 
+            }
+            match(input,42,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0()); 
             }
@@ -17713,17 +17912,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__FieldChoiceOption__ValueAssignment_7_1"
-    // InternalCalculatorForm.g:5454:1: rule__FieldChoiceOption__ValueAssignment_7_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5514:1: rule__FieldChoiceOption__ValueAssignment_7_1 : ( RULE_STRING ) ;
     public final void rule__FieldChoiceOption__ValueAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5458:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5459:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5518:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5519:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5459:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5460:3: RULE_STRING
+            // InternalCalculatorForm.g:5519:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5520:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFieldChoiceOptionAccess().getValueSTRINGTerminalRuleCall_7_1_0()); 
@@ -17754,17 +17953,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__NameAssignment_1"
-    // InternalCalculatorForm.g:5469:1: rule__Group__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:5529:1: rule__Group__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Group__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5473:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:5474:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5533:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:5534:2: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:5474:2: ( RULE_ID )
-            // InternalCalculatorForm.g:5475:3: RULE_ID
+            // InternalCalculatorForm.g:5534:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5535:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -17795,17 +17994,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__LabelAssignment_2_1"
-    // InternalCalculatorForm.g:5484:1: rule__Group__LabelAssignment_2_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5544:1: rule__Group__LabelAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__Group__LabelAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5488:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5489:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5548:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5549:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5489:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5490:3: RULE_STRING
+            // InternalCalculatorForm.g:5549:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5550:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getLabelSTRINGTerminalRuleCall_2_1_0()); 
@@ -17836,17 +18035,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Group__FieldsAssignment_4"
-    // InternalCalculatorForm.g:5499:1: rule__Group__FieldsAssignment_4 : ( ruleField ) ;
+    // InternalCalculatorForm.g:5559:1: rule__Group__FieldsAssignment_4 : ( ruleField ) ;
     public final void rule__Group__FieldsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5503:1: ( ( ruleField ) )
-            // InternalCalculatorForm.g:5504:2: ( ruleField )
+            // InternalCalculatorForm.g:5563:1: ( ( ruleField ) )
+            // InternalCalculatorForm.g:5564:2: ( ruleField )
             {
-            // InternalCalculatorForm.g:5504:2: ( ruleField )
-            // InternalCalculatorForm.g:5505:3: ruleField
+            // InternalCalculatorForm.g:5564:2: ( ruleField )
+            // InternalCalculatorForm.g:5565:3: ruleField
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getGroupAccess().getFieldsFieldParserRuleCall_4_0()); 
@@ -17881,17 +18080,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Page__ChildsAssignment_2"
-    // InternalCalculatorForm.g:5514:1: rule__Page__ChildsAssignment_2 : ( rulePageChild ) ;
+    // InternalCalculatorForm.g:5574:1: rule__Page__ChildsAssignment_2 : ( rulePageChild ) ;
     public final void rule__Page__ChildsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5518:1: ( ( rulePageChild ) )
-            // InternalCalculatorForm.g:5519:2: ( rulePageChild )
+            // InternalCalculatorForm.g:5578:1: ( ( rulePageChild ) )
+            // InternalCalculatorForm.g:5579:2: ( rulePageChild )
             {
-            // InternalCalculatorForm.g:5519:2: ( rulePageChild )
-            // InternalCalculatorForm.g:5520:3: rulePageChild
+            // InternalCalculatorForm.g:5579:2: ( rulePageChild )
+            // InternalCalculatorForm.g:5580:3: rulePageChild
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPageAccess().getChildsPageChildParserRuleCall_2_0()); 
@@ -17926,17 +18125,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__NameAssignment_1"
-    // InternalCalculatorForm.g:5529:1: rule__ButtonSubmit__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalCalculatorForm.g:5589:1: rule__ButtonSubmit__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ButtonSubmit__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5533:1: ( ( RULE_ID ) )
-            // InternalCalculatorForm.g:5534:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5593:1: ( ( RULE_ID ) )
+            // InternalCalculatorForm.g:5594:2: ( RULE_ID )
             {
-            // InternalCalculatorForm.g:5534:2: ( RULE_ID )
-            // InternalCalculatorForm.g:5535:3: RULE_ID
+            // InternalCalculatorForm.g:5594:2: ( RULE_ID )
+            // InternalCalculatorForm.g:5595:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -17967,17 +18166,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__TextAssignment_2"
-    // InternalCalculatorForm.g:5544:1: rule__ButtonSubmit__TextAssignment_2 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5604:1: rule__ButtonSubmit__TextAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ButtonSubmit__TextAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5548:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5549:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5608:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5609:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5549:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5550:3: RULE_STRING
+            // InternalCalculatorForm.g:5609:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5610:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getTextSTRINGTerminalRuleCall_2_0()); 
@@ -18008,28 +18207,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__AutofocusAssignment_3"
-    // InternalCalculatorForm.g:5559:1: rule__ButtonSubmit__AutofocusAssignment_3 : ( ( 'autofocus' ) ) ;
+    // InternalCalculatorForm.g:5619:1: rule__ButtonSubmit__AutofocusAssignment_3 : ( ( 'autofocus' ) ) ;
     public final void rule__ButtonSubmit__AutofocusAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5563:1: ( ( ( 'autofocus' ) ) )
-            // InternalCalculatorForm.g:5564:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5623:1: ( ( ( 'autofocus' ) ) )
+            // InternalCalculatorForm.g:5624:2: ( ( 'autofocus' ) )
             {
-            // InternalCalculatorForm.g:5564:2: ( ( 'autofocus' ) )
-            // InternalCalculatorForm.g:5565:3: ( 'autofocus' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0()); 
-            }
-            // InternalCalculatorForm.g:5566:3: ( 'autofocus' )
-            // InternalCalculatorForm.g:5567:4: 'autofocus'
+            // InternalCalculatorForm.g:5624:2: ( ( 'autofocus' ) )
+            // InternalCalculatorForm.g:5625:3: ( 'autofocus' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0()); 
             }
-            match(input,37,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5626:3: ( 'autofocus' )
+            // InternalCalculatorForm.g:5627:4: 'autofocus'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0()); 
+            }
+            match(input,38,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0()); 
             }
@@ -18061,28 +18260,28 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__DisabledAssignment_4"
-    // InternalCalculatorForm.g:5578:1: rule__ButtonSubmit__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
+    // InternalCalculatorForm.g:5638:1: rule__ButtonSubmit__DisabledAssignment_4 : ( ( 'disabled' ) ) ;
     public final void rule__ButtonSubmit__DisabledAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5582:1: ( ( ( 'disabled' ) ) )
-            // InternalCalculatorForm.g:5583:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5642:1: ( ( ( 'disabled' ) ) )
+            // InternalCalculatorForm.g:5643:2: ( ( 'disabled' ) )
             {
-            // InternalCalculatorForm.g:5583:2: ( ( 'disabled' ) )
-            // InternalCalculatorForm.g:5584:3: ( 'disabled' )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0()); 
-            }
-            // InternalCalculatorForm.g:5585:3: ( 'disabled' )
-            // InternalCalculatorForm.g:5586:4: 'disabled'
+            // InternalCalculatorForm.g:5643:2: ( ( 'disabled' ) )
+            // InternalCalculatorForm.g:5644:3: ( 'disabled' )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0()); 
             }
-            match(input,38,FOLLOW_2); if (state.failed) return ;
+            // InternalCalculatorForm.g:5645:3: ( 'disabled' )
+            // InternalCalculatorForm.g:5646:4: 'disabled'
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0()); 
+            }
+            match(input,39,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0()); 
             }
@@ -18114,17 +18313,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ButtonSubmit__ValueAssignment_5_1"
-    // InternalCalculatorForm.g:5597:1: rule__ButtonSubmit__ValueAssignment_5_1 : ( RULE_STRING ) ;
+    // InternalCalculatorForm.g:5657:1: rule__ButtonSubmit__ValueAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__ButtonSubmit__ValueAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5601:1: ( ( RULE_STRING ) )
-            // InternalCalculatorForm.g:5602:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5661:1: ( ( RULE_STRING ) )
+            // InternalCalculatorForm.g:5662:2: ( RULE_STRING )
             {
-            // InternalCalculatorForm.g:5602:2: ( RULE_STRING )
-            // InternalCalculatorForm.g:5603:3: RULE_STRING
+            // InternalCalculatorForm.g:5662:2: ( RULE_STRING )
+            // InternalCalculatorForm.g:5663:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getButtonSubmitAccess().getValueSTRINGTerminalRuleCall_5_1_0()); 
@@ -18155,23 +18354,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__ResultAssignment_1"
-    // InternalCalculatorForm.g:5612:1: rule__Calculate__ResultAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalCalculatorForm.g:5672:1: rule__Calculate__ResultAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Calculate__ResultAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5616:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalCalculatorForm.g:5617:2: ( ( ruleQualifiedName ) )
+            // InternalCalculatorForm.g:5676:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalCalculatorForm.g:5677:2: ( ( ruleQualifiedName ) )
             {
-            // InternalCalculatorForm.g:5617:2: ( ( ruleQualifiedName ) )
-            // InternalCalculatorForm.g:5618:3: ( ruleQualifiedName )
+            // InternalCalculatorForm.g:5677:2: ( ( ruleQualifiedName ) )
+            // InternalCalculatorForm.g:5678:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getResultFieldCrossReference_1_0()); 
             }
-            // InternalCalculatorForm.g:5619:3: ( ruleQualifiedName )
-            // InternalCalculatorForm.g:5620:4: ruleQualifiedName
+            // InternalCalculatorForm.g:5679:3: ( ruleQualifiedName )
+            // InternalCalculatorForm.g:5680:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getResultFieldQualifiedNameParserRuleCall_1_0_1()); 
@@ -18212,17 +18411,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Calculate__ExpressionAssignment_3"
-    // InternalCalculatorForm.g:5631:1: rule__Calculate__ExpressionAssignment_3 : ( ruleExpression ) ;
+    // InternalCalculatorForm.g:5691:1: rule__Calculate__ExpressionAssignment_3 : ( ruleExpression ) ;
     public final void rule__Calculate__ExpressionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5635:1: ( ( ruleExpression ) )
-            // InternalCalculatorForm.g:5636:2: ( ruleExpression )
+            // InternalCalculatorForm.g:5695:1: ( ( ruleExpression ) )
+            // InternalCalculatorForm.g:5696:2: ( ruleExpression )
             {
-            // InternalCalculatorForm.g:5636:2: ( ruleExpression )
-            // InternalCalculatorForm.g:5637:3: ruleExpression
+            // InternalCalculatorForm.g:5696:2: ( ruleExpression )
+            // InternalCalculatorForm.g:5697:3: ruleExpression
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getCalculateAccess().getExpressionExpressionParserRuleCall_3_0()); 
@@ -18257,17 +18456,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Addition__RightAssignment_1_1"
-    // InternalCalculatorForm.g:5646:1: rule__Addition__RightAssignment_1_1 : ( ruleMultiplication ) ;
+    // InternalCalculatorForm.g:5706:1: rule__Addition__RightAssignment_1_1 : ( ruleMultiplication ) ;
     public final void rule__Addition__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5650:1: ( ( ruleMultiplication ) )
-            // InternalCalculatorForm.g:5651:2: ( ruleMultiplication )
+            // InternalCalculatorForm.g:5710:1: ( ( ruleMultiplication ) )
+            // InternalCalculatorForm.g:5711:2: ( ruleMultiplication )
             {
-            // InternalCalculatorForm.g:5651:2: ( ruleMultiplication )
-            // InternalCalculatorForm.g:5652:3: ruleMultiplication
+            // InternalCalculatorForm.g:5711:2: ( ruleMultiplication )
+            // InternalCalculatorForm.g:5712:3: ruleMultiplication
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_1_0()); 
@@ -18302,23 +18501,23 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__OpAssignment_1_0_1"
-    // InternalCalculatorForm.g:5661:1: rule__Multiplication__OpAssignment_1_0_1 : ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) ) ;
+    // InternalCalculatorForm.g:5721:1: rule__Multiplication__OpAssignment_1_0_1 : ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) ) ;
     public final void rule__Multiplication__OpAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5665:1: ( ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) ) )
-            // InternalCalculatorForm.g:5666:2: ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) )
+            // InternalCalculatorForm.g:5725:1: ( ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) ) )
+            // InternalCalculatorForm.g:5726:2: ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) )
             {
-            // InternalCalculatorForm.g:5666:2: ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) )
-            // InternalCalculatorForm.g:5667:3: ( rule__Multiplication__OpAlternatives_1_0_1_0 )
+            // InternalCalculatorForm.g:5726:2: ( ( rule__Multiplication__OpAlternatives_1_0_1_0 ) )
+            // InternalCalculatorForm.g:5727:3: ( rule__Multiplication__OpAlternatives_1_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getOpAlternatives_1_0_1_0()); 
             }
-            // InternalCalculatorForm.g:5668:3: ( rule__Multiplication__OpAlternatives_1_0_1_0 )
-            // InternalCalculatorForm.g:5668:4: rule__Multiplication__OpAlternatives_1_0_1_0
+            // InternalCalculatorForm.g:5728:3: ( rule__Multiplication__OpAlternatives_1_0_1_0 )
+            // InternalCalculatorForm.g:5728:4: rule__Multiplication__OpAlternatives_1_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__OpAlternatives_1_0_1_0();
@@ -18353,17 +18552,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Multiplication__RightAssignment_1_1"
-    // InternalCalculatorForm.g:5676:1: rule__Multiplication__RightAssignment_1_1 : ( rulePrefixed ) ;
+    // InternalCalculatorForm.g:5736:1: rule__Multiplication__RightAssignment_1_1 : ( rulePrefixed ) ;
     public final void rule__Multiplication__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5680:1: ( ( rulePrefixed ) )
-            // InternalCalculatorForm.g:5681:2: ( rulePrefixed )
+            // InternalCalculatorForm.g:5740:1: ( ( rulePrefixed ) )
+            // InternalCalculatorForm.g:5741:2: ( rulePrefixed )
             {
-            // InternalCalculatorForm.g:5681:2: ( rulePrefixed )
-            // InternalCalculatorForm.g:5682:3: rulePrefixed
+            // InternalCalculatorForm.g:5741:2: ( rulePrefixed )
+            // InternalCalculatorForm.g:5742:3: rulePrefixed
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0()); 
@@ -18398,17 +18597,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__ExpressionAssignment_0_2"
-    // InternalCalculatorForm.g:5691:1: rule__Prefixed__ExpressionAssignment_0_2 : ( ruleAtomic ) ;
+    // InternalCalculatorForm.g:5751:1: rule__Prefixed__ExpressionAssignment_0_2 : ( ruleAtomic ) ;
     public final void rule__Prefixed__ExpressionAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5695:1: ( ( ruleAtomic ) )
-            // InternalCalculatorForm.g:5696:2: ( ruleAtomic )
+            // InternalCalculatorForm.g:5755:1: ( ( ruleAtomic ) )
+            // InternalCalculatorForm.g:5756:2: ( ruleAtomic )
             {
-            // InternalCalculatorForm.g:5696:2: ( ruleAtomic )
-            // InternalCalculatorForm.g:5697:3: ruleAtomic
+            // InternalCalculatorForm.g:5756:2: ( ruleAtomic )
+            // InternalCalculatorForm.g:5757:3: ruleAtomic
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_0_2_0()); 
@@ -18443,17 +18642,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Prefixed__ExpressionAssignment_1_2"
-    // InternalCalculatorForm.g:5706:1: rule__Prefixed__ExpressionAssignment_1_2 : ( ruleAtomic ) ;
+    // InternalCalculatorForm.g:5766:1: rule__Prefixed__ExpressionAssignment_1_2 : ( ruleAtomic ) ;
     public final void rule__Prefixed__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5710:1: ( ( ruleAtomic ) )
-            // InternalCalculatorForm.g:5711:2: ( ruleAtomic )
+            // InternalCalculatorForm.g:5770:1: ( ( ruleAtomic ) )
+            // InternalCalculatorForm.g:5771:2: ( ruleAtomic )
             {
-            // InternalCalculatorForm.g:5711:2: ( ruleAtomic )
-            // InternalCalculatorForm.g:5712:3: ruleAtomic
+            // InternalCalculatorForm.g:5771:2: ( ruleAtomic )
+            // InternalCalculatorForm.g:5772:3: ruleAtomic
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_1_2_0()); 
@@ -18488,17 +18687,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_1_1"
-    // InternalCalculatorForm.g:5721:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_INT ) ;
+    // InternalCalculatorForm.g:5781:1: rule__Atomic__ValueAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__Atomic__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5725:1: ( ( RULE_INT ) )
-            // InternalCalculatorForm.g:5726:2: ( RULE_INT )
+            // InternalCalculatorForm.g:5785:1: ( ( RULE_INT ) )
+            // InternalCalculatorForm.g:5786:2: ( RULE_INT )
             {
-            // InternalCalculatorForm.g:5726:2: ( RULE_INT )
-            // InternalCalculatorForm.g:5727:3: RULE_INT
+            // InternalCalculatorForm.g:5786:2: ( RULE_INT )
+            // InternalCalculatorForm.g:5787:3: RULE_INT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0()); 
@@ -18529,17 +18728,17 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Atomic__ValueAssignment_2_1"
-    // InternalCalculatorForm.g:5736:1: rule__Atomic__ValueAssignment_2_1 : ( RULE_FLOAT ) ;
+    // InternalCalculatorForm.g:5796:1: rule__Atomic__ValueAssignment_2_1 : ( RULE_FLOAT ) ;
     public final void rule__Atomic__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5740:1: ( ( RULE_FLOAT ) )
-            // InternalCalculatorForm.g:5741:2: ( RULE_FLOAT )
+            // InternalCalculatorForm.g:5800:1: ( ( RULE_FLOAT ) )
+            // InternalCalculatorForm.g:5801:2: ( RULE_FLOAT )
             {
-            // InternalCalculatorForm.g:5741:2: ( RULE_FLOAT )
-            // InternalCalculatorForm.g:5742:3: RULE_FLOAT
+            // InternalCalculatorForm.g:5801:2: ( RULE_FLOAT )
+            // InternalCalculatorForm.g:5802:3: RULE_FLOAT
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0()); 
@@ -18569,41 +18768,25 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Atomic__ValueAssignment_2_1"
 
 
-    // $ANTLR start "rule__Atomic__RefAssignment_3_1"
-    // InternalCalculatorForm.g:5751:1: rule__Atomic__RefAssignment_3_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Atomic__RefAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Atomic__ValueAssignment_3_1"
+    // InternalCalculatorForm.g:5811:1: rule__Atomic__ValueAssignment_3_1 : ( RULE_PERCENT ) ;
+    public final void rule__Atomic__ValueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalCalculatorForm.g:5755:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalCalculatorForm.g:5756:2: ( ( ruleQualifiedName ) )
+            // InternalCalculatorForm.g:5815:1: ( ( RULE_PERCENT ) )
+            // InternalCalculatorForm.g:5816:2: ( RULE_PERCENT )
             {
-            // InternalCalculatorForm.g:5756:2: ( ( ruleQualifiedName ) )
-            // InternalCalculatorForm.g:5757:3: ( ruleQualifiedName )
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0()); 
-            }
-            // InternalCalculatorForm.g:5758:3: ( ruleQualifiedName )
-            // InternalCalculatorForm.g:5759:4: ruleQualifiedName
+            // InternalCalculatorForm.g:5816:2: ( RULE_PERCENT )
+            // InternalCalculatorForm.g:5817:3: RULE_PERCENT
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1()); 
+               before(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0()); 
             }
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-            if (state.failed) return ;
+            match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1()); 
-            }
-
-            }
-
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0()); 
+               after(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0()); 
             }
 
             }
@@ -18623,7 +18806,64 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Atomic__RefAssignment_3_1"
+    // $ANTLR end "rule__Atomic__ValueAssignment_3_1"
+
+
+    // $ANTLR start "rule__Atomic__RefAssignment_4_1"
+    // InternalCalculatorForm.g:5826:1: rule__Atomic__RefAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__Atomic__RefAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalCalculatorForm.g:5830:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalCalculatorForm.g:5831:2: ( ( ruleQualifiedName ) )
+            {
+            // InternalCalculatorForm.g:5831:2: ( ( ruleQualifiedName ) )
+            // InternalCalculatorForm.g:5832:3: ( ruleQualifiedName )
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0()); 
+            }
+            // InternalCalculatorForm.g:5833:3: ( ruleQualifiedName )
+            // InternalCalculatorForm.g:5834:4: ruleQualifiedName
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1()); 
+            }
+            pushFollow(FOLLOW_2);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1()); 
+            }
+
+            }
+
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Atomic__RefAssignment_4_1"
 
     // Delegated rules
 
@@ -18632,41 +18872,42 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000001E044002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000003C088002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000040000002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000003E000038000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000007C000070000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000066000298000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001500000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001400002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000CC000530000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000002A00000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000002800002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000084000820000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000004000090000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000500000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000017E0000B8000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000136000020000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000090000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000012144000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000012044002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000016144000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000016044002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000006000020000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000E000000D0L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000300000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000003000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000003002L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000108001040000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000008000120000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000A00000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00002FC000170000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x000026C000040000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000024288000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000024088002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000002C288000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x000000002C088002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x000000C000040000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000001C000001D0L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000600000002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000100L});
 
 }

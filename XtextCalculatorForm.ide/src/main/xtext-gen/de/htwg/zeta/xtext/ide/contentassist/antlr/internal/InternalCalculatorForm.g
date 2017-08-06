@@ -799,6 +799,12 @@ rule__Atomic__Alternatives
 		(rule__Atomic__Group_3__0)
 		{ after(grammarAccess.getAtomicAccess().getGroup_3()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getAtomicAccess().getGroup_4()); }
+		(rule__Atomic__Group_4__0)
+		{ after(grammarAccess.getAtomicAccess().getGroup_4()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4629,9 +4635,9 @@ rule__Atomic__Group_3__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0()); }
+	{ before(grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0()); }
 	()
-	{ after(grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0()); }
+	{ after(grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0()); }
 )
 ;
 finally {
@@ -4655,9 +4661,63 @@ rule__Atomic__Group_3__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getAtomicAccess().getRefAssignment_3_1()); }
-	(rule__Atomic__RefAssignment_3_1)
-	{ after(grammarAccess.getAtomicAccess().getRefAssignment_3_1()); }
+	{ before(grammarAccess.getAtomicAccess().getValueAssignment_3_1()); }
+	(rule__Atomic__ValueAssignment_3_1)
+	{ after(grammarAccess.getAtomicAccess().getValueAssignment_3_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Atomic__Group_4__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Atomic__Group_4__0__Impl
+	rule__Atomic__Group_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Atomic__Group_4__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0()); }
+	()
+	{ after(grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Atomic__Group_4__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Atomic__Group_4__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Atomic__Group_4__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getAtomicAccess().getRefAssignment_4_1()); }
+	(rule__Atomic__RefAssignment_4_1)
+	{ after(grammarAccess.getAtomicAccess().getRefAssignment_4_1()); }
 )
 ;
 finally {
@@ -5748,19 +5808,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Atomic__RefAssignment_3_1
+rule__Atomic__ValueAssignment_3_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0()); }
+		{ before(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0()); }
+		RULE_PERCENT
+		{ after(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Atomic__RefAssignment_4_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0()); }
 		(
-			{ before(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1()); }
+			{ before(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1()); }
 			ruleQualifiedName
-			{ after(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1()); }
+			{ after(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1()); }
 		)
-		{ after(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0()); }
+		{ after(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0()); }
 	)
 ;
 finally {
@@ -5772,6 +5847,8 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 RULE_INT : ('0'..'9')+;
 
 RULE_FLOAT : RULE_INT '.' RULE_INT;
+
+RULE_PERCENT : (RULE_INT|RULE_FLOAT) '%';
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
