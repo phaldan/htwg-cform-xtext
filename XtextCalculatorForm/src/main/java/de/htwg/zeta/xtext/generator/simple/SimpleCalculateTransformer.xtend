@@ -10,6 +10,7 @@ import de.htwg.zeta.xtext.calculatorForm.FieldChoice
 import de.htwg.zeta.xtext.calculatorForm.FieldInput
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect
 import de.htwg.zeta.xtext.calculatorForm.FieldReference
+import de.htwg.zeta.xtext.calculatorForm.FloatLiteral
 import de.htwg.zeta.xtext.calculatorForm.Minus
 import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral
@@ -69,8 +70,12 @@ class SimpleCalculateTransformer {
             '''-parseFloat(«processExpression(expression.expression)»)'''
         } else if (expression instanceof NumberLiteral) {
             expression.value.toString
+        } else if (expression instanceof FloatLiteral) {
+            expression.value.toString
         } else if (expression instanceof FieldReference) {
             processFieldReference(expression)
+        } else {
+            throw new UnsupportedOperationException("Unknown Expression: " + expression.getClass.getName)
         }
     }
 
