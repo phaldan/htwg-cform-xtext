@@ -49,7 +49,7 @@ abstract class FormTransformer {
         } else if (field instanceof Button) {
             processFieldButton(field)
         } else {
-            throw new UnsupportedOperationException("Unknown FieldType: " + field.getClass.getName)
+            throw new UnsupportedOperationException("Unknown Field: " + field.getClass.getName)
         }
     }
 
