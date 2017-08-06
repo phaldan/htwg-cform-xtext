@@ -21,6 +21,7 @@ import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelectChild;
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
+import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.FormElement;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
@@ -53,6 +54,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass formEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -307,7 +315,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_FormElements()
+  public EReference getModel_Forms()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -317,9 +325,39 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Calculations()
+  public EClass getForm()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return formEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getForm_Name()
+  {
+    return (EAttribute)formEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForm_FormElements()
+  {
+    return (EReference)formEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForm_Calculations()
+  {
+    return (EReference)formEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1273,8 +1311,12 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__FORM_ELEMENTS);
-    createEReference(modelEClass, MODEL__CALCULATIONS);
+    createEReference(modelEClass, MODEL__FORMS);
+
+    formEClass = createEClass(FORM);
+    createEAttribute(formEClass, FORM__NAME);
+    createEReference(formEClass, FORM__FORM_ELEMENTS);
+    createEReference(formEClass, FORM__CALCULATIONS);
 
     formElementEClass = createEClass(FORM_ELEMENT);
 
@@ -1447,8 +1489,12 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_FormElements(), this.getFormElement(), null, "formElements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Calculations(), this.getCalculate(), null, "calculations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Forms(), this.getForm(), null, "forms", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getForm_Name(), ecorePackage.getEString(), "name", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForm_FormElements(), this.getFormElement(), null, "formElements", null, 0, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForm_Calculations(), this.getCalculate(), null, "calculations", null, 0, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formElementEClass, FormElement.class, "FormElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

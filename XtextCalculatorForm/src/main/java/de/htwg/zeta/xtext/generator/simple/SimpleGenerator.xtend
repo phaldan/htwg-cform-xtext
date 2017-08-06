@@ -2,20 +2,34 @@ package de.htwg.zeta.xtext.generator.simple
 
 import de.htwg.zeta.xtext.calculatorForm.Model
 import org.eclipse.xtext.generator.IFileSystemAccess2
+import de.htwg.zeta.xtext.calculatorForm.Form
 
 /**
  * Create a html with basic html.
  */
 class SimpleGenerator {
 
-    new(IFileSystemAccess2 fsa, Model model, String name) {
-        val form = new SimpleFormTransformer().transform(model.formElements)
-        fsa.generateFile(name + ".html", createHtmlBootrap(form, name))
-        val calculation = new SimpleCalculateTransformer().tranform(model.calculations)
-        fsa.generateFile(name + ".js", createJavaScript(calculation))
+    private IFileSystemAccess2 fsa
+
+    new(IFileSystemAccess2 fsa) {
+        this.fsa = fsa
     }
 
-    private def String createHtmlBootrap(String content, String name) '''
+    public def generate(Model model) {
+        for (Form form: model.forms) {
+            generateForm(form)
+        }
+    }
+
+    private def generateForm(Form form) {
+        val formHtml = new SimpleFormTransformer().transform(form.formElements)
+        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml))
+        fsa.generateFile(form.name + "/simple.html", formHtml)
+        val calculation = new SimpleCalculateTransformer().tranform(form.calculations)
+        fsa.generateFile(form.name + "/simple.js", createJavaScript(calculation))
+    }
+
+    private def String createHtmlDemo(String content) '''
         <!doctype html>
 
         <html lang="en">
@@ -50,7 +64,7 @@ class SimpleGenerator {
 
             <body>
                 «content»
-                <script type="text/javascript" src="«name».js" charset="utf-8"></script>
+                <script type="text/javascript" src="simple.js" charset="utf-8"></script>
             </body>
         </html>
     '''

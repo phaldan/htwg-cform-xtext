@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Model#getFormElements <em>Form Elements</em>}</li>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Model#getCalculations <em>Calculations</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Model#getForms <em>Forms</em>}</li>
  * </ul>
  *
  * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel()
@@ -27,35 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Form Elements</b></em>' containment reference list.
-   * The list contents are of type {@link de.htwg.zeta.xtext.calculatorForm.FormElement}.
+   * Returns the value of the '<em><b>Forms</b></em>' containment reference list.
+   * The list contents are of type {@link de.htwg.zeta.xtext.calculatorForm.Form}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Form Elements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Forms</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Form Elements</em>' containment reference list.
-   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel_FormElements()
+   * @return the value of the '<em>Forms</em>' containment reference list.
+   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel_Forms()
    * @model containment="true"
    * @generated
    */
-  EList<FormElement> getFormElements();
-
-  /**
-   * Returns the value of the '<em><b>Calculations</b></em>' containment reference list.
-   * The list contents are of type {@link de.htwg.zeta.xtext.calculatorForm.Calculate}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Calculations</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Calculations</em>' containment reference list.
-   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getModel_Calculations()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Calculate> getCalculations();
+  EList<Form> getForms();
 
 } // Model

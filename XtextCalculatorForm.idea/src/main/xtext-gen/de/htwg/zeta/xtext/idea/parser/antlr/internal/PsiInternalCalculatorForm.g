@@ -60,11 +60,69 @@ ruleModel returns [Boolean current=false]
 :
 	(
 		(
+			{
+				markComposite(elementTypeProvider.getModel_FormsFormParserRuleCall_0ElementType());
+			}
+			lv_forms_0_0=ruleForm
+			{
+				doneComposite();
+				if(!$current) {
+					associateWithSemanticElement();
+					$current = true;
+				}
+			}
+		)
+	)*
+;
+
+//Entry rule entryRuleForm
+entryRuleForm returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getFormElementType()); }
+	iv_ruleForm=ruleForm
+	{ $current=$iv_ruleForm.current; }
+	EOF;
+
+// Rule Form
+ruleForm returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getForm_FormKeyword_0ElementType());
+		}
+		otherlv_0='form'
+		{
+			doneLeaf(otherlv_0);
+		}
+		(
 			(
 				{
-					markComposite(elementTypeProvider.getModel_FormElementsFormElementParserRuleCall_0_0ElementType());
+					markLeaf(elementTypeProvider.getForm_NameIDTerminalRuleCall_1_0ElementType());
 				}
-				lv_formElements_0_0=ruleFormElement
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
+					}
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
+			)
+		)
+		{
+			markLeaf(elementTypeProvider.getForm_LeftCurlyBracketKeyword_2ElementType());
+		}
+		otherlv_2='{'
+		{
+			doneLeaf(otherlv_2);
+		}
+		(
+			(
+				{
+					markComposite(elementTypeProvider.getForm_FormElementsFormElementParserRuleCall_3_0ElementType());
+				}
+				lv_formElements_3_0=ruleFormElement
 				{
 					doneComposite();
 					if(!$current) {
@@ -77,9 +135,9 @@ ruleModel returns [Boolean current=false]
 		(
 			(
 				{
-					markComposite(elementTypeProvider.getModel_CalculationsCalculateParserRuleCall_1_0ElementType());
+					markComposite(elementTypeProvider.getForm_CalculationsCalculateParserRuleCall_4_0ElementType());
 				}
-				lv_calculations_1_0=ruleCalculate
+				lv_calculations_4_0=ruleCalculate
 				{
 					doneComposite();
 					if(!$current) {
@@ -89,6 +147,13 @@ ruleModel returns [Boolean current=false]
 				}
 			)
 		)*
+		{
+			markLeaf(elementTypeProvider.getForm_RightCurlyBracketKeyword_5ElementType());
+		}
+		otherlv_5='}'
+		{
+			doneLeaf(otherlv_5);
+		}
 	)
 ;
 

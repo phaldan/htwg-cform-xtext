@@ -31,34 +31,77 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createModelElementType() {
 			return new IGrammarAwareElementType("Model_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelRule());
 		}
-		public static IGrammarAwareElementType createModel_GroupElementType() {
-			return new IGrammarAwareElementType("Model_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getGroup());
+		public static IGrammarAwareElementType createModel_FormsAssignmentElementType() {
+			return new IGrammarAwareElementType("Model_FormsAssignment_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormsAssignment());
 		}
-		public static IGrammarAwareElementType createModel_FormElementsAssignment_0ElementType() {
-			return new IGrammarAwareElementType("Model_FormElementsAssignment_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormElementsAssignment_0());
-		}
-		public static IGrammarAwareElementType createModel_FormElementsFormElementParserRuleCall_0_0ElementType() {
-			return new IGrammarAwareElementType("Model_FormElementsFormElementParserRuleCall_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormElementsFormElementParserRuleCall_0_0());
-		}
-		public static IGrammarAwareElementType createModel_CalculationsAssignment_1ElementType() {
-			return new IGrammarAwareElementType("Model_CalculationsAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getCalculationsAssignment_1());
-		}
-		public static IGrammarAwareElementType createModel_CalculationsCalculateParserRuleCall_1_0ElementType() {
-			return new IGrammarAwareElementType("Model_CalculationsCalculateParserRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getCalculationsCalculateParserRuleCall_1_0());
+		public static IGrammarAwareElementType createModel_FormsFormParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("Model_FormsFormParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getModelAccess().getFormsFormParserRuleCall_0());
 		}
 	}
 
 	public static final IGrammarAwareElementType Model_ELEMENT_TYPE = associate(ModelFactory.createModelElementType());
 
-	public static final IGrammarAwareElementType Model_Group_ELEMENT_TYPE = associate(ModelFactory.createModel_GroupElementType());
+	public static final IGrammarAwareElementType Model_FormsAssignment_ELEMENT_TYPE = associate(ModelFactory.createModel_FormsAssignmentElementType());
 
-	public static final IGrammarAwareElementType Model_FormElementsAssignment_0_ELEMENT_TYPE = associate(ModelFactory.createModel_FormElementsAssignment_0ElementType());
+	public static final IGrammarAwareElementType Model_FormsFormParserRuleCall_0_ELEMENT_TYPE = associate(ModelFactory.createModel_FormsFormParserRuleCall_0ElementType());
 
-	public static final IGrammarAwareElementType Model_FormElementsFormElementParserRuleCall_0_0_ELEMENT_TYPE = associate(ModelFactory.createModel_FormElementsFormElementParserRuleCall_0_0ElementType());
+	private static class FormFactory {
+		public static IGrammarAwareElementType createFormElementType() {
+			return new IGrammarAwareElementType("Form_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormRule());
+		}
+		public static IGrammarAwareElementType createForm_GroupElementType() {
+			return new IGrammarAwareElementType("Form_Group_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getGroup());
+		}
+		public static IGrammarAwareElementType createForm_FormKeyword_0ElementType() {
+			return new IGrammarAwareElementType("Form_FormKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getFormKeyword_0());
+		}
+		public static IGrammarAwareElementType createForm_NameAssignment_1ElementType() {
+			return new IGrammarAwareElementType("Form_NameAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getNameAssignment_1());
+		}
+		public static IGrammarAwareElementType createForm_NameIDTerminalRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("Form_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getNameIDTerminalRuleCall_1_0());
+		}
+		public static IGrammarAwareElementType createForm_LeftCurlyBracketKeyword_2ElementType() {
+			return new IGrammarAwareElementType("Form_LeftCurlyBracketKeyword_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getLeftCurlyBracketKeyword_2());
+		}
+		public static IGrammarAwareElementType createForm_FormElementsAssignment_3ElementType() {
+			return new IGrammarAwareElementType("Form_FormElementsAssignment_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getFormElementsAssignment_3());
+		}
+		public static IGrammarAwareElementType createForm_FormElementsFormElementParserRuleCall_3_0ElementType() {
+			return new IGrammarAwareElementType("Form_FormElementsFormElementParserRuleCall_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getFormElementsFormElementParserRuleCall_3_0());
+		}
+		public static IGrammarAwareElementType createForm_CalculationsAssignment_4ElementType() {
+			return new IGrammarAwareElementType("Form_CalculationsAssignment_4_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getCalculationsAssignment_4());
+		}
+		public static IGrammarAwareElementType createForm_CalculationsCalculateParserRuleCall_4_0ElementType() {
+			return new IGrammarAwareElementType("Form_CalculationsCalculateParserRuleCall_4_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getCalculationsCalculateParserRuleCall_4_0());
+		}
+		public static IGrammarAwareElementType createForm_RightCurlyBracketKeyword_5ElementType() {
+			return new IGrammarAwareElementType("Form_RightCurlyBracketKeyword_5_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getFormAccess().getRightCurlyBracketKeyword_5());
+		}
+	}
 
-	public static final IGrammarAwareElementType Model_CalculationsAssignment_1_ELEMENT_TYPE = associate(ModelFactory.createModel_CalculationsAssignment_1ElementType());
+	public static final IGrammarAwareElementType Form_ELEMENT_TYPE = associate(FormFactory.createFormElementType());
 
-	public static final IGrammarAwareElementType Model_CalculationsCalculateParserRuleCall_1_0_ELEMENT_TYPE = associate(ModelFactory.createModel_CalculationsCalculateParserRuleCall_1_0ElementType());
+	public static final IGrammarAwareElementType Form_Group_ELEMENT_TYPE = associate(FormFactory.createForm_GroupElementType());
+
+	public static final IGrammarAwareElementType Form_FormKeyword_0_ELEMENT_TYPE = associate(FormFactory.createForm_FormKeyword_0ElementType());
+
+	public static final IGrammarAwareElementType Form_NameAssignment_1_ELEMENT_TYPE = associate(FormFactory.createForm_NameAssignment_1ElementType());
+
+	public static final IGrammarAwareElementType Form_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE = associate(FormFactory.createForm_NameIDTerminalRuleCall_1_0ElementType());
+
+	public static final IGrammarAwareElementType Form_LeftCurlyBracketKeyword_2_ELEMENT_TYPE = associate(FormFactory.createForm_LeftCurlyBracketKeyword_2ElementType());
+
+	public static final IGrammarAwareElementType Form_FormElementsAssignment_3_ELEMENT_TYPE = associate(FormFactory.createForm_FormElementsAssignment_3ElementType());
+
+	public static final IGrammarAwareElementType Form_FormElementsFormElementParserRuleCall_3_0_ELEMENT_TYPE = associate(FormFactory.createForm_FormElementsFormElementParserRuleCall_3_0ElementType());
+
+	public static final IGrammarAwareElementType Form_CalculationsAssignment_4_ELEMENT_TYPE = associate(FormFactory.createForm_CalculationsAssignment_4ElementType());
+
+	public static final IGrammarAwareElementType Form_CalculationsCalculateParserRuleCall_4_0_ELEMENT_TYPE = associate(FormFactory.createForm_CalculationsCalculateParserRuleCall_4_0ElementType());
+
+	public static final IGrammarAwareElementType Form_RightCurlyBracketKeyword_5_ELEMENT_TYPE = associate(FormFactory.createForm_RightCurlyBracketKeyword_5ElementType());
 
 	private static class FormElementFactory {
 		public static IGrammarAwareElementType createFormElementElementType() {
@@ -1512,24 +1555,56 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Model_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_GroupElementType() {
-		return Model_Group_ELEMENT_TYPE;
+	public IGrammarAwareElementType getModel_FormsAssignmentElementType() {
+		return Model_FormsAssignment_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_FormElementsAssignment_0ElementType() {
-		return Model_FormElementsAssignment_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getModel_FormsFormParserRuleCall_0ElementType() {
+		return Model_FormsFormParserRuleCall_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_FormElementsFormElementParserRuleCall_0_0ElementType() {
-		return Model_FormElementsFormElementParserRuleCall_0_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getFormElementType() {
+		return Form_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_CalculationsAssignment_1ElementType() {
-		return Model_CalculationsAssignment_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getForm_GroupElementType() {
+		return Form_Group_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getModel_CalculationsCalculateParserRuleCall_1_0ElementType() {
-		return Model_CalculationsCalculateParserRuleCall_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getForm_FormKeyword_0ElementType() {
+		return Form_FormKeyword_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_NameAssignment_1ElementType() {
+		return Form_NameAssignment_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_NameIDTerminalRuleCall_1_0ElementType() {
+		return Form_NameIDTerminalRuleCall_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_LeftCurlyBracketKeyword_2ElementType() {
+		return Form_LeftCurlyBracketKeyword_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_FormElementsAssignment_3ElementType() {
+		return Form_FormElementsAssignment_3_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_FormElementsFormElementParserRuleCall_3_0ElementType() {
+		return Form_FormElementsFormElementParserRuleCall_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_CalculationsAssignment_4ElementType() {
+		return Form_CalculationsAssignment_4_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_CalculationsCalculateParserRuleCall_4_0ElementType() {
+		return Form_CalculationsCalculateParserRuleCall_4_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getForm_RightCurlyBracketKeyword_5ElementType() {
+		return Form_RightCurlyBracketKeyword_5_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getFormElementElementType() {

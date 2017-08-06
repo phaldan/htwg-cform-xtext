@@ -17,6 +17,7 @@ import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
 import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
+import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
@@ -86,6 +87,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.FLOAT_LITERAL:
 				sequence_Atomic(context, (FloatLiteral) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FORM:
+				sequence_Form(context, (Form) semanticObject); 
 				return; 
 			case CalculatorFormPackage.GROUP:
 				sequence_Group(context, (Group) semanticObject); 
@@ -435,6 +439,18 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
+	 *     Form returns Form
+	 *
+	 * Constraint:
+	 *     (name=ID formElements+=FormElement* calculations+=Calculate*)
+	 */
+	protected void sequence_Form(ISerializationContext context, Form semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FormElement returns Group
 	 *     Group returns Group
 	 *     PageChild returns Group
@@ -452,7 +468,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     ((formElements+=FormElement+ calculations+=Calculate+) | calculations+=Calculate+)?
+	 *     forms+=Form+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

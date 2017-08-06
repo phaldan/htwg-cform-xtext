@@ -33,6 +33,15 @@ public interface CalculatorFormFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Form</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Form</em>'.
+   * @generated
+   */
+  Form createForm();
+
+  /**
    * Returns a new object of class '<em>Form Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

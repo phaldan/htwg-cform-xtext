@@ -81,6 +81,11 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseForm(Form object)
+      {
+        return createFormAdapter();
+      }
+      @Override
       public Adapter caseFormElement(FormElement object)
       {
         return createFormElementAdapter();
@@ -238,6 +243,21 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Form <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Form
+   * @generated
+   */
+  public Adapter createFormAdapter()
   {
     return null;
   }

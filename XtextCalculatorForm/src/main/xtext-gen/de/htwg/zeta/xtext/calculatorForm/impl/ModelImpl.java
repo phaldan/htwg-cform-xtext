@@ -3,9 +3,8 @@
  */
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
-import de.htwg.zeta.xtext.calculatorForm.Calculate;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.FormElement;
+import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.Model;
 
 import java.util.Collection;
@@ -30,8 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.ModelImpl#getFormElements <em>Form Elements</em>}</li>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.ModelImpl#getCalculations <em>Calculations</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.ModelImpl#getForms <em>Forms</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,24 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getFormElements() <em>Form Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getForms() <em>Forms</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFormElements()
+   * @see #getForms()
    * @generated
    * @ordered
    */
-  protected EList<FormElement> formElements;
-
-  /**
-   * The cached value of the '{@link #getCalculations() <em>Calculations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCalculations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Calculate> calculations;
+  protected EList<Form> forms;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,27 +72,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<FormElement> getFormElements()
+  public EList<Form> getForms()
   {
-    if (formElements == null)
+    if (forms == null)
     {
-      formElements = new EObjectContainmentEList<FormElement>(FormElement.class, this, CalculatorFormPackage.MODEL__FORM_ELEMENTS);
+      forms = new EObjectContainmentEList<Form>(Form.class, this, CalculatorFormPackage.MODEL__FORMS);
     }
-    return formElements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Calculate> getCalculations()
-  {
-    if (calculations == null)
-    {
-      calculations = new EObjectContainmentEList<Calculate>(Calculate.class, this, CalculatorFormPackage.MODEL__CALCULATIONS);
-    }
-    return calculations;
+    return forms;
   }
 
   /**
@@ -117,10 +91,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return ((InternalEList<?>)getFormElements()).basicRemove(otherEnd, msgs);
-      case CalculatorFormPackage.MODEL__CALCULATIONS:
-        return ((InternalEList<?>)getCalculations()).basicRemove(otherEnd, msgs);
+      case CalculatorFormPackage.MODEL__FORMS:
+        return ((InternalEList<?>)getForms()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,10 +107,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return getFormElements();
-      case CalculatorFormPackage.MODEL__CALCULATIONS:
-        return getCalculations();
+      case CalculatorFormPackage.MODEL__FORMS:
+        return getForms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,13 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        getFormElements().clear();
-        getFormElements().addAll((Collection<? extends FormElement>)newValue);
-        return;
-      case CalculatorFormPackage.MODEL__CALCULATIONS:
-        getCalculations().clear();
-        getCalculations().addAll((Collection<? extends Calculate>)newValue);
+      case CalculatorFormPackage.MODEL__FORMS:
+        getForms().clear();
+        getForms().addAll((Collection<? extends Form>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,11 +142,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        getFormElements().clear();
-        return;
-      case CalculatorFormPackage.MODEL__CALCULATIONS:
-        getCalculations().clear();
+      case CalculatorFormPackage.MODEL__FORMS:
+        getForms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -196,10 +159,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.MODEL__FORM_ELEMENTS:
-        return formElements != null && !formElements.isEmpty();
-      case CalculatorFormPackage.MODEL__CALCULATIONS:
-        return calculations != null && !calculations.isEmpty();
+      case CalculatorFormPackage.MODEL__FORMS:
+        return forms != null && !forms.isEmpty();
     }
     return super.eIsSet(featureID);
   }

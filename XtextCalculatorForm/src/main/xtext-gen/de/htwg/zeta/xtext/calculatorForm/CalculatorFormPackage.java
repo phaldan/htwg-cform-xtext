@@ -68,22 +68,13 @@ public interface CalculatorFormPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Form Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Forms</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__FORM_ELEMENTS = 0;
-
-  /**
-   * The feature id for the '<em><b>Calculations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__CALCULATIONS = 1;
+  int MODEL__FORMS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -92,7 +83,53 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormImpl <em>Form</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FormImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getForm()
+   * @generated
+   */
+  int FORM = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Form Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__FORM_ELEMENTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Calculations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__CALCULATIONS = 2;
+
+  /**
+   * The number of structural features of the '<em>Form</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl <em>Form Element</em>}' class.
@@ -102,7 +139,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFormElement()
    * @generated
    */
-  int FORM_ELEMENT = 1;
+  int FORM_ELEMENT = 2;
 
   /**
    * The number of structural features of the '<em>Form Element</em>' class.
@@ -121,7 +158,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getField()
    * @generated
    */
-  int FIELD = 2;
+  int FIELD = 3;
 
   /**
    * The number of structural features of the '<em>Field</em>' class.
@@ -140,7 +177,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldInput()
    * @generated
    */
-  int FIELD_INPUT = 3;
+  int FIELD_INPUT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -240,7 +277,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelect()
    * @generated
    */
-  int FIELD_SELECT = 4;
+  int FIELD_SELECT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -340,7 +377,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldSelectChild()
    * @generated
    */
-  int FIELD_SELECT_CHILD = 5;
+  int FIELD_SELECT_CHILD = 6;
 
   /**
    * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -368,7 +405,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOption()
    * @generated
    */
-  int FIELD_OPTION = 6;
+  int FIELD_OPTION = 7;
 
   /**
    * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -423,7 +460,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldOptionGroup()
    * @generated
    */
-  int FIELD_OPTION_GROUP = 7;
+  int FIELD_OPTION_GROUP = 8;
 
   /**
    * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -469,7 +506,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoice()
    * @generated
    */
-  int FIELD_CHOICE = 8;
+  int FIELD_CHOICE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -596,7 +633,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldChoiceOption()
    * @generated
    */
-  int FIELD_CHOICE_OPTION = 9;
+  int FIELD_CHOICE_OPTION = 10;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -678,7 +715,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getGroup()
    * @generated
    */
-  int GROUP = 10;
+  int GROUP = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -724,7 +761,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPage()
    * @generated
    */
-  int PAGE = 11;
+  int PAGE = 12;
 
   /**
    * The feature id for the '<em><b>Childs</b></em>' containment reference list.
@@ -752,7 +789,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPageChild()
    * @generated
    */
-  int PAGE_CHILD = 12;
+  int PAGE_CHILD = 13;
 
   /**
    * The number of structural features of the '<em>Page Child</em>' class.
@@ -771,7 +808,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 13;
+  int BUTTON = 14;
 
   /**
    * The number of structural features of the '<em>Button</em>' class.
@@ -790,7 +827,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getButtonSubmit()
    * @generated
    */
-  int BUTTON_SUBMIT = 14;
+  int BUTTON_SUBMIT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -854,7 +891,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getCalculate()
    * @generated
    */
-  int CALCULATE = 15;
+  int CALCULATE = 16;
 
   /**
    * The feature id for the '<em><b>Result</b></em>' reference.
@@ -891,7 +928,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 16;
+  int EXPRESSION = 17;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -910,7 +947,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 17;
+  int PLUS = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -947,7 +984,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 18;
+  int MINUS = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -984,7 +1021,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMultiOrDiv()
    * @generated
    */
-  int MULTI_OR_DIV = 19;
+  int MULTI_OR_DIV = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1030,7 +1067,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 20;
+  int BOOLEAN_NEGATION = 21;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1058,7 +1095,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getArithmeticSigned()
    * @generated
    */
-  int ARITHMETIC_SIGNED = 21;
+  int ARITHMETIC_SIGNED = 22;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1086,7 +1123,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 22;
+  int NUMBER_LITERAL = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1114,7 +1151,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 23;
+  int FLOAT_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1142,7 +1179,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPercentLiteral()
    * @generated
    */
-  int PERCENT_LITERAL = 24;
+  int PERCENT_LITERAL = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1170,7 +1207,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
    * @generated
    */
-  int FIELD_REFERENCE = 25;
+  int FIELD_REFERENCE = 26;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -1202,26 +1239,58 @@ public interface CalculatorFormPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Model#getFormElements <em>Form Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Model#getForms <em>Forms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Forms</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Model#getForms()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Forms();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Form <em>Form</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Form</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Form
+   * @generated
+   */
+  EClass getForm();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.Form#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Form#getName()
+   * @see #getForm()
+   * @generated
+   */
+  EAttribute getForm_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Form#getFormElements <em>Form Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Form Elements</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.Model#getFormElements()
-   * @see #getModel()
+   * @see de.htwg.zeta.xtext.calculatorForm.Form#getFormElements()
+   * @see #getForm()
    * @generated
    */
-  EReference getModel_FormElements();
+  EReference getForm_FormElements();
 
   /**
-   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Model#getCalculations <em>Calculations</em>}'.
+   * Returns the meta object for the containment reference list '{@link de.htwg.zeta.xtext.calculatorForm.Form#getCalculations <em>Calculations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Calculations</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.Model#getCalculations()
-   * @see #getModel()
+   * @see de.htwg.zeta.xtext.calculatorForm.Form#getCalculations()
+   * @see #getForm()
    * @generated
    */
-  EReference getModel_Calculations();
+  EReference getForm_Calculations();
 
   /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FormElement <em>Form Element</em>}'.
@@ -2244,12 +2313,38 @@ public interface CalculatorFormPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
+     * The meta object literal for the '<em><b>Forms</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__FORMS = eINSTANCE.getModel_Forms();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormImpl <em>Form</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FormImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getForm()
+     * @generated
+     */
+    EClass FORM = eINSTANCE.getForm();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORM__NAME = eINSTANCE.getForm_Name();
+
+    /**
      * The meta object literal for the '<em><b>Form Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__FORM_ELEMENTS = eINSTANCE.getModel_FormElements();
+    EReference FORM__FORM_ELEMENTS = eINSTANCE.getForm_FormElements();
 
     /**
      * The meta object literal for the '<em><b>Calculations</b></em>' containment reference list feature.
@@ -2257,7 +2352,7 @@ public interface CalculatorFormPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__CALCULATIONS = eINSTANCE.getModel_Calculations();
+    EReference FORM__CALCULATIONS = eINSTANCE.getForm_Calculations();
 
     /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FormElementImpl <em>Form Element</em>}' class.

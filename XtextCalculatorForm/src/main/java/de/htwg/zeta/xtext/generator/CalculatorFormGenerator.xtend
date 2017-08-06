@@ -19,6 +19,6 @@ class CalculatorFormGenerator extends AbstractGenerator {
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
         val root = resource.contents.filter(typeof(Model)).toList.get(0)
-        new SimpleGenerator(fsa, root, "simple")
+        new SimpleGenerator(fsa).generate(root)
     }
 }

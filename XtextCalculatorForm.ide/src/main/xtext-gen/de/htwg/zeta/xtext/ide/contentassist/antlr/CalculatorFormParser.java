@@ -43,7 +43,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getOpAlternatives_1_0_1_0(), "rule__Multiplication__OpAlternatives_1_0_1_0");
 					put(grammarAccess.getPrefixedAccess().getAlternatives(), "rule__Prefixed__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
-					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup(), "rule__FieldInput__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup_4(), "rule__FieldInput__Group_4__0");
 					put(grammarAccess.getFieldInputAccess().getGroup_5(), "rule__FieldInput__Group_5__0");
@@ -86,8 +86,10 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
 					put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
 					put(grammarAccess.getAtomicAccess().getGroup_4(), "rule__Atomic__Group_4__0");
-					put(grammarAccess.getModelAccess().getFormElementsAssignment_0(), "rule__Model__FormElementsAssignment_0");
-					put(grammarAccess.getModelAccess().getCalculationsAssignment_1(), "rule__Model__CalculationsAssignment_1");
+					put(grammarAccess.getModelAccess().getFormsAssignment(), "rule__Model__FormsAssignment");
+					put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
+					put(grammarAccess.getFormAccess().getFormElementsAssignment_3(), "rule__Form__FormElementsAssignment_3");
+					put(grammarAccess.getFormAccess().getCalculationsAssignment_4(), "rule__Form__CalculationsAssignment_4");
 					put(grammarAccess.getFieldInputAccess().getNameAssignment_1(), "rule__FieldInput__NameAssignment_1");
 					put(grammarAccess.getFieldInputAccess().getAutofocusAssignment_2(), "rule__FieldInput__AutofocusAssignment_2");
 					put(grammarAccess.getFieldInputAccess().getDisabledAssignment_3(), "rule__FieldInput__DisabledAssignment_3");

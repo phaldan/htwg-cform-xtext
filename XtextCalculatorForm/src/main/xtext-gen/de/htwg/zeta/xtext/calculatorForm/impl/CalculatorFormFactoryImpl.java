@@ -66,6 +66,7 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
     switch (eClass.getClassifierID())
     {
       case CalculatorFormPackage.MODEL: return createModel();
+      case CalculatorFormPackage.FORM: return createForm();
       case CalculatorFormPackage.FORM_ELEMENT: return createFormElement();
       case CalculatorFormPackage.FIELD: return createField();
       case CalculatorFormPackage.FIELD_INPUT: return createFieldInput();
@@ -105,6 +106,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Form createForm()
+  {
+    FormImpl form = new FormImpl();
+    return form;
   }
 
   /**

@@ -25,30 +25,65 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Model");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFormElementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cFormElementsFormElementParserRuleCall_0_0 = (RuleCall)cFormElementsAssignment_0.eContents().get(0);
-		private final Assignment cCalculationsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCalculationsCalculateParserRuleCall_1_0 = (RuleCall)cCalculationsAssignment_1.eContents().get(0);
+		private final Assignment cFormsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFormsFormParserRuleCall_0 = (RuleCall)cFormsAssignment.eContents().get(0);
 		
 		//Model:
-		//	formElements+=FormElement* calculations+=Calculate*;
+		//	forms+=Form*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//formElements+=FormElement* calculations+=Calculate*
+		//forms+=Form*
+		public Assignment getFormsAssignment() { return cFormsAssignment; }
+		
+		//Form
+		public RuleCall getFormsFormParserRuleCall_0() { return cFormsFormParserRuleCall_0; }
+	}
+	public class FormElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Form");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFormKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cFormElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFormElementsFormElementParserRuleCall_3_0 = (RuleCall)cFormElementsAssignment_3.eContents().get(0);
+		private final Assignment cCalculationsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCalculationsCalculateParserRuleCall_4_0 = (RuleCall)cCalculationsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Form:
+		//	'form' name=ID '{' formElements+=FormElement* calculations+=Calculate* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'form' name=ID '{' formElements+=FormElement* calculations+=Calculate* '}'
 		public Group getGroup() { return cGroup; }
 		
+		//'form'
+		public Keyword getFormKeyword_0() { return cFormKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
 		//formElements+=FormElement*
-		public Assignment getFormElementsAssignment_0() { return cFormElementsAssignment_0; }
+		public Assignment getFormElementsAssignment_3() { return cFormElementsAssignment_3; }
 		
 		//FormElement
-		public RuleCall getFormElementsFormElementParserRuleCall_0_0() { return cFormElementsFormElementParserRuleCall_0_0; }
+		public RuleCall getFormElementsFormElementParserRuleCall_3_0() { return cFormElementsFormElementParserRuleCall_3_0; }
 		
 		//calculations+=Calculate*
-		public Assignment getCalculationsAssignment_1() { return cCalculationsAssignment_1; }
+		public Assignment getCalculationsAssignment_4() { return cCalculationsAssignment_4; }
 		
 		//Calculate
-		public RuleCall getCalculationsCalculateParserRuleCall_1_0() { return cCalculationsCalculateParserRuleCall_1_0; }
+		public RuleCall getCalculationsCalculateParserRuleCall_4_0() { return cCalculationsCalculateParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class FormElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FormElement");
@@ -1229,6 +1264,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
+	private final FormElements pForm;
 	private final FormElementElements pFormElement;
 	private final FieldElements pField;
 	private final FieldInputElements pFieldInput;
@@ -1266,6 +1302,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	public CalculatorFormGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.pModel = new ModelElements();
+		this.pForm = new FormElements();
 		this.pFormElement = new FormElementElements();
 		this.pField = new FieldElements();
 		this.pFieldInput = new FieldInputElements();
@@ -1322,13 +1359,23 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	formElements+=FormElement* calculations+=Calculate*;
+	//	forms+=Form*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//Form:
+	//	'form' name=ID '{' formElements+=FormElement* calculations+=Calculate* '}';
+	public FormElements getFormAccess() {
+		return pForm;
+	}
+	
+	public ParserRule getFormRule() {
+		return getFormAccess().getRule();
 	}
 	
 	//FormElement:

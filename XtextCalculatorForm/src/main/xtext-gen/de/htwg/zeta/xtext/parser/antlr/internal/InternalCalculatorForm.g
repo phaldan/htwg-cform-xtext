@@ -77,19 +77,81 @@ ruleModel returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getModelAccess().getFormElementsFormElementParserRuleCall_0_0());
+			{
+				newCompositeNode(grammarAccess.getModelAccess().getFormsFormParserRuleCall_0());
+			}
+			lv_forms_0_0=ruleForm
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
-				lv_formElements_0_0=ruleFormElement
+				add(
+					$current,
+					"forms",
+					lv_forms_0_0,
+					"de.htwg.zeta.xtext.CalculatorForm.Form");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)*
+;
+
+// Entry rule entryRuleForm
+entryRuleForm returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFormRule()); }
+	iv_ruleForm=ruleForm
+	{ $current=$iv_ruleForm.current; }
+	EOF;
+
+// Rule Form
+ruleForm returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='form'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFormAccess().getFormKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0());
+				}
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElement(grammarAccess.getFormRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFormAccess().getFormElementsFormElementParserRuleCall_3_0());
+				}
+				lv_formElements_3_0=ruleFormElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFormRule());
 					}
 					add(
 						$current,
 						"formElements",
-						lv_formElements_0_0,
+						lv_formElements_3_0,
 						"de.htwg.zeta.xtext.CalculatorForm.FormElement");
 					afterParserOrEnumRuleCall();
 				}
@@ -98,22 +160,26 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getCalculationsCalculateParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getFormAccess().getCalculationsCalculateParserRuleCall_4_0());
 				}
-				lv_calculations_1_0=ruleCalculate
+				lv_calculations_4_0=ruleCalculate
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getFormRule());
 					}
 					add(
 						$current,
 						"calculations",
-						lv_calculations_1_0,
+						lv_calculations_4_0,
 						"de.htwg.zeta.xtext.CalculatorForm.Calculate");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getFormAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 
