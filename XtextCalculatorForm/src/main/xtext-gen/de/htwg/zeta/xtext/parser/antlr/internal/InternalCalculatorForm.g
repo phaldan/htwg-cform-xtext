@@ -1979,7 +1979,35 @@ ruleAtomic returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
+						grammarAccess.getAtomicAccess().getFloatLiteralAction_2_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_value_6_0=RULE_FLOAT
+					{
+						newLeafNode(lv_value_6_0, grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtomicRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_6_0,
+							"de.htwg.zeta.xtext.CalculatorForm.FLOAT");
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0(),
 						$current);
 				}
 			)
@@ -1991,7 +2019,7 @@ ruleAtomic returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
+						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0());
 					}
 					ruleQualifiedName
 					{
@@ -2006,6 +2034,8 @@ ruleAtomic returns [EObject current=null]
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
+
+RULE_FLOAT : RULE_INT '.' RULE_INT;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

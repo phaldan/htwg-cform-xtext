@@ -16,6 +16,7 @@ import de.htwg.zeta.xtext.calculatorForm.FieldOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
 import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
+import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
@@ -81,6 +82,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.FIELD_SELECT:
 				sequence_FieldSelect(context, (FieldSelect) semanticObject); 
+				return; 
+			case CalculatorFormPackage.FLOAT_LITERAL:
+				sequence_Atomic(context, (FloatLiteral) semanticObject); 
 				return; 
 			case CalculatorFormPackage.GROUP:
 				sequence_Group(context, (Group) semanticObject); 
@@ -184,7 +188,32 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FIELD_REFERENCE__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_2_1_0_1(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns FloatLiteral
+	 *     Addition returns FloatLiteral
+	 *     Addition.Plus_1_0_0_0 returns FloatLiteral
+	 *     Addition.Minus_1_0_1_0 returns FloatLiteral
+	 *     Multiplication returns FloatLiteral
+	 *     Multiplication.MultiOrDiv_1_0_0 returns FloatLiteral
+	 *     Prefixed returns FloatLiteral
+	 *     Atomic returns FloatLiteral
+	 *
+	 * Constraint:
+	 *     value=FLOAT
+	 */
+	protected void sequence_Atomic(ISerializationContext context, FloatLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

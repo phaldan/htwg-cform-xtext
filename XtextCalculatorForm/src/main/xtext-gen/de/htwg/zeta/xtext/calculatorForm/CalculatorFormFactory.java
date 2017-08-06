@@ -231,6 +231,15 @@ public interface CalculatorFormFactory extends EFactory
   NumberLiteral createNumberLiteral();
 
   /**
+   * Returns a new object of class '<em>Float Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Literal</em>'.
+   * @generated
+   */
+  FloatLiteral createFloatLiteral();
+
+  /**
    * Returns a new object of class '<em>Field Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

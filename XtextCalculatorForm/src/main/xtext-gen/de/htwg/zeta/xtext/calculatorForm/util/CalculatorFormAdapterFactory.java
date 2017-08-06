@@ -191,6 +191,11 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createNumberLiteralAdapter();
       }
       @Override
+      public Adapter caseFloatLiteral(FloatLiteral object)
+      {
+        return createFloatLiteralAdapter();
+      }
+      @Override
       public Adapter caseFieldReference(FieldReference object)
       {
         return createFieldReferenceAdapter();
@@ -558,6 +563,21 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNumberLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FloatLiteral <em>Float Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.FloatLiteral
+   * @generated
+   */
+  public Adapter createFloatLiteralAdapter()
   {
     return null;
   }

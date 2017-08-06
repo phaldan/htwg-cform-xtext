@@ -20,6 +20,7 @@ import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
 import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelectChild;
+import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
 import de.htwg.zeta.xtext.calculatorForm.FormElement;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
@@ -205,6 +206,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * @generated
    */
   private EClass numberLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass floatLiteralEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1171,6 +1179,26 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFloatLiteral()
+  {
+    return floatLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFloatLiteral_Value()
+  {
+    return (EAttribute)floatLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getFieldReference()
   {
     return fieldReferenceEClass;
@@ -1328,6 +1356,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     numberLiteralEClass = createEClass(NUMBER_LITERAL);
     createEAttribute(numberLiteralEClass, NUMBER_LITERAL__VALUE);
 
+    floatLiteralEClass = createEClass(FLOAT_LITERAL);
+    createEAttribute(floatLiteralEClass, FLOAT_LITERAL__VALUE);
+
     fieldReferenceEClass = createEClass(FIELD_REFERENCE);
     createEReference(fieldReferenceEClass, FIELD_REFERENCE__REF);
   }
@@ -1379,6 +1410,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     booleanNegationEClass.getESuperTypes().add(this.getExpression());
     arithmeticSignedEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
+    floatLiteralEClass.getESuperTypes().add(this.getExpression());
     fieldReferenceEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -1493,6 +1525,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(numberLiteralEClass, NumberLiteral.class, "NumberLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumberLiteral_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, NumberLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(floatLiteralEClass, FloatLiteral.class, "FloatLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFloatLiteral_Value(), ecorePackage.getEFloat(), "value", null, 0, 1, FloatLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldReferenceEClass, FieldReference.class, "FieldReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFieldReference_Ref(), this.getField(), null, "ref", null, 0, 1, FieldReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

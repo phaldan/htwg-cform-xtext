@@ -1997,7 +1997,34 @@ ruleAtomic returns [Boolean current=false]
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
+					precedeComposite(elementTypeProvider.getAtomic_FloatLiteralAction_2_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getAtomic_ValueFLOATTerminalRuleCall_2_1_0ElementType());
+					}
+					lv_value_6_0=RULE_FLOAT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_6_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_3_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
@@ -2011,7 +2038,7 @@ ruleAtomic returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
+						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_3_1_0ElementType());
 					}
 					ruleQualifiedName
 					{
@@ -2026,6 +2053,8 @@ ruleAtomic returns [Boolean current=false]
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
+
+RULE_FLOAT : RULE_INT '.' RULE_INT;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

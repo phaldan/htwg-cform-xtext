@@ -63,6 +63,7 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     (rule start) (ambiguity) '!' expression=Atomic
 	 *     (rule start) (ambiguity) '-' expression=Atomic
 	 *     (rule start) (ambiguity) ref=[Field|QualifiedName]
+	 *     (rule start) (ambiguity) value=FLOAT
 	 *     (rule start) (ambiguity) value=INT
 	 *     (rule start) (ambiguity) {Minus.left=}
 	 *     (rule start) (ambiguity) {MultiOrDiv.left=}

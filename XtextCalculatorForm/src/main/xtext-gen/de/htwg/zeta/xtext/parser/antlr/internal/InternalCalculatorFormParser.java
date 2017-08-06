@@ -22,14 +22,13 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'field'", "'autofocus'", "'disabled'", "'form'", "'label'", "'notdisplayed'", "'readonly'", "'required'", "'value'", "'dropdown'", "'multiple'", "'size'", "'{'", "'}'", "'option'", "'selected'", "'text'", "'option-group'", "'choice'", "'checked'", "'group'", "'page'", "'submit-button'", "'calculate'", "'='", "'.'", "'+'", "'-'", "'*'", "'/'", "'!'", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_FLOAT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'field'", "'autofocus'", "'disabled'", "'form'", "'label'", "'notdisplayed'", "'readonly'", "'required'", "'value'", "'dropdown'", "'multiple'", "'size'", "'{'", "'}'", "'option'", "'selected'", "'text'", "'option-group'", "'choice'", "'checked'", "'group'", "'page'", "'submit-button'", "'calculate'", "'='", "'.'", "'+'", "'-'", "'*'", "'/'", "'!'", "'('", "')'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -40,14 +39,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
     public static final int RULE_STRING=5;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
@@ -59,8 +58,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int T__44=44;
+    public static final int RULE_FLOAT=7;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__42=42;
@@ -171,7 +172,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11||LA1_0==20||LA1_0==29||(LA1_0>=31 && LA1_0<=33)) ) {
+                if ( (LA1_0==12||LA1_0==21||LA1_0==30||(LA1_0>=32 && LA1_0<=34)) ) {
                     alt1=1;
                 }
 
@@ -224,7 +225,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==34) ) {
+                if ( (LA2_0==35) ) {
                     alt2=1;
                 }
 
@@ -357,20 +358,20 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:135:2: (this_Field_0= ruleField | this_Group_1= ruleGroup | this_Page_2= rulePage )
             int alt3=3;
             switch ( input.LA(1) ) {
-            case 11:
-            case 20:
-            case 29:
-            case 33:
+            case 12:
+            case 21:
+            case 30:
+            case 34:
                 {
                 alt3=1;
                 }
                 break;
-            case 31:
+            case 32:
                 {
                 alt3=2;
                 }
                 break;
-            case 32:
+            case 33:
                 {
                 alt3=3;
                 }
@@ -538,22 +539,22 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:180:2: (this_FieldInput_0= ruleFieldInput | this_FieldSelect_1= ruleFieldSelect | this_FieldChoice_2= ruleFieldChoice | this_Button_3= ruleButton )
             int alt4=4;
             switch ( input.LA(1) ) {
-            case 11:
+            case 12:
                 {
                 alt4=1;
                 }
                 break;
-            case 20:
+            case 21:
                 {
                 alt4=2;
                 }
                 break;
-            case 29:
+            case 30:
                 {
                 alt4=3;
                 }
                 break;
-            case 33:
+            case 34:
                 {
                 alt4=4;
                 }
@@ -748,7 +749,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:234:2: (otherlv_0= 'field' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_disabled_3_0= 'disabled' ) )? (otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) ) )? (otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) ) )? ( (lv_notdisplayed_8_0= 'notdisplayed' ) )? ( (lv_readonly_9_0= 'readonly' ) )? ( (lv_required_10_0= 'required' ) )? (otherlv_11= 'value' ( (lv_value_12_0= RULE_STRING ) ) )? )
             // InternalCalculatorForm.g:235:3: otherlv_0= 'field' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_disabled_3_0= 'disabled' ) )? (otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) ) )? (otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) ) )? ( (lv_notdisplayed_8_0= 'notdisplayed' ) )? ( (lv_readonly_9_0= 'readonly' ) )? ( (lv_required_10_0= 'required' ) )? (otherlv_11= 'value' ( (lv_value_12_0= RULE_STRING ) ) )?
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,12,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldInputAccess().getFieldKeyword_0());
@@ -788,7 +789,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==12) ) {
+            if ( (LA5_0==13) ) {
                 alt5=1;
             }
             switch (alt5) {
@@ -798,7 +799,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:258:4: (lv_autofocus_2_0= 'autofocus' )
                     // InternalCalculatorForm.g:259:5: lv_autofocus_2_0= 'autofocus'
                     {
-                    lv_autofocus_2_0=(Token)match(input,12,FOLLOW_7); if (state.failed) return current;
+                    lv_autofocus_2_0=(Token)match(input,13,FOLLOW_7); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldInputAccess().getAutofocusAutofocusKeyword_2_0());
@@ -825,7 +826,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==13) ) {
+            if ( (LA6_0==14) ) {
                 alt6=1;
             }
             switch (alt6) {
@@ -835,7 +836,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:272:4: (lv_disabled_3_0= 'disabled' )
                     // InternalCalculatorForm.g:273:5: lv_disabled_3_0= 'disabled'
                     {
-                    lv_disabled_3_0=(Token)match(input,13,FOLLOW_8); if (state.failed) return current;
+                    lv_disabled_3_0=(Token)match(input,14,FOLLOW_8); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_3_0, grammarAccess.getFieldInputAccess().getDisabledDisabledKeyword_3_0());
@@ -862,14 +863,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==14) ) {
+            if ( (LA7_0==15) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
                     // InternalCalculatorForm.g:286:4: otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,14,FOLLOW_9); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getFieldInputAccess().getFormKeyword_4_0());
@@ -915,14 +916,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==15) ) {
+            if ( (LA8_0==16) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
                     // InternalCalculatorForm.g:310:4: otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) )
                     {
-                    otherlv_6=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_6, grammarAccess.getFieldInputAccess().getLabelKeyword_5_0());
@@ -968,7 +969,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==16) ) {
+            if ( (LA9_0==17) ) {
                 alt9=1;
             }
             switch (alt9) {
@@ -978,7 +979,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:334:4: (lv_notdisplayed_8_0= 'notdisplayed' )
                     // InternalCalculatorForm.g:335:5: lv_notdisplayed_8_0= 'notdisplayed'
                     {
-                    lv_notdisplayed_8_0=(Token)match(input,16,FOLLOW_12); if (state.failed) return current;
+                    lv_notdisplayed_8_0=(Token)match(input,17,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_notdisplayed_8_0, grammarAccess.getFieldInputAccess().getNotdisplayedNotdisplayedKeyword_6_0());
@@ -1005,7 +1006,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==17) ) {
+            if ( (LA10_0==18) ) {
                 alt10=1;
             }
             switch (alt10) {
@@ -1015,7 +1016,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:348:4: (lv_readonly_9_0= 'readonly' )
                     // InternalCalculatorForm.g:349:5: lv_readonly_9_0= 'readonly'
                     {
-                    lv_readonly_9_0=(Token)match(input,17,FOLLOW_13); if (state.failed) return current;
+                    lv_readonly_9_0=(Token)match(input,18,FOLLOW_13); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_readonly_9_0, grammarAccess.getFieldInputAccess().getReadonlyReadonlyKeyword_7_0());
@@ -1042,7 +1043,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==18) ) {
+            if ( (LA11_0==19) ) {
                 alt11=1;
             }
             switch (alt11) {
@@ -1052,7 +1053,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:362:4: (lv_required_10_0= 'required' )
                     // InternalCalculatorForm.g:363:5: lv_required_10_0= 'required'
                     {
-                    lv_required_10_0=(Token)match(input,18,FOLLOW_14); if (state.failed) return current;
+                    lv_required_10_0=(Token)match(input,19,FOLLOW_14); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_required_10_0, grammarAccess.getFieldInputAccess().getRequiredRequiredKeyword_8_0());
@@ -1079,14 +1080,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==19) ) {
+            if ( (LA12_0==20) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
                     // InternalCalculatorForm.g:376:4: otherlv_11= 'value' ( (lv_value_12_0= RULE_STRING ) )
                     {
-                    otherlv_11=(Token)match(input,19,FOLLOW_9); if (state.failed) return current;
+                    otherlv_11=(Token)match(input,20,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_11, grammarAccess.getFieldInputAccess().getValueKeyword_9_0());
@@ -1224,7 +1225,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:417:2: (otherlv_0= 'dropdown' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_disabled_3_0= 'disabled' ) )? (otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) ) )? (otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) ) )? ( (lv_multiple_8_0= 'multiple' ) )? ( (lv_required_9_0= 'required' ) )? (otherlv_10= 'size' ( (lv_size_11_0= RULE_INT ) ) )? otherlv_12= '{' ( (lv_childs_13_0= ruleFieldSelectChild ) )* otherlv_14= '}' )
             // InternalCalculatorForm.g:418:3: otherlv_0= 'dropdown' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_disabled_3_0= 'disabled' ) )? (otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) ) )? (otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) ) )? ( (lv_multiple_8_0= 'multiple' ) )? ( (lv_required_9_0= 'required' ) )? (otherlv_10= 'size' ( (lv_size_11_0= RULE_INT ) ) )? otherlv_12= '{' ( (lv_childs_13_0= ruleFieldSelectChild ) )* otherlv_14= '}'
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,21,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldSelectAccess().getDropdownKeyword_0());
@@ -1264,7 +1265,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==12) ) {
+            if ( (LA13_0==13) ) {
                 alt13=1;
             }
             switch (alt13) {
@@ -1274,7 +1275,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:441:4: (lv_autofocus_2_0= 'autofocus' )
                     // InternalCalculatorForm.g:442:5: lv_autofocus_2_0= 'autofocus'
                     {
-                    lv_autofocus_2_0=(Token)match(input,12,FOLLOW_16); if (state.failed) return current;
+                    lv_autofocus_2_0=(Token)match(input,13,FOLLOW_16); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldSelectAccess().getAutofocusAutofocusKeyword_2_0());
@@ -1301,7 +1302,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt14=2;
             int LA14_0 = input.LA(1);
 
-            if ( (LA14_0==13) ) {
+            if ( (LA14_0==14) ) {
                 alt14=1;
             }
             switch (alt14) {
@@ -1311,7 +1312,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:455:4: (lv_disabled_3_0= 'disabled' )
                     // InternalCalculatorForm.g:456:5: lv_disabled_3_0= 'disabled'
                     {
-                    lv_disabled_3_0=(Token)match(input,13,FOLLOW_17); if (state.failed) return current;
+                    lv_disabled_3_0=(Token)match(input,14,FOLLOW_17); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_3_0, grammarAccess.getFieldSelectAccess().getDisabledDisabledKeyword_3_0());
@@ -1338,14 +1339,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==14) ) {
+            if ( (LA15_0==15) ) {
                 alt15=1;
             }
             switch (alt15) {
                 case 1 :
                     // InternalCalculatorForm.g:469:4: otherlv_4= 'form' ( (lv_form_5_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,14,FOLLOW_9); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getFieldSelectAccess().getFormKeyword_4_0());
@@ -1391,14 +1392,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==15) ) {
+            if ( (LA16_0==16) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
                     // InternalCalculatorForm.g:493:4: otherlv_6= 'label' ( (lv_label_7_0= RULE_STRING ) )
                     {
-                    otherlv_6=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_6, grammarAccess.getFieldSelectAccess().getLabelKeyword_5_0());
@@ -1444,7 +1445,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==21) ) {
+            if ( (LA17_0==22) ) {
                 alt17=1;
             }
             switch (alt17) {
@@ -1454,7 +1455,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:517:4: (lv_multiple_8_0= 'multiple' )
                     // InternalCalculatorForm.g:518:5: lv_multiple_8_0= 'multiple'
                     {
-                    lv_multiple_8_0=(Token)match(input,21,FOLLOW_20); if (state.failed) return current;
+                    lv_multiple_8_0=(Token)match(input,22,FOLLOW_20); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_multiple_8_0, grammarAccess.getFieldSelectAccess().getMultipleMultipleKeyword_6_0());
@@ -1481,7 +1482,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==18) ) {
+            if ( (LA18_0==19) ) {
                 alt18=1;
             }
             switch (alt18) {
@@ -1491,7 +1492,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:531:4: (lv_required_9_0= 'required' )
                     // InternalCalculatorForm.g:532:5: lv_required_9_0= 'required'
                     {
-                    lv_required_9_0=(Token)match(input,18,FOLLOW_21); if (state.failed) return current;
+                    lv_required_9_0=(Token)match(input,19,FOLLOW_21); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_required_9_0, grammarAccess.getFieldSelectAccess().getRequiredRequiredKeyword_7_0());
@@ -1518,14 +1519,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==22) ) {
+            if ( (LA19_0==23) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
                     // InternalCalculatorForm.g:545:4: otherlv_10= 'size' ( (lv_size_11_0= RULE_INT ) )
                     {
-                    otherlv_10=(Token)match(input,22,FOLLOW_22); if (state.failed) return current;
+                    otherlv_10=(Token)match(input,23,FOLLOW_22); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_10, grammarAccess.getFieldSelectAccess().getSizeKeyword_8_0());
@@ -1567,7 +1568,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,23,FOLLOW_24); if (state.failed) return current;
+            otherlv_12=(Token)match(input,24,FOLLOW_24); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_12, grammarAccess.getFieldSelectAccess().getLeftCurlyBracketKeyword_9());
@@ -1579,7 +1580,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( (LA20_0==25||LA20_0==28) ) {
+                if ( (LA20_0==26||LA20_0==29) ) {
                     alt20=1;
                 }
 
@@ -1626,7 +1627,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_14=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
+            otherlv_14=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_14, grammarAccess.getFieldSelectAccess().getRightCurlyBracketKeyword_11());
@@ -1717,10 +1718,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==25) ) {
+            if ( (LA21_0==26) ) {
                 alt21=1;
             }
-            else if ( (LA21_0==28) ) {
+            else if ( (LA21_0==29) ) {
                 alt21=2;
             }
             else {
@@ -1863,7 +1864,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:649:2: (otherlv_0= 'option' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_disabled_2_0= 'disabled' ) )? ( (lv_selected_3_0= 'selected' ) )? (otherlv_4= 'text' ( (lv_text_5_0= RULE_STRING ) ) )? (otherlv_6= 'value' ( (lv_value_7_0= RULE_STRING ) ) )? )
             // InternalCalculatorForm.g:650:3: otherlv_0= 'option' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_disabled_2_0= 'disabled' ) )? ( (lv_selected_3_0= 'selected' ) )? (otherlv_4= 'text' ( (lv_text_5_0= RULE_STRING ) ) )? (otherlv_6= 'value' ( (lv_value_7_0= RULE_STRING ) ) )?
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_9); if (state.failed) return current;
+            otherlv_0=(Token)match(input,26,FOLLOW_9); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldOptionAccess().getOptionKeyword_0());
@@ -1903,7 +1904,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==13) ) {
+            if ( (LA22_0==14) ) {
                 alt22=1;
             }
             switch (alt22) {
@@ -1913,7 +1914,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:673:4: (lv_disabled_2_0= 'disabled' )
                     // InternalCalculatorForm.g:674:5: lv_disabled_2_0= 'disabled'
                     {
-                    lv_disabled_2_0=(Token)match(input,13,FOLLOW_26); if (state.failed) return current;
+                    lv_disabled_2_0=(Token)match(input,14,FOLLOW_26); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_2_0, grammarAccess.getFieldOptionAccess().getDisabledDisabledKeyword_2_0());
@@ -1940,7 +1941,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( (LA23_0==26) ) {
+            if ( (LA23_0==27) ) {
                 alt23=1;
             }
             switch (alt23) {
@@ -1950,7 +1951,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:687:4: (lv_selected_3_0= 'selected' )
                     // InternalCalculatorForm.g:688:5: lv_selected_3_0= 'selected'
                     {
-                    lv_selected_3_0=(Token)match(input,26,FOLLOW_27); if (state.failed) return current;
+                    lv_selected_3_0=(Token)match(input,27,FOLLOW_27); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_selected_3_0, grammarAccess.getFieldOptionAccess().getSelectedSelectedKeyword_3_0());
@@ -1977,14 +1978,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt24=2;
             int LA24_0 = input.LA(1);
 
-            if ( (LA24_0==27) ) {
+            if ( (LA24_0==28) ) {
                 alt24=1;
             }
             switch (alt24) {
                 case 1 :
                     // InternalCalculatorForm.g:701:4: otherlv_4= 'text' ( (lv_text_5_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,27,FOLLOW_9); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,28,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_4, grammarAccess.getFieldOptionAccess().getTextKeyword_4_0());
@@ -2030,14 +2031,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( (LA25_0==19) ) {
+            if ( (LA25_0==20) ) {
                 alt25=1;
             }
             switch (alt25) {
                 case 1 :
                     // InternalCalculatorForm.g:725:4: otherlv_6= 'value' ( (lv_value_7_0= RULE_STRING ) )
                     {
-                    otherlv_6=(Token)match(input,19,FOLLOW_9); if (state.failed) return current;
+                    otherlv_6=(Token)match(input,20,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_6, grammarAccess.getFieldOptionAccess().getValueKeyword_5_0());
@@ -2167,7 +2168,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:766:2: (otherlv_0= 'option-group' ( (lv_disabled_1_0= 'disabled' ) )? (otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) ) )? otherlv_4= '{' ( (lv_options_5_0= ruleFieldOption ) )* otherlv_6= '}' )
             // InternalCalculatorForm.g:767:3: otherlv_0= 'option-group' ( (lv_disabled_1_0= 'disabled' ) )? (otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) ) )? otherlv_4= '{' ( (lv_options_5_0= ruleFieldOption ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28); if (state.failed) return current;
+            otherlv_0=(Token)match(input,29,FOLLOW_28); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldOptionGroupAccess().getOptionGroupKeyword_0());
@@ -2177,7 +2178,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==13) ) {
+            if ( (LA26_0==14) ) {
                 alt26=1;
             }
             switch (alt26) {
@@ -2187,7 +2188,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:772:4: (lv_disabled_1_0= 'disabled' )
                     // InternalCalculatorForm.g:773:5: lv_disabled_1_0= 'disabled'
                     {
-                    lv_disabled_1_0=(Token)match(input,13,FOLLOW_29); if (state.failed) return current;
+                    lv_disabled_1_0=(Token)match(input,14,FOLLOW_29); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_1_0, grammarAccess.getFieldOptionGroupAccess().getDisabledDisabledKeyword_1_0());
@@ -2214,14 +2215,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==15) ) {
+            if ( (LA27_0==16) ) {
                 alt27=1;
             }
             switch (alt27) {
                 case 1 :
                     // InternalCalculatorForm.g:786:4: otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) )
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getFieldOptionGroupAccess().getLabelKeyword_2_0());
@@ -2263,7 +2264,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,23,FOLLOW_30); if (state.failed) return current;
+            otherlv_4=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getFieldOptionGroupAccess().getLeftCurlyBracketKeyword_3());
@@ -2275,7 +2276,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt28=2;
                 int LA28_0 = input.LA(1);
 
-                if ( (LA28_0==25) ) {
+                if ( (LA28_0==26) ) {
                     alt28=1;
                 }
 
@@ -2322,7 +2323,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
+            otherlv_6=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_6, grammarAccess.getFieldOptionGroupAccess().getRightCurlyBracketKeyword_5());
@@ -2427,7 +2428,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:854:2: (otherlv_0= 'choice' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_checked_3_0= 'checked' ) )? ( (lv_disabled_4_0= 'disabled' ) )? (otherlv_5= 'form' ( (lv_form_6_0= RULE_STRING ) ) )? (otherlv_7= 'label' ( (lv_label_8_0= RULE_STRING ) ) )? ( (lv_multiple_9_0= 'multiple' ) )? ( (lv_notdisplayed_10_0= 'notdisplayed' ) )? ( (lv_readonly_11_0= 'readonly' ) )? ( (lv_required_12_0= 'required' ) )? (otherlv_13= 'value' ( (lv_value_14_0= RULE_STRING ) ) )? (otherlv_15= '{' ( (lv_options_16_0= ruleFieldChoiceOption ) )* otherlv_17= '}' )? )
             // InternalCalculatorForm.g:855:3: otherlv_0= 'choice' ( (lv_name_1_0= RULE_ID ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_checked_3_0= 'checked' ) )? ( (lv_disabled_4_0= 'disabled' ) )? (otherlv_5= 'form' ( (lv_form_6_0= RULE_STRING ) ) )? (otherlv_7= 'label' ( (lv_label_8_0= RULE_STRING ) ) )? ( (lv_multiple_9_0= 'multiple' ) )? ( (lv_notdisplayed_10_0= 'notdisplayed' ) )? ( (lv_readonly_11_0= 'readonly' ) )? ( (lv_required_12_0= 'required' ) )? (otherlv_13= 'value' ( (lv_value_14_0= RULE_STRING ) ) )? (otherlv_15= '{' ( (lv_options_16_0= ruleFieldChoiceOption ) )* otherlv_17= '}' )?
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,30,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldChoiceAccess().getChoiceKeyword_0());
@@ -2467,7 +2468,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( (LA29_0==12) ) {
+            if ( (LA29_0==13) ) {
                 alt29=1;
             }
             switch (alt29) {
@@ -2477,7 +2478,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:878:4: (lv_autofocus_2_0= 'autofocus' )
                     // InternalCalculatorForm.g:879:5: lv_autofocus_2_0= 'autofocus'
                     {
-                    lv_autofocus_2_0=(Token)match(input,12,FOLLOW_32); if (state.failed) return current;
+                    lv_autofocus_2_0=(Token)match(input,13,FOLLOW_32); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldChoiceAccess().getAutofocusAutofocusKeyword_2_0());
@@ -2504,7 +2505,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( (LA30_0==30) ) {
+            if ( (LA30_0==31) ) {
                 alt30=1;
             }
             switch (alt30) {
@@ -2514,7 +2515,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:892:4: (lv_checked_3_0= 'checked' )
                     // InternalCalculatorForm.g:893:5: lv_checked_3_0= 'checked'
                     {
-                    lv_checked_3_0=(Token)match(input,30,FOLLOW_33); if (state.failed) return current;
+                    lv_checked_3_0=(Token)match(input,31,FOLLOW_33); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_checked_3_0, grammarAccess.getFieldChoiceAccess().getCheckedCheckedKeyword_3_0());
@@ -2541,7 +2542,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0==13) ) {
+            if ( (LA31_0==14) ) {
                 alt31=1;
             }
             switch (alt31) {
@@ -2551,7 +2552,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:906:4: (lv_disabled_4_0= 'disabled' )
                     // InternalCalculatorForm.g:907:5: lv_disabled_4_0= 'disabled'
                     {
-                    lv_disabled_4_0=(Token)match(input,13,FOLLOW_34); if (state.failed) return current;
+                    lv_disabled_4_0=(Token)match(input,14,FOLLOW_34); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_4_0, grammarAccess.getFieldChoiceAccess().getDisabledDisabledKeyword_4_0());
@@ -2578,14 +2579,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt32=2;
             int LA32_0 = input.LA(1);
 
-            if ( (LA32_0==14) ) {
+            if ( (LA32_0==15) ) {
                 alt32=1;
             }
             switch (alt32) {
                 case 1 :
                     // InternalCalculatorForm.g:920:4: otherlv_5= 'form' ( (lv_form_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,14,FOLLOW_9); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_5, grammarAccess.getFieldChoiceAccess().getFormKeyword_5_0());
@@ -2631,14 +2632,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt33=2;
             int LA33_0 = input.LA(1);
 
-            if ( (LA33_0==15) ) {
+            if ( (LA33_0==16) ) {
                 alt33=1;
             }
             switch (alt33) {
                 case 1 :
                     // InternalCalculatorForm.g:944:4: otherlv_7= 'label' ( (lv_label_8_0= RULE_STRING ) )
                     {
-                    otherlv_7=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_7, grammarAccess.getFieldChoiceAccess().getLabelKeyword_6_0());
@@ -2684,7 +2685,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt34=2;
             int LA34_0 = input.LA(1);
 
-            if ( (LA34_0==21) ) {
+            if ( (LA34_0==22) ) {
                 alt34=1;
             }
             switch (alt34) {
@@ -2694,7 +2695,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:968:4: (lv_multiple_9_0= 'multiple' )
                     // InternalCalculatorForm.g:969:5: lv_multiple_9_0= 'multiple'
                     {
-                    lv_multiple_9_0=(Token)match(input,21,FOLLOW_37); if (state.failed) return current;
+                    lv_multiple_9_0=(Token)match(input,22,FOLLOW_37); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_multiple_9_0, grammarAccess.getFieldChoiceAccess().getMultipleMultipleKeyword_7_0());
@@ -2721,7 +2722,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt35=2;
             int LA35_0 = input.LA(1);
 
-            if ( (LA35_0==16) ) {
+            if ( (LA35_0==17) ) {
                 alt35=1;
             }
             switch (alt35) {
@@ -2731,7 +2732,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:982:4: (lv_notdisplayed_10_0= 'notdisplayed' )
                     // InternalCalculatorForm.g:983:5: lv_notdisplayed_10_0= 'notdisplayed'
                     {
-                    lv_notdisplayed_10_0=(Token)match(input,16,FOLLOW_38); if (state.failed) return current;
+                    lv_notdisplayed_10_0=(Token)match(input,17,FOLLOW_38); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_notdisplayed_10_0, grammarAccess.getFieldChoiceAccess().getNotdisplayedNotdisplayedKeyword_8_0());
@@ -2758,7 +2759,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt36=2;
             int LA36_0 = input.LA(1);
 
-            if ( (LA36_0==17) ) {
+            if ( (LA36_0==18) ) {
                 alt36=1;
             }
             switch (alt36) {
@@ -2768,7 +2769,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:996:4: (lv_readonly_11_0= 'readonly' )
                     // InternalCalculatorForm.g:997:5: lv_readonly_11_0= 'readonly'
                     {
-                    lv_readonly_11_0=(Token)match(input,17,FOLLOW_39); if (state.failed) return current;
+                    lv_readonly_11_0=(Token)match(input,18,FOLLOW_39); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_readonly_11_0, grammarAccess.getFieldChoiceAccess().getReadonlyReadonlyKeyword_9_0());
@@ -2795,7 +2796,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt37=2;
             int LA37_0 = input.LA(1);
 
-            if ( (LA37_0==18) ) {
+            if ( (LA37_0==19) ) {
                 alt37=1;
             }
             switch (alt37) {
@@ -2805,7 +2806,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1010:4: (lv_required_12_0= 'required' )
                     // InternalCalculatorForm.g:1011:5: lv_required_12_0= 'required'
                     {
-                    lv_required_12_0=(Token)match(input,18,FOLLOW_40); if (state.failed) return current;
+                    lv_required_12_0=(Token)match(input,19,FOLLOW_40); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_required_12_0, grammarAccess.getFieldChoiceAccess().getRequiredRequiredKeyword_10_0());
@@ -2832,14 +2833,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt38=2;
             int LA38_0 = input.LA(1);
 
-            if ( (LA38_0==19) ) {
+            if ( (LA38_0==20) ) {
                 alt38=1;
             }
             switch (alt38) {
                 case 1 :
                     // InternalCalculatorForm.g:1024:4: otherlv_13= 'value' ( (lv_value_14_0= RULE_STRING ) )
                     {
-                    otherlv_13=(Token)match(input,19,FOLLOW_9); if (state.failed) return current;
+                    otherlv_13=(Token)match(input,20,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_13, grammarAccess.getFieldChoiceAccess().getValueKeyword_11_0());
@@ -2885,14 +2886,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt40=2;
             int LA40_0 = input.LA(1);
 
-            if ( (LA40_0==23) ) {
+            if ( (LA40_0==24) ) {
                 alt40=1;
             }
             switch (alt40) {
                 case 1 :
                     // InternalCalculatorForm.g:1048:4: otherlv_15= '{' ( (lv_options_16_0= ruleFieldChoiceOption ) )* otherlv_17= '}'
                     {
-                    otherlv_15=(Token)match(input,23,FOLLOW_30); if (state.failed) return current;
+                    otherlv_15=(Token)match(input,24,FOLLOW_30); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_15, grammarAccess.getFieldChoiceAccess().getLeftCurlyBracketKeyword_12_0());
@@ -2904,7 +2905,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                         int alt39=2;
                         int LA39_0 = input.LA(1);
 
-                        if ( (LA39_0==25) ) {
+                        if ( (LA39_0==26) ) {
                             alt39=1;
                         }
 
@@ -2951,7 +2952,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_17=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
+                    otherlv_17=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_17, grammarAccess.getFieldChoiceAccess().getRightCurlyBracketKeyword_12_2());
@@ -3052,7 +3053,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1094:2: (otherlv_0= 'option' ( (lv_label_1_0= RULE_STRING ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_checked_3_0= 'checked' ) )? ( (lv_disabled_4_0= 'disabled' ) )? ( (lv_readonly_5_0= 'readonly' ) )? ( (lv_required_6_0= 'required' ) )? (otherlv_7= 'value' ( (lv_value_8_0= RULE_STRING ) ) )? )
             // InternalCalculatorForm.g:1095:3: otherlv_0= 'option' ( (lv_label_1_0= RULE_STRING ) ) ( (lv_autofocus_2_0= 'autofocus' ) )? ( (lv_checked_3_0= 'checked' ) )? ( (lv_disabled_4_0= 'disabled' ) )? ( (lv_readonly_5_0= 'readonly' ) )? ( (lv_required_6_0= 'required' ) )? (otherlv_7= 'value' ( (lv_value_8_0= RULE_STRING ) ) )?
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_9); if (state.failed) return current;
+            otherlv_0=(Token)match(input,26,FOLLOW_9); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getFieldChoiceOptionAccess().getOptionKeyword_0());
@@ -3092,7 +3093,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt41=2;
             int LA41_0 = input.LA(1);
 
-            if ( (LA41_0==12) ) {
+            if ( (LA41_0==13) ) {
                 alt41=1;
             }
             switch (alt41) {
@@ -3102,7 +3103,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1118:4: (lv_autofocus_2_0= 'autofocus' )
                     // InternalCalculatorForm.g:1119:5: lv_autofocus_2_0= 'autofocus'
                     {
-                    lv_autofocus_2_0=(Token)match(input,12,FOLLOW_43); if (state.failed) return current;
+                    lv_autofocus_2_0=(Token)match(input,13,FOLLOW_43); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_autofocus_2_0, grammarAccess.getFieldChoiceOptionAccess().getAutofocusAutofocusKeyword_2_0());
@@ -3129,7 +3130,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt42=2;
             int LA42_0 = input.LA(1);
 
-            if ( (LA42_0==30) ) {
+            if ( (LA42_0==31) ) {
                 alt42=1;
             }
             switch (alt42) {
@@ -3139,7 +3140,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1132:4: (lv_checked_3_0= 'checked' )
                     // InternalCalculatorForm.g:1133:5: lv_checked_3_0= 'checked'
                     {
-                    lv_checked_3_0=(Token)match(input,30,FOLLOW_44); if (state.failed) return current;
+                    lv_checked_3_0=(Token)match(input,31,FOLLOW_44); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_checked_3_0, grammarAccess.getFieldChoiceOptionAccess().getCheckedCheckedKeyword_3_0());
@@ -3166,7 +3167,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt43=2;
             int LA43_0 = input.LA(1);
 
-            if ( (LA43_0==13) ) {
+            if ( (LA43_0==14) ) {
                 alt43=1;
             }
             switch (alt43) {
@@ -3176,7 +3177,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1146:4: (lv_disabled_4_0= 'disabled' )
                     // InternalCalculatorForm.g:1147:5: lv_disabled_4_0= 'disabled'
                     {
-                    lv_disabled_4_0=(Token)match(input,13,FOLLOW_12); if (state.failed) return current;
+                    lv_disabled_4_0=(Token)match(input,14,FOLLOW_12); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_4_0, grammarAccess.getFieldChoiceOptionAccess().getDisabledDisabledKeyword_4_0());
@@ -3203,7 +3204,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt44=2;
             int LA44_0 = input.LA(1);
 
-            if ( (LA44_0==17) ) {
+            if ( (LA44_0==18) ) {
                 alt44=1;
             }
             switch (alt44) {
@@ -3213,7 +3214,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1160:4: (lv_readonly_5_0= 'readonly' )
                     // InternalCalculatorForm.g:1161:5: lv_readonly_5_0= 'readonly'
                     {
-                    lv_readonly_5_0=(Token)match(input,17,FOLLOW_13); if (state.failed) return current;
+                    lv_readonly_5_0=(Token)match(input,18,FOLLOW_13); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_readonly_5_0, grammarAccess.getFieldChoiceOptionAccess().getReadonlyReadonlyKeyword_5_0());
@@ -3240,7 +3241,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt45=2;
             int LA45_0 = input.LA(1);
 
-            if ( (LA45_0==18) ) {
+            if ( (LA45_0==19) ) {
                 alt45=1;
             }
             switch (alt45) {
@@ -3250,7 +3251,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1174:4: (lv_required_6_0= 'required' )
                     // InternalCalculatorForm.g:1175:5: lv_required_6_0= 'required'
                     {
-                    lv_required_6_0=(Token)match(input,18,FOLLOW_14); if (state.failed) return current;
+                    lv_required_6_0=(Token)match(input,19,FOLLOW_14); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_required_6_0, grammarAccess.getFieldChoiceOptionAccess().getRequiredRequiredKeyword_6_0());
@@ -3277,14 +3278,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt46=2;
             int LA46_0 = input.LA(1);
 
-            if ( (LA46_0==19) ) {
+            if ( (LA46_0==20) ) {
                 alt46=1;
             }
             switch (alt46) {
                 case 1 :
                     // InternalCalculatorForm.g:1188:4: otherlv_7= 'value' ( (lv_value_8_0= RULE_STRING ) )
                     {
-                    otherlv_7=(Token)match(input,19,FOLLOW_9); if (state.failed) return current;
+                    otherlv_7=(Token)match(input,20,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_7, grammarAccess.getFieldChoiceOptionAccess().getValueKeyword_7_0());
@@ -3414,7 +3415,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1229:2: (otherlv_0= 'group' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) ) )? otherlv_4= '{' ( (lv_fields_5_0= ruleField ) )* otherlv_6= '}' )
             // InternalCalculatorForm.g:1230:3: otherlv_0= 'group' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) ) )? otherlv_4= '{' ( (lv_fields_5_0= ruleField ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,32,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getGroupAccess().getGroupKeyword_0());
@@ -3454,14 +3455,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt47=2;
             int LA47_0 = input.LA(1);
 
-            if ( (LA47_0==15) ) {
+            if ( (LA47_0==16) ) {
                 alt47=1;
             }
             switch (alt47) {
                 case 1 :
                     // InternalCalculatorForm.g:1253:4: otherlv_2= 'label' ( (lv_label_3_0= RULE_STRING ) )
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_9); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,16,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getGroupAccess().getLabelKeyword_2_0());
@@ -3503,7 +3504,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,23,FOLLOW_45); if (state.failed) return current;
+            otherlv_4=(Token)match(input,24,FOLLOW_45); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_4, grammarAccess.getGroupAccess().getLeftCurlyBracketKeyword_3());
@@ -3515,7 +3516,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt48=2;
                 int LA48_0 = input.LA(1);
 
-                if ( (LA48_0==11||LA48_0==20||LA48_0==29||LA48_0==33) ) {
+                if ( (LA48_0==12||LA48_0==21||LA48_0==30||LA48_0==34) ) {
                     alt48=1;
                 }
 
@@ -3562,7 +3563,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
+            otherlv_6=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_6, grammarAccess.getGroupAccess().getRightCurlyBracketKeyword_5());
@@ -3653,13 +3654,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1321:2: (otherlv_0= 'page' otherlv_1= '{' ( (lv_childs_2_0= rulePageChild ) )* otherlv_3= '}' )
             // InternalCalculatorForm.g:1322:3: otherlv_0= 'page' otherlv_1= '{' ( (lv_childs_2_0= rulePageChild ) )* otherlv_3= '}'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_23); if (state.failed) return current;
+            otherlv_0=(Token)match(input,33,FOLLOW_23); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getPageAccess().getPageKeyword_0());
               		
             }
-            otherlv_1=(Token)match(input,23,FOLLOW_46); if (state.failed) return current;
+            otherlv_1=(Token)match(input,24,FOLLOW_46); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getPageAccess().getLeftCurlyBracketKeyword_1());
@@ -3671,7 +3672,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt49=2;
                 int LA49_0 = input.LA(1);
 
-                if ( (LA49_0==11||LA49_0==20||LA49_0==29||LA49_0==31||LA49_0==33) ) {
+                if ( (LA49_0==12||LA49_0==21||LA49_0==30||LA49_0==32||LA49_0==34) ) {
                     alt49=1;
                 }
 
@@ -3718,7 +3719,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
+            otherlv_3=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_3, grammarAccess.getPageAccess().getRightCurlyBracketKeyword_3());
@@ -3809,10 +3810,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( (LA50_0==31) ) {
+            if ( (LA50_0==32) ) {
                 alt50=1;
             }
-            else if ( (LA50_0==11||LA50_0==20||LA50_0==29||LA50_0==33) ) {
+            else if ( (LA50_0==12||LA50_0==21||LA50_0==30||LA50_0==34) ) {
                 alt50=2;
             }
             else {
@@ -4046,7 +4047,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1432:2: (otherlv_0= 'submit-button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_autofocus_3_0= 'autofocus' ) )? ( (lv_disabled_4_0= 'disabled' ) )? (otherlv_5= 'value' ( (lv_value_6_0= RULE_STRING ) ) )? )
             // InternalCalculatorForm.g:1433:3: otherlv_0= 'submit-button' ( (lv_name_1_0= RULE_ID ) ) ( (lv_text_2_0= RULE_STRING ) ) ( (lv_autofocus_3_0= 'autofocus' ) )? ( (lv_disabled_4_0= 'disabled' ) )? (otherlv_5= 'value' ( (lv_value_6_0= RULE_STRING ) ) )?
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,34,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getButtonSubmitAccess().getSubmitButtonKeyword_0());
@@ -4116,7 +4117,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( (LA51_0==12) ) {
+            if ( (LA51_0==13) ) {
                 alt51=1;
             }
             switch (alt51) {
@@ -4126,7 +4127,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1474:4: (lv_autofocus_3_0= 'autofocus' )
                     // InternalCalculatorForm.g:1475:5: lv_autofocus_3_0= 'autofocus'
                     {
-                    lv_autofocus_3_0=(Token)match(input,12,FOLLOW_48); if (state.failed) return current;
+                    lv_autofocus_3_0=(Token)match(input,13,FOLLOW_48); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_autofocus_3_0, grammarAccess.getButtonSubmitAccess().getAutofocusAutofocusKeyword_3_0());
@@ -4153,7 +4154,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( (LA52_0==13) ) {
+            if ( (LA52_0==14) ) {
                 alt52=1;
             }
             switch (alt52) {
@@ -4163,7 +4164,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1488:4: (lv_disabled_4_0= 'disabled' )
                     // InternalCalculatorForm.g:1489:5: lv_disabled_4_0= 'disabled'
                     {
-                    lv_disabled_4_0=(Token)match(input,13,FOLLOW_14); if (state.failed) return current;
+                    lv_disabled_4_0=(Token)match(input,14,FOLLOW_14); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(lv_disabled_4_0, grammarAccess.getButtonSubmitAccess().getDisabledDisabledKeyword_4_0());
@@ -4190,14 +4191,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             int alt53=2;
             int LA53_0 = input.LA(1);
 
-            if ( (LA53_0==19) ) {
+            if ( (LA53_0==20) ) {
                 alt53=1;
             }
             switch (alt53) {
                 case 1 :
                     // InternalCalculatorForm.g:1502:4: otherlv_5= 'value' ( (lv_value_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,19,FOLLOW_9); if (state.failed) return current;
+                    otherlv_5=(Token)match(input,20,FOLLOW_9); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_5, grammarAccess.getButtonSubmitAccess().getValueKeyword_5_0());
@@ -4323,7 +4324,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1543:2: (otherlv_0= 'calculate' ( ( ruleQualifiedName ) ) otherlv_2= '=' ( (lv_expression_3_0= ruleExpression ) ) )
             // InternalCalculatorForm.g:1544:3: otherlv_0= 'calculate' ( ( ruleQualifiedName ) ) otherlv_2= '=' ( (lv_expression_3_0= ruleExpression ) )
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_5); if (state.failed) return current;
+            otherlv_0=(Token)match(input,35,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getCalculateAccess().getCalculateKeyword_0());
@@ -4363,7 +4364,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_50); if (state.failed) return current;
+            otherlv_2=(Token)match(input,36,FOLLOW_50); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_2, grammarAccess.getCalculateAccess().getEqualsSignKeyword_2());
@@ -4504,7 +4505,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt54=2;
                 int LA54_0 = input.LA(1);
 
-                if ( (LA54_0==36) ) {
+                if ( (LA54_0==37) ) {
                     alt54=1;
                 }
 
@@ -4513,7 +4514,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalCalculatorForm.g:1614:4: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,36,FOLLOW_5); if (state.failed) return current;
+            	    kw=(Token)match(input,37,FOLLOW_5); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      				current.merge(kw);
@@ -4740,7 +4741,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt56=2;
                 int LA56_0 = input.LA(1);
 
-                if ( ((LA56_0>=37 && LA56_0<=38)) ) {
+                if ( ((LA56_0>=38 && LA56_0<=39)) ) {
                     alt56=1;
                 }
 
@@ -4753,10 +4754,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             	    int alt55=2;
             	    int LA55_0 = input.LA(1);
 
-            	    if ( (LA55_0==37) ) {
+            	    if ( (LA55_0==38) ) {
             	        alt55=1;
             	    }
-            	    else if ( (LA55_0==38) ) {
+            	    else if ( (LA55_0==39) ) {
             	        alt55=2;
             	    }
             	    else {
@@ -4786,7 +4787,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_2=(Token)match(input,37,FOLLOW_50); if (state.failed) return current;
+            	            otherlv_2=(Token)match(input,38,FOLLOW_50); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	              						newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_1_0_0_1());
@@ -4817,7 +4818,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            otherlv_4=(Token)match(input,38,FOLLOW_50); if (state.failed) return current;
+            	            otherlv_4=(Token)match(input,39,FOLLOW_50); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	              						newLeafNode(otherlv_4, grammarAccess.getAdditionAccess().getHyphenMinusKeyword_1_0_1_1());
@@ -4984,7 +4985,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 int alt58=2;
                 int LA58_0 = input.LA(1);
 
-                if ( ((LA58_0>=39 && LA58_0<=40)) ) {
+                if ( ((LA58_0>=40 && LA58_0<=41)) ) {
                     alt58=1;
                 }
 
@@ -5019,10 +5020,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             	    int alt57=2;
             	    int LA57_0 = input.LA(1);
 
-            	    if ( (LA57_0==39) ) {
+            	    if ( (LA57_0==40) ) {
             	        alt57=1;
             	    }
-            	    else if ( (LA57_0==40) ) {
+            	    else if ( (LA57_0==41) ) {
             	        alt57=2;
             	    }
             	    else {
@@ -5036,7 +5037,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // InternalCalculatorForm.g:1768:8: lv_op_2_1= '*'
             	            {
-            	            lv_op_2_1=(Token)match(input,39,FOLLOW_50); if (state.failed) return current;
+            	            lv_op_2_1=(Token)match(input,40,FOLLOW_50); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	              								newLeafNode(lv_op_2_1, grammarAccess.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0());
@@ -5056,7 +5057,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             	        case 2 :
             	            // InternalCalculatorForm.g:1779:8: lv_op_2_2= '/'
             	            {
-            	            lv_op_2_2=(Token)match(input,40,FOLLOW_50); if (state.failed) return current;
+            	            lv_op_2_2=(Token)match(input,41,FOLLOW_50); if (state.failed) return current;
             	            if ( state.backtracking==0 ) {
 
             	              								newLeafNode(lv_op_2_2, grammarAccess.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1());
@@ -5217,19 +5218,20 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             // InternalCalculatorForm.g:1831:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) | this_Atomic_6= ruleAtomic )
             int alt59=3;
             switch ( input.LA(1) ) {
-            case 41:
+            case 42:
                 {
                 alt59=1;
                 }
                 break;
-            case 38:
+            case 39:
                 {
                 alt59=2;
                 }
                 break;
             case RULE_ID:
             case RULE_INT:
-            case 42:
+            case RULE_FLOAT:
+            case 43:
                 {
                 alt59=3;
                 }
@@ -5265,7 +5267,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1840:4: ( ( '!' )=>otherlv_1= '!' )
                     // InternalCalculatorForm.g:1841:5: ( '!' )=>otherlv_1= '!'
                     {
-                    otherlv_1=(Token)match(input,41,FOLLOW_50); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,42,FOLLOW_50); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_1, grammarAccess.getPrefixedAccess().getExclamationMarkKeyword_0_1());
@@ -5337,7 +5339,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1876:4: ( ( '-' )=>otherlv_4= '-' )
                     // InternalCalculatorForm.g:1877:5: ( '-' )=>otherlv_4= '-'
                     {
-                    otherlv_4=(Token)match(input,38,FOLLOW_50); if (state.failed) return current;
+                    otherlv_4=(Token)match(input,39,FOLLOW_50); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       					newLeafNode(otherlv_4, grammarAccess.getPrefixedAccess().getHyphenMinusKeyword_1_1());
@@ -5474,13 +5476,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // InternalCalculatorForm.g:1923:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // InternalCalculatorForm.g:1923:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
         Token lv_value_4_0=null;
+        Token lv_value_6_0=null;
         EObject this_Expression_1 = null;
 
 
@@ -5488,13 +5491,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCalculatorForm.g:1929:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // InternalCalculatorForm.g:1930:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            // InternalCalculatorForm.g:1929:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // InternalCalculatorForm.g:1930:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // InternalCalculatorForm.g:1930:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt60=3;
+            // InternalCalculatorForm.g:1930:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt60=4;
             switch ( input.LA(1) ) {
-            case 42:
+            case 43:
                 {
                 alt60=1;
                 }
@@ -5504,9 +5507,14 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 alt60=2;
                 }
                 break;
-            case RULE_ID:
+            case RULE_FLOAT:
                 {
                 alt60=3;
+                }
+                break;
+            case RULE_ID:
+                {
+                alt60=4;
                 }
                 break;
             default:
@@ -5524,7 +5532,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     // InternalCalculatorForm.g:1931:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     // InternalCalculatorForm.g:1932:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
-                    otherlv_0=(Token)match(input,42,FOLLOW_50); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,43,FOLLOW_50); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getAtomicAccess().getLeftParenthesisKeyword_0_0());
@@ -5546,7 +5554,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                       				afterParserOrEnumRuleCall();
                       			
                     }
-                    otherlv_2=(Token)match(input,43,FOLLOW_2); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,44,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_2, grammarAccess.getAtomicAccess().getRightParenthesisKeyword_0_2());
@@ -5614,10 +5622,10 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCalculatorForm.g:1978:3: ( () ( ( ruleQualifiedName ) ) )
+                    // InternalCalculatorForm.g:1978:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
                     {
-                    // InternalCalculatorForm.g:1978:3: ( () ( ( ruleQualifiedName ) ) )
-                    // InternalCalculatorForm.g:1979:4: () ( ( ruleQualifiedName ) )
+                    // InternalCalculatorForm.g:1978:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
+                    // InternalCalculatorForm.g:1979:4: () ( (lv_value_6_0= RULE_FLOAT ) )
                     {
                     // InternalCalculatorForm.g:1979:4: ()
                     // InternalCalculatorForm.g:1980:5: 
@@ -5625,18 +5633,73 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
+                      						grammarAccess.getAtomicAccess().getFloatLiteralAction_2_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalCalculatorForm.g:1986:4: ( ( ruleQualifiedName ) )
-                    // InternalCalculatorForm.g:1987:5: ( ruleQualifiedName )
+                    // InternalCalculatorForm.g:1986:4: ( (lv_value_6_0= RULE_FLOAT ) )
+                    // InternalCalculatorForm.g:1987:5: (lv_value_6_0= RULE_FLOAT )
                     {
-                    // InternalCalculatorForm.g:1987:5: ( ruleQualifiedName )
-                    // InternalCalculatorForm.g:1988:6: ruleQualifiedName
+                    // InternalCalculatorForm.g:1987:5: (lv_value_6_0= RULE_FLOAT )
+                    // InternalCalculatorForm.g:1988:6: lv_value_6_0= RULE_FLOAT
+                    {
+                    lv_value_6_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(lv_value_6_0, grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0());
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getAtomicRule());
+                      						}
+                      						setWithLastConsumed(
+                      							current,
+                      							"value",
+                      							lv_value_6_0,
+                      							"de.htwg.zeta.xtext.CalculatorForm.FLOAT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalCalculatorForm.g:2006:3: ( () ( ( ruleQualifiedName ) ) )
+                    {
+                    // InternalCalculatorForm.g:2006:3: ( () ( ( ruleQualifiedName ) ) )
+                    // InternalCalculatorForm.g:2007:4: () ( ( ruleQualifiedName ) )
+                    {
+                    // InternalCalculatorForm.g:2007:4: ()
+                    // InternalCalculatorForm.g:2008:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getAtomicAccess().getFieldReferenceAction_3_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalCalculatorForm.g:2014:4: ( ( ruleQualifiedName ) )
+                    // InternalCalculatorForm.g:2015:5: ( ruleQualifiedName )
+                    {
+                    // InternalCalculatorForm.g:2015:5: ( ruleQualifiedName )
+                    // InternalCalculatorForm.g:2016:6: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5647,7 +5710,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
+                      						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_3_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
@@ -5702,57 +5765,57 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000007A0100802L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000400000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000F40201002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000800000002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000000FF002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000000FE002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000FC002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000001FE002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000001FC002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000001F8002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000F8002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000000F0002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000E0002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000000C0002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000E4F000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000E4E000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000E4C000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000E48000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000E40000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000C40000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000C00000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001F0002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x00000000001E0002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000001C0002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000180002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001C9E000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001C9C000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001C98000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001C90000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001C80000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001880000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001800000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000013000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x000000000C082002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x000000000C080002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000008080002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000000000080A000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000808000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000003000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000040AFF002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000040AFE002L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000AFE002L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000AFC002L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000AF8002L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000AF0002L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00000000008F0002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x00000000008E0002L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x00000000008C0002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000880002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x00000000400E3002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x00000000400E2002L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x00000000000E2002L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000221100800L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x00000002A1100800L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000083002L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000082002L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000064000000050L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000018000000002L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000026000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000018104002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000018100002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010100002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000001014000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000001010000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000006000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00000000815FE002L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x00000000815FC002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x00000000015FC002L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x00000000015F8002L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x00000000015F0002L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x00000000015E0002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x00000000011E0002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x00000000011C0002L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000001180002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000001100002L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x00000000801C6002L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x00000000801C4002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x00000000001C4002L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000442201000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000542201000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000106002L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000104002L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x00000C80000000D0L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x000000C000000002L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000030000000002L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000100000000000L});
 
 }

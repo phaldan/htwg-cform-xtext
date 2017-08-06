@@ -1141,16 +1141,21 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cFieldReferenceAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cRefAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cRefFieldCrossReference_2_1_0 = (CrossReference)cRefAssignment_2_1.eContents().get(0);
-		private final RuleCall cRefFieldQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRefFieldCrossReference_2_1_0.eContents().get(1);
+		private final Action cFloatLiteralAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValueFLOATTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cFieldReferenceAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cRefAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cRefFieldCrossReference_3_1_0 = (CrossReference)cRefAssignment_3_1.eContents().get(0);
+		private final RuleCall cRefFieldQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefFieldCrossReference_3_1_0.eContents().get(1);
 		
 		//Atomic Expression:
-		//	'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+		//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference}
+		//	ref=[Field|QualifiedName]
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+		//'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference} ref=[Field|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' Expression ')'
@@ -1177,20 +1182,32 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
 		
-		//{FieldReference} ref=[Field|QualifiedName]
+		//{FloatLiteral} value=FLOAT
 		public Group getGroup_2() { return cGroup_2; }
 		
+		//{FloatLiteral}
+		public Action getFloatLiteralAction_2_0() { return cFloatLiteralAction_2_0; }
+		
+		//value=FLOAT
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		
+		//FLOAT
+		public RuleCall getValueFLOATTerminalRuleCall_2_1_0() { return cValueFLOATTerminalRuleCall_2_1_0; }
+		
+		//{FieldReference} ref=[Field|QualifiedName]
+		public Group getGroup_3() { return cGroup_3; }
+		
 		//{FieldReference}
-		public Action getFieldReferenceAction_2_0() { return cFieldReferenceAction_2_0; }
+		public Action getFieldReferenceAction_3_0() { return cFieldReferenceAction_3_0; }
 		
 		//ref=[Field|QualifiedName]
-		public Assignment getRefAssignment_2_1() { return cRefAssignment_2_1; }
+		public Assignment getRefAssignment_3_1() { return cRefAssignment_3_1; }
 		
 		//[Field|QualifiedName]
-		public CrossReference getRefFieldCrossReference_2_1_0() { return cRefFieldCrossReference_2_1_0; }
+		public CrossReference getRefFieldCrossReference_3_1_0() { return cRefFieldCrossReference_3_1_0; }
 		
 		//QualifiedName
-		public RuleCall getRefFieldQualifiedNameParserRuleCall_2_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_2_1_0_1; }
+		public RuleCall getRefFieldQualifiedNameParserRuleCall_3_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_3_1_0_1; }
 	}
 	
 	
@@ -1218,6 +1235,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final AtomicElements pAtomic;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
+	private final TerminalRule tFLOAT;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
@@ -1253,6 +1271,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAtomic = new AtomicElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.INT");
+		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FLOAT");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.STRING");
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.SL_COMMENT");
@@ -1500,7 +1519,8 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Atomic Expression:
-	//	'(' Expression ')' | {NumberLiteral} value=INT | {FieldReference} ref=[Field|QualifiedName]
+	//	'(' Expression ')' | {NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {FieldReference}
+	//	ref=[Field|QualifiedName]
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;
 	}
@@ -1519,6 +1539,12 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
 		return tINT;
+	}
+	
+	//terminal FLOAT returns ecore::EFloat:
+	//	INT '.' INT;
+	public TerminalRule getFLOATRule() {
+		return tFLOAT;
 	}
 	
 	//terminal STRING:

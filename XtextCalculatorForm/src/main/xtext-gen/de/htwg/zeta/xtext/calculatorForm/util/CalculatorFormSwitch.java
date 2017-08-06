@@ -263,6 +263,14 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CalculatorFormPackage.FLOAT_LITERAL:
+      {
+        FloatLiteral floatLiteral = (FloatLiteral)theEObject;
+        T result = caseFloatLiteral(floatLiteral);
+        if (result == null) result = caseExpression(floatLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CalculatorFormPackage.FIELD_REFERENCE:
       {
         FieldReference fieldReference = (FieldReference)theEObject;
@@ -639,6 +647,22 @@ public class CalculatorFormSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNumberLiteral(NumberLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatLiteral(FloatLiteral object)
   {
     return null;
   }

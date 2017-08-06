@@ -200,7 +200,10 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getAtomic_NumberLiteralAction_1_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType()) {
+			if (elementType == elementTypeProvider.getAtomic_FloatLiteralAction_2_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getAtomic_FieldReferenceAction_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);
