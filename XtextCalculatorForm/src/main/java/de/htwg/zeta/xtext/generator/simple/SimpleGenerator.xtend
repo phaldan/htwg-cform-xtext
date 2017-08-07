@@ -51,6 +51,9 @@ class SimpleGenerator {
                         box-sizing: border-box;
                         width: calc(50% - 10px);
                     }
+                    .cform-input {
+                        text-align: right;
+                    }
                     .cform-button {
                         text-align: center;
                         min-width: 200px;
@@ -65,14 +68,22 @@ class SimpleGenerator {
                 <script type="text/javascript" src="cform.js" charset="utf-8"></script>
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
                 <script>
-                    cform.init(document.querySelectorAll('.cform'), { calculations });
+                    cform.init(document.querySelectorAll('.cform'), {
+                        calculations,
+                        formatInput: value => {
+                            return value.replace(',','.').replace('.','');
+                        },
+                        formatOutput: value => {
+                            return value.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+                        }
+                    });
                 </script>
             </body>
         </html>
     '''
 
     private def String createJavaScript() '''
-        var cform = (function(document) {
+        const cform = (function(document) {
             'use strict';
 
             const CLASSES = {
@@ -81,7 +92,9 @@ class SimpleGenerator {
             };
 
             const DEFAULTS = {
-                calculations: []
+                calculations: [],
+                formatInput: function(value, element) { return value; },
+                formatOutput: function(value, element) { return value; }
             };
 
             const CALCULTATE_DEFAULTS = {
@@ -91,8 +104,10 @@ class SimpleGenerator {
             };
 
             class Cform {
-                constructor(element, { calculations }) {
+                constructor(element, { calculations, formatInput, formatOutput }) {
                     this.element = element;
+                    this.formatInput = formatInput;
+                    this.formatOutput = formatOutput;
                     this.calculations = calculations.map(this._initCalculation, this);
                     this._initStore();
                     this._initialCalculation();
@@ -108,10 +123,21 @@ class SimpleGenerator {
                     const fields = this.element.querySelectorAll('.' + CLASSES.FIELD);
                     this.store = {};
                     fields.forEach(element => {
-                        if (element instanceof HTMLInputElement) {
-                            this.store[element.name] = element.value;
-                        }
+                        const value = this._getFieldValue(element);
+                        this._setStoreFromField(element, element.value);
                     });
+                }
+
+                _getFieldValue(element) {
+                    if (element instanceof HTMLInputElement) {
+                        return element.value;
+                    } else {
+                        return undefined;
+                    }
+                }
+
+                _setStoreFromField(element, value) {
+                    this.store[element.name] = this.formatInput(value, element);
                 }
 
                 _initialCalculation() {
@@ -124,15 +150,15 @@ class SimpleGenerator {
                       return;
                     }
 
-                    var key = event.target.name;
-                    this.store[key] = event.target.value;
-                    this._runDependingCalculations(key);
+                    const element = event.target;
+                    this._setStoreFromField(element, element.value);
+                    this._runDependingCalculations(element.name);
                 }
 
-                _setFieldValue(field, value) {
-                    const selector = '.' + CLASSES.ELEMENT + ' input[name=\"' + field + '\"]';
+                _setFieldValue(fieldName, value) {
+                    const selector = '.' + CLASSES.ELEMENT + ' input[name=\"' + fieldName + '\"]';
                     const element = document.querySelector(selector);
-                    element.value = value;
+                    element.value = this.formatOutput(value, element);
                 }
 
                 _runDependingCalculations(field) {
@@ -141,7 +167,7 @@ class SimpleGenerator {
                 }
 
                 _execCalculate(entry) {
-                    const value = entry.calculate();
+                    const value = Number(entry.calculate());
                     if (isNaN(value)) {
                         return;
                     }
@@ -195,7 +221,7 @@ class SimpleGenerator {
             }
 
             function initiate(element, settings) {
-                var elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
+                const elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
                 return elements.map(e => {
                     const cform = new Cform(e, Object.assign({}, DEFAULTS, settings));
                     instances.push(cform);
