@@ -129,10 +129,6 @@ class SimpleGenerator {
                     this._runDependingCalculations(key);
                 }
 
-                getValue(field) {
-                    return this.store[field];
-                }
-
                 _setFieldValue(field, value) {
                     const selector = '.' + CLASSES.ELEMENT + ' input[name=\"' + field + '\"]';
                     const element = document.querySelector(selector);
@@ -152,6 +148,49 @@ class SimpleGenerator {
                     this.store[entry.output] = value;
                     this._setFieldValue(entry.output, value);
                     this._runDependingCalculations(entry.output);
+                }
+
+                getValue(field) {
+                    return this.store[field];
+                }
+
+                mathPlus(left, right) {
+                    const leftNum = Number(left);
+                    const rightNum = Number(right);
+                    const factor = this._getCalculationFaktor(leftNum, rightNum);
+                    return (Math.round(leftNum * factor) + Math.round(rightNum * factor)) / factor;
+                }
+
+                mathMinus(left, right) {
+                    const leftNum = Number(left);
+                    const rightNum = Number(right);
+                    const factor = this._getCalculationFaktor(leftNum, rightNum);
+                    return (Math.round(leftNum * factor) - Math.round(rightNum * factor)) / factor;
+                }
+
+                mathMulti(left, right) {
+                    const leftNum = Number(left);
+                    const rightNum = Number(right);
+                    const factor = this._getCalculationFaktor(leftNum, rightNum);
+                    return Math.round(leftNum * factor) * Math.round(rightNum * factor) / (factor * factor);
+                }
+
+                mathDiv(left, right) {
+                    const leftNum = Number(left);
+                    const rightNum = Number(right);
+                    const factor = this._getCalculationFaktor(leftNum, rightNum);
+                    return Math.round(leftNum * factor) / Math.round(rightNum * factor);
+                }
+
+                _getCalculationFaktor() {
+                    return Array.prototype.reduce.call(arguments, (prev, next) => {
+                        return Math.max(prev, this._shiftCalculationFaktor(next));
+                    }, 1);
+                }
+
+                _shiftCalculationFaktor(x) {
+                    const parts = x.toString().split('.');
+                    return (parts.length < 2) ? 1 : Math.pow(10, parts[1].length);
                 }
             }
 
