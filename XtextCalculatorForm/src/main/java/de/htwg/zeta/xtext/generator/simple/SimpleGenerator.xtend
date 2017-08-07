@@ -23,13 +23,14 @@ class SimpleGenerator {
 
     private def generateForm(Form form) {
         val formHtml = new SimpleFormTransformer().transform(form.formElements)
-        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml))
-        fsa.generateFile(form.name + "/simple.html", formHtml)
         val calculation = new SimpleCalculateTransformer().tranform(form.calculations)
-        fsa.generateFile(form.name + "/simple.js", createJavaScript(calculation))
+        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml, calculation))
+        fsa.generateFile(form.name + "/simple.html", formHtml)
+        fsa.generateFile(form.name + "/cform.js", createJavaScript())
+        fsa.generateFile(form.name + "/simple.js", calculation)
     }
 
-    private def String createHtmlDemo(String content) '''
+    private def String createHtmlDemo(String formHtml, String calculation) '''
         <!doctype html>
 
         <html lang="en">
@@ -63,29 +64,45 @@ class SimpleGenerator {
             </head>
 
             <body>
-                «content»
+                «formHtml»
+                <script type="text/javascript" src="cform.js" charset="utf-8"></script>
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
             </body>
         </html>
     '''
 
-    private def String createJavaScript(String content) '''
-        (function(document) {
-            const classes = {
-                element: 'cform-element'
+    private def String createJavaScript() '''
+        var cform = (function(document) {
+            'use strict';
+
+            const CLASSES = {
+                get ELEMENT() { return 'cform-element'; }
             };
 
-            const instances = [];
-            document.addEventListener("change", e => instances.forEach(i => i.processChange(e)));
+            const DEFAULTS = {
+                calculations: []
+            };
+
+            const CALCULTATE_DEFAULTS = {
+                calculate: function() {},
+                input: [],
+                output: null
+            };
 
             class Cform {
-                constructor(calculations) {
+                constructor({ calculations }) {
                     this.store = {};
-                    this.calculations = calculations.map(e => Object.assign({}, e));
+                    this.calculations = calculations.map(this._initiateCalculations, this);
+                }
+
+                _initiateCalculations(entry) {
+                    const clone = Object.assign({}, CALCULTATE_DEFAULTS, entry);
+                    clone.calculate = clone.calculate.bind(this);
+                    return clone;
                 }
 
                 processChange(event) {
-                    if (!event.target.closest('.' + classes.element)) {
+                    if (!event.target.closest('.' + CLASSES.ELEMENT)) {
                       return;
                     }
 
@@ -100,15 +117,15 @@ class SimpleGenerator {
 
                 setValue(field, value) {
                     this.store[field] = value;
-                    document.querySelector('.' + classes.element + ' input[name=\"' + field + '\"]').value = value;
+                    document.querySelector('.' + CLASSES.ELEMENT + ' input[name=\"' + field + '\"]').value = value;
                 }
 
                 _updateResults(field) {
-                    calculations.filter(c => c.input.includes(field)).forEach(c => this._execCalculate(c));
+                    this.calculations.filter(c => c.input.includes(field)).forEach(c => this._execCalculate(c));
                 }
+
                 _execCalculate(entry) {
-                    const expression = entry.calculate.bind(this);
-                    const value = expression();
+                    const value = entry.calculate();
                     if (isNaN(value)) {
                         return;
                     }
@@ -116,8 +133,18 @@ class SimpleGenerator {
                     this._updateResults(entry.output);
                 }
             }
-            «content»
-            instances.push(new Cform(calculations));
+
+            function initiate(settings) {
+                const cform = new Cform(Object.assign({}, DEFAULTS, settings));
+                instances.push(cform);
+            }
+
+            const instances = [];
+            document.addEventListener("change", e => instances.forEach(i => i.processChange(e)));
+
+            return {
+                init: initiate
+            };
         })(document);
     '''
 }
