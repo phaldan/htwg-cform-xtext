@@ -28,16 +28,16 @@ class SimpleCalculateTransformer {
     private val fields = new HashSet<String>()
 
     public def String tranform(List<Calculate> list) '''
-        cform.init({ calculations: [
+        var calculations = [
             «FOR calculate: list SEPARATOR ','»
                 «processCalculate(calculate)»
             «ENDFOR»
-        ]});
+        ];
     '''
 
     private def String processCalculate(Calculate calculate) '''
         {
-            calculate: function(store) {
+            calculate: function() {
                 return «fields.clear»«processExpression(calculate.expression)»
             },
             input: [«FOR field: fields SEPARATOR ','»'«field»'«ENDFOR»],

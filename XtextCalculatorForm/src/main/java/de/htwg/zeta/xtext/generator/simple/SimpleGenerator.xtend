@@ -38,35 +38,34 @@ class SimpleGenerator {
                 <meta charset="utf-8">
                 <title>CalculatorForm</title>
                 <style>
-                    .cform-field {
+                    .cform-element {
                         padding: 5px 0;
                     }
-                    .cform-field > label {
+                    .cform-element > label {
                         display: inline-block;
                         width: 50%;
                     }
-                    .cform-choice-option {
-                        display: inline-block;
-                    }
-                    .cform-field > select,
-                    .cform-field > input {
+                    .cform-element > select,
+                    .cform-element > input[type="text"] {
                         box-sizing: border-box;
                         width: calc(50% - 10px);
                     }
                     .cform-button {
                         text-align: center;
-                        padding: 5px 0;
-                    }
-                    .cform-button button {
                         min-width: 200px;
                     }
                 </style>
             </head>
 
             <body>
-                «formHtml»
+                <div class="cform">
+                    «formHtml»
+                </div>
                 <script type="text/javascript" src="cform.js" charset="utf-8"></script>
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
+                <script>
+                    cform.init(document.querySelectorAll('.cform'), { calculations });
+                </script>
             </body>
         </html>
     '''
@@ -76,7 +75,8 @@ class SimpleGenerator {
             'use strict';
 
             const CLASSES = {
-                get ELEMENT() { return 'cform-element'; }
+                get ELEMENT() { return 'cform-element'; },
+                get FIELD() { return 'cform-field'; }
             };
 
             const DEFAULTS = {
@@ -90,38 +90,57 @@ class SimpleGenerator {
             };
 
             class Cform {
-                constructor({ calculations }) {
-                    this.store = {};
-                    this.calculations = calculations.map(this._initiateCalculations, this);
+                constructor(element, { calculations }) {
+                    this.element = element;
+                    this.calculations = calculations.map(this._initCalculation, this);
+                    this._initStore();
+                    this._initialCalculation();
                 }
 
-                _initiateCalculations(entry) {
+                _initCalculation(entry) {
                     const clone = Object.assign({}, CALCULTATE_DEFAULTS, entry);
                     clone.calculate = clone.calculate.bind(this);
                     return clone;
                 }
 
+                _initStore() {
+                    const fields = this.element.querySelectorAll('.' + CLASSES.FIELD);
+                    this.store = {};
+                    fields.forEach(element => {
+                        if (element instanceof HTMLInputElement) {
+                            this.store[element.name] = element.value;
+                        }
+                    });
+                }
+
+                _initialCalculation() {
+                    const fields = Object.keys(this.store);
+                    fields.forEach(f => this._runDependingCalculations(f));
+                }
+
                 processChange(event) {
-                    if (!event.target.closest('.' + CLASSES.ELEMENT)) {
+                    if (!event.target.closest('.' + CLASSES.ELEMENT) || !this.element.contains(event.target)) {
                       return;
                     }
 
                     var key = event.target.name;
                     this.store[key] = event.target.value;
-                    this._updateResults(key);
+                    this._runDependingCalculations(key);
                 }
 
                 getValue(field) {
                     return this.store[field];
                 }
 
-                setValue(field, value) {
-                    this.store[field] = value;
-                    document.querySelector('.' + CLASSES.ELEMENT + ' input[name=\"' + field + '\"]').value = value;
+                _setFieldValue(field, value) {
+                    const selector = '.' + CLASSES.ELEMENT + ' input[name=\"' + field + '\"]';
+                    const element = document.querySelector(selector);
+                    element.value = value;
                 }
 
-                _updateResults(field) {
-                    this.calculations.filter(c => c.input.includes(field)).forEach(c => this._execCalculate(c));
+                _runDependingCalculations(field) {
+                    const calculations = this.calculations.filter(c => c.input.includes(field));
+                    calculations.forEach(c => this._execCalculate(c));
                 }
 
                 _execCalculate(entry) {
@@ -129,14 +148,19 @@ class SimpleGenerator {
                     if (isNaN(value)) {
                         return;
                     }
-                    this.setValue(entry.output, value);
-                    this._updateResults(entry.output);
+                    this.store[entry.output] = value;
+                    this._setFieldValue(entry.output, value);
+                    this._runDependingCalculations(entry.output);
                 }
             }
 
-            function initiate(settings) {
-                const cform = new Cform(Object.assign({}, DEFAULTS, settings));
-                instances.push(cform);
+            function initiate(element, settings) {
+                var elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
+                return elements.map(e => {
+                    const cform = new Cform(e, Object.assign({}, DEFAULTS, settings));
+                    instances.push(cform);
+                    return cform;
+                });
             }
 
             const instances = [];
