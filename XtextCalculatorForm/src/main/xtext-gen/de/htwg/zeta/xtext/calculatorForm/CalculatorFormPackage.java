@@ -1014,14 +1014,14 @@ public interface CalculatorFormPackage extends EPackage
   int MINUS_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.MultiOrDivImpl <em>Multi Or Div</em>}' class.
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.MultiImpl <em>Multi</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.MultiOrDivImpl
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMultiOrDiv()
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.MultiImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMulti()
    * @generated
    */
-  int MULTI_OR_DIV = 20;
+  int MULTI = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1030,16 +1030,7 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MULTI_OR_DIV__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_OR_DIV__OP = EXPRESSION_FEATURE_COUNT + 1;
+  int MULTI__LEFT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1048,16 +1039,53 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MULTI_OR_DIV__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+  int MULTI__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Multi Or Div</em>' class.
+   * The number of structural features of the '<em>Multi</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MULTI_OR_DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+  int MULTI_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.DivImpl <em>Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.DivImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getDiv()
+   * @generated
+   */
+  int DIV = 21;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.
@@ -1067,7 +1095,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 21;
+  int BOOLEAN_NEGATION = 22;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1095,7 +1123,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getArithmeticSigned()
    * @generated
    */
-  int ARITHMETIC_SIGNED = 22;
+  int ARITHMETIC_SIGNED = 23;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1123,7 +1151,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 23;
+  int NUMBER_LITERAL = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1151,7 +1179,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 24;
+  int FLOAT_LITERAL = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1179,7 +1207,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPercentLiteral()
    * @generated
    */
-  int PERCENT_LITERAL = 25;
+  int PERCENT_LITERAL = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1207,7 +1235,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
    * @generated
    */
-  int FIELD_REFERENCE = 26;
+  int FIELD_REFERENCE = 27;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -2111,47 +2139,68 @@ public interface CalculatorFormPackage extends EPackage
   EReference getMinus_Right();
 
   /**
-   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.MultiOrDiv <em>Multi Or Div</em>}'.
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Multi <em>Multi</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multi Or Div</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.MultiOrDiv
+   * @return the meta object for class '<em>Multi</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Multi
    * @generated
    */
-  EClass getMultiOrDiv();
+  EClass getMulti();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getLeft <em>Left</em>}'.
+   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.Multi#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getLeft()
-   * @see #getMultiOrDiv()
+   * @see de.htwg.zeta.xtext.calculatorForm.Multi#getLeft()
+   * @see #getMulti()
    * @generated
    */
-  EReference getMultiOrDiv_Left();
+  EReference getMulti_Left();
 
   /**
-   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getOp()
-   * @see #getMultiOrDiv()
-   * @generated
-   */
-  EAttribute getMultiOrDiv_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getRight <em>Right</em>}'.
+   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.Multi#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.MultiOrDiv#getRight()
-   * @see #getMultiOrDiv()
+   * @see de.htwg.zeta.xtext.calculatorForm.Multi#getRight()
+   * @see #getMulti()
    * @generated
    */
-  EReference getMultiOrDiv_Right();
+  EReference getMulti_Right();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Div</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Div
+   * @generated
+   */
+  EClass getDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.Div#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Div#getLeft()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.Div#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.Div#getRight()
+   * @see #getDiv()
+   * @generated
+   */
+  EReference getDiv_Right();
 
   /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.BooleanNegation <em>Boolean Negation</em>}'.
@@ -2999,14 +3048,14 @@ public interface CalculatorFormPackage extends EPackage
     EReference MINUS__RIGHT = eINSTANCE.getMinus_Right();
 
     /**
-     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.MultiOrDivImpl <em>Multi Or Div</em>}' class.
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.MultiImpl <em>Multi</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.MultiOrDivImpl
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMultiOrDiv()
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.MultiImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMulti()
      * @generated
      */
-    EClass MULTI_OR_DIV = eINSTANCE.getMultiOrDiv();
+    EClass MULTI = eINSTANCE.getMulti();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -3014,15 +3063,7 @@ public interface CalculatorFormPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MULTI_OR_DIV__LEFT = eINSTANCE.getMultiOrDiv_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MULTI_OR_DIV__OP = eINSTANCE.getMultiOrDiv_Op();
+    EReference MULTI__LEFT = eINSTANCE.getMulti_Left();
 
     /**
      * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -3030,7 +3071,33 @@ public interface CalculatorFormPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MULTI_OR_DIV__RIGHT = eINSTANCE.getMultiOrDiv_Right();
+    EReference MULTI__RIGHT = eINSTANCE.getMulti_Right();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.DivImpl <em>Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.DivImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getDiv()
+     * @generated
+     */
+    EClass DIV = eINSTANCE.getDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__LEFT = eINSTANCE.getDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIV__RIGHT = eINSTANCE.getDiv_Right();
 
     /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.BooleanNegationImpl <em>Boolean Negation</em>}' class.

@@ -10,6 +10,7 @@ import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.Calculate;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormFactory;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
+import de.htwg.zeta.xtext.calculatorForm.Div;
 import de.htwg.zeta.xtext.calculatorForm.Expression;
 import de.htwg.zeta.xtext.calculatorForm.Field;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
@@ -26,7 +27,7 @@ import de.htwg.zeta.xtext.calculatorForm.FormElement;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
-import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv;
+import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PageChild;
@@ -193,7 +194,14 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass multiOrDivEClass = null;
+  private EClass multiEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass divEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1125,9 +1133,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMultiOrDiv()
+  public EClass getMulti()
   {
-    return multiOrDivEClass;
+    return multiEClass;
   }
 
   /**
@@ -1135,9 +1143,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMultiOrDiv_Left()
+  public EReference getMulti_Left()
   {
-    return (EReference)multiOrDivEClass.getEStructuralFeatures().get(0);
+    return (EReference)multiEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1145,9 +1153,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMultiOrDiv_Op()
+  public EReference getMulti_Right()
   {
-    return (EAttribute)multiOrDivEClass.getEStructuralFeatures().get(1);
+    return (EReference)multiEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1155,9 +1163,29 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMultiOrDiv_Right()
+  public EClass getDiv()
   {
-    return (EReference)multiOrDivEClass.getEStructuralFeatures().get(2);
+    return divEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDiv_Left()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDiv_Right()
+  {
+    return (EReference)divEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1412,10 +1440,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     createEReference(minusEClass, MINUS__LEFT);
     createEReference(minusEClass, MINUS__RIGHT);
 
-    multiOrDivEClass = createEClass(MULTI_OR_DIV);
-    createEReference(multiOrDivEClass, MULTI_OR_DIV__LEFT);
-    createEAttribute(multiOrDivEClass, MULTI_OR_DIV__OP);
-    createEReference(multiOrDivEClass, MULTI_OR_DIV__RIGHT);
+    multiEClass = createEClass(MULTI);
+    createEReference(multiEClass, MULTI__LEFT);
+    createEReference(multiEClass, MULTI__RIGHT);
+
+    divEClass = createEClass(DIV);
+    createEReference(divEClass, DIV__LEFT);
+    createEReference(divEClass, DIV__RIGHT);
 
     booleanNegationEClass = createEClass(BOOLEAN_NEGATION);
     createEReference(booleanNegationEClass, BOOLEAN_NEGATION__EXPRESSION);
@@ -1479,7 +1510,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
-    multiOrDivEClass.getESuperTypes().add(this.getExpression());
+    multiEClass.getESuperTypes().add(this.getExpression());
+    divEClass.getESuperTypes().add(this.getExpression());
     booleanNegationEClass.getESuperTypes().add(this.getExpression());
     arithmeticSignedEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getExpression());
@@ -1590,10 +1622,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEReference(getMinus_Left(), this.getExpression(), null, "left", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMinus_Right(), this.getExpression(), null, "right", null, 0, 1, Minus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(multiOrDivEClass, MultiOrDiv.class, "MultiOrDiv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMultiOrDiv_Left(), this.getExpression(), null, "left", null, 0, 1, MultiOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMultiOrDiv_Op(), ecorePackage.getEString(), "op", null, 0, 1, MultiOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMultiOrDiv_Right(), this.getExpression(), null, "right", null, 0, 1, MultiOrDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(multiEClass, Multi.class, "Multi", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMulti_Left(), this.getExpression(), null, "left", null, 0, 1, Multi.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMulti_Right(), this.getExpression(), null, "right", null, 0, 1, Multi.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDiv_Left(), this.getExpression(), null, "left", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDiv_Right(), this.getExpression(), null, "right", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanNegationEClass, BooleanNegation.class, "BooleanNegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanNegation_Expression(), this.getExpression(), null, "expression", null, 0, 1, BooleanNegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

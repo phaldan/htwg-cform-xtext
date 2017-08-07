@@ -9,6 +9,7 @@ import de.htwg.zeta.xtext.calculatorForm.BooleanNegation;
 import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.Calculate;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
+import de.htwg.zeta.xtext.calculatorForm.Div;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldInput;
@@ -21,7 +22,7 @@ import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.Group;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
-import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv;
+import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
@@ -64,6 +65,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 			case CalculatorFormPackage.CALCULATE:
 				sequence_Calculate(context, (Calculate) semanticObject); 
 				return; 
+			case CalculatorFormPackage.DIV:
+				sequence_Multiplication(context, (Div) semanticObject); 
+				return; 
 			case CalculatorFormPackage.FIELD_CHOICE:
 				sequence_FieldChoice(context, (FieldChoice) semanticObject); 
 				return; 
@@ -100,8 +104,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 			case CalculatorFormPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case CalculatorFormPackage.MULTI_OR_DIV:
-				sequence_Multiplication(context, (MultiOrDiv) semanticObject); 
+			case CalculatorFormPackage.MULTI:
+				sequence_Multiplication(context, (Multi) semanticObject); 
 				return; 
 			case CalculatorFormPackage.NUMBER_LITERAL:
 				sequence_Atomic(context, (NumberLiteral) semanticObject); 
@@ -127,7 +131,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns Minus
 	 *     Addition.Minus_1_0_1_0 returns Minus
 	 *     Multiplication returns Minus
-	 *     Multiplication.MultiOrDiv_1_0_0 returns Minus
+	 *     Multiplication.Multi_1_0_0_0 returns Minus
+	 *     Multiplication.Div_1_0_1_0 returns Minus
 	 *     Prefixed returns Minus
 	 *     Atomic returns Minus
 	 *
@@ -155,7 +160,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns Plus
 	 *     Addition.Minus_1_0_1_0 returns Plus
 	 *     Multiplication returns Plus
-	 *     Multiplication.MultiOrDiv_1_0_0 returns Plus
+	 *     Multiplication.Multi_1_0_0_0 returns Plus
+	 *     Multiplication.Div_1_0_1_0 returns Plus
 	 *     Prefixed returns Plus
 	 *     Atomic returns Plus
 	 *
@@ -183,7 +189,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns FieldReference
 	 *     Addition.Minus_1_0_1_0 returns FieldReference
 	 *     Multiplication returns FieldReference
-	 *     Multiplication.MultiOrDiv_1_0_0 returns FieldReference
+	 *     Multiplication.Multi_1_0_0_0 returns FieldReference
+	 *     Multiplication.Div_1_0_1_0 returns FieldReference
 	 *     Prefixed returns FieldReference
 	 *     Atomic returns FieldReference
 	 *
@@ -208,7 +215,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns FloatLiteral
 	 *     Addition.Minus_1_0_1_0 returns FloatLiteral
 	 *     Multiplication returns FloatLiteral
-	 *     Multiplication.MultiOrDiv_1_0_0 returns FloatLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns FloatLiteral
+	 *     Multiplication.Div_1_0_1_0 returns FloatLiteral
 	 *     Prefixed returns FloatLiteral
 	 *     Atomic returns FloatLiteral
 	 *
@@ -233,7 +241,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns NumberLiteral
 	 *     Addition.Minus_1_0_1_0 returns NumberLiteral
 	 *     Multiplication returns NumberLiteral
-	 *     Multiplication.MultiOrDiv_1_0_0 returns NumberLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns NumberLiteral
+	 *     Multiplication.Div_1_0_1_0 returns NumberLiteral
 	 *     Prefixed returns NumberLiteral
 	 *     Atomic returns NumberLiteral
 	 *
@@ -258,7 +267,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns PercentLiteral
 	 *     Addition.Minus_1_0_1_0 returns PercentLiteral
 	 *     Multiplication returns PercentLiteral
-	 *     Multiplication.MultiOrDiv_1_0_0 returns PercentLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns PercentLiteral
+	 *     Multiplication.Div_1_0_1_0 returns PercentLiteral
 	 *     Prefixed returns PercentLiteral
 	 *     Atomic returns PercentLiteral
 	 *
@@ -477,20 +487,59 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
-	 *     Expression returns MultiOrDiv
-	 *     Addition returns MultiOrDiv
-	 *     Addition.Plus_1_0_0_0 returns MultiOrDiv
-	 *     Addition.Minus_1_0_1_0 returns MultiOrDiv
-	 *     Multiplication returns MultiOrDiv
-	 *     Multiplication.MultiOrDiv_1_0_0 returns MultiOrDiv
-	 *     Prefixed returns MultiOrDiv
-	 *     Atomic returns MultiOrDiv
+	 *     Expression returns Div
+	 *     Addition returns Div
+	 *     Addition.Plus_1_0_0_0 returns Div
+	 *     Addition.Minus_1_0_1_0 returns Div
+	 *     Multiplication returns Div
+	 *     Multiplication.Multi_1_0_0_0 returns Div
+	 *     Multiplication.Div_1_0_1_0 returns Div
+	 *     Prefixed returns Div
+	 *     Atomic returns Div
 	 *
 	 * Constraint:
-	 *     (left=Multiplication_MultiOrDiv_1_0_0 (op='*' | op='/') right=Prefixed)
+	 *     (left=Multiplication_Div_1_0_1_0 right=Prefixed)
 	 */
-	protected void sequence_Multiplication(ISerializationContext context, MultiOrDiv semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Multiplication(ISerializationContext context, Div semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.DIV__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.DIV__LEFT));
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.DIV__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.DIV__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns Multi
+	 *     Addition returns Multi
+	 *     Addition.Plus_1_0_0_0 returns Multi
+	 *     Addition.Minus_1_0_1_0 returns Multi
+	 *     Multiplication returns Multi
+	 *     Multiplication.Multi_1_0_0_0 returns Multi
+	 *     Multiplication.Div_1_0_1_0 returns Multi
+	 *     Prefixed returns Multi
+	 *     Atomic returns Multi
+	 *
+	 * Constraint:
+	 *     (left=Multiplication_Multi_1_0_0_0 right=Prefixed)
+	 */
+	protected void sequence_Multiplication(ISerializationContext context, Multi semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.MULTI__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.MULTI__LEFT));
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.MULTI__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.MULTI__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -514,7 +563,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns ArithmeticSigned
 	 *     Addition.Minus_1_0_1_0 returns ArithmeticSigned
 	 *     Multiplication returns ArithmeticSigned
-	 *     Multiplication.MultiOrDiv_1_0_0 returns ArithmeticSigned
+	 *     Multiplication.Multi_1_0_0_0 returns ArithmeticSigned
+	 *     Multiplication.Div_1_0_1_0 returns ArithmeticSigned
 	 *     Prefixed returns ArithmeticSigned
 	 *     Atomic returns ArithmeticSigned
 	 *
@@ -539,7 +589,8 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Addition.Plus_1_0_0_0 returns BooleanNegation
 	 *     Addition.Minus_1_0_1_0 returns BooleanNegation
 	 *     Multiplication returns BooleanNegation
-	 *     Multiplication.MultiOrDiv_1_0_0 returns BooleanNegation
+	 *     Multiplication.Multi_1_0_0_0 returns BooleanNegation
+	 *     Multiplication.Div_1_0_1_0 returns BooleanNegation
 	 *     Prefixed returns BooleanNegation
 	 *     Atomic returns BooleanNegation
 	 *

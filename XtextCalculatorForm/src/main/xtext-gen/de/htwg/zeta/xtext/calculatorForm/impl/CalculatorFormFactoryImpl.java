@@ -85,7 +85,8 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.EXPRESSION: return createExpression();
       case CalculatorFormPackage.PLUS: return createPlus();
       case CalculatorFormPackage.MINUS: return createMinus();
-      case CalculatorFormPackage.MULTI_OR_DIV: return createMultiOrDiv();
+      case CalculatorFormPackage.MULTI: return createMulti();
+      case CalculatorFormPackage.DIV: return createDiv();
       case CalculatorFormPackage.BOOLEAN_NEGATION: return createBooleanNegation();
       case CalculatorFormPackage.ARITHMETIC_SIGNED: return createArithmeticSigned();
       case CalculatorFormPackage.NUMBER_LITERAL: return createNumberLiteral();
@@ -322,10 +323,21 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public MultiOrDiv createMultiOrDiv()
+  public Multi createMulti()
   {
-    MultiOrDivImpl multiOrDiv = new MultiOrDivImpl();
-    return multiOrDiv;
+    MultiImpl multi = new MultiImpl();
+    return multi;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Div createDiv()
+  {
+    DivImpl div = new DivImpl();
+    return div;
   }
 
   /**

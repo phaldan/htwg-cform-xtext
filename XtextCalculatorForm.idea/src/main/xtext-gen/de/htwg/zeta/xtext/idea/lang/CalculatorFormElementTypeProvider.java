@@ -1305,23 +1305,26 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createMultiplication_Group_1ElementType() {
 			return new IGrammarAwareElementType("Multiplication_Group_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getGroup_1());
 		}
-		public static IGrammarAwareElementType createMultiplication_Group_1_0ElementType() {
-			return new IGrammarAwareElementType("Multiplication_Group_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getGroup_1_0());
+		public static IGrammarAwareElementType createMultiplication_Alternatives_1_0ElementType() {
+			return new IGrammarAwareElementType("Multiplication_Alternatives_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getAlternatives_1_0());
 		}
-		public static IGrammarAwareElementType createMultiplication_MultiOrDivLeftAction_1_0_0ElementType() {
-			return new IGrammarAwareElementType("Multiplication_MultiOrDivLeftAction_1_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getMultiOrDivLeftAction_1_0_0());
+		public static IGrammarAwareElementType createMultiplication_Group_1_0_0ElementType() {
+			return new IGrammarAwareElementType("Multiplication_Group_1_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getGroup_1_0_0());
 		}
-		public static IGrammarAwareElementType createMultiplication_OpAssignment_1_0_1ElementType() {
-			return new IGrammarAwareElementType("Multiplication_OpAssignment_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getOpAssignment_1_0_1());
+		public static IGrammarAwareElementType createMultiplication_MultiLeftAction_1_0_0_0ElementType() {
+			return new IGrammarAwareElementType("Multiplication_MultiLeftAction_1_0_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getMultiLeftAction_1_0_0_0());
 		}
-		public static IGrammarAwareElementType createMultiplication_OpAlternatives_1_0_1_0ElementType() {
-			return new IGrammarAwareElementType("Multiplication_OpAlternatives_1_0_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getOpAlternatives_1_0_1_0());
+		public static IGrammarAwareElementType createMultiplication_AsteriskKeyword_1_0_0_1ElementType() {
+			return new IGrammarAwareElementType("Multiplication_AsteriskKeyword_1_0_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getAsteriskKeyword_1_0_0_1());
 		}
-		public static IGrammarAwareElementType createMultiplication_OpAsteriskKeyword_1_0_1_0_0ElementType() {
-			return new IGrammarAwareElementType("Multiplication_OpAsteriskKeyword_1_0_1_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0());
+		public static IGrammarAwareElementType createMultiplication_Group_1_0_1ElementType() {
+			return new IGrammarAwareElementType("Multiplication_Group_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getGroup_1_0_1());
 		}
-		public static IGrammarAwareElementType createMultiplication_OpSolidusKeyword_1_0_1_0_1ElementType() {
-			return new IGrammarAwareElementType("Multiplication_OpSolidusKeyword_1_0_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1());
+		public static IGrammarAwareElementType createMultiplication_DivLeftAction_1_0_1_0ElementType() {
+			return new IGrammarAwareElementType("Multiplication_DivLeftAction_1_0_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getDivLeftAction_1_0_1_0());
+		}
+		public static IGrammarAwareElementType createMultiplication_SolidusKeyword_1_0_1_1ElementType() {
+			return new IGrammarAwareElementType("Multiplication_SolidusKeyword_1_0_1_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getSolidusKeyword_1_0_1_1());
 		}
 		public static IGrammarAwareElementType createMultiplication_RightAssignment_1_1ElementType() {
 			return new IGrammarAwareElementType("Multiplication_RightAssignment_1_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getMultiplicationAccess().getRightAssignment_1_1());
@@ -1339,17 +1342,19 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Multiplication_Group_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_Group_1ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_Group_1_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_Group_1_0ElementType());
+	public static final IGrammarAwareElementType Multiplication_Alternatives_1_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_Alternatives_1_0ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_MultiOrDivLeftAction_1_0_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_MultiOrDivLeftAction_1_0_0ElementType());
+	public static final IGrammarAwareElementType Multiplication_Group_1_0_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_Group_1_0_0ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_OpAssignment_1_0_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_OpAssignment_1_0_1ElementType());
+	public static final IGrammarAwareElementType Multiplication_MultiLeftAction_1_0_0_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_MultiLeftAction_1_0_0_0ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_OpAlternatives_1_0_1_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_OpAlternatives_1_0_1_0ElementType());
+	public static final IGrammarAwareElementType Multiplication_AsteriskKeyword_1_0_0_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_AsteriskKeyword_1_0_0_1ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_OpAsteriskKeyword_1_0_1_0_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_OpAsteriskKeyword_1_0_1_0_0ElementType());
+	public static final IGrammarAwareElementType Multiplication_Group_1_0_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_Group_1_0_1ElementType());
 
-	public static final IGrammarAwareElementType Multiplication_OpSolidusKeyword_1_0_1_0_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_OpSolidusKeyword_1_0_1_0_1ElementType());
+	public static final IGrammarAwareElementType Multiplication_DivLeftAction_1_0_1_0_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_DivLeftAction_1_0_1_0ElementType());
+
+	public static final IGrammarAwareElementType Multiplication_SolidusKeyword_1_0_1_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_SolidusKeyword_1_0_1_1ElementType());
 
 	public static final IGrammarAwareElementType Multiplication_RightAssignment_1_1_ELEMENT_TYPE = associate(MultiplicationFactory.createMultiplication_RightAssignment_1_1ElementType());
 
@@ -2531,28 +2536,32 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Multiplication_Group_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_Group_1_0ElementType() {
-		return Multiplication_Group_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_Alternatives_1_0ElementType() {
+		return Multiplication_Alternatives_1_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_MultiOrDivLeftAction_1_0_0ElementType() {
-		return Multiplication_MultiOrDivLeftAction_1_0_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_Group_1_0_0ElementType() {
+		return Multiplication_Group_1_0_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_OpAssignment_1_0_1ElementType() {
-		return Multiplication_OpAssignment_1_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_MultiLeftAction_1_0_0_0ElementType() {
+		return Multiplication_MultiLeftAction_1_0_0_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_OpAlternatives_1_0_1_0ElementType() {
-		return Multiplication_OpAlternatives_1_0_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_AsteriskKeyword_1_0_0_1ElementType() {
+		return Multiplication_AsteriskKeyword_1_0_0_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_OpAsteriskKeyword_1_0_1_0_0ElementType() {
-		return Multiplication_OpAsteriskKeyword_1_0_1_0_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_Group_1_0_1ElementType() {
+		return Multiplication_Group_1_0_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getMultiplication_OpSolidusKeyword_1_0_1_0_1ElementType() {
-		return Multiplication_OpSolidusKeyword_1_0_1_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getMultiplication_DivLeftAction_1_0_1_0ElementType() {
+		return Multiplication_DivLeftAction_1_0_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getMultiplication_SolidusKeyword_1_0_1_1ElementType() {
+		return Multiplication_SolidusKeyword_1_0_1_1_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getMultiplication_RightAssignment_1_1ElementType() {

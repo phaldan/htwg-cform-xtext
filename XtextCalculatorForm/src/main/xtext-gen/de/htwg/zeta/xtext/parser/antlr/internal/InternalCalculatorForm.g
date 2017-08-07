@@ -1822,38 +1822,31 @@ ruleMultiplication returns [EObject current=null]
 		(
 			(
 				(
+					(
+						{
+							$current = forceCreateModelElementAndSet(
+								grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0(),
+								$current);
+						}
+					)
+					otherlv_2='*'
 					{
-						$current = forceCreateModelElementAndSet(
-							grammarAccess.getMultiplicationAccess().getMultiOrDivLeftAction_1_0_0(),
-							$current);
+						newLeafNode(otherlv_2, grammarAccess.getMultiplicationAccess().getAsteriskKeyword_1_0_0_1());
 					}
 				)
+				    |
 				(
 					(
-						(
-							lv_op_2_1='*'
-							{
-								newLeafNode(lv_op_2_1, grammarAccess.getMultiplicationAccess().getOpAsteriskKeyword_1_0_1_0_0());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getMultiplicationRule());
-								}
-								setWithLastConsumed($current, "op", lv_op_2_1, null);
-							}
-							    |
-							lv_op_2_2='/'
-							{
-								newLeafNode(lv_op_2_2, grammarAccess.getMultiplicationAccess().getOpSolidusKeyword_1_0_1_0_1());
-							}
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getMultiplicationRule());
-								}
-								setWithLastConsumed($current, "op", lv_op_2_2, null);
-							}
-						)
+						{
+							$current = forceCreateModelElementAndSet(
+								grammarAccess.getMultiplicationAccess().getDivLeftAction_1_0_1_0(),
+								$current);
+						}
 					)
+					otherlv_4='/'
+					{
+						newLeafNode(otherlv_4, grammarAccess.getMultiplicationAccess().getSolidusKeyword_1_0_1_1());
+					}
 				)
 			)
 			(
@@ -1861,7 +1854,7 @@ ruleMultiplication returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0());
 					}
-					lv_right_3_0=rulePrefixed
+					lv_right_5_0=rulePrefixed
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMultiplicationRule());
@@ -1869,7 +1862,7 @@ ruleMultiplication returns [EObject current=null]
 						set(
 							$current,
 							"right",
-							lv_right_3_0,
+							lv_right_5_0,
 							"de.htwg.zeta.xtext.CalculatorForm.Prefixed");
 						afterParserOrEnumRuleCall();
 					}

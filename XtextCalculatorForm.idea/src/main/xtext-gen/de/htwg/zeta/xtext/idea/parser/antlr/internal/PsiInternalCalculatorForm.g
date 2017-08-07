@@ -1845,44 +1845,37 @@ ruleMultiplication returns [Boolean current=false]
 		(
 			(
 				(
+					(
+						{
+							precedeComposite(elementTypeProvider.getMultiplication_MultiLeftAction_1_0_0_0ElementType());
+							doneComposite();
+							associateWithSemanticElement();
+						}
+					)
 					{
-						precedeComposite(elementTypeProvider.getMultiplication_MultiOrDivLeftAction_1_0_0ElementType());
-						doneComposite();
-						associateWithSemanticElement();
+						markLeaf(elementTypeProvider.getMultiplication_AsteriskKeyword_1_0_0_1ElementType());
+					}
+					otherlv_2='*'
+					{
+						doneLeaf(otherlv_2);
 					}
 				)
+				    |
 				(
 					(
-						(
-							{
-								markLeaf(elementTypeProvider.getMultiplication_OpAsteriskKeyword_1_0_1_0_0ElementType());
-							}
-							lv_op_2_1='*'
-							{
-								doneLeaf(lv_op_2_1);
-							}
-							{
-								if (!$current) {
-									associateWithSemanticElement();
-									$current = true;
-								}
-							}
-							    |
-							{
-								markLeaf(elementTypeProvider.getMultiplication_OpSolidusKeyword_1_0_1_0_1ElementType());
-							}
-							lv_op_2_2='/'
-							{
-								doneLeaf(lv_op_2_2);
-							}
-							{
-								if (!$current) {
-									associateWithSemanticElement();
-									$current = true;
-								}
-							}
-						)
+						{
+							precedeComposite(elementTypeProvider.getMultiplication_DivLeftAction_1_0_1_0ElementType());
+							doneComposite();
+							associateWithSemanticElement();
+						}
 					)
+					{
+						markLeaf(elementTypeProvider.getMultiplication_SolidusKeyword_1_0_1_1ElementType());
+					}
+					otherlv_4='/'
+					{
+						doneLeaf(otherlv_4);
+					}
 				)
 			)
 			(
@@ -1890,7 +1883,7 @@ ruleMultiplication returns [Boolean current=false]
 					{
 						markComposite(elementTypeProvider.getMultiplication_RightPrefixedParserRuleCall_1_1_0ElementType());
 					}
-					lv_right_3_0=rulePrefixed
+					lv_right_5_0=rulePrefixed
 					{
 						doneComposite();
 						if(!$current) {

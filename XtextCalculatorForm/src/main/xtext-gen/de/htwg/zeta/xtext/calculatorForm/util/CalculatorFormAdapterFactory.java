@@ -176,9 +176,14 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createMinusAdapter();
       }
       @Override
-      public Adapter caseMultiOrDiv(MultiOrDiv object)
+      public Adapter caseMulti(Multi object)
       {
-        return createMultiOrDivAdapter();
+        return createMultiAdapter();
+      }
+      @Override
+      public Adapter caseDiv(Div object)
+      {
+        return createDivAdapter();
       }
       @Override
       public Adapter caseBooleanNegation(BooleanNegation object)
@@ -533,16 +538,31 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.MultiOrDiv <em>Multi Or Div</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Multi <em>Multi</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwg.zeta.xtext.calculatorForm.MultiOrDiv
+   * @see de.htwg.zeta.xtext.calculatorForm.Multi
    * @generated
    */
-  public Adapter createMultiOrDivAdapter()
+  public Adapter createMultiAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.Div <em>Div</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.Div
+   * @generated
+   */
+  public Adapter createDivAdapter()
   {
     return null;
   }

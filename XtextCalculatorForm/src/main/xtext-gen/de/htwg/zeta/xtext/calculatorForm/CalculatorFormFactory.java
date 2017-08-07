@@ -204,13 +204,22 @@ public interface CalculatorFormFactory extends EFactory
   Minus createMinus();
 
   /**
-   * Returns a new object of class '<em>Multi Or Div</em>'.
+   * Returns a new object of class '<em>Multi</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Or Div</em>'.
+   * @return a new object of class '<em>Multi</em>'.
    * @generated
    */
-  MultiOrDiv createMultiOrDiv();
+  Multi createMulti();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
 
   /**
    * Returns a new object of class '<em>Boolean Negation</em>'.

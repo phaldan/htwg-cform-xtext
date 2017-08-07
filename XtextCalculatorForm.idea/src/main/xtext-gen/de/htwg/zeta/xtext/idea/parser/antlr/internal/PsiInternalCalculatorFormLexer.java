@@ -756,10 +756,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2145:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // PsiInternalCalculatorForm.g:2145:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // PsiInternalCalculatorForm.g:2138:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // PsiInternalCalculatorForm.g:2138:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // PsiInternalCalculatorForm.g:2145:11: ( '^' )?
+            // PsiInternalCalculatorForm.g:2138:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -768,7 +768,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2145:11: '^'
+                    // PsiInternalCalculatorForm.g:2138:11: '^'
                     {
                     match('^'); 
 
@@ -786,7 +786,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // PsiInternalCalculatorForm.g:2145:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // PsiInternalCalculatorForm.g:2138:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -835,10 +835,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2147:10: ( ( '0' .. '9' )+ )
-            // PsiInternalCalculatorForm.g:2147:12: ( '0' .. '9' )+
+            // PsiInternalCalculatorForm.g:2140:10: ( ( '0' .. '9' )+ )
+            // PsiInternalCalculatorForm.g:2140:12: ( '0' .. '9' )+
             {
-            // PsiInternalCalculatorForm.g:2147:12: ( '0' .. '9' )+
+            // PsiInternalCalculatorForm.g:2140:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -852,7 +852,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // PsiInternalCalculatorForm.g:2147:13: '0' .. '9'
+            	    // PsiInternalCalculatorForm.g:2140:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -884,8 +884,8 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2149:12: ( RULE_INT '.' RULE_INT )
-            // PsiInternalCalculatorForm.g:2149:14: RULE_INT '.' RULE_INT
+            // PsiInternalCalculatorForm.g:2142:12: ( RULE_INT '.' RULE_INT )
+            // PsiInternalCalculatorForm.g:2142:14: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -906,22 +906,22 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2151:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
-            // PsiInternalCalculatorForm.g:2151:16: ( RULE_INT | RULE_FLOAT ) '%'
+            // PsiInternalCalculatorForm.g:2144:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
+            // PsiInternalCalculatorForm.g:2144:16: ( RULE_INT | RULE_FLOAT ) '%'
             {
-            // PsiInternalCalculatorForm.g:2151:16: ( RULE_INT | RULE_FLOAT )
+            // PsiInternalCalculatorForm.g:2144:16: ( RULE_INT | RULE_FLOAT )
             int alt4=2;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2151:17: RULE_INT
+                    // PsiInternalCalculatorForm.g:2144:17: RULE_INT
                     {
                     mRULE_INT(); 
 
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2151:26: RULE_FLOAT
+                    // PsiInternalCalculatorForm.g:2144:26: RULE_FLOAT
                     {
                     mRULE_FLOAT(); 
 
@@ -947,10 +947,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2153:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // PsiInternalCalculatorForm.g:2153:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // PsiInternalCalculatorForm.g:2146:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // PsiInternalCalculatorForm.g:2146:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // PsiInternalCalculatorForm.g:2153:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // PsiInternalCalculatorForm.g:2146:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -968,10 +968,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2153:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // PsiInternalCalculatorForm.g:2146:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // PsiInternalCalculatorForm.g:2153:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // PsiInternalCalculatorForm.g:2146:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -987,7 +987,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // PsiInternalCalculatorForm.g:2153:21: '\\\\' .
+                    	    // PsiInternalCalculatorForm.g:2146:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -995,7 +995,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalCalculatorForm.g:2153:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // PsiInternalCalculatorForm.g:2146:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1020,10 +1020,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2153:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // PsiInternalCalculatorForm.g:2146:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // PsiInternalCalculatorForm.g:2153:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // PsiInternalCalculatorForm.g:2146:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1039,7 +1039,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // PsiInternalCalculatorForm.g:2153:54: '\\\\' .
+                    	    // PsiInternalCalculatorForm.g:2146:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1047,7 +1047,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // PsiInternalCalculatorForm.g:2153:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // PsiInternalCalculatorForm.g:2146:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1090,12 +1090,12 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2155:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // PsiInternalCalculatorForm.g:2155:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // PsiInternalCalculatorForm.g:2148:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // PsiInternalCalculatorForm.g:2148:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // PsiInternalCalculatorForm.g:2155:24: ( options {greedy=false; } : . )*
+            // PsiInternalCalculatorForm.g:2148:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1120,7 +1120,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // PsiInternalCalculatorForm.g:2155:52: .
+            	    // PsiInternalCalculatorForm.g:2148:52: .
             	    {
             	    matchAny(); 
 
@@ -1150,12 +1150,12 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2157:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // PsiInternalCalculatorForm.g:2157:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // PsiInternalCalculatorForm.g:2150:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // PsiInternalCalculatorForm.g:2150:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // PsiInternalCalculatorForm.g:2157:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // PsiInternalCalculatorForm.g:2150:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1168,7 +1168,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // PsiInternalCalculatorForm.g:2157:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // PsiInternalCalculatorForm.g:2150:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1188,7 +1188,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                 }
             } while (true);
 
-            // PsiInternalCalculatorForm.g:2157:40: ( ( '\\r' )? '\\n' )?
+            // PsiInternalCalculatorForm.g:2150:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1197,9 +1197,9 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2157:41: ( '\\r' )? '\\n'
+                    // PsiInternalCalculatorForm.g:2150:41: ( '\\r' )? '\\n'
                     {
-                    // PsiInternalCalculatorForm.g:2157:41: ( '\\r' )?
+                    // PsiInternalCalculatorForm.g:2150:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1208,7 +1208,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // PsiInternalCalculatorForm.g:2157:41: '\\r'
+                            // PsiInternalCalculatorForm.g:2150:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1240,10 +1240,10 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2159:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // PsiInternalCalculatorForm.g:2159:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalCalculatorForm.g:2152:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // PsiInternalCalculatorForm.g:2152:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // PsiInternalCalculatorForm.g:2159:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // PsiInternalCalculatorForm.g:2152:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1297,8 +1297,8 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // PsiInternalCalculatorForm.g:2161:16: ( . )
-            // PsiInternalCalculatorForm.g:2161:18: .
+            // PsiInternalCalculatorForm.g:2154:16: ( . )
+            // PsiInternalCalculatorForm.g:2154:18: .
             {
             matchAny(); 
 
@@ -1668,7 +1668,7 @@ public class PsiInternalCalculatorFormLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "2151:16: ( RULE_INT | RULE_FLOAT )";
+            return "2144:16: ( RULE_INT | RULE_FLOAT )";
         }
     }
     static final String DFA13_eotS =

@@ -66,8 +66,9 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     (rule start) (ambiguity) value=FLOAT
 	 *     (rule start) (ambiguity) value=INT
 	 *     (rule start) (ambiguity) value=PERCENT
+	 *     (rule start) (ambiguity) {Div.left=}
 	 *     (rule start) (ambiguity) {Minus.left=}
-	 *     (rule start) (ambiguity) {MultiOrDiv.left=}
+	 *     (rule start) (ambiguity) {Multi.left=}
 	 *     (rule start) (ambiguity) {Plus.left=}
 	 */
 	protected void emit_Atomic_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -81,8 +82,9 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '!' expression=Atomic
 	 *     (rule start) (ambiguity) '-' expression=Atomic
+	 *     (rule start) (ambiguity) {Div.left=}
 	 *     (rule start) (ambiguity) {Minus.left=}
-	 *     (rule start) (ambiguity) {MultiOrDiv.left=}
+	 *     (rule start) (ambiguity) {Multi.left=}
 	 *     (rule start) (ambiguity) {Plus.left=}
 	 */
 	protected void emit_Atomic_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

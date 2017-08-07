@@ -1063,45 +1063,49 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cPrefixedParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
-		private final Action cMultiOrDivLeftAction_1_0_0 = (Action)cGroup_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final Alternatives cOpAlternatives_1_0_1_0 = (Alternatives)cOpAssignment_1_0_1.eContents().get(0);
-		private final Keyword cOpAsteriskKeyword_1_0_1_0_0 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(0);
-		private final Keyword cOpSolidusKeyword_1_0_1_0_1 = (Keyword)cOpAlternatives_1_0_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cAlternatives_1_0.eContents().get(0);
+		private final Action cMultiLeftAction_1_0_0_0 = (Action)cGroup_1_0_0.eContents().get(0);
+		private final Keyword cAsteriskKeyword_1_0_0_1 = (Keyword)cGroup_1_0_0.eContents().get(1);
+		private final Group cGroup_1_0_1 = (Group)cAlternatives_1_0.eContents().get(1);
+		private final Action cDivLeftAction_1_0_1_0 = (Action)cGroup_1_0_1.eContents().get(0);
+		private final Keyword cSolidusKeyword_1_0_1_1 = (Keyword)cGroup_1_0_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cRightPrefixedParserRuleCall_1_1_0 = (RuleCall)cRightAssignment_1_1.eContents().get(0);
 		
 		//Multiplication Expression:
-		//	Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		//	Prefixed (({Multi.left=current} '*' | {Div.left=current} '/') right=Prefixed)*
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		//Prefixed (({Multi.left=current} '*' | {Div.left=current} '/') right=Prefixed)*
 		public Group getGroup() { return cGroup; }
 		
 		//Prefixed
 		public RuleCall getPrefixedParserRuleCall_0() { return cPrefixedParserRuleCall_0; }
 		
-		//(({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+		//(({Multi.left=current} '*' | {Div.left=current} '/') right=Prefixed)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//({MultiOrDiv.left=current} op=("*" | "/"))
-		public Group getGroup_1_0() { return cGroup_1_0; }
+		//({Multi.left=current} '*' | {Div.left=current} '/')
+		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
-		//{MultiOrDiv.left=current}
-		public Action getMultiOrDivLeftAction_1_0_0() { return cMultiOrDivLeftAction_1_0_0; }
+		//{Multi.left=current} '*'
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 		
-		//op=("*" | "/")
-		public Assignment getOpAssignment_1_0_1() { return cOpAssignment_1_0_1; }
+		//{Multi.left=current}
+		public Action getMultiLeftAction_1_0_0_0() { return cMultiLeftAction_1_0_0_0; }
 		
-		//("*" | "/")
-		public Alternatives getOpAlternatives_1_0_1_0() { return cOpAlternatives_1_0_1_0; }
+		//'*'
+		public Keyword getAsteriskKeyword_1_0_0_1() { return cAsteriskKeyword_1_0_0_1; }
 		
-		//"*"
-		public Keyword getOpAsteriskKeyword_1_0_1_0_0() { return cOpAsteriskKeyword_1_0_1_0_0; }
+		//{Div.left=current} '/'
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 		
-		//"/"
-		public Keyword getOpSolidusKeyword_1_0_1_0_1() { return cOpSolidusKeyword_1_0_1_0_1; }
+		//{Div.left=current}
+		public Action getDivLeftAction_1_0_1_0() { return cDivLeftAction_1_0_1_0; }
+		
+		//'/'
+		public Keyword getSolidusKeyword_1_0_1_1() { return cSolidusKeyword_1_0_1_1; }
 		
 		//right=Prefixed
 		public Assignment getRightAssignment_1_1() { return cRightAssignment_1_1; }
@@ -1565,7 +1569,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Multiplication Expression:
-	//	Prefixed (({MultiOrDiv.left=current} op=("*" | "/")) right=Prefixed)*
+	//	Prefixed (({Multi.left=current} '*' | {Div.left=current} '/') right=Prefixed)*
 	public MultiplicationElements getMultiplicationAccess() {
 		return pMultiplication;
 	}

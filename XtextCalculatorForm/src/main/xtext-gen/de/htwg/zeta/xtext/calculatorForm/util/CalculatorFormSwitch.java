@@ -238,11 +238,19 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CalculatorFormPackage.MULTI_OR_DIV:
+      case CalculatorFormPackage.MULTI:
       {
-        MultiOrDiv multiOrDiv = (MultiOrDiv)theEObject;
-        T result = caseMultiOrDiv(multiOrDiv);
-        if (result == null) result = caseExpression(multiOrDiv);
+        Multi multi = (Multi)theEObject;
+        T result = caseMulti(multi);
+        if (result == null) result = caseExpression(multi);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CalculatorFormPackage.DIV:
+      {
+        Div div = (Div)theEObject;
+        T result = caseDiv(div);
+        if (result == null) result = caseExpression(div);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -619,17 +627,33 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Multi Or Div</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Multi</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multi Or Div</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Multi</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMultiOrDiv(MultiOrDiv object)
+  public T caseMulti(Multi object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Div</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDiv(Div object)
   {
     return null;
   }

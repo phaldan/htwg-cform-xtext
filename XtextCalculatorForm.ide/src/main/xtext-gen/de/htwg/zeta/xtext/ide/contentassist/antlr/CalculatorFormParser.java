@@ -40,7 +40,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldSelectChildAccess().getAlternatives(), "rule__FieldSelectChild__Alternatives");
 					put(grammarAccess.getPageChildAccess().getAlternatives(), "rule__PageChild__Alternatives");
 					put(grammarAccess.getAdditionAccess().getAlternatives_1_0(), "rule__Addition__Alternatives_1_0");
-					put(grammarAccess.getMultiplicationAccess().getOpAlternatives_1_0_1_0(), "rule__Multiplication__OpAlternatives_1_0_1_0");
+					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
 					put(grammarAccess.getPrefixedAccess().getAlternatives(), "rule__Prefixed__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
@@ -78,7 +78,8 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAdditionAccess().getGroup_1_0_1(), "rule__Addition__Group_1_0_1__0");
 					put(grammarAccess.getMultiplicationAccess().getGroup(), "rule__Multiplication__Group__0");
 					put(grammarAccess.getMultiplicationAccess().getGroup_1(), "rule__Multiplication__Group_1__0");
-					put(grammarAccess.getMultiplicationAccess().getGroup_1_0(), "rule__Multiplication__Group_1_0__0");
+					put(grammarAccess.getMultiplicationAccess().getGroup_1_0_0(), "rule__Multiplication__Group_1_0_0__0");
+					put(grammarAccess.getMultiplicationAccess().getGroup_1_0_1(), "rule__Multiplication__Group_1_0_1__0");
 					put(grammarAccess.getPrefixedAccess().getGroup_0(), "rule__Prefixed__Group_0__0");
 					put(grammarAccess.getPrefixedAccess().getGroup_1(), "rule__Prefixed__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
@@ -147,7 +148,6 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCalculateAccess().getResultAssignment_1(), "rule__Calculate__ResultAssignment_1");
 					put(grammarAccess.getCalculateAccess().getExpressionAssignment_3(), "rule__Calculate__ExpressionAssignment_3");
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_1(), "rule__Addition__RightAssignment_1_1");
-					put(grammarAccess.getMultiplicationAccess().getOpAssignment_1_0_1(), "rule__Multiplication__OpAssignment_1_0_1");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getPrefixedAccess().getExpressionAssignment_0_2(), "rule__Prefixed__ExpressionAssignment_0_2");
 					put(grammarAccess.getPrefixedAccess().getExpressionAssignment_1_2(), "rule__Prefixed__ExpressionAssignment_1_2");

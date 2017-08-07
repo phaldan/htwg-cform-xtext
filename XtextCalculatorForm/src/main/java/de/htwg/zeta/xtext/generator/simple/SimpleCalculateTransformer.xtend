@@ -12,13 +12,14 @@ import de.htwg.zeta.xtext.calculatorForm.FieldSelect
 import de.htwg.zeta.xtext.calculatorForm.FieldReference
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral
 import de.htwg.zeta.xtext.calculatorForm.Minus
-import de.htwg.zeta.xtext.calculatorForm.MultiOrDiv
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral
 import de.htwg.zeta.xtext.calculatorForm.Plus
 import java.math.BigDecimal
 import java.util.HashSet
 import java.util.List
+import de.htwg.zeta.xtext.calculatorForm.Multi
+import de.htwg.zeta.xtext.calculatorForm.Div
 
 /**
  * Create a html with basic html.
@@ -61,15 +62,17 @@ class SimpleCalculateTransformer {
 
     private def String processExpression(Expression expression) {
         if (expression instanceof Plus) {
-            '''(parseFloat(«processExpression(expression.left)») + parseFloat(«processExpression(expression.right)»))'''
+            '''this.mathPlus(«processExpression(expression.left)», «processExpression(expression.right)»)'''
         } else if (expression instanceof Minus) {
-            '''(parseFloat(«processExpression(expression.left)») - parseFloat(«processExpression(expression.right)»))'''
-        } else if (expression instanceof MultiOrDiv) {
-            '''(parseFloat(«processExpression(expression.left)») «expression.op» parseFloat(«processExpression(expression.right)»))'''
+            '''this.mathMinus(«processExpression(expression.left)», «processExpression(expression.right)»)'''
+        } else if (expression instanceof Multi) {
+            '''this.mathMulti(«processExpression(expression.left)», «processExpression(expression.right)»)'''
+        } else if (expression instanceof Div) {
+            '''this.mathDiv(«processExpression(expression.left)», «processExpression(expression.right)»)'''
         } else if (expression instanceof BooleanNegation) {
-            '''!«processExpression(expression.expression)»'''
+            '''!Boolean(«processExpression(expression.expression)»)'''
         } else if (expression instanceof ArithmeticSigned) {
-            '''-parseFloat(«processExpression(expression.expression)»)'''
+            '''-Number(«processExpression(expression.expression)»)'''
         } else if (expression instanceof NumberLiteral) {
             expression.value.toString
         } else if (expression instanceof FloatLiteral) {

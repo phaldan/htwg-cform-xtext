@@ -89,7 +89,9 @@ Addition returns Expression:
 ;
 
 Multiplication returns Expression:
-    Prefixed (({MultiOrDiv.left=current} op=("*"|"/")) right=Prefixed)*
+    Prefixed
+    (({Multi.left=current} '*' | {Div.left=current} '/')
+    right=Prefixed)*
 ;
 
 Prefixed returns Expression:
