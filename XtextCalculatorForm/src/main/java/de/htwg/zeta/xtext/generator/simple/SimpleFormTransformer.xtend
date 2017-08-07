@@ -81,14 +81,18 @@ class SimpleFormTransformer extends FormTransformer {
 
     override transformFieldRadio(FieldChoice choice, FieldChoiceOption option, int index) '''
         <label class="cform-element">
-            <input type="radio" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-radio-option">
+            <input type="radio" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-radio-option"«
+                IF option.checked» checked«ENDIF»«
+            »>
             <span class="cform-label">«option.label»</span>
         </label>
     '''
 
     override transformFieldCheckbox(FieldChoice choice, FieldChoiceOption option, int index) '''
         <label class="cform-element">
-            <input type="checkbox" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-checkbox-option">
+            <input type="checkbox" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-checkbox-option"«
+                IF option.checked» checked«ENDIF»«
+            »>
             <span class="cform-label">«option.label»</span>
         </label>
     '''
