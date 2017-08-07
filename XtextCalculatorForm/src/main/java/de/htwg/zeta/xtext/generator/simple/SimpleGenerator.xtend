@@ -40,8 +40,9 @@ class SimpleGenerator {
                 <style>
                     .cform-element {
                         padding: 5px 0;
+                        display: block;
                     }
-                    .cform-element > label {
+                    .cform-element > .cform-label {
                         display: inline-block;
                         width: 50%;
                     }

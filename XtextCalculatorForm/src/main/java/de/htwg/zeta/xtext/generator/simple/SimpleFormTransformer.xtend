@@ -21,11 +21,11 @@ class SimpleFormTransformer extends FormTransformer {
     }
 
     override transformFieldInput(FieldInput input) '''
-        <div class="cform-element cform-element-«cssClass(input.name)»">
+        <label class="cform-element cform-element-«cssClass(input.name)»">
             «IF input.label != null»
-            <label for="cform-element-«cssClass(input.name)»">«input.label»</label>
+            <span class="cform-label">«input.label»</span>
             «ENDIF»
-            <input type="text" id="cform-element-«cssClass(input.name)»" name="«input.name»" class="cform-field cform-input"«
+            <input type="text" name="«input.name»" class="cform-field cform-input"«
                 IF input.autofocus» autofocus«ENDIF»«
                 IF input.disabled» disabled«ENDIF»«
                 IF input.form != null» form="«input.form»"«ENDIF»«
@@ -33,15 +33,15 @@ class SimpleFormTransformer extends FormTransformer {
                 IF input.required» required«ENDIF»«
                 IF input.value != null» value="«input.value»"«ENDIF»«
             »>
-        </div>
+        </label>
     '''
 
     override transformFieldSelect(FieldSelect select, String childs) '''
-        <div class="cform-element cform-element-«cssClass(select.name)»">
+        <label class="cform-element cform-element-«cssClass(select.name)»">
             «IF select.label != null»
-            <label for="cform-element-«cssClass(select.name)»">«select.label»</label>
+            <span class="cform-label">«select.label»</span>
             «ENDIF»
-            <select id="cform-element-«cssClass(select.name)»" name="«select.name»" class="cform-field cform-select"«
+            <select name="«select.name»" class="cform-field cform-select"«
                 IF select.autofocus» autofocus«ENDIF»«
                 IF select.disabled» disabled«ENDIF»«
                 IF select.form != null» form="«select.form»"«ENDIF»«
@@ -51,7 +51,7 @@ class SimpleFormTransformer extends FormTransformer {
             »>
                 «childs»
             </select>
-        </div>
+        </label>
     '''
 
     override transformFieldOptionGroup(FieldOptionGroup group, String options) '''
@@ -74,23 +74,23 @@ class SimpleFormTransformer extends FormTransformer {
         «ELSE»
         <div class="cform-element cform-element-«cssClass(choice.name)»">
         «ENDIF»
-            <label for="cform-element-«cssClass(choice.name)»-0">«choice.label»</label>
+            <span class="cform-label">«choice.label»</span>
             «childs»
         </div>
     '''
 
     override transformFieldRadio(FieldChoice choice, FieldChoiceOption option, int index) '''
-        <div class="cform-element">
-            <input type="radio" id="cform-element-«cssClass(choice.name)»-«index»" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-radio-option">
-            <label for="cform-element-«cssClass(choice.name)»-«index»">«option.label»</label>
-        </div>
+        <label class="cform-element">
+            <input type="radio" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-radio-option">
+            <span class="cform-label">«option.label»</span>
+        </label>
     '''
 
     override transformFieldCheckbox(FieldChoice choice, FieldChoiceOption option, int index) '''
-        <div class="cform-element">
-            <input type="checkbox" id="cform-element-«cssClass(choice.name)»-«index»" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-checkbox-option">
-            <label for="cform-element-«cssClass(choice.name)»-«index»">«option.label»</label>
-        </div>
+        <label class="cform-element">
+            <input type="checkbox" name="«choice.name»" value="«option.value»" class="cform-field cform-choice-option cform-checkbox-option">
+            <span class="cform-label">«option.label»</span>
+        </label>
     '''
 
     override transformFieldButtonSubmit(ButtonSubmit button) '''
