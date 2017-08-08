@@ -69,15 +69,7 @@ class SimpleGenerator {
                 <script type="text/javascript" src="cform.js" charset="utf-8"></script>
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
                 <script>
-                    cform.init(document.querySelectorAll('.cform'), {
-                        calculations: cform_«name»,
-                        formatInput: value => {
-                            return value.replace(',','.').replace('.','');
-                        },
-                        formatOutput: value => {
-                            return value.toLocaleString('de-DE', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-                        }
-                    });
+                    cform.init(document.querySelectorAll('.cform'), { calculations: cform_«name» });
                 </script>
             </body>
         </html>
