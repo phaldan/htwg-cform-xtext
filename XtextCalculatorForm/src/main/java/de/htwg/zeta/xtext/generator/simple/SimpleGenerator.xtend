@@ -25,6 +25,7 @@ class SimpleGenerator {
         val formHtml = new SimpleFormTransformer().transform(form.formElements)
         val calculation = new SimpleCalculateTransformer().tranform(form.calculations)
         fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml))
+        fsa.generateFile(form.name + "/simple-template.html", createHtmlTemplate(formHtml))
         fsa.generateFile(form.name + "/simple.html", formHtml)
         fsa.generateFile(form.name + "/cform.js", createJavaScript())
         fsa.generateFile(form.name + "/simple.js", calculation)
@@ -80,6 +81,15 @@ class SimpleGenerator {
                 </script>
             </body>
         </html>
+    '''
+
+    private def String createHtmlTemplate(String content) '''
+        <script type="text/javascript" src="cform.js" charset="utf-8"></script>
+        <template>
+            <div class="cform">
+                «content»
+            </div>
+        </template>
     '''
 
     private def String createJavaScript() '''
