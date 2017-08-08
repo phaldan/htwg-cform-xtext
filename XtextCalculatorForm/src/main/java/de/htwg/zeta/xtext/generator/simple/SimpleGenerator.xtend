@@ -23,15 +23,15 @@ class SimpleGenerator {
 
     private def generateForm(Form form) {
         val formHtml = new SimpleFormTransformer().transform(form.formElements)
-        val calculation = new SimpleCalculateTransformer().tranform(form.calculations)
-        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml))
+        val calculation = new SimpleCalculateTransformer().tranform(form.calculations, form.name)
+        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml, form.name))
         fsa.generateFile(form.name + "/simple-template.html", createHtmlTemplate(formHtml))
         fsa.generateFile(form.name + "/simple.html", formHtml)
         fsa.generateFile(form.name + "/cform.js", createJavaScript())
         fsa.generateFile(form.name + "/simple.js", calculation)
     }
 
-    private def String createHtmlDemo(String formHtml) '''
+    private def String createHtmlDemo(String formHtml, String name) '''
         <!doctype html>
 
         <html lang="en">
@@ -70,7 +70,7 @@ class SimpleGenerator {
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
                 <script>
                     cform.init(document.querySelectorAll('.cform'), {
-                        calculations,
+                        calculations: cform_«name»,
                         formatInput: value => {
                             return value.replace(',','.').replace('.','');
                         },

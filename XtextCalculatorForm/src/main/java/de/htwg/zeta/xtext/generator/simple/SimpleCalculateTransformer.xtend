@@ -28,8 +28,8 @@ class SimpleCalculateTransformer {
 
     private val fields = new HashSet<String>()
 
-    public def String tranform(List<Calculate> list) '''
-        var calculations = [
+    public def String tranform(List<Calculate> list, String name) '''
+        var cform_«name» = [
             «FOR calculate: list SEPARATOR ','»
                 «processCalculate(calculate)»
             «ENDFOR»
