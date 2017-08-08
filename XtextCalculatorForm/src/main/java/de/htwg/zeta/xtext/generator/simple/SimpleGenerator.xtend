@@ -24,13 +24,13 @@ class SimpleGenerator {
     private def generateForm(Form form) {
         val formHtml = new SimpleFormTransformer().transform(form.formElements)
         val calculation = new SimpleCalculateTransformer().tranform(form.calculations)
-        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml, calculation))
+        fsa.generateFile(form.name + "/simple-demo.html", createHtmlDemo(formHtml))
         fsa.generateFile(form.name + "/simple.html", formHtml)
         fsa.generateFile(form.name + "/cform.js", createJavaScript())
         fsa.generateFile(form.name + "/simple.js", calculation)
     }
 
-    private def String createHtmlDemo(String formHtml, String calculation) '''
+    private def String createHtmlDemo(String formHtml) '''
         <!doctype html>
 
         <html lang="en">
@@ -146,11 +146,14 @@ class SimpleGenerator {
                 }
 
                 processChange(event) {
-                    if (!event.target.closest('.' + CLASSES.ELEMENT) || !this.element.contains(event.target)) {
+                    this.update(event.target);
+                }
+
+                update(element) {
+                    if (!element.closest('.' + CLASSES.ELEMENT) || !this.element.contains(element)) {
                       return;
                     }
 
-                    const element = event.target;
                     this._setStoreFromField(element, element.value);
                     this._runDependingCalculations(element.name);
                 }
@@ -222,11 +225,15 @@ class SimpleGenerator {
 
             function initiate(element, settings) {
                 const elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
-                return elements.map(e => {
+                const cforms = elements.map(e => {
                     const cform = new Cform(e, Object.assign({}, DEFAULTS, settings));
                     instances.push(cform);
                     return cform;
                 });
+                const update = (element) => {
+                    cforms.forEach(c => c.update(element));
+                }
+                return { update };
             }
 
             const instances = [];
