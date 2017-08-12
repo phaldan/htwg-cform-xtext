@@ -54,10 +54,10 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 		if (epackage == CalculatorFormPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case CalculatorFormPackage.ARITHMETIC_SIGNED:
-				sequence_Prefixed(context, (ArithmeticSigned) semanticObject); 
+				sequence_UnaryOperation(context, (ArithmeticSigned) semanticObject); 
 				return; 
 			case CalculatorFormPackage.BOOLEAN_NEGATION:
-				sequence_Prefixed(context, (BooleanNegation) semanticObject); 
+				sequence_UnaryOperation(context, (BooleanNegation) semanticObject); 
 				return; 
 			case CalculatorFormPackage.BUTTON_SUBMIT:
 				sequence_ButtonSubmit(context, (ButtonSubmit) semanticObject); 
@@ -569,18 +569,19 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Multiplication.Multi_1_0_0_0 returns ArithmeticSigned
 	 *     Multiplication.Div_1_0_1_0 returns ArithmeticSigned
 	 *     Prefixed returns ArithmeticSigned
+	 *     UnaryOperation returns ArithmeticSigned
 	 *     Atomic returns ArithmeticSigned
 	 *
 	 * Constraint:
 	 *     expression=Atomic
 	 */
-	protected void sequence_Prefixed(ISerializationContext context, ArithmeticSigned semanticObject) {
+	protected void sequence_UnaryOperation(ISerializationContext context, ArithmeticSigned semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.ARITHMETIC_SIGNED__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.ARITHMETIC_SIGNED__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.UNARY_OPERATION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.UNARY_OPERATION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_1_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_1_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -595,18 +596,19 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Multiplication.Multi_1_0_0_0 returns BooleanNegation
 	 *     Multiplication.Div_1_0_1_0 returns BooleanNegation
 	 *     Prefixed returns BooleanNegation
+	 *     UnaryOperation returns BooleanNegation
 	 *     Atomic returns BooleanNegation
 	 *
 	 * Constraint:
 	 *     expression=Atomic
 	 */
-	protected void sequence_Prefixed(ISerializationContext context, BooleanNegation semanticObject) {
+	protected void sequence_UnaryOperation(ISerializationContext context, BooleanNegation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.BOOLEAN_NEGATION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.BOOLEAN_NEGATION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.UNARY_OPERATION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.UNARY_OPERATION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_0_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_0_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

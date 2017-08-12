@@ -166,6 +166,11 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
+      public Adapter caseUnaryOperation(UnaryOperation object)
+      {
+        return createUnaryOperationAdapter();
+      }
+      @Override
       public Adapter caseLiteral(Literal object)
       {
         return createLiteralAdapter();
@@ -508,6 +513,21 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.UnaryOperation <em>Unary Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see de.htwg.zeta.xtext.calculatorForm.UnaryOperation
+   * @generated
+   */
+  public Adapter createUnaryOperationAdapter()
   {
     return null;
   }

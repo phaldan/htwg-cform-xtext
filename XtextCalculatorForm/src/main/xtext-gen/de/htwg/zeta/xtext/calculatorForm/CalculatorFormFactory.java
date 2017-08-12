@@ -186,6 +186,15 @@ public interface CalculatorFormFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Unary Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unary Operation</em>'.
+   * @generated
+   */
+  UnaryOperation createUnaryOperation();
+
+  /**
    * Returns a new object of class '<em>Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

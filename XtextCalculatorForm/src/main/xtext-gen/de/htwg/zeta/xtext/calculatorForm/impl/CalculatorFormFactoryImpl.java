@@ -83,6 +83,7 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       case CalculatorFormPackage.CALCULATE: return createCalculate();
       case CalculatorFormPackage.EXPRESSION: return createExpression();
+      case CalculatorFormPackage.UNARY_OPERATION: return createUnaryOperation();
       case CalculatorFormPackage.LITERAL: return createLiteral();
       case CalculatorFormPackage.PLUS: return createPlus();
       case CalculatorFormPackage.MINUS: return createMinus();
@@ -295,6 +296,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     ExpressionImpl expression = new ExpressionImpl();
     return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnaryOperation createUnaryOperation()
+  {
+    UnaryOperationImpl unaryOperation = new UnaryOperationImpl();
+    return unaryOperation;
   }
 
   /**

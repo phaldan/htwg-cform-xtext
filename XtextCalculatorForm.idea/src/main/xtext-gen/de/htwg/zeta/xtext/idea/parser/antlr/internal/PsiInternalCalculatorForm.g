@@ -1908,10 +1908,41 @@ entryRulePrefixed returns [Boolean current=false]:
 rulePrefixed returns [Boolean current=false]
 :
 	(
+		{
+			markComposite(elementTypeProvider.getPrefixed_UnaryOperationParserRuleCall_0ElementType());
+		}
+		this_UnaryOperation_0=ruleUnaryOperation
+		{
+			$current = $this_UnaryOperation_0.current;
+			doneComposite();
+		}
+		    |
+		{
+			markComposite(elementTypeProvider.getPrefixed_AtomicParserRuleCall_1ElementType());
+		}
+		this_Atomic_1=ruleAtomic
+		{
+			$current = $this_Atomic_1.current;
+			doneComposite();
+		}
+	)
+;
+
+//Entry rule entryRuleUnaryOperation
+entryRuleUnaryOperation returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getUnaryOperationElementType()); }
+	iv_ruleUnaryOperation=ruleUnaryOperation
+	{ $current=$iv_ruleUnaryOperation.current; }
+	EOF;
+
+// Rule UnaryOperation
+ruleUnaryOperation returns [Boolean current=false]
+:
+	(
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getPrefixed_BooleanNegationAction_0_0ElementType());
+					precedeComposite(elementTypeProvider.getUnaryOperation_BooleanNegationAction_0_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
@@ -1919,7 +1950,7 @@ rulePrefixed returns [Boolean current=false]
 			(
 				('!')=>
 				{
-					markLeaf(elementTypeProvider.getPrefixed_ExclamationMarkKeyword_0_1ElementType());
+					markLeaf(elementTypeProvider.getUnaryOperation_ExclamationMarkKeyword_0_1ElementType());
 				}
 				otherlv_1='!'
 				{
@@ -1929,7 +1960,7 @@ rulePrefixed returns [Boolean current=false]
 			(
 				(
 					{
-						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType());
+						markComposite(elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType());
 					}
 					lv_expression_2_0=ruleAtomic
 					{
@@ -1946,7 +1977,7 @@ rulePrefixed returns [Boolean current=false]
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getPrefixed_ArithmeticSignedAction_1_0ElementType());
+					precedeComposite(elementTypeProvider.getUnaryOperation_ArithmeticSignedAction_1_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
@@ -1954,7 +1985,7 @@ rulePrefixed returns [Boolean current=false]
 			(
 				('-')=>
 				{
-					markLeaf(elementTypeProvider.getPrefixed_HyphenMinusKeyword_1_1ElementType());
+					markLeaf(elementTypeProvider.getUnaryOperation_HyphenMinusKeyword_1_1ElementType());
 				}
 				otherlv_4='-'
 				{
@@ -1964,7 +1995,7 @@ rulePrefixed returns [Boolean current=false]
 			(
 				(
 					{
-						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType());
+						markComposite(elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType());
 					}
 					lv_expression_5_0=ruleAtomic
 					{
@@ -1977,15 +2008,6 @@ rulePrefixed returns [Boolean current=false]
 				)
 			)
 		)
-		    |
-		{
-			markComposite(elementTypeProvider.getPrefixed_AtomicParserRuleCall_2ElementType());
-		}
-		this_Atomic_6=ruleAtomic
-		{
-			$current = $this_Atomic_6.current;
-			doneComposite();
-		}
 	)
 ;
 

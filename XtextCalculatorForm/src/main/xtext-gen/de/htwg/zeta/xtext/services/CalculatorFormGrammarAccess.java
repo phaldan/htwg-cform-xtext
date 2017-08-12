@@ -1116,6 +1116,25 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	public class PrefixedElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Prefixed");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUnaryOperationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAtomicParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Prefixed Expression:
+		//	UnaryOperation | Atomic
+		@Override public ParserRule getRule() { return rule; }
+		
+		//UnaryOperation | Atomic
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//UnaryOperation
+		public RuleCall getUnaryOperationParserRuleCall_0() { return cUnaryOperationParserRuleCall_0; }
+		
+		//Atomic
+		public RuleCall getAtomicParserRuleCall_1() { return cAtomicParserRuleCall_1; }
+	}
+	public class UnaryOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.UnaryOperation");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cBooleanNegationAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
@@ -1126,13 +1145,12 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cExpressionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cExpressionAtomicParserRuleCall_1_2_0 = (RuleCall)cExpressionAssignment_1_2.eContents().get(0);
-		private final RuleCall cAtomicParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Prefixed Expression:
-		//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+		//UnaryOperation:
+		//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic / * right associativity * /;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+		//{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{BooleanNegation} => "!" expression=Atomic
@@ -1164,9 +1182,6 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Atomic
 		public RuleCall getExpressionAtomicParserRuleCall_1_2_0() { return cExpressionAtomicParserRuleCall_1_2_0; }
-		
-		/// * right associativity * / Atomic
-		public RuleCall getAtomicParserRuleCall_2() { return cAtomicParserRuleCall_2; }
 	}
 	public class AtomicElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Atomic");
@@ -1302,6 +1317,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final AdditionElements pAddition;
 	private final MultiplicationElements pMultiplication;
 	private final PrefixedElements pPrefixed;
+	private final UnaryOperationElements pUnaryOperation;
 	private final AtomicElements pAtomic;
 	private final LiteralElements pLiteral;
 	private final TerminalRule tID;
@@ -1341,6 +1357,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAddition = new AdditionElements();
 		this.pMultiplication = new MultiplicationElements();
 		this.pPrefixed = new PrefixedElements();
+		this.pUnaryOperation = new UnaryOperationElements();
 		this.pAtomic = new AtomicElements();
 		this.pLiteral = new LiteralElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
@@ -1594,13 +1611,23 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Prefixed Expression:
-	//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic | Atomic
+	//	UnaryOperation | Atomic
 	public PrefixedElements getPrefixedAccess() {
 		return pPrefixed;
 	}
 	
 	public ParserRule getPrefixedRule() {
 		return getPrefixedAccess().getRule();
+	}
+	
+	//UnaryOperation:
+	//	{BooleanNegation} => "!" expression=Atomic | {ArithmeticSigned} => "-" expression=Atomic / * right associativity * /;
+	public UnaryOperationElements getUnaryOperationAccess() {
+		return pUnaryOperation;
+	}
+	
+	public ParserRule getUnaryOperationRule() {
+		return getUnaryOperationAccess().getRule();
 	}
 	
 	//Atomic Expression:

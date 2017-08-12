@@ -940,6 +940,34 @@ public interface CalculatorFormPackage extends EPackage
   int EXPRESSION_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.UnaryOperationImpl <em>Unary Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.UnaryOperationImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getUnaryOperation()
+   * @generated
+   */
+  int UNARY_OPERATION = 18;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_OPERATION__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Unary Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNARY_OPERATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.LiteralImpl <em>Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -947,7 +975,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 18;
+  int LITERAL = 19;
 
   /**
    * The number of structural features of the '<em>Literal</em>' class.
@@ -966,7 +994,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 19;
+  int PLUS = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1003,7 +1031,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 20;
+  int MINUS = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1040,7 +1068,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 21;
+  int MULTI = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1077,7 +1105,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 22;
+  int DIV = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1114,7 +1142,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 23;
+  int BOOLEAN_NEGATION = 24;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1123,7 +1151,7 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_NEGATION__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+  int BOOLEAN_NEGATION__EXPRESSION = UNARY_OPERATION__EXPRESSION;
 
   /**
    * The number of structural features of the '<em>Boolean Negation</em>' class.
@@ -1132,7 +1160,7 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOOLEAN_NEGATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int BOOLEAN_NEGATION_FEATURE_COUNT = UNARY_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ArithmeticSignedImpl <em>Arithmetic Signed</em>}' class.
@@ -1142,7 +1170,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getArithmeticSigned()
    * @generated
    */
-  int ARITHMETIC_SIGNED = 24;
+  int ARITHMETIC_SIGNED = 25;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1151,7 +1179,7 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARITHMETIC_SIGNED__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+  int ARITHMETIC_SIGNED__EXPRESSION = UNARY_OPERATION__EXPRESSION;
 
   /**
    * The number of structural features of the '<em>Arithmetic Signed</em>' class.
@@ -1160,7 +1188,7 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARITHMETIC_SIGNED_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int ARITHMETIC_SIGNED_FEATURE_COUNT = UNARY_OPERATION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.
@@ -1170,7 +1198,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
    * @generated
    */
-  int FIELD_REFERENCE = 25;
+  int FIELD_REFERENCE = 26;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -1198,7 +1226,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 26;
+  int NUMBER_LITERAL = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1226,7 +1254,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 27;
+  int FLOAT_LITERAL = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1254,7 +1282,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPercentLiteral()
    * @generated
    */
-  int PERCENT_LITERAL = 28;
+  int PERCENT_LITERAL = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2094,6 +2122,27 @@ public interface CalculatorFormPackage extends EPackage
   EClass getExpression();
 
   /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.UnaryOperation <em>Unary Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unary Operation</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.UnaryOperation
+   * @generated
+   */
+  EClass getUnaryOperation();
+
+  /**
+   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.UnaryOperation#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.UnaryOperation#getExpression()
+   * @see #getUnaryOperation()
+   * @generated
+   */
+  EReference getUnaryOperation_Expression();
+
+  /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Literal <em>Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2242,17 +2291,6 @@ public interface CalculatorFormPackage extends EPackage
   EClass getBooleanNegation();
 
   /**
-   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.BooleanNegation#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.BooleanNegation#getExpression()
-   * @see #getBooleanNegation()
-   * @generated
-   */
-  EReference getBooleanNegation_Expression();
-
-  /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.ArithmeticSigned <em>Arithmetic Signed</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2261,17 +2299,6 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    */
   EClass getArithmeticSigned();
-
-  /**
-   * Returns the meta object for the containment reference '{@link de.htwg.zeta.xtext.calculatorForm.ArithmeticSigned#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.ArithmeticSigned#getExpression()
-   * @see #getArithmeticSigned()
-   * @generated
-   */
-  EReference getArithmeticSigned_Expression();
 
   /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference <em>Field Reference</em>}'.
@@ -3025,6 +3052,24 @@ public interface CalculatorFormPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.UnaryOperationImpl <em>Unary Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.UnaryOperationImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getUnaryOperation()
+     * @generated
+     */
+    EClass UNARY_OPERATION = eINSTANCE.getUnaryOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNARY_OPERATION__EXPRESSION = eINSTANCE.getUnaryOperation_Expression();
+
+    /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.LiteralImpl <em>Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3149,14 +3194,6 @@ public interface CalculatorFormPackage extends EPackage
     EClass BOOLEAN_NEGATION = eINSTANCE.getBooleanNegation();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BOOLEAN_NEGATION__EXPRESSION = eINSTANCE.getBooleanNegation_Expression();
-
-    /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ArithmeticSignedImpl <em>Arithmetic Signed</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3165,14 +3202,6 @@ public interface CalculatorFormPackage extends EPackage
      * @generated
      */
     EClass ARITHMETIC_SIGNED = eINSTANCE.getArithmeticSigned();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARITHMETIC_SIGNED__EXPRESSION = eINSTANCE.getArithmeticSigned_Expression();
 
     /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.

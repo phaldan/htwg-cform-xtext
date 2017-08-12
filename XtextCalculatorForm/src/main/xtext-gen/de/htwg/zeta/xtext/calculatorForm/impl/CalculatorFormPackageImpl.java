@@ -34,6 +34,7 @@ import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PageChild;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
+import de.htwg.zeta.xtext.calculatorForm.UnaryOperation;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -175,6 +176,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * @generated
    */
   private EClass expressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unaryOperationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1081,6 +1089,26 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getUnaryOperation()
+  {
+    return unaryOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnaryOperation_Expression()
+  {
+    return (EReference)unaryOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLiteral()
   {
     return literalEClass;
@@ -1221,29 +1249,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanNegation_Expression()
-  {
-    return (EReference)booleanNegationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getArithmeticSigned()
   {
     return arithmeticSignedEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArithmeticSigned_Expression()
-  {
-    return (EReference)arithmeticSignedEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1450,6 +1458,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     expressionEClass = createEClass(EXPRESSION);
 
+    unaryOperationEClass = createEClass(UNARY_OPERATION);
+    createEReference(unaryOperationEClass, UNARY_OPERATION__EXPRESSION);
+
     literalEClass = createEClass(LITERAL);
 
     plusEClass = createEClass(PLUS);
@@ -1469,10 +1480,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     createEReference(divEClass, DIV__RIGHT);
 
     booleanNegationEClass = createEClass(BOOLEAN_NEGATION);
-    createEReference(booleanNegationEClass, BOOLEAN_NEGATION__EXPRESSION);
 
     arithmeticSignedEClass = createEClass(ARITHMETIC_SIGNED);
-    createEReference(arithmeticSignedEClass, ARITHMETIC_SIGNED__EXPRESSION);
 
     fieldReferenceEClass = createEClass(FIELD_REFERENCE);
     createEReference(fieldReferenceEClass, FIELD_REFERENCE__REF);
@@ -1528,13 +1537,14 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     pageEClass.getESuperTypes().add(this.getFormElement());
     buttonEClass.getESuperTypes().add(this.getField());
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
+    unaryOperationEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
     divEClass.getESuperTypes().add(this.getExpression());
-    booleanNegationEClass.getESuperTypes().add(this.getExpression());
-    arithmeticSignedEClass.getESuperTypes().add(this.getExpression());
+    booleanNegationEClass.getESuperTypes().add(this.getUnaryOperation());
+    arithmeticSignedEClass.getESuperTypes().add(this.getUnaryOperation());
     fieldReferenceEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getLiteral());
     floatLiteralEClass.getESuperTypes().add(this.getLiteral());
@@ -1635,6 +1645,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(unaryOperationEClass, UnaryOperation.class, "UnaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUnaryOperation_Expression(), this.getExpression(), null, "expression", null, 0, 1, UnaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1654,10 +1667,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEReference(getDiv_Right(), this.getExpression(), null, "right", null, 0, 1, Div.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanNegationEClass, BooleanNegation.class, "BooleanNegation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanNegation_Expression(), this.getExpression(), null, "expression", null, 0, 1, BooleanNegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arithmeticSignedEClass, ArithmeticSigned.class, "ArithmeticSigned", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArithmeticSigned_Expression(), this.getExpression(), null, "expression", null, 0, 1, ArithmeticSigned.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldReferenceEClass, FieldReference.class, "FieldReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFieldReference_Ref(), this.getField(), null, "ref", null, 0, 1, FieldReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

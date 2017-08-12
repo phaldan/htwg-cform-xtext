@@ -93,9 +93,12 @@ Multiplication returns Expression:
 ;
 
 Prefixed returns Expression:
+    UnaryOperation | Atomic
+;
+
+UnaryOperation:
     {BooleanNegation} =>"!" expression=Atomic | /* right associativity */
-    {ArithmeticSigned} =>"-" expression=Atomic | /* right associativity */
-    Atomic
+    {ArithmeticSigned} =>"-" expression=Atomic /* right associativity */
 ;
 
 Atomic returns Expression:

@@ -1888,11 +1888,47 @@ rulePrefixed returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getPrefixedAccess().getUnaryOperationParserRuleCall_0());
+		}
+		this_UnaryOperation_0=ruleUnaryOperation
+		{
+			$current = $this_UnaryOperation_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPrefixedAccess().getAtomicParserRuleCall_1());
+		}
+		this_Atomic_1=ruleAtomic
+		{
+			$current = $this_Atomic_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleUnaryOperation
+entryRuleUnaryOperation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUnaryOperationRule()); }
+	iv_ruleUnaryOperation=ruleUnaryOperation
+	{ $current=$iv_ruleUnaryOperation.current; }
+	EOF;
+
+// Rule UnaryOperation
+ruleUnaryOperation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getPrefixedAccess().getBooleanNegationAction_0_0(),
+						grammarAccess.getUnaryOperationAccess().getBooleanNegationAction_0_0(),
 						$current);
 				}
 			)
@@ -1900,18 +1936,18 @@ rulePrefixed returns [EObject current=null]
 				('!')=>
 				otherlv_1='!'
 				{
-					newLeafNode(otherlv_1, grammarAccess.getPrefixedAccess().getExclamationMarkKeyword_0_1());
+					newLeafNode(otherlv_1, grammarAccess.getUnaryOperationAccess().getExclamationMarkKeyword_0_1());
 				}
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_0_2_0());
+						newCompositeNode(grammarAccess.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_0_2_0());
 					}
 					lv_expression_2_0=ruleAtomic
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPrefixedRule());
+							$current = createModelElementForParent(grammarAccess.getUnaryOperationRule());
 						}
 						set(
 							$current,
@@ -1928,7 +1964,7 @@ rulePrefixed returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getPrefixedAccess().getArithmeticSignedAction_1_0(),
+						grammarAccess.getUnaryOperationAccess().getArithmeticSignedAction_1_0(),
 						$current);
 				}
 			)
@@ -1936,18 +1972,18 @@ rulePrefixed returns [EObject current=null]
 				('-')=>
 				otherlv_4='-'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getPrefixedAccess().getHyphenMinusKeyword_1_1());
+					newLeafNode(otherlv_4, grammarAccess.getUnaryOperationAccess().getHyphenMinusKeyword_1_1());
 				}
 			)
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPrefixedAccess().getExpressionAtomicParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_1_2_0());
 					}
 					lv_expression_5_0=ruleAtomic
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPrefixedRule());
+							$current = createModelElementForParent(grammarAccess.getUnaryOperationRule());
 						}
 						set(
 							$current,
@@ -1959,15 +1995,6 @@ rulePrefixed returns [EObject current=null]
 				)
 			)
 		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getPrefixedAccess().getAtomicParserRuleCall_2());
-		}
-		this_Atomic_6=ruleAtomic
-		{
-			$current = $this_Atomic_6.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 

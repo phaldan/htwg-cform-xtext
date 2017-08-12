@@ -1367,38 +1367,11 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createPrefixed_AlternativesElementType() {
 			return new IGrammarAwareElementType("Prefixed_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getAlternatives());
 		}
-		public static IGrammarAwareElementType createPrefixed_Group_0ElementType() {
-			return new IGrammarAwareElementType("Prefixed_Group_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getGroup_0());
+		public static IGrammarAwareElementType createPrefixed_UnaryOperationParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("Prefixed_UnaryOperationParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getUnaryOperationParserRuleCall_0());
 		}
-		public static IGrammarAwareElementType createPrefixed_BooleanNegationAction_0_0ElementType() {
-			return new IGrammarAwareElementType("Prefixed_BooleanNegationAction_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getBooleanNegationAction_0_0());
-		}
-		public static IGrammarAwareElementType createPrefixed_ExclamationMarkKeyword_0_1ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ExclamationMarkKeyword_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getExclamationMarkKeyword_0_1());
-		}
-		public static IGrammarAwareElementType createPrefixed_ExpressionAssignment_0_2ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ExpressionAssignment_0_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getExpressionAssignment_0_2());
-		}
-		public static IGrammarAwareElementType createPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getExpressionAtomicParserRuleCall_0_2_0());
-		}
-		public static IGrammarAwareElementType createPrefixed_Group_1ElementType() {
-			return new IGrammarAwareElementType("Prefixed_Group_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getGroup_1());
-		}
-		public static IGrammarAwareElementType createPrefixed_ArithmeticSignedAction_1_0ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ArithmeticSignedAction_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getArithmeticSignedAction_1_0());
-		}
-		public static IGrammarAwareElementType createPrefixed_HyphenMinusKeyword_1_1ElementType() {
-			return new IGrammarAwareElementType("Prefixed_HyphenMinusKeyword_1_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getHyphenMinusKeyword_1_1());
-		}
-		public static IGrammarAwareElementType createPrefixed_ExpressionAssignment_1_2ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ExpressionAssignment_1_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getExpressionAssignment_1_2());
-		}
-		public static IGrammarAwareElementType createPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType() {
-			return new IGrammarAwareElementType("Prefixed_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getExpressionAtomicParserRuleCall_1_2_0());
-		}
-		public static IGrammarAwareElementType createPrefixed_AtomicParserRuleCall_2ElementType() {
-			return new IGrammarAwareElementType("Prefixed_AtomicParserRuleCall_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getAtomicParserRuleCall_2());
+		public static IGrammarAwareElementType createPrefixed_AtomicParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("Prefixed_AtomicParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getPrefixedAccess().getAtomicParserRuleCall_1());
 		}
 	}
 
@@ -1406,27 +1379,72 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Prefixed_Alternatives_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_AlternativesElementType());
 
-	public static final IGrammarAwareElementType Prefixed_Group_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_Group_0ElementType());
+	public static final IGrammarAwareElementType Prefixed_UnaryOperationParserRuleCall_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_UnaryOperationParserRuleCall_0ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_BooleanNegationAction_0_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_BooleanNegationAction_0_0ElementType());
+	public static final IGrammarAwareElementType Prefixed_AtomicParserRuleCall_1_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_AtomicParserRuleCall_1ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_ExclamationMarkKeyword_0_1_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ExclamationMarkKeyword_0_1ElementType());
+	private static class UnaryOperationFactory {
+		public static IGrammarAwareElementType createUnaryOperationElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationRule());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_AlternativesElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getAlternatives());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_Group_0ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_Group_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getGroup_0());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_BooleanNegationAction_0_0ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_BooleanNegationAction_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getBooleanNegationAction_0_0());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ExclamationMarkKeyword_0_1ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ExclamationMarkKeyword_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getExclamationMarkKeyword_0_1());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ExpressionAssignment_0_2ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ExpressionAssignment_0_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getExpressionAssignment_0_2());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_0_2_0());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_Group_1ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_Group_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getGroup_1());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ArithmeticSignedAction_1_0ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ArithmeticSignedAction_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getArithmeticSignedAction_1_0());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_HyphenMinusKeyword_1_1ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_HyphenMinusKeyword_1_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getHyphenMinusKeyword_1_1());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ExpressionAssignment_1_2ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ExpressionAssignment_1_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getExpressionAssignment_1_2());
+		}
+		public static IGrammarAwareElementType createUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType() {
+			return new IGrammarAwareElementType("UnaryOperation_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getUnaryOperationAccess().getExpressionAtomicParserRuleCall_1_2_0());
+		}
+	}
 
-	public static final IGrammarAwareElementType Prefixed_ExpressionAssignment_0_2_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ExpressionAssignment_0_2ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperationElementType());
 
-	public static final IGrammarAwareElementType Prefixed_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_Alternatives_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_AlternativesElementType());
 
-	public static final IGrammarAwareElementType Prefixed_Group_1_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_Group_1ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_Group_0_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_Group_0ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_ArithmeticSignedAction_1_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ArithmeticSignedAction_1_0ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_BooleanNegationAction_0_0_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_BooleanNegationAction_0_0ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_HyphenMinusKeyword_1_1_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_HyphenMinusKeyword_1_1ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_ExclamationMarkKeyword_0_1_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ExclamationMarkKeyword_0_1ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_ExpressionAssignment_1_2_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ExpressionAssignment_1_2ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_ExpressionAssignment_0_2_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ExpressionAssignment_0_2ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType());
 
-	public static final IGrammarAwareElementType Prefixed_AtomicParserRuleCall_2_ELEMENT_TYPE = associate(PrefixedFactory.createPrefixed_AtomicParserRuleCall_2ElementType());
+	public static final IGrammarAwareElementType UnaryOperation_Group_1_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_Group_1ElementType());
+
+	public static final IGrammarAwareElementType UnaryOperation_ArithmeticSignedAction_1_0_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ArithmeticSignedAction_1_0ElementType());
+
+	public static final IGrammarAwareElementType UnaryOperation_HyphenMinusKeyword_1_1_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_HyphenMinusKeyword_1_1ElementType());
+
+	public static final IGrammarAwareElementType UnaryOperation_ExpressionAssignment_1_2_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ExpressionAssignment_1_2ElementType());
+
+	public static final IGrammarAwareElementType UnaryOperation_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE = associate(UnaryOperationFactory.createUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType());
 
 	private static class AtomicFactory {
 		public static IGrammarAwareElementType createAtomicElementType() {
@@ -2598,48 +2616,60 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Prefixed_Alternatives_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_Group_0ElementType() {
-		return Prefixed_Group_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getPrefixed_UnaryOperationParserRuleCall_0ElementType() {
+		return Prefixed_UnaryOperationParserRuleCall_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_BooleanNegationAction_0_0ElementType() {
-		return Prefixed_BooleanNegationAction_0_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getPrefixed_AtomicParserRuleCall_1ElementType() {
+		return Prefixed_AtomicParserRuleCall_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ExclamationMarkKeyword_0_1ElementType() {
-		return Prefixed_ExclamationMarkKeyword_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperationElementType() {
+		return UnaryOperation_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ExpressionAssignment_0_2ElementType() {
-		return Prefixed_ExpressionAssignment_0_2_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_AlternativesElementType() {
+		return UnaryOperation_Alternatives_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType() {
-		return Prefixed_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_Group_0ElementType() {
+		return UnaryOperation_Group_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_Group_1ElementType() {
-		return Prefixed_Group_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_BooleanNegationAction_0_0ElementType() {
+		return UnaryOperation_BooleanNegationAction_0_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ArithmeticSignedAction_1_0ElementType() {
-		return Prefixed_ArithmeticSignedAction_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_ExclamationMarkKeyword_0_1ElementType() {
+		return UnaryOperation_ExclamationMarkKeyword_0_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_HyphenMinusKeyword_1_1ElementType() {
-		return Prefixed_HyphenMinusKeyword_1_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_ExpressionAssignment_0_2ElementType() {
+		return UnaryOperation_ExpressionAssignment_0_2_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ExpressionAssignment_1_2ElementType() {
-		return Prefixed_ExpressionAssignment_1_2_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType() {
+		return UnaryOperation_ExpressionAtomicParserRuleCall_0_2_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType() {
-		return Prefixed_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_Group_1ElementType() {
+		return UnaryOperation_Group_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getPrefixed_AtomicParserRuleCall_2ElementType() {
-		return Prefixed_AtomicParserRuleCall_2_ELEMENT_TYPE;
+	public IGrammarAwareElementType getUnaryOperation_ArithmeticSignedAction_1_0ElementType() {
+		return UnaryOperation_ArithmeticSignedAction_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getUnaryOperation_HyphenMinusKeyword_1_1ElementType() {
+		return UnaryOperation_HyphenMinusKeyword_1_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getUnaryOperation_ExpressionAssignment_1_2ElementType() {
+		return UnaryOperation_ExpressionAssignment_1_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType() {
+		return UnaryOperation_ExpressionAtomicParserRuleCall_1_2_0_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getAtomicElementType() {

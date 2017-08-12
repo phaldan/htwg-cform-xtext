@@ -222,6 +222,14 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CalculatorFormPackage.UNARY_OPERATION:
+      {
+        UnaryOperation unaryOperation = (UnaryOperation)theEObject;
+        T result = caseUnaryOperation(unaryOperation);
+        if (result == null) result = caseExpression(unaryOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CalculatorFormPackage.LITERAL:
       {
         Literal literal = (Literal)theEObject;
@@ -266,6 +274,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
       {
         BooleanNegation booleanNegation = (BooleanNegation)theEObject;
         T result = caseBooleanNegation(booleanNegation);
+        if (result == null) result = caseUnaryOperation(booleanNegation);
         if (result == null) result = caseExpression(booleanNegation);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -274,6 +283,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
       {
         ArithmeticSigned arithmeticSigned = (ArithmeticSigned)theEObject;
         T result = caseArithmeticSigned(arithmeticSigned);
+        if (result == null) result = caseUnaryOperation(arithmeticSigned);
         if (result == null) result = caseExpression(arithmeticSigned);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -601,6 +611,22 @@ public class CalculatorFormSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpression(Expression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unary Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnaryOperation(UnaryOperation object)
   {
     return null;
   }

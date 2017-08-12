@@ -185,19 +185,25 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getPrefixedElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getPrefixed_BooleanNegationAction_0_0ElementType()) {
+			if (elementType == elementTypeProvider.getPrefixed_UnaryOperationParserRuleCall_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType()) {
+			if (elementType == elementTypeProvider.getPrefixed_AtomicParserRuleCall_1ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getPrefixed_ArithmeticSignedAction_1_0ElementType()) {
+			if (elementType == elementTypeProvider.getUnaryOperationElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType()) {
+			if (elementType == elementTypeProvider.getUnaryOperation_BooleanNegationAction_0_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getPrefixed_AtomicParserRuleCall_2ElementType()) {
+			if (elementType == elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getUnaryOperation_ArithmeticSignedAction_1_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getAtomicElementType()) {

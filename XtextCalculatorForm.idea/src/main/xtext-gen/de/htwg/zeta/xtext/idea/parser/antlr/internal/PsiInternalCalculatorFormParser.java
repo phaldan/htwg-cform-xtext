@@ -5482,8 +5482,141 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "rulePrefixed"
-    // PsiInternalCalculatorForm.g:1908:1: rulePrefixed returns [Boolean current=false] : ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) | this_Atomic_6= ruleAtomic ) ;
+    // PsiInternalCalculatorForm.g:1908:1: rulePrefixed returns [Boolean current=false] : (this_UnaryOperation_0= ruleUnaryOperation | this_Atomic_1= ruleAtomic ) ;
     public final Boolean rulePrefixed() throws RecognitionException {
+        Boolean current = false;
+
+        Boolean this_UnaryOperation_0 = null;
+
+        Boolean this_Atomic_1 = null;
+
+
+        try {
+            // PsiInternalCalculatorForm.g:1909:1: ( (this_UnaryOperation_0= ruleUnaryOperation | this_Atomic_1= ruleAtomic ) )
+            // PsiInternalCalculatorForm.g:1910:2: (this_UnaryOperation_0= ruleUnaryOperation | this_Atomic_1= ruleAtomic )
+            {
+            // PsiInternalCalculatorForm.g:1910:2: (this_UnaryOperation_0= ruleUnaryOperation | this_Atomic_1= ruleAtomic )
+            int alt60=2;
+            int LA60_0 = input.LA(1);
+
+            if ( (LA60_0==40||LA60_0==43) ) {
+                alt60=1;
+            }
+            else if ( (LA60_0==RULE_ID||(LA60_0>=RULE_INT && LA60_0<=RULE_PERCENT)||LA60_0==44) ) {
+                alt60=2;
+            }
+            else {
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 60, 0, input);
+
+                throw nvae;
+            }
+            switch (alt60) {
+                case 1 :
+                    // PsiInternalCalculatorForm.g:1911:3: this_UnaryOperation_0= ruleUnaryOperation
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			markComposite(elementTypeProvider.getPrefixed_UnaryOperationParserRuleCall_0ElementType());
+                      		
+                    }
+                    pushFollow(FOLLOW_2);
+                    this_UnaryOperation_0=ruleUnaryOperation();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			current = this_UnaryOperation_0;
+                      			doneComposite();
+                      		
+                    }
+
+                    }
+                    break;
+                case 2 :
+                    // PsiInternalCalculatorForm.g:1920:3: this_Atomic_1= ruleAtomic
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      			markComposite(elementTypeProvider.getPrefixed_AtomicParserRuleCall_1ElementType());
+                      		
+                    }
+                    pushFollow(FOLLOW_2);
+                    this_Atomic_1=ruleAtomic();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			current = this_Atomic_1;
+                      			doneComposite();
+                      		
+                    }
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePrefixed"
+
+
+    // $ANTLR start "entryRuleUnaryOperation"
+    // PsiInternalCalculatorForm.g:1932:1: entryRuleUnaryOperation returns [Boolean current=false] : iv_ruleUnaryOperation= ruleUnaryOperation EOF ;
+    public final Boolean entryRuleUnaryOperation() throws RecognitionException {
+        Boolean current = false;
+
+        Boolean iv_ruleUnaryOperation = null;
+
+
+        try {
+            // PsiInternalCalculatorForm.g:1932:56: (iv_ruleUnaryOperation= ruleUnaryOperation EOF )
+            // PsiInternalCalculatorForm.g:1933:2: iv_ruleUnaryOperation= ruleUnaryOperation EOF
+            {
+            if ( state.backtracking==0 ) {
+               markComposite(elementTypeProvider.getUnaryOperationElementType()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleUnaryOperation=ruleUnaryOperation();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleUnaryOperation; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleUnaryOperation"
+
+
+    // $ANTLR start "ruleUnaryOperation"
+    // PsiInternalCalculatorForm.g:1939:1: ruleUnaryOperation returns [Boolean current=false] : ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) ) ;
+    public final Boolean ruleUnaryOperation() throws RecognitionException {
         Boolean current = false;
 
         Token otherlv_1=null;
@@ -5492,56 +5625,41 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
         Boolean lv_expression_5_0 = null;
 
-        Boolean this_Atomic_6 = null;
-
 
         try {
-            // PsiInternalCalculatorForm.g:1909:1: ( ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) | this_Atomic_6= ruleAtomic ) )
-            // PsiInternalCalculatorForm.g:1910:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) | this_Atomic_6= ruleAtomic )
+            // PsiInternalCalculatorForm.g:1940:1: ( ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) ) )
+            // PsiInternalCalculatorForm.g:1941:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:1910:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) | this_Atomic_6= ruleAtomic )
-            int alt60=3;
-            switch ( input.LA(1) ) {
-            case 43:
-                {
-                alt60=1;
-                }
-                break;
-            case 40:
-                {
-                alt60=2;
-                }
-                break;
-            case RULE_ID:
-            case RULE_INT:
-            case RULE_FLOAT:
-            case RULE_PERCENT:
-            case 44:
-                {
-                alt60=3;
-                }
-                break;
-            default:
+            // PsiInternalCalculatorForm.g:1941:2: ( ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) ) | ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) ) )
+            int alt61=2;
+            int LA61_0 = input.LA(1);
+
+            if ( (LA61_0==43) ) {
+                alt61=1;
+            }
+            else if ( (LA61_0==40) ) {
+                alt61=2;
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 60, 0, input);
+                    new NoViableAltException("", 61, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt60) {
+            switch (alt61) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:1911:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) )
+                    // PsiInternalCalculatorForm.g:1942:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:1911:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) )
-                    // PsiInternalCalculatorForm.g:1912:4: () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) )
+                    // PsiInternalCalculatorForm.g:1942:3: ( () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) ) )
+                    // PsiInternalCalculatorForm.g:1943:4: () ( ( '!' )=>otherlv_1= '!' ) ( (lv_expression_2_0= ruleAtomic ) )
                     {
-                    // PsiInternalCalculatorForm.g:1912:4: ()
-                    // PsiInternalCalculatorForm.g:1913:5: 
+                    // PsiInternalCalculatorForm.g:1943:4: ()
+                    // PsiInternalCalculatorForm.g:1944:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                      					precedeComposite(elementTypeProvider.getPrefixed_BooleanNegationAction_0_0ElementType());
+                      					precedeComposite(elementTypeProvider.getUnaryOperation_BooleanNegationAction_0_0ElementType());
                       					doneComposite();
                       					associateWithSemanticElement();
                       				
@@ -5549,12 +5667,12 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:1919:4: ( ( '!' )=>otherlv_1= '!' )
-                    // PsiInternalCalculatorForm.g:1920:5: ( '!' )=>otherlv_1= '!'
+                    // PsiInternalCalculatorForm.g:1950:4: ( ( '!' )=>otherlv_1= '!' )
+                    // PsiInternalCalculatorForm.g:1951:5: ( '!' )=>otherlv_1= '!'
                     {
                     if ( state.backtracking==0 ) {
 
-                      					markLeaf(elementTypeProvider.getPrefixed_ExclamationMarkKeyword_0_1ElementType());
+                      					markLeaf(elementTypeProvider.getUnaryOperation_ExclamationMarkKeyword_0_1ElementType());
                       				
                     }
                     otherlv_1=(Token)match(input,43,FOLLOW_51); if (state.failed) return current;
@@ -5566,15 +5684,15 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:1929:4: ( (lv_expression_2_0= ruleAtomic ) )
-                    // PsiInternalCalculatorForm.g:1930:5: (lv_expression_2_0= ruleAtomic )
+                    // PsiInternalCalculatorForm.g:1960:4: ( (lv_expression_2_0= ruleAtomic ) )
+                    // PsiInternalCalculatorForm.g:1961:5: (lv_expression_2_0= ruleAtomic )
                     {
-                    // PsiInternalCalculatorForm.g:1930:5: (lv_expression_2_0= ruleAtomic )
-                    // PsiInternalCalculatorForm.g:1931:6: lv_expression_2_0= ruleAtomic
+                    // PsiInternalCalculatorForm.g:1961:5: (lv_expression_2_0= ruleAtomic )
+                    // PsiInternalCalculatorForm.g:1962:6: lv_expression_2_0= ruleAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_0_2_0ElementType());
+                      						markComposite(elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_0_2_0ElementType());
                       					
                     }
                     pushFollow(FOLLOW_2);
@@ -5604,17 +5722,17 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:1946:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) )
+                    // PsiInternalCalculatorForm.g:1977:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:1946:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) )
-                    // PsiInternalCalculatorForm.g:1947:4: () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) )
+                    // PsiInternalCalculatorForm.g:1977:3: ( () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) ) )
+                    // PsiInternalCalculatorForm.g:1978:4: () ( ( '-' )=>otherlv_4= '-' ) ( (lv_expression_5_0= ruleAtomic ) )
                     {
-                    // PsiInternalCalculatorForm.g:1947:4: ()
-                    // PsiInternalCalculatorForm.g:1948:5: 
+                    // PsiInternalCalculatorForm.g:1978:4: ()
+                    // PsiInternalCalculatorForm.g:1979:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                      					precedeComposite(elementTypeProvider.getPrefixed_ArithmeticSignedAction_1_0ElementType());
+                      					precedeComposite(elementTypeProvider.getUnaryOperation_ArithmeticSignedAction_1_0ElementType());
                       					doneComposite();
                       					associateWithSemanticElement();
                       				
@@ -5622,12 +5740,12 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:1954:4: ( ( '-' )=>otherlv_4= '-' )
-                    // PsiInternalCalculatorForm.g:1955:5: ( '-' )=>otherlv_4= '-'
+                    // PsiInternalCalculatorForm.g:1985:4: ( ( '-' )=>otherlv_4= '-' )
+                    // PsiInternalCalculatorForm.g:1986:5: ( '-' )=>otherlv_4= '-'
                     {
                     if ( state.backtracking==0 ) {
 
-                      					markLeaf(elementTypeProvider.getPrefixed_HyphenMinusKeyword_1_1ElementType());
+                      					markLeaf(elementTypeProvider.getUnaryOperation_HyphenMinusKeyword_1_1ElementType());
                       				
                     }
                     otherlv_4=(Token)match(input,40,FOLLOW_51); if (state.failed) return current;
@@ -5639,15 +5757,15 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:1964:4: ( (lv_expression_5_0= ruleAtomic ) )
-                    // PsiInternalCalculatorForm.g:1965:5: (lv_expression_5_0= ruleAtomic )
+                    // PsiInternalCalculatorForm.g:1995:4: ( (lv_expression_5_0= ruleAtomic ) )
+                    // PsiInternalCalculatorForm.g:1996:5: (lv_expression_5_0= ruleAtomic )
                     {
-                    // PsiInternalCalculatorForm.g:1965:5: (lv_expression_5_0= ruleAtomic )
-                    // PsiInternalCalculatorForm.g:1966:6: lv_expression_5_0= ruleAtomic
+                    // PsiInternalCalculatorForm.g:1996:5: (lv_expression_5_0= ruleAtomic )
+                    // PsiInternalCalculatorForm.g:1997:6: lv_expression_5_0= ruleAtomic
                     {
                     if ( state.backtracking==0 ) {
 
-                      						markComposite(elementTypeProvider.getPrefixed_ExpressionAtomicParserRuleCall_1_2_0ElementType());
+                      						markComposite(elementTypeProvider.getUnaryOperation_ExpressionAtomicParserRuleCall_1_2_0ElementType());
                       					
                     }
                     pushFollow(FOLLOW_2);
@@ -5676,28 +5794,6 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
                     break;
-                case 3 :
-                    // PsiInternalCalculatorForm.g:1981:3: this_Atomic_6= ruleAtomic
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      			markComposite(elementTypeProvider.getPrefixed_AtomicParserRuleCall_2ElementType());
-                      		
-                    }
-                    pushFollow(FOLLOW_2);
-                    this_Atomic_6=ruleAtomic();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      			current = this_Atomic_6;
-                      			doneComposite();
-                      		
-                    }
-
-                    }
-                    break;
 
             }
 
@@ -5713,11 +5809,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "rulePrefixed"
+    // $ANTLR end "ruleUnaryOperation"
 
 
     // $ANTLR start "entryRuleAtomic"
-    // PsiInternalCalculatorForm.g:1993:1: entryRuleAtomic returns [Boolean current=false] : iv_ruleAtomic= ruleAtomic EOF ;
+    // PsiInternalCalculatorForm.g:2015:1: entryRuleAtomic returns [Boolean current=false] : iv_ruleAtomic= ruleAtomic EOF ;
     public final Boolean entryRuleAtomic() throws RecognitionException {
         Boolean current = false;
 
@@ -5725,8 +5821,8 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
         try {
-            // PsiInternalCalculatorForm.g:1993:48: (iv_ruleAtomic= ruleAtomic EOF )
-            // PsiInternalCalculatorForm.g:1994:2: iv_ruleAtomic= ruleAtomic EOF
+            // PsiInternalCalculatorForm.g:2015:48: (iv_ruleAtomic= ruleAtomic EOF )
+            // PsiInternalCalculatorForm.g:2016:2: iv_ruleAtomic= ruleAtomic EOF
             {
             if ( state.backtracking==0 ) {
                markComposite(elementTypeProvider.getAtomicElementType()); 
@@ -5756,7 +5852,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // PsiInternalCalculatorForm.g:2000:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:2022:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final Boolean ruleAtomic() throws RecognitionException {
         Boolean current = false;
 
@@ -5768,43 +5864,43 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
         try {
-            // PsiInternalCalculatorForm.g:2001:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            // PsiInternalCalculatorForm.g:2023:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // PsiInternalCalculatorForm.g:2024:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt61=3;
+            // PsiInternalCalculatorForm.g:2024:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt62=3;
             switch ( input.LA(1) ) {
             case 44:
                 {
-                alt61=1;
+                alt62=1;
                 }
                 break;
             case RULE_INT:
             case RULE_FLOAT:
             case RULE_PERCENT:
                 {
-                alt61=2;
+                alt62=2;
                 }
                 break;
             case RULE_ID:
                 {
-                alt61=3;
+                alt62=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 61, 0, input);
+                    new NoViableAltException("", 62, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt61) {
+            switch (alt62) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2003:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // PsiInternalCalculatorForm.g:2025:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // PsiInternalCalculatorForm.g:2003:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // PsiInternalCalculatorForm.g:2004:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // PsiInternalCalculatorForm.g:2025:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // PsiInternalCalculatorForm.g:2026:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5851,7 +5947,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2028:3: this_Literal_3= ruleLiteral
+                    // PsiInternalCalculatorForm.g:2050:3: this_Literal_3= ruleLiteral
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5873,13 +5969,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 3 :
-                    // PsiInternalCalculatorForm.g:2037:3: ( () ( ( ruleQualifiedName ) ) )
+                    // PsiInternalCalculatorForm.g:2059:3: ( () ( ( ruleQualifiedName ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2037:3: ( () ( ( ruleQualifiedName ) ) )
-                    // PsiInternalCalculatorForm.g:2038:4: () ( ( ruleQualifiedName ) )
+                    // PsiInternalCalculatorForm.g:2059:3: ( () ( ( ruleQualifiedName ) ) )
+                    // PsiInternalCalculatorForm.g:2060:4: () ( ( ruleQualifiedName ) )
                     {
-                    // PsiInternalCalculatorForm.g:2038:4: ()
-                    // PsiInternalCalculatorForm.g:2039:5: 
+                    // PsiInternalCalculatorForm.g:2060:4: ()
+                    // PsiInternalCalculatorForm.g:2061:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5891,11 +5987,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2045:4: ( ( ruleQualifiedName ) )
-                    // PsiInternalCalculatorForm.g:2046:5: ( ruleQualifiedName )
+                    // PsiInternalCalculatorForm.g:2067:4: ( ( ruleQualifiedName ) )
+                    // PsiInternalCalculatorForm.g:2068:5: ( ruleQualifiedName )
                     {
-                    // PsiInternalCalculatorForm.g:2046:5: ( ruleQualifiedName )
-                    // PsiInternalCalculatorForm.g:2047:6: ruleQualifiedName
+                    // PsiInternalCalculatorForm.g:2068:5: ( ruleQualifiedName )
+                    // PsiInternalCalculatorForm.g:2069:6: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5951,7 +6047,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteral"
-    // PsiInternalCalculatorForm.g:2067:1: entryRuleLiteral returns [Boolean current=false] : iv_ruleLiteral= ruleLiteral EOF ;
+    // PsiInternalCalculatorForm.g:2089:1: entryRuleLiteral returns [Boolean current=false] : iv_ruleLiteral= ruleLiteral EOF ;
     public final Boolean entryRuleLiteral() throws RecognitionException {
         Boolean current = false;
 
@@ -5959,8 +6055,8 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
         try {
-            // PsiInternalCalculatorForm.g:2067:49: (iv_ruleLiteral= ruleLiteral EOF )
-            // PsiInternalCalculatorForm.g:2068:2: iv_ruleLiteral= ruleLiteral EOF
+            // PsiInternalCalculatorForm.g:2089:49: (iv_ruleLiteral= ruleLiteral EOF )
+            // PsiInternalCalculatorForm.g:2090:2: iv_ruleLiteral= ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
                markComposite(elementTypeProvider.getLiteralElementType()); 
@@ -5990,7 +6086,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // PsiInternalCalculatorForm.g:2074:1: ruleLiteral returns [Boolean current=false] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:2096:1: ruleLiteral returns [Boolean current=false] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
     public final Boolean ruleLiteral() throws RecognitionException {
         Boolean current = false;
 
@@ -5999,44 +6095,44 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         Token lv_value_5_0=null;
 
         try {
-            // PsiInternalCalculatorForm.g:2075:1: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
-            // PsiInternalCalculatorForm.g:2076:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            // PsiInternalCalculatorForm.g:2097:1: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
+            // PsiInternalCalculatorForm.g:2098:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:2076:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
-            int alt62=3;
+            // PsiInternalCalculatorForm.g:2098:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            int alt63=3;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt62=1;
+                alt63=1;
                 }
                 break;
             case RULE_FLOAT:
                 {
-                alt62=2;
+                alt63=2;
                 }
                 break;
             case RULE_PERCENT:
                 {
-                alt62=3;
+                alt63=3;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 62, 0, input);
+                    new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt62) {
+            switch (alt63) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2077:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // PsiInternalCalculatorForm.g:2099:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2077:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // PsiInternalCalculatorForm.g:2078:4: () ( (lv_value_1_0= RULE_INT ) )
+                    // PsiInternalCalculatorForm.g:2099:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // PsiInternalCalculatorForm.g:2100:4: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2078:4: ()
-                    // PsiInternalCalculatorForm.g:2079:5: 
+                    // PsiInternalCalculatorForm.g:2100:4: ()
+                    // PsiInternalCalculatorForm.g:2101:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6048,11 +6144,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2085:4: ( (lv_value_1_0= RULE_INT ) )
-                    // PsiInternalCalculatorForm.g:2086:5: (lv_value_1_0= RULE_INT )
+                    // PsiInternalCalculatorForm.g:2107:4: ( (lv_value_1_0= RULE_INT ) )
+                    // PsiInternalCalculatorForm.g:2108:5: (lv_value_1_0= RULE_INT )
                     {
-                    // PsiInternalCalculatorForm.g:2086:5: (lv_value_1_0= RULE_INT )
-                    // PsiInternalCalculatorForm.g:2087:6: lv_value_1_0= RULE_INT
+                    // PsiInternalCalculatorForm.g:2108:5: (lv_value_1_0= RULE_INT )
+                    // PsiInternalCalculatorForm.g:2109:6: lv_value_1_0= RULE_INT
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6086,13 +6182,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2104:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2126:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2104:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
-                    // PsiInternalCalculatorForm.g:2105:4: () ( (lv_value_3_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2126:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2127:4: () ( (lv_value_3_0= RULE_FLOAT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2105:4: ()
-                    // PsiInternalCalculatorForm.g:2106:5: 
+                    // PsiInternalCalculatorForm.g:2127:4: ()
+                    // PsiInternalCalculatorForm.g:2128:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6104,11 +6200,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2112:4: ( (lv_value_3_0= RULE_FLOAT ) )
-                    // PsiInternalCalculatorForm.g:2113:5: (lv_value_3_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2134:4: ( (lv_value_3_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2135:5: (lv_value_3_0= RULE_FLOAT )
                     {
-                    // PsiInternalCalculatorForm.g:2113:5: (lv_value_3_0= RULE_FLOAT )
-                    // PsiInternalCalculatorForm.g:2114:6: lv_value_3_0= RULE_FLOAT
+                    // PsiInternalCalculatorForm.g:2135:5: (lv_value_3_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2136:6: lv_value_3_0= RULE_FLOAT
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6142,13 +6238,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 3 :
-                    // PsiInternalCalculatorForm.g:2131:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // PsiInternalCalculatorForm.g:2153:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2131:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
-                    // PsiInternalCalculatorForm.g:2132:4: () ( (lv_value_5_0= RULE_PERCENT ) )
+                    // PsiInternalCalculatorForm.g:2153:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // PsiInternalCalculatorForm.g:2154:4: () ( (lv_value_5_0= RULE_PERCENT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2132:4: ()
-                    // PsiInternalCalculatorForm.g:2133:5: 
+                    // PsiInternalCalculatorForm.g:2154:4: ()
+                    // PsiInternalCalculatorForm.g:2155:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6160,11 +6256,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2139:4: ( (lv_value_5_0= RULE_PERCENT ) )
-                    // PsiInternalCalculatorForm.g:2140:5: (lv_value_5_0= RULE_PERCENT )
+                    // PsiInternalCalculatorForm.g:2161:4: ( (lv_value_5_0= RULE_PERCENT ) )
+                    // PsiInternalCalculatorForm.g:2162:5: (lv_value_5_0= RULE_PERCENT )
                     {
-                    // PsiInternalCalculatorForm.g:2140:5: (lv_value_5_0= RULE_PERCENT )
-                    // PsiInternalCalculatorForm.g:2141:6: lv_value_5_0= RULE_PERCENT
+                    // PsiInternalCalculatorForm.g:2162:5: (lv_value_5_0= RULE_PERCENT )
+                    // PsiInternalCalculatorForm.g:2163:6: lv_value_5_0= RULE_PERCENT
                     {
                     if ( state.backtracking==0 ) {
 
