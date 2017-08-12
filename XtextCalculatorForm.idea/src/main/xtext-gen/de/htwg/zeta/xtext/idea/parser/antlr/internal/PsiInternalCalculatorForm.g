@@ -2025,91 +2025,19 @@ ruleAtomic returns [Boolean current=false]
 			}
 		)
 		    |
-		(
-			(
-				{
-					precedeComposite(elementTypeProvider.getAtomic_NumberLiteralAction_1_0ElementType());
-					doneComposite();
-					associateWithSemanticElement();
-				}
-			)
-			(
-				(
-					{
-						markLeaf(elementTypeProvider.getAtomic_ValueINTTerminalRuleCall_1_1_0ElementType());
-					}
-					lv_value_4_0=RULE_INT
-					{
-						if(!$current) {
-							associateWithSemanticElement();
-							$current = true;
-						}
-					}
-					{
-						doneLeaf(lv_value_4_0);
-					}
-				)
-			)
-		)
+		{
+			markComposite(elementTypeProvider.getAtomic_LiteralParserRuleCall_1ElementType());
+		}
+		this_Literal_3=ruleLiteral
+		{
+			$current = $this_Literal_3.current;
+			doneComposite();
+		}
 		    |
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getAtomic_FloatLiteralAction_2_0ElementType());
-					doneComposite();
-					associateWithSemanticElement();
-				}
-			)
-			(
-				(
-					{
-						markLeaf(elementTypeProvider.getAtomic_ValueFLOATTerminalRuleCall_2_1_0ElementType());
-					}
-					lv_value_6_0=RULE_FLOAT
-					{
-						if(!$current) {
-							associateWithSemanticElement();
-							$current = true;
-						}
-					}
-					{
-						doneLeaf(lv_value_6_0);
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					precedeComposite(elementTypeProvider.getAtomic_PercentLiteralAction_3_0ElementType());
-					doneComposite();
-					associateWithSemanticElement();
-				}
-			)
-			(
-				(
-					{
-						markLeaf(elementTypeProvider.getAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType());
-					}
-					lv_value_8_0=RULE_PERCENT
-					{
-						if(!$current) {
-							associateWithSemanticElement();
-							$current = true;
-						}
-					}
-					{
-						doneLeaf(lv_value_8_0);
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_4_0ElementType());
+					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
@@ -2123,11 +2051,105 @@ ruleAtomic returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_4_1_0ElementType());
+						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
 					}
 					ruleQualifiedName
 					{
 						doneComposite();
+					}
+				)
+			)
+		)
+	)
+;
+
+//Entry rule entryRuleLiteral
+entryRuleLiteral returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getLiteralElementType()); }
+	iv_ruleLiteral=ruleLiteral
+	{ $current=$iv_ruleLiteral.current; }
+	EOF;
+
+// Rule Literal
+ruleLiteral returns [Boolean current=false]
+:
+	(
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getLiteral_NumberLiteralAction_0_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getLiteral_ValueINTTerminalRuleCall_0_1_0ElementType());
+					}
+					lv_value_1_0=RULE_INT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_1_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getLiteral_FloatLiteralAction_1_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getLiteral_ValueFLOATTerminalRuleCall_1_1_0ElementType());
+					}
+					lv_value_3_0=RULE_FLOAT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_3_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getLiteral_PercentLiteralAction_2_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getLiteral_ValuePERCENTTerminalRuleCall_2_1_0ElementType());
+					}
+					lv_value_5_0=RULE_PERCENT
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_value_5_0);
 					}
 				)
 			)

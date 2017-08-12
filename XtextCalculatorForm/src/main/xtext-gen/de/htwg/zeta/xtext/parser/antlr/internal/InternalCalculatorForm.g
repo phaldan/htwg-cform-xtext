@@ -2006,28 +2006,81 @@ ruleAtomic returns [EObject current=null]
 			}
 		)
 		    |
+		{
+			newCompositeNode(grammarAccess.getAtomicAccess().getLiteralParserRuleCall_1());
+		}
+		this_Literal_3=ruleLiteral
+		{
+			$current = $this_Literal_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
 		(
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getNumberLiteralAction_1_0(),
+						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
 						$current);
 				}
 			)
 			(
 				(
-					lv_value_4_0=RULE_INT
-					{
-						newLeafNode(lv_value_4_0, grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0());
-					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getAtomicRule());
 						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLiteral
+entryRuleLiteral returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLiteralRule()); }
+	iv_ruleLiteral=ruleLiteral
+	{ $current=$iv_ruleLiteral.current; }
+	EOF;
+
+// Rule Literal
+ruleLiteral returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getLiteralAccess().getNumberLiteralAction_0_0(),
+						$current);
+				}
+			)
+			(
+				(
+					lv_value_1_0=RULE_INT
+					{
+						newLeafNode(lv_value_1_0, grammarAccess.getLiteralAccess().getValueINTTerminalRuleCall_0_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLiteralRule());
+						}
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_4_0,
+							lv_value_1_0,
 							"de.htwg.zeta.xtext.CalculatorForm.INT");
 					}
 				)
@@ -2038,24 +2091,24 @@ ruleAtomic returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getFloatLiteralAction_2_0(),
+						grammarAccess.getLiteralAccess().getFloatLiteralAction_1_0(),
 						$current);
 				}
 			)
 			(
 				(
-					lv_value_6_0=RULE_FLOAT
+					lv_value_3_0=RULE_FLOAT
 					{
-						newLeafNode(lv_value_6_0, grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0());
+						newLeafNode(lv_value_3_0, grammarAccess.getLiteralAccess().getValueFLOATTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
+							$current = createModelElement(grammarAccess.getLiteralRule());
 						}
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_6_0,
+							lv_value_3_0,
 							"de.htwg.zeta.xtext.CalculatorForm.FLOAT");
 					}
 				)
@@ -2066,51 +2119,25 @@ ruleAtomic returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0(),
+						grammarAccess.getLiteralAccess().getPercentLiteralAction_2_0(),
 						$current);
 				}
 			)
 			(
 				(
-					lv_value_8_0=RULE_PERCENT
+					lv_value_5_0=RULE_PERCENT
 					{
-						newLeafNode(lv_value_8_0, grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0());
+						newLeafNode(lv_value_5_0, grammarAccess.getLiteralAccess().getValuePERCENTTerminalRuleCall_2_1_0());
 					}
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
+							$current = createModelElement(grammarAccess.getLiteralRule());
 						}
 						setWithLastConsumed(
 							$current,
 							"value",
-							lv_value_8_0,
+							lv_value_5_0,
 							"de.htwg.zeta.xtext.CalculatorForm.PERCENT");
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0(),
-						$current);
-				}
-			)
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
 					}
 				)
 			)

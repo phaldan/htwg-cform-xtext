@@ -25,6 +25,7 @@ import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.FormElement;
 import de.htwg.zeta.xtext.calculatorForm.Group;
+import de.htwg.zeta.xtext.calculatorForm.Literal;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.Multi;
@@ -180,6 +181,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass literalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass plusEClass = null;
 
   /**
@@ -222,6 +230,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass fieldReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass numberLiteralEClass = null;
 
   /**
@@ -237,13 +252,6 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * @generated
    */
   private EClass percentLiteralEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass fieldReferenceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1073,6 +1081,16 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getLiteral()
+  {
+    return literalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPlus()
   {
     return plusEClass;
@@ -1233,6 +1251,26 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFieldReference()
+  {
+    return fieldReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFieldReference_Ref()
+  {
+    return (EReference)fieldReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNumberLiteral()
   {
     return numberLiteralEClass;
@@ -1286,26 +1324,6 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
   public EAttribute getPercentLiteral_Value()
   {
     return (EAttribute)percentLiteralEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFieldReference()
-  {
-    return fieldReferenceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFieldReference_Ref()
-  {
-    return (EReference)fieldReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1432,6 +1450,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     expressionEClass = createEClass(EXPRESSION);
 
+    literalEClass = createEClass(LITERAL);
+
     plusEClass = createEClass(PLUS);
     createEReference(plusEClass, PLUS__LEFT);
     createEReference(plusEClass, PLUS__RIGHT);
@@ -1454,6 +1474,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     arithmeticSignedEClass = createEClass(ARITHMETIC_SIGNED);
     createEReference(arithmeticSignedEClass, ARITHMETIC_SIGNED__EXPRESSION);
 
+    fieldReferenceEClass = createEClass(FIELD_REFERENCE);
+    createEReference(fieldReferenceEClass, FIELD_REFERENCE__REF);
+
     numberLiteralEClass = createEClass(NUMBER_LITERAL);
     createEAttribute(numberLiteralEClass, NUMBER_LITERAL__VALUE);
 
@@ -1462,9 +1485,6 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     percentLiteralEClass = createEClass(PERCENT_LITERAL);
     createEAttribute(percentLiteralEClass, PERCENT_LITERAL__VALUE);
-
-    fieldReferenceEClass = createEClass(FIELD_REFERENCE);
-    createEReference(fieldReferenceEClass, FIELD_REFERENCE__REF);
   }
 
   /**
@@ -1508,16 +1528,17 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     pageEClass.getESuperTypes().add(this.getFormElement());
     buttonEClass.getESuperTypes().add(this.getField());
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
+    literalEClass.getESuperTypes().add(this.getExpression());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
     divEClass.getESuperTypes().add(this.getExpression());
     booleanNegationEClass.getESuperTypes().add(this.getExpression());
     arithmeticSignedEClass.getESuperTypes().add(this.getExpression());
-    numberLiteralEClass.getESuperTypes().add(this.getExpression());
-    floatLiteralEClass.getESuperTypes().add(this.getExpression());
-    percentLiteralEClass.getESuperTypes().add(this.getExpression());
     fieldReferenceEClass.getESuperTypes().add(this.getExpression());
+    numberLiteralEClass.getESuperTypes().add(this.getLiteral());
+    floatLiteralEClass.getESuperTypes().add(this.getLiteral());
+    percentLiteralEClass.getESuperTypes().add(this.getLiteral());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1614,6 +1635,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPlus_Right(), this.getExpression(), null, "right", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1636,6 +1659,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEClass(arithmeticSignedEClass, ArithmeticSigned.class, "ArithmeticSigned", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArithmeticSigned_Expression(), this.getExpression(), null, "expression", null, 0, 1, ArithmeticSigned.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(fieldReferenceEClass, FieldReference.class, "FieldReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFieldReference_Ref(), this.getField(), null, "ref", null, 0, 1, FieldReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(numberLiteralEClass, NumberLiteral.class, "NumberLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumberLiteral_Value(), ecorePackage.getEIntegerObject(), "value", null, 0, 1, NumberLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1644,9 +1670,6 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(percentLiteralEClass, PercentLiteral.class, "PercentLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPercentLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, PercentLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(fieldReferenceEClass, FieldReference.class, "FieldReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFieldReference_Ref(), this.getField(), null, "ref", null, 0, 1, FieldReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

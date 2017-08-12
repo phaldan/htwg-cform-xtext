@@ -206,16 +206,22 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getAtomic_ExpressionParserRuleCall_0_1ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_NumberLiteralAction_1_0ElementType()) {
+			if (elementType == elementTypeProvider.getAtomic_LiteralParserRuleCall_1ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_FloatLiteralAction_2_0ElementType()) {
+			if (elementType == elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_PercentLiteralAction_3_0ElementType()) {
+			if (elementType == elementTypeProvider.getLiteralElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_FieldReferenceAction_4_0ElementType()) {
+			if (elementType == elementTypeProvider.getLiteral_NumberLiteralAction_0_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getLiteral_FloatLiteralAction_1_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getLiteral_PercentLiteralAction_2_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);

@@ -43,6 +43,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getAlternatives_1_0(), "rule__Multiplication__Alternatives_1_0");
 					put(grammarAccess.getPrefixedAccess().getAlternatives(), "rule__Prefixed__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
+					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup(), "rule__FieldInput__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup_4(), "rule__FieldInput__Group_4__0");
@@ -83,10 +84,10 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrefixedAccess().getGroup_0(), "rule__Prefixed__Group_0__0");
 					put(grammarAccess.getPrefixedAccess().getGroup_1(), "rule__Prefixed__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
-					put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
-					put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
-					put(grammarAccess.getAtomicAccess().getGroup_4(), "rule__Atomic__Group_4__0");
+					put(grammarAccess.getLiteralAccess().getGroup_0(), "rule__Literal__Group_0__0");
+					put(grammarAccess.getLiteralAccess().getGroup_1(), "rule__Literal__Group_1__0");
+					put(grammarAccess.getLiteralAccess().getGroup_2(), "rule__Literal__Group_2__0");
 					put(grammarAccess.getModelAccess().getFormsAssignment(), "rule__Model__FormsAssignment");
 					put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
 					put(grammarAccess.getFormAccess().getFormElementsAssignment_3(), "rule__Form__FormElementsAssignment_3");
@@ -151,10 +152,10 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getPrefixedAccess().getExpressionAssignment_0_2(), "rule__Prefixed__ExpressionAssignment_0_2");
 					put(grammarAccess.getPrefixedAccess().getExpressionAssignment_1_2(), "rule__Prefixed__ExpressionAssignment_1_2");
-					put(grammarAccess.getAtomicAccess().getValueAssignment_1_1(), "rule__Atomic__ValueAssignment_1_1");
-					put(grammarAccess.getAtomicAccess().getValueAssignment_2_1(), "rule__Atomic__ValueAssignment_2_1");
-					put(grammarAccess.getAtomicAccess().getValueAssignment_3_1(), "rule__Atomic__ValueAssignment_3_1");
-					put(grammarAccess.getAtomicAccess().getRefAssignment_4_1(), "rule__Atomic__RefAssignment_4_1");
+					put(grammarAccess.getAtomicAccess().getRefAssignment_2_1(), "rule__Atomic__RefAssignment_2_1");
+					put(grammarAccess.getLiteralAccess().getValueAssignment_0_1(), "rule__Literal__ValueAssignment_0_1");
+					put(grammarAccess.getLiteralAccess().getValueAssignment_1_1(), "rule__Literal__ValueAssignment_1_1");
+					put(grammarAccess.getLiteralAccess().getValueAssignment_2_1(), "rule__Literal__ValueAssignment_2_1");
 				}
 			};
 		}

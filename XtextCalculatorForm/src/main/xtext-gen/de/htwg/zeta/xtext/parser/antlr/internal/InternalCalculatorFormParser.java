@@ -5650,27 +5650,26 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // InternalCalculatorForm.g:1982:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // InternalCalculatorForm.g:1982:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token lv_value_4_0=null;
-        Token lv_value_6_0=null;
-        Token lv_value_8_0=null;
         EObject this_Expression_1 = null;
+
+        EObject this_Literal_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCalculatorForm.g:1988:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // InternalCalculatorForm.g:1989:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            // InternalCalculatorForm.g:1988:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // InternalCalculatorForm.g:1989:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // InternalCalculatorForm.g:1989:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt61=5;
+            // InternalCalculatorForm.g:1989:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt61=3;
             switch ( input.LA(1) ) {
             case 44:
                 {
@@ -5678,23 +5677,15 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case RULE_INT:
+            case RULE_FLOAT:
+            case RULE_PERCENT:
                 {
                 alt61=2;
                 }
                 break;
-            case RULE_FLOAT:
-                {
-                alt61=3;
-                }
-                break;
-            case RULE_PERCENT:
-                {
-                alt61=4;
-                }
-                break;
             case RULE_ID:
                 {
-                alt61=5;
+                alt61=3;
                 }
                 break;
             default:
@@ -5747,194 +5738,51 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:2009:3: ( () ( (lv_value_4_0= RULE_INT ) ) )
-                    {
-                    // InternalCalculatorForm.g:2009:3: ( () ( (lv_value_4_0= RULE_INT ) ) )
-                    // InternalCalculatorForm.g:2010:4: () ( (lv_value_4_0= RULE_INT ) )
-                    {
-                    // InternalCalculatorForm.g:2010:4: ()
-                    // InternalCalculatorForm.g:2011:5: 
+                    // InternalCalculatorForm.g:2009:3: this_Literal_3= ruleLiteral
                     {
                     if ( state.backtracking==0 ) {
 
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getNumberLiteralAction_1_0(),
-                      						current);
-                      				
+                      			newCompositeNode(grammarAccess.getAtomicAccess().getLiteralParserRuleCall_1());
+                      		
                     }
+                    pushFollow(FOLLOW_2);
+                    this_Literal_3=ruleLiteral();
 
-                    }
-
-                    // InternalCalculatorForm.g:2017:4: ( (lv_value_4_0= RULE_INT ) )
-                    // InternalCalculatorForm.g:2018:5: (lv_value_4_0= RULE_INT )
-                    {
-                    // InternalCalculatorForm.g:2018:5: (lv_value_4_0= RULE_INT )
-                    // InternalCalculatorForm.g:2019:6: lv_value_4_0= RULE_INT
-                    {
-                    lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(lv_value_4_0, grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0());
-                      					
+                      			current = this_Literal_3;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getAtomicRule());
-                      						}
-                      						setWithLastConsumed(
-                      							current,
-                      							"value",
-                      							lv_value_4_0,
-                      							"de.htwg.zeta.xtext.CalculatorForm.INT");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
 
                     }
                     break;
                 case 3 :
-                    // InternalCalculatorForm.g:2037:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
+                    // InternalCalculatorForm.g:2018:3: ( () ( ( ruleQualifiedName ) ) )
                     {
-                    // InternalCalculatorForm.g:2037:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
-                    // InternalCalculatorForm.g:2038:4: () ( (lv_value_6_0= RULE_FLOAT ) )
+                    // InternalCalculatorForm.g:2018:3: ( () ( ( ruleQualifiedName ) ) )
+                    // InternalCalculatorForm.g:2019:4: () ( ( ruleQualifiedName ) )
                     {
-                    // InternalCalculatorForm.g:2038:4: ()
-                    // InternalCalculatorForm.g:2039:5: 
+                    // InternalCalculatorForm.g:2019:4: ()
+                    // InternalCalculatorForm.g:2020:5: 
                     {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getFloatLiteralAction_2_0(),
+                      						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
                       						current);
                       				
                     }
 
                     }
 
-                    // InternalCalculatorForm.g:2045:4: ( (lv_value_6_0= RULE_FLOAT ) )
-                    // InternalCalculatorForm.g:2046:5: (lv_value_6_0= RULE_FLOAT )
+                    // InternalCalculatorForm.g:2026:4: ( ( ruleQualifiedName ) )
+                    // InternalCalculatorForm.g:2027:5: ( ruleQualifiedName )
                     {
-                    // InternalCalculatorForm.g:2046:5: (lv_value_6_0= RULE_FLOAT )
-                    // InternalCalculatorForm.g:2047:6: lv_value_6_0= RULE_FLOAT
-                    {
-                    lv_value_6_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_value_6_0, grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0());
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getAtomicRule());
-                      						}
-                      						setWithLastConsumed(
-                      							current,
-                      							"value",
-                      							lv_value_6_0,
-                      							"de.htwg.zeta.xtext.CalculatorForm.FLOAT");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalCalculatorForm.g:2065:3: ( () ( (lv_value_8_0= RULE_PERCENT ) ) )
-                    {
-                    // InternalCalculatorForm.g:2065:3: ( () ( (lv_value_8_0= RULE_PERCENT ) ) )
-                    // InternalCalculatorForm.g:2066:4: () ( (lv_value_8_0= RULE_PERCENT ) )
-                    {
-                    // InternalCalculatorForm.g:2066:4: ()
-                    // InternalCalculatorForm.g:2067:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getPercentLiteralAction_3_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    // InternalCalculatorForm.g:2073:4: ( (lv_value_8_0= RULE_PERCENT ) )
-                    // InternalCalculatorForm.g:2074:5: (lv_value_8_0= RULE_PERCENT )
-                    {
-                    // InternalCalculatorForm.g:2074:5: (lv_value_8_0= RULE_PERCENT )
-                    // InternalCalculatorForm.g:2075:6: lv_value_8_0= RULE_PERCENT
-                    {
-                    lv_value_8_0=(Token)match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_value_8_0, grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0());
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getAtomicRule());
-                      						}
-                      						setWithLastConsumed(
-                      							current,
-                      							"value",
-                      							lv_value_8_0,
-                      							"de.htwg.zeta.xtext.CalculatorForm.PERCENT");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // InternalCalculatorForm.g:2093:3: ( () ( ( ruleQualifiedName ) ) )
-                    {
-                    // InternalCalculatorForm.g:2093:3: ( () ( ( ruleQualifiedName ) ) )
-                    // InternalCalculatorForm.g:2094:4: () ( ( ruleQualifiedName ) )
-                    {
-                    // InternalCalculatorForm.g:2094:4: ()
-                    // InternalCalculatorForm.g:2095:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getFieldReferenceAction_4_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    // InternalCalculatorForm.g:2101:4: ( ( ruleQualifiedName ) )
-                    // InternalCalculatorForm.g:2102:5: ( ruleQualifiedName )
-                    {
-                    // InternalCalculatorForm.g:2102:5: ( ruleQualifiedName )
-                    // InternalCalculatorForm.g:2103:6: ruleQualifiedName
+                    // InternalCalculatorForm.g:2027:5: ( ruleQualifiedName )
+                    // InternalCalculatorForm.g:2028:6: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -5945,7 +5793,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_4_1_0());
+                      						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);
@@ -5992,6 +5840,278 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleAtomic"
+
+
+    // $ANTLR start "entryRuleLiteral"
+    // InternalCalculatorForm.g:2047:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    public final EObject entryRuleLiteral() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLiteral = null;
+
+
+        try {
+            // InternalCalculatorForm.g:2047:48: (iv_ruleLiteral= ruleLiteral EOF )
+            // InternalCalculatorForm.g:2048:2: iv_ruleLiteral= ruleLiteral EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getLiteralRule()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleLiteral=ruleLiteral();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleLiteral; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteral"
+
+
+    // $ANTLR start "ruleLiteral"
+    // InternalCalculatorForm.g:2054:1: ruleLiteral returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
+    public final EObject ruleLiteral() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_value_1_0=null;
+        Token lv_value_3_0=null;
+        Token lv_value_5_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalCalculatorForm.g:2060:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
+            // InternalCalculatorForm.g:2061:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            {
+            // InternalCalculatorForm.g:2061:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            int alt62=3;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+                {
+                alt62=1;
+                }
+                break;
+            case RULE_FLOAT:
+                {
+                alt62=2;
+                }
+                break;
+            case RULE_PERCENT:
+                {
+                alt62=3;
+                }
+                break;
+            default:
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 62, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt62) {
+                case 1 :
+                    // InternalCalculatorForm.g:2062:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    {
+                    // InternalCalculatorForm.g:2062:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalCalculatorForm.g:2063:4: () ( (lv_value_1_0= RULE_INT ) )
+                    {
+                    // InternalCalculatorForm.g:2063:4: ()
+                    // InternalCalculatorForm.g:2064:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getLiteralAccess().getNumberLiteralAction_0_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalCalculatorForm.g:2070:4: ( (lv_value_1_0= RULE_INT ) )
+                    // InternalCalculatorForm.g:2071:5: (lv_value_1_0= RULE_INT )
+                    {
+                    // InternalCalculatorForm.g:2071:5: (lv_value_1_0= RULE_INT )
+                    // InternalCalculatorForm.g:2072:6: lv_value_1_0= RULE_INT
+                    {
+                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(lv_value_1_0, grammarAccess.getLiteralAccess().getValueINTTerminalRuleCall_0_1_0());
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getLiteralRule());
+                      						}
+                      						setWithLastConsumed(
+                      							current,
+                      							"value",
+                      							lv_value_1_0,
+                      							"de.htwg.zeta.xtext.CalculatorForm.INT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalCalculatorForm.g:2090:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    {
+                    // InternalCalculatorForm.g:2090:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // InternalCalculatorForm.g:2091:4: () ( (lv_value_3_0= RULE_FLOAT ) )
+                    {
+                    // InternalCalculatorForm.g:2091:4: ()
+                    // InternalCalculatorForm.g:2092:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getLiteralAccess().getFloatLiteralAction_1_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalCalculatorForm.g:2098:4: ( (lv_value_3_0= RULE_FLOAT ) )
+                    // InternalCalculatorForm.g:2099:5: (lv_value_3_0= RULE_FLOAT )
+                    {
+                    // InternalCalculatorForm.g:2099:5: (lv_value_3_0= RULE_FLOAT )
+                    // InternalCalculatorForm.g:2100:6: lv_value_3_0= RULE_FLOAT
+                    {
+                    lv_value_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(lv_value_3_0, grammarAccess.getLiteralAccess().getValueFLOATTerminalRuleCall_1_1_0());
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getLiteralRule());
+                      						}
+                      						setWithLastConsumed(
+                      							current,
+                      							"value",
+                      							lv_value_3_0,
+                      							"de.htwg.zeta.xtext.CalculatorForm.FLOAT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalCalculatorForm.g:2118:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    {
+                    // InternalCalculatorForm.g:2118:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // InternalCalculatorForm.g:2119:4: () ( (lv_value_5_0= RULE_PERCENT ) )
+                    {
+                    // InternalCalculatorForm.g:2119:4: ()
+                    // InternalCalculatorForm.g:2120:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getLiteralAccess().getPercentLiteralAction_2_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalCalculatorForm.g:2126:4: ( (lv_value_5_0= RULE_PERCENT ) )
+                    // InternalCalculatorForm.g:2127:5: (lv_value_5_0= RULE_PERCENT )
+                    {
+                    // InternalCalculatorForm.g:2127:5: (lv_value_5_0= RULE_PERCENT )
+                    // InternalCalculatorForm.g:2128:6: lv_value_5_0= RULE_PERCENT
+                    {
+                    lv_value_5_0=(Token)match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						newLeafNode(lv_value_5_0, grammarAccess.getLiteralAccess().getValuePERCENTTerminalRuleCall_2_1_0());
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getLiteralRule());
+                      						}
+                      						setWithLastConsumed(
+                      							current,
+                      							"value",
+                      							lv_value_5_0,
+                      							"de.htwg.zeta.xtext.CalculatorForm.PERCENT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+
+              	leaveRule();
+
+            }
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteral"
 
     // Delegated rules
 

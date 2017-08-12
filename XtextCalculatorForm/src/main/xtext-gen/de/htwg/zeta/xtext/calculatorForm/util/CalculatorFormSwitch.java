@@ -222,6 +222,14 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CalculatorFormPackage.LITERAL:
+      {
+        Literal literal = (Literal)theEObject;
+        T result = caseLiteral(literal);
+        if (result == null) result = caseExpression(literal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CalculatorFormPackage.PLUS:
       {
         Plus plus = (Plus)theEObject;
@@ -270,10 +278,19 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CalculatorFormPackage.FIELD_REFERENCE:
+      {
+        FieldReference fieldReference = (FieldReference)theEObject;
+        T result = caseFieldReference(fieldReference);
+        if (result == null) result = caseExpression(fieldReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CalculatorFormPackage.NUMBER_LITERAL:
       {
         NumberLiteral numberLiteral = (NumberLiteral)theEObject;
         T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseLiteral(numberLiteral);
         if (result == null) result = caseExpression(numberLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -282,6 +299,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
       {
         FloatLiteral floatLiteral = (FloatLiteral)theEObject;
         T result = caseFloatLiteral(floatLiteral);
+        if (result == null) result = caseLiteral(floatLiteral);
         if (result == null) result = caseExpression(floatLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -290,15 +308,8 @@ public class CalculatorFormSwitch<T> extends Switch<T>
       {
         PercentLiteral percentLiteral = (PercentLiteral)theEObject;
         T result = casePercentLiteral(percentLiteral);
+        if (result == null) result = caseLiteral(percentLiteral);
         if (result == null) result = caseExpression(percentLiteral);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CalculatorFormPackage.FIELD_REFERENCE:
-      {
-        FieldReference fieldReference = (FieldReference)theEObject;
-        T result = caseFieldReference(fieldReference);
-        if (result == null) result = caseExpression(fieldReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -595,6 +606,22 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteral(Literal object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Plus</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -691,6 +718,22 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Field Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Field Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFieldReference(FieldReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -734,22 +777,6 @@ public class CalculatorFormSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePercentLiteral(PercentLiteral object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Field Reference</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Field Reference</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFieldReference(FieldReference object)
   {
     return null;
   }

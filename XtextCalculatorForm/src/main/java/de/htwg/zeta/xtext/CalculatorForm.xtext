@@ -84,14 +84,12 @@ Expression:
 
 Addition returns Expression:
     Multiplication
-    (({Plus.left=current} '+' | {Minus.left=current} '-')
-    right=Multiplication)*
+    (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication)*
 ;
 
 Multiplication returns Expression:
     Prefixed
-    (({Multi.left=current} '*' | {Div.left=current} '/')
-    right=Prefixed)*
+    (({Multi.left=current} '*' | {Div.left=current} '/') right=Prefixed)*
 ;
 
 Prefixed returns Expression:
@@ -101,11 +99,13 @@ Prefixed returns Expression:
 ;
 
 Atomic returns Expression:
-    '(' Expression ')' |
+    '(' Expression ')' | Literal | {FieldReference} ref=[Field|QualifiedName]
+;
+
+Literal:
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
-    {PercentLiteral} value=PERCENT |
-    {FieldReference} ref=[Field|QualifiedName]
+    {PercentLiteral} value=PERCENT
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

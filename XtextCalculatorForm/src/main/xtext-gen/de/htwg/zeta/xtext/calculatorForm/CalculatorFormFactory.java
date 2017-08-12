@@ -186,6 +186,15 @@ public interface CalculatorFormFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal</em>'.
+   * @generated
+   */
+  Literal createLiteral();
+
+  /**
    * Returns a new object of class '<em>Plus</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -240,6 +249,15 @@ public interface CalculatorFormFactory extends EFactory
   ArithmeticSigned createArithmeticSigned();
 
   /**
+   * Returns a new object of class '<em>Field Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Field Reference</em>'.
+   * @generated
+   */
+  FieldReference createFieldReference();
+
+  /**
    * Returns a new object of class '<em>Number Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -265,15 +283,6 @@ public interface CalculatorFormFactory extends EFactory
    * @generated
    */
   PercentLiteral createPercentLiteral();
-
-  /**
-   * Returns a new object of class '<em>Field Reference</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Field Reference</em>'.
-   * @generated
-   */
-  FieldReference createFieldReference();
 
   /**
    * Returns the package supported by this factory.

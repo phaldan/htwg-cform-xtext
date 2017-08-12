@@ -5756,24 +5756,23 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // PsiInternalCalculatorForm.g:2000:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:2000:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final Boolean ruleAtomic() throws RecognitionException {
         Boolean current = false;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token lv_value_4_0=null;
-        Token lv_value_6_0=null;
-        Token lv_value_8_0=null;
         Boolean this_Expression_1 = null;
+
+        Boolean this_Literal_3 = null;
 
 
         try {
-            // PsiInternalCalculatorForm.g:2001:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            // PsiInternalCalculatorForm.g:2001:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () ( (lv_value_4_0= RULE_INT ) ) ) | ( () ( (lv_value_6_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_8_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt61=5;
+            // PsiInternalCalculatorForm.g:2002:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt61=3;
             switch ( input.LA(1) ) {
             case 44:
                 {
@@ -5781,23 +5780,15 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                 }
                 break;
             case RULE_INT:
+            case RULE_FLOAT:
+            case RULE_PERCENT:
                 {
                 alt61=2;
                 }
                 break;
-            case RULE_FLOAT:
-                {
-                alt61=3;
-                }
-                break;
-            case RULE_PERCENT:
-                {
-                alt61=4;
-                }
-                break;
             case RULE_ID:
                 {
-                alt61=5;
+                alt61=3;
                 }
                 break;
             default:
@@ -5860,73 +5851,39 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2028:3: ( () ( (lv_value_4_0= RULE_INT ) ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2028:3: ( () ( (lv_value_4_0= RULE_INT ) ) )
-                    // PsiInternalCalculatorForm.g:2029:4: () ( (lv_value_4_0= RULE_INT ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2029:4: ()
-                    // PsiInternalCalculatorForm.g:2030:5: 
+                    // PsiInternalCalculatorForm.g:2028:3: this_Literal_3= ruleLiteral
                     {
                     if ( state.backtracking==0 ) {
 
-                      					precedeComposite(elementTypeProvider.getAtomic_NumberLiteralAction_1_0ElementType());
-                      					doneComposite();
-                      					associateWithSemanticElement();
-                      				
+                      			markComposite(elementTypeProvider.getAtomic_LiteralParserRuleCall_1ElementType());
+                      		
                     }
+                    pushFollow(FOLLOW_2);
+                    this_Literal_3=ruleLiteral();
 
-                    }
-
-                    // PsiInternalCalculatorForm.g:2036:4: ( (lv_value_4_0= RULE_INT ) )
-                    // PsiInternalCalculatorForm.g:2037:5: (lv_value_4_0= RULE_INT )
-                    {
-                    // PsiInternalCalculatorForm.g:2037:5: (lv_value_4_0= RULE_INT )
-                    // PsiInternalCalculatorForm.g:2038:6: lv_value_4_0= RULE_INT
-                    {
+                    state._fsp--;
+                    if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						markLeaf(elementTypeProvider.getAtomic_ValueINTTerminalRuleCall_1_1_0ElementType());
-                      					
+                      			current = this_Literal_3;
+                      			doneComposite();
+                      		
                     }
-                    lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						if(!current) {
-                      							associateWithSemanticElement();
-                      							current = true;
-                      						}
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						doneLeaf(lv_value_4_0);
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
 
                     }
                     break;
                 case 3 :
-                    // PsiInternalCalculatorForm.g:2055:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2037:3: ( () ( ( ruleQualifiedName ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2055:3: ( () ( (lv_value_6_0= RULE_FLOAT ) ) )
-                    // PsiInternalCalculatorForm.g:2056:4: () ( (lv_value_6_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2037:3: ( () ( ( ruleQualifiedName ) ) )
+                    // PsiInternalCalculatorForm.g:2038:4: () ( ( ruleQualifiedName ) )
                     {
-                    // PsiInternalCalculatorForm.g:2056:4: ()
-                    // PsiInternalCalculatorForm.g:2057:5: 
+                    // PsiInternalCalculatorForm.g:2038:4: ()
+                    // PsiInternalCalculatorForm.g:2039:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                      					precedeComposite(elementTypeProvider.getAtomic_FloatLiteralAction_2_0ElementType());
+                      					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
                       					doneComposite();
                       					associateWithSemanticElement();
                       				
@@ -5934,123 +5891,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2063:4: ( (lv_value_6_0= RULE_FLOAT ) )
-                    // PsiInternalCalculatorForm.g:2064:5: (lv_value_6_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2045:4: ( ( ruleQualifiedName ) )
+                    // PsiInternalCalculatorForm.g:2046:5: ( ruleQualifiedName )
                     {
-                    // PsiInternalCalculatorForm.g:2064:5: (lv_value_6_0= RULE_FLOAT )
-                    // PsiInternalCalculatorForm.g:2065:6: lv_value_6_0= RULE_FLOAT
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						markLeaf(elementTypeProvider.getAtomic_ValueFLOATTerminalRuleCall_2_1_0ElementType());
-                      					
-                    }
-                    lv_value_6_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						if(!current) {
-                      							associateWithSemanticElement();
-                      							current = true;
-                      						}
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						doneLeaf(lv_value_6_0);
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // PsiInternalCalculatorForm.g:2082:3: ( () ( (lv_value_8_0= RULE_PERCENT ) ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2082:3: ( () ( (lv_value_8_0= RULE_PERCENT ) ) )
-                    // PsiInternalCalculatorForm.g:2083:4: () ( (lv_value_8_0= RULE_PERCENT ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2083:4: ()
-                    // PsiInternalCalculatorForm.g:2084:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					precedeComposite(elementTypeProvider.getAtomic_PercentLiteralAction_3_0ElementType());
-                      					doneComposite();
-                      					associateWithSemanticElement();
-                      				
-                    }
-
-                    }
-
-                    // PsiInternalCalculatorForm.g:2090:4: ( (lv_value_8_0= RULE_PERCENT ) )
-                    // PsiInternalCalculatorForm.g:2091:5: (lv_value_8_0= RULE_PERCENT )
-                    {
-                    // PsiInternalCalculatorForm.g:2091:5: (lv_value_8_0= RULE_PERCENT )
-                    // PsiInternalCalculatorForm.g:2092:6: lv_value_8_0= RULE_PERCENT
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						markLeaf(elementTypeProvider.getAtomic_ValuePERCENTTerminalRuleCall_3_1_0ElementType());
-                      					
-                    }
-                    lv_value_8_0=(Token)match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						if(!current) {
-                      							associateWithSemanticElement();
-                      							current = true;
-                      						}
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						doneLeaf(lv_value_8_0);
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // PsiInternalCalculatorForm.g:2109:3: ( () ( ( ruleQualifiedName ) ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2109:3: ( () ( ( ruleQualifiedName ) ) )
-                    // PsiInternalCalculatorForm.g:2110:4: () ( ( ruleQualifiedName ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2110:4: ()
-                    // PsiInternalCalculatorForm.g:2111:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_4_0ElementType());
-                      					doneComposite();
-                      					associateWithSemanticElement();
-                      				
-                    }
-
-                    }
-
-                    // PsiInternalCalculatorForm.g:2117:4: ( ( ruleQualifiedName ) )
-                    // PsiInternalCalculatorForm.g:2118:5: ( ruleQualifiedName )
-                    {
-                    // PsiInternalCalculatorForm.g:2118:5: ( ruleQualifiedName )
-                    // PsiInternalCalculatorForm.g:2119:6: ruleQualifiedName
+                    // PsiInternalCalculatorForm.g:2046:5: ( ruleQualifiedName )
+                    // PsiInternalCalculatorForm.g:2047:6: ruleQualifiedName
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6062,7 +5907,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_4_1_0ElementType());
+                      						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
                       					
                     }
                     pushFollow(FOLLOW_2);
@@ -6103,6 +5948,271 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         return current;
     }
     // $ANTLR end "ruleAtomic"
+
+
+    // $ANTLR start "entryRuleLiteral"
+    // PsiInternalCalculatorForm.g:2067:1: entryRuleLiteral returns [Boolean current=false] : iv_ruleLiteral= ruleLiteral EOF ;
+    public final Boolean entryRuleLiteral() throws RecognitionException {
+        Boolean current = false;
+
+        Boolean iv_ruleLiteral = null;
+
+
+        try {
+            // PsiInternalCalculatorForm.g:2067:49: (iv_ruleLiteral= ruleLiteral EOF )
+            // PsiInternalCalculatorForm.g:2068:2: iv_ruleLiteral= ruleLiteral EOF
+            {
+            if ( state.backtracking==0 ) {
+               markComposite(elementTypeProvider.getLiteralElementType()); 
+            }
+            pushFollow(FOLLOW_1);
+            iv_ruleLiteral=ruleLiteral();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleLiteral; 
+            }
+            match(input,EOF,FOLLOW_2); if (state.failed) return current;
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteral"
+
+
+    // $ANTLR start "ruleLiteral"
+    // PsiInternalCalculatorForm.g:2074:1: ruleLiteral returns [Boolean current=false] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
+    public final Boolean ruleLiteral() throws RecognitionException {
+        Boolean current = false;
+
+        Token lv_value_1_0=null;
+        Token lv_value_3_0=null;
+        Token lv_value_5_0=null;
+
+        try {
+            // PsiInternalCalculatorForm.g:2075:1: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
+            // PsiInternalCalculatorForm.g:2076:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            {
+            // PsiInternalCalculatorForm.g:2076:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            int alt62=3;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+                {
+                alt62=1;
+                }
+                break;
+            case RULE_FLOAT:
+                {
+                alt62=2;
+                }
+                break;
+            case RULE_PERCENT:
+                {
+                alt62=3;
+                }
+                break;
+            default:
+                if (state.backtracking>0) {state.failed=true; return current;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 62, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt62) {
+                case 1 :
+                    // PsiInternalCalculatorForm.g:2077:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2077:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // PsiInternalCalculatorForm.g:2078:4: () ( (lv_value_1_0= RULE_INT ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2078:4: ()
+                    // PsiInternalCalculatorForm.g:2079:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					precedeComposite(elementTypeProvider.getLiteral_NumberLiteralAction_0_0ElementType());
+                      					doneComposite();
+                      					associateWithSemanticElement();
+                      				
+                    }
+
+                    }
+
+                    // PsiInternalCalculatorForm.g:2085:4: ( (lv_value_1_0= RULE_INT ) )
+                    // PsiInternalCalculatorForm.g:2086:5: (lv_value_1_0= RULE_INT )
+                    {
+                    // PsiInternalCalculatorForm.g:2086:5: (lv_value_1_0= RULE_INT )
+                    // PsiInternalCalculatorForm.g:2087:6: lv_value_1_0= RULE_INT
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						markLeaf(elementTypeProvider.getLiteral_ValueINTTerminalRuleCall_0_1_0ElementType());
+                      					
+                    }
+                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						if(!current) {
+                      							associateWithSemanticElement();
+                      							current = true;
+                      						}
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						doneLeaf(lv_value_1_0);
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // PsiInternalCalculatorForm.g:2104:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2104:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2105:4: () ( (lv_value_3_0= RULE_FLOAT ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2105:4: ()
+                    // PsiInternalCalculatorForm.g:2106:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					precedeComposite(elementTypeProvider.getLiteral_FloatLiteralAction_1_0ElementType());
+                      					doneComposite();
+                      					associateWithSemanticElement();
+                      				
+                    }
+
+                    }
+
+                    // PsiInternalCalculatorForm.g:2112:4: ( (lv_value_3_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2113:5: (lv_value_3_0= RULE_FLOAT )
+                    {
+                    // PsiInternalCalculatorForm.g:2113:5: (lv_value_3_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2114:6: lv_value_3_0= RULE_FLOAT
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						markLeaf(elementTypeProvider.getLiteral_ValueFLOATTerminalRuleCall_1_1_0ElementType());
+                      					
+                    }
+                    lv_value_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						if(!current) {
+                      							associateWithSemanticElement();
+                      							current = true;
+                      						}
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						doneLeaf(lv_value_3_0);
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // PsiInternalCalculatorForm.g:2131:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2131:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // PsiInternalCalculatorForm.g:2132:4: () ( (lv_value_5_0= RULE_PERCENT ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2132:4: ()
+                    // PsiInternalCalculatorForm.g:2133:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					precedeComposite(elementTypeProvider.getLiteral_PercentLiteralAction_2_0ElementType());
+                      					doneComposite();
+                      					associateWithSemanticElement();
+                      				
+                    }
+
+                    }
+
+                    // PsiInternalCalculatorForm.g:2139:4: ( (lv_value_5_0= RULE_PERCENT ) )
+                    // PsiInternalCalculatorForm.g:2140:5: (lv_value_5_0= RULE_PERCENT )
+                    {
+                    // PsiInternalCalculatorForm.g:2140:5: (lv_value_5_0= RULE_PERCENT )
+                    // PsiInternalCalculatorForm.g:2141:6: lv_value_5_0= RULE_PERCENT
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						markLeaf(elementTypeProvider.getLiteral_ValuePERCENTTerminalRuleCall_2_1_0ElementType());
+                      					
+                    }
+                    lv_value_5_0=(Token)match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						if(!current) {
+                      							associateWithSemanticElement();
+                      							current = true;
+                      						}
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						doneLeaf(lv_value_5_0);
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteral"
 
     // Delegated rules
 

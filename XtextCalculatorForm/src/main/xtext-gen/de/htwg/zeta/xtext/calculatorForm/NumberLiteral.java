@@ -20,7 +20,7 @@ package de.htwg.zeta.xtext.calculatorForm;
  * @model
  * @generated
  */
-public interface NumberLiteral extends Expression
+public interface NumberLiteral extends Literal
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

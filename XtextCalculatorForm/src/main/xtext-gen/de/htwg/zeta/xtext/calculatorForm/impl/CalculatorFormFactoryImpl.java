@@ -83,16 +83,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       case CalculatorFormPackage.CALCULATE: return createCalculate();
       case CalculatorFormPackage.EXPRESSION: return createExpression();
+      case CalculatorFormPackage.LITERAL: return createLiteral();
       case CalculatorFormPackage.PLUS: return createPlus();
       case CalculatorFormPackage.MINUS: return createMinus();
       case CalculatorFormPackage.MULTI: return createMulti();
       case CalculatorFormPackage.DIV: return createDiv();
       case CalculatorFormPackage.BOOLEAN_NEGATION: return createBooleanNegation();
       case CalculatorFormPackage.ARITHMETIC_SIGNED: return createArithmeticSigned();
+      case CalculatorFormPackage.FIELD_REFERENCE: return createFieldReference();
       case CalculatorFormPackage.NUMBER_LITERAL: return createNumberLiteral();
       case CalculatorFormPackage.FLOAT_LITERAL: return createFloatLiteral();
       case CalculatorFormPackage.PERCENT_LITERAL: return createPercentLiteral();
-      case CalculatorFormPackage.FIELD_REFERENCE: return createFieldReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -301,6 +302,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public Literal createLiteral()
+  {
+    LiteralImpl literal = new LiteralImpl();
+    return literal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Plus createPlus()
   {
     PlusImpl plus = new PlusImpl();
@@ -367,6 +379,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public FieldReference createFieldReference()
+  {
+    FieldReferenceImpl fieldReference = new FieldReferenceImpl();
+    return fieldReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public NumberLiteral createNumberLiteral()
   {
     NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
@@ -393,17 +416,6 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     PercentLiteralImpl percentLiteral = new PercentLiteralImpl();
     return percentLiteral;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FieldReference createFieldReference()
-  {
-    FieldReferenceImpl fieldReference = new FieldReferenceImpl();
-    return fieldReference;
   }
 
   /**

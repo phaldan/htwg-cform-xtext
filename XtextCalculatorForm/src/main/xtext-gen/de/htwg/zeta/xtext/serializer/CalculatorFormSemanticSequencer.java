@@ -90,7 +90,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				sequence_FieldSelect(context, (FieldSelect) semanticObject); 
 				return; 
 			case CalculatorFormPackage.FLOAT_LITERAL:
-				sequence_Atomic(context, (FloatLiteral) semanticObject); 
+				sequence_Literal(context, (FloatLiteral) semanticObject); 
 				return; 
 			case CalculatorFormPackage.FORM:
 				sequence_Form(context, (Form) semanticObject); 
@@ -108,13 +108,13 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				sequence_Multiplication(context, (Multi) semanticObject); 
 				return; 
 			case CalculatorFormPackage.NUMBER_LITERAL:
-				sequence_Atomic(context, (NumberLiteral) semanticObject); 
+				sequence_Literal(context, (NumberLiteral) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PERCENT_LITERAL:
-				sequence_Atomic(context, (PercentLiteral) semanticObject); 
+				sequence_Literal(context, (PercentLiteral) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PLUS:
 				sequence_Addition(context, (Plus) semanticObject); 
@@ -203,85 +203,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FIELD_REFERENCE__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_4_1_0_1(), semanticObject.getRef());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Expression returns FloatLiteral
-	 *     Addition returns FloatLiteral
-	 *     Addition.Plus_1_0_0_0 returns FloatLiteral
-	 *     Addition.Minus_1_0_1_0 returns FloatLiteral
-	 *     Multiplication returns FloatLiteral
-	 *     Multiplication.Multi_1_0_0_0 returns FloatLiteral
-	 *     Multiplication.Div_1_0_1_0 returns FloatLiteral
-	 *     Prefixed returns FloatLiteral
-	 *     Atomic returns FloatLiteral
-	 *
-	 * Constraint:
-	 *     value=FLOAT
-	 */
-	protected void sequence_Atomic(ISerializationContext context, FloatLiteral semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueFLOATTerminalRuleCall_2_1_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Expression returns NumberLiteral
-	 *     Addition returns NumberLiteral
-	 *     Addition.Plus_1_0_0_0 returns NumberLiteral
-	 *     Addition.Minus_1_0_1_0 returns NumberLiteral
-	 *     Multiplication returns NumberLiteral
-	 *     Multiplication.Multi_1_0_0_0 returns NumberLiteral
-	 *     Multiplication.Div_1_0_1_0 returns NumberLiteral
-	 *     Prefixed returns NumberLiteral
-	 *     Atomic returns NumberLiteral
-	 *
-	 * Constraint:
-	 *     value=INT
-	 */
-	protected void sequence_Atomic(ISerializationContext context, NumberLiteral semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.NUMBER_LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.NUMBER_LITERAL__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_1_1_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Expression returns PercentLiteral
-	 *     Addition returns PercentLiteral
-	 *     Addition.Plus_1_0_0_0 returns PercentLiteral
-	 *     Addition.Minus_1_0_1_0 returns PercentLiteral
-	 *     Multiplication returns PercentLiteral
-	 *     Multiplication.Multi_1_0_0_0 returns PercentLiteral
-	 *     Multiplication.Div_1_0_1_0 returns PercentLiteral
-	 *     Prefixed returns PercentLiteral
-	 *     Atomic returns PercentLiteral
-	 *
-	 * Constraint:
-	 *     value=PERCENT
-	 */
-	protected void sequence_Atomic(ISerializationContext context, PercentLiteral semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getValuePERCENTTerminalRuleCall_3_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getAtomicAccess().getRefFieldQualifiedNameParserRuleCall_2_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -470,6 +392,87 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 */
 	protected void sequence_Group(ISerializationContext context, Group semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns FloatLiteral
+	 *     Addition returns FloatLiteral
+	 *     Addition.Plus_1_0_0_0 returns FloatLiteral
+	 *     Addition.Minus_1_0_1_0 returns FloatLiteral
+	 *     Multiplication returns FloatLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns FloatLiteral
+	 *     Multiplication.Div_1_0_1_0 returns FloatLiteral
+	 *     Prefixed returns FloatLiteral
+	 *     Atomic returns FloatLiteral
+	 *     Literal returns FloatLiteral
+	 *
+	 * Constraint:
+	 *     value=FLOAT
+	 */
+	protected void sequence_Literal(ISerializationContext context, FloatLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FLOAT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteralAccess().getValueFLOATTerminalRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns NumberLiteral
+	 *     Addition returns NumberLiteral
+	 *     Addition.Plus_1_0_0_0 returns NumberLiteral
+	 *     Addition.Minus_1_0_1_0 returns NumberLiteral
+	 *     Multiplication returns NumberLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns NumberLiteral
+	 *     Multiplication.Div_1_0_1_0 returns NumberLiteral
+	 *     Prefixed returns NumberLiteral
+	 *     Atomic returns NumberLiteral
+	 *     Literal returns NumberLiteral
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Literal(ISerializationContext context, NumberLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.NUMBER_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.NUMBER_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteralAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns PercentLiteral
+	 *     Addition returns PercentLiteral
+	 *     Addition.Plus_1_0_0_0 returns PercentLiteral
+	 *     Addition.Minus_1_0_1_0 returns PercentLiteral
+	 *     Multiplication returns PercentLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns PercentLiteral
+	 *     Multiplication.Div_1_0_1_0 returns PercentLiteral
+	 *     Prefixed returns PercentLiteral
+	 *     Atomic returns PercentLiteral
+	 *     Literal returns PercentLiteral
+	 *
+	 * Constraint:
+	 *     value=PERCENT
+	 */
+	protected void sequence_Literal(ISerializationContext context, PercentLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.PERCENT_LITERAL__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteralAccess().getValuePERCENTTerminalRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

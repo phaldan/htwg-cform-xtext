@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class PercentLiteralImpl extends ExpressionImpl implements PercentLiteral
+public class PercentLiteralImpl extends LiteralImpl implements PercentLiteral
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
