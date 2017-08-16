@@ -6,21 +6,21 @@ package de.htwg.zeta.xtext.calculatorForm;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Output Variable</b></em>'.
+ * A representation of the model object '<em><b>Calculate Variable</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName <em>Name</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.CalculateVariable#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getOutputVariable()
+ * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getCalculateVariable()
  * @model
  * @generated
  */
-public interface OutputVariable extends ResultOutput, ExpressionVariable
+public interface CalculateVariable extends ResultOutput, ExpressionVariable
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface OutputVariable extends ResultOutput, ExpressionVariable
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getOutputVariable_Name()
+   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getCalculateVariable_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.CalculateVariable#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface OutputVariable extends ResultOutput, ExpressionVariable
    */
   void setName(String value);
 
-} // OutputVariable
+} // CalculateVariable

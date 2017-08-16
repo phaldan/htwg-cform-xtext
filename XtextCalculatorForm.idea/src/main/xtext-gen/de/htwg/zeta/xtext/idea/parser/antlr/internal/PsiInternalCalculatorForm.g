@@ -1702,11 +1702,11 @@ ruleResultOutput returns [Boolean current=false]
 :
 	(
 		{
-			markComposite(elementTypeProvider.getResultOutput_OutputVariableParserRuleCall_0ElementType());
+			markComposite(elementTypeProvider.getResultOutput_CalculateVariableParserRuleCall_0ElementType());
 		}
-		this_OutputVariable_0=ruleOutputVariable
+		this_CalculateVariable_0=ruleCalculateVariable
 		{
-			$current = $this_OutputVariable_0.current;
+			$current = $this_CalculateVariable_0.current;
 			doneComposite();
 		}
 		    |
@@ -1746,19 +1746,19 @@ ruleResultOutput returns [Boolean current=false]
 	)
 ;
 
-//Entry rule entryRuleOutputVariable
-entryRuleOutputVariable returns [Boolean current=false]:
-	{ markComposite(elementTypeProvider.getOutputVariableElementType()); }
-	iv_ruleOutputVariable=ruleOutputVariable
-	{ $current=$iv_ruleOutputVariable.current; }
+//Entry rule entryRuleCalculateVariable
+entryRuleCalculateVariable returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getCalculateVariableElementType()); }
+	iv_ruleCalculateVariable=ruleCalculateVariable
+	{ $current=$iv_ruleCalculateVariable.current; }
 	EOF;
 
-// Rule OutputVariable
-ruleOutputVariable returns [Boolean current=false]
+// Rule CalculateVariable
+ruleCalculateVariable returns [Boolean current=false]
 :
 	(
 		{
-			markLeaf(elementTypeProvider.getOutputVariable_VarKeyword_0ElementType());
+			markLeaf(elementTypeProvider.getCalculateVariable_VarKeyword_0ElementType());
 		}
 		otherlv_0='var'
 		{
@@ -1767,7 +1767,7 @@ ruleOutputVariable returns [Boolean current=false]
 		(
 			(
 				{
-					markLeaf(elementTypeProvider.getOutputVariable_NameIDTerminalRuleCall_1_0ElementType());
+					markLeaf(elementTypeProvider.getCalculateVariable_NameIDTerminalRuleCall_1_0ElementType());
 				}
 				lv_name_1_0=RULE_ID
 				{

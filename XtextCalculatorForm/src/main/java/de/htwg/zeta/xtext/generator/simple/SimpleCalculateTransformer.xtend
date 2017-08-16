@@ -21,11 +21,11 @@ import de.htwg.zeta.xtext.calculatorForm.Multi
 import de.htwg.zeta.xtext.calculatorForm.Div
 import de.htwg.zeta.xtext.calculatorForm.ResultOutput
 import de.htwg.zeta.xtext.calculatorForm.OutputField
-import de.htwg.zeta.xtext.calculatorForm.OutputVariable
 import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral
 import de.htwg.zeta.xtext.calculatorForm.Literal
 import de.htwg.zeta.xtext.calculatorForm.UnaryOperation
 import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable
+import de.htwg.zeta.xtext.calculatorForm.CalculateVariable
 
 /**
  * Create a html with basic html.
@@ -68,7 +68,7 @@ class SimpleCalculateTransformer {
     }
 
     private def String getOutputVariable(ResultOutput output) {
-        if (output instanceof OutputVariable) {
+        if (output instanceof CalculateVariable) {
             ''' '«output.name»' '''.toString.trim
         } else {
             '''null'''
@@ -134,7 +134,7 @@ class SimpleCalculateTransformer {
     private def String processExpressionVariable(ExpressionVariable variable) {
         if (variable instanceof Field) {
             processFieldReference(variable)
-        } else if (variable instanceof OutputVariable) {
+        } else if (variable instanceof CalculateVariable) {
             processOutputVariable(variable)
         } else {
             throw new UnsupportedOperationException("Unknown ExpressionVariable: " + variable.getClass.getName)
@@ -147,7 +147,7 @@ class SimpleCalculateTransformer {
         '''this.resolveFieldValue('«name»')'''
     }
 
-    private def String processOutputVariable(OutputVariable variable) {
+    private def String processOutputVariable(CalculateVariable variable) {
         variables.add(variable.name)
         '''this.resolveVariableValue('«variable.name»')'''
     }

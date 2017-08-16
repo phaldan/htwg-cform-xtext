@@ -186,13 +186,13 @@ public interface CalculatorFormFactory extends EFactory
   ResultOutput createResultOutput();
 
   /**
-   * Returns a new object of class '<em>Output Variable</em>'.
+   * Returns a new object of class '<em>Calculate Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Output Variable</em>'.
+   * @return a new object of class '<em>Calculate Variable</em>'.
    * @generated
    */
-  OutputVariable createOutputVariable();
+  CalculateVariable createCalculateVariable();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.

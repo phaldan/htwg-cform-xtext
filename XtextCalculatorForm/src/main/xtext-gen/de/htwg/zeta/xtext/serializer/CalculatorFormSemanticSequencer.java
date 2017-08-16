@@ -8,6 +8,7 @@ import de.htwg.zeta.xtext.calculatorForm.ArithmeticSigned;
 import de.htwg.zeta.xtext.calculatorForm.BooleanNegation;
 import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.Calculate;
+import de.htwg.zeta.xtext.calculatorForm.CalculateVariable;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Div;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
@@ -24,7 +25,6 @@ import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
 import de.htwg.zeta.xtext.calculatorForm.OutputField;
-import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
@@ -66,6 +66,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.CALCULATE:
 				sequence_Calculate(context, (Calculate) semanticObject); 
+				return; 
+			case CalculatorFormPackage.CALCULATE_VARIABLE:
+				sequence_CalculateVariable(context, (CalculateVariable) semanticObject); 
 				return; 
 			case CalculatorFormPackage.DIV:
 				sequence_Multiplication(context, (Div) semanticObject); 
@@ -111,9 +114,6 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.OUTPUT_FIELD:
 				sequence_ResultOutput(context, (OutputField) semanticObject); 
-				return; 
-			case CalculatorFormPackage.OUTPUT_VARIABLE:
-				sequence_OutputVariable(context, (OutputVariable) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
@@ -204,6 +204,26 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 */
 	protected void sequence_ButtonSubmit(ISerializationContext context, ButtonSubmit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResultOutput returns CalculateVariable
+	 *     CalculateVariable returns CalculateVariable
+	 *     ExpressionVariable returns CalculateVariable
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_CalculateVariable(ISerializationContext context, CalculateVariable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.CALCULATE_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.CALCULATE_VARIABLE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCalculateVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -555,26 +575,6 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMultiplicationAccess().getMultiLeftAction_1_0_0_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getMultiplicationAccess().getRightPrefixedParserRuleCall_1_1_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ResultOutput returns OutputVariable
-	 *     OutputVariable returns OutputVariable
-	 *     ExpressionVariable returns OutputVariable
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_OutputVariable(ISerializationContext context, OutputVariable semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOutputVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

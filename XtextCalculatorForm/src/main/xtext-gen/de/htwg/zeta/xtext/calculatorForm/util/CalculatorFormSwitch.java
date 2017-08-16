@@ -228,12 +228,12 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CalculatorFormPackage.OUTPUT_VARIABLE:
+      case CalculatorFormPackage.CALCULATE_VARIABLE:
       {
-        OutputVariable outputVariable = (OutputVariable)theEObject;
-        T result = caseOutputVariable(outputVariable);
-        if (result == null) result = caseResultOutput(outputVariable);
-        if (result == null) result = caseExpressionVariable(outputVariable);
+        CalculateVariable calculateVariable = (CalculateVariable)theEObject;
+        T result = caseCalculateVariable(calculateVariable);
+        if (result == null) result = caseResultOutput(calculateVariable);
+        if (result == null) result = caseExpressionVariable(calculateVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -654,17 +654,17 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Output Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Calculate Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Output Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Calculate Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOutputVariable(OutputVariable object)
+  public T caseCalculateVariable(CalculateVariable object)
   {
     return null;
   }

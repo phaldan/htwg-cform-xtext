@@ -152,13 +152,13 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getResultOutputElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getResultOutput_OutputVariableParserRuleCall_0ElementType()) {
+			if (elementType == elementTypeProvider.getResultOutput_CalculateVariableParserRuleCall_0ElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getResultOutput_OutputFieldAction_1_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getOutputVariableElementType()) {
+			if (elementType == elementTypeProvider.getCalculateVariableElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getExpressionElementType()) {
@@ -251,7 +251,7 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getExpressionVariable_FieldParserRuleCall_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getExpressionVariable_OutputVariableParserRuleCall_1ElementType()) {
+			if (elementType == elementTypeProvider.getExpressionVariable_CalculateVariableParserRuleCall_1ElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);

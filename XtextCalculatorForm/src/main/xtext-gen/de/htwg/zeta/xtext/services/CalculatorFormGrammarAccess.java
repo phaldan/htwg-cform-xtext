@@ -964,7 +964,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	public class ResultOutputElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ResultOutput");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cOutputVariableParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCalculateVariableParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cOutputFieldAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cFieldKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
@@ -973,14 +973,14 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFieldFieldQualifiedNameParserRuleCall_1_2_0_1 = (RuleCall)cFieldFieldCrossReference_1_2_0.eContents().get(1);
 		
 		//ResultOutput:
-		//	OutputVariable | {OutputField} 'field' field=[Field|QualifiedName];
+		//	CalculateVariable | {OutputField} 'field' field=[Field|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//OutputVariable | {OutputField} 'field' field=[Field|QualifiedName]
+		//CalculateVariable | {OutputField} 'field' field=[Field|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//OutputVariable
-		public RuleCall getOutputVariableParserRuleCall_0() { return cOutputVariableParserRuleCall_0; }
+		//CalculateVariable
+		public RuleCall getCalculateVariableParserRuleCall_0() { return cCalculateVariableParserRuleCall_0; }
 		
 		//{OutputField} 'field' field=[Field|QualifiedName]
 		public Group getGroup_1() { return cGroup_1; }
@@ -1000,14 +1000,14 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getFieldFieldQualifiedNameParserRuleCall_1_2_0_1() { return cFieldFieldQualifiedNameParserRuleCall_1_2_0_1; }
 	}
-	public class OutputVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.OutputVariable");
+	public class CalculateVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.CalculateVariable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
-		//OutputVariable:
+		//CalculateVariable:
 		//	'var' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1357,20 +1357,20 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ExpressionVariable");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cFieldParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cOutputVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCalculateVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ExpressionVariable:
-		//	Field | OutputVariable;
+		//	Field | CalculateVariable;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Field | OutputVariable
+		//Field | CalculateVariable
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Field
 		public RuleCall getFieldParserRuleCall_0() { return cFieldParserRuleCall_0; }
 		
-		//OutputVariable
-		public RuleCall getOutputVariableParserRuleCall_1() { return cOutputVariableParserRuleCall_1; }
+		//CalculateVariable
+		public RuleCall getCalculateVariableParserRuleCall_1() { return cCalculateVariableParserRuleCall_1; }
 	}
 	
 	
@@ -1392,7 +1392,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final ButtonSubmitElements pButtonSubmit;
 	private final CalculateElements pCalculate;
 	private final ResultOutputElements pResultOutput;
-	private final OutputVariableElements pOutputVariable;
+	private final CalculateVariableElements pCalculateVariable;
 	private final QualifiedNameElements pQualifiedName;
 	private final ExpressionElements pExpression;
 	private final AdditionElements pAddition;
@@ -1435,7 +1435,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pButtonSubmit = new ButtonSubmitElements();
 		this.pCalculate = new CalculateElements();
 		this.pResultOutput = new ResultOutputElements();
-		this.pOutputVariable = new OutputVariableElements();
+		this.pCalculateVariable = new CalculateVariableElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pExpression = new ExpressionElements();
 		this.pAddition = new AdditionElements();
@@ -1656,7 +1656,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ResultOutput:
-	//	OutputVariable | {OutputField} 'field' field=[Field|QualifiedName];
+	//	CalculateVariable | {OutputField} 'field' field=[Field|QualifiedName];
 	public ResultOutputElements getResultOutputAccess() {
 		return pResultOutput;
 	}
@@ -1665,14 +1665,14 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		return getResultOutputAccess().getRule();
 	}
 	
-	//OutputVariable:
+	//CalculateVariable:
 	//	'var' name=ID;
-	public OutputVariableElements getOutputVariableAccess() {
-		return pOutputVariable;
+	public CalculateVariableElements getCalculateVariableAccess() {
+		return pCalculateVariable;
 	}
 	
-	public ParserRule getOutputVariableRule() {
-		return getOutputVariableAccess().getRule();
+	public ParserRule getCalculateVariableRule() {
+		return getCalculateVariableAccess().getRule();
 	}
 	
 	//QualifiedName:
@@ -1757,7 +1757,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ExpressionVariable:
-	//	Field | OutputVariable;
+	//	Field | CalculateVariable;
 	public ExpressionVariableElements getExpressionVariableAccess() {
 		return pExpressionVariable;
 	}

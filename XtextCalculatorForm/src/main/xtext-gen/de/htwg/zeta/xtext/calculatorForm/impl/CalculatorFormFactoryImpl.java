@@ -83,7 +83,7 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       case CalculatorFormPackage.CALCULATE: return createCalculate();
       case CalculatorFormPackage.RESULT_OUTPUT: return createResultOutput();
-      case CalculatorFormPackage.OUTPUT_VARIABLE: return createOutputVariable();
+      case CalculatorFormPackage.CALCULATE_VARIABLE: return createCalculateVariable();
       case CalculatorFormPackage.EXPRESSION: return createExpression();
       case CalculatorFormPackage.UNARY_OPERATION: return createUnaryOperation();
       case CalculatorFormPackage.LITERAL: return createLiteral();
@@ -307,10 +307,10 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public OutputVariable createOutputVariable()
+  public CalculateVariable createCalculateVariable()
   {
-    OutputVariableImpl outputVariable = new OutputVariableImpl();
-    return outputVariable;
+    CalculateVariableImpl calculateVariable = new CalculateVariableImpl();
+    return calculateVariable;
   }
 
   /**

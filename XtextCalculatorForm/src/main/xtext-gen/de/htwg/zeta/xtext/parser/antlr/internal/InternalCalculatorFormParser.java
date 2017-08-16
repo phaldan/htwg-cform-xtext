@@ -4656,22 +4656,22 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResultOutput"
-    // InternalCalculatorForm.g:1667:1: ruleResultOutput returns [EObject current=null] : (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) ;
+    // InternalCalculatorForm.g:1667:1: ruleResultOutput returns [EObject current=null] : (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) ;
     public final EObject ruleResultOutput() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_OutputVariable_0 = null;
+        EObject this_CalculateVariable_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCalculatorForm.g:1673:2: ( (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) )
-            // InternalCalculatorForm.g:1674:2: (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
+            // InternalCalculatorForm.g:1673:2: ( (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) )
+            // InternalCalculatorForm.g:1674:2: (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
             {
-            // InternalCalculatorForm.g:1674:2: (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
+            // InternalCalculatorForm.g:1674:2: (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4690,21 +4690,21 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             }
             switch (alt55) {
                 case 1 :
-                    // InternalCalculatorForm.g:1675:3: this_OutputVariable_0= ruleOutputVariable
+                    // InternalCalculatorForm.g:1675:3: this_CalculateVariable_0= ruleCalculateVariable
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getResultOutputAccess().getOutputVariableParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getResultOutputAccess().getCalculateVariableParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_OutputVariable_0=ruleOutputVariable();
+                    this_CalculateVariable_0=ruleCalculateVariable();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_OutputVariable_0;
+                      			current = this_CalculateVariable_0;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -4800,28 +4800,28 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleResultOutput"
 
 
-    // $ANTLR start "entryRuleOutputVariable"
-    // InternalCalculatorForm.g:1717:1: entryRuleOutputVariable returns [EObject current=null] : iv_ruleOutputVariable= ruleOutputVariable EOF ;
-    public final EObject entryRuleOutputVariable() throws RecognitionException {
+    // $ANTLR start "entryRuleCalculateVariable"
+    // InternalCalculatorForm.g:1717:1: entryRuleCalculateVariable returns [EObject current=null] : iv_ruleCalculateVariable= ruleCalculateVariable EOF ;
+    public final EObject entryRuleCalculateVariable() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleOutputVariable = null;
+        EObject iv_ruleCalculateVariable = null;
 
 
         try {
-            // InternalCalculatorForm.g:1717:55: (iv_ruleOutputVariable= ruleOutputVariable EOF )
-            // InternalCalculatorForm.g:1718:2: iv_ruleOutputVariable= ruleOutputVariable EOF
+            // InternalCalculatorForm.g:1717:58: (iv_ruleCalculateVariable= ruleCalculateVariable EOF )
+            // InternalCalculatorForm.g:1718:2: iv_ruleCalculateVariable= ruleCalculateVariable EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getOutputVariableRule()); 
+               newCompositeNode(grammarAccess.getCalculateVariableRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleOutputVariable=ruleOutputVariable();
+            iv_ruleCalculateVariable=ruleCalculateVariable();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleOutputVariable; 
+               current =iv_ruleCalculateVariable; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -4837,12 +4837,12 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleOutputVariable"
+    // $ANTLR end "entryRuleCalculateVariable"
 
 
-    // $ANTLR start "ruleOutputVariable"
-    // InternalCalculatorForm.g:1724:1: ruleOutputVariable returns [EObject current=null] : (otherlv_0= 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
-    public final EObject ruleOutputVariable() throws RecognitionException {
+    // $ANTLR start "ruleCalculateVariable"
+    // InternalCalculatorForm.g:1724:1: ruleCalculateVariable returns [EObject current=null] : (otherlv_0= 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleCalculateVariable() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -4861,7 +4861,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             otherlv_0=(Token)match(input,38,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_0, grammarAccess.getOutputVariableAccess().getVarKeyword_0());
+              			newLeafNode(otherlv_0, grammarAccess.getCalculateVariableAccess().getVarKeyword_0());
               		
             }
             // InternalCalculatorForm.g:1736:3: ( (lv_name_1_0= RULE_ID ) )
@@ -4873,13 +4873,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(lv_name_1_0, grammarAccess.getOutputVariableAccess().getNameIDTerminalRuleCall_1_0());
+              					newLeafNode(lv_name_1_0, grammarAccess.getCalculateVariableAccess().getNameIDTerminalRuleCall_1_0());
               				
             }
             if ( state.backtracking==0 ) {
 
               					if (current==null) {
-              						current = createModelElement(grammarAccess.getOutputVariableRule());
+              						current = createModelElement(grammarAccess.getCalculateVariableRule());
               					}
               					setWithLastConsumed(
               						current,
@@ -4915,7 +4915,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleOutputVariable"
+    // $ANTLR end "ruleCalculateVariable"
 
 
     // $ANTLR start "entryRuleQualifiedName"

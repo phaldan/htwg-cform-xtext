@@ -4789,19 +4789,19 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleResultOutput"
-    // PsiInternalCalculatorForm.g:1701:1: ruleResultOutput returns [Boolean current=false] : (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:1701:1: ruleResultOutput returns [Boolean current=false] : (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) ;
     public final Boolean ruleResultOutput() throws RecognitionException {
         Boolean current = false;
 
         Token otherlv_2=null;
-        Boolean this_OutputVariable_0 = null;
+        Boolean this_CalculateVariable_0 = null;
 
 
         try {
-            // PsiInternalCalculatorForm.g:1702:1: ( (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) )
-            // PsiInternalCalculatorForm.g:1703:2: (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
+            // PsiInternalCalculatorForm.g:1702:1: ( (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) ) )
+            // PsiInternalCalculatorForm.g:1703:2: (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:1703:2: (this_OutputVariable_0= ruleOutputVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
+            // PsiInternalCalculatorForm.g:1703:2: (this_CalculateVariable_0= ruleCalculateVariable | ( () otherlv_2= 'field' ( ( ruleQualifiedName ) ) ) )
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -4820,21 +4820,21 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
             }
             switch (alt55) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:1704:3: this_OutputVariable_0= ruleOutputVariable
+                    // PsiInternalCalculatorForm.g:1704:3: this_CalculateVariable_0= ruleCalculateVariable
                     {
                     if ( state.backtracking==0 ) {
 
-                      			markComposite(elementTypeProvider.getResultOutput_OutputVariableParserRuleCall_0ElementType());
+                      			markComposite(elementTypeProvider.getResultOutput_CalculateVariableParserRuleCall_0ElementType());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_OutputVariable_0=ruleOutputVariable();
+                    this_CalculateVariable_0=ruleCalculateVariable();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_OutputVariable_0;
+                      			current = this_CalculateVariable_0;
                       			doneComposite();
                       		
                     }
@@ -4930,28 +4930,28 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
     // $ANTLR end "ruleResultOutput"
 
 
-    // $ANTLR start "entryRuleOutputVariable"
-    // PsiInternalCalculatorForm.g:1750:1: entryRuleOutputVariable returns [Boolean current=false] : iv_ruleOutputVariable= ruleOutputVariable EOF ;
-    public final Boolean entryRuleOutputVariable() throws RecognitionException {
+    // $ANTLR start "entryRuleCalculateVariable"
+    // PsiInternalCalculatorForm.g:1750:1: entryRuleCalculateVariable returns [Boolean current=false] : iv_ruleCalculateVariable= ruleCalculateVariable EOF ;
+    public final Boolean entryRuleCalculateVariable() throws RecognitionException {
         Boolean current = false;
 
-        Boolean iv_ruleOutputVariable = null;
+        Boolean iv_ruleCalculateVariable = null;
 
 
         try {
-            // PsiInternalCalculatorForm.g:1750:56: (iv_ruleOutputVariable= ruleOutputVariable EOF )
-            // PsiInternalCalculatorForm.g:1751:2: iv_ruleOutputVariable= ruleOutputVariable EOF
+            // PsiInternalCalculatorForm.g:1750:59: (iv_ruleCalculateVariable= ruleCalculateVariable EOF )
+            // PsiInternalCalculatorForm.g:1751:2: iv_ruleCalculateVariable= ruleCalculateVariable EOF
             {
             if ( state.backtracking==0 ) {
-               markComposite(elementTypeProvider.getOutputVariableElementType()); 
+               markComposite(elementTypeProvider.getCalculateVariableElementType()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleOutputVariable=ruleOutputVariable();
+            iv_ruleCalculateVariable=ruleCalculateVariable();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleOutputVariable; 
+               current =iv_ruleCalculateVariable; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -4966,12 +4966,12 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleOutputVariable"
+    // $ANTLR end "entryRuleCalculateVariable"
 
 
-    // $ANTLR start "ruleOutputVariable"
-    // PsiInternalCalculatorForm.g:1757:1: ruleOutputVariable returns [Boolean current=false] : (otherlv_0= 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
-    public final Boolean ruleOutputVariable() throws RecognitionException {
+    // $ANTLR start "ruleCalculateVariable"
+    // PsiInternalCalculatorForm.g:1757:1: ruleCalculateVariable returns [Boolean current=false] : (otherlv_0= 'var' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final Boolean ruleCalculateVariable() throws RecognitionException {
         Boolean current = false;
 
         Token otherlv_0=null;
@@ -4986,7 +4986,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
             {
             if ( state.backtracking==0 ) {
 
-              			markLeaf(elementTypeProvider.getOutputVariable_VarKeyword_0ElementType());
+              			markLeaf(elementTypeProvider.getCalculateVariable_VarKeyword_0ElementType());
               		
             }
             otherlv_0=(Token)match(input,38,FOLLOW_4); if (state.failed) return current;
@@ -5003,7 +5003,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
             {
             if ( state.backtracking==0 ) {
 
-              					markLeaf(elementTypeProvider.getOutputVariable_NameIDTerminalRuleCall_1_0ElementType());
+              					markLeaf(elementTypeProvider.getCalculateVariable_NameIDTerminalRuleCall_1_0ElementType());
               				
             }
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
@@ -5041,7 +5041,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleOutputVariable"
+    // $ANTLR end "ruleCalculateVariable"
 
 
     // $ANTLR start "entryRuleQualifiedName"

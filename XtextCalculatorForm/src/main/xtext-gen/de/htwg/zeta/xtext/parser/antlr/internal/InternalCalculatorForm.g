@@ -1673,11 +1673,11 @@ ruleResultOutput returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getResultOutputAccess().getOutputVariableParserRuleCall_0());
+			newCompositeNode(grammarAccess.getResultOutputAccess().getCalculateVariableParserRuleCall_0());
 		}
-		this_OutputVariable_0=ruleOutputVariable
+		this_CalculateVariable_0=ruleCalculateVariable
 		{
-			$current = $this_OutputVariable_0.current;
+			$current = $this_CalculateVariable_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -1713,15 +1713,15 @@ ruleResultOutput returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleOutputVariable
-entryRuleOutputVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOutputVariableRule()); }
-	iv_ruleOutputVariable=ruleOutputVariable
-	{ $current=$iv_ruleOutputVariable.current; }
+// Entry rule entryRuleCalculateVariable
+entryRuleCalculateVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCalculateVariableRule()); }
+	iv_ruleCalculateVariable=ruleCalculateVariable
+	{ $current=$iv_ruleCalculateVariable.current; }
 	EOF;
 
-// Rule OutputVariable
-ruleOutputVariable returns [EObject current=null]
+// Rule CalculateVariable
+ruleCalculateVariable returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1731,17 +1731,17 @@ ruleOutputVariable returns [EObject current=null]
 	(
 		otherlv_0='var'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getOutputVariableAccess().getVarKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getCalculateVariableAccess().getVarKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getOutputVariableAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getCalculateVariableAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOutputVariableRule());
+						$current = createModelElement(grammarAccess.getCalculateVariableRule());
 					}
 					setWithLastConsumed(
 						$current,

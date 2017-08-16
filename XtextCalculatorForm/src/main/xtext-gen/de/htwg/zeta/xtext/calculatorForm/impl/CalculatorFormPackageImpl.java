@@ -8,6 +8,7 @@ import de.htwg.zeta.xtext.calculatorForm.BooleanNegation;
 import de.htwg.zeta.xtext.calculatorForm.Button;
 import de.htwg.zeta.xtext.calculatorForm.ButtonSubmit;
 import de.htwg.zeta.xtext.calculatorForm.Calculate;
+import de.htwg.zeta.xtext.calculatorForm.CalculateVariable;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormFactory;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Div;
@@ -31,7 +32,6 @@ import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
 import de.htwg.zeta.xtext.calculatorForm.OutputField;
-import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PageChild;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
@@ -186,7 +186,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass outputVariableEClass = null;
+  private EClass calculateVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1121,9 +1121,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOutputVariable()
+  public EClass getCalculateVariable()
   {
-    return outputVariableEClass;
+    return calculateVariableEClass;
   }
 
   /**
@@ -1131,9 +1131,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOutputVariable_Name()
+  public EAttribute getCalculateVariable_Name()
   {
-    return (EAttribute)outputVariableEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)calculateVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1550,8 +1550,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     resultOutputEClass = createEClass(RESULT_OUTPUT);
 
-    outputVariableEClass = createEClass(OUTPUT_VARIABLE);
-    createEAttribute(outputVariableEClass, OUTPUT_VARIABLE__NAME);
+    calculateVariableEClass = createEClass(CALCULATE_VARIABLE);
+    createEAttribute(calculateVariableEClass, CALCULATE_VARIABLE__NAME);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -1640,8 +1640,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     pageEClass.getESuperTypes().add(this.getFormElement());
     buttonEClass.getESuperTypes().add(this.getField());
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
-    outputVariableEClass.getESuperTypes().add(this.getResultOutput());
-    outputVariableEClass.getESuperTypes().add(this.getExpressionVariable());
+    calculateVariableEClass.getESuperTypes().add(this.getResultOutput());
+    calculateVariableEClass.getESuperTypes().add(this.getExpressionVariable());
     unaryOperationEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
     outputFieldEClass.getESuperTypes().add(this.getResultOutput());
@@ -1751,8 +1751,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(resultOutputEClass, ResultOutput.class, "ResultOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(outputVariableEClass, OutputVariable.class, "OutputVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOutputVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, OutputVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(calculateVariableEClass, CalculateVariable.class, "CalculateVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCalculateVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, CalculateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -3,8 +3,8 @@
  */
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
+import de.htwg.zeta.xtext.calculatorForm.CalculateVariable;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Output Variable</b></em>'.
+ * An implementation of the model object '<em><b>Calculate Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.CalculateVariableImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OutputVariableImpl extends ResultOutputImpl implements OutputVariable
+public class CalculateVariableImpl extends ResultOutputImpl implements CalculateVariable
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -52,7 +52,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
    * <!-- end-user-doc -->
    * @generated
    */
-  protected OutputVariableImpl()
+  protected CalculateVariableImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
   @Override
   protected EClass eStaticClass()
   {
-    return CalculatorFormPackage.Literals.OUTPUT_VARIABLE;
+    return CalculatorFormPackage.Literals.CALCULATE_VARIABLE;
   }
 
   /**
@@ -88,7 +88,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.OUTPUT_VARIABLE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.CALCULATE_VARIABLE__NAME, oldName, name));
   }
 
   /**
@@ -101,7 +101,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.OUTPUT_VARIABLE__NAME:
+      case CalculatorFormPackage.CALCULATE_VARIABLE__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.OUTPUT_VARIABLE__NAME:
+      case CalculatorFormPackage.CALCULATE_VARIABLE__NAME:
         setName((String)newValue);
         return;
     }
@@ -134,7 +134,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.OUTPUT_VARIABLE__NAME:
+      case CalculatorFormPackage.CALCULATE_VARIABLE__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -151,7 +151,7 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.OUTPUT_VARIABLE__NAME:
+      case CalculatorFormPackage.CALCULATE_VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -174,4 +174,4 @@ public class OutputVariableImpl extends ResultOutputImpl implements OutputVariab
     return result.toString();
   }
 
-} //OutputVariableImpl
+} //CalculateVariableImpl
