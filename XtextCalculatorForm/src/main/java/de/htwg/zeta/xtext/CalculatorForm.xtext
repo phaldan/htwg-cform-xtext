@@ -118,10 +118,10 @@ Literal:
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
     {PercentLiteral} value=PERCENT |
-    {ReferenceLiteral} ref=[ExpressionVariable|QualifiedName]
+    {ReferenceLiteral} ref=[InputVariable|QualifiedName]
 ;
 
-ExpressionVariable:
+InputVariable:
     Field | CalculateVariable
 ;
 

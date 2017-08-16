@@ -197,7 +197,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     PageChild returns ButtonSubmit
 	 *     Button returns ButtonSubmit
 	 *     ButtonSubmit returns ButtonSubmit
-	 *     ExpressionVariable returns ButtonSubmit
+	 *     InputVariable returns ButtonSubmit
 	 *
 	 * Constraint:
 	 *     (name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? value=STRING?)
@@ -211,7 +211,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 * Contexts:
 	 *     ResultOutput returns CalculateVariable
 	 *     CalculateVariable returns CalculateVariable
-	 *     ExpressionVariable returns CalculateVariable
+	 *     InputVariable returns CalculateVariable
 	 *
 	 * Constraint:
 	 *     name=ID
@@ -274,7 +274,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldChoice
 	 *     FieldChoice returns FieldChoice
 	 *     PageChild returns FieldChoice
-	 *     ExpressionVariable returns FieldChoice
+	 *     InputVariable returns FieldChoice
 	 *
 	 * Constraint:
 	 *     (
@@ -303,7 +303,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldInput
 	 *     FieldInput returns FieldInput
 	 *     PageChild returns FieldInput
-	 *     ExpressionVariable returns FieldInput
+	 *     InputVariable returns FieldInput
 	 *
 	 * Constraint:
 	 *     (
@@ -355,7 +355,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldSelect
 	 *     FieldSelect returns FieldSelect
 	 *     PageChild returns FieldSelect
-	 *     ExpressionVariable returns FieldSelect
+	 *     InputVariable returns FieldSelect
 	 *
 	 * Constraint:
 	 *     (
@@ -496,7 +496,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Literal returns ReferenceLiteral
 	 *
 	 * Constraint:
-	 *     ref=[ExpressionVariable|QualifiedName]
+	 *     ref=[InputVariable|QualifiedName]
 	 */
 	protected void sequence_Literal(ISerializationContext context, ReferenceLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -504,7 +504,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.REFERENCE_LITERAL__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	

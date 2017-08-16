@@ -4,7 +4,7 @@
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable;
+import de.htwg.zeta.xtext.calculatorForm.InputVariable;
 import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -37,7 +37,7 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
    * @generated
    * @ordered
    */
-  protected ExpressionVariable ref;
+  protected InputVariable ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,12 +65,12 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpressionVariable getRef()
+  public InputVariable getRef()
   {
     if (ref != null && ref.eIsProxy())
     {
       InternalEObject oldRef = (InternalEObject)ref;
-      ref = (ExpressionVariable)eResolveProxy(oldRef);
+      ref = (InputVariable)eResolveProxy(oldRef);
       if (ref != oldRef)
       {
         if (eNotificationRequired())
@@ -85,7 +85,7 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpressionVariable basicGetRef()
+  public InputVariable basicGetRef()
   {
     return ref;
   }
@@ -95,9 +95,9 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRef(ExpressionVariable newRef)
+  public void setRef(InputVariable newRef)
   {
-    ExpressionVariable oldRef = ref;
+    InputVariable oldRef = ref;
     ref = newRef;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.REFERENCE_LITERAL__REF, oldRef, ref));
@@ -131,7 +131,7 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
     switch (featureID)
     {
       case CalculatorFormPackage.REFERENCE_LITERAL__REF:
-        setRef((ExpressionVariable)newValue);
+        setRef((InputVariable)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -148,7 +148,7 @@ public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLitera
     switch (featureID)
     {
       case CalculatorFormPackage.REFERENCE_LITERAL__REF:
-        setRef((ExpressionVariable)null);
+        setRef((InputVariable)null);
         return;
     }
     super.eUnset(featureID);

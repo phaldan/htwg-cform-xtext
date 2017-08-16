@@ -31,12 +31,12 @@ public interface ReferenceLiteral extends Literal
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ref</em>' reference.
-   * @see #setRef(ExpressionVariable)
+   * @see #setRef(InputVariable)
    * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getReferenceLiteral_Ref()
    * @model
    * @generated
    */
-  ExpressionVariable getRef();
+  InputVariable getRef();
 
   /**
    * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral#getRef <em>Ref</em>}' reference.
@@ -46,6 +46,6 @@ public interface ReferenceLiteral extends Literal
    * @see #getRef()
    * @generated
    */
-  void setRef(ExpressionVariable value);
+  void setRef(InputVariable value);
 
 } // ReferenceLiteral

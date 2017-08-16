@@ -100,7 +100,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         T result = caseField(field);
         if (result == null) result = caseFormElement(field);
         if (result == null) result = casePageChild(field);
-        if (result == null) result = caseExpressionVariable(field);
+        if (result == null) result = caseInputVariable(field);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -111,7 +111,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = caseField(fieldInput);
         if (result == null) result = caseFormElement(fieldInput);
         if (result == null) result = casePageChild(fieldInput);
-        if (result == null) result = caseExpressionVariable(fieldInput);
+        if (result == null) result = caseInputVariable(fieldInput);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -122,7 +122,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = caseField(fieldSelect);
         if (result == null) result = caseFormElement(fieldSelect);
         if (result == null) result = casePageChild(fieldSelect);
-        if (result == null) result = caseExpressionVariable(fieldSelect);
+        if (result == null) result = caseInputVariable(fieldSelect);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,7 +156,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = caseField(fieldChoice);
         if (result == null) result = caseFormElement(fieldChoice);
         if (result == null) result = casePageChild(fieldChoice);
-        if (result == null) result = caseExpressionVariable(fieldChoice);
+        if (result == null) result = caseInputVariable(fieldChoice);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -198,7 +198,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = caseField(button);
         if (result == null) result = caseFormElement(button);
         if (result == null) result = casePageChild(button);
-        if (result == null) result = caseExpressionVariable(button);
+        if (result == null) result = caseInputVariable(button);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -210,7 +210,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = caseField(buttonSubmit);
         if (result == null) result = caseFormElement(buttonSubmit);
         if (result == null) result = casePageChild(buttonSubmit);
-        if (result == null) result = caseExpressionVariable(buttonSubmit);
+        if (result == null) result = caseInputVariable(buttonSubmit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -233,7 +233,7 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         CalculateVariable calculateVariable = (CalculateVariable)theEObject;
         T result = caseCalculateVariable(calculateVariable);
         if (result == null) result = caseResultOutput(calculateVariable);
-        if (result == null) result = caseExpressionVariable(calculateVariable);
+        if (result == null) result = caseInputVariable(calculateVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -260,10 +260,10 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CalculatorFormPackage.EXPRESSION_VARIABLE:
+      case CalculatorFormPackage.INPUT_VARIABLE:
       {
-        ExpressionVariable expressionVariable = (ExpressionVariable)theEObject;
-        T result = caseExpressionVariable(expressionVariable);
+        InputVariable inputVariable = (InputVariable)theEObject;
+        T result = caseInputVariable(inputVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -718,17 +718,17 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Input Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Input Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpressionVariable(ExpressionVariable object)
+  public T caseInputVariable(InputVariable object)
   {
     return null;
   }

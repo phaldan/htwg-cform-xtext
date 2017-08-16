@@ -2261,7 +2261,7 @@ ruleLiteral returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0());
+						newCompositeNode(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0());
 					}
 					ruleQualifiedName
 					{

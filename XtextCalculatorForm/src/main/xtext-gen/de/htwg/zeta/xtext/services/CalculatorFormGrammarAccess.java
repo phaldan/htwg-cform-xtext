@@ -1290,16 +1290,16 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Action cReferenceLiteralAction_3_0 = (Action)cGroup_3.eContents().get(0);
 		private final Assignment cRefAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cRefExpressionVariableCrossReference_3_1_0 = (CrossReference)cRefAssignment_3_1.eContents().get(0);
-		private final RuleCall cRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefExpressionVariableCrossReference_3_1_0.eContents().get(1);
+		private final CrossReference cRefInputVariableCrossReference_3_1_0 = (CrossReference)cRefAssignment_3_1.eContents().get(0);
+		private final RuleCall cRefInputVariableQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefInputVariableCrossReference_3_1_0.eContents().get(1);
 		
 		//Literal:
 		//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {ReferenceLiteral}
-		//	ref=[ExpressionVariable|QualifiedName];
+		//	ref=[InputVariable|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {ReferenceLiteral}
-		//ref=[ExpressionVariable|QualifiedName]
+		//ref=[InputVariable|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{NumberLiteral} value=INT
@@ -1338,28 +1338,28 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		//PERCENT
 		public RuleCall getValuePERCENTTerminalRuleCall_2_1_0() { return cValuePERCENTTerminalRuleCall_2_1_0; }
 		
-		//{ReferenceLiteral} ref=[ExpressionVariable|QualifiedName]
+		//{ReferenceLiteral} ref=[InputVariable|QualifiedName]
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//{ReferenceLiteral}
 		public Action getReferenceLiteralAction_3_0() { return cReferenceLiteralAction_3_0; }
 		
-		//ref=[ExpressionVariable|QualifiedName]
+		//ref=[InputVariable|QualifiedName]
 		public Assignment getRefAssignment_3_1() { return cRefAssignment_3_1; }
 		
-		//[ExpressionVariable|QualifiedName]
-		public CrossReference getRefExpressionVariableCrossReference_3_1_0() { return cRefExpressionVariableCrossReference_3_1_0; }
+		//[InputVariable|QualifiedName]
+		public CrossReference getRefInputVariableCrossReference_3_1_0() { return cRefInputVariableCrossReference_3_1_0; }
 		
 		//QualifiedName
-		public RuleCall getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1() { return cRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1; }
+		public RuleCall getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1() { return cRefInputVariableQualifiedNameParserRuleCall_3_1_0_1; }
 	}
-	public class ExpressionVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ExpressionVariable");
+	public class InputVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.InputVariable");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cFieldParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCalculateVariableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ExpressionVariable:
+		//InputVariable:
 		//	Field | CalculateVariable;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1401,7 +1401,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final UnaryOperationElements pUnaryOperation;
 	private final AtomicElements pAtomic;
 	private final LiteralElements pLiteral;
-	private final ExpressionVariableElements pExpressionVariable;
+	private final InputVariableElements pInputVariable;
 	private final TerminalRule tID;
 	private final TerminalRule tINT;
 	private final TerminalRule tFLOAT;
@@ -1444,7 +1444,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUnaryOperation = new UnaryOperationElements();
 		this.pAtomic = new AtomicElements();
 		this.pLiteral = new LiteralElements();
-		this.pExpressionVariable = new ExpressionVariableElements();
+		this.pInputVariable = new InputVariableElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ID");
 		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.INT");
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.FLOAT");
@@ -1747,7 +1747,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Literal:
 	//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {ReferenceLiteral}
-	//	ref=[ExpressionVariable|QualifiedName];
+	//	ref=[InputVariable|QualifiedName];
 	public LiteralElements getLiteralAccess() {
 		return pLiteral;
 	}
@@ -1756,14 +1756,14 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralAccess().getRule();
 	}
 	
-	//ExpressionVariable:
+	//InputVariable:
 	//	Field | CalculateVariable;
-	public ExpressionVariableElements getExpressionVariableAccess() {
-		return pExpressionVariable;
+	public InputVariableElements getInputVariableAccess() {
+		return pInputVariable;
 	}
 	
-	public ParserRule getExpressionVariableRule() {
-		return getExpressionVariableAccess().getRule();
+	public ParserRule getInputVariableRule() {
+		return getInputVariableAccess().getRule();
 	}
 	
 	//terminal ID:

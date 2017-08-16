@@ -1607,11 +1607,11 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createLiteral_RefAssignment_3_1ElementType() {
 			return new IGrammarAwareElementType("Literal_RefAssignment_3_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefAssignment_3_1());
 		}
-		public static IGrammarAwareElementType createLiteral_RefExpressionVariableCrossReference_3_1_0ElementType() {
-			return new IGrammarAwareElementType("Literal_RefExpressionVariableCrossReference_3_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0());
+		public static IGrammarAwareElementType createLiteral_RefInputVariableCrossReference_3_1_0ElementType() {
+			return new IGrammarAwareElementType("Literal_RefInputVariableCrossReference_3_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefInputVariableCrossReference_3_1_0());
 		}
-		public static IGrammarAwareElementType createLiteral_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1ElementType() {
-			return new IGrammarAwareElementType("Literal_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1());
+		public static IGrammarAwareElementType createLiteral_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1ElementType() {
+			return new IGrammarAwareElementType("Literal_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1());
 		}
 	}
 
@@ -1649,32 +1649,32 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Literal_RefAssignment_3_1_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefAssignment_3_1ElementType());
 
-	public static final IGrammarAwareElementType Literal_RefExpressionVariableCrossReference_3_1_0_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefExpressionVariableCrossReference_3_1_0ElementType());
+	public static final IGrammarAwareElementType Literal_RefInputVariableCrossReference_3_1_0_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefInputVariableCrossReference_3_1_0ElementType());
 
-	public static final IGrammarAwareElementType Literal_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1ElementType());
+	public static final IGrammarAwareElementType Literal_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1ElementType());
 
-	private static class ExpressionVariableFactory {
-		public static IGrammarAwareElementType createExpressionVariableElementType() {
-			return new IGrammarAwareElementType("ExpressionVariable_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getExpressionVariableRule());
+	private static class InputVariableFactory {
+		public static IGrammarAwareElementType createInputVariableElementType() {
+			return new IGrammarAwareElementType("InputVariable_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getInputVariableRule());
 		}
-		public static IGrammarAwareElementType createExpressionVariable_AlternativesElementType() {
-			return new IGrammarAwareElementType("ExpressionVariable_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getExpressionVariableAccess().getAlternatives());
+		public static IGrammarAwareElementType createInputVariable_AlternativesElementType() {
+			return new IGrammarAwareElementType("InputVariable_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getInputVariableAccess().getAlternatives());
 		}
-		public static IGrammarAwareElementType createExpressionVariable_FieldParserRuleCall_0ElementType() {
-			return new IGrammarAwareElementType("ExpressionVariable_FieldParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getExpressionVariableAccess().getFieldParserRuleCall_0());
+		public static IGrammarAwareElementType createInputVariable_FieldParserRuleCall_0ElementType() {
+			return new IGrammarAwareElementType("InputVariable_FieldParserRuleCall_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getInputVariableAccess().getFieldParserRuleCall_0());
 		}
-		public static IGrammarAwareElementType createExpressionVariable_CalculateVariableParserRuleCall_1ElementType() {
-			return new IGrammarAwareElementType("ExpressionVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getExpressionVariableAccess().getCalculateVariableParserRuleCall_1());
+		public static IGrammarAwareElementType createInputVariable_CalculateVariableParserRuleCall_1ElementType() {
+			return new IGrammarAwareElementType("InputVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getInputVariableAccess().getCalculateVariableParserRuleCall_1());
 		}
 	}
 
-	public static final IGrammarAwareElementType ExpressionVariable_ELEMENT_TYPE = associate(ExpressionVariableFactory.createExpressionVariableElementType());
+	public static final IGrammarAwareElementType InputVariable_ELEMENT_TYPE = associate(InputVariableFactory.createInputVariableElementType());
 
-	public static final IGrammarAwareElementType ExpressionVariable_Alternatives_ELEMENT_TYPE = associate(ExpressionVariableFactory.createExpressionVariable_AlternativesElementType());
+	public static final IGrammarAwareElementType InputVariable_Alternatives_ELEMENT_TYPE = associate(InputVariableFactory.createInputVariable_AlternativesElementType());
 
-	public static final IGrammarAwareElementType ExpressionVariable_FieldParserRuleCall_0_ELEMENT_TYPE = associate(ExpressionVariableFactory.createExpressionVariable_FieldParserRuleCall_0ElementType());
+	public static final IGrammarAwareElementType InputVariable_FieldParserRuleCall_0_ELEMENT_TYPE = associate(InputVariableFactory.createInputVariable_FieldParserRuleCall_0ElementType());
 
-	public static final IGrammarAwareElementType ExpressionVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE = associate(ExpressionVariableFactory.createExpressionVariable_CalculateVariableParserRuleCall_1ElementType());
+	public static final IGrammarAwareElementType InputVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE = associate(InputVariableFactory.createInputVariable_CalculateVariableParserRuleCall_1ElementType());
 
 	@Override
 	public IFileElementType getFileType() {
@@ -2914,28 +2914,28 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Literal_RefAssignment_3_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getLiteral_RefExpressionVariableCrossReference_3_1_0ElementType() {
-		return Literal_RefExpressionVariableCrossReference_3_1_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getLiteral_RefInputVariableCrossReference_3_1_0ElementType() {
+		return Literal_RefInputVariableCrossReference_3_1_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getLiteral_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1ElementType() {
-		return Literal_RefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getLiteral_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1ElementType() {
+		return Literal_RefInputVariableQualifiedNameParserRuleCall_3_1_0_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getExpressionVariableElementType() {
-		return ExpressionVariable_ELEMENT_TYPE;
+	public IGrammarAwareElementType getInputVariableElementType() {
+		return InputVariable_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getExpressionVariable_AlternativesElementType() {
-		return ExpressionVariable_Alternatives_ELEMENT_TYPE;
+	public IGrammarAwareElementType getInputVariable_AlternativesElementType() {
+		return InputVariable_Alternatives_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getExpressionVariable_FieldParserRuleCall_0ElementType() {
-		return ExpressionVariable_FieldParserRuleCall_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getInputVariable_FieldParserRuleCall_0ElementType() {
+		return InputVariable_FieldParserRuleCall_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getExpressionVariable_CalculateVariableParserRuleCall_1ElementType() {
-		return ExpressionVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getInputVariable_CalculateVariableParserRuleCall_1ElementType() {
+		return InputVariable_CalculateVariableParserRuleCall_1_ELEMENT_TYPE;
 	}
 
 }

@@ -4,7 +4,7 @@
 package de.htwg.zeta.xtext.calculatorForm.impl;
 
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
-import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable;
+import de.htwg.zeta.xtext.calculatorForm.InputVariable;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -12,19 +12,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expression Variable</b></em>'.
+ * An implementation of the model object '<em><b>Input Variable</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ExpressionVariableImpl extends MinimalEObjectImpl.Container implements ExpressionVariable
+public class InputVariableImpl extends MinimalEObjectImpl.Container implements InputVariable
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExpressionVariableImpl()
+  protected InputVariableImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class ExpressionVariableImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return CalculatorFormPackage.Literals.EXPRESSION_VARIABLE;
+    return CalculatorFormPackage.Literals.INPUT_VARIABLE;
   }
 
-} //ExpressionVariableImpl
+} //InputVariableImpl

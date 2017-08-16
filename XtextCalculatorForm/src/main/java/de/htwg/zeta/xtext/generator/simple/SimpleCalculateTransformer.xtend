@@ -24,8 +24,8 @@ import de.htwg.zeta.xtext.calculatorForm.OutputField
 import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral
 import de.htwg.zeta.xtext.calculatorForm.Literal
 import de.htwg.zeta.xtext.calculatorForm.UnaryOperation
-import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable
 import de.htwg.zeta.xtext.calculatorForm.CalculateVariable
+import de.htwg.zeta.xtext.calculatorForm.InputVariable
 
 /**
  * Create a html with basic html.
@@ -131,7 +131,7 @@ class SimpleCalculateTransformer {
         }
     }
 
-    private def String processExpressionVariable(ExpressionVariable variable) {
+    private def String processExpressionVariable(InputVariable variable) {
         if (variable instanceof Field) {
             processFieldReference(variable)
         } else if (variable instanceof CalculateVariable) {

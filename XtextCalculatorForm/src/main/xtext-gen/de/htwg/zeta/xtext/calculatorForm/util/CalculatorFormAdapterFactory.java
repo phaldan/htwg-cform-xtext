@@ -186,9 +186,9 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createLiteralAdapter();
       }
       @Override
-      public Adapter caseExpressionVariable(ExpressionVariable object)
+      public Adapter caseInputVariable(InputVariable object)
       {
-        return createExpressionVariableAdapter();
+        return createInputVariableAdapter();
       }
       @Override
       public Adapter caseOutputField(OutputField object)
@@ -598,16 +598,16 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.ExpressionVariable <em>Expression Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.InputVariable <em>Input Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwg.zeta.xtext.calculatorForm.ExpressionVariable
+   * @see de.htwg.zeta.xtext.calculatorForm.InputVariable
    * @generated
    */
-  public Adapter createExpressionVariableAdapter()
+  public Adapter createInputVariableAdapter()
   {
     return null;
   }

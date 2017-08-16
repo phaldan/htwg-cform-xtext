@@ -14,6 +14,6 @@ package de.htwg.zeta.xtext.calculatorForm;
  * @model
  * @generated
  */
-public interface Field extends FormElement, PageChild, ExpressionVariable
+public interface Field extends FormElement, PageChild, InputVariable
 {
 } // Field

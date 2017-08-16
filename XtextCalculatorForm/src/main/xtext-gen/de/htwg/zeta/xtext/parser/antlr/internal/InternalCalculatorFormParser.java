@@ -6472,7 +6472,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0());
+                      						newCompositeNode(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0());
                       					
                     }
                     pushFollow(FOLLOW_2);

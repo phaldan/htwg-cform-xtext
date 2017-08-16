@@ -62,7 +62,7 @@ public class CalculatorFormSyntacticSequencer extends AbstractSyntacticSequencer
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '!' expression=Atomic
 	 *     (rule start) (ambiguity) '-' expression=Atomic
-	 *     (rule start) (ambiguity) ref=[ExpressionVariable|QualifiedName]
+	 *     (rule start) (ambiguity) ref=[InputVariable|QualifiedName]
 	 *     (rule start) (ambiguity) value=FLOAT
 	 *     (rule start) (ambiguity) value=INT
 	 *     (rule start) (ambiguity) value=PERCENT

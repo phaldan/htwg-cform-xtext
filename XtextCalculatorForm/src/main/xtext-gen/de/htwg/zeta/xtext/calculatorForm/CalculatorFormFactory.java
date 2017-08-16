@@ -222,13 +222,13 @@ public interface CalculatorFormFactory extends EFactory
   Literal createLiteral();
 
   /**
-   * Returns a new object of class '<em>Expression Variable</em>'.
+   * Returns a new object of class '<em>Input Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Variable</em>'.
+   * @return a new object of class '<em>Input Variable</em>'.
    * @generated
    */
-  ExpressionVariable createExpressionVariable();
+  InputVariable createInputVariable();
 
   /**
    * Returns a new object of class '<em>Output Field</em>'.

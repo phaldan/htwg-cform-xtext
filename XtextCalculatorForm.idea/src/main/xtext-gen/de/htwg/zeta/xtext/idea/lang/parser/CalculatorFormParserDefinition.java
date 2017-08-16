@@ -245,13 +245,13 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getLiteral_ReferenceLiteralAction_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getExpressionVariableElementType()) {
+			if (elementType == elementTypeProvider.getInputVariableElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getExpressionVariable_FieldParserRuleCall_0ElementType()) {
+			if (elementType == elementTypeProvider.getInputVariable_FieldParserRuleCall_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getExpressionVariable_CalculateVariableParserRuleCall_1ElementType()) {
+			if (elementType == elementTypeProvider.getInputVariable_CalculateVariableParserRuleCall_1ElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);

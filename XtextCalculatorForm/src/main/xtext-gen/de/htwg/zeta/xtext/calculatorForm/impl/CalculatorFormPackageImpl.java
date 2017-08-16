@@ -13,7 +13,6 @@ import de.htwg.zeta.xtext.calculatorForm.CalculatorFormFactory;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Div;
 import de.htwg.zeta.xtext.calculatorForm.Expression;
-import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable;
 import de.htwg.zeta.xtext.calculatorForm.Field;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
@@ -26,6 +25,7 @@ import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Form;
 import de.htwg.zeta.xtext.calculatorForm.FormElement;
 import de.htwg.zeta.xtext.calculatorForm.Group;
+import de.htwg.zeta.xtext.calculatorForm.InputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Literal;
 import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
@@ -214,7 +214,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionVariableEClass = null;
+  private EClass inputVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1181,9 +1181,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpressionVariable()
+  public EClass getInputVariable()
   {
-    return expressionVariableEClass;
+    return inputVariableEClass;
   }
 
   /**
@@ -1560,7 +1560,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     literalEClass = createEClass(LITERAL);
 
-    expressionVariableEClass = createEClass(EXPRESSION_VARIABLE);
+    inputVariableEClass = createEClass(INPUT_VARIABLE);
 
     outputFieldEClass = createEClass(OUTPUT_FIELD);
     createEReference(outputFieldEClass, OUTPUT_FIELD__FIELD);
@@ -1629,7 +1629,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     // Add supertypes to classes
     fieldEClass.getESuperTypes().add(this.getFormElement());
     fieldEClass.getESuperTypes().add(this.getPageChild());
-    fieldEClass.getESuperTypes().add(this.getExpressionVariable());
+    fieldEClass.getESuperTypes().add(this.getInputVariable());
     fieldInputEClass.getESuperTypes().add(this.getField());
     fieldSelectEClass.getESuperTypes().add(this.getField());
     fieldOptionEClass.getESuperTypes().add(this.getFieldSelectChild());
@@ -1641,7 +1641,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     buttonEClass.getESuperTypes().add(this.getField());
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
     calculateVariableEClass.getESuperTypes().add(this.getResultOutput());
-    calculateVariableEClass.getESuperTypes().add(this.getExpressionVariable());
+    calculateVariableEClass.getESuperTypes().add(this.getInputVariable());
     unaryOperationEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
     outputFieldEClass.getESuperTypes().add(this.getResultOutput());
@@ -1761,7 +1761,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(expressionVariableEClass, ExpressionVariable.class, "ExpressionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(inputVariableEClass, InputVariable.class, "InputVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(outputFieldEClass, OutputField.class, "OutputField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutputField_Field(), this.getField(), null, "field", null, 0, 1, OutputField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1796,7 +1796,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEAttribute(getPercentLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, PercentLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referenceLiteralEClass, ReferenceLiteral.class, "ReferenceLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferenceLiteral_Ref(), this.getExpressionVariable(), null, "ref", null, 0, 1, ReferenceLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferenceLiteral_Ref(), this.getInputVariable(), null, "ref", null, 0, 1, ReferenceLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

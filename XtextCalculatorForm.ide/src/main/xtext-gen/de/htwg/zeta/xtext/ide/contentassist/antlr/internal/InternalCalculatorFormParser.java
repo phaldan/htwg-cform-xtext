@@ -20488,13 +20488,13 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             // InternalCalculatorForm.g:6350:3: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0()); 
+               before(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0()); 
             }
             // InternalCalculatorForm.g:6351:3: ( ruleQualifiedName )
             // InternalCalculatorForm.g:6352:4: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1()); 
+               before(grammarAccess.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1()); 
             }
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
@@ -20502,13 +20502,13 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1()); 
+               after(grammarAccess.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0()); 
+               after(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0()); 
             }
 
             }

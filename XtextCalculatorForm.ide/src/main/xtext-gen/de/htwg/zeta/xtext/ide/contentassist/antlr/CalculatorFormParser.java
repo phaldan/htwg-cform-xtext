@@ -46,7 +46,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryOperationAccess().getAlternatives(), "rule__UnaryOperation__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
-					put(grammarAccess.getExpressionVariableAccess().getAlternatives(), "rule__ExpressionVariable__Alternatives");
+					put(grammarAccess.getInputVariableAccess().getAlternatives(), "rule__InputVariable__Alternatives");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup(), "rule__FieldInput__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup_4(), "rule__FieldInput__Group_4__0");

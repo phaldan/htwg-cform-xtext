@@ -6347,13 +6347,13 @@ rule__Literal__RefAssignment_3_1
 	}
 :
 	(
-		{ before(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0()); }
+		{ before(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0()); }
 		(
-			{ before(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1()); }
+			{ before(grammarAccess.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1()); }
 			ruleQualifiedName
-			{ after(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1()); }
+			{ after(grammarAccess.getLiteralAccess().getRefInputVariableQualifiedNameParserRuleCall_3_1_0_1()); }
 		)
-		{ after(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0()); }
+		{ after(grammarAccess.getLiteralAccess().getRefInputVariableCrossReference_3_1_0()); }
 	)
 ;
 finally {

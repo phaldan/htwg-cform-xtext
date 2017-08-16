@@ -2259,7 +2259,7 @@ ruleLiteral returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getLiteral_RefExpressionVariableCrossReference_3_1_0ElementType());
+						markComposite(elementTypeProvider.getLiteral_RefInputVariableCrossReference_3_1_0ElementType());
 					}
 					ruleQualifiedName
 					{
