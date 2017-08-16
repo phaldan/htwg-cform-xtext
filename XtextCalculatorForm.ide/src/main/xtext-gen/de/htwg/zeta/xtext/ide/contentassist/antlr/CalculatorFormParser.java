@@ -46,6 +46,7 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryOperationAccess().getAlternatives(), "rule__UnaryOperation__Alternatives");
 					put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
+					put(grammarAccess.getExpressionVariableAccess().getAlternatives(), "rule__ExpressionVariable__Alternatives");
 					put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup(), "rule__FieldInput__Group__0");
 					put(grammarAccess.getFieldInputAccess().getGroup_4(), "rule__FieldInput__Group_4__0");
@@ -73,8 +74,8 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonSubmitAccess().getGroup(), "rule__ButtonSubmit__Group__0");
 					put(grammarAccess.getButtonSubmitAccess().getGroup_5(), "rule__ButtonSubmit__Group_5__0");
 					put(grammarAccess.getCalculateAccess().getGroup(), "rule__Calculate__Group__0");
-					put(grammarAccess.getResultOutputAccess().getGroup_0(), "rule__ResultOutput__Group_0__0");
 					put(grammarAccess.getResultOutputAccess().getGroup_1(), "rule__ResultOutput__Group_1__0");
+					put(grammarAccess.getOutputVariableAccess().getGroup(), "rule__OutputVariable__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
@@ -152,8 +153,8 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonSubmitAccess().getValueAssignment_5_1(), "rule__ButtonSubmit__ValueAssignment_5_1");
 					put(grammarAccess.getCalculateAccess().getOutputAssignment_1(), "rule__Calculate__OutputAssignment_1");
 					put(grammarAccess.getCalculateAccess().getExpressionAssignment_3(), "rule__Calculate__ExpressionAssignment_3");
-					put(grammarAccess.getResultOutputAccess().getFieldAssignment_0_2(), "rule__ResultOutput__FieldAssignment_0_2");
-					put(grammarAccess.getResultOutputAccess().getNameAssignment_1_2(), "rule__ResultOutput__NameAssignment_1_2");
+					put(grammarAccess.getResultOutputAccess().getFieldAssignment_1_2(), "rule__ResultOutput__FieldAssignment_1_2");
+					put(grammarAccess.getOutputVariableAccess().getNameAssignment_1(), "rule__OutputVariable__NameAssignment_1");
 					put(grammarAccess.getAdditionAccess().getRightAssignment_1_1(), "rule__Addition__RightAssignment_1_1");
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getUnaryOperationAccess().getExpressionAssignment_0_2(), "rule__UnaryOperation__ExpressionAssignment_0_2");

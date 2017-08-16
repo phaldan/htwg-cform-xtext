@@ -778,10 +778,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6365:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalCalculatorForm.g:6365:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCalculatorForm.g:6363:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalCalculatorForm.g:6363:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalCalculatorForm.g:6365:11: ( '^' )?
+            // InternalCalculatorForm.g:6363:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -790,7 +790,7 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalCalculatorForm.g:6365:11: '^'
+                    // InternalCalculatorForm.g:6363:11: '^'
                     {
                     match('^'); 
 
@@ -808,7 +808,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalCalculatorForm.g:6365:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCalculatorForm.g:6363:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -857,10 +857,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6367:10: ( ( '0' .. '9' )+ )
-            // InternalCalculatorForm.g:6367:12: ( '0' .. '9' )+
+            // InternalCalculatorForm.g:6365:10: ( ( '0' .. '9' )+ )
+            // InternalCalculatorForm.g:6365:12: ( '0' .. '9' )+
             {
-            // InternalCalculatorForm.g:6367:12: ( '0' .. '9' )+
+            // InternalCalculatorForm.g:6365:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -874,7 +874,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6367:13: '0' .. '9'
+            	    // InternalCalculatorForm.g:6365:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -906,8 +906,8 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6369:12: ( RULE_INT '.' RULE_INT )
-            // InternalCalculatorForm.g:6369:14: RULE_INT '.' RULE_INT
+            // InternalCalculatorForm.g:6367:12: ( RULE_INT '.' RULE_INT )
+            // InternalCalculatorForm.g:6367:14: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -928,22 +928,22 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6371:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
-            // InternalCalculatorForm.g:6371:16: ( RULE_INT | RULE_FLOAT ) '%'
+            // InternalCalculatorForm.g:6369:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
+            // InternalCalculatorForm.g:6369:16: ( RULE_INT | RULE_FLOAT ) '%'
             {
-            // InternalCalculatorForm.g:6371:16: ( RULE_INT | RULE_FLOAT )
+            // InternalCalculatorForm.g:6369:16: ( RULE_INT | RULE_FLOAT )
             int alt4=2;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // InternalCalculatorForm.g:6371:17: RULE_INT
+                    // InternalCalculatorForm.g:6369:17: RULE_INT
                     {
                     mRULE_INT(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:6371:26: RULE_FLOAT
+                    // InternalCalculatorForm.g:6369:26: RULE_FLOAT
                     {
                     mRULE_FLOAT(); 
 
@@ -969,10 +969,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6373:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalCalculatorForm.g:6373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCalculatorForm.g:6371:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCalculatorForm.g:6371:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalCalculatorForm.g:6373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCalculatorForm.g:6371:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -990,10 +990,10 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalCalculatorForm.g:6373:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCalculatorForm.g:6371:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalCalculatorForm.g:6373:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCalculatorForm.g:6371:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1009,7 +1009,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalCalculatorForm.g:6373:21: '\\\\' .
+                    	    // InternalCalculatorForm.g:6371:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1017,7 +1017,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCalculatorForm.g:6373:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCalculatorForm.g:6371:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1042,10 +1042,10 @@ public class InternalCalculatorFormLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:6373:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCalculatorForm.g:6371:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalCalculatorForm.g:6373:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCalculatorForm.g:6371:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1061,7 +1061,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalCalculatorForm.g:6373:54: '\\\\' .
+                    	    // InternalCalculatorForm.g:6371:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1069,7 +1069,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCalculatorForm.g:6373:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCalculatorForm.g:6371:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1112,12 +1112,12 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6375:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalCalculatorForm.g:6375:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalCalculatorForm.g:6373:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalCalculatorForm.g:6373:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalCalculatorForm.g:6375:24: ( options {greedy=false; } : . )*
+            // InternalCalculatorForm.g:6373:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1142,7 +1142,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6375:52: .
+            	    // InternalCalculatorForm.g:6373:52: .
             	    {
             	    matchAny(); 
 
@@ -1172,12 +1172,12 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6377:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalCalculatorForm.g:6377:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCalculatorForm.g:6375:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCalculatorForm.g:6375:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalCalculatorForm.g:6377:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCalculatorForm.g:6375:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1190,7 +1190,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6377:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCalculatorForm.g:6375:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1210,7 +1210,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCalculatorForm.g:6377:40: ( ( '\\r' )? '\\n' )?
+            // InternalCalculatorForm.g:6375:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1219,9 +1219,9 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCalculatorForm.g:6377:41: ( '\\r' )? '\\n'
+                    // InternalCalculatorForm.g:6375:41: ( '\\r' )? '\\n'
                     {
-                    // InternalCalculatorForm.g:6377:41: ( '\\r' )?
+                    // InternalCalculatorForm.g:6375:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1230,7 +1230,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalCalculatorForm.g:6377:41: '\\r'
+                            // InternalCalculatorForm.g:6375:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1262,10 +1262,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6379:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalCalculatorForm.g:6379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCalculatorForm.g:6377:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCalculatorForm.g:6377:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCalculatorForm.g:6379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCalculatorForm.g:6377:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1319,8 +1319,8 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6381:16: ( . )
-            // InternalCalculatorForm.g:6381:18: .
+            // InternalCalculatorForm.g:6379:16: ( . )
+            // InternalCalculatorForm.g:6379:18: .
             {
             matchAny(); 
 
@@ -1697,7 +1697,7 @@ public class InternalCalculatorFormLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "6371:16: ( RULE_INT | RULE_FLOAT )";
+            return "6369:16: ( RULE_INT | RULE_FLOAT )";
         }
     }
     static final String DFA13_eotS =

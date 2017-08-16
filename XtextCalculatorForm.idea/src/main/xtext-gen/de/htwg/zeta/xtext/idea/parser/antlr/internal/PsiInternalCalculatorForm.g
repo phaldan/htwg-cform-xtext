@@ -1701,20 +1701,29 @@ entryRuleResultOutput returns [Boolean current=false]:
 ruleResultOutput returns [Boolean current=false]
 :
 	(
+		{
+			markComposite(elementTypeProvider.getResultOutput_OutputVariableParserRuleCall_0ElementType());
+		}
+		this_OutputVariable_0=ruleOutputVariable
+		{
+			$current = $this_OutputVariable_0.current;
+			doneComposite();
+		}
+		    |
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getResultOutput_OutputFieldAction_0_0ElementType());
+					precedeComposite(elementTypeProvider.getResultOutput_OutputFieldAction_1_0ElementType());
 					doneComposite();
 					associateWithSemanticElement();
 				}
 			)
 			{
-				markLeaf(elementTypeProvider.getResultOutput_FieldKeyword_0_1ElementType());
+				markLeaf(elementTypeProvider.getResultOutput_FieldKeyword_1_1ElementType());
 			}
-			otherlv_1='field'
+			otherlv_2='field'
 			{
-				doneLeaf(otherlv_1);
+				doneLeaf(otherlv_2);
 			}
 			(
 				(
@@ -1725,7 +1734,7 @@ ruleResultOutput returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getResultOutput_FieldFieldCrossReference_0_2_0ElementType());
+						markComposite(elementTypeProvider.getResultOutput_FieldFieldCrossReference_1_2_0ElementType());
 					}
 					ruleQualifiedName
 					{
@@ -1734,38 +1743,42 @@ ruleResultOutput returns [Boolean current=false]
 				)
 			)
 		)
-		    |
+	)
+;
+
+//Entry rule entryRuleOutputVariable
+entryRuleOutputVariable returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getOutputVariableElementType()); }
+	iv_ruleOutputVariable=ruleOutputVariable
+	{ $current=$iv_ruleOutputVariable.current; }
+	EOF;
+
+// Rule OutputVariable
+ruleOutputVariable returns [Boolean current=false]
+:
+	(
+		{
+			markLeaf(elementTypeProvider.getOutputVariable_VarKeyword_0ElementType());
+		}
+		otherlv_0='var'
+		{
+			doneLeaf(otherlv_0);
+		}
 		(
 			(
 				{
-					precedeComposite(elementTypeProvider.getResultOutput_OutputVariableAction_1_0ElementType());
-					doneComposite();
-					associateWithSemanticElement();
+					markLeaf(elementTypeProvider.getOutputVariable_NameIDTerminalRuleCall_1_0ElementType());
 				}
-			)
-			{
-				markLeaf(elementTypeProvider.getResultOutput_VarKeyword_1_1ElementType());
-			}
-			otherlv_4='var'
-			{
-				doneLeaf(otherlv_4);
-			}
-			(
-				(
-					{
-						markLeaf(elementTypeProvider.getResultOutput_NameIDTerminalRuleCall_1_2_0ElementType());
+				lv_name_1_0=RULE_ID
+				{
+					if(!$current) {
+						associateWithSemanticElement();
+						$current = true;
 					}
-					lv_name_5_0=RULE_ID
-					{
-						if(!$current) {
-							associateWithSemanticElement();
-							$current = true;
-						}
-					}
-					{
-						doneLeaf(lv_name_5_0);
-					}
-				)
+				}
+				{
+					doneLeaf(lv_name_1_0);
+				}
 			)
 		)
 	)
@@ -2246,7 +2259,7 @@ ruleLiteral returns [Boolean current=false]
 						}
 					}
 					{
-						markComposite(elementTypeProvider.getLiteral_RefFieldCrossReference_3_1_0ElementType());
+						markComposite(elementTypeProvider.getLiteral_RefExpressionVariableCrossReference_3_1_0ElementType());
 					}
 					ruleQualifiedName
 					{

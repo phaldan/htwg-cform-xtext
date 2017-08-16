@@ -25,6 +25,7 @@ import de.htwg.zeta.xtext.calculatorForm.OutputVariable
 import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral
 import de.htwg.zeta.xtext.calculatorForm.Literal
 import de.htwg.zeta.xtext.calculatorForm.UnaryOperation
+import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable
 
 /**
  * Create a html with basic html.
@@ -32,11 +33,12 @@ import de.htwg.zeta.xtext.calculatorForm.UnaryOperation
 class SimpleCalculateTransformer {
 
     private val fields = new HashSet<String>()
+    private val variables = new HashSet<String>()
 
     public def String tranform(List<Calculate> list, String name) '''
         var cform_«name» = [
             «FOR calculate: list SEPARATOR ','»
-                «processCalculate(calculate)»
+                «fields.clear»«variables.clear»«processCalculate(calculate)»
             «ENDFOR»
         ];
     '''
@@ -44,9 +46,12 @@ class SimpleCalculateTransformer {
     private def String processCalculate(Calculate calculate) '''
         {
             calculate: function() {
-                return «fields.clear»«processExpression(calculate.expression)»
+                return «processExpression(calculate.expression)»
             },
-            input: [«FOR field: fields SEPARATOR ','»'«field»'«ENDFOR»],
+            input: {
+                fields: [«FOR field: fields SEPARATOR ','»'«field»'«ENDFOR»],
+                variables: [«FOR variable: variables SEPARATOR ','»'«variable»'«ENDFOR»],
+            },
             output: {
                 field: «getOutputField(calculate.output)»,
                 variable: «getOutputVariable(calculate.output)»
@@ -120,15 +125,30 @@ class SimpleCalculateTransformer {
         } else if (literal instanceof PercentLiteral) {
             new BigDecimal(literal.value.replace("%", "")).divide(BigDecimal.valueOf(100)).toString
         } else if (literal instanceof ReferenceLiteral) {
-            processFieldReference(literal)
+            processExpressionVariable(literal.ref)
         } else {
             throw new UnsupportedOperationException("Unknown Literal: " + literal.getClass.getName)
         }
     }
 
-    private def String processFieldReference(ReferenceLiteral expression) {
-        val name = name(expression.ref)
+    private def String processExpressionVariable(ExpressionVariable variable) {
+        if (variable instanceof Field) {
+            processFieldReference(variable)
+        } else if (variable instanceof OutputVariable) {
+            processOutputVariable(variable)
+        } else {
+            throw new UnsupportedOperationException("Unknown ExpressionVariable: " + variable.getClass.getName)
+        }
+    }
+
+    private def String processFieldReference(Field field) {
+        val name = name(field)
         fields.add(name)
-        '''this.getValue('«name»')'''
+        '''this.resolveFieldValue('«name»')'''
+    }
+
+    private def String processOutputVariable(OutputVariable variable) {
+        variables.add(variable.name)
+        '''this.resolveVariableValue('«variable.name»')'''
     }
 }

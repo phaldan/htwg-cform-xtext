@@ -152,10 +152,13 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getResultOutputElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getResultOutput_OutputFieldAction_0_0ElementType()) {
+			if (elementType == elementTypeProvider.getResultOutput_OutputVariableParserRuleCall_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getResultOutput_OutputFieldAction_1_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getResultOutput_OutputVariableAction_1_0ElementType()) {
+			if (elementType == elementTypeProvider.getOutputVariableElementType()) {
 				return new PsiNamedEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getExpressionElementType()) {
@@ -241,6 +244,15 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			}
 			if (elementType == elementTypeProvider.getLiteral_ReferenceLiteralAction_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getExpressionVariableElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getExpressionVariable_FieldParserRuleCall_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getExpressionVariable_OutputVariableParserRuleCall_1ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);
 		}

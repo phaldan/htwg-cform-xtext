@@ -75,8 +75,12 @@ Calculate:
 ;
 
 ResultOutput:
-    {OutputField} 'field' field=[Field|QualifiedName] |
-    {OutputVariable} 'var' name=ID
+    OutputVariable |
+    {OutputField} 'field' field=[Field|QualifiedName]
+;
+
+OutputVariable:
+    'var' name=ID
 ;
 
 QualifiedName:
@@ -114,7 +118,11 @@ Literal:
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
     {PercentLiteral} value=PERCENT |
-    {ReferenceLiteral} ref=[Field|QualifiedName]
+    {ReferenceLiteral} ref=[ExpressionVariable|QualifiedName]
+;
+
+ExpressionVariable:
+    Field | OutputVariable
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

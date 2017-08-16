@@ -186,6 +186,15 @@ public interface CalculatorFormFactory extends EFactory
   ResultOutput createResultOutput();
 
   /**
+   * Returns a new object of class '<em>Output Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Output Variable</em>'.
+   * @generated
+   */
+  OutputVariable createOutputVariable();
+
+  /**
    * Returns a new object of class '<em>Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -213,6 +222,15 @@ public interface CalculatorFormFactory extends EFactory
   Literal createLiteral();
 
   /**
+   * Returns a new object of class '<em>Expression Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Variable</em>'.
+   * @generated
+   */
+  ExpressionVariable createExpressionVariable();
+
+  /**
    * Returns a new object of class '<em>Output Field</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -220,15 +238,6 @@ public interface CalculatorFormFactory extends EFactory
    * @generated
    */
   OutputField createOutputField();
-
-  /**
-   * Returns a new object of class '<em>Output Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Output Variable</em>'.
-   * @generated
-   */
-  OutputVariable createOutputVariable();
 
   /**
    * Returns a new object of class '<em>Plus</em>'.

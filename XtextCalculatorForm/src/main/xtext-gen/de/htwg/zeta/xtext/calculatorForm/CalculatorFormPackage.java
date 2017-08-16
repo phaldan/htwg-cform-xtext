@@ -940,6 +940,34 @@ public interface CalculatorFormPackage extends EPackage
   int RESULT_OUTPUT_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl <em>Output Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getOutputVariable()
+   * @generated
+   */
+  int OUTPUT_VARIABLE = 18;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT_VARIABLE__NAME = RESULT_OUTPUT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Output Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTPUT_VARIABLE_FEATURE_COUNT = RESULT_OUTPUT_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ExpressionImpl <em>Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -947,7 +975,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 18;
+  int EXPRESSION = 19;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -966,7 +994,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getUnaryOperation()
    * @generated
    */
-  int UNARY_OPERATION = 19;
+  int UNARY_OPERATION = 20;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -994,7 +1022,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 20;
+  int LITERAL = 21;
 
   /**
    * The number of structural features of the '<em>Literal</em>' class.
@@ -1006,6 +1034,25 @@ public interface CalculatorFormPackage extends EPackage
   int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ExpressionVariableImpl <em>Expression Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.ExpressionVariableImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getExpressionVariable()
+   * @generated
+   */
+  int EXPRESSION_VARIABLE = 22;
+
+  /**
+   * The number of structural features of the '<em>Expression Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_VARIABLE_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputFieldImpl <em>Output Field</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1013,7 +1060,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getOutputField()
    * @generated
    */
-  int OUTPUT_FIELD = 21;
+  int OUTPUT_FIELD = 23;
 
   /**
    * The feature id for the '<em><b>Field</b></em>' reference.
@@ -1034,34 +1081,6 @@ public interface CalculatorFormPackage extends EPackage
   int OUTPUT_FIELD_FEATURE_COUNT = RESULT_OUTPUT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl <em>Output Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getOutputVariable()
-   * @generated
-   */
-  int OUTPUT_VARIABLE = 22;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTPUT_VARIABLE__NAME = RESULT_OUTPUT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Output Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUTPUT_VARIABLE_FEATURE_COUNT = RESULT_OUTPUT_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PlusImpl <em>Plus</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1069,7 +1088,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 23;
+  int PLUS = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1106,7 +1125,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 24;
+  int MINUS = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1143,7 +1162,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getMulti()
    * @generated
    */
-  int MULTI = 25;
+  int MULTI = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1180,7 +1199,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 26;
+  int DIV = 27;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1217,7 +1236,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getBooleanNegation()
    * @generated
    */
-  int BOOLEAN_NEGATION = 27;
+  int BOOLEAN_NEGATION = 28;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1245,7 +1264,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getArithmeticSigned()
    * @generated
    */
-  int ARITHMETIC_SIGNED = 28;
+  int ARITHMETIC_SIGNED = 29;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1273,7 +1292,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 29;
+  int NUMBER_LITERAL = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1301,7 +1320,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 30;
+  int FLOAT_LITERAL = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1329,7 +1348,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPercentLiteral()
    * @generated
    */
-  int PERCENT_LITERAL = 31;
+  int PERCENT_LITERAL = 32;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1357,7 +1376,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getReferenceLiteral()
    * @generated
    */
-  int REFERENCE_LITERAL = 32;
+  int REFERENCE_LITERAL = 33;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -2197,6 +2216,27 @@ public interface CalculatorFormPackage extends EPackage
   EClass getResultOutput();
 
   /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable <em>Output Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Output Variable</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.OutputVariable
+   * @generated
+   */
+  EClass getOutputVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName()
+   * @see #getOutputVariable()
+   * @generated
+   */
+  EAttribute getOutputVariable_Name();
+
+  /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Expression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2238,6 +2278,16 @@ public interface CalculatorFormPackage extends EPackage
   EClass getLiteral();
 
   /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.ExpressionVariable <em>Expression Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Variable</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.ExpressionVariable
+   * @generated
+   */
+  EClass getExpressionVariable();
+
+  /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.OutputField <em>Output Field</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2257,27 +2307,6 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    */
   EReference getOutputField_Field();
-
-  /**
-   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable <em>Output Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Output Variable</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.OutputVariable
-   * @generated
-   */
-  EClass getOutputVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.OutputVariable#getName()
-   * @see #getOutputVariable()
-   * @generated
-   */
-  EAttribute getOutputVariable_Name();
 
   /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.Plus <em>Plus</em>}'.
@@ -3179,6 +3208,24 @@ public interface CalculatorFormPackage extends EPackage
     EClass RESULT_OUTPUT = eINSTANCE.getResultOutput();
 
     /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl <em>Output Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getOutputVariable()
+     * @generated
+     */
+    EClass OUTPUT_VARIABLE = eINSTANCE.getOutputVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OUTPUT_VARIABLE__NAME = eINSTANCE.getOutputVariable_Name();
+
+    /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ExpressionImpl <em>Expression</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3217,6 +3264,16 @@ public interface CalculatorFormPackage extends EPackage
     EClass LITERAL = eINSTANCE.getLiteral();
 
     /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.ExpressionVariableImpl <em>Expression Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.ExpressionVariableImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getExpressionVariable()
+     * @generated
+     */
+    EClass EXPRESSION_VARIABLE = eINSTANCE.getExpressionVariable();
+
+    /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputFieldImpl <em>Output Field</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3233,24 +3290,6 @@ public interface CalculatorFormPackage extends EPackage
      * @generated
      */
     EReference OUTPUT_FIELD__FIELD = eINSTANCE.getOutputField_Field();
-
-    /**
-     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl <em>Output Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.OutputVariableImpl
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getOutputVariable()
-     * @generated
-     */
-    EClass OUTPUT_VARIABLE = eINSTANCE.getOutputVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OUTPUT_VARIABLE__NAME = eINSTANCE.getOutputVariable_Name();
 
     /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.PlusImpl <em>Plus</em>}' class.

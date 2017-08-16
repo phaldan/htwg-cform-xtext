@@ -83,11 +83,12 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       case CalculatorFormPackage.CALCULATE: return createCalculate();
       case CalculatorFormPackage.RESULT_OUTPUT: return createResultOutput();
+      case CalculatorFormPackage.OUTPUT_VARIABLE: return createOutputVariable();
       case CalculatorFormPackage.EXPRESSION: return createExpression();
       case CalculatorFormPackage.UNARY_OPERATION: return createUnaryOperation();
       case CalculatorFormPackage.LITERAL: return createLiteral();
+      case CalculatorFormPackage.EXPRESSION_VARIABLE: return createExpressionVariable();
       case CalculatorFormPackage.OUTPUT_FIELD: return createOutputField();
-      case CalculatorFormPackage.OUTPUT_VARIABLE: return createOutputVariable();
       case CalculatorFormPackage.PLUS: return createPlus();
       case CalculatorFormPackage.MINUS: return createMinus();
       case CalculatorFormPackage.MULTI: return createMulti();
@@ -306,6 +307,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public OutputVariable createOutputVariable()
+  {
+    OutputVariableImpl outputVariable = new OutputVariableImpl();
+    return outputVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expression createExpression()
   {
     ExpressionImpl expression = new ExpressionImpl();
@@ -339,10 +351,10 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public OutputField createOutputField()
+  public ExpressionVariable createExpressionVariable()
   {
-    OutputFieldImpl outputField = new OutputFieldImpl();
-    return outputField;
+    ExpressionVariableImpl expressionVariable = new ExpressionVariableImpl();
+    return expressionVariable;
   }
 
   /**
@@ -350,10 +362,10 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public OutputVariable createOutputVariable()
+  public OutputField createOutputField()
   {
-    OutputVariableImpl outputVariable = new OutputVariableImpl();
-    return outputVariable;
+    OutputFieldImpl outputField = new OutputFieldImpl();
+    return outputField;
   }
 
   /**

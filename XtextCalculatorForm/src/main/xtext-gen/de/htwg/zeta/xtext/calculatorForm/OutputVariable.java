@@ -20,7 +20,7 @@ package de.htwg.zeta.xtext.calculatorForm;
  * @model
  * @generated
  */
-public interface OutputVariable extends ResultOutput
+public interface OutputVariable extends ResultOutput, ExpressionVariable
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

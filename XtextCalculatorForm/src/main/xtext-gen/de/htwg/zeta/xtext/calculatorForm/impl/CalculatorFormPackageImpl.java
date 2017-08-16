@@ -12,6 +12,7 @@ import de.htwg.zeta.xtext.calculatorForm.CalculatorFormFactory;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Div;
 import de.htwg.zeta.xtext.calculatorForm.Expression;
+import de.htwg.zeta.xtext.calculatorForm.ExpressionVariable;
 import de.htwg.zeta.xtext.calculatorForm.Field;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice;
 import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
@@ -185,6 +186,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass outputVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
@@ -206,14 +214,14 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass outputFieldEClass = null;
+  private EClass expressionVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass outputVariableEClass = null;
+  private EClass outputFieldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1113,6 +1121,26 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOutputVariable()
+  {
+    return outputVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOutputVariable_Name()
+  {
+    return (EAttribute)outputVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getExpression()
   {
     return expressionEClass;
@@ -1153,6 +1181,16 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getExpressionVariable()
+  {
+    return expressionVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getOutputField()
   {
     return outputFieldEClass;
@@ -1166,26 +1204,6 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
   public EReference getOutputField_Field()
   {
     return (EReference)outputFieldEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOutputVariable()
-  {
-    return outputVariableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getOutputVariable_Name()
-  {
-    return (EAttribute)outputVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1532,6 +1550,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     resultOutputEClass = createEClass(RESULT_OUTPUT);
 
+    outputVariableEClass = createEClass(OUTPUT_VARIABLE);
+    createEAttribute(outputVariableEClass, OUTPUT_VARIABLE__NAME);
+
     expressionEClass = createEClass(EXPRESSION);
 
     unaryOperationEClass = createEClass(UNARY_OPERATION);
@@ -1539,11 +1560,10 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     literalEClass = createEClass(LITERAL);
 
+    expressionVariableEClass = createEClass(EXPRESSION_VARIABLE);
+
     outputFieldEClass = createEClass(OUTPUT_FIELD);
     createEReference(outputFieldEClass, OUTPUT_FIELD__FIELD);
-
-    outputVariableEClass = createEClass(OUTPUT_VARIABLE);
-    createEAttribute(outputVariableEClass, OUTPUT_VARIABLE__NAME);
 
     plusEClass = createEClass(PLUS);
     createEReference(plusEClass, PLUS__LEFT);
@@ -1609,6 +1629,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     // Add supertypes to classes
     fieldEClass.getESuperTypes().add(this.getFormElement());
     fieldEClass.getESuperTypes().add(this.getPageChild());
+    fieldEClass.getESuperTypes().add(this.getExpressionVariable());
     fieldInputEClass.getESuperTypes().add(this.getField());
     fieldSelectEClass.getESuperTypes().add(this.getField());
     fieldOptionEClass.getESuperTypes().add(this.getFieldSelectChild());
@@ -1619,10 +1640,11 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     pageEClass.getESuperTypes().add(this.getFormElement());
     buttonEClass.getESuperTypes().add(this.getField());
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
+    outputVariableEClass.getESuperTypes().add(this.getResultOutput());
+    outputVariableEClass.getESuperTypes().add(this.getExpressionVariable());
     unaryOperationEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
     outputFieldEClass.getESuperTypes().add(this.getResultOutput());
-    outputVariableEClass.getESuperTypes().add(this.getResultOutput());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
@@ -1729,6 +1751,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(resultOutputEClass, ResultOutput.class, "ResultOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(outputVariableEClass, OutputVariable.class, "OutputVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOutputVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, OutputVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(unaryOperationEClass, UnaryOperation.class, "UnaryOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1736,11 +1761,10 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
 
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(expressionVariableEClass, ExpressionVariable.class, "ExpressionVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(outputFieldEClass, OutputField.class, "OutputField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutputField_Field(), this.getField(), null, "field", null, 0, 1, OutputField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(outputVariableEClass, OutputVariable.class, "OutputVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOutputVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, OutputVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1772,7 +1796,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEAttribute(getPercentLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, PercentLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referenceLiteralEClass, ReferenceLiteral.class, "ReferenceLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferenceLiteral_Ref(), this.getField(), null, "ref", null, 0, 1, ReferenceLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferenceLiteral_Ref(), this.getExpressionVariable(), null, "ref", null, 0, 1, ReferenceLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

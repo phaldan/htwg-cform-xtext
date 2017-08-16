@@ -113,7 +113,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				sequence_ResultOutput(context, (OutputField) semanticObject); 
 				return; 
 			case CalculatorFormPackage.OUTPUT_VARIABLE:
-				sequence_ResultOutput(context, (OutputVariable) semanticObject); 
+				sequence_OutputVariable(context, (OutputVariable) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
@@ -197,6 +197,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     PageChild returns ButtonSubmit
 	 *     Button returns ButtonSubmit
 	 *     ButtonSubmit returns ButtonSubmit
+	 *     ExpressionVariable returns ButtonSubmit
 	 *
 	 * Constraint:
 	 *     (name=ID text=STRING autofocus?='autofocus'? disabled?='disabled'? value=STRING?)
@@ -253,6 +254,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldChoice
 	 *     FieldChoice returns FieldChoice
 	 *     PageChild returns FieldChoice
+	 *     ExpressionVariable returns FieldChoice
 	 *
 	 * Constraint:
 	 *     (
@@ -281,6 +283,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldInput
 	 *     FieldInput returns FieldInput
 	 *     PageChild returns FieldInput
+	 *     ExpressionVariable returns FieldInput
 	 *
 	 * Constraint:
 	 *     (
@@ -332,6 +335,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Field returns FieldSelect
 	 *     FieldSelect returns FieldSelect
 	 *     PageChild returns FieldSelect
+	 *     ExpressionVariable returns FieldSelect
 	 *
 	 * Constraint:
 	 *     (
@@ -472,7 +476,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Literal returns ReferenceLiteral
 	 *
 	 * Constraint:
-	 *     ref=[Field|QualifiedName]
+	 *     ref=[ExpressionVariable|QualifiedName]
 	 */
 	protected void sequence_Literal(ISerializationContext context, ReferenceLiteral semanticObject) {
 		if (errorAcceptor != null) {
@@ -480,7 +484,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.REFERENCE_LITERAL__REF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLiteralAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getLiteralAccess().getRefExpressionVariableQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -557,6 +561,26 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
+	 *     ResultOutput returns OutputVariable
+	 *     OutputVariable returns OutputVariable
+	 *     ExpressionVariable returns OutputVariable
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_OutputVariable(ISerializationContext context, OutputVariable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOutputVariableAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FormElement returns Page
 	 *     Page returns Page
 	 *
@@ -581,25 +605,7 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_FIELD__FIELD));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getResultOutputAccess().getFieldFieldQualifiedNameParserRuleCall_0_2_0_1(), semanticObject.getField());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ResultOutput returns OutputVariable
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_ResultOutput(ISerializationContext context, OutputVariable semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getResultOutputAccess().getNameIDTerminalRuleCall_1_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getResultOutputAccess().getFieldFieldQualifiedNameParserRuleCall_1_2_0_1(), semanticObject.getField());
 		feeder.finish();
 	}
 	

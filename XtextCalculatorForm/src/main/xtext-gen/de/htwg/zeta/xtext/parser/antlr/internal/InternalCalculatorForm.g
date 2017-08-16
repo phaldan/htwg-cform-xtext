@@ -1672,17 +1672,26 @@ ruleResultOutput returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getResultOutputAccess().getOutputVariableParserRuleCall_0());
+		}
+		this_OutputVariable_0=ruleOutputVariable
+		{
+			$current = $this_OutputVariable_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
 		(
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getResultOutputAccess().getOutputFieldAction_0_0(),
+						grammarAccess.getResultOutputAccess().getOutputFieldAction_1_0(),
 						$current);
 				}
 			)
-			otherlv_1='field'
+			otherlv_2='field'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getResultOutputAccess().getFieldKeyword_0_1());
+				newLeafNode(otherlv_2, grammarAccess.getResultOutputAccess().getFieldKeyword_1_1());
 			}
 			(
 				(
@@ -1692,7 +1701,7 @@ ruleResultOutput returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getResultOutputAccess().getFieldFieldCrossReference_0_2_0());
+						newCompositeNode(grammarAccess.getResultOutputAccess().getFieldFieldCrossReference_1_2_0());
 					}
 					ruleQualifiedName
 					{
@@ -1701,36 +1710,45 @@ ruleResultOutput returns [EObject current=null]
 				)
 			)
 		)
-		    |
+	)
+;
+
+// Entry rule entryRuleOutputVariable
+entryRuleOutputVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOutputVariableRule()); }
+	iv_ruleOutputVariable=ruleOutputVariable
+	{ $current=$iv_ruleOutputVariable.current; }
+	EOF;
+
+// Rule OutputVariable
+ruleOutputVariable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='var'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getOutputVariableAccess().getVarKeyword_0());
+		}
 		(
 			(
+				lv_name_1_0=RULE_ID
 				{
-					$current = forceCreateModelElement(
-						grammarAccess.getResultOutputAccess().getOutputVariableAction_1_0(),
-						$current);
+					newLeafNode(lv_name_1_0, grammarAccess.getOutputVariableAccess().getNameIDTerminalRuleCall_1_0());
 				}
-			)
-			otherlv_4='var'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getResultOutputAccess().getVarKeyword_1_1());
-			}
-			(
-				(
-					lv_name_5_0=RULE_ID
-					{
-						newLeafNode(lv_name_5_0, grammarAccess.getResultOutputAccess().getNameIDTerminalRuleCall_1_2_0());
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOutputVariableRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getResultOutputRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_5_0,
-							"de.htwg.zeta.xtext.CalculatorForm.ID");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ID");
+				}
 			)
 		)
 	)
@@ -2243,7 +2261,7 @@ ruleLiteral returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getLiteralAccess().getRefFieldCrossReference_3_1_0());
+						newCompositeNode(grammarAccess.getLiteralAccess().getRefExpressionVariableCrossReference_3_1_0());
 					}
 					ruleQualifiedName
 					{
