@@ -5984,7 +5984,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // InternalCalculatorForm.g:2092:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // InternalCalculatorForm.g:2092:1: ruleAtomic returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -5999,37 +5999,26 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCalculatorForm.g:2098:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // InternalCalculatorForm.g:2099:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            // InternalCalculatorForm.g:2098:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral ) )
+            // InternalCalculatorForm.g:2099:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral )
             {
-            // InternalCalculatorForm.g:2099:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt63=3;
-            switch ( input.LA(1) ) {
-            case 45:
-                {
+            // InternalCalculatorForm.g:2099:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral )
+            int alt63=2;
+            int LA63_0 = input.LA(1);
+
+            if ( (LA63_0==45) ) {
                 alt63=1;
-                }
-                break;
-            case RULE_INT:
-            case RULE_FLOAT:
-            case RULE_PERCENT:
-                {
+            }
+            else if ( (LA63_0==RULE_ID||(LA63_0>=RULE_INT && LA63_0<=RULE_PERCENT)) ) {
                 alt63=2;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt63=3;
-                }
-                break;
-            default:
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
-
             switch (alt63) {
                 case 1 :
                     // InternalCalculatorForm.g:2100:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
@@ -6093,65 +6082,6 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 3 :
-                    // InternalCalculatorForm.g:2128:3: ( () ( ( ruleQualifiedName ) ) )
-                    {
-                    // InternalCalculatorForm.g:2128:3: ( () ( ( ruleQualifiedName ) ) )
-                    // InternalCalculatorForm.g:2129:4: () ( ( ruleQualifiedName ) )
-                    {
-                    // InternalCalculatorForm.g:2129:4: ()
-                    // InternalCalculatorForm.g:2130:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					current = forceCreateModelElement(
-                      						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
-                      						current);
-                      				
-                    }
-
-                    }
-
-                    // InternalCalculatorForm.g:2136:4: ( ( ruleQualifiedName ) )
-                    // InternalCalculatorForm.g:2137:5: ( ruleQualifiedName )
-                    {
-                    // InternalCalculatorForm.g:2137:5: ( ruleQualifiedName )
-                    // InternalCalculatorForm.g:2138:6: ruleQualifiedName
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getAtomicRule());
-                      						}
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
-                      					
-                    }
-                    pushFollow(FOLLOW_2);
-                    ruleQualifiedName();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						afterParserOrEnumRuleCall();
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -6177,7 +6107,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteral"
-    // InternalCalculatorForm.g:2157:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    // InternalCalculatorForm.g:2131:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
     public final EObject entryRuleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6185,8 +6115,8 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCalculatorForm.g:2157:48: (iv_ruleLiteral= ruleLiteral EOF )
-            // InternalCalculatorForm.g:2158:2: iv_ruleLiteral= ruleLiteral EOF
+            // InternalCalculatorForm.g:2131:48: (iv_ruleLiteral= ruleLiteral EOF )
+            // InternalCalculatorForm.g:2132:2: iv_ruleLiteral= ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getLiteralRule()); 
@@ -6217,7 +6147,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // InternalCalculatorForm.g:2164:1: ruleLiteral returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
+    // InternalCalculatorForm.g:2138:1: ruleLiteral returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final EObject ruleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -6229,11 +6159,11 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCalculatorForm.g:2170:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
-            // InternalCalculatorForm.g:2171:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            // InternalCalculatorForm.g:2144:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // InternalCalculatorForm.g:2145:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // InternalCalculatorForm.g:2171:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
-            int alt64=3;
+            // InternalCalculatorForm.g:2145:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt64=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
@@ -6250,6 +6180,11 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                 alt64=3;
                 }
                 break;
+            case RULE_ID:
+                {
+                alt64=4;
+                }
+                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
@@ -6260,13 +6195,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
             switch (alt64) {
                 case 1 :
-                    // InternalCalculatorForm.g:2172:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalCalculatorForm.g:2146:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // InternalCalculatorForm.g:2172:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // InternalCalculatorForm.g:2173:4: () ( (lv_value_1_0= RULE_INT ) )
+                    // InternalCalculatorForm.g:2146:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalCalculatorForm.g:2147:4: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // InternalCalculatorForm.g:2173:4: ()
-                    // InternalCalculatorForm.g:2174:5: 
+                    // InternalCalculatorForm.g:2147:4: ()
+                    // InternalCalculatorForm.g:2148:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6278,11 +6213,11 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCalculatorForm.g:2180:4: ( (lv_value_1_0= RULE_INT ) )
-                    // InternalCalculatorForm.g:2181:5: (lv_value_1_0= RULE_INT )
+                    // InternalCalculatorForm.g:2154:4: ( (lv_value_1_0= RULE_INT ) )
+                    // InternalCalculatorForm.g:2155:5: (lv_value_1_0= RULE_INT )
                     {
-                    // InternalCalculatorForm.g:2181:5: (lv_value_1_0= RULE_INT )
-                    // InternalCalculatorForm.g:2182:6: lv_value_1_0= RULE_INT
+                    // InternalCalculatorForm.g:2155:5: (lv_value_1_0= RULE_INT )
+                    // InternalCalculatorForm.g:2156:6: lv_value_1_0= RULE_INT
                     {
                     lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -6315,13 +6250,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:2200:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // InternalCalculatorForm.g:2174:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
                     {
-                    // InternalCalculatorForm.g:2200:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
-                    // InternalCalculatorForm.g:2201:4: () ( (lv_value_3_0= RULE_FLOAT ) )
+                    // InternalCalculatorForm.g:2174:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // InternalCalculatorForm.g:2175:4: () ( (lv_value_3_0= RULE_FLOAT ) )
                     {
-                    // InternalCalculatorForm.g:2201:4: ()
-                    // InternalCalculatorForm.g:2202:5: 
+                    // InternalCalculatorForm.g:2175:4: ()
+                    // InternalCalculatorForm.g:2176:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6333,11 +6268,11 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCalculatorForm.g:2208:4: ( (lv_value_3_0= RULE_FLOAT ) )
-                    // InternalCalculatorForm.g:2209:5: (lv_value_3_0= RULE_FLOAT )
+                    // InternalCalculatorForm.g:2182:4: ( (lv_value_3_0= RULE_FLOAT ) )
+                    // InternalCalculatorForm.g:2183:5: (lv_value_3_0= RULE_FLOAT )
                     {
-                    // InternalCalculatorForm.g:2209:5: (lv_value_3_0= RULE_FLOAT )
-                    // InternalCalculatorForm.g:2210:6: lv_value_3_0= RULE_FLOAT
+                    // InternalCalculatorForm.g:2183:5: (lv_value_3_0= RULE_FLOAT )
+                    // InternalCalculatorForm.g:2184:6: lv_value_3_0= RULE_FLOAT
                     {
                     lv_value_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -6370,13 +6305,13 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCalculatorForm.g:2228:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // InternalCalculatorForm.g:2202:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
                     {
-                    // InternalCalculatorForm.g:2228:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
-                    // InternalCalculatorForm.g:2229:4: () ( (lv_value_5_0= RULE_PERCENT ) )
+                    // InternalCalculatorForm.g:2202:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // InternalCalculatorForm.g:2203:4: () ( (lv_value_5_0= RULE_PERCENT ) )
                     {
-                    // InternalCalculatorForm.g:2229:4: ()
-                    // InternalCalculatorForm.g:2230:5: 
+                    // InternalCalculatorForm.g:2203:4: ()
+                    // InternalCalculatorForm.g:2204:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6388,11 +6323,11 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalCalculatorForm.g:2236:4: ( (lv_value_5_0= RULE_PERCENT ) )
-                    // InternalCalculatorForm.g:2237:5: (lv_value_5_0= RULE_PERCENT )
+                    // InternalCalculatorForm.g:2210:4: ( (lv_value_5_0= RULE_PERCENT ) )
+                    // InternalCalculatorForm.g:2211:5: (lv_value_5_0= RULE_PERCENT )
                     {
-                    // InternalCalculatorForm.g:2237:5: (lv_value_5_0= RULE_PERCENT )
-                    // InternalCalculatorForm.g:2238:6: lv_value_5_0= RULE_PERCENT
+                    // InternalCalculatorForm.g:2211:5: (lv_value_5_0= RULE_PERCENT )
+                    // InternalCalculatorForm.g:2212:6: lv_value_5_0= RULE_PERCENT
                     {
                     lv_value_5_0=(Token)match(input,RULE_PERCENT,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -6410,6 +6345,65 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                       							"value",
                       							lv_value_5_0,
                       							"de.htwg.zeta.xtext.CalculatorForm.PERCENT");
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalCalculatorForm.g:2230:3: ( () ( ( ruleQualifiedName ) ) )
+                    {
+                    // InternalCalculatorForm.g:2230:3: ( () ( ( ruleQualifiedName ) ) )
+                    // InternalCalculatorForm.g:2231:4: () ( ( ruleQualifiedName ) )
+                    {
+                    // InternalCalculatorForm.g:2231:4: ()
+                    // InternalCalculatorForm.g:2232:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0(),
+                      						current);
+                      				
+                    }
+
+                    }
+
+                    // InternalCalculatorForm.g:2238:4: ( ( ruleQualifiedName ) )
+                    // InternalCalculatorForm.g:2239:5: ( ruleQualifiedName )
+                    {
+                    // InternalCalculatorForm.g:2239:5: ( ruleQualifiedName )
+                    // InternalCalculatorForm.g:2240:6: ruleQualifiedName
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getLiteralRule());
+                      						}
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						newCompositeNode(grammarAccess.getLiteralAccess().getRefFieldCrossReference_3_1_0());
+                      					
+                    }
+                    pushFollow(FOLLOW_2);
+                    ruleQualifiedName();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						afterParserOrEnumRuleCall();
                       					
                     }
 

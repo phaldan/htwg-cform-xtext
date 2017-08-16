@@ -2124,32 +2124,6 @@ ruleAtomic returns [EObject current=null]
 			$current = $this_Literal_3.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getFieldReferenceAction_2_0(),
-						$current);
-				}
-			)
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getRefFieldCrossReference_2_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
 	)
 ;
 
@@ -2248,6 +2222,32 @@ ruleLiteral returns [EObject current=null]
 							"value",
 							lv_value_5_0,
 							"de.htwg.zeta.xtext.CalculatorForm.PERCENT");
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLiteralRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getLiteralAccess().getRefFieldCrossReference_3_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)

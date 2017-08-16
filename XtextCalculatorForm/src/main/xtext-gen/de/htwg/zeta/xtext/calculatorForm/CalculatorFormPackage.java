@@ -1266,34 +1266,6 @@ public interface CalculatorFormPackage extends EPackage
   int ARITHMETIC_SIGNED_FEATURE_COUNT = UNARY_OPERATION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl
-   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
-   * @generated
-   */
-  int FIELD_REFERENCE = 29;
-
-  /**
-   * The feature id for the '<em><b>Ref</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FIELD_REFERENCE__REF = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Field Reference</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FIELD_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1301,7 +1273,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 30;
+  int NUMBER_LITERAL = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1329,7 +1301,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 31;
+  int FLOAT_LITERAL = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1357,7 +1329,7 @@ public interface CalculatorFormPackage extends EPackage
    * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getPercentLiteral()
    * @generated
    */
-  int PERCENT_LITERAL = 32;
+  int PERCENT_LITERAL = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1376,6 +1348,34 @@ public interface CalculatorFormPackage extends EPackage
    * @ordered
    */
   int PERCENT_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl
+   * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
+   * @generated
+   */
+  int FIELD_REFERENCE = 32;
+
+  /**
+   * The feature id for the '<em><b>Ref</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_REFERENCE__REF = LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Field Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FIELD_REFERENCE_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
 
 
   /**
@@ -2428,27 +2428,6 @@ public interface CalculatorFormPackage extends EPackage
   EClass getArithmeticSigned();
 
   /**
-   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference <em>Field Reference</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Field Reference</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.FieldReference
-   * @generated
-   */
-  EClass getFieldReference();
-
-  /**
-   * Returns the meta object for the reference '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef <em>Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Ref</em>'.
-   * @see de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef()
-   * @see #getFieldReference()
-   * @generated
-   */
-  EReference getFieldReference_Ref();
-
-  /**
    * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.NumberLiteral <em>Number Literal</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2510,6 +2489,27 @@ public interface CalculatorFormPackage extends EPackage
    * @generated
    */
   EAttribute getPercentLiteral_Value();
+
+  /**
+   * Returns the meta object for class '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference <em>Field Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Field Reference</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldReference
+   * @generated
+   */
+  EClass getFieldReference();
+
+  /**
+   * Returns the meta object for the reference '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef <em>Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef()
+   * @see #getFieldReference()
+   * @generated
+   */
+  EReference getFieldReference_Ref();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3377,24 +3377,6 @@ public interface CalculatorFormPackage extends EPackage
     EClass ARITHMETIC_SIGNED = eINSTANCE.getArithmeticSigned();
 
     /**
-     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl
-     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
-     * @generated
-     */
-    EClass FIELD_REFERENCE = eINSTANCE.getFieldReference();
-
-    /**
-     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FIELD_REFERENCE__REF = eINSTANCE.getFieldReference_Ref();
-
-    /**
      * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3447,6 +3429,24 @@ public interface CalculatorFormPackage extends EPackage
      * @generated
      */
     EAttribute PERCENT_LITERAL__VALUE = eINSTANCE.getPercentLiteral_Value();
+
+    /**
+     * The meta object literal for the '{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl <em>Field Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl
+     * @see de.htwg.zeta.xtext.calculatorForm.impl.CalculatorFormPackageImpl#getFieldReference()
+     * @generated
+     */
+    EClass FIELD_REFERENCE = eINSTANCE.getFieldReference();
+
+    /**
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FIELD_REFERENCE__REF = eINSTANCE.getFieldReference_Ref();
 
   }
 

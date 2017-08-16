@@ -88,10 +88,10 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryOperationAccess().getGroup_0(), "rule__UnaryOperation__Group_0__0");
 					put(grammarAccess.getUnaryOperationAccess().getGroup_1(), "rule__UnaryOperation__Group_1__0");
 					put(grammarAccess.getAtomicAccess().getGroup_0(), "rule__Atomic__Group_0__0");
-					put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
 					put(grammarAccess.getLiteralAccess().getGroup_0(), "rule__Literal__Group_0__0");
 					put(grammarAccess.getLiteralAccess().getGroup_1(), "rule__Literal__Group_1__0");
 					put(grammarAccess.getLiteralAccess().getGroup_2(), "rule__Literal__Group_2__0");
+					put(grammarAccess.getLiteralAccess().getGroup_3(), "rule__Literal__Group_3__0");
 					put(grammarAccess.getModelAccess().getFormsAssignment(), "rule__Model__FormsAssignment");
 					put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
 					put(grammarAccess.getFormAccess().getFormElementsAssignment_3(), "rule__Form__FormElementsAssignment_3");
@@ -158,10 +158,10 @@ public class CalculatorFormParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationAccess().getRightAssignment_1_1(), "rule__Multiplication__RightAssignment_1_1");
 					put(grammarAccess.getUnaryOperationAccess().getExpressionAssignment_0_2(), "rule__UnaryOperation__ExpressionAssignment_0_2");
 					put(grammarAccess.getUnaryOperationAccess().getExpressionAssignment_1_2(), "rule__UnaryOperation__ExpressionAssignment_1_2");
-					put(grammarAccess.getAtomicAccess().getRefAssignment_2_1(), "rule__Atomic__RefAssignment_2_1");
 					put(grammarAccess.getLiteralAccess().getValueAssignment_0_1(), "rule__Literal__ValueAssignment_0_1");
 					put(grammarAccess.getLiteralAccess().getValueAssignment_1_1(), "rule__Literal__ValueAssignment_1_1");
 					put(grammarAccess.getLiteralAccess().getValueAssignment_2_1(), "rule__Literal__ValueAssignment_2_1");
+					put(grammarAccess.getLiteralAccess().getRefAssignment_3_1(), "rule__Literal__RefAssignment_3_1");
 				}
 			};
 		}

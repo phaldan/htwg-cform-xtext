@@ -107,13 +107,14 @@ UnaryOperation:
 ;
 
 Atomic returns Expression:
-    '(' Expression ')' | Literal | {FieldReference} ref=[Field|QualifiedName]
+    '(' Expression ')' | Literal
 ;
 
 Literal:
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
-    {PercentLiteral} value=PERCENT
+    {PercentLiteral} value=PERCENT |
+    {FieldReference} ref=[Field|QualifiedName]
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

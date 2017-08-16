@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FieldReferenceImpl extends ExpressionImpl implements FieldReference
+public class FieldReferenceImpl extends LiteralImpl implements FieldReference
 {
   /**
    * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.

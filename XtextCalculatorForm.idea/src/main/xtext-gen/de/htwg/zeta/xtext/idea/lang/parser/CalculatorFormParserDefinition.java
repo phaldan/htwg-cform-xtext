@@ -227,9 +227,6 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getAtomic_LiteralParserRuleCall_1ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
-			if (elementType == elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType()) {
-				return new PsiEObjectImpl(node) {};
-			}
 			if (elementType == elementTypeProvider.getLiteralElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
@@ -240,6 +237,9 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 				return new PsiEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getLiteral_PercentLiteralAction_2_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getLiteral_FieldReferenceAction_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
 			throw new IllegalStateException("Unexpected element type: " + elementType);

@@ -1242,17 +1242,12 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final RuleCall cLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cFieldReferenceAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cRefAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cRefFieldCrossReference_2_1_0 = (CrossReference)cRefAssignment_2_1.eContents().get(0);
-		private final RuleCall cRefFieldQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cRefFieldCrossReference_2_1_0.eContents().get(1);
 		
 		//Atomic Expression:
-		//	'(' Expression ')' | Literal | {FieldReference} ref=[Field|QualifiedName]
+		//	'(' Expression ')' | Literal
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' Expression ')' | Literal | {FieldReference} ref=[Field|QualifiedName]
+		//'(' Expression ')' | Literal
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' Expression ')'
@@ -1269,21 +1264,6 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Literal
 		public RuleCall getLiteralParserRuleCall_1() { return cLiteralParserRuleCall_1; }
-		
-		//{FieldReference} ref=[Field|QualifiedName]
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//{FieldReference}
-		public Action getFieldReferenceAction_2_0() { return cFieldReferenceAction_2_0; }
-		
-		//ref=[Field|QualifiedName]
-		public Assignment getRefAssignment_2_1() { return cRefAssignment_2_1; }
-		
-		//[Field|QualifiedName]
-		public CrossReference getRefFieldCrossReference_2_1_0() { return cRefFieldCrossReference_2_1_0; }
-		
-		//QualifiedName
-		public RuleCall getRefFieldQualifiedNameParserRuleCall_2_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_2_1_0_1; }
 	}
 	public class LiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Literal");
@@ -1300,12 +1280,19 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cPercentLiteralAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cValuePERCENTTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cFieldReferenceAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cRefAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cRefFieldCrossReference_3_1_0 = (CrossReference)cRefAssignment_3_1.eContents().get(0);
+		private final RuleCall cRefFieldQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cRefFieldCrossReference_3_1_0.eContents().get(1);
 		
 		//Literal:
-		//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT;
+		//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {FieldReference}
+		//	ref=[Field|QualifiedName];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT
+		//{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {FieldReference}
+		//ref=[Field|QualifiedName]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{NumberLiteral} value=INT
@@ -1343,6 +1330,21 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PERCENT
 		public RuleCall getValuePERCENTTerminalRuleCall_2_1_0() { return cValuePERCENTTerminalRuleCall_2_1_0; }
+		
+		//{FieldReference} ref=[Field|QualifiedName]
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//{FieldReference}
+		public Action getFieldReferenceAction_3_0() { return cFieldReferenceAction_3_0; }
+		
+		//ref=[Field|QualifiedName]
+		public Assignment getRefAssignment_3_1() { return cRefAssignment_3_1; }
+		
+		//[Field|QualifiedName]
+		public CrossReference getRefFieldCrossReference_3_1_0() { return cRefFieldCrossReference_3_1_0; }
+		
+		//QualifiedName
+		public RuleCall getRefFieldQualifiedNameParserRuleCall_3_1_0_1() { return cRefFieldQualifiedNameParserRuleCall_3_1_0_1; }
 	}
 	
 	
@@ -1694,7 +1696,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Atomic Expression:
-	//	'(' Expression ')' | Literal | {FieldReference} ref=[Field|QualifiedName]
+	//	'(' Expression ')' | Literal
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;
 	}
@@ -1704,7 +1706,8 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Literal:
-	//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT;
+	//	{NumberLiteral} value=INT | {FloatLiteral} value=FLOAT | {PercentLiteral} value=PERCENT | {FieldReference}
+	//	ref=[Field|QualifiedName];
 	public LiteralElements getLiteralAccess() {
 		return pLiteral;
 	}

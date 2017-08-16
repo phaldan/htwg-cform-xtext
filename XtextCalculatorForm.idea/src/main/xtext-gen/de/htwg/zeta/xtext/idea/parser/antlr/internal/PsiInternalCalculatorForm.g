@@ -2134,33 +2134,6 @@ ruleAtomic returns [Boolean current=false]
 			$current = $this_Literal_3.current;
 			doneComposite();
 		}
-		    |
-		(
-			(
-				{
-					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
-					doneComposite();
-					associateWithSemanticElement();
-				}
-			)
-			(
-				(
-					{
-						if (!$current) {
-							associateWithSemanticElement();
-							$current = true;
-						}
-					}
-					{
-						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
-					}
-					ruleQualifiedName
-					{
-						doneComposite();
-					}
-				)
-			)
-		)
 	)
 ;
 
@@ -2251,6 +2224,33 @@ ruleLiteral returns [Boolean current=false]
 					}
 					{
 						doneLeaf(lv_value_5_0);
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getLiteral_FieldReferenceAction_3_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			(
+				(
+					{
+						if (!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						markComposite(elementTypeProvider.getLiteral_RefFieldCrossReference_3_1_0ElementType());
+					}
+					ruleQualifiedName
+					{
+						doneComposite();
 					}
 				)
 			)

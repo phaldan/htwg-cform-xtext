@@ -20,7 +20,7 @@ package de.htwg.zeta.xtext.calculatorForm;
  * @model
  * @generated
  */
-public interface FieldReference extends Expression
+public interface FieldReference extends Literal
 {
   /**
    * Returns the value of the '<em><b>Ref</b></em>' reference.

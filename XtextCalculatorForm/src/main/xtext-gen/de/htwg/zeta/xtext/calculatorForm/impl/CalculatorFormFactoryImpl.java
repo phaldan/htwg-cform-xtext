@@ -94,10 +94,10 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.DIV: return createDiv();
       case CalculatorFormPackage.BOOLEAN_NEGATION: return createBooleanNegation();
       case CalculatorFormPackage.ARITHMETIC_SIGNED: return createArithmeticSigned();
-      case CalculatorFormPackage.FIELD_REFERENCE: return createFieldReference();
       case CalculatorFormPackage.NUMBER_LITERAL: return createNumberLiteral();
       case CalculatorFormPackage.FLOAT_LITERAL: return createFloatLiteral();
       case CalculatorFormPackage.PERCENT_LITERAL: return createPercentLiteral();
+      case CalculatorFormPackage.FIELD_REFERENCE: return createFieldReference();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -427,17 +427,6 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public FieldReference createFieldReference()
-  {
-    FieldReferenceImpl fieldReference = new FieldReferenceImpl();
-    return fieldReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public NumberLiteral createNumberLiteral()
   {
     NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
@@ -464,6 +453,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     PercentLiteralImpl percentLiteral = new PercentLiteralImpl();
     return percentLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FieldReference createFieldReference()
+  {
+    FieldReferenceImpl fieldReference = new FieldReferenceImpl();
+    return fieldReference;
   }
 
   /**

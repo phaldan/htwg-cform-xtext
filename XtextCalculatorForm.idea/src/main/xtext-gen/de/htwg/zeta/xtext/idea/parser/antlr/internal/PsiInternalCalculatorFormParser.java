@@ -6077,7 +6077,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleAtomic"
-    // PsiInternalCalculatorForm.g:2101:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:2101:1: ruleAtomic returns [Boolean current=false] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral ) ;
     public final Boolean ruleAtomic() throws RecognitionException {
         Boolean current = false;
 
@@ -6089,37 +6089,26 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
         try {
-            // PsiInternalCalculatorForm.g:2102:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) ) )
-            // PsiInternalCalculatorForm.g:2103:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
+            // PsiInternalCalculatorForm.g:2102:1: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral ) )
+            // PsiInternalCalculatorForm.g:2103:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral )
             {
-            // PsiInternalCalculatorForm.g:2103:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral | ( () ( ( ruleQualifiedName ) ) ) )
-            int alt63=3;
-            switch ( input.LA(1) ) {
-            case 45:
-                {
+            // PsiInternalCalculatorForm.g:2103:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | this_Literal_3= ruleLiteral )
+            int alt63=2;
+            int LA63_0 = input.LA(1);
+
+            if ( (LA63_0==45) ) {
                 alt63=1;
-                }
-                break;
-            case RULE_INT:
-            case RULE_FLOAT:
-            case RULE_PERCENT:
-                {
+            }
+            else if ( (LA63_0==RULE_ID||(LA63_0>=RULE_INT && LA63_0<=RULE_PERCENT)) ) {
                 alt63=2;
-                }
-                break;
-            case RULE_ID:
-                {
-                alt63=3;
-                }
-                break;
-            default:
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 63, 0, input);
 
                 throw nvae;
             }
-
             switch (alt63) {
                 case 1 :
                     // PsiInternalCalculatorForm.g:2104:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
@@ -6193,66 +6182,6 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
                     break;
-                case 3 :
-                    // PsiInternalCalculatorForm.g:2138:3: ( () ( ( ruleQualifiedName ) ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2138:3: ( () ( ( ruleQualifiedName ) ) )
-                    // PsiInternalCalculatorForm.g:2139:4: () ( ( ruleQualifiedName ) )
-                    {
-                    // PsiInternalCalculatorForm.g:2139:4: ()
-                    // PsiInternalCalculatorForm.g:2140:5: 
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					precedeComposite(elementTypeProvider.getAtomic_FieldReferenceAction_2_0ElementType());
-                      					doneComposite();
-                      					associateWithSemanticElement();
-                      				
-                    }
-
-                    }
-
-                    // PsiInternalCalculatorForm.g:2146:4: ( ( ruleQualifiedName ) )
-                    // PsiInternalCalculatorForm.g:2147:5: ( ruleQualifiedName )
-                    {
-                    // PsiInternalCalculatorForm.g:2147:5: ( ruleQualifiedName )
-                    // PsiInternalCalculatorForm.g:2148:6: ruleQualifiedName
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      						if (!current) {
-                      							associateWithSemanticElement();
-                      							current = true;
-                      						}
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						markComposite(elementTypeProvider.getAtomic_RefFieldCrossReference_2_1_0ElementType());
-                      					
-                    }
-                    pushFollow(FOLLOW_2);
-                    ruleQualifiedName();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						doneComposite();
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -6272,7 +6201,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteral"
-    // PsiInternalCalculatorForm.g:2168:1: entryRuleLiteral returns [Boolean current=false] : iv_ruleLiteral= ruleLiteral EOF ;
+    // PsiInternalCalculatorForm.g:2141:1: entryRuleLiteral returns [Boolean current=false] : iv_ruleLiteral= ruleLiteral EOF ;
     public final Boolean entryRuleLiteral() throws RecognitionException {
         Boolean current = false;
 
@@ -6280,8 +6209,8 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
         try {
-            // PsiInternalCalculatorForm.g:2168:49: (iv_ruleLiteral= ruleLiteral EOF )
-            // PsiInternalCalculatorForm.g:2169:2: iv_ruleLiteral= ruleLiteral EOF
+            // PsiInternalCalculatorForm.g:2141:49: (iv_ruleLiteral= ruleLiteral EOF )
+            // PsiInternalCalculatorForm.g:2142:2: iv_ruleLiteral= ruleLiteral EOF
             {
             if ( state.backtracking==0 ) {
                markComposite(elementTypeProvider.getLiteralElementType()); 
@@ -6311,7 +6240,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
 
     // $ANTLR start "ruleLiteral"
-    // PsiInternalCalculatorForm.g:2175:1: ruleLiteral returns [Boolean current=false] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) ;
+    // PsiInternalCalculatorForm.g:2148:1: ruleLiteral returns [Boolean current=false] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) ;
     public final Boolean ruleLiteral() throws RecognitionException {
         Boolean current = false;
 
@@ -6320,11 +6249,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
         Token lv_value_5_0=null;
 
         try {
-            // PsiInternalCalculatorForm.g:2176:1: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) ) )
-            // PsiInternalCalculatorForm.g:2177:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
+            // PsiInternalCalculatorForm.g:2149:1: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) ) )
+            // PsiInternalCalculatorForm.g:2150:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
             {
-            // PsiInternalCalculatorForm.g:2177:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) )
-            int alt64=3;
+            // PsiInternalCalculatorForm.g:2150:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_FLOAT ) ) ) | ( () ( (lv_value_5_0= RULE_PERCENT ) ) ) | ( () ( ( ruleQualifiedName ) ) ) )
+            int alt64=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
@@ -6341,6 +6270,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                 alt64=3;
                 }
                 break;
+            case RULE_ID:
+                {
+                alt64=4;
+                }
+                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
@@ -6351,13 +6285,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
             switch (alt64) {
                 case 1 :
-                    // PsiInternalCalculatorForm.g:2178:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // PsiInternalCalculatorForm.g:2151:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2178:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // PsiInternalCalculatorForm.g:2179:4: () ( (lv_value_1_0= RULE_INT ) )
+                    // PsiInternalCalculatorForm.g:2151:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // PsiInternalCalculatorForm.g:2152:4: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2179:4: ()
-                    // PsiInternalCalculatorForm.g:2180:5: 
+                    // PsiInternalCalculatorForm.g:2152:4: ()
+                    // PsiInternalCalculatorForm.g:2153:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6369,11 +6303,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2186:4: ( (lv_value_1_0= RULE_INT ) )
-                    // PsiInternalCalculatorForm.g:2187:5: (lv_value_1_0= RULE_INT )
+                    // PsiInternalCalculatorForm.g:2159:4: ( (lv_value_1_0= RULE_INT ) )
+                    // PsiInternalCalculatorForm.g:2160:5: (lv_value_1_0= RULE_INT )
                     {
-                    // PsiInternalCalculatorForm.g:2187:5: (lv_value_1_0= RULE_INT )
-                    // PsiInternalCalculatorForm.g:2188:6: lv_value_1_0= RULE_INT
+                    // PsiInternalCalculatorForm.g:2160:5: (lv_value_1_0= RULE_INT )
+                    // PsiInternalCalculatorForm.g:2161:6: lv_value_1_0= RULE_INT
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6407,13 +6341,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 2 :
-                    // PsiInternalCalculatorForm.g:2205:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2178:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2205:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
-                    // PsiInternalCalculatorForm.g:2206:4: () ( (lv_value_3_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2178:3: ( () ( (lv_value_3_0= RULE_FLOAT ) ) )
+                    // PsiInternalCalculatorForm.g:2179:4: () ( (lv_value_3_0= RULE_FLOAT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2206:4: ()
-                    // PsiInternalCalculatorForm.g:2207:5: 
+                    // PsiInternalCalculatorForm.g:2179:4: ()
+                    // PsiInternalCalculatorForm.g:2180:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6425,11 +6359,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2213:4: ( (lv_value_3_0= RULE_FLOAT ) )
-                    // PsiInternalCalculatorForm.g:2214:5: (lv_value_3_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2186:4: ( (lv_value_3_0= RULE_FLOAT ) )
+                    // PsiInternalCalculatorForm.g:2187:5: (lv_value_3_0= RULE_FLOAT )
                     {
-                    // PsiInternalCalculatorForm.g:2214:5: (lv_value_3_0= RULE_FLOAT )
-                    // PsiInternalCalculatorForm.g:2215:6: lv_value_3_0= RULE_FLOAT
+                    // PsiInternalCalculatorForm.g:2187:5: (lv_value_3_0= RULE_FLOAT )
+                    // PsiInternalCalculatorForm.g:2188:6: lv_value_3_0= RULE_FLOAT
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6463,13 +6397,13 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     }
                     break;
                 case 3 :
-                    // PsiInternalCalculatorForm.g:2232:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // PsiInternalCalculatorForm.g:2205:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
                     {
-                    // PsiInternalCalculatorForm.g:2232:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
-                    // PsiInternalCalculatorForm.g:2233:4: () ( (lv_value_5_0= RULE_PERCENT ) )
+                    // PsiInternalCalculatorForm.g:2205:3: ( () ( (lv_value_5_0= RULE_PERCENT ) ) )
+                    // PsiInternalCalculatorForm.g:2206:4: () ( (lv_value_5_0= RULE_PERCENT ) )
                     {
-                    // PsiInternalCalculatorForm.g:2233:4: ()
-                    // PsiInternalCalculatorForm.g:2234:5: 
+                    // PsiInternalCalculatorForm.g:2206:4: ()
+                    // PsiInternalCalculatorForm.g:2207:5: 
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6481,11 +6415,11 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
 
                     }
 
-                    // PsiInternalCalculatorForm.g:2240:4: ( (lv_value_5_0= RULE_PERCENT ) )
-                    // PsiInternalCalculatorForm.g:2241:5: (lv_value_5_0= RULE_PERCENT )
+                    // PsiInternalCalculatorForm.g:2213:4: ( (lv_value_5_0= RULE_PERCENT ) )
+                    // PsiInternalCalculatorForm.g:2214:5: (lv_value_5_0= RULE_PERCENT )
                     {
-                    // PsiInternalCalculatorForm.g:2241:5: (lv_value_5_0= RULE_PERCENT )
-                    // PsiInternalCalculatorForm.g:2242:6: lv_value_5_0= RULE_PERCENT
+                    // PsiInternalCalculatorForm.g:2214:5: (lv_value_5_0= RULE_PERCENT )
+                    // PsiInternalCalculatorForm.g:2215:6: lv_value_5_0= RULE_PERCENT
                     {
                     if ( state.backtracking==0 ) {
 
@@ -6504,6 +6438,66 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       						doneLeaf(lv_value_5_0);
+                      					
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // PsiInternalCalculatorForm.g:2232:3: ( () ( ( ruleQualifiedName ) ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2232:3: ( () ( ( ruleQualifiedName ) ) )
+                    // PsiInternalCalculatorForm.g:2233:4: () ( ( ruleQualifiedName ) )
+                    {
+                    // PsiInternalCalculatorForm.g:2233:4: ()
+                    // PsiInternalCalculatorForm.g:2234:5: 
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      					precedeComposite(elementTypeProvider.getLiteral_FieldReferenceAction_3_0ElementType());
+                      					doneComposite();
+                      					associateWithSemanticElement();
+                      				
+                    }
+
+                    }
+
+                    // PsiInternalCalculatorForm.g:2240:4: ( ( ruleQualifiedName ) )
+                    // PsiInternalCalculatorForm.g:2241:5: ( ruleQualifiedName )
+                    {
+                    // PsiInternalCalculatorForm.g:2241:5: ( ruleQualifiedName )
+                    // PsiInternalCalculatorForm.g:2242:6: ruleQualifiedName
+                    {
+                    if ( state.backtracking==0 ) {
+
+                      						if (!current) {
+                      							associateWithSemanticElement();
+                      							current = true;
+                      						}
+                      					
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      						markComposite(elementTypeProvider.getLiteral_RefFieldCrossReference_3_1_0ElementType());
+                      					
+                    }
+                    pushFollow(FOLLOW_2);
+                    ruleQualifiedName();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      						doneComposite();
                       					
                     }
 
