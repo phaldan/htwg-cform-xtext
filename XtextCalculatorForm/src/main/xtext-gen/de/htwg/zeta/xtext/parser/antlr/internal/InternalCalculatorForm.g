@@ -1614,15 +1614,18 @@ ruleCalculate returns [EObject current=null]
 		(
 			(
 				{
+					newCompositeNode(grammarAccess.getCalculateAccess().getOutputResultOutputParserRuleCall_1_0());
+				}
+				lv_output_1_0=ruleResultOutput
+				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCalculateRule());
+						$current = createModelElementForParent(grammarAccess.getCalculateRule());
 					}
-				}
-				{
-					newCompositeNode(grammarAccess.getCalculateAccess().getResultFieldCrossReference_1_0());
-				}
-				ruleQualifiedName
-				{
+					set(
+						$current,
+						"output",
+						lv_output_1_0,
+						"de.htwg.zeta.xtext.CalculatorForm.ResultOutput");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1648,6 +1651,86 @@ ruleCalculate returns [EObject current=null]
 						"de.htwg.zeta.xtext.CalculatorForm.Expression");
 					afterParserOrEnumRuleCall();
 				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResultOutput
+entryRuleResultOutput returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResultOutputRule()); }
+	iv_ruleResultOutput=ruleResultOutput
+	{ $current=$iv_ruleResultOutput.current; }
+	EOF;
+
+// Rule ResultOutput
+ruleResultOutput returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getResultOutputAccess().getOutputFieldAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='field'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getResultOutputAccess().getFieldKeyword_0_1());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getResultOutputRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getResultOutputAccess().getFieldFieldCrossReference_0_2_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getResultOutputAccess().getOutputVariableAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_4='var'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getResultOutputAccess().getVarKeyword_1_1());
+			}
+			(
+				(
+					lv_name_5_0=RULE_ID
+					{
+						newLeafNode(lv_name_5_0, grammarAccess.getResultOutputAccess().getNameIDTerminalRuleCall_1_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getResultOutputRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_5_0,
+							"de.htwg.zeta.xtext.CalculatorForm.ID");
+					}
+				)
 			)
 		)
 	)

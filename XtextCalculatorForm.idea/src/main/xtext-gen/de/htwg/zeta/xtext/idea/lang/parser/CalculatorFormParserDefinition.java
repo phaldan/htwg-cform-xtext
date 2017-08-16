@@ -143,8 +143,20 @@ public class CalculatorFormParserDefinition extends AbstractXtextParserDefinitio
 			if (elementType == elementTypeProvider.getCalculateElementType()) {
 				return new PsiEObjectImpl(node) {};
 			}
+			if (elementType == elementTypeProvider.getCalculate_OutputResultOutputParserRuleCall_1_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
 			if (elementType == elementTypeProvider.getCalculate_ExpressionExpressionParserRuleCall_3_0ElementType()) {
 				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getResultOutputElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getResultOutput_OutputFieldAction_0_0ElementType()) {
+				return new PsiEObjectImpl(node) {};
+			}
+			if (elementType == elementTypeProvider.getResultOutput_OutputVariableAction_1_0ElementType()) {
+				return new PsiNamedEObjectImpl(node) {};
 			}
 			if (elementType == elementTypeProvider.getExpressionElementType()) {
 				return new PsiEObjectImpl(node) {};

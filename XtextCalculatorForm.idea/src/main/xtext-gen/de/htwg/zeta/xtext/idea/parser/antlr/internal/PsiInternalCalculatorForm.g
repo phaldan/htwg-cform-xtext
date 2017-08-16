@@ -1653,17 +1653,15 @@ ruleCalculate returns [Boolean current=false]
 		(
 			(
 				{
-					if (!$current) {
+					markComposite(elementTypeProvider.getCalculate_OutputResultOutputParserRuleCall_1_0ElementType());
+				}
+				lv_output_1_0=ruleResultOutput
+				{
+					doneComposite();
+					if(!$current) {
 						associateWithSemanticElement();
 						$current = true;
 					}
-				}
-				{
-					markComposite(elementTypeProvider.getCalculate_ResultFieldCrossReference_1_0ElementType());
-				}
-				ruleQualifiedName
-				{
-					doneComposite();
 				}
 			)
 		)
@@ -1687,6 +1685,87 @@ ruleCalculate returns [Boolean current=false]
 						$current = true;
 					}
 				}
+			)
+		)
+	)
+;
+
+//Entry rule entryRuleResultOutput
+entryRuleResultOutput returns [Boolean current=false]:
+	{ markComposite(elementTypeProvider.getResultOutputElementType()); }
+	iv_ruleResultOutput=ruleResultOutput
+	{ $current=$iv_ruleResultOutput.current; }
+	EOF;
+
+// Rule ResultOutput
+ruleResultOutput returns [Boolean current=false]
+:
+	(
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getResultOutput_OutputFieldAction_0_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			{
+				markLeaf(elementTypeProvider.getResultOutput_FieldKeyword_0_1ElementType());
+			}
+			otherlv_1='field'
+			{
+				doneLeaf(otherlv_1);
+			}
+			(
+				(
+					{
+						if (!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						markComposite(elementTypeProvider.getResultOutput_FieldFieldCrossReference_0_2_0ElementType());
+					}
+					ruleQualifiedName
+					{
+						doneComposite();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					precedeComposite(elementTypeProvider.getResultOutput_OutputVariableAction_1_0ElementType());
+					doneComposite();
+					associateWithSemanticElement();
+				}
+			)
+			{
+				markLeaf(elementTypeProvider.getResultOutput_VarKeyword_1_1ElementType());
+			}
+			otherlv_4='var'
+			{
+				doneLeaf(otherlv_4);
+			}
+			(
+				(
+					{
+						markLeaf(elementTypeProvider.getResultOutput_NameIDTerminalRuleCall_1_2_0ElementType());
+					}
+					lv_name_5_0=RULE_ID
+					{
+						if(!$current) {
+							associateWithSemanticElement();
+							$current = true;
+						}
+					}
+					{
+						doneLeaf(lv_name_5_0);
+					}
+				)
 			)
 		)
 	)

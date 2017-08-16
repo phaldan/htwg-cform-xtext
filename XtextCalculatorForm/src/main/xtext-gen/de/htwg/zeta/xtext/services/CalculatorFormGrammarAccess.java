@@ -929,32 +929,28 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.Calculate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCalculateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cResultAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cResultFieldCrossReference_1_0 = (CrossReference)cResultAssignment_1.eContents().get(0);
-		private final RuleCall cResultFieldQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cResultFieldCrossReference_1_0.eContents().get(1);
+		private final Assignment cOutputAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOutputResultOutputParserRuleCall_1_0 = (RuleCall)cOutputAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//// Expression based on http://xsemantics.sourceforge.net/xsemantics-documentation/Expressions-example.html
 		//Calculate:
-		//	'calculate' result=[Field|QualifiedName] '=' expression=Expression;
+		//	'calculate' output=ResultOutput '=' expression=Expression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'calculate' result=[Field|QualifiedName] '=' expression=Expression
+		//'calculate' output=ResultOutput '=' expression=Expression
 		public Group getGroup() { return cGroup; }
 		
 		//'calculate'
 		public Keyword getCalculateKeyword_0() { return cCalculateKeyword_0; }
 		
-		//result=[Field|QualifiedName]
-		public Assignment getResultAssignment_1() { return cResultAssignment_1; }
+		//output=ResultOutput
+		public Assignment getOutputAssignment_1() { return cOutputAssignment_1; }
 		
-		//[Field|QualifiedName]
-		public CrossReference getResultFieldCrossReference_1_0() { return cResultFieldCrossReference_1_0; }
-		
-		//QualifiedName
-		public RuleCall getResultFieldQualifiedNameParserRuleCall_1_0_1() { return cResultFieldQualifiedNameParserRuleCall_1_0_1; }
+		//ResultOutput
+		public RuleCall getOutputResultOutputParserRuleCall_1_0() { return cOutputResultOutputParserRuleCall_1_0; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
@@ -964,6 +960,61 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_3_0() { return cExpressionExpressionParserRuleCall_3_0; }
+	}
+	public class ResultOutputElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.ResultOutput");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cOutputFieldAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cFieldKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cFieldAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final CrossReference cFieldFieldCrossReference_0_2_0 = (CrossReference)cFieldAssignment_0_2.eContents().get(0);
+		private final RuleCall cFieldFieldQualifiedNameParserRuleCall_0_2_0_1 = (RuleCall)cFieldFieldCrossReference_0_2_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cOutputVariableAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cVarKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cNameAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_1_2_0 = (RuleCall)cNameAssignment_1_2.eContents().get(0);
+		
+		//ResultOutput:
+		//	{OutputField} 'field' field=[Field|QualifiedName] | {OutputVariable} 'var' name=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{OutputField} 'field' field=[Field|QualifiedName] | {OutputVariable} 'var' name=ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{OutputField} 'field' field=[Field|QualifiedName]
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{OutputField}
+		public Action getOutputFieldAction_0_0() { return cOutputFieldAction_0_0; }
+		
+		//'field'
+		public Keyword getFieldKeyword_0_1() { return cFieldKeyword_0_1; }
+		
+		//field=[Field|QualifiedName]
+		public Assignment getFieldAssignment_0_2() { return cFieldAssignment_0_2; }
+		
+		//[Field|QualifiedName]
+		public CrossReference getFieldFieldCrossReference_0_2_0() { return cFieldFieldCrossReference_0_2_0; }
+		
+		//QualifiedName
+		public RuleCall getFieldFieldQualifiedNameParserRuleCall_0_2_0_1() { return cFieldFieldQualifiedNameParserRuleCall_0_2_0_1; }
+		
+		//{OutputVariable} 'var' name=ID
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{OutputVariable}
+		public Action getOutputVariableAction_1_0() { return cOutputVariableAction_1_0; }
+		
+		//'var'
+		public Keyword getVarKeyword_1_1() { return cVarKeyword_1_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1_2() { return cNameAssignment_1_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_2_0() { return cNameIDTerminalRuleCall_1_2_0; }
 	}
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "de.htwg.zeta.xtext.CalculatorForm.QualifiedName");
@@ -1312,6 +1363,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	private final ButtonElements pButton;
 	private final ButtonSubmitElements pButtonSubmit;
 	private final CalculateElements pCalculate;
+	private final ResultOutputElements pResultOutput;
 	private final QualifiedNameElements pQualifiedName;
 	private final ExpressionElements pExpression;
 	private final AdditionElements pAddition;
@@ -1352,6 +1404,7 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 		this.pButton = new ButtonElements();
 		this.pButtonSubmit = new ButtonSubmitElements();
 		this.pCalculate = new CalculateElements();
+		this.pResultOutput = new ResultOutputElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pExpression = new ExpressionElements();
 		this.pAddition = new AdditionElements();
@@ -1561,13 +1614,23 @@ public class CalculatorFormGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//// Expression based on http://xsemantics.sourceforge.net/xsemantics-documentation/Expressions-example.html
 	//Calculate:
-	//	'calculate' result=[Field|QualifiedName] '=' expression=Expression;
+	//	'calculate' output=ResultOutput '=' expression=Expression;
 	public CalculateElements getCalculateAccess() {
 		return pCalculate;
 	}
 	
 	public ParserRule getCalculateRule() {
 		return getCalculateAccess().getRule();
+	}
+	
+	//ResultOutput:
+	//	{OutputField} 'field' field=[Field|QualifiedName] | {OutputVariable} 'var' name=ID;
+	public ResultOutputElements getResultOutputAccess() {
+		return pResultOutput;
+	}
+	
+	public ParserRule getResultOutputRule() {
+		return getResultOutputAccess().getRule();
 	}
 	
 	//QualifiedName:

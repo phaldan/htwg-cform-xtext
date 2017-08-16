@@ -30,10 +30,13 @@ import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
+import de.htwg.zeta.xtext.calculatorForm.OutputField;
+import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PageChild;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
+import de.htwg.zeta.xtext.calculatorForm.ResultOutput;
 import de.htwg.zeta.xtext.calculatorForm.UnaryOperation;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -175,6 +178,13 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass resultOutputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass expressionEClass = null;
 
   /**
@@ -190,6 +200,20 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * @generated
    */
   private EClass literalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass outputFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass outputVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1059,7 +1083,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCalculate_Result()
+  public EReference getCalculate_Output()
   {
     return (EReference)calculateEClass.getEStructuralFeatures().get(0);
   }
@@ -1072,6 +1096,16 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
   public EReference getCalculate_Expression()
   {
     return (EReference)calculateEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getResultOutput()
+  {
+    return resultOutputEClass;
   }
 
   /**
@@ -1112,6 +1146,46 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
   public EClass getLiteral()
   {
     return literalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOutputField()
+  {
+    return outputFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOutputField_Field()
+  {
+    return (EReference)outputFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getOutputVariable()
+  {
+    return outputVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOutputVariable_Name()
+  {
+    return (EAttribute)outputVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1453,8 +1527,10 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     createEAttribute(buttonSubmitEClass, BUTTON_SUBMIT__VALUE);
 
     calculateEClass = createEClass(CALCULATE);
-    createEReference(calculateEClass, CALCULATE__RESULT);
+    createEReference(calculateEClass, CALCULATE__OUTPUT);
     createEReference(calculateEClass, CALCULATE__EXPRESSION);
+
+    resultOutputEClass = createEClass(RESULT_OUTPUT);
 
     expressionEClass = createEClass(EXPRESSION);
 
@@ -1462,6 +1538,12 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     createEReference(unaryOperationEClass, UNARY_OPERATION__EXPRESSION);
 
     literalEClass = createEClass(LITERAL);
+
+    outputFieldEClass = createEClass(OUTPUT_FIELD);
+    createEReference(outputFieldEClass, OUTPUT_FIELD__FIELD);
+
+    outputVariableEClass = createEClass(OUTPUT_VARIABLE);
+    createEAttribute(outputVariableEClass, OUTPUT_VARIABLE__NAME);
 
     plusEClass = createEClass(PLUS);
     createEReference(plusEClass, PLUS__LEFT);
@@ -1539,6 +1621,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     buttonSubmitEClass.getESuperTypes().add(this.getButton());
     unaryOperationEClass.getESuperTypes().add(this.getExpression());
     literalEClass.getESuperTypes().add(this.getExpression());
+    outputFieldEClass.getESuperTypes().add(this.getResultOutput());
+    outputVariableEClass.getESuperTypes().add(this.getResultOutput());
     plusEClass.getESuperTypes().add(this.getExpression());
     minusEClass.getESuperTypes().add(this.getExpression());
     multiEClass.getESuperTypes().add(this.getExpression());
@@ -1640,8 +1724,10 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEAttribute(getButtonSubmit_Value(), ecorePackage.getEString(), "value", null, 0, 1, ButtonSubmit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(calculateEClass, Calculate.class, "Calculate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCalculate_Result(), this.getField(), null, "result", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCalculate_Output(), this.getResultOutput(), null, "output", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCalculate_Expression(), this.getExpression(), null, "expression", null, 0, 1, Calculate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resultOutputEClass, ResultOutput.class, "ResultOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1649,6 +1735,12 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEReference(getUnaryOperation_Expression(), this.getExpression(), null, "expression", null, 0, 1, UnaryOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(outputFieldEClass, OutputField.class, "OutputField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOutputField_Field(), this.getField(), null, "field", null, 0, 1, OutputField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(outputVariableEClass, OutputVariable.class, "OutputVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOutputVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, OutputVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPlus_Left(), this.getExpression(), null, "left", null, 0, 1, Plus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

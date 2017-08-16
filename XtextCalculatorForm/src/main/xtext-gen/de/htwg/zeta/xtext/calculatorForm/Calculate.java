@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Calculate#getResult <em>Result</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Calculate#getOutput <em>Output</em>}</li>
  *   <li>{@link de.htwg.zeta.xtext.calculatorForm.Calculate#getExpression <em>Expression</em>}</li>
  * </ul>
  *
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Calculate extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Result</b></em>' reference.
+   * Returns the value of the '<em><b>Output</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Result</em>' reference isn't clear,
+   * If the meaning of the '<em>Output</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Result</em>' reference.
-   * @see #setResult(Field)
-   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getCalculate_Result()
-   * @model
+   * @return the value of the '<em>Output</em>' containment reference.
+   * @see #setOutput(ResultOutput)
+   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getCalculate_Output()
+   * @model containment="true"
    * @generated
    */
-  Field getResult();
+  ResultOutput getOutput();
 
   /**
-   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.Calculate#getResult <em>Result</em>}' reference.
+   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.Calculate#getOutput <em>Output</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Result</em>' reference.
-   * @see #getResult()
+   * @param value the new value of the '<em>Output</em>' containment reference.
+   * @see #getOutput()
    * @generated
    */
-  void setResult(Field value);
+  void setOutput(ResultOutput value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

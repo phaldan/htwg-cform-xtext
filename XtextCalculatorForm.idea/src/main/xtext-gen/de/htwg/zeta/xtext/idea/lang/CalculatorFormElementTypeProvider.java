@@ -1140,14 +1140,11 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createCalculate_CalculateKeyword_0ElementType() {
 			return new IGrammarAwareElementType("Calculate_CalculateKeyword_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getCalculateKeyword_0());
 		}
-		public static IGrammarAwareElementType createCalculate_ResultAssignment_1ElementType() {
-			return new IGrammarAwareElementType("Calculate_ResultAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getResultAssignment_1());
+		public static IGrammarAwareElementType createCalculate_OutputAssignment_1ElementType() {
+			return new IGrammarAwareElementType("Calculate_OutputAssignment_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getOutputAssignment_1());
 		}
-		public static IGrammarAwareElementType createCalculate_ResultFieldCrossReference_1_0ElementType() {
-			return new IGrammarAwareElementType("Calculate_ResultFieldCrossReference_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getResultFieldCrossReference_1_0());
-		}
-		public static IGrammarAwareElementType createCalculate_ResultFieldQualifiedNameParserRuleCall_1_0_1ElementType() {
-			return new IGrammarAwareElementType("Calculate_ResultFieldQualifiedNameParserRuleCall_1_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getResultFieldQualifiedNameParserRuleCall_1_0_1());
+		public static IGrammarAwareElementType createCalculate_OutputResultOutputParserRuleCall_1_0ElementType() {
+			return new IGrammarAwareElementType("Calculate_OutputResultOutputParserRuleCall_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getOutputResultOutputParserRuleCall_1_0());
 		}
 		public static IGrammarAwareElementType createCalculate_EqualsSignKeyword_2ElementType() {
 			return new IGrammarAwareElementType("Calculate_EqualsSignKeyword_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getCalculateAccess().getEqualsSignKeyword_2());
@@ -1166,17 +1163,83 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Calculate_CalculateKeyword_0_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_CalculateKeyword_0ElementType());
 
-	public static final IGrammarAwareElementType Calculate_ResultAssignment_1_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_ResultAssignment_1ElementType());
+	public static final IGrammarAwareElementType Calculate_OutputAssignment_1_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_OutputAssignment_1ElementType());
 
-	public static final IGrammarAwareElementType Calculate_ResultFieldCrossReference_1_0_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_ResultFieldCrossReference_1_0ElementType());
-
-	public static final IGrammarAwareElementType Calculate_ResultFieldQualifiedNameParserRuleCall_1_0_1_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_ResultFieldQualifiedNameParserRuleCall_1_0_1ElementType());
+	public static final IGrammarAwareElementType Calculate_OutputResultOutputParserRuleCall_1_0_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_OutputResultOutputParserRuleCall_1_0ElementType());
 
 	public static final IGrammarAwareElementType Calculate_EqualsSignKeyword_2_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_EqualsSignKeyword_2ElementType());
 
 	public static final IGrammarAwareElementType Calculate_ExpressionAssignment_3_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_ExpressionAssignment_3ElementType());
 
 	public static final IGrammarAwareElementType Calculate_ExpressionExpressionParserRuleCall_3_0_ELEMENT_TYPE = associate(CalculateFactory.createCalculate_ExpressionExpressionParserRuleCall_3_0ElementType());
+
+	private static class ResultOutputFactory {
+		public static IGrammarAwareElementType createResultOutputElementType() {
+			return new IGrammarAwareElementType("ResultOutput_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputRule());
+		}
+		public static IGrammarAwareElementType createResultOutput_AlternativesElementType() {
+			return new IGrammarAwareElementType("ResultOutput_Alternatives_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getAlternatives());
+		}
+		public static IGrammarAwareElementType createResultOutput_Group_0ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_Group_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getGroup_0());
+		}
+		public static IGrammarAwareElementType createResultOutput_OutputFieldAction_0_0ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_OutputFieldAction_0_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getOutputFieldAction_0_0());
+		}
+		public static IGrammarAwareElementType createResultOutput_FieldKeyword_0_1ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_FieldKeyword_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getFieldKeyword_0_1());
+		}
+		public static IGrammarAwareElementType createResultOutput_FieldAssignment_0_2ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_FieldAssignment_0_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getFieldAssignment_0_2());
+		}
+		public static IGrammarAwareElementType createResultOutput_FieldFieldCrossReference_0_2_0ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_FieldFieldCrossReference_0_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getFieldFieldCrossReference_0_2_0());
+		}
+		public static IGrammarAwareElementType createResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getFieldFieldQualifiedNameParserRuleCall_0_2_0_1());
+		}
+		public static IGrammarAwareElementType createResultOutput_Group_1ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_Group_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getGroup_1());
+		}
+		public static IGrammarAwareElementType createResultOutput_OutputVariableAction_1_0ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_OutputVariableAction_1_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getOutputVariableAction_1_0());
+		}
+		public static IGrammarAwareElementType createResultOutput_VarKeyword_1_1ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_VarKeyword_1_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getVarKeyword_1_1());
+		}
+		public static IGrammarAwareElementType createResultOutput_NameAssignment_1_2ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_NameAssignment_1_2_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getNameAssignment_1_2());
+		}
+		public static IGrammarAwareElementType createResultOutput_NameIDTerminalRuleCall_1_2_0ElementType() {
+			return new IGrammarAwareElementType("ResultOutput_NameIDTerminalRuleCall_1_2_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getResultOutputAccess().getNameIDTerminalRuleCall_1_2_0());
+		}
+	}
+
+	public static final IGrammarAwareElementType ResultOutput_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutputElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_Alternatives_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_AlternativesElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_Group_0_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_Group_0ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_OutputFieldAction_0_0_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_OutputFieldAction_0_0ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_FieldKeyword_0_1_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_FieldKeyword_0_1ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_FieldAssignment_0_2_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_FieldAssignment_0_2ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_FieldFieldCrossReference_0_2_0_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_FieldFieldCrossReference_0_2_0ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_Group_1_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_Group_1ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_OutputVariableAction_1_0_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_OutputVariableAction_1_0ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_VarKeyword_1_1_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_VarKeyword_1_1ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_NameAssignment_1_2_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_NameAssignment_1_2ElementType());
+
+	public static final IGrammarAwareElementType ResultOutput_NameIDTerminalRuleCall_1_2_0_ELEMENT_TYPE = associate(ResultOutputFactory.createResultOutput_NameIDTerminalRuleCall_1_2_0ElementType());
 
 	private static class QualifiedNameFactory {
 		public static IGrammarAwareElementType createQualifiedNameElementType() {
@@ -2448,16 +2511,12 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Calculate_CalculateKeyword_0_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getCalculate_ResultAssignment_1ElementType() {
-		return Calculate_ResultAssignment_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getCalculate_OutputAssignment_1ElementType() {
+		return Calculate_OutputAssignment_1_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getCalculate_ResultFieldCrossReference_1_0ElementType() {
-		return Calculate_ResultFieldCrossReference_1_0_ELEMENT_TYPE;
-	}
-	
-	public IGrammarAwareElementType getCalculate_ResultFieldQualifiedNameParserRuleCall_1_0_1ElementType() {
-		return Calculate_ResultFieldQualifiedNameParserRuleCall_1_0_1_ELEMENT_TYPE;
+	public IGrammarAwareElementType getCalculate_OutputResultOutputParserRuleCall_1_0ElementType() {
+		return Calculate_OutputResultOutputParserRuleCall_1_0_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getCalculate_EqualsSignKeyword_2ElementType() {
@@ -2470,6 +2529,58 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 	
 	public IGrammarAwareElementType getCalculate_ExpressionExpressionParserRuleCall_3_0ElementType() {
 		return Calculate_ExpressionExpressionParserRuleCall_3_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutputElementType() {
+		return ResultOutput_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_AlternativesElementType() {
+		return ResultOutput_Alternatives_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_Group_0ElementType() {
+		return ResultOutput_Group_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_OutputFieldAction_0_0ElementType() {
+		return ResultOutput_OutputFieldAction_0_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_FieldKeyword_0_1ElementType() {
+		return ResultOutput_FieldKeyword_0_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_FieldAssignment_0_2ElementType() {
+		return ResultOutput_FieldAssignment_0_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_FieldFieldCrossReference_0_2_0ElementType() {
+		return ResultOutput_FieldFieldCrossReference_0_2_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1ElementType() {
+		return ResultOutput_FieldFieldQualifiedNameParserRuleCall_0_2_0_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_Group_1ElementType() {
+		return ResultOutput_Group_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_OutputVariableAction_1_0ElementType() {
+		return ResultOutput_OutputVariableAction_1_0_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_VarKeyword_1_1ElementType() {
+		return ResultOutput_VarKeyword_1_1_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_NameAssignment_1_2ElementType() {
+		return ResultOutput_NameAssignment_1_2_ELEMENT_TYPE;
+	}
+	
+	public IGrammarAwareElementType getResultOutput_NameIDTerminalRuleCall_1_2_0ElementType() {
+		return ResultOutput_NameIDTerminalRuleCall_1_2_0_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getQualifiedNameElementType() {

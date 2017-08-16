@@ -71,7 +71,12 @@ ButtonSubmit:
 
 // Expression based on http://xsemantics.sourceforge.net/xsemantics-documentation/Expressions-example.html
 Calculate:
-    'calculate' result=[Field|QualifiedName] '=' expression=Expression
+    'calculate' output=ResultOutput '=' expression=Expression
+;
+
+ResultOutput:
+    {OutputField} 'field' field=[Field|QualifiedName] |
+    {OutputVariable} 'var' name=ID
 ;
 
 QualifiedName:

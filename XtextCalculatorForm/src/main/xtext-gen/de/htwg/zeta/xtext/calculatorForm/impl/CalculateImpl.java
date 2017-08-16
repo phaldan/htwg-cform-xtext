@@ -6,7 +6,7 @@ package de.htwg.zeta.xtext.calculatorForm.impl;
 import de.htwg.zeta.xtext.calculatorForm.Calculate;
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Expression;
-import de.htwg.zeta.xtext.calculatorForm.Field;
+import de.htwg.zeta.xtext.calculatorForm.ResultOutput;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.CalculateImpl#getResult <em>Result</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.CalculateImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.CalculateImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class CalculateImpl extends MinimalEObjectImpl.Container implements Calculate
 {
   /**
-   * The cached value of the '{@link #getResult() <em>Result</em>}' reference.
+   * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getResult()
+   * @see #getOutput()
    * @generated
    * @ordered
    */
-  protected Field result;
+  protected ResultOutput output;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -79,19 +79,9 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Field getResult()
+  public ResultOutput getOutput()
   {
-    if (result != null && result.eIsProxy())
-    {
-      InternalEObject oldResult = (InternalEObject)result;
-      result = (Field)eResolveProxy(oldResult);
-      if (result != oldResult)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CalculatorFormPackage.CALCULATE__RESULT, oldResult, result));
-      }
-    }
-    return result;
+    return output;
   }
 
   /**
@@ -99,22 +89,37 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Field basicGetResult()
+  public NotificationChain basicSetOutput(ResultOutput newOutput, NotificationChain msgs)
   {
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setResult(Field newResult)
-  {
-    Field oldResult = result;
-    result = newResult;
+    ResultOutput oldOutput = output;
+    output = newOutput;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.CALCULATE__RESULT, oldResult, result));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.CALCULATE__OUTPUT, oldOutput, newOutput);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOutput(ResultOutput newOutput)
+  {
+    if (newOutput != output)
+    {
+      NotificationChain msgs = null;
+      if (output != null)
+        msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CalculatorFormPackage.CALCULATE__OUTPUT, null, msgs);
+      if (newOutput != null)
+        msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CalculatorFormPackage.CALCULATE__OUTPUT, null, msgs);
+      msgs = basicSetOutput(newOutput, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.CALCULATE__OUTPUT, newOutput, newOutput));
   }
 
   /**
@@ -175,6 +180,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
+      case CalculatorFormPackage.CALCULATE__OUTPUT:
+        return basicSetOutput(null, msgs);
       case CalculatorFormPackage.CALCULATE__EXPRESSION:
         return basicSetExpression(null, msgs);
     }
@@ -191,9 +198,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.CALCULATE__RESULT:
-        if (resolve) return getResult();
-        return basicGetResult();
+      case CalculatorFormPackage.CALCULATE__OUTPUT:
+        return getOutput();
       case CalculatorFormPackage.CALCULATE__EXPRESSION:
         return getExpression();
     }
@@ -210,8 +216,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.CALCULATE__RESULT:
-        setResult((Field)newValue);
+      case CalculatorFormPackage.CALCULATE__OUTPUT:
+        setOutput((ResultOutput)newValue);
         return;
       case CalculatorFormPackage.CALCULATE__EXPRESSION:
         setExpression((Expression)newValue);
@@ -230,8 +236,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.CALCULATE__RESULT:
-        setResult((Field)null);
+      case CalculatorFormPackage.CALCULATE__OUTPUT:
+        setOutput((ResultOutput)null);
         return;
       case CalculatorFormPackage.CALCULATE__EXPRESSION:
         setExpression((Expression)null);
@@ -250,8 +256,8 @@ public class CalculateImpl extends MinimalEObjectImpl.Container implements Calcu
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.CALCULATE__RESULT:
-        return result != null;
+      case CalculatorFormPackage.CALCULATE__OUTPUT:
+        return output != null;
       case CalculatorFormPackage.CALCULATE__EXPRESSION:
         return expression != null;
     }

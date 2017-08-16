@@ -24,6 +24,8 @@ import de.htwg.zeta.xtext.calculatorForm.Minus;
 import de.htwg.zeta.xtext.calculatorForm.Model;
 import de.htwg.zeta.xtext.calculatorForm.Multi;
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral;
+import de.htwg.zeta.xtext.calculatorForm.OutputField;
+import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
@@ -109,6 +111,12 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.NUMBER_LITERAL:
 				sequence_Literal(context, (NumberLiteral) semanticObject); 
+				return; 
+			case CalculatorFormPackage.OUTPUT_FIELD:
+				sequence_ResultOutput(context, (OutputField) semanticObject); 
+				return; 
+			case CalculatorFormPackage.OUTPUT_VARIABLE:
+				sequence_ResultOutput(context, (OutputVariable) semanticObject); 
 				return; 
 			case CalculatorFormPackage.PAGE:
 				sequence_Page(context, (Page) semanticObject); 
@@ -229,17 +237,17 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 *     Calculate returns Calculate
 	 *
 	 * Constraint:
-	 *     (result=[Field|QualifiedName] expression=Expression)
+	 *     (output=ResultOutput expression=Expression)
 	 */
 	protected void sequence_Calculate(ISerializationContext context, Calculate semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.CALCULATE__RESULT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.CALCULATE__RESULT));
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.CALCULATE__OUTPUT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.CALCULATE__OUTPUT));
 			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.CALCULATE__EXPRESSION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.CALCULATE__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCalculateAccess().getResultFieldQualifiedNameParserRuleCall_1_0_1(), semanticObject.getResult());
+		feeder.accept(grammarAccess.getCalculateAccess().getOutputResultOutputParserRuleCall_1_0(), semanticObject.getOutput());
 		feeder.accept(grammarAccess.getCalculateAccess().getExpressionExpressionParserRuleCall_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
@@ -556,6 +564,42 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	 */
 	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResultOutput returns OutputField
+	 *
+	 * Constraint:
+	 *     field=[Field|QualifiedName]
+	 */
+	protected void sequence_ResultOutput(ISerializationContext context, OutputField semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.OUTPUT_FIELD__FIELD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_FIELD__FIELD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getResultOutputAccess().getFieldFieldQualifiedNameParserRuleCall_0_2_0_1(), semanticObject.getField());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ResultOutput returns OutputVariable
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_ResultOutput(ISerializationContext context, OutputVariable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.OUTPUT_VARIABLE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getResultOutputAccess().getNameIDTerminalRuleCall_1_2_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

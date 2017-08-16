@@ -51,6 +51,7 @@ public class InternalCalculatorFormLexer extends Lexer {
     public static final int T__44=44;
     public static final int T__45=45;
     public static final int RULE_FLOAT=7;
+    public static final int T__46=46;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__42=42;
@@ -428,10 +429,11 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:28:7: ( '.' )
-            // InternalCalculatorForm.g:28:9: '.'
+            // InternalCalculatorForm.g:28:7: ( 'var' )
+            // InternalCalculatorForm.g:28:9: 'var'
             {
-            match('.'); 
+            match("var"); 
+
 
             }
 
@@ -448,10 +450,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:29:7: ( '+' )
-            // InternalCalculatorForm.g:29:9: '+'
+            // InternalCalculatorForm.g:29:7: ( '.' )
+            // InternalCalculatorForm.g:29:9: '.'
             {
-            match('+'); 
+            match('.'); 
 
             }
 
@@ -468,10 +470,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:30:7: ( '-' )
-            // InternalCalculatorForm.g:30:9: '-'
+            // InternalCalculatorForm.g:30:7: ( '+' )
+            // InternalCalculatorForm.g:30:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -488,10 +490,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:31:7: ( '*' )
-            // InternalCalculatorForm.g:31:9: '*'
+            // InternalCalculatorForm.g:31:7: ( '-' )
+            // InternalCalculatorForm.g:31:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -508,10 +510,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:32:7: ( '/' )
-            // InternalCalculatorForm.g:32:9: '/'
+            // InternalCalculatorForm.g:32:7: ( '*' )
+            // InternalCalculatorForm.g:32:9: '*'
             {
-            match('/'); 
+            match('*'); 
 
             }
 
@@ -528,10 +530,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:33:7: ( '!' )
-            // InternalCalculatorForm.g:33:9: '!'
+            // InternalCalculatorForm.g:33:7: ( '/' )
+            // InternalCalculatorForm.g:33:9: '/'
             {
-            match('!'); 
+            match('/'); 
 
             }
 
@@ -548,10 +550,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:34:7: ( '(' )
-            // InternalCalculatorForm.g:34:9: '('
+            // InternalCalculatorForm.g:34:7: ( '!' )
+            // InternalCalculatorForm.g:34:9: '!'
             {
-            match('('); 
+            match('!'); 
 
             }
 
@@ -568,10 +570,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:35:7: ( ')' )
-            // InternalCalculatorForm.g:35:9: ')'
+            // InternalCalculatorForm.g:35:7: ( '(' )
+            // InternalCalculatorForm.g:35:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -588,11 +590,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:36:7: ( 'autofocus' )
-            // InternalCalculatorForm.g:36:9: 'autofocus'
+            // InternalCalculatorForm.g:36:7: ( ')' )
+            // InternalCalculatorForm.g:36:9: ')'
             {
-            match("autofocus"); 
-
+            match(')'); 
 
             }
 
@@ -609,10 +610,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:37:7: ( 'disabled' )
-            // InternalCalculatorForm.g:37:9: 'disabled'
+            // InternalCalculatorForm.g:37:7: ( 'autofocus' )
+            // InternalCalculatorForm.g:37:9: 'autofocus'
             {
-            match("disabled"); 
+            match("autofocus"); 
 
 
             }
@@ -630,10 +631,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:38:7: ( 'notdisplayed' )
-            // InternalCalculatorForm.g:38:9: 'notdisplayed'
+            // InternalCalculatorForm.g:38:7: ( 'disabled' )
+            // InternalCalculatorForm.g:38:9: 'disabled'
             {
-            match("notdisplayed"); 
+            match("disabled"); 
 
 
             }
@@ -651,10 +652,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:39:7: ( 'readonly' )
-            // InternalCalculatorForm.g:39:9: 'readonly'
+            // InternalCalculatorForm.g:39:7: ( 'notdisplayed' )
+            // InternalCalculatorForm.g:39:9: 'notdisplayed'
             {
-            match("readonly"); 
+            match("notdisplayed"); 
 
 
             }
@@ -672,10 +673,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:40:7: ( 'required' )
-            // InternalCalculatorForm.g:40:9: 'required'
+            // InternalCalculatorForm.g:40:7: ( 'readonly' )
+            // InternalCalculatorForm.g:40:9: 'readonly'
             {
-            match("required"); 
+            match("readonly"); 
 
 
             }
@@ -693,10 +694,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:41:7: ( 'multiple' )
-            // InternalCalculatorForm.g:41:9: 'multiple'
+            // InternalCalculatorForm.g:41:7: ( 'required' )
+            // InternalCalculatorForm.g:41:9: 'required'
             {
-            match("multiple"); 
+            match("required"); 
 
 
             }
@@ -714,10 +715,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:42:7: ( 'selected' )
-            // InternalCalculatorForm.g:42:9: 'selected'
+            // InternalCalculatorForm.g:42:7: ( 'multiple' )
+            // InternalCalculatorForm.g:42:9: 'multiple'
             {
-            match("selected"); 
+            match("multiple"); 
 
 
             }
@@ -735,10 +736,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:43:7: ( 'checked' )
-            // InternalCalculatorForm.g:43:9: 'checked'
+            // InternalCalculatorForm.g:43:7: ( 'selected' )
+            // InternalCalculatorForm.g:43:9: 'selected'
             {
-            match("checked"); 
+            match("selected"); 
 
 
             }
@@ -751,15 +752,36 @@ public class InternalCalculatorFormLexer extends Lexer {
     }
     // $ANTLR end "T__45"
 
+    // $ANTLR start "T__46"
+    public final void mT__46() throws RecognitionException {
+        try {
+            int _type = T__46;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalCalculatorForm.g:44:7: ( 'checked' )
+            // InternalCalculatorForm.g:44:9: 'checked'
+            {
+            match("checked"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__46"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6127:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalCalculatorForm.g:6127:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCalculatorForm.g:6365:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalCalculatorForm.g:6365:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalCalculatorForm.g:6127:11: ( '^' )?
+            // InternalCalculatorForm.g:6365:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -768,7 +790,7 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalCalculatorForm.g:6127:11: '^'
+                    // InternalCalculatorForm.g:6365:11: '^'
                     {
                     match('^'); 
 
@@ -786,7 +808,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalCalculatorForm.g:6127:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalCalculatorForm.g:6365:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -835,10 +857,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6129:10: ( ( '0' .. '9' )+ )
-            // InternalCalculatorForm.g:6129:12: ( '0' .. '9' )+
+            // InternalCalculatorForm.g:6367:10: ( ( '0' .. '9' )+ )
+            // InternalCalculatorForm.g:6367:12: ( '0' .. '9' )+
             {
-            // InternalCalculatorForm.g:6129:12: ( '0' .. '9' )+
+            // InternalCalculatorForm.g:6367:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -852,7 +874,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6129:13: '0' .. '9'
+            	    // InternalCalculatorForm.g:6367:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -884,8 +906,8 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6131:12: ( RULE_INT '.' RULE_INT )
-            // InternalCalculatorForm.g:6131:14: RULE_INT '.' RULE_INT
+            // InternalCalculatorForm.g:6369:12: ( RULE_INT '.' RULE_INT )
+            // InternalCalculatorForm.g:6369:14: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -906,22 +928,22 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6133:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
-            // InternalCalculatorForm.g:6133:16: ( RULE_INT | RULE_FLOAT ) '%'
+            // InternalCalculatorForm.g:6371:14: ( ( RULE_INT | RULE_FLOAT ) '%' )
+            // InternalCalculatorForm.g:6371:16: ( RULE_INT | RULE_FLOAT ) '%'
             {
-            // InternalCalculatorForm.g:6133:16: ( RULE_INT | RULE_FLOAT )
+            // InternalCalculatorForm.g:6371:16: ( RULE_INT | RULE_FLOAT )
             int alt4=2;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // InternalCalculatorForm.g:6133:17: RULE_INT
+                    // InternalCalculatorForm.g:6371:17: RULE_INT
                     {
                     mRULE_INT(); 
 
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:6133:26: RULE_FLOAT
+                    // InternalCalculatorForm.g:6371:26: RULE_FLOAT
                     {
                     mRULE_FLOAT(); 
 
@@ -947,10 +969,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6135:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalCalculatorForm.g:6135:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCalculatorForm.g:6373:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalCalculatorForm.g:6373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalCalculatorForm.g:6135:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalCalculatorForm.g:6373:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -968,10 +990,10 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalCalculatorForm.g:6135:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalCalculatorForm.g:6373:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalCalculatorForm.g:6135:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalCalculatorForm.g:6373:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -987,7 +1009,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalCalculatorForm.g:6135:21: '\\\\' .
+                    	    // InternalCalculatorForm.g:6373:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -995,7 +1017,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCalculatorForm.g:6135:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalCalculatorForm.g:6373:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1020,10 +1042,10 @@ public class InternalCalculatorFormLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalCalculatorForm.g:6135:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalCalculatorForm.g:6373:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalCalculatorForm.g:6135:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalCalculatorForm.g:6373:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1039,7 +1061,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalCalculatorForm.g:6135:54: '\\\\' .
+                    	    // InternalCalculatorForm.g:6373:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1047,7 +1069,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalCalculatorForm.g:6135:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalCalculatorForm.g:6373:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1090,12 +1112,12 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6137:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalCalculatorForm.g:6137:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalCalculatorForm.g:6375:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalCalculatorForm.g:6375:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalCalculatorForm.g:6137:24: ( options {greedy=false; } : . )*
+            // InternalCalculatorForm.g:6375:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1120,7 +1142,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6137:52: .
+            	    // InternalCalculatorForm.g:6375:52: .
             	    {
             	    matchAny(); 
 
@@ -1150,12 +1172,12 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6139:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalCalculatorForm.g:6139:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalCalculatorForm.g:6377:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalCalculatorForm.g:6377:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalCalculatorForm.g:6139:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalCalculatorForm.g:6377:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1168,7 +1190,7 @@ public class InternalCalculatorFormLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalCalculatorForm.g:6139:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalCalculatorForm.g:6377:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1188,7 +1210,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalCalculatorForm.g:6139:40: ( ( '\\r' )? '\\n' )?
+            // InternalCalculatorForm.g:6377:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1197,9 +1219,9 @@ public class InternalCalculatorFormLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalCalculatorForm.g:6139:41: ( '\\r' )? '\\n'
+                    // InternalCalculatorForm.g:6377:41: ( '\\r' )? '\\n'
                     {
-                    // InternalCalculatorForm.g:6139:41: ( '\\r' )?
+                    // InternalCalculatorForm.g:6377:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1208,7 +1230,7 @@ public class InternalCalculatorFormLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalCalculatorForm.g:6139:41: '\\r'
+                            // InternalCalculatorForm.g:6377:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1240,10 +1262,10 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6141:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalCalculatorForm.g:6141:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCalculatorForm.g:6379:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalCalculatorForm.g:6379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalCalculatorForm.g:6141:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalCalculatorForm.g:6379:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1297,8 +1319,8 @@ public class InternalCalculatorFormLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalCalculatorForm.g:6143:16: ( . )
-            // InternalCalculatorForm.g:6143:18: .
+            // InternalCalculatorForm.g:6381:16: ( . )
+            // InternalCalculatorForm.g:6381:18: .
             {
             matchAny(); 
 
@@ -1313,8 +1335,8 @@ public class InternalCalculatorFormLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalCalculatorForm.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | RULE_ID | RULE_INT | RULE_FLOAT | RULE_PERCENT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=42;
+        // InternalCalculatorForm.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_ID | RULE_INT | RULE_FLOAT | RULE_PERCENT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=43;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
@@ -1549,63 +1571,70 @@ public class InternalCalculatorFormLexer extends Lexer {
                 }
                 break;
             case 34 :
-                // InternalCalculatorForm.g:1:208: RULE_ID
+                // InternalCalculatorForm.g:1:208: T__46
+                {
+                mT__46(); 
+
+                }
+                break;
+            case 35 :
+                // InternalCalculatorForm.g:1:214: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 35 :
-                // InternalCalculatorForm.g:1:216: RULE_INT
+            case 36 :
+                // InternalCalculatorForm.g:1:222: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 36 :
-                // InternalCalculatorForm.g:1:225: RULE_FLOAT
+            case 37 :
+                // InternalCalculatorForm.g:1:231: RULE_FLOAT
                 {
                 mRULE_FLOAT(); 
 
                 }
                 break;
-            case 37 :
-                // InternalCalculatorForm.g:1:236: RULE_PERCENT
+            case 38 :
+                // InternalCalculatorForm.g:1:242: RULE_PERCENT
                 {
                 mRULE_PERCENT(); 
 
                 }
                 break;
-            case 38 :
-                // InternalCalculatorForm.g:1:249: RULE_STRING
+            case 39 :
+                // InternalCalculatorForm.g:1:255: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 39 :
-                // InternalCalculatorForm.g:1:261: RULE_ML_COMMENT
+            case 40 :
+                // InternalCalculatorForm.g:1:267: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 40 :
-                // InternalCalculatorForm.g:1:277: RULE_SL_COMMENT
+            case 41 :
+                // InternalCalculatorForm.g:1:283: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 41 :
-                // InternalCalculatorForm.g:1:293: RULE_WS
+            case 42 :
+                // InternalCalculatorForm.g:1:299: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 42 :
-                // InternalCalculatorForm.g:1:301: RULE_ANY_OTHER
+            case 43 :
+                // InternalCalculatorForm.g:1:307: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1668,21 +1697,21 @@ public class InternalCalculatorFormLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "6133:16: ( RULE_INT | RULE_FLOAT )";
+            return "6371:16: ( RULE_INT | RULE_FLOAT )";
         }
     }
     static final String DFA13_eotS =
-        "\1\uffff\1\43\2\uffff\11\43\5\uffff\1\72\3\uffff\4\43\1\40\1\uffff\1\102\2\40\2\uffff\2\43\3\uffff\15\43\13\uffff\4\43\2\uffff\1\102\3\uffff\25\43\1\163\1\164\5\43\1\172\3\43\1\176\4\43\1\u0083\5\43\2\uffff\1\u0089\1\u008a\1\u008b\2\43\1\uffff\3\43\1\uffff\3\43\1\u0094\1\uffff\5\43\3\uffff\4\43\1\u009f\1\u00a0\2\43\1\uffff\7\43\1\uffff\1\43\3\uffff\1\u00ab\6\43\1\u00b2\1\u00b3\1\u00b4\1\uffff\3\43\1\u00b8\1\u00b9\1\u00ba\3\uffff\1\u00bb\1\u00bc\1\43\5\uffff\2\43\1\u00c0\1\uffff";
+        "\1\uffff\1\43\2\uffff\11\43\5\uffff\1\72\3\uffff\4\43\1\40\1\uffff\1\102\2\40\2\uffff\2\43\3\uffff\15\43\13\uffff\4\43\2\uffff\1\102\3\uffff\4\43\1\143\21\43\1\165\1\166\3\43\1\uffff\2\43\1\174\3\43\1\u0080\4\43\1\u0085\5\43\2\uffff\1\u008b\1\u008c\1\u008d\2\43\1\uffff\3\43\1\uffff\3\43\1\u0096\1\uffff\5\43\3\uffff\4\43\1\u00a1\1\u00a2\2\43\1\uffff\7\43\1\uffff\1\43\3\uffff\1\u00ad\6\43\1\u00b4\1\u00b5\1\u00b6\1\uffff\3\43\1\u00ba\1\u00bb\1\u00bc\3\uffff\1\u00bd\1\u00be\1\43\5\uffff\2\43\1\u00c2\1\uffff";
     static final String DFA13_eofS =
-        "\u00c1\uffff";
+        "\u00c3\uffff";
     static final String DFA13_minS =
-        "\1\0\1\151\2\uffff\2\141\1\151\1\145\1\160\1\145\1\141\1\162\1\141\5\uffff\1\52\3\uffff\1\165\1\157\1\145\1\165\1\101\1\uffff\1\45\2\0\2\uffff\1\162\1\145\3\uffff\1\142\1\154\1\157\1\163\1\172\1\142\1\154\1\164\1\170\1\145\1\154\1\157\1\147\13\uffff\2\164\1\141\1\154\1\uffff\1\60\1\45\3\uffff\1\155\1\154\1\145\1\165\1\160\1\141\1\145\1\155\1\145\1\151\1\164\1\151\2\143\1\165\1\145\1\157\2\144\1\165\1\164\1\45\1\60\1\144\1\154\1\145\1\144\1\142\1\60\1\151\1\143\1\157\1\60\1\143\1\153\1\165\1\160\1\60\1\146\1\151\1\157\2\151\2\uffff\3\60\1\157\1\154\1\uffff\2\164\1\156\1\uffff\2\145\1\154\1\60\1\uffff\1\157\1\163\1\156\1\162\1\160\3\uffff\1\167\1\145\1\55\1\145\1\55\1\60\1\144\1\141\1\uffff\1\143\1\160\1\154\1\145\1\154\1\156\1\144\1\uffff\1\144\3\uffff\1\60\1\164\1\165\1\154\1\171\1\144\1\145\3\60\1\uffff\1\145\1\163\1\141\3\60\3\uffff\2\60\1\171\5\uffff\1\145\1\144\1\60\1\uffff";
+        "\1\0\1\151\2\uffff\2\141\1\151\1\145\1\160\1\145\1\141\1\162\1\141\5\uffff\1\52\3\uffff\1\165\1\157\1\145\1\165\1\101\1\uffff\1\45\2\0\2\uffff\1\162\1\145\3\uffff\1\142\1\154\1\157\1\163\1\172\1\142\1\154\1\164\1\170\1\145\1\154\1\157\1\147\13\uffff\2\164\1\141\1\154\2\uffff\1\45\1\60\2\uffff\1\155\1\154\1\145\1\165\1\60\1\160\1\141\1\145\1\155\1\145\1\151\1\164\1\151\2\143\1\165\1\145\1\157\2\144\1\165\1\164\1\45\1\60\1\144\1\154\1\145\1\uffff\1\144\1\142\1\60\1\151\1\143\1\157\1\60\1\143\1\153\1\165\1\160\1\60\1\146\1\151\1\157\2\151\2\uffff\3\60\1\157\1\154\1\uffff\2\164\1\156\1\uffff\2\145\1\154\1\60\1\uffff\1\157\1\163\1\156\1\162\1\160\3\uffff\1\167\1\145\1\55\1\145\1\55\1\60\1\144\1\141\1\uffff\1\143\1\160\1\154\1\145\1\154\1\156\1\144\1\uffff\1\144\3\uffff\1\60\1\164\1\165\1\154\1\171\1\144\1\145\3\60\1\uffff\1\145\1\163\1\141\3\60\3\uffff\2\60\1\171\5\uffff\1\145\1\144\1\60\1\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\157\2\uffff\2\141\1\162\1\165\1\160\1\145\1\150\1\162\1\141\5\uffff\1\57\3\uffff\1\165\1\157\1\145\1\165\1\172\1\uffff\1\71\2\uffff\2\uffff\1\162\1\145\3\uffff\1\142\1\154\1\157\1\163\1\172\1\142\1\154\1\164\1\170\1\157\1\154\1\157\1\147\13\uffff\2\164\1\161\1\154\1\uffff\2\71\3\uffff\1\155\1\154\1\145\1\165\1\160\1\141\1\145\1\155\1\145\1\151\1\164\1\151\2\143\1\165\1\145\1\157\2\144\1\165\1\164\1\71\1\172\1\144\1\154\1\145\1\144\1\142\1\172\1\151\1\143\1\157\1\172\1\143\1\153\1\165\1\160\1\172\1\146\1\151\1\157\2\151\2\uffff\3\172\1\157\1\154\1\uffff\2\164\1\156\1\uffff\2\145\1\154\1\172\1\uffff\1\157\1\163\1\156\1\162\1\160\3\uffff\1\167\1\145\1\55\1\145\2\172\1\144\1\141\1\uffff\1\143\1\160\1\154\1\145\1\154\1\156\1\144\1\uffff\1\144\3\uffff\1\172\1\164\1\165\1\154\1\171\1\144\1\145\3\172\1\uffff\1\145\1\163\1\141\3\172\3\uffff\2\172\1\171\5\uffff\1\145\1\144\1\172\1\uffff";
+        "\1\uffff\1\157\2\uffff\2\141\1\162\1\165\1\160\1\145\1\150\1\162\1\141\5\uffff\1\57\3\uffff\1\165\1\157\1\145\1\165\1\172\1\uffff\1\71\2\uffff\2\uffff\1\162\1\145\3\uffff\1\142\1\162\1\157\1\163\1\172\1\142\1\154\1\164\1\170\1\157\1\154\1\157\1\147\13\uffff\2\164\1\161\1\154\2\uffff\2\71\2\uffff\1\155\1\154\1\145\1\165\1\172\1\160\1\141\1\145\1\155\1\145\1\151\1\164\1\151\2\143\1\165\1\145\1\157\2\144\1\165\1\164\1\71\1\172\1\144\1\154\1\145\1\uffff\1\144\1\142\1\172\1\151\1\143\1\157\1\172\1\143\1\153\1\165\1\160\1\172\1\146\1\151\1\157\2\151\2\uffff\3\172\1\157\1\154\1\uffff\2\164\1\156\1\uffff\2\145\1\154\1\172\1\uffff\1\157\1\163\1\156\1\162\1\160\3\uffff\1\167\1\145\1\55\1\145\2\172\1\144\1\141\1\uffff\1\143\1\160\1\154\1\145\1\154\1\156\1\144\1\uffff\1\144\3\uffff\1\172\1\164\1\165\1\154\1\171\1\144\1\145\3\172\1\uffff\1\145\1\163\1\141\3\172\3\uffff\2\172\1\171\5\uffff\1\145\1\144\1\172\1\uffff";
     static final String DFA13_acceptS =
-        "\2\uffff\1\2\1\3\11\uffff\1\21\1\22\1\23\1\24\1\25\1\uffff\1\27\1\30\1\31\5\uffff\1\42\3\uffff\1\51\1\52\2\uffff\1\42\1\2\1\3\15\uffff\1\21\1\22\1\23\1\24\1\25\1\47\1\50\1\26\1\27\1\30\1\31\4\uffff\1\43\2\uffff\1\45\1\46\1\51\53\uffff\1\44\1\1\5\uffff\1\10\3\uffff\1\12\4\uffff\1\16\5\uffff\1\4\1\5\1\6\10\uffff\1\15\7\uffff\1\17\1\uffff\1\13\1\11\1\14\12\uffff\1\41\6\uffff\1\7\1\33\1\40\3\uffff\1\35\1\36\1\37\1\20\1\32\3\uffff\1\34";
+        "\2\uffff\1\2\1\3\11\uffff\1\21\1\23\1\24\1\25\1\26\1\uffff\1\30\1\31\1\32\5\uffff\1\43\3\uffff\1\52\1\53\2\uffff\1\43\1\2\1\3\15\uffff\1\21\1\23\1\24\1\25\1\26\1\50\1\51\1\27\1\30\1\31\1\32\4\uffff\1\44\1\46\2\uffff\1\47\1\52\33\uffff\1\22\21\uffff\1\45\1\1\5\uffff\1\10\3\uffff\1\12\4\uffff\1\16\5\uffff\1\4\1\5\1\6\10\uffff\1\15\7\uffff\1\17\1\uffff\1\13\1\11\1\14\12\uffff\1\42\6\uffff\1\7\1\34\1\41\3\uffff\1\36\1\37\1\40\1\20\1\33\3\uffff\1\35";
     static final String DFA13_specialS =
-        "\1\2\34\uffff\1\0\1\1\u00a2\uffff}>";
+        "\1\2\34\uffff\1\0\1\1\u00a4\uffff}>";
     static final String[] DFA13_transitionS = {
             "\11\40\2\37\2\40\1\37\22\40\1\37\1\23\1\35\4\40\1\36\1\24\1\25\1\21\1\17\1\40\1\20\1\16\1\22\12\34\3\40\1\15\3\40\32\33\3\40\1\32\1\33\1\40\1\26\1\33\1\12\1\6\1\33\1\1\1\13\4\33\1\4\1\31\1\27\1\10\1\14\1\33\1\30\1\7\1\11\1\33\1\5\4\33\1\2\1\40\1\3\uff82\40",
             "\1\42\5\uffff\1\41",
@@ -1712,7 +1741,7 @@ public class InternalCalculatorFormLexer extends Lexer {
             "\1\101",
             "\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\105\10\uffff\1\103\1\uffff\12\104",
+            "\1\103\10\uffff\1\105\1\uffff\12\104",
             "\0\106",
             "\0\106",
             "",
@@ -1723,45 +1752,44 @@ public class InternalCalculatorFormLexer extends Lexer {
             "",
             "",
             "\1\112",
-            "\1\113",
-            "\1\114",
+            "\1\113\5\uffff\1\114",
             "\1\115",
             "\1\116",
             "\1\117",
             "\1\120",
             "\1\121",
             "\1\122",
-            "\1\124\11\uffff\1\123",
-            "\1\125",
+            "\1\123",
+            "\1\125\11\uffff\1\124",
             "\1\126",
             "\1\127",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\130",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\131",
-            "\1\132\17\uffff\1\133",
-            "\1\134",
-            "",
-            "\12\135",
-            "\1\105\10\uffff\1\103\1\uffff\12\104",
+            "\1\132",
+            "\1\133\17\uffff\1\134",
+            "\1\135",
             "",
             "",
+            "\1\103\10\uffff\1\105\1\uffff\12\104",
+            "\12\136",
             "",
-            "\1\136",
+            "",
             "\1\137",
             "\1\140",
             "\1\141",
             "\1\142",
-            "\1\143",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\144",
             "\1\145",
             "\1\146",
@@ -1777,88 +1805,91 @@ public class InternalCalculatorFormLexer extends Lexer {
             "\1\160",
             "\1\161",
             "\1\162",
-            "\1\105\12\uffff\12\135",
+            "\1\163",
+            "\1\164",
+            "\1\103\12\uffff\12\136",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\165",
-            "\1\166",
             "\1\167",
             "\1\170",
             "\1\171",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "",
+            "\1\172",
             "\1\173",
-            "\1\174",
-            "\1\175",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\175",
+            "\1\176",
             "\1\177",
-            "\1\u0080",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0081",
             "\1\u0082",
-            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u0083",
             "\1\u0084",
-            "\1\u0085",
+            "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\1\u0086",
             "\1\u0087",
             "\1\u0088",
+            "\1\u0089",
+            "\1\u008a",
             "",
             "",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u008c",
-            "\1\u008d",
-            "",
             "\1\u008e",
             "\1\u008f",
-            "\1\u0090",
             "",
+            "\1\u0090",
             "\1\u0091",
             "\1\u0092",
+            "",
             "\1\u0093",
+            "\1\u0094",
+            "\1\u0095",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u0095",
-            "\1\u0096",
             "\1\u0097",
             "\1\u0098",
             "\1\u0099",
-            "",
-            "",
-            "",
             "\1\u009a",
             "\1\u009b",
+            "",
+            "",
+            "",
             "\1\u009c",
             "\1\u009d",
-            "\1\u009e\2\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
+            "\1\u009e",
+            "\1\u009f",
+            "\1\u00a0\2\uffff\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u00a1",
-            "\1\u00a2",
-            "",
             "\1\u00a3",
             "\1\u00a4",
+            "",
             "\1\u00a5",
             "\1\u00a6",
             "\1\u00a7",
             "\1\u00a8",
             "\1\u00a9",
-            "",
             "\1\u00aa",
+            "\1\u00ab",
+            "",
+            "\1\u00ac",
             "",
             "",
             "",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u00ac",
-            "\1\u00ad",
             "\1\u00ae",
             "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
+            "\1\u00b2",
+            "\1\u00b3",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "",
-            "\1\u00b5",
-            "\1\u00b6",
             "\1\u00b7",
+            "\1\u00b8",
+            "\1\u00b9",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
@@ -1867,14 +1898,14 @@ public class InternalCalculatorFormLexer extends Lexer {
             "",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
-            "\1\u00bd",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00be",
             "\1\u00bf",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00c0",
+            "\1\u00c1",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
             ""
     };
@@ -1909,7 +1940,7 @@ public class InternalCalculatorFormLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | RULE_ID | RULE_INT | RULE_FLOAT | RULE_PERCENT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_ID | RULE_INT | RULE_FLOAT | RULE_PERCENT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;

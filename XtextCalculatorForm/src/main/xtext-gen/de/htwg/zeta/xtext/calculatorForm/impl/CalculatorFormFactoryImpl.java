@@ -82,9 +82,12 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
       case CalculatorFormPackage.BUTTON: return createButton();
       case CalculatorFormPackage.BUTTON_SUBMIT: return createButtonSubmit();
       case CalculatorFormPackage.CALCULATE: return createCalculate();
+      case CalculatorFormPackage.RESULT_OUTPUT: return createResultOutput();
       case CalculatorFormPackage.EXPRESSION: return createExpression();
       case CalculatorFormPackage.UNARY_OPERATION: return createUnaryOperation();
       case CalculatorFormPackage.LITERAL: return createLiteral();
+      case CalculatorFormPackage.OUTPUT_FIELD: return createOutputField();
+      case CalculatorFormPackage.OUTPUT_VARIABLE: return createOutputVariable();
       case CalculatorFormPackage.PLUS: return createPlus();
       case CalculatorFormPackage.MINUS: return createMinus();
       case CalculatorFormPackage.MULTI: return createMulti();
@@ -292,6 +295,17 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
+  public ResultOutput createResultOutput()
+  {
+    ResultOutputImpl resultOutput = new ResultOutputImpl();
+    return resultOutput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Expression createExpression()
   {
     ExpressionImpl expression = new ExpressionImpl();
@@ -318,6 +332,28 @@ public class CalculatorFormFactoryImpl extends EFactoryImpl implements Calculato
   {
     LiteralImpl literal = new LiteralImpl();
     return literal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OutputField createOutputField()
+  {
+    OutputFieldImpl outputField = new OutputFieldImpl();
+    return outputField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OutputVariable createOutputVariable()
+  {
+    OutputVariableImpl outputVariable = new OutputVariableImpl();
+    return outputVariable;
   }
 
   /**

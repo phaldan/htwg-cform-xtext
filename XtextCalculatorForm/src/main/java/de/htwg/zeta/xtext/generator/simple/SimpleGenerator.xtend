@@ -176,9 +176,11 @@ class SimpleGenerator {
                     if (isNaN(value)) {
                         return;
                     }
-                    this.store[entry.output] = value;
-                    this._setFieldValue(entry.output, value);
-                    this._runDependingCalculations(entry.output);
+                    if (entry.output.field) {
+                        this.store[entry.output.field] = value;
+                        this._setFieldValue(entry.output.field, value);
+                        this._runDependingCalculations(entry.output.field);
+                    }
                 }
 
                 getValue(field) {

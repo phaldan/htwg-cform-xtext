@@ -20,6 +20,9 @@ import java.util.HashSet
 import java.util.List
 import de.htwg.zeta.xtext.calculatorForm.Multi
 import de.htwg.zeta.xtext.calculatorForm.Div
+import de.htwg.zeta.xtext.calculatorForm.ResultOutput
+import de.htwg.zeta.xtext.calculatorForm.OutputField
+import de.htwg.zeta.xtext.calculatorForm.OutputVariable
 
 /**
  * Create a html with basic html.
@@ -42,9 +45,28 @@ class SimpleCalculateTransformer {
                 return «fields.clear»«processExpression(calculate.expression)»
             },
             input: [«FOR field: fields SEPARATOR ','»'«field»'«ENDFOR»],
-            output: '«name(calculate.result)»'
+            output: {
+                field: «getOutputField(calculate.output)»,
+                variable: «getOutputVariable(calculate.output)»
+            }
         }
     '''
+
+    private def String getOutputField(ResultOutput output) {
+        if (output instanceof OutputField) {
+            ''' '«name(output.field)»' '''.toString.trim
+        } else {
+            '''null'''
+        }
+    }
+
+    private def String getOutputVariable(ResultOutput output) {
+        if (output instanceof OutputVariable) {
+            ''' '«output.name»' '''.toString.trim
+        } else {
+            '''null'''
+        }
+    }
 
     private def String name(Field field) {
         if (field instanceof FieldInput) {
