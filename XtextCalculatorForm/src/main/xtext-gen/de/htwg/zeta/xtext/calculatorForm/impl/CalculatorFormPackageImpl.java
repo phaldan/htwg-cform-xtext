@@ -18,7 +18,6 @@ import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldInput;
 import de.htwg.zeta.xtext.calculatorForm.FieldOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
-import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelectChild;
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
@@ -36,6 +35,7 @@ import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PageChild;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
+import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral;
 import de.htwg.zeta.xtext.calculatorForm.ResultOutput;
 import de.htwg.zeta.xtext.calculatorForm.UnaryOperation;
 
@@ -283,7 +283,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass fieldReferenceEClass = null;
+  private EClass referenceLiteralEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1393,9 +1393,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFieldReference()
+  public EClass getReferenceLiteral()
   {
-    return fieldReferenceEClass;
+    return referenceLiteralEClass;
   }
 
   /**
@@ -1403,9 +1403,9 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFieldReference_Ref()
+  public EReference getReferenceLiteral_Ref()
   {
-    return (EReference)fieldReferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)referenceLiteralEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1574,8 +1574,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     percentLiteralEClass = createEClass(PERCENT_LITERAL);
     createEAttribute(percentLiteralEClass, PERCENT_LITERAL__VALUE);
 
-    fieldReferenceEClass = createEClass(FIELD_REFERENCE);
-    createEReference(fieldReferenceEClass, FIELD_REFERENCE__REF);
+    referenceLiteralEClass = createEClass(REFERENCE_LITERAL);
+    createEReference(referenceLiteralEClass, REFERENCE_LITERAL__REF);
   }
 
   /**
@@ -1632,7 +1632,7 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     numberLiteralEClass.getESuperTypes().add(this.getLiteral());
     floatLiteralEClass.getESuperTypes().add(this.getLiteral());
     percentLiteralEClass.getESuperTypes().add(this.getLiteral());
-    fieldReferenceEClass.getESuperTypes().add(this.getLiteral());
+    referenceLiteralEClass.getESuperTypes().add(this.getLiteral());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1771,8 +1771,8 @@ public class CalculatorFormPackageImpl extends EPackageImpl implements Calculato
     initEClass(percentLiteralEClass, PercentLiteral.class, "PercentLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPercentLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, PercentLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(fieldReferenceEClass, FieldReference.class, "FieldReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFieldReference_Ref(), this.getField(), null, "ref", null, 0, 1, FieldReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(referenceLiteralEClass, ReferenceLiteral.class, "ReferenceLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferenceLiteral_Ref(), this.getField(), null, "ref", null, 0, 1, ReferenceLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

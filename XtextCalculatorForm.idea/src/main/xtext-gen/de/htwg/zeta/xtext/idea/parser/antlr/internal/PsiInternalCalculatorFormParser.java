@@ -6463,7 +6463,7 @@ public class PsiInternalCalculatorFormParser extends AbstractPsiAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      					precedeComposite(elementTypeProvider.getLiteral_FieldReferenceAction_3_0ElementType());
+                      					precedeComposite(elementTypeProvider.getLiteral_ReferenceLiteralAction_3_0ElementType());
                       					doneComposite();
                       					associateWithSemanticElement();
                       				

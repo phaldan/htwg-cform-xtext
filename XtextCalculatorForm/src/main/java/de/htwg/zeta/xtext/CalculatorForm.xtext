@@ -114,7 +114,7 @@ Literal:
     {NumberLiteral} value=INT |
     {FloatLiteral} value=FLOAT |
     {PercentLiteral} value=PERCENT |
-    {FieldReference} ref=[Field|QualifiedName]
+    {ReferenceLiteral} ref=[Field|QualifiedName]
 ;
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

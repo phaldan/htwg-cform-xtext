@@ -17150,7 +17150,7 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             // InternalCalculatorForm.g:5167:2: ()
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0()); 
+               before(grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0()); 
             }
             // InternalCalculatorForm.g:5168:2: ()
             // InternalCalculatorForm.g:5168:3: 
@@ -17158,7 +17158,7 @@ public class InternalCalculatorFormParser extends AbstractInternalContentAssistP
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0()); 
+               after(grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0()); 
             }
 
             }

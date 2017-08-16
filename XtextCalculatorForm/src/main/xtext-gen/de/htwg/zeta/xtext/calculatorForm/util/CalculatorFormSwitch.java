@@ -338,12 +338,12 @@ public class CalculatorFormSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CalculatorFormPackage.FIELD_REFERENCE:
+      case CalculatorFormPackage.REFERENCE_LITERAL:
       {
-        FieldReference fieldReference = (FieldReference)theEObject;
-        T result = caseFieldReference(fieldReference);
-        if (result == null) result = caseLiteral(fieldReference);
-        if (result == null) result = caseExpression(fieldReference);
+        ReferenceLiteral referenceLiteral = (ReferenceLiteral)theEObject;
+        T result = caseReferenceLiteral(referenceLiteral);
+        if (result == null) result = caseLiteral(referenceLiteral);
+        if (result == null) result = caseExpression(referenceLiteral);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -864,17 +864,17 @@ public class CalculatorFormSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Field Reference</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Reference Literal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Field Reference</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Reference Literal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFieldReference(FieldReference object)
+  public T caseReferenceLiteral(ReferenceLiteral object)
   {
     return null;
   }

@@ -312,13 +312,13 @@ public interface CalculatorFormFactory extends EFactory
   PercentLiteral createPercentLiteral();
 
   /**
-   * Returns a new object of class '<em>Field Reference</em>'.
+   * Returns a new object of class '<em>Reference Literal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Field Reference</em>'.
+   * @return a new object of class '<em>Reference Literal</em>'.
    * @generated
    */
-  FieldReference createFieldReference();
+  ReferenceLiteral createReferenceLiteral();
 
   /**
    * Returns the package supported by this factory.

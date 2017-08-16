@@ -236,9 +236,9 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
         return createPercentLiteralAdapter();
       }
       @Override
-      public Adapter caseFieldReference(FieldReference object)
+      public Adapter caseReferenceLiteral(ReferenceLiteral object)
       {
-        return createFieldReferenceAdapter();
+        return createReferenceLiteralAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -743,16 +743,16 @@ public class CalculatorFormAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference <em>Field Reference</em>}'.
+   * Creates a new adapter for an object of class '{@link de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral <em>Reference Literal</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see de.htwg.zeta.xtext.calculatorForm.FieldReference
+   * @see de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral
    * @generated
    */
-  public Adapter createFieldReferenceAdapter()
+  public Adapter createReferenceLiteralAdapter()
   {
     return null;
   }

@@ -15,7 +15,6 @@ import de.htwg.zeta.xtext.calculatorForm.FieldChoiceOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldInput;
 import de.htwg.zeta.xtext.calculatorForm.FieldOption;
 import de.htwg.zeta.xtext.calculatorForm.FieldOptionGroup;
-import de.htwg.zeta.xtext.calculatorForm.FieldReference;
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect;
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Form;
@@ -29,6 +28,7 @@ import de.htwg.zeta.xtext.calculatorForm.OutputVariable;
 import de.htwg.zeta.xtext.calculatorForm.Page;
 import de.htwg.zeta.xtext.calculatorForm.PercentLiteral;
 import de.htwg.zeta.xtext.calculatorForm.Plus;
+import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral;
 import de.htwg.zeta.xtext.services.CalculatorFormGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -85,9 +85,6 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 			case CalculatorFormPackage.FIELD_OPTION_GROUP:
 				sequence_FieldOptionGroup(context, (FieldOptionGroup) semanticObject); 
 				return; 
-			case CalculatorFormPackage.FIELD_REFERENCE:
-				sequence_Literal(context, (FieldReference) semanticObject); 
-				return; 
 			case CalculatorFormPackage.FIELD_SELECT:
 				sequence_FieldSelect(context, (FieldSelect) semanticObject); 
 				return; 
@@ -126,6 +123,9 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 				return; 
 			case CalculatorFormPackage.PLUS:
 				sequence_Addition(context, (Plus) semanticObject); 
+				return; 
+			case CalculatorFormPackage.REFERENCE_LITERAL:
+				sequence_Literal(context, (ReferenceLiteral) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -379,33 +379,6 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Contexts:
-	 *     Expression returns FieldReference
-	 *     Addition returns FieldReference
-	 *     Addition.Plus_1_0_0_0 returns FieldReference
-	 *     Addition.Minus_1_0_1_0 returns FieldReference
-	 *     Multiplication returns FieldReference
-	 *     Multiplication.Multi_1_0_0_0 returns FieldReference
-	 *     Multiplication.Div_1_0_1_0 returns FieldReference
-	 *     Prefixed returns FieldReference
-	 *     Atomic returns FieldReference
-	 *     Literal returns FieldReference
-	 *
-	 * Constraint:
-	 *     ref=[Field|QualifiedName]
-	 */
-	protected void sequence_Literal(ISerializationContext context, FieldReference semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.FIELD_REFERENCE__REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.FIELD_REFERENCE__REF));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLiteralAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Expression returns FloatLiteral
 	 *     Addition returns FloatLiteral
 	 *     Addition.Plus_1_0_0_0 returns FloatLiteral
@@ -481,6 +454,33 @@ public class CalculatorFormSemanticSequencer extends AbstractDelegatingSemanticS
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLiteralAccess().getValuePERCENTTerminalRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns ReferenceLiteral
+	 *     Addition returns ReferenceLiteral
+	 *     Addition.Plus_1_0_0_0 returns ReferenceLiteral
+	 *     Addition.Minus_1_0_1_0 returns ReferenceLiteral
+	 *     Multiplication returns ReferenceLiteral
+	 *     Multiplication.Multi_1_0_0_0 returns ReferenceLiteral
+	 *     Multiplication.Div_1_0_1_0 returns ReferenceLiteral
+	 *     Prefixed returns ReferenceLiteral
+	 *     Atomic returns ReferenceLiteral
+	 *     Literal returns ReferenceLiteral
+	 *
+	 * Constraint:
+	 *     ref=[Field|QualifiedName]
+	 */
+	protected void sequence_Literal(ISerializationContext context, ReferenceLiteral semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CalculatorFormPackage.Literals.REFERENCE_LITERAL__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CalculatorFormPackage.Literals.REFERENCE_LITERAL__REF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLiteralAccess().getRefFieldQualifiedNameParserRuleCall_3_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	

@@ -6371,7 +6371,7 @@ public class InternalCalculatorFormParser extends AbstractInternalAntlrParser {
                     if ( state.backtracking==0 ) {
 
                       					current = forceCreateModelElement(
-                      						grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0(),
+                      						grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0(),
                       						current);
                       				
                     }

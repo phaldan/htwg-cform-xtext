@@ -9,7 +9,6 @@ import de.htwg.zeta.xtext.calculatorForm.Field
 import de.htwg.zeta.xtext.calculatorForm.FieldChoice
 import de.htwg.zeta.xtext.calculatorForm.FieldInput
 import de.htwg.zeta.xtext.calculatorForm.FieldSelect
-import de.htwg.zeta.xtext.calculatorForm.FieldReference
 import de.htwg.zeta.xtext.calculatorForm.FloatLiteral
 import de.htwg.zeta.xtext.calculatorForm.Minus
 import de.htwg.zeta.xtext.calculatorForm.NumberLiteral
@@ -23,6 +22,9 @@ import de.htwg.zeta.xtext.calculatorForm.Div
 import de.htwg.zeta.xtext.calculatorForm.ResultOutput
 import de.htwg.zeta.xtext.calculatorForm.OutputField
 import de.htwg.zeta.xtext.calculatorForm.OutputVariable
+import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral
+import de.htwg.zeta.xtext.calculatorForm.Literal
+import de.htwg.zeta.xtext.calculatorForm.UnaryOperation
 
 /**
  * Create a html with basic html.
@@ -91,24 +93,40 @@ class SimpleCalculateTransformer {
             '''this.mathMulti(«processExpression(expression.left)», «processExpression(expression.right)»)'''
         } else if (expression instanceof Div) {
             '''this.mathDiv(«processExpression(expression.left)», «processExpression(expression.right)»)'''
-        } else if (expression instanceof BooleanNegation) {
-            '''!Boolean(«processExpression(expression.expression)»)'''
-        } else if (expression instanceof ArithmeticSigned) {
-            '''-Number(«processExpression(expression.expression)»)'''
-        } else if (expression instanceof NumberLiteral) {
-            expression.value.toString
-        } else if (expression instanceof FloatLiteral) {
-            expression.value.toString
-        } else if (expression instanceof PercentLiteral) {
-            new BigDecimal(expression.value.replace("%", "")).divide(BigDecimal.valueOf(100)).toString
-        } else if (expression instanceof FieldReference) {
-            processFieldReference(expression)
+        } else if (expression instanceof UnaryOperation) {
+            processUnaryOperation(expression)
+        } else if (expression instanceof Literal) {
+            processLiteral(expression)
         } else {
             throw new UnsupportedOperationException("Unknown Expression: " + expression.getClass.getName)
         }
     }
 
-    private def String processFieldReference(FieldReference expression) {
+    private def String processUnaryOperation(UnaryOperation operation) {
+        if (operation instanceof BooleanNegation) {
+            '''!Boolean(«processExpression(operation.expression)»)'''
+        } else if (operation instanceof ArithmeticSigned) {
+            '''-Number(«processExpression(operation.expression)»)'''
+        } else {
+            throw new UnsupportedOperationException("Unknown UnaryOperation: " + operation.getClass.getName)
+        }
+    }
+
+    private def String processLiteral(Literal literal) {
+        if (literal instanceof NumberLiteral) {
+            literal.value.toString
+        } else if (literal instanceof FloatLiteral) {
+            literal.value.toString
+        } else if (literal instanceof PercentLiteral) {
+            new BigDecimal(literal.value.replace("%", "")).divide(BigDecimal.valueOf(100)).toString
+        } else if (literal instanceof ReferenceLiteral) {
+            processFieldReference(literal)
+        } else {
+            throw new UnsupportedOperationException("Unknown Literal: " + literal.getClass.getName)
+        }
+    }
+
+    private def String processFieldReference(ReferenceLiteral expression) {
         val name = name(expression.ref)
         fields.add(name)
         '''this.getValue('«name»')'''

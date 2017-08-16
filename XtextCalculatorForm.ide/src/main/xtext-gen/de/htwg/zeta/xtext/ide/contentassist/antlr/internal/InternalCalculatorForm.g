@@ -5164,9 +5164,9 @@ rule__Literal__Group_3__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0()); }
+	{ before(grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0()); }
 	()
-	{ after(grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0()); }
+	{ after(grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0()); }
 )
 ;
 finally {

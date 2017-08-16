@@ -1593,8 +1593,8 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		public static IGrammarAwareElementType createLiteral_Group_3ElementType() {
 			return new IGrammarAwareElementType("Literal_Group_3_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getGroup_3());
 		}
-		public static IGrammarAwareElementType createLiteral_FieldReferenceAction_3_0ElementType() {
-			return new IGrammarAwareElementType("Literal_FieldReferenceAction_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getFieldReferenceAction_3_0());
+		public static IGrammarAwareElementType createLiteral_ReferenceLiteralAction_3_0ElementType() {
+			return new IGrammarAwareElementType("Literal_ReferenceLiteralAction_3_0_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getReferenceLiteralAction_3_0());
 		}
 		public static IGrammarAwareElementType createLiteral_RefAssignment_3_1ElementType() {
 			return new IGrammarAwareElementType("Literal_RefAssignment_3_1_ELEMENT_TYPE", CalculatorFormLanguage.INSTANCE, GRAMMAR_ACCESS.getLiteralAccess().getRefAssignment_3_1());
@@ -1637,7 +1637,7 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 
 	public static final IGrammarAwareElementType Literal_Group_3_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_Group_3ElementType());
 
-	public static final IGrammarAwareElementType Literal_FieldReferenceAction_3_0_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_FieldReferenceAction_3_0ElementType());
+	public static final IGrammarAwareElementType Literal_ReferenceLiteralAction_3_0_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_ReferenceLiteralAction_3_0ElementType());
 
 	public static final IGrammarAwareElementType Literal_RefAssignment_3_1_ELEMENT_TYPE = associate(LiteralFactory.createLiteral_RefAssignment_3_1ElementType());
 
@@ -2871,8 +2871,8 @@ public class CalculatorFormElementTypeProvider implements IElementTypeProvider {
 		return Literal_Group_3_ELEMENT_TYPE;
 	}
 	
-	public IGrammarAwareElementType getLiteral_FieldReferenceAction_3_0ElementType() {
-		return Literal_FieldReferenceAction_3_0_ELEMENT_TYPE;
+	public IGrammarAwareElementType getLiteral_ReferenceLiteralAction_3_0ElementType() {
+		return Literal_ReferenceLiteralAction_3_0_ELEMENT_TYPE;
 	}
 	
 	public IGrammarAwareElementType getLiteral_RefAssignment_3_1ElementType() {

@@ -6,21 +6,21 @@ package de.htwg.zeta.xtext.calculatorForm;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Field Reference</b></em>'.
+ * A representation of the model object '<em><b>Reference Literal</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef <em>Ref</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral#getRef <em>Ref</em>}</li>
  * </ul>
  *
- * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getFieldReference()
+ * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getReferenceLiteral()
  * @model
  * @generated
  */
-public interface FieldReference extends Literal
+public interface ReferenceLiteral extends Literal
 {
   /**
    * Returns the value of the '<em><b>Ref</b></em>' reference.
@@ -32,14 +32,14 @@ public interface FieldReference extends Literal
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ref</em>' reference.
    * @see #setRef(Field)
-   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getFieldReference_Ref()
+   * @see de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage#getReferenceLiteral_Ref()
    * @model
    * @generated
    */
   Field getRef();
 
   /**
-   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.FieldReference#getRef <em>Ref</em>}' reference.
+   * Sets the value of the '{@link de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral#getRef <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Ref</em>' reference.
@@ -48,4 +48,4 @@ public interface FieldReference extends Literal
    */
   void setRef(Field value);
 
-} // FieldReference
+} // ReferenceLiteral

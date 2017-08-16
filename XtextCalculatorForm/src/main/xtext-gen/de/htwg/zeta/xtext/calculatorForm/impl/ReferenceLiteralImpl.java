@@ -5,7 +5,7 @@ package de.htwg.zeta.xtext.calculatorForm.impl;
 
 import de.htwg.zeta.xtext.calculatorForm.CalculatorFormPackage;
 import de.htwg.zeta.xtext.calculatorForm.Field;
-import de.htwg.zeta.xtext.calculatorForm.FieldReference;
+import de.htwg.zeta.xtext.calculatorForm.ReferenceLiteral;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,18 +16,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Field Reference</b></em>'.
+ * An implementation of the model object '<em><b>Reference Literal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.FieldReferenceImpl#getRef <em>Ref</em>}</li>
+ *   <li>{@link de.htwg.zeta.xtext.calculatorForm.impl.ReferenceLiteralImpl#getRef <em>Ref</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FieldReferenceImpl extends LiteralImpl implements FieldReference
+public class ReferenceLiteralImpl extends LiteralImpl implements ReferenceLiteral
 {
   /**
    * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
@@ -44,7 +44,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FieldReferenceImpl()
+  protected ReferenceLiteralImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
   @Override
   protected EClass eStaticClass()
   {
-    return CalculatorFormPackage.Literals.FIELD_REFERENCE;
+    return CalculatorFormPackage.Literals.REFERENCE_LITERAL;
   }
 
   /**
@@ -74,7 +74,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
       if (ref != oldRef)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CalculatorFormPackage.FIELD_REFERENCE__REF, oldRef, ref));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CalculatorFormPackage.REFERENCE_LITERAL__REF, oldRef, ref));
       }
     }
     return ref;
@@ -100,7 +100,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
     Field oldRef = ref;
     ref = newRef;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.FIELD_REFERENCE__REF, oldRef, ref));
+      eNotify(new ENotificationImpl(this, Notification.SET, CalculatorFormPackage.REFERENCE_LITERAL__REF, oldRef, ref));
   }
 
   /**
@@ -113,7 +113,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.FIELD_REFERENCE__REF:
+      case CalculatorFormPackage.REFERENCE_LITERAL__REF:
         if (resolve) return getRef();
         return basicGetRef();
     }
@@ -130,7 +130,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.FIELD_REFERENCE__REF:
+      case CalculatorFormPackage.REFERENCE_LITERAL__REF:
         setRef((Field)newValue);
         return;
     }
@@ -147,7 +147,7 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.FIELD_REFERENCE__REF:
+      case CalculatorFormPackage.REFERENCE_LITERAL__REF:
         setRef((Field)null);
         return;
     }
@@ -164,10 +164,10 @@ public class FieldReferenceImpl extends LiteralImpl implements FieldReference
   {
     switch (featureID)
     {
-      case CalculatorFormPackage.FIELD_REFERENCE__REF:
+      case CalculatorFormPackage.REFERENCE_LITERAL__REF:
         return ref != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //FieldReferenceImpl
+} //ReferenceLiteralImpl

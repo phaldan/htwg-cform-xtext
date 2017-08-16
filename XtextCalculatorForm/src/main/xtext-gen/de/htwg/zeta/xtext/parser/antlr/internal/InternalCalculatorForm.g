@@ -2231,7 +2231,7 @@ ruleLiteral returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getLiteralAccess().getFieldReferenceAction_3_0(),
+						grammarAccess.getLiteralAccess().getReferenceLiteralAction_3_0(),
 						$current);
 				}
 			)
