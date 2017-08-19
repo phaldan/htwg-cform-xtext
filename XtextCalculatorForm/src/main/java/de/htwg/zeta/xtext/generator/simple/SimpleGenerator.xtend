@@ -69,7 +69,7 @@ class SimpleGenerator {
                 <script type="text/javascript" src="cform.js" charset="utf-8"></script>
                 <script type="text/javascript" src="simple.js" charset="utf-8"></script>
                 <script>
-                    cform.init(document.querySelectorAll('.cform'), { calculations: cform_«name» });
+                    new Cform(document.querySelectorAll('.cform'), { calculations: cform_«name» });
                 </script>
             </body>
         </html>
@@ -85,7 +85,7 @@ class SimpleGenerator {
     '''
 
     private def String createJavaScript() '''
-        const cform = (function(document) {
+        const Cform = (function(document) {
             'use strict';
 
             const CLASSES = {
@@ -105,7 +105,7 @@ class SimpleGenerator {
                 output: null
             };
 
-            class Cform {
+            class Handler {
                 constructor(element, { calculations, formatInput, formatOutput }) {
                     this.element = element;
                     this.formatInput = formatInput;
@@ -246,9 +246,8 @@ class SimpleGenerator {
             }
 
             function initiate(element, settings) {
-                const elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
                 const cforms = elements.map(e => {
-                    const cform = new Cform(e, Object.assign({}, DEFAULTS, settings));
+                    const cform = new Handler(e, Object.assign({}, DEFAULTS, settings));
                     instances.push(cform);
                     return cform;
                 });
@@ -261,8 +260,29 @@ class SimpleGenerator {
             const instances = [];
             document.addEventListener("change", e => instances.forEach(i => i.processChange(e)));
 
-            return {
-                init: initiate
+            return class Cform {
+                /**
+                 * Creates a new instance.
+                 * @param {HTMLElement|HTMLElement[]} elements Surrounding HTMLElement of the whole form
+                 * @param {Object} [settings] Change default settings
+                 **/
+                constructor(element, settings) {
+                    const elements = (element instanceof Element) ? [element] : Array.prototype.slice.call(element);
+                    this.cforms = elements.map(e => {
+                        const cform = new Handler(e, Object.assign({}, DEFAULTS, settings));
+                        instances.push(cform);
+                        return cform;
+                    });
+                }
+
+                /**
+                 * Trigger execution of all depending calculations of an HTML
+                 * form element.
+                 * @param {HTMLElement} element  HTML form element
+                 **/
+                update(element) {
+                    cforms.forEach(c => c.update(element));
+                }
             };
         })(document);
     '''
