@@ -18,7 +18,9 @@ import de.htwg.zeta.xtext.generator.simple.SimpleGenerator
 class CalculatorFormGenerator extends AbstractGenerator {
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        val root = resource.contents.filter(typeof(Model)).toList.get(0)
-        new SimpleGenerator(fsa).generate(root)
+        val models = resource.contents.filter(typeof(Model))
+        for (Model root: models) {
+            new SimpleGenerator(fsa).generate(root)
+        }
     }
 }
